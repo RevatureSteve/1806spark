@@ -1,0 +1,54 @@
+
+/*Html Elements  */
+
+body {
+    margin: 0;
+}
+
+
+/* Class Elements */
+
+.moviePoster {
+    width: 200px;
+    height: auto;
+    align-content: center;
+    margin-left: 50px;
+}
+
+.movieColumn {   
+    float: left;
+    width: 300px;
+    height: auto;
+    padding: 20px 0;
+}
+
+
+
+.movieTitleHome {
+    text-align: center;
+    color: white;
+}
+
+/* ID Elements */
+
+#movieRow {
+    float: left;
+    width: 100%;
+    background-color: maroon;
+    margin-top: 20px; 
+}
+
+#movieSection h1{
+    padding-left: 50px;
+} 
+
+/* #mainHead {
+} */
+
+#Statement {
+    text-align: center;
+}
+
+#Slogan {
+    text-align: center;
+}
