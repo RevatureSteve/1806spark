@@ -1,0 +1,48 @@
+body{
+    margin: 0%;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: darkslategray ;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color:red;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.column {
+    float: left;
+    width: 50%;
+    padding-left: 0px;
+    height: 500px; /* Should be removed. Only for demonstration */
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+img { 
+    margin: 30px;
+    width: 600px; 
+    height: 400px;
+}
+.clubName{ 
+    color: rgb(231, 19, 19);
+    background-color: darkslategray;
+    padding-left: 10px;
+
+}
