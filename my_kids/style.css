@@ -1,0 +1,78 @@
+/*
+different comment block
+style.css is a common 
+*/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: red;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+h1 {
+    color: red;
+}
+div {
+    border: 3px solid black;
+    margin: 25px;
+   
+}
+#div2 {
+    border: 1px solid blueviolet;
+}
+.blue-border{
+    border:2px solid blue;
+}
+.green-border{
+    border:2px solid green
+}
+.red-font{
+    color:red;
+}
+/* Three image containers (use 25% for four, and 50% for two, etc) */
+.column {
+    float: center;
+    width: 50%;
+    padding: 5px;
+    
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%; 
+    height: auto;
+}
+.thingsilike{
+    background: #cce5ff;
+    margin: 5px;
+}
+.favoritethings{
+   list style:  
+}
