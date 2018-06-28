@@ -1,0 +1,29 @@
+
+/* HTML Elements */
+
+h1 {
+    text-align: center;
+}
+
+body {
+    margin: 0;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a, u{
+    text-decoration: none;
+}
+
+input {
+    border-radius: 5%;
+    border: thin solid lightgray;
+}
+
+/* html classes */
+
+.float-right {
+    float: right;
+}

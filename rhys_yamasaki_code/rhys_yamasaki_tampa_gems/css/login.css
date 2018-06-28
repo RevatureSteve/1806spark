@@ -1,0 +1,27 @@
+/* 
+For login page
+*/
+
+header {
+    max-width: 100%;
+    margin: auto;
+    font-size: 50px;
+    padding: 50px;
+    background-color: gray;
+    text-align: center;
+}
+
+/* HTML IDs */
+
+#loginForm {
+    border: 1px solid black;
+    max-width: 500px;
+    margin: auto;
+    padding: 20;
+    text-align: center;
+    background-color: white;
+}
+
+#loginBody {
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/51/49/735791be81aff4a.jpg")
+}
