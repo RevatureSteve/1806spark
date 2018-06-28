@@ -41,6 +41,7 @@ li a {
 #home-pic {
   width: 500px;
  height: 350px;
+ border: 2px solid rgb(146, 70, 68);
     
 }
 #login {
@@ -60,6 +61,33 @@ li a {
     height: 120px;
     width: 120px;
 }
+#subscribe {
+    background-color: rgb(172, 157, 108);
+    color: black;
+    border: 1px solid black;
+}
 #subscribe:hover{
-    background-color: rgb(90, 81, 81);
+    background-color: rgb(214, 200, 137);
+}
+p {
+    color: white;
+    font-size: 20px;
+    margin-left: 100px;
+    margin-right: 100px;
+}
+h3 {
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    text-decoration: underline;
+    margin-bottom: 10px;
+}
+#home-info {
+    background-color: rgb(146, 70, 68);
+    margin-left: 80px;
+    margin-right: 80px;
+}
+#sub-frm {
+    margin-left: 80px;
+    margin-right: 80px;
 }
