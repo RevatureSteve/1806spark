@@ -1,0 +1,27 @@
+#registerform{
+    background-color: white;
+    max-width: 400px;
+    margin: auto;
+    border: dotted rgb(104, 136, 15);
+    font-weight: bold;
+    text-align: center;
+    padding-top: 1.5%;
+    padding-bottom: 1.5%;
+}
+
+body{
+    background-image: url("https://www.nature.org/cs/groups/webcontent/@web/@rhodeisland/documents/media/hpsp-bradford-dam.jpg");
+}
+
+.success-btn-register{
+    font-size: 20px;
+    color: white; /* text color */
+    background-color:black;
+    min-width: 300px;
+    height: 35px;
+}
+
+.success-btn-register:hover {
+    color:black;
+    background-color: white;
+}
