@@ -1,3 +1,17 @@
+/*
+    Styles for tampa gems
+*/
+
+/*
+    HTML IDs
+*/
+#loginLink {
+    float: right;
+}
+
+/*
+    HTML Elements
+*/
 ul {
     list-style-type: none;
     margin: 0;
@@ -26,6 +40,10 @@ li.dropdown {
     display: inline-block;
 }
 
+/*
+    HTML Classes
+*/
+
 .dropdown-content {
     display: none;
     position: absolute;
@@ -48,3 +66,4 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
