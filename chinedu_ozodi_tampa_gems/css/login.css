@@ -1,0 +1,32 @@
+/*  login.css: styles for the login page/component */
+
+/* HTML ELEMENTS */
+
+header{
+    max-width: 100%;
+    margin: auto;
+    background: rgb(92, 92, 92);
+    text-align: center;
+    font-size: 35px;
+    padding: 5px;
+    color: aliceblue;
+}
+
+/* HtML IDS */
+#loginForm{
+    background: rgb(116, 116, 116);
+    /* border: 1px solid black; */
+    font-weight: bold;
+    text-align: center;
+
+    padding: 15px;
+    /* Center loginForm element */
+    max-width: 500px;
+    margin: auto;
+}
+
+#loginBody{
+    background-image: url("https://previews.123rf.com/images/andreykuzmin/andreykuzmin1409/andreykuzmin140900117/32013578-old-map-with-brass-compass-as-exploration-and-adventure-background.jpg");
+}
+
+

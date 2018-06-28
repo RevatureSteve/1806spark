@@ -2,6 +2,7 @@
     <head>
         <title>Tampa Hidden Gems</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/login.css">
     </head>
     <body>
         <!-- Nav Bar Begin -->
@@ -14,9 +15,18 @@
                 <li><a href="movie_theaters.html">Movie Theaters</a></li>
                 <li><a href="amusement_parks.html">Amusement Parks</a></li>
                 <li><a href="nature.html">Nature</a></li>
-                <li class="float-right"><a href="login.html">Login</a></li>                
-            </ul>
+                <li class="active float-right"><a href="login.html">Login</a></li>                
+              </ul>
         <!-- Nav Bar End -->
-        <h1>Movie Theaters</h1>
+        <header>
+            <h1>Login</h1>
+        </header>
+        <div id="loginBody">
+            <form id="loginForm" action="login" method="POST">
+                Enter Username: <input type="text" minlength="3" maxlength="12" required> <br> <br>
+                Enter Password: <input type="password" minlength="5" maxlength="20" required> <br> <br>
+                <input class="success-btn" type="submit" value="Login">
+            </form>
+        </div>
     </body>
 </html>
