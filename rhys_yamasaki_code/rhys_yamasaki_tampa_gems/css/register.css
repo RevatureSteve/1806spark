@@ -1,6 +1,11 @@
+
 /* 
-For login page
+For register page
 */
+body {
+    background: url("https://c1.staticflickr.com/9/8186/8102625287_73f13dbb1d_b.jpg") no-repeat center center fixed;
+    background-size: cover;
+}
 
 header {
     max-width: 100%;
@@ -9,20 +14,16 @@ header {
     padding: 50px;
     background-color: gray;
     text-align: center;
-    opacity: 1;
+    opacity: 0.9;
 }
 
 /* HTML IDs */
 
-#loginForm {
+#registerForm {
     border: 1px solid black;
     max-width: 500px;
     margin: auto;
     padding: 20;
     text-align: center;
     background-color: white;
-}
-
-#loginBody {
-    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/51/49/735791be81aff4a.jpg")
 }
