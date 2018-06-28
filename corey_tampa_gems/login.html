@@ -1,30 +1,72 @@
 <html>
 
 <head>
-    <title>
-        Tampa Hidden Gems
-    </title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="login.css" />
+    <title>Tampa Hidden Gems</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/register.css" />
 </head>
 
 <body>
 
+    <!-- Navbar begin -->
     <ul>
         <li>
-            <a class="active" href="#home">Home</a>
+            <a href="index.html">Home</a>
         </li>
         <li>
-            <a href="#news">News</a>
+            <a href="restaurant.html">Restaurant</a>
         </li>
         <li>
-            <a href="#contact">Contact</a>
+            <a href="bars.html">Bars</a>
         </li>
-        <li>
-            <a href="#about">About</a>
+
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Test</a>
+                <a href="#">Link 3</a>
+            </div>
         </li>
     </ul>
-    <a href="login.html"> Login</a>
+    <!-- Navbar End-->
+
+    <!-- fix this registration page and add the proper styles-->
+    <div id="registration">
+        <form action="url-to-server">
+            <label>Name:</label>
+            <input type="text" required/>
+            <br><br>
+            <label>age:</label>
+            <input type="number" required/>
+            <br><br>
+            <label>DOB:</label>
+            <input type="date" required/>
+            <br><br>
+            <label> Username:</label>
+            <input type="text" required>
+            <br><br>
+            <label> Password:</label>
+            <input type="password" required>
+            <br><br>
+            <label> Confirm password:</label>
+            <input type="password" required>
+            <br><br>
+            <input id="registrationBtn" type="submit" value="Sign up!" />
+        </form>
+    </div>
+    <!-- <div 
+        <form action="url-to-server"></form>
+            Name: <input type="text" />
+            age: <input type="image" />
+            Password: <input type="hidden" required>
+            Username: <input type="text" required>
+            Confirm password: <input type="password" >
+
+            missing a submit
+        </div>
+        </form>
+    </div> -->
 </body>
 
 </html>

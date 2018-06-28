@@ -15,3 +15,17 @@ header {
     text-align: center; /* center text */
     padding: 15px;
 }
+
+/*
+    HTML IDs
+*/
+
+#loginForm {
+    border: 1px solid black;
+    font-weight: bold;
+    text-align: center; /* text inside the element */
+    padding: 20px;
+    /* center loginForm element */
+    max-width: 500px;
+    margin: auto;
+}
