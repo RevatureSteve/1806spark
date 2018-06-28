@@ -7,7 +7,7 @@ h1 {
     font-family: Georgia, 'Times New Roman', Times, serif;
     color: white;
 }
-img {
+.img {
     width: 250px;
     height: 400px;
     margin: 30px;
@@ -19,15 +19,15 @@ li {
     float: left;
     padding-left: 60px;
 }
-li:hover {
-    color: #996633;
+a:hover {
+    color: hsl(0, 51%, 14%);
 }
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color:#cccccc;
+    background-color:rgb(146, 70, 68);
 }
 
 li a {
@@ -36,4 +36,30 @@ li a {
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+}
+
+#home-pic {
+  width: 500px;
+ height: 350px;
+    
+}
+#login {
+    float: right;
+}
+.subscrbe-frm {
+    background-color:rgb(146, 70, 68);
+    text-align: center;
+    border: 2px solid black;
+    width: 500p;
+}
+#subscribe {
+    width: 150px;
+    height: 30px;
+}
+#news {
+    height: 120px;
+    width: 120px;
+}
+#subscribe:hover{
+    background-color: rgb(90, 81, 81);
 }
