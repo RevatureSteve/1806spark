@@ -16,6 +16,6 @@ body{
     padding: 20px;
     border-style: dotted;
     border-color: green;
-
+    font-weight: bold;
     text-align: center;
 }
