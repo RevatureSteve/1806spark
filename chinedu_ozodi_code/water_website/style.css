@@ -1,5 +1,8 @@
+/* ELEMENT STYLES */
 body{
-    background-image: url("https://images.designtrends.com/wp-content/uploads/2015/12/15090256/Water-Rose-Background.jpg")
+    /* background-image: url("https://images.designtrends.com/wp-content/uploads/2015/12/15090256/Water-Rose-Background.jpg"); */
+    background-color: #1976D2;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 
 ul {
@@ -7,7 +10,7 @@ ul {
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: #1976D2;
 }
 
 li {
@@ -24,21 +27,38 @@ li a {
 
 /* Change the link color to #111 (black) on hover */
 li a:hover {
-    background-color: #111;
+    background-color: #2196F3;
+    color: black;
 }
 
-.card:hover {
-    border-color: aqua;
-    background-color: aqua;
+/* CLASS STYLES */
+
+.card {
+    border-color: #90CAF9;
+    background-color: #90CAF9;
 }
 
 .title{
-    color: darkblue;
+    color: black;
 }
 .color-blue{
-    color: midnightblue;
+    color: black;
+}
+.background-darkblue{
+    background-color: #1976D2;
+}
+.background-blue{
+    background-color: #2196F3;
 }
 
-.background-blue{
-    background-color: lightblue;
+.background-lightblue{
+    background-color: #90CAF9
+}
+
+.background-white{
+    background-color: white;
+}
+
+.img-width{
+    width: 250px;
 }
