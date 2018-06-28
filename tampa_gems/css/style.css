@@ -68,3 +68,23 @@ li.dropdown {
     display: block;
 }
 
+
+.float-right {
+    float: right;
+}
+
+.success-btn {
+    font-size: 20px;
+    color: white; /* text color */
+    background-color: rgb(136, 255, 0);
+    min-width:  300px;
+    height: 35px;
+}
+
+.success-btn:hover {
+    /*
+        swap the color and background-color on mouse hover
+    */
+    color: rgb(136, 255, 0);
+    background-color: white;
+}
