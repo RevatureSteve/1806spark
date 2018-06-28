@@ -2,6 +2,16 @@ body{
     background-color: burlywood;
 }
 
+table{
+    background-color: whitesmoke;
+}
+
+h4{
+    background-color: whitesmoke;
+    max-width: 600px;
+    padding: 10px;
+}
+
 ul{
     list-style-type: none;
     margin: 0;
