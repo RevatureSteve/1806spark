@@ -1,9 +1,14 @@
+body{
+    background-color: burlywood;
+}
+
 ul{
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: bisque;
+    background-color: rgb(240, 186, 121);
+    max-width: 400px;
 }
 
 li{
@@ -12,12 +17,33 @@ li{
 
 li a{
     display: block;
-    color: green;
+    color: black;
     text-align: start;
     padding: 15px 16px;
     text-decoration: red;
 }
 
+ol{
+    margin: 7px;
+    padding: 20px;
+    max-width: 400px;
+}
+
+.instruction {
+    padding: 10px;
+    background-color: rgb(255, 220, 175);
+    max-width: 300px;
+}
+
+img{
+    width: 500px;
+    float: right;
+}
+
 li a:hover{
-    background-color: blue;
+    background-color: rgb(226, 179, 116);
+}
+
+body{
+    background-image: url("https://img.sndimg.com/food/image/upload/w_896,h_504,c_fill,fl_progressive,q_80/v1/img/recipes/13/73/64/4mN6Zjh5SNmTNKFsca1D_0S9A2673.jpg")
 }
