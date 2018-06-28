@@ -1,0 +1,48 @@
+/* 
+    styles for the login page/component
+*/
+
+/* 
+    HTML Elements
+*/
+
+header{
+    /* center an element */
+    max-width: 100%;
+    margin: auto;
+
+    background-color: rgb(182, 182, 182);
+    text-align: center; /*center text*/
+
+    padding: 25px;
+    font-size: 30px;
+
+    
+}
+
+h1{
+    /* make header margin 0 */
+    margin: 0;
+  
+}
+
+/* HTML IDs */
+
+#loginForm{
+    border: 1px solid black;
+    font-weight: bold;
+
+    /* center loginForm element */
+    max-width: 400px;
+    margin: auto;
+    
+    /* center text */
+    text-align: center;
+    padding: 20px;
+
+    background-color: white;
+}
+
+#loginBody{
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/51/49/735791be81aff4a.jpg");
+}
