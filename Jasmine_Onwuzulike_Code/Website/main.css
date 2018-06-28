@@ -1,0 +1,39 @@
+.container {
+    background-image: url("https://i.ebayimg.com/images/i/182716299497-0-1/s-l1000.jpg");
+}
+h1 {
+    text-align: center;
+    font-size: 50px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: white;
+}
+img {
+    width: 250px;
+    height: 400px;
+    margin: 30px;
+    border: 2px solid black;
+}
+li {
+    color: white;
+    list-style-type: none;
+    float: left;
+    padding-left: 60px;
+}
+li:hover {
+    color: #996633;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:#cccccc;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
