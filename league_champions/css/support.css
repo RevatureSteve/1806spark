@@ -1,0 +1,10 @@
+/* Background Begins*/
+
+body {
+    background-image: url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Blitzcrank_0.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    }
+    
+    /* Background End */

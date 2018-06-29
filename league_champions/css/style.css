@@ -1,10 +1,11 @@
 /* Nav Bar Begins */
 ul {
     list-style-type: none;
-    margin: 0;
+    margin: auto;
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    max-width: 400px;
 }
 
 li {
@@ -51,15 +52,21 @@ li.dropdown {
 }
 /* Nav Bar Ends */
 
-h1 {
-    color: indigo;
+/* Character Info Starts */
+
+.name {
+    font-weight: bold;
+    font-size: 75px;
+    color: white;
     text-align: center;
 }
 
-/* Background Begins*/
-body {
-/*background-image: url("https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_6.jpg");*/
-background-color: silver;
+.lore {
+    font-weight: bold;
+    font-style: italic;
+    font-size: 50px;
+    color: white;
+    text-align: center;
 }
 
-/* Background End */
+/* Character Info Ends */

@@ -4,6 +4,7 @@
 
         <title>LoL Champions</title>
         <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/jungle.css">
         <link rel="icon" href="https://vignette.wikia.nocookie.net/leagueoflegends/images/e/e9/Noxus_Crest.png/revision/latest?cb=20161117055949">
  
     </head>
@@ -11,6 +12,7 @@
     <body>
 
         <!-- Nav Bar Begin -->
+
         <ul>
             <li>
                 <a href="index.html">Home</a>
@@ -18,7 +20,7 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Top</a>
                 <div class="dropdown-content">
-                    <a href="top.html">Top 1</a>
+                    <a href="top.html">Volibear</a>
                     <a href="#">Blank 2</a>
                     <a href="#">Blank 3</a>
                 </div>
@@ -34,7 +36,7 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Mid</a>
                 <div class="dropdown-content">
-                    <a href="mid.html">Mid 1</a>
+                    <a href="mid.html">Annie</a>
                     <a href="#">Blank 2</a>
                     <a href="#">Blank 3</a>
                 </div>
@@ -42,7 +44,7 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Bot</a>
                 <div class="dropdown-content">
-                    <a href="bot.html">Bot 1</a>
+                    <a href="bot.html">Caitlyn</a>
                     <a href="#">Blank 2</a>
                     <a href="#">Blank 3</a>
                 </div>
@@ -50,7 +52,7 @@
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Support</a>
                 <div class="dropdown-content">
-                    <a href="support.html">Support 1</a>
+                    <a href="support.html">Blitzcrank</a>
                     <a href="#">Blank 2</a>
                     <a href="#">Blank 3</a>
                 </div>
@@ -59,7 +61,55 @@
 
         <!-- Nav Bar End -->
 
-        <h1>Jungle</h1>
+        <!-- Character Info Starts -->
+
+        <header class="name">Warwick</header>
+        <header class="lore">the Uncaged Wrath of Zaun</header>
+
+         <!-- Character Info Ends -->
+
+        <br>
+        <br>
+
+        <h2 class="top-desc">Skin #1</h2>
+        <h2 class="top-desc">Skin #2</h2>
+        <h2 class="top-desc">Skin #3</h2>
+
+        <!-- Image Gallery Starts -->
+
+        <div class="gallery">
+            <a target="_blank" href="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_1.jpg">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_1.jpg" alt="Warwick" width="402" height="286.5">
+            </a>
+            <div class="bot-desc">Add a description of the image here</div>
+        </div>
+          
+        <div class="gallery">
+            <a target="_blank" href="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_1.jpg">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_1.jpg" alt="Forest" width="402" height="286.5">
+            </a>
+            <div class="bot-desc">Add a description of the image here</div>
+        </div>
+          
+        <div class="gallery">
+            <a target="_blank" href="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_1.jpg">
+                <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_1.jpg" alt="Northern Lights" width="402" height="286.5">
+            </a>
+            <div class="bot-desc">Add a description of the image here</div>
+        </div>
+
+        <!-- Image Gallery Ends -->
+
+        <!-- Form Input Starts -->
+        
+        <div>
+            <form id="voteForm" action="vote" method="POST">
+                Skin # <br> <input type="number" min="1" max="3" required> <br>
+                <input class="vote-btn" type="submit" value="Vote Now">
+            </form>
+        </div>
+
+        <!-- Form Input Ends -->
 
     </body>
 
