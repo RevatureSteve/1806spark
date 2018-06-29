@@ -1,0 +1,12 @@
+/*
+    HTML IDs
+*/
+
+#left-tile {
+    float: left;
+    width: 50%;
+}
+
+#right-tile {
+    width: 50%;
+}
