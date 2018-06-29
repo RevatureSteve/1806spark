@@ -2,52 +2,55 @@
 different comment block
 style.css is a common 
 */
-ul {
+.navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
-    background-color: #333;
+    background-color: green;
 }
 
 
 
-li {
+li.navbar {
     float: left;
 }
 
-li a {
+li.navbar a  {
     display: block;
-    color: red;
+    color: gold;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
+    font-weight: bold;
 }
 
 /* Change the link color to #111 (black) on hover */
-li a:hover {
-    background-color: #111;
+li.navbar a:hover {
+    background-color: gold;
+    color: green;
+
 }
+.navbarlogin {
+    display: block;
+    padding: 14px 16px;
+    font-weight: bold;
+    float: right;
+}
+
 h1 {
-    color: red;
+    color: gold;
 }
 div {
     border: 3px solid black;
     margin: 25px;
-   
+
 }
-#div2 {
-    border: 1px solid blueviolet;
+#emaillink {
+    border-style: none;
 }
-.blue-border{
-    border:2px solid blue;
-}
-.green-border{
-    border:2px solid green
-}
-.red-font{
-    color:red;
-}
+
+
 /* Three image containers (use 25% for four, and 50% for two, etc) */
 .column {
     float: center;
@@ -63,16 +66,66 @@ div {
     display: table;
   }
 .center {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 75%; 
-    height: auto;
+    margin: auto;
+    width: 100%;
+
 }
-.thingsilike{
-    background: #cce5ff;
+.centertext {
+    text-align: center;
+}
+#titletext {
+    margin:auto;
+
+}
+.likedthings{
+    background: gold;
     margin: 5px;
+    color: green;
+    font-weight: bold;
+
 }
-.favoritethings{
-   list style:  
+.notlikedthings{
+    background: gold;
+    margin: 5px;
+    color: green;
+    font-weight: bold;    
+}
+body {
+    
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbaN_dzztaEeFFvFvMaGAM6m5nq_UuK9SRDUfdpOPsBpihBzOn);
+    background-color: green;
+}
+h1 {
+    color: gold;
+    background-color: green;
+}
+h2 {
+    color: gold;
+    background-color:green;
+}
+#loginForm {
+    color: gold;
+    background-color: green;
+    border: 10px solid gold;
+    font-weight: bold;
+    text-align: center; /* text inside the element */
+    padding: 20px;
+    /* center loginForm element */
+    max-width: 80%;
+    margin: auto;
+}
+
+.login-btn {
+    background-color: rgb(51, 236, 51);
+    color: gold;
+    padding: 15px 32px;
+    text-align: center;
+    display: inline-block;
+    font-size: 16px;
+    border-radius:50%;
+    border: 3px solid gold;
+   }
+.login-btn:hover {
+    background-color: gold;
+    color: lightgreen;
 }
