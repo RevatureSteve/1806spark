@@ -1,3 +1,4 @@
+/**Navagation list**/
 ul {
     list-style-type: none;
     margin: 0;
@@ -6,14 +7,19 @@ ul {
     background-color: #333;
 }
 
+
 body{
+    margin-top: 0;
     margin: 0;
+    font-style: oblique;
 }
 
+/**navagation bar tab location**/
 li {
     float: left;
 }
 
+/**Drop down list**/
 li a, .dropbtn {
     display: inline-block;
     color: white;
@@ -22,14 +28,17 @@ li a, .dropbtn {
     text-decoration: none;
 }
 
+/**Hover on drop list**/
 li a:hover, .dropdown:hover .dropbtn {
     background-color: red;
 }
 
+/**Drop down**/
 li.dropdown {
     display: inline-block;
 }
 
+/**Drop down background**/
 .dropdown-content {
     display: none;
     position: absolute;
@@ -38,7 +47,7 @@ li.dropdown {
     box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
     z-index: 1;
 }
-
+/**Drop down content's text**/
 .dropdown-content a {
     color: black;
     padding: 12px 16px;
@@ -47,12 +56,15 @@ li.dropdown {
     text-align: left;
 }
 
+/**drop down when highlighted**/
 .dropdown-content a:hover {background-color: #f1f1f1}
 
+
 .dropdown:hover .dropdown-content {
-    display: block;
+    display: -webkit-box;
 }
 
+/**about me tab**/
 .float-right{
     float: right;
 }
@@ -62,5 +74,20 @@ li.dropdown {
     display: block;
     margin-left: auto;
     margin-right: auto;
+    margin-top: 0;
     width: 50%;
+}
+
+/**paragrapgh indent**/
+div.a {
+    text-indent: 50px;
+}
+
+div{
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+h2{
+    margin-left: 50px;
 }
