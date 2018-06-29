@@ -1,9 +1,25 @@
+body {
+    background-color:rgb(255, 223, 45);
+    margin: 0px;
+}
+
+h1 {
+    text-align: center
+    border: 5px solid color:black 
+}
+
+
+#bigger{
+font-size: 20px;
+text-align: center
+}
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: black;
+    /* font-family: "Comic Sans MS", cursive, sans-serif; */
 }
 
 li {
@@ -32,6 +48,26 @@ li a:hover {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+    background-color: rgba(255, 255, 255, 0.719);
+    border: 3px solid red;
+    padding: 10px;
+    
+
+
+
+}
+
+.header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.719);
+}
+
+.profile {
+    margin: 120px 0px 0px 120px
+
 }
 
 /* Add a gray right border to all list items, except the last item (last-child) */
@@ -39,3 +75,22 @@ li {
     border-right: 1px solid #bbb;
 }
 
+.character {
+    float: right;
+    padding-right: 300px;
+    padding-bottom: 100px;
+    min-width: 100px;
+    margin: -390px 30px 120px 20px 
+}
+
+#title {
+    float: right;
+    border: 5px;
+    margin: 120px 250px 0px 0px;
+    font-size: 50px;
+}
+
+#body {
+    margin: auto;
+    max-width: 250px;
+}
