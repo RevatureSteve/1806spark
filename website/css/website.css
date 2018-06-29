@@ -1,0 +1,64 @@
+/* This is the website information page */
+
+body {
+    margin: 0;
+  }
+  
+  /* Style the header */
+  .header {
+      background-color: #f1f1f1;
+      padding: 20px;
+      text-align: center;
+      background: linear-gradient(rgba(255, 255, 255, 0.75), transparent);
+  }
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(255, 255, 255, 0.75);
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+    background-color: #111;
+}
+
+.active {
+    background-color: #4CAF50;
+}
+
+.column {
+    float: left;
+    width: 50%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.float-right {
+    float: right;
+}
+.tampa { 
+    background: url(https://www.toptal.com/designers/subtlepatterns/patterns/stardust.png) no-repeat center center fixed; 
+    background-size: cover;
+  }
+
+ 

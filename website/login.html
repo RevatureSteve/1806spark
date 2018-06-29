@@ -1,0 +1,55 @@
+<html>
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/website.css" />
+    <link rel="stylesheet" href="css/login.css" />
+</head>
+
+<body class="tampa">
+
+    <!-- Navbar begin -->
+    <ul id="navbar">
+        <li><a href="Mainpage.html">Home</a></li>
+        <li><a  href="secondpage.html">News</a></li>
+        <li><a href="thirdpage.html">Christmas in July</a></li>
+        <li><a  href="fourthpage.html">About</a></li>
+        <li class="float-right active">
+                <a href="login.html">Login</a>
+         </li>
+         <li class="float-right">
+                <a href="register.html">Register</a>
+       </li>
+    </ul>
+    <!-- Navbar End-->
+<header>
+        <h1>Login Here</h1>
+</header>
+
+<!-- LOGIN FORM -->
+
+<div id="loginBody">
+    <!--
+get vs post
+get - form data in the url
+post - form data hidden in the request body
+-->
+<form id="loginForm" method="POST">
+
+<br>
+Username:
+<input type="text">
+<br><br>
+ Password:
+<input type="password" >
+<br><br>
+
+<input class="successbtn" type="submit" value="Login">
+
+</form>
+
+</div>
+
+</body>
+
+</html>
