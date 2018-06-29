@@ -1,0 +1,28 @@
+/*
+CSS Elements needed:
+Background image
+Green dotted border
+Text box formatting
+*/
+
+#registerForm {
+    background-color: white;
+    border: 1px dashed green;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+
+    /* center registerForm element */
+    max-width: 500;
+    margin: auto;
+}
+
+#registerBody {
+    background-image: url("https://theboardr.blob.core.windows.net/photos/8908.jpg");
+    background-size: 100vw 100vh;
+    height: 100%;
+}
+
+input[type=submit] {
+    width: 100%;
+}
