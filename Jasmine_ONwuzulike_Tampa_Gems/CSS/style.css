@@ -1,41 +1,31 @@
-body{
+ul {
+    list-style-type: none;
     margin: 0;
-}
-
-.navbar {
+    padding: 0;
     overflow: hidden;
     background-color: #333;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar a {
+li {
     float: left;
-    font-size: 16px;
+}
+
+li a, .dropbtn {
+    display: inline-block;
     color: white;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-.dropdown {
-    float: left;
-    overflow: hidden;
-}
-
-.dropdown .dropbtn {
-    font-size: 16px;    
-    border: none;
-    outline: none;
-    color: white;
-    padding: 14px 16px;
-    background-color: inherit;
-    font-family: inherit;
-    margin: 0;
-}
-
-.navbar a:hover, .dropdown:hover .dropbtn {
+li a:hover, .dropdown:hover .dropbtn {
     background-color: red;
 }
+
+li.dropdown {
+    display: inline-block;
+}
+
 
 .dropdown-content {
     display: none;
