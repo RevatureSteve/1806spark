@@ -1,0 +1,56 @@
+/* 
+Register.css: styles for the login page/component
+*/
+
+/* HTML ELEMENTS */
+
+header {
+    max-width: 100%;
+    margin: auto;
+    background-color: rgba(169, 169, 169, 0.603);
+    text-align: center;
+    font-size: 35px;
+    padding: 2px;
+    border-bottom-color: 3zpx black
+}
+
+/* HTML IDs */
+
+
+
+#registerForm {
+    border: 1px dotted green;
+    font-weight: bolder;
+/* center loginForm Elements */
+max-width: 200px;
+margin: auto;
+padding: 20px;
+background-color: lightgray;
+text-align: center;
+
+}
+
+#registerBody {
+}
+/* HTML Classes */
+
+.tampa { background: url(http://www.compasslandandtitle.com/wp-content/uploads/2017/01/TampaBay_1200x540-2.jpg) no-repeat center;
+background-size:cover;
+}
+
+.successbtn {
+    font-size: 20px;
+    color: white; /* text color */
+    background-color: rgb(136, 255, 0);
+    width:  100%;
+    height: 35px;
+}
+
+.successbtn:hover {
+    
+        /* swap the color and background-color on mouse hover */
+   
+     color: rgb(136, 255, 0);
+    background-color: white;
+    
+}
