@@ -1,0 +1,57 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color:darkred;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding:16px;
+    text-decoration: none;
+    
+}
+
+li a:hover {
+    background-color:darkred;
+}
+
+.imgpad{
+    padding: 30px;
+    width:350px;
+    height:250px;
+}
+.imgcenter{
+    max-width:100%;
+    margin-left:30;
+  
+}
+.foodimg{
+    padding:30px;
+    width:350px;
+    height:250px;
+}
+.foodimgcenter{
+    margin-left:30;
+}
+ 
+.headertextfont{
+    font-style: italic
+}
+.placeimg{
+    padding: 30px;
+    width: 350px;
+    height:250px
+}
+.cultureimg{
+    padding: 30px;
+    width: 350px;
+    height:250px;
+}
