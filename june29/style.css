@@ -14,10 +14,10 @@ body  { background-color: blue;
 		
 } /* the body css end here  */
 
-margin-left:hover 
+body:hover 
 {
 	
-	
+	/*background-image:url(https://media.giphy.com/media/e2tSgEk1k8Baw/giphy.gif);*/
 }
 h1 { background-color: yellow;}
 
@@ -46,12 +46,12 @@ ul{
 	opacity: 0.6;
 	}	 
 	
-a { 
+.nava { 
     list-style-type:none;
     border: 1px solid;
     padding:5px;
 	}
-a:hover
+.nava:hover
 {background-color:yellow;}
 
 #rebel
@@ -73,7 +73,24 @@ a:hover
   max-width:300px;
   }
   
-
+  #row 
+{
+  background-color:white;
+  float:right;
+  padding:20px;
+  max-width:300px;
+  margin-right:60px;
+  }
+  
+.fonti{
+	display: block;
+    font-size: 1.2em;
+    -webkit-margin-before: 0.83em;
+    -webkit-margin-after: 0.83em;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    font-weight: bold;
+}
   
 img 
 {
