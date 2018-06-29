@@ -91,3 +91,6 @@ h3 {
     margin-left: 80px;
     margin-right: 80px;
 }
+#news {
+    border: 2px solid rgb(146, 70, 68);
+}
