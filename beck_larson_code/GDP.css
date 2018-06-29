@@ -39,11 +39,14 @@ h1 {
         height:105%;
         z-index:-1;
     }
-    .aboutpic{
-        position: absolute;
-        margin-left:1%;
-        width: 23%;
-        height: 33%;
+    img.aboutpic{
+       width: 30em;
+       position: absolute;
+       left: 35%;
+       top: 5%;
+       margin-left: -50px; /*half the image width*/
+       margin-top: -50px;
+        
     }
     .nav-bar{
         color: white;
@@ -84,4 +87,14 @@ h1 {
     .ddiscription{
         float: left;
         text-align: center;
+    }
+    .about-txt{
+        text-align: center;
+        color: white;
+        position: absolute;
+    top: 60%;
+    left: 18%;
+    }
+    #contact{
+        font-size: .5in;
     }
