@@ -1,0 +1,29 @@
+body {
+    background-image: url("https://defendernetwork.com/wp-content/uploads/2017/06/page_5_social_media.jpg");
+    z-index: -1;
+    background-color: #0000;
+    background-repeat: no-repeat;
+    background-size: 1000px 500px
+    width: 10em;
+
+ }
+
+ 
+body,h1 {font-family: "Montserrat", sans-serif}
+img {margin-bottom: -7px}
+.w3-row-padding img {margin-bottom: 12px;
+}
+
+.centerpic {
+    display: block; 
+    margin-left: auto;
+    margin-right: auto;
+    
+}
+
+dd {
+    text-align: center;
+    position: relative;
+    right: .93rem;
+}
+
