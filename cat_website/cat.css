@@ -22,7 +22,6 @@ body {
     padding: 0;
     overflow: hidden;
     background-color: rgb(195, 152, 224);
-    /* font-family: "Comic Sans MS", cursive, sans-serif; */
  }
  
  li {
@@ -37,7 +36,6 @@ body {
     text-decoration: none;
  }
  
- /* Change the link color to #111 (black) on hover */
  li a:hover {
     background-color: rgb(98, 224, 98);
  }
@@ -73,7 +71,6 @@ body {
  
  }
  
- /* Add a gray right border to all list items, except the last item (last-child) */
  li {
     border-right: 1px solid #bbb;
  }
