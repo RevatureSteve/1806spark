@@ -1,7 +1,100 @@
-/* nav bar begins */
-
-/* navbar ends */
-
-h1 {
-    align: middle;
-}
+body {
+    background-color:rgb(114, 191, 214);
+    margin: 0px;
+    font-family:Tahoma, Geneva, sans-serif;
+ }
+ 
+ h1 {
+    text-align: center
+    border: 5px solid color:black 
+ }
+ 
+ 
+ #bigger{
+ font-size: 22px;
+ text-align: center;
+ font-family:Tahoma, Geneva, sans-serif;
+ }
+ ul {
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgb(195, 152, 224);
+    /* font-family: "Comic Sans MS", cursive, sans-serif; */
+ }
+ 
+ li {
+    float: left;
+ }
+ 
+ li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+ }
+ 
+ /* Change the link color to #111 (black) on hover */
+ li a:hover {
+    background-color: rgb(98, 224, 98);
+ }
+ 
+ .active {
+    background-color: #4CAF50;
+ }
+ 
+ .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: rgb(135, 231, 183);
+    border: 3px solid rgb(127, 127, 168);
+    padding: 10px;
+    
+ 
+ 
+ 
+ }
+ 
+ .header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.719);
+ }
+ 
+ .profile {
+    margin: 120px 0px 0px 120px
+ 
+ }
+ 
+ /* Add a gray right border to all list items, except the last item (last-child) */
+ li {
+    border-right: 1px solid #bbb;
+ }
+ 
+ .character {
+    float: right;
+    padding-right: 300px;
+    padding-bottom: 100px;
+    min-width: 100px;
+    margin: -220px 30px 120px 20px 
+ }
+ 
+ #title {
+    float: right;
+    border: 5px;
+    margin: 120px 250px 0px 0px;
+    font-size: 40;
+    font-family:Tahoma, Geneva, sans-serif;
+ }
+ 
+ #body {
+    margin: auto;
+    max-width: 250px;
+ }
