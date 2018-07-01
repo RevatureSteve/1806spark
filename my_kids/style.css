@@ -1,16 +1,13 @@
-/*
-different comment block
-style.css is a common 
-*/
+
 .navbar {
     list-style-type: none;
     margin: 0;
     padding: 0;
     overflow: hidden;
     background-color: green;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhETP9GF3HAynJ6Zup3ZrBoQYNKfXoeuB0KPjI5kfsAp_fzL5a");
+
 }
-
-
 
 li.navbar {
     float: left;
@@ -25,7 +22,6 @@ li.navbar a  {
     font-weight: bold;
 }
 
-/* Change the link color to #111 (black) on hover */
 li.navbar a:hover {
     background-color: gold;
     color: green;
@@ -41,30 +37,11 @@ li.navbar a:hover {
 h1 {
     color: gold;
 }
-div {
-    border: 3px solid black;
-    margin: 25px;
 
-}
 #emaillink {
     border-style: none;
 }
 
-
-/* Three image containers (use 25% for four, and 50% for two, etc) */
-.column {
-    float: center;
-    width: 50%;
-    padding: 5px;
-    
-  }
-  
-  /* Clear floats after image containers */
-  .row::after {
-    content: "";
-    clear: both;
-    display: table;
-  }
 .center {
     margin: auto;
     width: 100%;
@@ -82,30 +59,41 @@ div {
     margin: 5px;
     color: green;
     font-weight: bold;
+    width:40%;
+    box-align:left;
 
 }
 .notlikedthings{
     background: gold;
     margin: 5px;
     color: green;
-    font-weight: bold;    
+    font-weight: bold;
+    width:40%;
+    box-align:left;
+
 }
 body {
     
     background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSbaN_dzztaEeFFvFvMaGAM6m5nq_UuK9SRDUfdpOPsBpihBzOn);
     background-color: green;
+    margin:25px 25px 25px 25px;
 }
 h1 {
     color: gold;
     background-color: green;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhETP9GF3HAynJ6Zup3ZrBoQYNKfXoeuB0KPjI5kfsAp_fzL5a");
+
 }
 h2 {
     color: gold;
     background-color:green;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhETP9GF3HAynJ6Zup3ZrBoQYNKfXoeuB0KPjI5kfsAp_fzL5a");
+
 }
 #loginForm {
     color: gold;
     background-color: green;
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhETP9GF3HAynJ6Zup3ZrBoQYNKfXoeuB0KPjI5kfsAp_fzL5a");
     border: 10px solid gold;
     font-weight: bold;
     text-align: center; /* text inside the element */
@@ -128,4 +116,25 @@ h2 {
 .login-btn:hover {
     background-color: gold;
     color: lightgreen;
+}
+.pictures {
+background-color: gold;
+background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhETP9GF3HAynJ6Zup3ZrBoQYNKfXoeuB0KPjI5kfsAp_fzL5a");
+max-width: 90%;
+padding-top: 100%;
+padding:30px;
+text-align:center;
+font-weight:bold;
+font-size:xx-large;
+color:gold;
+display:block;
+margin:auto;
+overflow:hidden;
+position:relative;
+}
+
+.responsive {
+    width:100%;
+    height:auto;
+
 }
