@@ -16,7 +16,7 @@ body {
 }
 
 .movieColumn {   
-    float: left;
+    float: inherit;
     width: 300px;
     height: auto;
     padding: 20px 0;
