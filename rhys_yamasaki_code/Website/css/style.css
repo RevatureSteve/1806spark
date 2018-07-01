@@ -22,11 +22,13 @@ body {
     padding: 20px 0;
 }
 
-
-
 .movieTitleHome {
     text-align: center;
     color: white;
+}
+
+.registerBtn {
+    margin-right: 10px;
 }
 
 /* ID Elements */
