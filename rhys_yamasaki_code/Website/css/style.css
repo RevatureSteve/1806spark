@@ -9,18 +9,18 @@ body {
 /* Class Elements */
 
 .moviePoster {
-    width: 200px;
+    width: 66%;
     height: auto;
     align-content: center;
-    margin-left: 50px;
+    margin: auto;
 }
 
-.movieColumn {   
+/* .movieColumn {   
     float: inherit;
     width: 300px;
     height: auto;
     padding: 20px 0;
-}
+} */
 
 .movieTitleHome {
     text-align: center;
@@ -54,3 +54,13 @@ body {
 #Slogan {
     text-align: center;
 }
+
+/* Movie column spacing */
+#movieRow > .movieColumn{
+    box-sizing: border-box;
+    display: inline-block;
+    width: 19.5%;
+    text-align: center;
+    margin: 20px 0; 
+}
+
