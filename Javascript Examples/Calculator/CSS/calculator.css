@@ -27,3 +27,8 @@ button {
     box-shadow: 10px 5px gray;
     
 }
+p {
+    color: red;
+    text-align: center;
+    margin: 0%;
+}
