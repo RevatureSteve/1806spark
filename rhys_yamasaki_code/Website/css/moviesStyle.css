@@ -1,0 +1,51 @@
+
+/* HTML Elements */
+img{
+    border: 1px solid white;
+    border-radius: 5%;
+    background-color: white;
+}
+
+
+/* Class Elements */
+
+.movieGenreIcon {
+    width: 100px;
+    height: auto;
+    align-content: center;
+    margin: auto;
+}
+
+.genreTitle {
+    text-align: center;
+    color: white;
+}
+
+/* .genreCol {   
+    float: inherit;
+    width: 300px;
+    height: auto;
+    padding: 20px 0;
+} */
+
+/* ID Elements */
+
+/* #genreMovieSection {
+    background-color: maroon;
+} */
+
+#genreMoviesRow {
+    float: left;
+    background-color: maroon;
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* Genre movie spacing */
+
+#genreMoviesRow > .genreCol{
+    display: inline-block;
+    width: 16.3%;
+    text-align: center;
+    margin: 80px 0; 
+}
