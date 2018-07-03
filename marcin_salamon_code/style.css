@@ -18,11 +18,7 @@ ul{
     padding: 0;
     overflow: hidden;
     background-color: rgb(240, 186, 121);
-    max-width: 400px;
-}
-
-li{
-    float: left;
+    max-width: 600px;
 }
 
 li a{
@@ -36,13 +32,13 @@ li a{
 ol{
     margin: 7px;
     padding: 20px;
-    max-width: 400px;
+    max-width: 300px;
 }
 
 .instruction {
     padding: 10px;
     background-color: rgb(255, 220, 175);
-    max-width: 300px;
+    max-width: 500px;
 }
 
 img{
