@@ -19,6 +19,7 @@ li {
     float: left;
     padding-left: 60px;
 }
+
 a:hover {
     color: hsl(0, 51%, 14%);
 }
@@ -97,4 +98,20 @@ h3 {
 }
 #news {
     border: 2px solid rgb(146, 70, 68);
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    z-index: 1;
+}
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+.dropdown:hover, .dropdown-content {
+    display: block;
+}
+#login {
+    float: right;
+    margin-right: 40px;
 }
