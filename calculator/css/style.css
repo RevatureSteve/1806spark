@@ -1,0 +1,50 @@
+
+h1 {
+    color: rgb(10, 206, 10);
+}
+
+#center {
+   margin: 45px 500px 0px 400px;
+   border: 1px solid black;
+   height: 368px;
+   width: 441px;
+   padding: 20px;
+   border-radius: 25px 25px 0px 0px;
+}
+
+
+.button {
+    background-color: rgba(128, 128, 128, 0.308);
+    float: left;
+    font-size: 40px;
+    padding: 13px 32px;
+    height: 70px;
+    width: 110px;
+}
+
+#form0 {
+    display: inline-block;
+    margin: 0px 0px 0px 0px;
+    width: 440px;
+    height: 70px;  
+    background-color: rgba(0, 0, 0, 0.425);
+    border-radius: 50px;
+    border:solid 1px black;
+ }
+
+#form1 {
+   display: inline-block;
+   margin: 0px 0px 0px 0px;
+}
+#form2 {
+   display: inline-block;
+   margin: 0px 0px 0px 0px;
+}
+#form3 {
+   display: inline-block;
+   margin: 0px 0px 0px 0px;
+}
+#form4 {
+   display: inline-block;
+   margin: 0px 0px 0px 0px;
+}
