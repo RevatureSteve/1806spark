@@ -1,0 +1,50 @@
+div{
+    color: red;
+    text-align: center;
+}
+
+table{
+    border: 1px solid grey;
+    border-radius: 10px 10px 0px 0px;
+    padding: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0px 5px 5px 0px;
+}
+
+h1{
+    color: lime;
+    margin-left:10em
+    /*text-align: center;*/
+}
+
+th{
+    border-radius: 50px;
+    text-align: center;
+}
+
+td{
+    align-content: center;
+    font-size: 25px;
+}
+
+input[type=button] {
+    height: 50px;
+    width: 75px;
+}
+
+input[type=reset] {
+    height: 50px;
+    width: 75px;
+}
+
+input[type=textfield] {
+    height: 35px;
+    width: 320px;
+    border-radius: 20px;
+    background-color: darkgray;
+    border: 1px solid black;
+    text-align: right;
+    padding-left: 15px;
+    padding-right: 15px;
+}
