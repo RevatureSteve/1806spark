@@ -1,0 +1,46 @@
+/* Element style */
+
+marquee{
+    color: rgb(0, 236, 0);
+    font-size: 40px;
+}
+
+
+/* Class Style */
+.center{
+    margin:auto;
+}
+
+.btn{
+    width: 120px;
+    height: 80px;
+    font-size: 30px;
+    
+}
+
+.calculator{
+    border-style: solid;
+
+    min-width: 494px;
+    max-width: 494px;
+    padding: 20px;
+    border-radius: 35px 35px 0px 0px;
+    box-shadow: 5px 5px grey;
+}
+
+/* Id styling */
+
+#output-box{
+    background-color: gray;
+    width: auto;
+    height: 70px;
+    margin-bottom: 20px;
+    border-radius: 35px;
+    font-size: 60px;
+    text-align: right;
+    padding-right: 20px;
+}
+
+#sliding-header{
+   width: 800px;
+}
