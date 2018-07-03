@@ -1,2 +1,3 @@
-var cat = "Calculator JS!";
-console.log(cat);
+
+console.log("Calculator JS!");
+
