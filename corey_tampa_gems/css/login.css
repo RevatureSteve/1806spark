@@ -21,6 +21,7 @@ header {
 */
 
 #loginForm {
+    background-color: white;
     border: 1px solid black;
     font-weight: bold;
     text-align: center; /* text inside the element */
@@ -28,4 +29,8 @@ header {
     /* center loginForm element */
     max-width: 500px;
     margin: auto;
+}
+
+#loginBody {
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/51/49/735791be81aff4a.jpg");
 }

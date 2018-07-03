@@ -72,3 +72,19 @@ li.dropdown {
 .float-right {
     float: right;
 }
+
+.success-btn {
+    font-size: 20px;
+    color: white; /* text color */
+    background-color: black;
+        min-width:  300px;
+    height: 35px;
+}
+
+.success-btn:hover {
+    /*
+        swap the color and background-color on mouse hover
+    */
+    color: black;
+    background-color: white;
+}

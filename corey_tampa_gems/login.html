@@ -3,7 +3,7 @@
 <head>
     <title>Tampa Hidden Gems</title>
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/register.css" />
+    <link rel="stylesheet" href="css/login.css" />
 </head>
 
 <body>
@@ -28,45 +28,29 @@
                 <a href="#">Link 3</a>
             </div>
         </li>
+        <li class="float-right">
+            <a href="login.html">Login</a>
+        </li>
     </ul>
     <!-- Navbar End-->
-
-    <!-- fix this registration page and add the proper styles-->
-    <div id="registration">
-        <form action="url-to-server">
-            <label>Name:</label>
-            <input type="text" required/>
-            <br><br>
-            <label>age:</label>
-            <input type="number" required/>
-            <br><br>
-            <label>DOB:</label>
-            <input type="date" required/>
-            <br><br>
-            <label> Username:</label>
-            <input type="text" required>
-            <br><br>
-            <label> Password:</label>
-            <input type="password" required>
-            <br><br>
-            <label> Confirm password:</label>
-            <input type="password" required>
-            <br><br>
-            <input id="registrationBtn" type="submit" value="Sign up!" />
+    <header>
+        <h1>Login</h1>
+    </header>
+    <div id="loginBody">
+        <!--
+            GET vs POST
+            GET - form data in the URL
+            POST - form data hidden in the request body
+        -->
+        <form id="loginForm" method="POST" action="http://www.maw.com/login">
+            Enter username:
+            <input type="text" required> <br><br>
+            Enter password:
+            <input type="password" required><br><br>
+            <input class="success-btn" type="submit" value="Login">
         </form>
+
     </div>
-    <!-- <div 
-        <form action="url-to-server"></form>
-            Name: <input type="text" />
-            age: <input type="image" />
-            Password: <input type="hidden" required>
-            Username: <input type="text" required>
-            Confirm password: <input type="password" >
-
-            missing a submit
-        </div>
-        </form>
-    </div> -->
 </body>
 
 </html>
