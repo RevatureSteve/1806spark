@@ -1,0 +1,39 @@
+.bb {
+    border: 2px solid black;
+    border-radius: 5px;
+    border-bottom: 2px solid;
+    border-width: 100px;
+    margin: auto;
+
+    
+}
+#bottom {
+    border-bottom: 2px solid black;
+}
+
+button {
+    background-color: rgb(202, 202, 202);
+    font-size: 15px;
+    text-align: center;
+    
+}
+#tf {
+    background-color: rgb(128, 128, 128);
+    border-radius: 5px;
+
+}
+#txtc {
+    color: rgb(136, 218, 14);
+    text-align: center;
+    font-size: 40px;
+    font-weight: bold;
+
+}
+tr {
+    margin: 100%
+}
+
+.divtxt{
+color: darkorange;
+text-align: center;
+}
