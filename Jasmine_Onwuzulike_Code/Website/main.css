@@ -115,3 +115,17 @@ h3 {
     float: right;
     margin-right: 40px;
 }
+.main-photo {
+    width: 200px;
+    height: 200px;
+}
+.gallery {
+    border: 1px solid rgb(156, 156, 156);
+    max-width: 200px;
+    display: inline;
+}
+.text {
+    padding: 15px;
+    text-align: center;
+    color: white;
+}
