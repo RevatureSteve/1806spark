@@ -94,3 +94,16 @@ function printShape(shape, height, character) {
         // }
     }
 }
+
+// 7. Palindrome
+// Define function isPalindrome(someStr)
+// Return true if someStr is a palindrome, otherwise return false
+
+function isPalindrome(someStr) {
+    for (var i = 0; i < someStr.length/2; i++) {
+        if (someStr[i] !== someStr[someStr.length - 1 - i]) {
+            return false;
+        }
+    }
+    return true;
+}
