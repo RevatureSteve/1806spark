@@ -1,0 +1,80 @@
+/*
+    login.css: styles for the login page/component
+*/
+
+/*
+    HTML Elements
+*/
+
+/* for the calculator title */
+#title {
+    text-align: center;
+    color: limegreen;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+/* the position and physical features of the calculator */
+#calForm {
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: 3px 3px 1px rgb(110, 108, 108);
+    color: black;
+    background-color: #fff;
+    border: 1px solid black;
+    font-weight: bold;
+    text-align: center;
+    margin: auto;
+    padding: 5px;
+}
+
+/* The calculator itself */
+#calBody {
+    border: 1px black;
+    font-weight: bold;
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+}
+/* top bar of the calculator */
+#calBar {
+    border-radius: 25px;
+    width: 95%;
+    display: block;
+    margin: 5px auto;
+    font-size: 30px;
+    background: rgb(180, 175, 175);
+}
+
+/* each row of buttons */
+.buttonRow {
+    padding: 2px;
+}
+
+/* button features */
+.calButton:hover {
+    background-color: rgb(143, 141, 141);
+    background-blend-mode: color-burn;
+}
+
+/* calculator buttons */
+.calButton {
+    font-size: 25px;
+    width: 114px;
+    height: 60px;
+    padding: 5px;
+}
+
+/* sentences below the calculator */
+.pHead {
+    text-align: center;
+    margin: 0px;
+    margin-top: 10px;
+    color: rgb(243, 180, 63);
+}
+
+.p {
+    text-align: center;
+    margin: 0px;
+    color: rgb(243, 180, 63);
+}
