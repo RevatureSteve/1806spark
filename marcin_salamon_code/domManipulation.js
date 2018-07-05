@@ -6,9 +6,13 @@ Print that element's contents.
 */
 
 function getUSA(){
-    var allElements = document.body.getElementsByTagName("*");
-    for(let i = 0; i < allElements; i++)
-    return usaElement;
+    var allElements = document.querySelectorAll( 'body *' );
+    for(let i = 0; i < allElements.length; i++){
+        let usaElement = allElements[i];
+        if(usaElement.innerHTML == "USA"){
+            console.log(usaElement.innerHTML);
+        }
+    }
     //console.log(usaElement.innerHTML);
 }
 
