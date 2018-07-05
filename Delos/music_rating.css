@@ -70,6 +70,46 @@
 }
 /* body list imaging*/
 
-#everything_is_love{
+#subject_bold{
     font-weight: bold
+
+}
+img{max-width: 75%;
+    max-height: 75%;
+}
+
+
+span {box-sizing: border-box;
+    align-self: auto;
+}
+
+
+
+/* like button and comment button*/
+.btn {
+    background-color:rgb(113, 2, 113);
+    border: none;
+    color: black;
+    padding: 12px 16px;
+    font-size: 16px;
+    cursor: pointer
+}
+
+/* Darker background on mouse-over */
+.btn:hover {
+    background-color:black;
+    color:rgb(113, 2, 113)
+}
+
+
+.column {
+    float: left;
+    width: 33.33%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
 }
