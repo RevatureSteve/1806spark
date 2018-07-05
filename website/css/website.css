@@ -61,4 +61,6 @@ li a:hover {
     background-size: cover;
   }
 
- 
+ #footer {
+     text-align: center;
+ }

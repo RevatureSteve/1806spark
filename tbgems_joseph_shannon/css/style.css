@@ -1,3 +1,10 @@
+/* Sizing and Dimensions */
+
+body{
+    margin: 0;
+}
+
+/* HTML Elements NAVBAR STUFF */
 ul {
     list-style-type: none;
     margin: 0;
@@ -48,3 +55,45 @@ li.dropdown {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+/* float elements */
+
+.float-right {
+    float: right;
+}
+
+.float-center {
+    float: center;
+}
+
+.float-left {
+    float: left;
+}
+/* end float elements */
+
+/* BUTTON ELEMENTS */
+.successbtn {
+    color: beige; /* THIS IS YOUR FONT COLOR */
+    background-color: rgb(58, 100, 58);
+    min-width: 130px;
+    min-height: 12px;
+    float: center;
+}
+
+.successbtn:hover {
+    /* 
+    swap color and background on hover */
+    color: rgb(58, 100, 58); /* THIS IS YOUR FONT COLOR */
+    background-color: beige;
+}
+
+/* FOOTER ELEMENTS */
+#footer {
+    background-color:#DADADA;
+    height:20px;
+    padding:10px;
+    border-top:1px solid #ABABAB;
+    position: fixed;
+    left:0;
+    bottom:0;
+    width:100%
+    }

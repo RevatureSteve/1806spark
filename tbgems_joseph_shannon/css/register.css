@@ -1,0 +1,44 @@
+/* 
+Register.css: styles for the login page/component
+*/
+
+/* HTML ELEMENTS */
+
+header {
+    max-width: 50%;
+    margin: auto;
+    background-color: rgba(169, 169, 169, 0.614);
+    text-align: center;
+    font-size: 15px;
+    padding: 2px;
+    border-bottom-color: 3zpx black
+}
+
+/* HTML IDs */
+
+
+
+#registerForm {
+    border: 1px dotted green;
+    font-weight: bolder;
+/* center loginForm Elements */
+max-width: 200px;
+margin: auto;
+padding: 5px;
+background-color: rgba(211, 211, 211, 0.719);
+text-align: center;
+
+}
+
+#registerBody {
+    background: url();
+
+    float: center;
+}
+
+/* HTML Classes */
+
+.tampa { 
+    background: url(http://res.cloudinary.com/simpleview/image/upload/v1519761816/clients/tampabay/IMG_1420a_3__e412c32a-8344-4a0d-abc9-affe2af268e3.jpg) no-repeat center center fixed; 
+    background-size: cover;
+  }
