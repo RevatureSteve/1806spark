@@ -1,0 +1,24 @@
+/*
+    styles for specifically restaurant
+*/
+
+/*
+    HTML IDs
+*/
+html {
+    font-size: 25px;
+    border: 3px solid black;
+}
+#restaurantContainer {
+    background-color: gray;
+    /* display: flex; */
+    /* flex-wrap: nowrap; */
+    /* justify-content: center; */
+}
+.column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    height: 100%;
+}
