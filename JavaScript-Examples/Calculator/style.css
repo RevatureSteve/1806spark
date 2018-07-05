@@ -1,0 +1,48 @@
+.numpad{
+    font-size: 20px; 
+    color: black;
+    background-color: rgb(231, 227, 227);
+    min-width: 100px;
+    margin: 1px;
+    padding: 15px;
+    height: 60px;
+}
+h1{
+    animation-name: movement;
+    animation-duration: 5s;
+    animation-iteration-count: infinite;
+    margin-bottom: 1px; 
+    color: rgb(124, 199, 11);
+}
+.calpad{
+   margin-left: 30%;
+    text-align: center;
+    margin-top: 1px;
+    border: 2px solid rgb(168, 166, 166);
+    border-top-right-radius: 30px;
+    border-top-left-radius: 30px;
+    width: 30%;
+    box-shadow: 2px 4px 10px #0c0c0c9a;
+}
+.inputfeild{
+    text-align: center;
+   margin-top: 20%;
+   padding-bottom: 0%;
+}
+.results{
+    margin-top: 5px;
+    border-radius: 35px;
+    width: 95%;
+    height: 40px;
+    background-color: rgb(107, 106, 106);
+}
+
+h5{
+    color: rgb(228, 153, 15);
+    text-align: center;
+    margin-left: -135px;
+}
+@keyframes movement{
+    from {margin-left: -10%;}
+    to {margin-left: 100%}
+}
