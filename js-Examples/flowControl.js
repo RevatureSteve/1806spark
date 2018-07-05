@@ -13,18 +13,18 @@ console.log("flow control js file loaded!")
 
 var myBoolean = true;
 
-function foo() {
-    if (myBoolean == true) {
-        console.log('my boolean is true!')
-        myBoolean = false;
-    } else if (myBoolean == false) {
-        console.log('my boolean is false!')
-        myBoolean = true
-    }
-    else {
-        console.log("myBoolean is no longer true/false");
-    }
-}
+// function foo() {
+//     if (myBoolean == true) {
+//         console.log('my boolean is true!')
+//         myBoolean = false;
+//     } else if (myBoolean == false) {
+//         console.log('my boolean is false!')
+//         myBoolean = true
+//     }
+//     else {
+//         console.log("myBoolean is no longer true/false");
+//     }
+// }
 
 function compareXandY(x, y) {
     if (x == y) {
