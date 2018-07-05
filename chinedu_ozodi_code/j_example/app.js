@@ -1,7 +1,15 @@
 var cat = "cat";
+var myNumber;
+myNumber = 42;
 
 /*
     console is a javascript browser object
 */
 
-console.log(cat);
+function foo(){
+    console.log(cat);
+}
+
+function sum(a,b){
+    return a + b;
+}
