@@ -118,6 +118,8 @@ h3 {
 .main-photo {
     width: 200px;
     height: 200px;
+    margin-right: 50px;
+    margin-left: 50px;
 }
 .gallery {
     border: 1px solid rgb(156, 156, 156);

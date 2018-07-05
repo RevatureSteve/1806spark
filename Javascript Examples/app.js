@@ -25,12 +25,6 @@ function foo() {
 foo();
 foo;
 
-
-
-
-
-
-
 /*Create a function that takes two numbers A and b, 
 that are numbers and rturn the sum.
 */
