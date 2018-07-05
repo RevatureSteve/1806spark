@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <title>Calculator</title>
+        <link rel="stylesheet" href="calculator.css">
+    </head>
+   <body>
+       <header class="marquee">
+            <h3>Calculator</h3>
+       </header>
+      <form id="calculatorForm">
+         <table id="calculatorTable">
+            <tr>
+               <td colspan="4">
+                  <input type="text" name="display" id="display" disabled>
+               </td>
+            </tr>
+            <tr>
+               <td><input type="button" id="one" value="1" ></td>
+               <td><input type="button" id="two" value="2" ></td>
+               <td><input type="button" id="three" value="3" ></td>
+               <td><input type="button" class="operator" id="plus" value="+" ></td>
+            </tr>
+            <tr>
+               <td><input type="button" id="four" value="4" ></td>
+               <td><input type="button" id="five" value="5" ></td>
+               <td><input type="button" id="six" value="6" ></td>
+               <td><input type="button" class="operator" id="minus" value="-" ></td>
+            </tr>
+            <tr>
+               <td><input type="button" id="seven" value="7" ></td>
+               <td><input type="button" id="eight" value="8" ></td>
+               <td><input type="button" id="nine" value="9" ></td>
+               <td><input type="button" class="operator" id="times" value="x" ></td>
+            </tr>
+            <tr>
+               <td><input type="button" id="clear" id="clear" value="c" ></td>
+               <td><input type="button" id="zero" value="0" ></td>
+               <td><input type="button" id="doit" value="=" ></td>
+               <td><input type="button" class="operator" id="div" value="/" ></td>
+            </tr>
+         </table>
+      </form>
+      <div id="selectedNums">
+          <h4 class="tag-centered text-center">Press a calculator button to select: num1</h4>
+          <div id="num1" class="tag-centered text-center">num1</div>
+          <div id="num2" class="tag-centered text-center">num2</div>
+          <div id="answer" class="tag-centered text-center">answer</div>
+      </div>
+      <script src="calculator.js"></script>
+   </body>
+</html>
