@@ -12,6 +12,7 @@ for(var i=0; i<keys.length; i++){
 
         if(buttonVal == 'c'){
             input.innerHTML = "";
+            number = "";
             equation = "";
             return;
         }
@@ -28,7 +29,7 @@ for(var i=0; i<keys.length; i++){
         }
 
         if(buttonVal == "+"||buttonVal == "-"||buttonVal=="/"||buttonVal=="*"){
-            input.innerHTML = number;
+            
             if (equation.length == 0){
                 equation = 0;
             } 
