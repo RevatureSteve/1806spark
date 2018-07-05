@@ -44,3 +44,27 @@ function reverseString(str) {
     }
     return newString;
 }
+/*
+10. Delete Element
+Define function deleteElement(someArr)
+Print length
+Delete the third element in the array.
+Print length
+The lengths should be the same.
+*/
+var list = ["milk", "eggs", "bacon", "steak"];
+function deleteElement(arr, element){
+
+    for(var i=0; i < arr.length; i++)
+    {
+       console.log(arr.length);
+        if (element == arr[i])
+        {
+            arr.splice(i,1);
+            console.log(arr.length);
+            return true; // stop looking for the element, we found it
+        }
+    }
+    return false; // stop looking for the element, we could not find it
+   
+}
