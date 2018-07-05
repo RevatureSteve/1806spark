@@ -1,29 +1,42 @@
 .bb {
-    border: 2px solid black;
-    border-radius: 5px;
-    border-bottom: 2px solid;
-    border-width: 100px;
-    margin: auto;
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 25px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    border-bottom: 1px solid;
+    margin-left: auto;
+    margin-right: auto;
+    width: 400px;
+    padding: 10px;
+    box-shadow: 0 10px 10px 0 rgba(0,0,0,0.24)
 
     
-}
-#bottom {
-    border-bottom: 2px solid black;
 }
 
 button {
-    background-color: rgb(202, 202, 202);
+    background-color: rgb(233, 233, 233);
     font-size: 15px;
     text-align: center;
+    height: 50px;
+    width: 97px; 
+    background-image: linear-gradient(color rgba(209, 209, 209, 0.801),rgba(233, 233, 233, 0.425));
+    
+
     
 }
-#tf {
-    background-color: rgb(128, 128, 128);
-    border-radius: 5px;
+.tf {
+    background-color: rgba(150, 150, 150, 0.616);
+    border-radius: 30px;
+    height: 50px;
+    text-align: center;
+    max-width: 500px;
+    margin: auto;
+
+
 
 }
 #txtc {
-    color: rgb(136, 218, 14);
+    color: rgb(105, 221, 28);
     text-align: center;
     font-size: 40px;
     font-weight: bold;
@@ -36,4 +49,14 @@ tr {
 .divtxt{
 color: darkorange;
 text-align: center;
+font-weight: bold
+}
+
+td {
+ font-size: 25px;
+ align-content: center;
+}
+
+#line{
+    line-height: 200px;
 }
