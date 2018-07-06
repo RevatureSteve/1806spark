@@ -18,19 +18,23 @@
 }
 
 /* IDs */
-#loginUsername{
+#registerUsername{
     border-bottom-left-radius: 0%;
     border-bottom-right-radius: 0%;
     margin-bottom: -1px;
 }
+#registerEmail{
+    border-radius: 0%;
+    margin-bottom: -2px;
+}
 
-#loginPassword{
+#registerPassword{
     border-top-left-radius: 0%;
     border-top-right-radius: 0%;
     margin-bottom: 10px;
 }
 
-#loginSignIn{
+#registerSignIn{
     width: 100%;
     background-color: #64ba69;
     border-radius: 1mm;

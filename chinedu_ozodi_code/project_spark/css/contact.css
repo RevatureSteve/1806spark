@@ -1,0 +1,24 @@
+/* TAGS */
+
+body{
+    background-color: #d32f2f;
+}
+
+nav{
+    max-width: 100%;
+    display: flex ;
+    width: 100%;
+    background-color: #9a0007;
+}
+
+
+/* CLASSES */
+.btn{
+    background-color: #ff5722;
+}
+
+.cover-heading{
+    background-color: #c41c00;
+    padding: 5px;
+    border-radius: 1mm;
+  }

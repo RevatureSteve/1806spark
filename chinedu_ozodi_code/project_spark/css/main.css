@@ -1,0 +1,34 @@
+/* TAGS */
+
+body{
+    min-width: 100%;
+    padding-bottom: 40px;
+    background-color: #1976d2;
+}
+
+nav{
+    max-width: 100%;
+    display: flex ;
+    width: 100%;
+    background-color: #004ba0;
+}
+
+/* CLASSES */
+
+.btn{
+    background-color: #64ba69;
+}
+
+.float-right{
+    float: right;
+}
+
+/* Custom default button */
+.btn-secondary,
+.btn-secondary:hover,
+.btn-secondary:focus {
+  color: #333;
+  text-shadow: none; /* Prevent inheritance from `body` */
+  background-color: #64ba69;
+  border: .05rem solid #64ba69;
+}
