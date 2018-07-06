@@ -4,8 +4,14 @@
 // Print that element's contents.
 
 function getUSA(){
-    var usaElement = document.getElementById("USA");
-    console.log(usaElement.innerHTML);
+
+    let allElements = document.querySelectorAll("span");
+    for (let i = 0; i < allElements.length; i++){
+        let selectedElement = allElements[i];
+        if (selectedElement.innerHTML.indexOf("USA") >= 0){
+            console.log(selectedElement.innerHTML);
+        }
+    }
 }
 
 // 2. Sales
