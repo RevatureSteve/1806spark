@@ -67,3 +67,13 @@ function removeElementFromArray(arr, element){
 
 
 }
+
+
+function foo(){
+    for(var i = 0; i < 3; i++){
+        console.log('hello');
+    }
+    // 0 < 3: hello
+    // 1 < 3: hello
+    // 2 < 3: hello;
+}
