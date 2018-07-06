@@ -22,7 +22,21 @@ function fib(n) {
 // Use the bubble sort algorithm to sort the array.
 // Return the sorted array.
 
+let arrayTest = [7, 6, 9, 1, 8, 3, 5, 4, 2];
 
+function bubbleSort(numArray) {
+    let temp;
+    for (let i = 0; i < numArray.length; i++) {
+        for (let j = 1; j < numArray.length; j++) {
+            if (numArray[j - 1] > numArray[j]) {
+                temp = numArray[j - 1]; // takes the first item in arr and saves it to temp
+                numArray[j - 1] = numArray[j];
+                numArray[j] = temp;
+            }
+        }
+    }
+    console.log(numArray);
+}
 
 
 // 3. Reverse String
@@ -66,32 +80,42 @@ function reverseStr(someStr) {
 //   *
 
 function printShape(shape, height, character) {
-    switch(shape.toLowerCase()) {
+    switch (shape.toLowerCase()) {
         case "triangle":
-        for (var i = 0; i <= height; i++) {
-            var row = ""
-            for (var j = 0; j < i; j++) {
-                row += character;
+            for (var i = 0; i <= height; i++) {
+                var row = "";
+                for (var j = 0; j < i; j++) {
+                    row += character;
+                }
+                console.log(row);
             }
-            console.log(row);
-        }
-        break;
+            break;
         case "diamond":
-        for (var i = 0; i <= height; i++) {
-            var row = ""
-            for (var j = 0; j < i; j++) {
-                row += character;
+            let arr = [];
+            let half = Math.ceil(height / 2);
+            for (var i = 0; i < height; i++) {
+                arr.push(" ");
+            };
+            for (var j = 0; j < height; j++) {
+                if (j < half) {
+                    arr[half + j] = character;
+                    arr[half - j] = character;
+                }
+                else {
+                    arr[half + (height - j)] = " ";
+                    arr[half - (height - j)] = " ";
+                }
+                console.log(arr.join(""));
             }
-            console.log(row);
-        }
-        break;
-        // for (var i = 0; i <= height; i++) {
-        //     var row = ""
-        //     for (var j = 0; j < i; j++) {
-        //         row += character;
-        //     }
-        //     console.log(row);
-        // }
+            break;
+        case "square":
+            for (let i = 0; i < height; i++) {
+                let meep = "";
+                for (let j = 0; j < height; j++) {
+                    meep += character;
+                }
+                console.log(meep);
+            }
     }
 }
 
@@ -100,10 +124,18 @@ function printShape(shape, height, character) {
 // Return true if someStr is a palindrome, otherwise return false
 
 function isPalindrome(someStr) {
-    for (var i = 0; i < someStr.length/2; i++) {
+    for (var i = 0; i < someStr.length / 2; i++) {
         if (someStr[i] !== someStr[someStr.length - 1 - i]) {
             return false;
         }
     }
     return true;
 }
+
+// 4. Factorial
+// Define function: factorial(someNum)
+// Use recursion to compute and return the factorial of someNum.
+
+// function factorial(someNum) {
+//     if 
+// }
