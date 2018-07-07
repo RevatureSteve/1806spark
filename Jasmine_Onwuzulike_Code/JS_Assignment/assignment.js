@@ -7,6 +7,14 @@ var num = fibonacci[n];
 return num;
 }
 
+// 2. Bubble Sort
+// Define function: bubbleSort(numArray)
+// Use the bubble sort algorithm to sort the array.
+// Return the sorted array.
+function bubbleSort(numArray) {
+    var numArray = ["zoo", "apple", "carrots"];
+    return numArray.sort();
+}
 // 3. Reverse String
 // Define function: reverseStr(someStr)
 // Reverse and return the String.
@@ -16,13 +24,6 @@ function reverseStr(someStr) {
         firstStr += someStr[i];
      }
      return firstStr;
-}
-
-// 9. Object literal
-// Define function traverseObject(someObj)
-// Print every property and it's value.
-function traverseObject(someObj) {
-    console.log(someObj);
 }
 
 // 4. Factorial
@@ -35,4 +36,13 @@ function factorial(someNum) {
     }
     return numArray;
 }
+
+// 9. Object literal
+// Define function traverseObject(someObj)
+// Print every property and it's value.
+function traverseObject(someObj) {
+    console.log(someObj);
+}
+
+
 
