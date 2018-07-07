@@ -1,4 +1,8 @@
 let favoriteColor = null;
+document.getElementById("num1").addEventListener("change", sumIt);
+document.getElementById("num2").addEventListener("change", sumIt);
+var colors = document.getElementsByName("favoriteColor");
+var htmlElem = document.getElementsByTagName('html')[0];
 
 /*
 1. USA
@@ -87,9 +91,6 @@ Regarding these elements:
 	<input id="num2" class="nums" type="text"/>
     <h3>Sum: <span id="sum"></span></h3>
 */
-document.getElementById("num1").addEventListener("change", sumIt);
-document.getElementById("num2").addEventListener("change", sumIt);
-
 function sumIt() {
     let num1 = document.getElementById("num1");
     let num2 = document.getElementById("num2");
@@ -123,8 +124,6 @@ In this example, green is the new value and blue is the old value.
 Make the background color (of all favoriteColor radio buttons) 
     the newly selected favoriteColor
 */
-
-var colors = document.getElementsByName("favoriteColor");
 
 for (var i = 0; i < colors.length; i++) {
     colors[i].onchange = function () {
@@ -212,8 +211,6 @@ Define function walkTheDOM(node, func)
 This function should traverse every node in the DOM. Use recursion.
 On each node, call func(node).
 */
-
-var htmlElem = document.getElementsByTagName('html')[0];
 
 function walkTheDOM(node, func) {
     func(node);
