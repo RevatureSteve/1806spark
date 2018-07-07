@@ -56,17 +56,21 @@ function getPeopleInSales() {
     Find all anchor elements with a <span> child.
     Print the contents of <span>
 */
-//INCOMPLETE
+
 y = document.querySelectorAll('a');
+// selecting all anchor tags
 
 function getAnchorChildren() {
-    console.log('in the func');
-
+//  console.log('in the func');
+    
     for (i = 0; i < y.length; i++) {
-//        console.log(y[i].children[0]);
+        // checking all anchor tags
+        //        console.log(y[i].children[0]);
 
-        if (console.log(y[i].children[0] == 'span')){
-            console.log(y[i].children[0].innerText);
+        if (y[i].children.length != 0) {
+            // if the children elements of the anchor elements is not equal then continue
+            console.log(y[i].children[0].innerHTML);
+            //print the text of the children tags
         }
     }
 }
@@ -83,17 +87,29 @@ function getAnchorChildren() {
 //INCOMPLETE
 var z = document.getElementsByTagName('select');
 
-function getHobbies(){
-    for(i = 0; i < z.length; i++){
-//        console.log(z[i].children[0]);
+function getHobbies() {
+    for (i = 0; i < z.length; i++) {
+        //check all selected tags
+        //        console.log(z[i].children[0]);
 
-        if(console.log(z[i].attributes.name == 'skills')){
-            console.log(z[i].children.innerHTML);
+        if (z[i].name == 'skills') {
+            //if it matches the tag 'skills' then continue
+
+            for (j = 0; j < z[i].children.length; j++) {
+                //check all children tags
+
+                if (z[i].children[j].attributes.selected) {
+                    //truthy statement used
+                    //if true then print the skill
+
+                    console.log(z[i].children[j].innerHTML);
+                    //skill printed
+                }
+            }
         }
+
     }
-
 }
-
 /****************************************************************************************************************************/
 /****************************************************************************************************************************/
 /****************************************************************************************************************************/
@@ -105,4 +121,4 @@ function getHobbies(){
     Print the element that has the attribute.
 */
 
-//  var xx = document.querySelectorAll[0].getAttribute('data-customAttr');
+var xx = document.querySelectorAll('[]');
