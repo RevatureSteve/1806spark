@@ -87,6 +87,12 @@ h3 {
     text-decoration: underline;
     margin-bottom: 10px;
 }
+h5 {
+    color: white;
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+}
 #home-info {
     background-color: rgb(146, 70, 68);
     margin-left: 80px;
@@ -121,6 +127,7 @@ h3 {
     margin-right: 50px;
     margin-left: 50px;
 }
+
 .gallery {
     border: 1px solid rgb(156, 156, 156);
     max-width: 200px;
@@ -131,3 +138,33 @@ h3 {
     text-align: center;
     color: white;
 }
+img:hover {
+    border: 1px solid gold;
+}
+.text {
+    display: inline;
+}
+#street {
+    margin-left: 250px;
+}
+#landscape {
+    margin-left: 130px;
+}
+#portrait {
+    margin-left: 100px;
+}
+#breadcrumbs {
+   margin: 0%;
+   padding: 3px;
+   color: white;
+   font-size: 15px;
+   text-align: center;
+}
+#breadcrumbs:hover {
+    color: gold;
+}
+#second-nav {
+    margin-left: 450px;
+    margin-right: 450px;
+}
+

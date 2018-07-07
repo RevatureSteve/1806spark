@@ -22,7 +22,7 @@ function reverseStr(someStr) {
 // Define function traverseObject(someObj)
 // Print every property and it's value.
 function traverseObject(someObj) {
-
+    console.log(someObj);
 }
 
 // 4. Factorial
@@ -35,3 +35,4 @@ function factorial(someNum) {
     }
     return numArray;
 }
+
