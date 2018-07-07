@@ -1,0 +1,60 @@
+/* 
+Register.css: styles for the login page/component
+*/
+
+/* HTML ELEMENTS */
+
+header {
+    max-width: 100%;
+    margin: auto;
+    background-color: darkgray;
+    text-align: center;
+    font-size: 35px;
+    padding: 2px;
+    border-bottom-color: 3zpx black
+}
+
+/* HTML IDs */
+
+
+
+#registerForm {
+    border: 3px dotted green;
+    font-weight: bolder;
+/* center loginForm Elements */
+max-width: 500px;
+margin: auto;
+padding: 20px;
+background-color: white;
+text-align: center;
+
+}
+
+/* #registerBody {
+    background-image: url(https://images.pexels.com/photos/51119/wall-stones-hauswand-structure-51119.jpeg?auto=compress&cs=tinysrgb&h=350);
+} */
+
+/* HTML Classes */
+
+.tampa { 
+    background: url(http://res.cloudinary.com/simpleview/image/upload/v1519761816/clients/tampabay/IMG_1420a_3__e412c32a-8344-4a0d-abc9-affe2af268e3.jpg) 
+    no-repeat center center fixed; 
+    background-size: cover;
+  }
+
+.signupbutton {
+    background-color: black; 
+    border-style: solid;
+    border-color:grey;
+    color: white;
+    padding: 15px 150px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+}
+
+/* .tampa {
+    background-image: url(http://res.cloudinary.com/simpleview/image/upload/v1519761816/clients/tampabay/IMG_1420a_3__e412c32a-8344-4a0d-abc9-affe2af268e3.jpg);
+
+} */

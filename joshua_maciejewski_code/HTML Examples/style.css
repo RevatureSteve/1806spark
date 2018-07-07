@@ -1,0 +1,58 @@
+/* 
+style.css is a common name for the overall sytling of a website    
+different comment block
+
+    */
+
+    ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background-color: #333;
+    }
+    
+    li {
+        float: left;
+    }
+    
+    li a {
+        display: block;
+        color: white;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+    }
+    
+    /* Change the link color to #111 (black) on hover */
+    li a:hover {
+        background-color: #111;
+    }
+
+    h1 {
+    color:red
+}
+
+div {
+border: 3px solid black;
+margin: 25px;
+}
+
+/* # : used to select html values like div 2
+. : used to select classes
+ html element can also select      ------all selectors  */
+#div2 {
+    border: 1px solid blueviolet;
+}
+
+.blue-border{
+    border: 2px solid blue;
+}
+
+.green-border{
+    border: 2px solid darkgreen;
+}
+
+.red-font {
+    color:red
+}

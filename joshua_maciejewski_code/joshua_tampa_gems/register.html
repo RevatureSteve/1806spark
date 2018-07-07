@@ -1,0 +1,94 @@
+<html>
+
+
+<head>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/register.css" />
+
+<!-- REGISTER VALIDATION SCRIPT -->
+    <script language='javascript' type='text/javascript'>
+        function check(input) {
+            if (input.value != document.getElementById('password').value) {
+                input.setCustomValidity('Password Must be Matching.');
+            } else {
+                // input is valid -- reset the error message
+                input.setCustomValidity('');
+            }
+        }
+    </script>
+ <!-- REGISTER VALIDATION SCRIPT -->
+</head>
+
+<body class="tampa">
+
+    <!-- Navbar begin -->
+    <ul>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li>
+            <a href="restaurants.html">Restaurant</a>
+        </li>
+        <li>
+            <a href="bars.html">Bars</a>
+        </li>
+
+        <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Entertainment</a>
+                <div class="dropdown-content">
+                    <a href="#">Busch Gardens</a>
+                    <a href="#">Studio Movie Grill</a>
+                    <a href="#">Ybor City</a>
+                </div>
+            </li>
+        <li class="float-right">
+                <a href="login.html">Login</a>
+                <a href="register.html">Register</a>
+         </li>
+        
+    </ul>
+    <!-- Navbar End-->
+<!-- <header>
+        <h1>Register Here!</h1>
+</header> -->
+
+<!-- LOGIN FORM -->
+
+<div id="registerBody">
+    <!--
+get vs post
+get - form data in the url
+post - form data hidden in the request body
+-->
+<form id="registerForm" method="POST">
+
+Name:
+<input type="text" maxlength="20" minlength="3" required>
+<br><br>
+Age:
+<input type="number" max="110" min="7" required>
+<br><br>
+Date of Birth:
+<input type="date">
+<br><br>
+Username:
+<input type="text" maxlength="20" minlength="3" required>
+<br><br>
+Password:
+<input name="password" required="required" type="password" id="password" />
+<br><br>
+Confirm Password:
+<input name="password_confirm" required="required" type="password" id="password_confirm" oninput="check(this)" />
+<br /><br />
+
+<input class="signupbutton" type="submit" value="Sign up!">
+
+</form>
+
+</div>
+
+
+</body>
+
+</html>
