@@ -67,11 +67,11 @@ function bubbleSort(numArray) {
 */
 
 // you must declare a string within the console to make the code work
-function reverseStr(someStr){
+function reverseStr(someStr) {
     var newStr = ''; //used to store the new string
 
-    for(var i = someStr.length - 1; i >= 0; i--){
-        newStr = newStr + someStr[i]; 
+    for (var i = someStr.length - 1; i >= 0; i--) {
+        newStr = newStr + someStr[i];
         /*
          the above eq. grabs the last string and prints that letter 
         and moves down 1 after each iteration
@@ -91,7 +91,7 @@ function reverseStr(someStr){
 */
 
 //this code was just used to see how the factorial works 
-    //and to compare to the recursion code
+//and to compare to the recursion code
 /*
 function factorial(someNum){
     var fac = 1;
@@ -112,17 +112,34 @@ function factorial(someNum) {
         fac = someNum * factorial(someNum - 1);
     }
     return fac;
-}   
+}
 
 /*******************************************************************************************************************/
 /*******************************************************************************************************************/
 /*******************************************************************************************************************/
-
 
 /*
-Define function substring(someStr, length, offset)
-Return the substring contained between offset 
-and (offset + length) inclusively.
-If incorrect input is entered, use the alert function 
-and describe why the input was incorrect.
+    Define function spliceElement(someArr)
+    Print length
+    Splice the third element in the array.
+    Print length
+    The lengths should be one less than the original length. 
 */
+
+//you must declare arr to make the code work
+var someArr;
+var x = 2;
+function spliceElement() {
+    console.log('Array length is ' + someArr.length);
+    console.log('The element we want to remove is ' + someArr[x]);
+
+    for (var i = 0; i < someArr.length; i++) {
+        //        console.log('The element is: ' + ' the index value is: ' + someArr[i]);
+        if (x == i) {
+            someArr.splice(x, 1);
+            console.log(someArr);
+        }
+    }
+}
+
+
