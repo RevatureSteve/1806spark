@@ -1,3 +1,18 @@
+/*
+    Styles for tampa gems
+*/
+
+/*
+    HTML IDs
+*/
+
+
+/*
+    HTML Elements
+*/
+body{
+    margin: 0;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -26,6 +41,9 @@ li.dropdown {
     display: inline-block;
 }
 
+/*
+    HTML Classes
+*/
 
 .dropdown-content {
     display: none;
@@ -37,7 +55,6 @@ li.dropdown {
 }
 
 .dropdown-content a {
-    float: none;
     color: black;
     padding: 12px 16px;
     text-decoration: none;
@@ -45,27 +62,63 @@ li.dropdown {
     text-align: left;
 }
 
-.dropdown-content a:hover {
-    background-color: #ddd;
-}
+.dropdown-content a:hover {background-color: #f1f1f1}
 
 .dropdown:hover .dropdown-content {
     display: block;
 }
 
-.float-right{
+
+.float-right {
     float: right;
 }
 
-.success-btn{
+.success-btn {
     font-size: 20px;
-    color: white;
-    background-color: rgba(0, 255, 0, 0.644);
-    width: 300px;
+    color: white; /* text color */
+    background-color: rgb(136, 255, 0);
+    min-width:  300px;
     height: 35px;
 }
 
 .success-btn:hover {
-    color: rgba(0, 255, 0, 0.644);
+    /*
+        swap the color and background-color on mouse hover
+    */
+    color: rgb(136, 255, 0);
     background-color: white;
+}
+
+.right-text {
+    text-align: right;
+}
+.left-text {
+    text-align: left;
+}
+.center-text{
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 15px;
+
+}
+.col-med {
+    width: 250px;
+    height: 100px;
+    margin: 10px;
+    order: 3;
+    
+    /* position: relative; */
+    /* display: flex; */
+}
+.border-solid {
+    /* border: 3px solid black; */
+}
+
+.container { 
+    color: red;
 }

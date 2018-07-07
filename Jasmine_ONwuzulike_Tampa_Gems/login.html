@@ -2,18 +2,24 @@
 
 <head>
     <title>Tampa Hidden Gems</title>
-    <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/login.css" />
 </head>
 
-<body id="loginBody">
-<header>
-    <h1>Login</h1>
-    </header>
-    <!-- Nav Bar Begins -->
+<body>
+
+    <!-- Navbar begin -->
     <ul>
-        <li><a href="index.html">Home</a></li>
-        <li> <a href="restuarant.html">Restuarants</a> </li>
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li>
+            <a href="restaurant.html">Restaurant</a>
+        </li>
+        <li>
+            <a href="bars.html">Bars</a>
+        </li>
+
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
             <div class="dropdown-content">
@@ -22,32 +28,29 @@
                 <a href="#">Link 3</a>
             </div>
         </li>
-        <li><a href="bars.html">bars</a></li>
-        <li class = "floatRight"><a href="login.html">Login</a></li>
+        <li class="float-right">
+            <a href="login.html">Login</a>
+        </li>
     </ul>
-    <!-- Nav Bar Ends -->
+    <!-- Navbar End-->
+    <header>
+        <h1>Login</h1>
+    </header>
+    <div id="loginBody">
+        <!--
+            GET vs POST
+            GET - form data in the URL
+            POST - form data hidden in the request body
+        -->
+        <form id="loginForm" method="POST" action="http://www.maw.com/login">
+            Enter username:
+            <input type="text" required> <br><br>
+            Enter password:
+            <input type="password" required><br><br>
+            <input class="success-btn" type="submit" value="Login">
+        </form>
 
-    <!-- Login Form -->
-<div id="loginBody">
-<form id="loginForm">
-Enter Username:<input type="text" required />
-<br />
-<br />
-Enter Password<input type="password" required/>
-<br />
-<br />
-<input id="successBtn" type="submit" value="login" minlength="300px" height="35px"/>
-<br />
-<br />
-</form>
-</div>
-
-
-
-
-
-
-
+    </div>
 </body>
 
 </html>
