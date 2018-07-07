@@ -1,0 +1,33 @@
+.header {
+    color: #adb7bd; font-family: 'Lucida Sans', Arial, sans-serif; 
+    margin: 15px; margin-right: 25px; margin-left: 25px; height: 60px;
+    list-style-type: none;
+}
+
+.header .colorBackground{
+   
+    padding: 20px;
+    color: #adb7bd;
+}
+
+.floating_left{
+    float: left;
+}
+
+.header .colorBackground:hover {
+    background-color: #fe921f;
+    color: rgb(26, 23, 23);
+}
+
+.siteLogo {
+    float: left;
+    height: 58px;
+    margin: 0;
+    padding: 0;
+}
+
+a {text-decoration: none; }
+
+.floating_right{
+    float: right;
+}
