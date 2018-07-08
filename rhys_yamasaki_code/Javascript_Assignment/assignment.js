@@ -2,12 +2,13 @@
 // Define function: fib(n) 
 // Return the nth number in the fibonacci sequence.
 
+
 function fib(n) {
     let a = 1;
     let b = 0;
     let temp;
 
-    while (n >= 0) {
+    while (n > 0) {
         temp = a;
         a = a + b;
         b = temp;
@@ -15,7 +16,17 @@ function fib(n) {
     }
     return b;
 }
+// function fib(n) {
+//     let a = 1;
+//     let b = 0;
 
+//     for  (;n > 0; n--) {  //2
+//         let temp = a;  // temp = 1
+//         a = a + b; // a = 2
+//         b = temp; // b = 1
+//     }
+//     return b;
+// }
 
 // 2. Bubble Sort
 // Define function: bubbleSort(numArray)
