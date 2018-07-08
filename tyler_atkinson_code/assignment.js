@@ -12,13 +12,18 @@ function fib(n){
   return f[f.length - 1];
 }
 
-//V this is wrong VVVVVVV
+//^^ I don't understand what this is doing//
+
 function fib2(n){
-  var a = (n), b = (n - 1), c = (n - 2), d = (b + c);
-
-  a = ((d + a) * 2) + 1;
-
-  return (a);
+  var a = 0;
+  var b = 1;
+  var sum = 0;
+  for (var i = 0; i < n; i++) {
+    sum = a + b;
+    a = b;
+    b = sum;
+  }
+  return sum;
 
 }
 
@@ -100,30 +105,61 @@ function factorial(x)
 }
 console.log(factorial(5));
 
+//doing #4 a different way
+
+function factorial2(someNum) {
+  if (someNum != 1 ) {
+    var result = someNum * factorial2(someNum - 1);
+    return result;
+  }else {
+    return 1;
+  }
+  }
+
+
 // 5. Substring
 // Define function substring(someStr, length, offset)
 // Return the substring contained between offset and (offset + length) inclusively.
 // If incorrect input is entered, use the alert function and describe why the input was incorrect.
 
-
+function substring(someStr, length, offset) {
+  var stringArray = someStr.split("");
+  var subArray = [];
+  for (var i = 0; i < length; i++) {
+    subArray[i] = stringArray[i + offset];
+  }
+  return subArray.join("")
+}
 
 
 // 6. Even Number
 // Define function: isEven(someNum)
 // Return true if even, false if odd.
 // Do not use % operator.
-// function isOdd(n){
-//   return 1&n;
-//   if{n = 1 
-//      return true;
 
-//   }
-//   }
-
+function isEven(someNum) {
+  while (someNum / 2 > 1) {
+    someNum = someNum / 2;
+  }
+  if (someNum == 2) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 // 7. Palindrome
 // Define function isPalindrome(someStr)
 // Return true if someStr is a palindrome, otherwise return false
+
+function isPalindrome(someStr) {
+  var reversed = reverseString(someStr);
+  if (someStr == reversed) {
+    return true;
+  } else {
+    return false;
+  }
+}
 
 // 8. Shapes
 // Define function: printShape(shape, height, character)
@@ -147,9 +183,69 @@ console.log(factorial(5));
 //  ***
 //   *
 
+// function printShape(shape, height, character) {
+
+//   switch (shape){
+//     case "Square": {
+//       for (var i = 0; i < height; i++) {
+//         var shapeStr = "";
+//         var shapeStr = shapeStr + character;
+//       }
+//       console.log(shapeStr);
+//     }
+//     break;
+  
+//    case "Triangle": {
+//       for (var i = 0; i < height; i++) {
+//         var shapeStr = "";
+//       }
+//       for (var j = 0; j < i + 1; j++) {
+//         shapeStr = shapeStr + character;
+//       }
+//       console.log(shapeStr);
+//     }
+//     break;
+  
+//     case "diamond": {
+//       var space = height/2;
+//       for (var i = 0; i < height / 2; i++) {
+//         var shapeStr = "";
+//       }
+//       space--;
+//       for(j = 1; j <=2 * i - 1; j++){
+//         shapeStr = shapeStr + character;
+//       }
+//       console.log(shapeStr);
+//     }
+//     for (i = 0; i <= height / 2; i++) {
+//       var shapeStr = " ";
+//     }
+//     space++;
+//     for (j = 0; j <= ((height - i*2)-1);j++) {
+//       shapeStr = shapeStr + character;
+//     }
+//     console.log(shapeStr);
+//   }
+//     break;
+   
+// }default: {
+
+  
+
+
 // 9. Object literal
 // Define function traverseObject(someObj)
 // Print every property and it's value.
+
+function traverseObject(someObj) {
+  var keys = Object.keys(someObj);
+  var values = Object.values(someObj);
+
+  for(var i = 0; i < keys.length; i++){
+    console.log("Key value: "+keys[i]+", value: "+ values[i]);
+  }
+  return values;
+}
 
 // 10. Delete Element
 // Define function deleteElement(someArr)
