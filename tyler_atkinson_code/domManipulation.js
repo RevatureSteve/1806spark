@@ -79,16 +79,29 @@ function getCustomAttribute(){
 // 	<input id="num2" class="nums" type="text"/>
 // 	<h3>Sum: <span id="sum"></span></h3>
 
-// Define onchange event handler.
-// Add <input> element values.
-// Put the sum in the <span> element.
-// If values cannot be added, put "Cannot add" in the <span> element
+function sumIt() {
+    let num1 = document.getElementById("num1");
+    let num2 = document.getElementById("num2");
+
+    if(num1.value  != "" && num2.value != "") {
+        let sum = parseInt(num1.value) + parseInt(num2.value);
+
+        document.getElementById("sum").innerHTML = sum;
+    }
+}
+
 
 // 7. Skills Event
 // NOTE: Write unobtrusive Javascript
 // When user selects a skill, create an alert with a message similar to:
 // 	"Are you sure CSS is one of your skills?"
 // NOTE: no alert should appear when user deselects a skill.
+
+document.getElementsByName("skills")[0].onchange = function () {
+    var index = this.selectedIndex;
+    var text = this.children[index].innerHTML.trim();
+    window.prompt("Are you sure " + text + " is one of your skills?");
+}
 
 // 8. Favorite Color Event
 // NOTE: Write unobtrusive Javascript
@@ -98,10 +111,40 @@ function getCustomAttribute(){
 // In this example, green is the new value and blue is the old value.
 // Make the background color (of all favoriteColor radio buttons) the newly selected favoriteColor
 
+
+// for (var i = 0; i < colors.length; i++) {
+//     colors[i].onchange = function () {
+//         if (favoriteColor == null) {
+//             favoriteColor = this.value;
+//         }else {
+//             var previousFav = favoriteColor;
+//             favoriteColor = this.value;
+//             window.alert("You Like " + favoriteColor + " more than " + previousFav + "?");
+//         }
+//         }
+//     }
+
+
+
 // 9. Show/Hide Event
 // When user hovers over an employees name:
 // 	Hide the name if shown.
 // 	Show the name if hidden.
+
+
+// var employees = document.getElementsByClassName("empName");
+
+// for (var i = 0; i < emmployees.length; i++) {
+//     employees[i].onpointerenter = function () {
+//         if (this.style.color == "black"){
+//             this.style.color = "white";
+//         }else {
+//             this.style.color = "black";
+//         }
+//         }
+    
+
+
 
 // 10. Current Time
 // Regarding this element:
@@ -128,12 +171,46 @@ function checkTime(i){
     return i;
 }
 
+
 // 11. Delay
 // Regarding this element:
 // 	<p id="helloWorld">Hello, World!</p>
 // Three seconds after a user clicks on this element, change the text to a random color.
 
+var hello = document.getElementById("helloWorld");
+
+hello.onclick = function () {
+    setTimeout(function () {
+        hello.style = "color:" + getRandomColor ();
+    }, 3000);
+}
+
+function getRandomColor() {
+    var letters = '0123456789ABCDEF';
+    var color = '#';
+    for (var i = 0; i < 6; i++){
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+}
+
 // 12. Walk the DOM
 // Define function walkTheDOM(node, func)
 // This function should traverse every node in the DOM. Use recursion.
 // On each node, call func(node).
+
+function walkTheDom(node, func) {
+    func(node);
+}
+
+function func(node) {
+    var childs = node.children
+    console.log(node);
+    if(childs.length == 0){
+        return true;
+    }
+    for(var i = 0; i < childs.length; i++){
+        var c = childs[i];
+        walkTheDom(c, func);
+    }
+}
