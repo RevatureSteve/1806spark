@@ -1,44 +1,36 @@
 /*
-    css for the login component
+    login.css: styles for the login page/component
 */
 
-header{
+/*
+    HTML Elements
+*/
+header {
+    /* to center an element */
+    max-width: 100%;
+    margin: auto;
+
     font-size: 35px;
-    text-align: center;
-    background-color: rgba(128, 128, 128, 0.562);
-    padding: 20px;
+    background-color: rgba(94, 94, 94, 0.5);
+    text-align: center; /* center text */
+    padding: 15px;
 }
-#loginBody{
-    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/51/49/735791be81aff4a.jpg");
-}
+
+/*
+    HTML IDs
+*/
+
 #loginForm {
-    min-width: 200px;
-    border: 2px solid rgba(0, 0, 0, 0.445);
-    margin-top: 1px;
-
-    /*
-        use max-width & marin: auto to center
-    */
-    max-width: 500px;
-    margin: auto; 
-
-    padding: 10px;
-    padding-top: 15px;
-    text-align: center;
-    background-image: none;
     background-color: white;
-
+    border: 1px solid black;
+    font-weight: bold;
+    text-align: center; /* text inside the element */
+    padding: 20px;
+    /* center loginForm element */
+    max-width: 500px;
+    margin: auto;
 }
 
-#loginBtn {
-    /* max-width: 100px; */
-    min-width: 100px;
-    background-color: rgba(40, 168, 125, 0.5);
-    font-size: 20px;
-}
-#loginBtn:hover {
-    min-width: 100px;
-    background-color: rgba(168, 40, 40, 0.5);
-    font-size: 20px;
-
+#loginBody {
+    background-image: url("https://png.pngtree.com/thumb_back/fw800/back_pic/03/51/49/735791be81aff4a.jpg");
 }
