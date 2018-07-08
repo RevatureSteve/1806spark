@@ -1,0 +1,70 @@
+form#bank_cards  {
+border: transparent;
+background:rgb(128, 22, 22);
+width: 260px;
+height: 163px;
+border-radius: 5%;
+position: absolute;
+left: 30%;
+top: 400px;
+}
+
+img#chip{
+    margin-top: 3%;
+    width: 30.3px;
+    height: 23.7px;
+    margin-left: 10%;
+}
+
+div#card_title{
+text-align: right;
+font-weight: bold;
+color: white;
+padding-right: 5%;
+margin-top: -4%;
+}
+
+div#issuer{
+    color: white;
+    text-align: right;
+    padding-right: 5%;
+    margin-top: -6%;
+    font-size: 25px;
+}
+
+div#card_num{
+    text-align: left;
+    margin-top: 2%;
+    margin-left: 10%;
+    font-size: 18px;
+    color: silver;
+}
+
+div#card_holder{
+    text-align: left;
+color: silver;
+margin-left: 7%;
+margin-top: 1%;
+}
+
+div#since{
+    margin-left: 4%;
+font-size: 7px;
+color: silver;
+margin-top: 2%;
+}
+
+h1#find_card{
+    color: rgb(128, 22, 22);
+    position: absolute;
+    left: 30%;
+    top: 310px;
+}
+
+span#issued{
+font-size: 14px;
+}
+
+span#exp{
+    font-size: 14px;
+    }
