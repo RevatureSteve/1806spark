@@ -129,6 +129,7 @@ function factorial(someNum) {
 //you must declare arr to make the code work
 var someArr;
 var x = 2;
+
 function spliceElement() {
     console.log('Array length is ' + someArr.length);
     console.log('The element we want to remove is ' + someArr[x]);
@@ -137,9 +138,37 @@ function spliceElement() {
         //        console.log('The element is: ' + ' the index value is: ' + someArr[i]);
         if (x == i) {
             someArr.splice(x, 1);
+            //deletes array element
             console.log(someArr);
+            //returns the new array with one less length
         }
     }
 }
+
+
+/*******************************************************************************************************************/
+/*******************************************************************************************************************/
+/*******************************************************************************************************************/
+
+/*
+    Define function: isEven(someNum)
+    Return true if even, false if odd.
+    Do not use % operator.
+*/
+
+var someNum = 4;
+
+//INCOMPLETE
+function isEven() {
+    for (i = 0; i < someNum; i++) {
+
+    var x = someNum / 2;
+    }
+        if (x == 0) {
+            return true;
+        }else{
+            return false;
+        }
+    }
 
 
