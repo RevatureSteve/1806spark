@@ -141,3 +141,35 @@ div.bot-desc {
 }
 
 /* Form Input Ends */
+
+/* Comment Box Starts */
+
+#nameBox{
+    color: white;
+    background-color: black;
+    width: 400px;
+    margin-left: 57.5px;
+}
+
+#commentBox{
+    color: white;
+    background-color: black;
+    width: 400px;
+    height: 200px;
+    margin-left: 57.5px;
+}
+
+#commentButton{
+    width: 100px;
+    margin-top: 5px;
+    margin-left:357.5px;
+}
+/* Comment Box Ends */
+
+#commentDiv{
+    float: left;
+}
+
+#fileDiv{
+    float: right;
+}
