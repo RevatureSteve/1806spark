@@ -16,17 +16,6 @@ function fib(n) {
     }
     return b;
 }
-// function fib(n) {
-//     let a = 1;
-//     let b = 0;
-
-//     for  (;n > 0; n--) {  //2
-//         let temp = a;  // temp = 1
-//         a = a + b; // a = 2
-//         b = temp; // b = 1
-//     }
-//     return b;
-// }
 
 // 2. Bubble Sort
 // Define function: bubbleSort(numArray)
@@ -53,16 +42,6 @@ function bubbleSort(numArray) {
 // 3. Reverse String
 // Define function: reverseStr(someStr)
 // Reverse and return the String.
-
-// function reverseStr(someStr) {
-
-//     var stringArr = someStr.split("");
-//     var reverseStr = stringArr.reverse();
-//     var newStr = reverseStr.join("");
-
-//     return newStr;
-
-// }
 
 function reverseStr(someStr) {
     return someStr.split("").reverse().join("");
@@ -147,6 +126,11 @@ function isPalindrome(someStr) {
 // Define function: factorial(someNum)
 // Use recursion to compute and return the factorial of someNum.
 
-// function factorial(someNum) {
-//     if 
-// }
+function factorial(someNum) {
+    if (someNum == 0) {
+        return 1
+    }
+    else {
+        return (someNum * factorial(someNum - 1));
+    }
+}

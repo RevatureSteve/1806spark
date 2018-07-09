@@ -4,7 +4,7 @@
 // Print that element's contents.
 
 function getUSA() {
-    let USA = document.getElementsByTagName("span");
+    let USA = document.getElementsByTagName("span"); // [span, span, span, span, span]
     for (i = 0; i < USA.length; i++) {
         if (USA[i].innerHTML == "USA") {
             return USA[i].innerHTML;
@@ -56,3 +56,19 @@ function alertSkill() {
     let selectSkill = document.getElementsByName("skills")[0].value;
     alert("Are you sure " + selectSkill + " is one of your skills?");
 }
+
+// 9. Show/Hide Event
+// When user hovers over an employees name:
+// 	Hide the name if shown.
+// 	Show the name if hidden.
+
+// document.getElementsByClassName("empName").addEventListener("mouseenter", hoverName);
+
+// function hoverName() {
+//     if (this.style.visibility == "hidden") {
+//         this.visibility = "visible";
+//     }
+//     else {
+//         this.visibility = "hidden";
+//     }
+// }    
