@@ -57,11 +57,12 @@ Regarding this element:
 	<p id="helloWorld">Hello, World!</p>
 Three seconds after a user clicks on this element, change the text to a random color.*/
 
+document.addEventListener("click", changing);
 var tyme = setTimeout(changing, 3000);
-var colors = document.getElementById("helloWorld").innerHTML; //obtaining Hello, World
 function changing() {
+    var colors = document.getElementById("helloWorld").innerHTML; //obtaining Hello, World
     var blue = colors.fontcolor("red");
-    document.getElementById("helloWorld").innerHTML.onclick = blue;
+    document.getElementById("helloWorld").innerHTML = blue;
 
 }
  //colors.addEventListener("click", changing);
