@@ -10,14 +10,19 @@ function getUSA() {
     // "USA" is contained in a span so find all elements by the span tag
     var originalBody = document.body.innerHTML;
     // Assign variable with the original contents inside the body tag
-    document.body.innerHTML = spanUsa[2].innerHTML; // "USA" is index 2 of span tags
-    window.print();
-    document.body.innerHTML = originalBody;
-    /*
-        The print property prints everything in the document.body.innerHTML
-        So assign document.body.innerHTML with the innerHTML you want to print
-        Then restore document.body.innerHTML to it's original contents
-    */
+    for (var i = 0; i < spanUsa.length; i++) {
+        if (spanUsa[i].outerText == "USA"){
+            // Find the span with text "USA"
+            document.body.innerHTML = spanUsa[i].innerHTML;
+            window.print();
+            document.body.innerHTML = originalBody;
+            /*
+                The print property prints everything in the document.body.innerHTML
+                So assign document.body.innerHTML with the innerHTML you want to print
+                Then restore document.body.innerHTML to it's original contents
+            */
+        }
+    }
 }
 
 /*
@@ -30,13 +35,17 @@ function getPeopleInSales() {
     var tdSales = document.getElementsByTagName("td");
     // "Sales" is contained in a td so find all elements by the td tag
     var originalBody = document.body.innerHTML;
-    document.body.innerHTML = tdSales[0].innerHTML + " " + tdSales[4].innerHTML + " " + tdSales[8].innerHTML + " " + tdSales[10].innerHTML;
+    var salesEmp = []
+    for (var i = 0; i < tdSales.length; i++) {
+        if (tdSales[i].outerText == "Sales") {
+            // Find the span with text "Sales"
+            salesEmp.push(tdSales[i - 1].innerHTML);
+            // Add tdSales[i - 1] to array because the employee name is the previous index
+        }
+    }
+    document.body.innerHTML = salesEmp;
     window.print();
     document.body.innerHTML = originalBody;
-    /*
-        There are four people in the sales department
-        So add all four of the innerHTML to document.body.innerHTML
-    */
 }
 
 /*
@@ -46,6 +55,7 @@ Find all anchor elements with a <span> child.
 Print the contents of <span>
 */
 
+/*
 function getAnchorChildren() {
     var anchor = document.getElementsByTagName("a");
     // Find all anchor elements
@@ -53,10 +63,31 @@ function getAnchorChildren() {
     document.body.innerHTML = anchor[6].innerHTML + " " + anchor[8].innerHTML + " " + anchor[9].innerHTML + " " + anchor[11].innerHTML;;
     window.print();
     document.body.innerHTML = originalBody;
-    /*
-        There are four anchor elements with a <span> child
-        So add all four of the innerHTML to document.body.innerHTML
-    */
+}
+*/
+
+function getAnchorChildren() {
+    var anchor = document.getElementsByTagName("a");
+    // Find all anchor elements
+    var originalBody = document.body.innerHTML;
+
+    var anchorSpan = []
+    for (var i = 0; i < anchor.length; i++) {
+        if (anchor[i].childNodes.length == 2) {
+            /*
+                Find all anchor elements with childNodes of 2
+                [text, span]
+            */
+            anchorSpan.push(anchor[i].children[0].outerText);
+            /*
+                Add anchor[i].children[0].outerText to array
+                span is the index 0 child of these anchors
+            */
+        }
+    }
+    document.body.innerHTML = anchorSpan;
+    window.print();
+    document.body.innerHTML = originalBody;
 }
 
 /*
