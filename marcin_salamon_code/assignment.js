@@ -81,15 +81,13 @@ Return true if even, false if odd.
 Do not use % operator.
 */
 function isEven(someNum) {
-    while (someNum / 2 > 1) {
-        someNum = someNum / 2;
+    if(someNum < 2){
+        return false;
+    } else if(someNum == 2){
+        return true;
     }
 
-    if (someNum == 2) {
-        return true;
-    } else {
-        return false;
-    }
+    return isEven(someNum - 2);
 }
 
 /*
