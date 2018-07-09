@@ -5,28 +5,10 @@ Return the nth number in the fibonacci sequence.
 
 function fib(n) { 
 
-    if (n <= 1) {
-        
-        return 1
-    }
-    else {
-
-        return fib(n - 1) + fib(n - 2); //function calls itself
-    }
+    
 }
 
-/*2. Bubble Sort
-Define function: bubbleSort(numArray)
-Use the bubble sort algorithm to sort the array.
-Return the sorted array.
-*/
-var myArray = [5, 16, 3, 2, 53, 38, 56, 4, 8]
-function bubbleSort(numArray) {
 
-a = numArray.sort(function(a, b){return a-b});
-
-console.log(a);
-}
 
 /* 3. Reverse String
 Define function: reverseStr(someSt)
@@ -83,3 +65,45 @@ function isEven(someNum) {
 Define function traverseObject(someObj)
 Print every property and it's value.
 */
+
+
+
+/* 11. Splice Element
+Define function spliceElement(someArr)
+Print length
+Splice the third element in the array.
+Print length
+The lengths should be one less than the original length.
+*/
+var myArr=[0,1,3,6,6];
+function spliceElement(someArr) {
+
+    console.log("Length of array is: " + someArr.length);
+    someArr.splice(2,1);
+    console.log("New length of array is: " + someArr.length);
+
+
+}
+
+/* Palindrome
+Define function isPalindrome(someStr)
+Return true if someStr is a palindrome, otherwise return false */
+
+
+function isPalindrome(someStr) {
+
+  var x = someStr.split(""); //splits string into an array of substrings
+
+  var y = x.reverse(); //reverses the array
+
+  var z = y.join(""); //joins the reversed array
+
+  if (z==someStr) {
+      return true
+  }
+  else {
+        return false 
+  }
+
+
+}
