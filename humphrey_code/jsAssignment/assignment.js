@@ -3,7 +3,7 @@ Define function: fib(n)
 Return the nth number in the fibonacci sequence.
 */
 
-function fib(n) {
+function fib(n) { 
 
     if (n <= 1) {
         
@@ -11,7 +11,7 @@ function fib(n) {
     }
     else {
 
-        return fib(n - 1) + fib(n - 2);
+        return fib(n - 1) + fib(n - 2); //function calls itself
     }
 }
 
@@ -27,6 +27,24 @@ a = numArray.sort(function(a, b){return a-b});
 
 console.log(a);
 }
+
+/* 3. Reverse String
+Define function: reverseStr(someSt)
+Reverse and return the String.
+*/
+
+function reverseStr(someSt) {
+
+  var x = someSt.split(""); //splits string into an array of substrings
+
+  var y = x.reverse(); //reverses the array
+
+  var z = y.join(""); //joins the reversed array
+
+  return z;
+
+}
+
 
 
 /* 5. Substring
