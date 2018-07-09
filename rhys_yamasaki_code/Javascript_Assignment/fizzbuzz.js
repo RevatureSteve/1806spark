@@ -33,13 +33,13 @@ let getValue;
 function appendItems() {
     getValue = document.getElementById("num").value;
     var length = document.getElementsByTagName("li").length;
+    var insertItem = document.getElementById("item");
     for (var i = 0; i < length; i++) {
-        insertItem.removeChild(insertItem.childNodes[i]);
+        insertItem.removeChild(insertItem.childNodes[1]);
     }
 
     for (let i = 1; i <= getValue; i++) {
         var char = "";
-        var insertItem = document.getElementById("item");
         if (i % 3 == 0) {
             char += "fizz";
         }

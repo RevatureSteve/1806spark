@@ -6,7 +6,7 @@ The function should return that array. */
 function createRandomList() {
     var arr = [];
     for (var i = 0; i < 10; i++) {
-        arr.push(Math.floor(Math.random() * 100));
+        arr.push(Math.floor(Math.random() * 101));
     }
     return arr;
 }
