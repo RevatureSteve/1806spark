@@ -62,13 +62,12 @@ function alertSkill() {
 // 	Hide the name if shown.
 // 	Show the name if hidden.
 
-// document.getElementsByClassName("empName").addEventListener("mouseenter", hoverName);
+let className = document.getElementsByClassName("empName");
 
-// function hoverName() {
-//     if (this.style.visibility == "hidden") {
-//         this.visibility = "visible";
-//     }
-//     else {
-//         this.visibility = "hidden";
-//     }
-// }    
+Array.from(className).map(function (e) {
+    e.addEventListener('mouseenter', hideShowName);
+});
+
+function hideShowName() {
+    this.style.opacity == 0 ? this.style.opacity = 1 : this.style.opacity = 0;
+}
