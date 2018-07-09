@@ -5,12 +5,15 @@
 // 2. Sales
 function getPeopleInSales() {
 
-    var salesPeople = document.getElementsByClassName("empName");
+    var salesPeople = document.getElementsByTagName("td")
     var length = salesPeople.length;
+    var newArray = [];
 
-            for (var i = 0; i <= length; i++) {
-            console.log(salesPeople[i].innerHTML);
+            for (var i = 0; i < length; i++) {
+                if (salesPeople[i].innerHTML == "Sales") {
+                newArray.push(salesPeople[i-1].innerHTML)}
         }
+        console.log(newArray.join(", "));
 }
 
 
@@ -28,6 +31,7 @@ function getAnchorChildren() {
         }
     }
 
+  
 
 
 
