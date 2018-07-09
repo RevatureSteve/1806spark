@@ -32,25 +32,18 @@ let getValue;
 
 function appendItems() {
     getValue = document.getElementById("num").value;
-    var length = document.getElementsByTagName("li").length;
-    var insertItem = document.getElementById("item");
-    for (var i = 0; i < length; i++) {
-        insertItem.removeChild(insertItem.childNodes[1]);
+    var ul = document.getElementById("item");
+    while (ul.hasChildNodes()) {
+        ul.removeChild(ul.firstChild);
     }
 
     for (let i = 1; i <= getValue; i++) {
         var char = "";
-        if (i % 3 == 0) {
-            char += "fizz";
-        }
-        if (i % 5 == 0) {
-            char += "buzz";
-        }
-        if (i % 3 !== 0 && i % 5 !== 0) {
-            char += i;
-        }
+        (i % 3 == 0) ? char += "fizz" : char;
+        (i % 5 == 0) ? char += "buzz": char;
+        (i % 3 !== 0 && i % 5 !== 0) ? char += i : char;
         var node = document.createElement("li");
         node.appendChild(document.createTextNode(char));
-        insertItem.appendChild(node);
+        ul.appendChild(node);
     }
 }
