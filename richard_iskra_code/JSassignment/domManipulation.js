@@ -29,9 +29,12 @@ function getPeopleInSales() {
     var sales = [];
     sales = (document.getElementsByClassName("empName")); //get all elements with the class empName
     for (var i = 0; i < sales.length; i++) {
-        console.log(sales[i].textContent); //convert each element to it's text
+        if (sales[i].nextElementSibling.textContent == 'Sales') {
+            console.log(sales[i].textContent);
+        } //convert each element to it's text
     }
 }
+
 
 /*
 3. Click Here
@@ -41,7 +44,7 @@ Print the contents of <span>
 */
 
 function getAnchorChildren() {
-    parents = document.getElementsByTagName("H1");
+    var parents = document.getElementsByTagName("A");
     for (var i = 0; i < parents.length; i++) {
         var possible = parents[i].childNodes;
         for (var j = 0; j < possible.length; j++) {
@@ -63,7 +66,7 @@ function getHobbies() {
     var sales = [];
     sales = document.querySelectorAll(`[${'selected'}="${'selected'}"]`);
     for (var i = 0; i < sales.length; i++) {
-        if(sales[i].parentElement.name == "skills"){
+        if (sales[i].parentElement.name == "skills") {
             console.log(sales[i]);
             console.log(sales[i].textContent);
         }
