@@ -116,3 +116,32 @@ function sum() {
     }
 }
 
+
+/*
+9. Show/Hide Event
+When user hovers over an employees name:
+	Hide the name if shown.
+    Show the name if hidden.
+*/
+
+
+var employees = document.getElementsByClassName("empName");
+
+for (var i = 0; i < employees.length; i++) {
+    employees[i].addEventListener("mouseover", show_hide);
+}
+
+function show_hide(){
+    var element = event.target;
+    // if (element.style.visibility === "hidden"){
+    //     element.style.visibility = "visible";
+    // } else {
+    //     element.style.visibility = "hidden";
+    // }
+    if (element.style.opacity == 0){
+        element.style.opacity = 1;
+    } else {
+        element.style.opacity = 0;
+    }
+}
+
