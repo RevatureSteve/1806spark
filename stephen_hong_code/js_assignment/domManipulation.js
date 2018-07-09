@@ -55,17 +55,6 @@ Find all anchor elements with a <span> child.
 Print the contents of <span>
 */
 
-/*
-function getAnchorChildren() {
-    var anchor = document.getElementsByTagName("a");
-    // Find all anchor elements
-    var originalBody = document.body.innerHTML;
-    document.body.innerHTML = anchor[6].innerHTML + " " + anchor[8].innerHTML + " " + anchor[9].innerHTML + " " + anchor[11].innerHTML;;
-    window.print();
-    document.body.innerHTML = originalBody;
-}
-*/
-
 function getAnchorChildren() {
     var anchor = document.getElementsByTagName("a");
     // Find all anchor elements
@@ -108,7 +97,7 @@ function getHobbies() {
                 console.log(skills[i].text);
             }
         }
-    }
+}
 
 /*  
 5. Custom Attribute
@@ -116,7 +105,38 @@ Define function getCustomAttribute()
 Find all elements with "data-customAttr" attribute
 Print the value of the attribute.
 Print the element that has the attribute.
+*/
 
+function getCustomAttribute() {
+    // There are 5 "data-customAttr" attribute
+    var a = document.getElementsByTagName("td");
+    var b = document.getElementsByTagName("input");
+    var c = document.getElementsByTagName("span");
+    var originalBody = document.body.innerHTML;
+
+    var attrValue = []
+    for (var i = 0; i < a.length; i++) {
+        if (a[i].hasAttribute("data-customAttr") == true) {
+            attrValue.push(a[i].getAttribute("data-customAttr"));
+        }
+    }
+    for (var j = 0; j < b.length; j++) {
+        if (b[j].hasAttribute("data-customAttr") == true) {
+            attrValue.push(b[j].getAttribute("data-customAttr"));
+        } 
+    }
+    for (var k = 0; k < c.length; k++) {
+        if (c[k].hasAttribute("data-customAttr") == true) {
+            attrValue.push(c[k].getAttribute("data-customAttr"));
+        }
+    }
+    
+    document.body.innerHTML = attrValue;
+    window.print();
+    document.body.innerHTML = originalBody;
+}
+
+/*
 6. Sum Event
 NOTE: Write unobtrusive Javascript
 Regarding these elements:
