@@ -32,9 +32,10 @@ The lengths should be one less than the original length
 
 someArr = ['mary', 'tom', 'anne', 'bobbert'];
 function spliceElement(someArr) {
-         someArr.length;
+         console.log(someArr.length);
          someArr.splice(2,1);
-         someArr.length;
+         console.log(someArr.length);
+         return someArr;
 
 }
 /*
