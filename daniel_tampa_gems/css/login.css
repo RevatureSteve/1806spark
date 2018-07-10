@@ -1,0 +1,36 @@
+/*Login.css styles for the login page/component*/
+
+/*html Elements*/
+header {
+    max-width: 100%;
+    margin: auto;
+    font-size: 35px;
+    background-color: rgb(177, 166, 166);
+    margin-top: 1px;
+    text-align: center;
+    padding: 15px;
+}
+
+/*html id*/
+#loginForm {
+    background-color: whitesmoke;
+    font-weight: bold;
+    border: 1px solid black;
+    text-align: center;
+    padding: 20px;
+
+    /*center an element*/
+    max-width: 500px;
+    margin: auto;
+
+}
+
+#loginBody {
+    background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/03/51/49/735791be81aff4a.jpg)
+}
+
+/* header { 
+    background-image:url(https://cdn2.vox-cdn.com/uploads/chorus_asset/file/8075929/DSC_7767_Ramen_Tatsu_ya_Houston_TX_Image_Credit_Ellie_Sharp_resized.jpg);
+width:inherit;
+height:500px;
+} */

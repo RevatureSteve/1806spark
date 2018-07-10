@@ -61,8 +61,8 @@ y = document.querySelectorAll('a');
 // selecting all anchor tags
 
 function getAnchorChildren() {
-//  console.log('in the func');
-    
+    //  console.log('in the func');
+
     for (i = 0; i < y.length; i++) {
         // checking all anchor tags
         //        console.log(y[i].children[0]);
@@ -121,4 +121,4 @@ function getHobbies() {
     Print the element that has the attribute.
 */
 
-var xx = document.querySelectorAll('[]');
+//var xx = document.querySelectorAll('[]');
