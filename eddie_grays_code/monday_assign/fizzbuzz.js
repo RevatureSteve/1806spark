@@ -13,7 +13,7 @@ document.getElementById("userNum").addEventListener("change", fizzbuzz);
 
 function fizzbuzz() {
     var liLength = document.getElementByTagName("li").length;
-    var list = document.getElementById("list");
+    var list = document.getElementByTagName("ul");
     for (var i = 0; i < liLength; i++) {
         list.removeChild(list.childNodes[1]);
     }
@@ -29,7 +29,7 @@ function fizzbuzz() {
         } else if (Number.isInteger(y) == true) { // checking to see if divisible by 5
             show += "buzz";
         } else {
-            value += i;
+            show += i;
         }
         var item = document.createElement("li");
         item.appendChild(document.createTextNode(value));
