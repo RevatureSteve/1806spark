@@ -1,0 +1,37 @@
+Linux Commands
+
+~ means home directory
+
+ls- lists the files in the corrent directory/folder
+
+cd - change directory
+cd (no argument) will change to ~ aka home 
+cd .. - using the argument .., cd will go up 1 folder level
+    e.g.
+        current C:\Users\Obosa Work pc
+        run: cd ..
+        new current: C:\User 
+
+Clear - resets the terminal 
+
+pwd - path to working directory 
+
+touch (name of file) - no(): will create a file
+      e.g.
+         run: touch readme.md
+
+mkdir (name of folder/directory) - create a new folder/directory 
+
+rm filename - deletes a file
+rm -r foldername - deletes a folder and its contents recursively
+
+cat (path to file name) - prints the contents of a file 
+cat > filename 
+      this will overite/replace what was in the file 
+ctrl + c = stop processs 
+
+
+terminal Editors
+    nano or vim - Obosa likes nano no vim
+nano filname - opens the Nano Editors
+    ctrl + x to exit then y to save or n to not save

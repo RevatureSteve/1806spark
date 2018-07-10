@@ -1,0 +1,33 @@
+body {
+background-color: white;
+}
+.calculator{
+    box-shadow: 3px 3px 5px rgb(160, 160, 160);
+    margin: auto;
+    max-width:430px;
+    border-width: .5px;
+    border-style: solid;
+    border-radius: 10px 10px 0px 0px;
+}
+.display{
+    margin: 3px 4px 0px 5px;
+    width: 425px;
+    height: 35px;
+    border-radius: 25px;
+    background-color: rgb(83, 81, 81);
+    
+} 
+input{
+    width: 100px;
+    height: 55px;
+    font-size: 20px;
+}
+p{
+    color: orangered;
+    text-align: center;
+}
+marquee{
+    font-size: 50px;
+    margin-top: 80px;
+    color: rgb(119, 168, 21);
+}
