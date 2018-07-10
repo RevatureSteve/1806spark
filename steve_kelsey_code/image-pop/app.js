@@ -16,16 +16,12 @@ var mouseY = 0;
 var imageArray = [
     "https://worldwideinterweb.com/wp-content/uploads/2015/09/epic-gaming-pics.jpg",
     "https://worldwideinterweb.com/wp-content/uploads/2016/12/epic-awesome-pictures.png",
-    "https://worldwideinterweb.com/wp-content/uploads/2016/12/epic-cat-pictures.png"
-
-];
-/*
-    More images
+    "https://worldwideinterweb.com/wp-content/uploads/2016/12/epic-cat-pictures.png",
     "https://worldwideinterweb.com/wp-content/uploads/2016/12/epic-image.png",
     "https://worldwideinterweb.com/wp-content/uploads/2016/12/epic-pics.png",
     "https://worldwideinterweb.com/wp-content/uploads/2016/12/epic-pictures-of-all-time.png",
-    "https://worldwideinterweb.com/wp-content/uploads/2016/12/most-epic-movies.png"
-    */
+    "https://worldwideinterweb.com/wp-content/uploads/2016/12/most-epic-movies.png"];
+    
 
 function updateMouseCoors(e){
     mouseX = e.pageX;
