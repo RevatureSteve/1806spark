@@ -9,45 +9,30 @@ Print For each multiple of 5, display "Buzz" instead of the number inside the un
 Print For numbers which are multiples of both 3 and 5, display "FizzBuzz" instead of the number inside the unordered list of the html page.
 */
 
-// document.getElementById("userNum").addEventListener("change", fizzbuzz);
-var para = document.createElement("li");
-var node;
-var ele = document.getElementById("demo");
+document.getElementById("userNum").addEventListener("change", fizzbuzz);
 
-function fizzbuzz(N) {
-    // var N = this.value;
-    var arr = [];
+function fizzbuzz() {
+    var liLength = document.getElementByTagName("li").length;
+    var list = document.getElementById("list");
+    for (var i = 0; i < liLength; i++) {
+        list.removeChild(list.childNodes[1]);
+    }
+    var N = parseInt(event.target.value);
     for (var i = 1; i <= N; i++) {
         var x = i / 3;
         var y = i / 5;
+        var show = "";
         if (Number.isInteger(x) == true && Number.isInteger(y) == true) { // checking to see if divisible by 3 AND 5
-
-            node = document.createTextNode("FizzBuzz");
-            para.appendChild(node);
-            // element.appendChild(para);
-            // arr.push("FizzBuzz");
-
+            show += "fizzbuzz";
         } else if (Number.isInteger(x) == true) { // checking to see if divisible by 3
-
-            node = document.createTextNode("Fizz");
-            para.appendChild(node);
-            // element.appendChild(para);
-            // arr.push("Fizz");
-
+            show += "fizz";
         } else if (Number.isInteger(y) == true) { // checking to see if divisible by 5
-
-            node = document.createTextNode("Buzz");
-            para.appendChild(node);
-            // element.appendChild(para);
-            // arr.push("Buzz");
-
+            show += "buzz";
         } else {
-
-            node = document.createTextNode(" " + i);
-            para.appendChild(node);
-            // element.appendChild(para);
-            // arr.push(i);
+            value += i;
         }
+        var item = document.createElement("li");
+        item.appendChild(document.createTextNode(value));
+        list.appendChild(item);
     }
-    console.log(arr);
 }
