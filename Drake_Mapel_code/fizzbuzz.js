@@ -1,7 +1,6 @@
 // make a version where one condition trips into the next?  3 then 5 gives combined case
-var nput = document.getElementById("inpt").value;
 
-// document.getElementById("sbt").addEventListener("click", fb);
+document.getElementById("sbt").addEventListener("click", fb);
 
 function lnk(text) {
     var li = document.createElement("LI");
@@ -11,6 +10,7 @@ function lnk(text) {
 }
 
 function fb() {
+    var nput = document.getElementById("inpt").value;
     for ( var i = 1; i <= nput; i++ ) {
         if ( i % 15 == 0 ) { lnk("FizzBuzz"); }
         else if ( i % 3 == 0 ) { lnk("Fizz"); }
