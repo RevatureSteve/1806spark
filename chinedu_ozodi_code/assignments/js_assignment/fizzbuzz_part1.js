@@ -25,6 +25,6 @@ When you're done you should have output 10 lines to the console -- one for each 
 */
 
 for( let i = 0; i < myRandomList.length; i++){
-    console.log("Item ${i} in the array is ${myRandomList[i]}");
+    console.log(`Item ${i} in the array is ${myRandomList[i]}`);
 }
 
