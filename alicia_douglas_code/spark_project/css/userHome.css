@@ -1,0 +1,154 @@
+/* HTML Elements */
+
+body {
+    /* background-image: url("pics/048.JPG");
+    background-size: 1540px;
+    background-attachment: fixed; */
+    background-color: rgb(70, 70, 70);
+}
+
+h2 {
+    margin: 0%;
+    padding: 5px 5% 15px 5%;
+    text-align: center;
+}
+
+h3 {
+    margin: 0%;
+    padding: 5px 5% 15px 5%;
+}
+
+/* HTML Classes */
+
+
+.sideli {
+    display: block;
+    color: #000;
+    padding: 8px 16px;
+    text-decoration: none;
+    width: 70px;
+}
+
+.sideli:hover {
+    background-color: #555;
+    color: white;
+}
+
+
+.sideNavBar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 102px;
+    background-color: lightgrey;
+    position: fixed;
+    height: auto;
+    overflow: auto;
+    margin-top: 25px;
+}
+
+.pics {
+    width: 90%;
+    height: auto;
+    padding: 0% 5% 0% 5%;
+}
+
+.location {
+    background-color: lightgray;
+    border: none;
+    padding: 10px;
+}
+
+.description {
+    background-color: lightgray;
+    border: none;
+    width: 100%;
+}
+
+.info {
+    padding-left: 5%;
+    margin-top: 5px;
+    width: 90%;
+}
+
+.userHomeView{
+    max-width: 70%;
+    margin: auto;
+    background-color: lightgray;
+    padding: 15px;
+    margin-top: 25px;
+}
+
+.uploadInfo {
+    width: 100%;
+    padding: 2px;
+    padding-left: 5px;
+    margin-bottom: 8px;
+}
+
+/* HTML IDs */
+
+#picView {
+    display: block;
+}
+
+#uploadView{
+    display: none;
+}
+
+#favView {
+    display: none;
+}
+
+#home{
+    color: white;
+    background-color: green;
+}
+
+#home:hover {
+    background-color: #555;
+    color: white;
+}
+
+#upload{
+    color: black;
+    background-color: lightgray;
+}
+
+#upload:hover {
+    background-color: #555;
+    color: white;
+}
+
+#favs{
+    color: black;
+    background-color: lightgray;
+}
+
+#favs:hover {
+    background-color: #555;
+    color: white;
+}
+
+#src{
+
+}
+
+#newPicLocation {
+
+}
+
+#uploadBtn {
+    width: 200px;
+    height: 35px;
+    background-color: green;
+    color: white;
+    border-color: black;
+    border-width: .5px;
+    border-radius: 17px;
+    font-weight: bold;
+    font-size: 15px;
+    display: block;
+    margin: auto;
+    margin-top: 10px;
+}

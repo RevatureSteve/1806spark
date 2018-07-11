@@ -1,0 +1,73 @@
+/* HTML Elements */
+img {
+    width: 80px;
+    height: auto;
+    border-radius: 15px;
+    margin-left: 10px;
+}
+
+body {
+    background-image: url("pics/WP_20130324_001.jpg");
+    background-size: 1550px;
+    background-attachment: fixed;
+}
+
+/* HTML IDs */
+
+#profile {
+    max-width: 500px;
+    margin: auto;
+    background-color: rgba(211, 211, 211, 0.8);
+    border: solid;
+    border-width: .5px;
+    font-weight: bold;
+    padding: 15px;
+    height: 115px;
+    margin-top: 25px;
+}
+
+#profilePic {
+    text-align: left;
+    float: left;
+    width: 25%;
+}
+
+#profileInfo {
+    text-align: right;
+    float: left;
+    width: 70%;
+}
+
+#edit{
+    visibility: visible;
+}
+
+#save{
+    visibility: hidden;
+}
+
+/* HTML Classes */
+
+.profileBtn {
+    padding: 3px;
+    width: 100px;
+    margin-top: 10px;
+    border-radius: 15px;
+    border: solid;
+    border-width: .5px;
+    border-color: black;
+    background-color: green;
+    color: lightgray;
+    font-weight: bold;
+}
+
+.profile_input {
+    width: 160.8px;
+    height: 24px;
+    margin-left: 15px;
+    margin-right: 70px;
+    border: solid;
+    border-width: .5px;
+    padding: 5px;
+    background-color: rgb(228, 228, 228);
+}

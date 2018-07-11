@@ -1,0 +1,52 @@
+<html>
+
+<head>
+    <title>Travel Guide</title>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/register.css">
+</head>
+
+<body>
+    <h1 id="title">Travel Guide</h1>
+    <ul class="topNavBar">
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+        <li class="float-right">
+            <a href="login.html">Login</a>
+        </li>
+        <li class="float-right">
+            <a href="register.html">Register</a>
+        </li>
+
+    </ul>
+
+    <form class="login_register_form">
+        Name: 
+        <input class="register_login_inputField" type="text" required><br><br>
+        Date of Birth: 
+        <input class="register_login_inputField" type="date" required><br><br>
+        Username: 
+        <input class="register_login_inputField" type="text" required><br><br>
+        Password:
+        <input name="password" class="register_login_inputField" type="password" required><br><br>
+        Confirm Password:
+        <input name="confirmPassword" class="register_login_inputField" type="password" required><br><br>
+        <div class="submitButtonDiv">
+            <input id="register_button" class="register_login_button" type="submit" required value="Register">
+        </div>
+        
+    </form>
+
+    <footer>
+        <p>
+            "A good traveler has no fixed plans, and is not intent on arriving"
+            <br> -Lao Tzu
+        </p>
+    </footer>
+
+    <script src="register.js"></script>
+
+</body>
+
+</html>
