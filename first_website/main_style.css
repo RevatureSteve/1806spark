@@ -1,39 +1,47 @@
-/*The nav bar*/ 
+/*Navbar*/
 ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    background-color: gray;
     overflow: hidden;
-    background-color: #333;
-    position: -webkit-sticky; /* Safari */
+    /*Allows the navbar to stay fixed at top*/
     position: sticky;
     top: 0;
+    width: 100%;
+    border: 1px solid darkgray;
+    box-shadow: 0px 20px 50px 0px rgba(161, 158, 158, 0.377);
 }
 
 li {
-    float: left;
-}
-/*Font and box editing*/
-li a {
-    display: block;
-    color: white;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    width: 60px;
+    float: left; /*Allows url's to be horizontal*/
 }
 
-/* Change the link color to #111 (black) on hover */
+/*Navbar color text and position within Navbar*/
+li a {
+    display: inline-block;
+    color:lightgray;
+    text-align: center;
+    padding: 10px 16px;
+    text-decoration: none;
+    border-right: 1px solid darkgray;
+}
+
+li:last-child {
+    border-right: none;
+}
+
+/* Change the link color black on hover
+    and box white */
 li a:hover {
-    background-color: rgb(116, 15, 15);
+    background-color: white;
+    color:black;
 }
 body {
        background-image: url("https://wallpapercave.com/wp/LRxGqsU.jpg")
-
-
-           }
+}
 /*Login Button*/
-#login ul {
+#log {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -47,6 +55,13 @@ body {
     text-align: center;
     padding: 40px;
     margin: 130px 30px 50px 50px;
+}
+/*Front page dumbbell picture*/
+#front_page_image {
+    width: 100%;
+    height: 200px;
+    background-size: 100%, 50%;
+    border: 1px;
 }
 /*Shredding picture*/
 #shred {
@@ -64,34 +79,8 @@ body {
     max-width: 400px;
     margin: -578px 0px 0px 700px;
 }
+/*Workout Fillout Form*/
+#Fillout_Form {
 
-.images {
-    background-color: rgba(151, 104, 155, 0.897);
-    border: 1px solid black;
-    font-weight: bold;
-    text-align: center; /* text inside the element */
-    padding: 20px;
-    /* center loginForm element */
-    max-width: 400px;
-    margin: 130px 30px 50px 50px;
-}
-.text {
-    background-color: rgb(175, 120, 168);
-    border: 1px solid black;
-    font-size: 8px;
-    text-align: center; /* text inside the element */
-    padding: 20px;
-    /* center loginForm element */
-    max-width: 400px;
-    margin: -300px 0px 0px 600px;
-}
-.link {
-    font-size: 15px;
-}
-#fashion-font {
-    font-size: 50px;
-    text-align: center;
-    bottom: -190px;
-    position: relative;
-    vertical-align: bottom;
+
 }
