@@ -17,6 +17,30 @@ footer {
     text-align: center;
 }
 
+/* Classes */
+
+.popupText {
+    background-color: rgba(39, 36, 36);
+    color: white;
+    text-align: center;
+    position: absolute;
+    padding: 10px;
+    border-radius: 15px;
+    width: 150px;
+    margin-left: 148;
+    margin-top: -180;
+}
+
+.check {
+    width: 18px;
+    height: auto;
+}
+
+/* HTML IDs */
+
+#passwordPopup{
+    display: none;
+}
 
 
 

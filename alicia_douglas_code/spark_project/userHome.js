@@ -62,10 +62,14 @@ function insertPic(){
 
 // posts picture to the user home page
 function postPic(){
+    let div = document.getElementById("picView");
     let pic = {
        src : document.getElementById('src').value,
        location : document.getElementById('newPicLocation').value,
        description : document.getElementById("newPicDesc").value
     };
+    let h3 = document.createElement("h3");
+    h3 = h3.appendChild(document.createTextNode("User Name"));
+    div.appendChild(h3);
 }
 

@@ -21,17 +21,26 @@
 
     </ul>
 
-    <form class="login_register_form">
+    <form id="registerForm" class="login_register_form">
         Name: 
-        <input class="register_login_inputField" type="text" required><br><br>
+        <input class="register_login_inputField" type="text" required maxlength="30"><br><br>
+        Email Address:
+        <input class="register_login_inputField" type="email" required maxlength="30"><br><br>
         Date of Birth: 
         <input class="register_login_inputField" type="date" required><br><br>
         Username: 
-        <input class="register_login_inputField" type="text" required><br><br>
+        <input class="register_login_inputField" type="text" required minlength="5" maxlength="15"><br><br>
         Password:
-        <input name="password" class="register_login_inputField" type="password" required><br><br>
+        <input id="password" class="register_login_inputField" type="password" required><br><br>
+            <span class="popupText" id="passwordPopup">
+                Min length 8 <img class="check" src="https://cdn.pixabay.com/photo/2014/04/02/11/01/tick-305245_960_720.png"> <br>
+                Capital Letter <img class="check" src="https://cdn.pixabay.com/photo/2014/04/02/11/01/tick-305245_960_720.png"><br>
+                Lowercase Letter<img  class="check" src="https://cdn.pixabay.com/photo/2014/04/02/11/01/tick-305245_960_720.png"> <br>
+                Number <img class="check" src="https://cdn.pixabay.com/photo/2014/04/02/11/01/tick-305245_960_720.png"><br>
+                Special Character <img class="check" src="https://cdn.pixabay.com/photo/2014/04/02/11/01/tick-305245_960_720.png"><br>
+            </span>
         Confirm Password:
-        <input name="confirmPassword" class="register_login_inputField" type="password" required><br><br>
+        <input id="confirmPassword" class="register_login_inputField" type="password" required><br><br>
         <div class="submitButtonDiv">
             <input id="register_button" class="register_login_button" type="submit" required value="Register">
         </div>
