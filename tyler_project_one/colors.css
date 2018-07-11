@@ -14,6 +14,7 @@
     position: absolute;
     top: 50%;
     left: 50%;
+    min-height: 100%;
     width: auto;
     transform: translate(-50%, -50%);
       
@@ -24,7 +25,7 @@
     
 }
 #logo{
-    background-image: url("https://media.giphy.com/media/wIPZAIRaznSYE/giphy.gif");
+    background-image: url("http://jonvilma.com/images/colors-6.jpg");
     background-size: 100%;
     height: 200px;
     opacity: 0.7;
@@ -40,26 +41,25 @@
     width: 33.33%;
     padding:5px;
   }
-
-#column1{
-    background-image: url("https://thumbs.dreamstime.com/b/seamless-pattern-geometry-shape-colorful-abstract-background-geometric-shapes-designs-vibrant-pop-style-eps-vector-64678884.jpg");
-    background-repeat: no-repeat;
-    object-fit: fill;
-    height: 600px;
+#shapesColumn{
+    background-color:  rgba(90, 129, 40, 0.432);
+    text-align: center;
 }
 
-#column2 {
-    background-image: url("https://d2gg9evh47fn9z.cloudfront.net/800px_COLOURBOX3440909.jpg");
-    background-repeat: no-repeat;
-    object-fit: fill;
-    height: 600px;
-}
+#soundBtnImg {
+    height: 100px;
+    width: 100px;
 
-#column3 {
-    background-image: url("http://jonvilma.com/images/colors-6.jpg");
-    background-repeat: no-repeat;
-    object-fit: fill;
-    height: 600px;
+}
+#audioBtn{
+    height: 20px;
+    width: 20px;
+}
+.quizDivClass{
+    font-family:fantasy;
+    font-weight: bolder;
+    font-size: 35px;
+    text-align: center;
 }
   .row {
     display: flex;
@@ -67,37 +67,22 @@
     width: 100%;
 
 }
-.indexLetters{
+.shapesLetters{
     font-family:fantasy;
     font-weight: bolder;
-    font-size: 50px;
+    font-size: 35px;
+
 }
 footer {
-    background-color: #777;
     padding: 10px;
     text-align: center;
-    background-color: rgba(90, 129, 40, 0.685);
+    background-color: black;
     height: 50px;
 }
 
-@keyframes myawesomemarquee {
-    from {
-        color:rgb(54, 221, 243);
-    }
-    to {color:rgb(231, 96, 231);
-
-    }
-}
-
-#footerMarq{
-    color:rgb(54, 221, 243);
-    animation-name: myawesomemarquee;
-    animation-duration: 2s;
-    animation-iteration-count: infinite;
-    font-size: 40px;
-    font-weight: bold;
-    font-family: fantasy;
-
+.testImage {
+    height: 150px;
+    width: 150px;
 }
 
 body{
@@ -165,7 +150,7 @@ li.dropdown {
 
 .success-btn {
     font-size: 20px;
-    color: rgb(153, 9, 153); /* text color */
+    color: white; /* text color */
     background-color: rgb(136, 255, 0);
     min-width:  300px;
     height: 35px;
@@ -176,7 +161,7 @@ li.dropdown {
         swap the color and background-color on mouse hover
     */
     color: rgb(136, 255, 0);
-    background-color: rgb(153, 9, 153);
+    background-color: white;
 }
 
 .right-text {
@@ -211,22 +196,3 @@ li.dropdown {
     height: 400px;
     width: 50%;
 }
-
-#loginForm {
-    background-color:  rgb(153, 9, 153);
-    border: 1px solid black;
-    font-weight: bolder;
-    text-align: center; /* text inside the element */
-    font-size: 25px; 
-    padding: 20px;
-    /* center loginForm element */
-    max-width: 500px;
-    margin: auto;
-
-}
-
-#loginBody {
-    background-image:url("http://jonvilma.com/images/colors-6.jpg");
-}
-
-
