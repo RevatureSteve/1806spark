@@ -5,9 +5,15 @@ window.onload = function() {
     document.getElementById("cancel").addEventListener("click", function() {  // Function to hide the form.
         document.getElementById("shop-form").style.visibility = "hidden";
     });
-    document.getElementById("submit").addEventListener("click", submitItem);  // Function to allow the user to submit the item on the form. 
+    document.getElementById("submit").addEventListener("click", submitItem);
 }
 
+submitItem = () => {
+    let item = document.getElementById("name").value;
+    let source = document.getElementById("source").value;
+    let image = document.getElementById("image").value;
+    window.alert("Your suggestion was sent! \n Item Name: " + item + " \n Source: " + source + "\n Image: " + image);
+}
 
 
 

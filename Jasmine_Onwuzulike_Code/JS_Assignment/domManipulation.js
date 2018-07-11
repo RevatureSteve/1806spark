@@ -14,6 +14,11 @@ function getUSA(x) {
 function getPeopleInSales() {
     var names = document.getElementsByTagName("td");
     var first = document.getElementsByTagName("td");
+    for (let i = 0; i < names.length; i++){
+        if(names[i].classList.contains('empName') ){
+            console.log(names[i]);
+        }
+    }
     var john = names[0].innerHTML;
     var austin = names[4].innerHTML;
     var courtney = names[8].innerHTML;
