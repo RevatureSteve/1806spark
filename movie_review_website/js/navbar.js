@@ -13,6 +13,8 @@ window.onload = function() {
     account = document.getElementById("account").onclick = changeIFrame;
     if (loggedIn) {
         document.getElementById("login").innerHTML = accountLogged.name;
+    } else{
+        document.getElementById("login").innerHTML = 'Login';
     }
 }
 

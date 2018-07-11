@@ -4,10 +4,10 @@ body{
 
 h1 { color: #ffffff; font-family: 'Lato', sans-serif; 
     font-size: 54px; font-weight: 300; line-height: 58px; 
-    margin: 0 0 58px; }
+    margin: auto; }
 
 
-p { color: #adb7bd; font-family: 'Lucida Sans', Arial, sans-serif; 
+p { color: black; font-family: 'Lucida Sans', Arial, sans-serif; 
     font-size: 16px; line-height: 26px; text-indent: 30px; margin: 0; }
 
 
@@ -31,4 +31,25 @@ a:hover { color: #ffffff }
 iframe{
     height: 100%;
     width: 100%;
+}
+
+/* scrollbar style */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888; 
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555; 
 }

@@ -1,28 +1,54 @@
 .review {
     background-color: rgb(233, 161, 27);
-    color: grey;
+    color: red; 
+    margin: auto;
 }
 
 div{
     margin-bottom: 20px;
 }
 
-h1{
-    color: rgb(26, 23, 23); 
+.reviewTitle{
+    color:black;
+    margin:auto;
+    font-family: Helvetica;
     margin: auto;
+}
+
+img{
+    float:right; 
+    margin-right:10px; 
+    margin-top: 8px;
+    width: 80px;
+    border:none;
+
+
+}
+
+.author{
+    color:black;
+    font-style: italic;
+    margin: auto;
+}
+
+.comments{
+    border-top-style: solid;
+    border-color: black;
 }
 
 h2{
-    color: rgb(26, 23, 23); 
+    color: black;
     margin: auto;
 }
 
-p{
-    color: rgb(26, 23, 23); 
+.title{
+    color: black;
+    margin: auto;
 }
 
 .comment{
-    text-indent: 40px;
+    color: black;
+    margin: auto;
 }
 
 textarea{
@@ -32,6 +58,8 @@ textarea{
 
 input{
     background-color: limegreen;
-    
-    margin-top: 0px;
+}
+
+.commentAuthor{
+    font-style: italic;
 }
