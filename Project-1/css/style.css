@@ -67,7 +67,7 @@ li a.active {
 }
 
 li a:hover:not(.active) {
-    background-color: #555;
+    background-color: rgb(206, 138, 12);
     color: white;
 }
 .login{
@@ -88,10 +88,10 @@ li a:hover:not(.active) {
 }
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-    background-color: rgb(95, 196, 28);
-    color: white;
+    background-color:rgb(33, 33, 33);
+    color:white;
     cursor: pointer;
-    padding: 10px;
+    padding: 7px;
     width: 100%;
     border: none;
     text-align: center;
@@ -99,9 +99,11 @@ li a:hover:not(.active) {
     font-size: 15px;
   }
   
+  
   /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
   .active, .collapsible:hover {
-    background-color: #ccc;
+    background-color:rgb(206, 138, 12);
+    color:white;
   }
   
   /* Style the collapsible content. Note: hidden by default */
@@ -109,9 +111,34 @@ li a:hover:not(.active) {
     padding: 0 18px;
     display: none;
     overflow: hidden;
-    background-color: #f1f1f1;
+    background-color: #ffffff;
   }
 input{
     margin-top: 5%;
 }
+.btn{
+    margin-bottom: 5%;
+    background-color: rgb(206, 138, 12);
+}
+
+#browse-bar{
+    margin-bottom: 5%;
+    margin-top:5%;
+}
+textarea{
+    width: 100%;
+    margin-bottom: 5%;
+}
+#searchBtn{
+ margin-bottom: 10%;
+ background-color: rgb(206, 138, 12);
+ color: white;
+}
+#number{
+    margin-left: 5%;
+   color: white;
+   background-color: rgb(33, 33, 33);
+   width: 15%;
+}
+
 
