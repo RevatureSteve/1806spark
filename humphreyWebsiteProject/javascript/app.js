@@ -22,8 +22,7 @@ function changeSearch() {
     inputBoxGet.setAttribute("type", "search");
     inputBoxGet.setAttribute("placeholder", "Search...");
     inputBoxGet.setAttribute("id", "inputBoxid");
-    inputBoxGet.addEventListener("keyup", (e) => {
-        if (e.keyCode === 13 && inputBoxGet.value !== "") {
+    inputBoxGet.addEventListener("change", () => {
             getInputValue = inputBoxGet.value;
             alert(getInputValue);
             fetch("https://api.themoviedb.org/3/search/movie?api_key=de645bfacfad1d8fc5c6b13e4d3780ee&query=" + getInputValue).then(function (data) {
@@ -39,19 +38,18 @@ function changeSearch() {
                createPosters.setAttribute("id","posterImages"+i);
                selectPoster=document.getElementById("posterImages"+i);
             //    var selectPosters = document.getElementsByClassName("posterImages")[i];
+            if(jsonMovieResults.results[i].poster_path !== null) {
                selectPoster.src= "http://image.tmdb.org/t/p/w185//" + jsonMovieResults.results[i].poster_path;
 
-
+            }
 
                 }
-
                 
                 
             });
-        }
+        })
     
-    });
+    };
 
 
 
-}
