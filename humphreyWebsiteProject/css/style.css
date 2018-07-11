@@ -1,0 +1,76 @@
+
+body {
+    background-color: rgba(230, 190, 138, 0.233);
+}
+
+
+input {
+    margin-top: -11px;
+    margin-right: 100px;
+    /* margin-bottom: 3000px; */
+    width: 200px;
+    height: 40px;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 25px;
+    font-size: 16px;
+    background-color: white;
+    background-image: url('../images/search2.png');
+    background-position: 10px 10px; 
+    background-repeat: no-repeat;
+    padding: 12px 20px 12px 40px;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: rgba(51, 51, 51, 0);
+    /* display: */
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 50px;
+    text-decoration: none;
+    font-size: 30px;
+    font-family: "Impact";
+}
+
+li a:hover:not(.active) {
+    font-size: 50px;
+    color: rgba(0, 0, 0, 0.5)
+}
+
+li a:hover, li a:active {
+    
+}
+
+.active {
+    text-decoration: underline;
+    text-decoration-color: rgba(243, 204, 30, 0.486);
+    color: rgba(0, 0, 0, 0.514)
+}
+
+#navlogo {
+    margin-top: 5px;
+}
+
+#searchIcon {
+        float: right;
+        width: 5%;
+        height: 5%;
+        margin-top: -58px;
+}
+
+#searchIcon a:hover {
+   
+}
+
