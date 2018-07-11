@@ -1,5 +1,6 @@
 .container {
     background-image: url("https://i.ebayimg.com/images/i/182716299497-0-1/s-l1000.jpg");
+    height: 100%;
 }
 h1 {
     text-align: center;
@@ -49,6 +50,11 @@ li a {
  border: 2px solid rgb(146, 70, 68);
     
 }
+#home-info {
+    background-color: rgb(146, 70, 68);
+    margin-left: 80px;
+    margin-right: 80px;
+}
 #login {
     float: right;
 }
@@ -93,11 +99,7 @@ h5 {
     font-size: 30px;
     margin: 20px;
 }
-#home-info {
-    background-color: rgb(146, 70, 68);
-    margin-left: 80px;
-    margin-right: 80px;
-}
+
 #sub-frm {
     margin-left: 80px;
     margin-right: 80px;
@@ -170,10 +172,41 @@ img:hover {
 .shop-img {
     width: 15em;
     height: 10em;
+    margin-right: 50px;
+    margin-left: 50px;
     border: 4px solid rgb(99, 67, 67);
-    margin: 0%;
-    padding: 0%;
 }
 .shop {
     display: inline;
 }
+.shop-text {
+    display: inline;
+}
+.items {
+    max-width: 150px;
+    display: inline;
+}
+#film {
+    margin-left: 120px;
+}
+#bag {
+    margin-left: 160px;
+}
+#cam {
+    margin-left: 190px;
+}
+#shop-form {
+    background-color: rgb(146, 70, 68);
+    margin-left: 200px;
+    margin-right: 200px;
+}
+#shop-form {
+    margin-left: 300px;
+    margin-right: 300px;
+    visibility: hidden;
+}
+#shp-frm {
+    text-align: center;
+    border: 2px solid black;
+}
+
