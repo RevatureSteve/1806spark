@@ -33,6 +33,11 @@ body {
     margin-right: 10px;
 }
 
+.headerIcon{
+    width: 30px;
+    height: auto;
+}
+
 /* ID Elements */
 
 #movieRow {
@@ -63,6 +68,10 @@ body {
     display: inline-block;
     width: 19.5%;
     text-align: center;
-    margin: 20px 0; 
+    margin: 40px 0; 
+}
+
+.movieColumn:hover {
+    transform: scale(1.1);
 }
 

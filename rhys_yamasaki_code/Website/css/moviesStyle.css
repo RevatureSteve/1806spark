@@ -1,6 +1,6 @@
 
 /* HTML Elements */
-img{
+.genreCol > img{
     border: 1px solid white;
     border-radius: 5%;
     background-color: white;
@@ -48,4 +48,8 @@ img{
     width: 16.3%;
     text-align: center;
     margin: 80px 0; 
+}
+
+.genreCol:hover {
+    transform: scale(1.1);
 }
