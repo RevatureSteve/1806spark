@@ -3,24 +3,73 @@
 body{
     min-width: 100%;
     padding-bottom: 40px;
-    background-color: #1976d2;
+    
 }
 
 nav{
     max-width: 100%;
     display: flex ;
     width: 100%;
-    background-color: #004ba0;
+    
 }
 
 /* CLASSES */
 
-.btn{
-    background-color: #64ba69;
+.color-main{
+    background-color: #1976d2;
+}
+
+.color-main-dark{
+    background-color: #004ba0;
+}
+
+.color-main-light{
+    background-color: #63a4ff;
+}
+
+.color-green{
+    background-color: #4caf50;
+}
+
+.color-green-dark{
+    background-color: #087f23;
+}
+
+.color-green-light{
+    background-color: #80e27e;
+}
+
+.color-red{
+    background-color: #ef5350;
+}
+
+.color-red-dark{
+    background-color: #b61827;
+}
+
+.color-red-light{
+    background-color: #ff867c;
+}
+
+.container-fluid{
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.row{
+    padding: 15px;
+    padding-left: 0px;
+    margin: 15px 0px 15px 0px;
+    background-color: whitesmoke;
+    border-radius: 1mm;
 }
 
 .float-right{
     float: right;
+}
+
+.form-inline{
+    margin-bottom: 0px;
 }
 
 /* Custom default button */
@@ -31,4 +80,25 @@ nav{
   text-shadow: none; /* Prevent inheritance from `body` */
   background-color: #64ba69;
   border: .05rem solid #64ba69;
+}
+
+/* ID's */
+
+#mainProfile {
+    padding: 15px;
+}
+
+#mainProfile .profileImg{
+    margin-bottom: 15px;
+}
+#mainProfile img{
+    width: 100%;
+}
+
+#logoutBtn{
+    margin: auto;
+}
+
+#graphContainer img{
+    width: 100%;
 }

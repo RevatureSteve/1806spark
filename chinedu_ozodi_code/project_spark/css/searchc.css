@@ -1,0 +1,21 @@
+/* IDs */
+
+#stockBuySell{
+    padding: 15px;
+}
+#stockBuySell input{
+    width: 100%;
+    margin-bottom: 15px;
+}
+#stockBuySell button{
+    width: 100%;
+}
+
+#buyStock{
+    border-radius: 1mm 1mm 0mm 0mm;
+    margin-bottom: -2px;
+}
+
+#sellStock{
+    border-radius: 0mm 0mm 1mm 1mm;
+}

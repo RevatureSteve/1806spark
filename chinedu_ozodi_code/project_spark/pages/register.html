@@ -11,8 +11,8 @@
     <link rel="stylesheet" type="text/css" media="screen" href="../css/register.css" />
 </head>
 
-<body class="text-center">
-        <nav class="navbar navbar-expand-md navbar-dark mb-4">
+<body class="text-center color-main">
+        <nav class="navbar navbar-expand-md navbar-dark mb-4 color-main-dark">
                 <a class="navbar-brand" href="#">SoSo</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
                     aria-expanded="false" aria-label="Toggle navigation">
@@ -36,13 +36,13 @@
     <form class="form-center" method="POST">
         <div class=" mb-3 mt-2 company-name">SoSo</div>
         <h1 class="h3 mb-3 font-weight-normal">Please Register</h1>
-        <label for="inputUsername" class="sr-only">Username</label>
-        <input name="" id="registerUsername" placeholder="Username" class="form-control" type="text" minlength="3" maxlength="20" required>
-        <label for="inputUsername" class="sr-only">Email</label>
-        <input name="" id="registerEmail" placeholder="Email" class="form-control" type="email" minlength="3" maxlength="20" required>
-        <label for="registerPassword" class="sr-only">Password</label>
-        <input id="registerPassword" placeholder="Password" class="form-control" type="password" minlength="5" maxlength="15" required>
-        <input id="registerSignIn" class="btn-secondary" type="submit" value="Register">
+        <input class="custom-btn-top" id="registerUsername" placeholder="Username" class="form-control" type="text" minlength="3" maxlength="20" required>
+        <input class="custom-btn-bottom" id="registerEmail" placeholder="Email" class="form-control" type="email" minlength="3" maxlength="20" required>
+        <h1 class="h5 mb-3 font-weight-normal">Set Password</h2>
+        <p>5 character min. with at least one number and one character(!,@,#,$,%,^,&,*)</p>
+        <input class="custom-btn-top" id="registerPassword" placeholder="Password" class="form-control" type="password" minlength="5" maxlength="15" required>
+        <input class="custom-btn-bottom" id="confirmPassword" placeholder="Confirm Password" class="form-control" type="password" minlength="5" maxlength="15" required>
+        <input id="registerSubmit" class="btn-secondary" type="submit" value="Register">
     </form>
 
     <!-- Javascript files -->

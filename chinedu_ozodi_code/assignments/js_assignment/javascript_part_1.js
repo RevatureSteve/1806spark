@@ -72,7 +72,7 @@ function factorial(someNum){
     if (someNum < 1){
         return 0;
     }
-    if (someNum = 1){
+    if (someNum == 1){
         return 1;
     }
     return someNum * factorial(someNum - 1);

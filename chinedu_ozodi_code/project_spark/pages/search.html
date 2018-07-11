@@ -2,15 +2,16 @@
 
 <head>
     <title>
-        "SoSo"
+        SoSo Search
     </title>
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/cover.css">
+    <link rel="stylesheet" href="../css/searchc.css">
 </head>
 
 <body class="text-center color-green">
-    <nav class="navbar navbar-expand-md navbar-dark mb-4  color-green-dark">
+    <nav class="navbar navbar-expand-md navbar-dark mb-4 color-green-dark">
         <a class="navbar-brand" href="#">SoSo</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse"
             aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +20,7 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active">
-                    <a class="nav-link" href="../pages/search.html">Search
+                    <a class="nav-link" href="../pages/main.html">Home
                     </a>
                 </li>
 
@@ -36,47 +37,15 @@
             <div id="graphContainer" class="col-sm">
                 <img src="http://journal.firsttuesday.us/wp-content/uploads/SP500PE-020218.png" alt="stock graph">
             </div>
-            <div id="mainProfile" class="col-sm-2 color-green">
-                <div class="profileImg">
-                    <img src="https://www.publicdomainpictures.net/pictures/170000/velka/woman-face-profile-illustration.jpg" alt="portrait image">
-                </div>
-                <h6 class="profileName">Profile Name</h6>
-                <p class="currentBalance">$9,001</p>
-                <p class="todaysGain">(+1)</p>
-                <a id="logoutBtn" href="../pages/login.html">Logout</a>
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-sm">
-                <div class="row">
-                    <div class="col-sm">
-                        STOCK
-                    </div>
-                    <div class="col-sm">
-                        Price
-                    </div>
-                    <div class="col-sm">
-                        # Shares
-                    </div>
-                    <div class="col-sm">
-                        Total
-                    </div>
-                    <div class="col-sm">
-                        Today
-                    </div>
-                    <div class="col-sm">
-                        Week
-                    </div>
-                    <div class="col-sm">
-                        Month
-                    </div>
-                    <div class="col-sm">
-                        3 Months
-                    </div>
-                    <div class="col-sm">
-                        Year
-                    </div>
-                </div>
+            <div id="stockBuySell" class="col-sm-2 color-green">
+                    <h6 class="stockName">Stock Name</h6>
+                    <p class="currentPrice">$154</p>
+                    <p class="todaysGain">(+12)</p>
+                <form method="get">
+                        <input type="number" id="stockAmount">
+                        <button class="btn-outline-dark color-green" id="buyStock" type="submit">Buy Stock</button>
+                        <button class="btn-outline-dark color-green" id="sellStock" type="submit">Sell Stock</button>
+                </form>
             </div>
         </div>
     </div>
