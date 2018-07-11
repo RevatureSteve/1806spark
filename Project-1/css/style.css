@@ -20,6 +20,9 @@ h1{
     width: 90%;
     margin-left: 4%;
 }
+#displayContent{
+    max-width: 40%;
+}
 h2{
     color: white;
     margin-left: 1%;
@@ -30,6 +33,7 @@ h2{
    width: 70%;
    height: fit-content;
     background-color: rgb(33, 33, 33);
+    columns: 100%;
 }
 #column2{
     margin-top: 15%;
@@ -78,7 +82,7 @@ li a:hover:not(.active) {
     box-sizing: border-box;
 }
 .image{
-    width:100%; 
+   width: 100%;
     image-resolution:300dpi;
     padding: 1%;    
 }

@@ -6,7 +6,7 @@ window.onload = function(){
   var coll = document.getElementsByClassName("collapsible");
   var i;
   if(document.getElementById('index')){
-    document.getElementById('tableImages').addEventListener('click', addPageContents);
+    document.getElementById('tableImages1').addEventListener('click', addPageContents);
   }
   
   if(document.getElementById("searchBtn")){
@@ -42,4 +42,5 @@ function dataBase(){
 function addPageContents(){
   pageImg = event.target.src;
   console.log('pageImg = ' + pageImg);
+  document.getElementById('displayContent').src = pageImg;
 }
