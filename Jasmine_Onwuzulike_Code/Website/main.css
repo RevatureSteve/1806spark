@@ -167,4 +167,13 @@ img:hover {
     margin-left: 450px;
     margin-right: 450px;
 }
-
+.shop-img {
+    width: 15em;
+    height: 10em;
+    border: 4px solid rgb(99, 67, 67);
+    margin: 0%;
+    padding: 0%;
+}
+.shop {
+    display: inline;
+}

@@ -8,7 +8,7 @@ function getInput() {
     list.innerHTML += i;
     count.push(i); 
     }
-    return count;
+    
 }
 
 function clearAll() {
