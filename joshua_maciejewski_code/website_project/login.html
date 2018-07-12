@@ -1,0 +1,44 @@
+<html>
+
+<head>
+    <title>login</title>
+    <link rel="stylesheet" href="C:\Users\Joshua\my_git_repos\1806spark\joshua_maciejewski_code\website_project\style.css" />
+    <link rel="stylesheet" href="C:\Users\Joshua\my_git_repos\1806spark\joshua_maciejewski_code\website_project\login.css" />
+</head>
+
+<body>
+
+    <!-- Navbar begin -->
+    <div class="topnav">
+        <a href="index.html">Home</a>
+        <a href="page1.html">Financial Markets</a>
+        <a href="page2.html">Create Budget</a>
+        <a href="page3.html">View budget</a>
+            <span class="float-right">
+                <a href="login.html">Login</a>
+                <a href="register.html">Sign Up!</a>
+            </span>
+    </div>
+    <!-- Navbar End-->
+    <header>
+        <h1>Login</h1>
+    </header>
+    <div id="loginBody">
+        <!--
+            GET vs POST
+            GET - form data in the URL
+            POST - form data hidden in the request body
+        -->
+        <form id="loginForm" method="POST" action="http://www.maw.com/login">
+            Enter username:
+            <input type="text" required> <br><br>
+            Enter password:
+            <input type="password" required><br><br>
+            <input class="success-btn" type="submit" value="Login">
+            <input class="success-btn" type="submit" value="Not a Member?">
+        </form>
+
+    </div>
+</body>
+
+</html>

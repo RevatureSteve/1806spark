@@ -1,0 +1,119 @@
+/* style for body */
+
+body {
+    margin: 0;
+    /* font-family: Arial, Helvetica, sans-serif; */
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+   
+}
+
+/* Style the top navigation bar */
+
+.topnav {
+    overflow: hidden;
+    background-color: #1a2c56;
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+}
+
+/* Style the topnav links */
+
+.topnav a {
+    font-family: Verdana, Helvetica, Arial, sans-serif;
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    
+}
+
+/* Change color on hover */
+
+.topnav a:hover {
+    background-color: #c5c1c0;
+    color: black;
+}
+
+/* Style the title content */
+
+
+.titlecontent {
+    background-color: white;
+    padding: 5px 20px 0px;
+    margin: 0px 130px;
+
+    
+}
+
+#logo {
+    padding: 0px 20px;
+    margin: 8px 0px 0px;
+}
+
+#dollar {
+    color: #DEA527;
+    font-size: 42px;
+}
+
+#climb {
+    color: #1a2c56;
+    font-size: 42px;
+}
+
+#slogan {
+    color: black;
+    padding: 0px 20px 0px;
+    margin: 0px;
+}
+
+.column {
+    float: left;
+    width: 48%;
+    padding: 5px;
+    position: relative;
+  }
+  
+  /* Clear floats after image containers */
+  .row::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+  .center {
+    margin: 60px 160px;
+}
+
+.imgTxt {
+    position: absolute;
+    background-color:  #1a2c56;
+    /* background-color:  black; */
+    /* background-color: #DEA527; */
+    bottom:2.5%;
+    /* left: 40%; */
+    width: 450px;;
+    height: 35%;
+    opacity: .9;
+}
+
+.homeLinkInfo {
+    color: white;
+    text-align: center;
+    padding: 0px;
+    margin: 10px;
+}
+
+.homeLinks {
+    background-color: #DEA527;
+    color: white;
+    border-style: dashed;
+    border-color:white;
+    margin: 3px 125px ; 
+    width: 200px; 
+    font-size: 16px;
+}
+
+.float-right {
+    float: right;
+}
