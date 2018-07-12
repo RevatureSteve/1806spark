@@ -2,7 +2,8 @@
 
 <head>
     <title>OnClick Learning</title>
-    <link rel="stylesheet" href="shapes.css">
+    <link rel="stylesheet" href="../project1css/shapes.css">
+    <script src="../project1js/quiz.js"></script>
 
 
 </head>
@@ -21,14 +22,14 @@
                     <li class="dropdown">
                         <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
                         <div class="dropdown-content">
-                                <a href="shapesIndex.html">Shapes</a>
-                                <a href="numbersIndex.html">Numbers</a>
-                                <a href="colorsIndex.html">Colors</a>
+                            <a href="project1Index/shapesIndex.html">Shapes</a>
+                            <a href="project1Index/numbersIndex.html">Numbers</a>
+                            <a href="project1Index/colorsIndex.html">Colors</a>
                         </div>
                     </li>
                     <li class="float-right">
-                            <a href="login.html">Login</a>
-                            <a href="Register.html">Register</a>
+                        <a href="project1Index/login.html">Login</a>
+                        <a href="project1Index/Register.html">Register</a>
                     </li>
                 </ul>
             </nav>
@@ -44,20 +45,20 @@
     </div>
     <div class="row">
         <div class="column" id="shapesColumn">
-            
-                <h1 class="shapesLetters">Choose The Correct Shape:</h1>
-            
-            
+
+            <h1 class="shapesLetters">Choose The Correct Shape:</h1>
+
+
             <form id="quizForm">
 
-                
 
 
-                    <input type="image" id="soundBtnImg" src="http://www.clker.com/cliparts/j/H/5/T/f/Y/audio-active-button-hi.png" alt="Submit">
-                    <br>
-                    <h2 class="quizDivClass">SQUARE:</h2>
-                    <br>
-               
+
+                <input type="image" id="soundBtnImg" src="http://www.clker.com/cliparts/j/H/5/T/f/Y/audio-active-button-hi.png" alt="Submit">
+                <br>
+                <h2 class="quizDivClass">SQUARE:</h2>
+                <br>
+
 
                 <span>
                     <input type="radio" name="question-1-answers" id="question-1-answers-A" value="A" />
@@ -95,6 +96,9 @@
             </form>
         </div>
     </div>
+         <div id="quiz"></div>
+             <button id="submit">Get Results</button>
+         <div id="results"></div>
 
 
     <footer>
