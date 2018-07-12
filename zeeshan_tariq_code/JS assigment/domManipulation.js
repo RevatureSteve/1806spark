@@ -42,6 +42,6 @@ Regarding this element:
 Three seconds after a user clicks on this element, change the text to a random color. */
 
 function delayTime() {
-    setTimeout(function(){ alert("Hello World"); }, 3000);
+    setTimeout(()=> alert("Hello World") , 3000);
 }
 

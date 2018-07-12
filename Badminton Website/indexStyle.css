@@ -1,0 +1,180 @@
+body{
+    margin:0% ;
+    background-image: url(http://badmintonbirdie.net/wp-content/uploads/2015/02/background.jpg); 
+}
+/* Image  */
+img {
+    display: block;
+    margin-top:  100px;
+    margin-left: 500px;    
+    width: 500px;
+    height: 450px;
+    border-radius: 40%;
+    opacity: 0.8;
+
+}
+/* Image flip */
+img:hover {
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+}
+/* h1 SMASH Club */
+.clubName{ 
+    letter-spacing: 3px;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(255, 255, 255);
+    background-color:rgba(0, 0, 0, 0.755);
+    font-size: 50px;
+    margin:0px auto 0px auto;
+    font-weight: bolder;
+
+}       
+/* Navigation Bar */
+
+.clubName{ 
+    letter-spacing: 3px;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(206, 127, 9);
+    background-color:rgba(0, 0, 0, 0.755);
+    font-size: 50px;
+    margin:0px auto 0px auto;
+    font-weight: bolder;
+
+}       
+/* Navigation Bar */
+
+    ul {
+        float: left;
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    width: 180px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #111010b6;
+    border: 3px solid rgb(206, 127, 9);
+    font-weight: bold;
+    
+}
+
+li a {
+    
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li {
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li a:hover{
+    background-color: rgb(206, 127, 9);
+    color: rgb(0, 0, 0);
+}
+
+  
+/* h1 clubnews*/
+/* .clubNews{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color:green;
+    background-color:rgb(243, 247, 24);
+    padding-left: 10px;
+    font-size: 40px;
+    margin-top: 45px;
+
+}
+buttonClass
+.btnClass{
+    background-color: rgb(242, 255, 0);
+    font: bold;
+    color: black;
+    width: 100px;
+    height: 50;
+    font-size: 20px;
+}
+.btnClass:hover{
+    background-color: rgb(19, 228, 19); Green */
+    /* color: white;
+}*/
+
+/*
+h2
+.topClub{
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    color:green;
+    background-color:rgb(243, 247, 24);
+    padding-left: 120px;
+    font-size: 40px;
+    margin-bottom: 20px;
+    
+}
+behind picture
+.row{ 
+    margin-top: auto;
+    background-image:url(https://thumbs.dreamstime.com/b/badminton-background-sport-invitation-poster-flyer-empty-space-43526703.jpg);
+ width: 100%;
+ height:80%;
+} */
+
+/* aboutUs
+ */
+ /* .aboutUs{
+     background-color: rgb(37, 150, 9);
+     text-align: center;
+     font-size: 30px;
+     font-weight: bolder;   
+     margin: 50px 400px auto 400px;
+     padding: 10px;
+     color: rgb(255, 247, 5);
+ }
+
+ .bgColor {
+    background-color:rgb(36, 155, 0);
+    float: left;
+    width: 100%;
+
+ }
+
+ .news {
+     float: left;
+     width: 500px;
+     margin-left: 100px;
+ }
+
+ .audioTxt{
+    background-color: rgb(9, 170, 0);
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    float: left;
+    margin-left: 30px;
+    margin-top: 25px;
+    font-size: 40px; 
+    color: yellow;   
+ } */
+ /* .audio{
+    float: left;
+    margin-left: 15px;  
+ }
+ 
+ .signUpForm{
+     background-color: rgb(227, 230, 223);
+
+ }
+ .signUp{ 
+     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-align: center;
+    color:green;
+    background-color:rgb(243, 247, 24);
+    padding-left: 10px;
+    font-size: 40px;
+    margin-top: 45px;
+     
+ } */

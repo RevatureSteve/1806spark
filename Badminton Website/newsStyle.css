@@ -1,0 +1,51 @@
+body{
+    margin:0% ;
+    background-image: url(http://badmintonbirdie.net/wp-content/uploads/2015/02/background.jpg); 
+}
+/* h1 contact */
+.clubName{ 
+    letter-spacing: 3px;
+    text-align: center;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color:rgb(206, 127, 9);
+    background-color:rgba(0, 0, 0, 0.755);
+    font-size: 50px;
+    margin:0px auto 0px auto;
+    font-weight: bolder;
+
+}       
+/* Navigation Bar */
+
+    ul {
+    list-style-type: none;
+    margin:0;
+    padding: 0;
+    width: 180px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    background-color: #111010b6;
+    border: 3px solid rgb(206, 127, 9);
+    font-weight: bold;
+    
+}
+
+li a {
+    
+    display: block;
+    color: rgb(255, 255, 255);
+    padding: 8px 16px;
+    text-decoration: none;
+}
+
+li {
+    text-align: center;
+    border-bottom: 1px solid #555;
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+li a:hover{
+    background-color: rgb(206, 127, 9);
+    color: rgb(0, 0, 0);
+}

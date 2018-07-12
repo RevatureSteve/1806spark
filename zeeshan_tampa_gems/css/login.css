@@ -1,0 +1,31 @@
+/*
+    login.css: styles for the login page/component
+*/
+
+/*
+    HTML Elements
+*/
+header {
+    /* to center an element */
+    max-width: 100%;
+    margin: auto;
+
+    font-size: 35px;
+    background-color: rgba(94, 94, 94, 0.5);
+    text-align: center; /* center text */
+    padding: 15px;
+}
+
+/*
+    HTML IDs
+*/
+
+#loginForm {
+    border: 1px solid black;
+    font-weight: bold;
+    text-align: center; /* text inside the element */
+
+    /* center loginForm element */
+    max-width: 500px;
+    margin: auto;
+}

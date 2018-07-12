@@ -1,0 +1,58 @@
+
+#calcForm{
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+#calcTable {
+    margin: 25px auto auto auto;
+    text-align: center;
+    border: 1px solid gray;
+    box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.837);
+    padding: 15px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+}
+
+table {
+    text-align: center;
+    margin: auto;
+}
+
+input {
+    font-size: 30px;
+    width: 110px;
+    height: 80px;
+}
+
+#display {
+    width: 100%;
+    height: 50px;
+    background-color: rgba(128, 128, 128, 0.892);
+    border-radius: 25px;
+    border: 1px solid black;
+}
+
+tr {
+    margin: 10px;
+}
+
+
+.text-center {
+    text-align: center;
+}
+.tag-centered {
+    margin: auto;
+    min-width: 100px;
+}
+
+#selectedNums {
+    font-weight: bold;
+    color: rgb(92, 92, 92);
+}
+
+
+
+
+
+  
+

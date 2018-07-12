@@ -8,7 +8,8 @@ function fib(n) {
     for (let i = 2; i <= n; i++) {
         ans = a + b;
         a = a;
-        a = ans;
+        a = b;
+        b = ans;
     }
     return ans;
 };

@@ -1,0 +1,58 @@
+/* 
+Register.css: styles for the login page/component
+*/
+
+/* HTML ELEMENTS */
+
+header {
+    max-width: 100%;
+    margin: auto;
+    background-color: rgb(255, 204, 0);
+    text-align: center;
+    font-size: 35px;
+    padding: 2px;
+    border-bottom-color: 3zpx black;
+}
+
+/* HTML IDs */
+
+
+
+#registerForm {
+    border: 3px dotted rgb(9, 221, 9);
+    font-weight: bolder;
+/* center loginForm Elements */
+max-width: 200px;
+margin: auto;
+padding: 20px;
+background-color: lightgray;
+text-align: center;
+
+}
+
+#registerBody {
+    /* background-image: url(http://facecoverz.com/static/img/uploads/o_facecoverz.com-1380614942452.jpg); */
+    
+}
+
+/* HTML Classes */
+
+.tampa {background: url(https://upload.wikimedia.org/wikipedia/commons/6/67/Yellow-maple.jpg) no-repeat center; 
+    background-size: cover;
+    /* background-image: url(http://res.cloudinary.com/simpleview/image/upload/v1519761816/clients/tampabay/IMG_1420a_3__e412c32a-8344-4a0d-abc9-affe2af268e3.jpg) */
+
+} 
+.successbtn {
+    font-size: 20px;
+    color: white; /* text color */
+    background-color: rgb(255, 225, 0);
+    width:  100%;
+    height: 35px;
+}
+.successbtn:hover {
+    /*
+        swap the color and background-color on mouse hover
+    */
+    color: rgb(242, 255, 0);
+    background-color: rgb(4, 4, 4);
+}   
