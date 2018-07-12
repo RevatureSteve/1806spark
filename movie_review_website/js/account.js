@@ -1,9 +1,6 @@
-var accountLogged = {
-    name: "Marcin Salamon",
-    email: "salamonmarcin29@gmail.com"
-}
+
 
 window.onload = function(){
-    document.getElementById("name").innerHTML = accountLogged.name;
-    document.getElementById("email").innerHTML = accountLogged.email
+    document.getElementById("name").innerHTML = parent.accountLogged.name;
+    document.getElementById("email").innerHTML = parent.accountLogged.email;
 }

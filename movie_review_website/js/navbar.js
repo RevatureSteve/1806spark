@@ -12,9 +12,13 @@ window.onload = function() {
     document.getElementById("personal").onclick = changeIFrame;
     document.getElementById("account").onclick = changeIFrame;
     document.getElementById("login").onclick = changeIFrame;
+    document.getElementById('login').innerHTML = accountLogged.name;
 }
 
 function changeIFrame(){
-    document.getElementsByTagName("iframe")[0].src = this.id + ".html";
+    document.getElementsByTagName("iframe")[0].src ='pages/' + this.id + ".html";
+    document.getElementById('login').innerHTML = accountLogged.name;
 }
+
+
 

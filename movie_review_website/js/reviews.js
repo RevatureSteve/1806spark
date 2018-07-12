@@ -19,7 +19,7 @@ let testReview2 = {
 let reviews = [testReview, testReview2];
 
 window.onload = function () {
-    console.log(window.parent.accountLogged);
+    //console.log(window.parent.accountLogged);
     displayReviews();
 }
 
