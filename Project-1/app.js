@@ -1,6 +1,8 @@
 
-
+ var anthem = {Description: "This is a description.", Rating:5};
+ var fallout76 = {Description: "This is a description", Rating:5};
  var pageImg;
+ var targetId;
 window.onload = function(){
   console.log("app.js is loaded");
   var coll = document.getElementsByClassName("collapsible");
@@ -41,6 +43,9 @@ function dataBase(){
 
 function addPageContents(){
   pageImg = event.target.src;
+  targetId = event.target.id;
   console.log('pageImg = ' + pageImg);
   document.getElementById('displayContent').src = pageImg;
+  document.getElementById('displayTitle').innerHTML = targetId;
+  document.getElementById('displayDescription').innerHTML = anthem.Description;
 }
