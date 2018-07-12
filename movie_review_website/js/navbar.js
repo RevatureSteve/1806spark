@@ -1,21 +1,17 @@
 let home;
 let personal;
 let account;
-var loggedIn = true;
+var loggedIn = false;
 var accountLogged = {
     name: "Marcin Salamon",
     email: "salamonmarcin29@gmail.com"
 }
 
 window.onload = function() {
-    home = document.getElementById("home").onclick = changeIFrame;
-    personal = document.getElementById("personal").onclick = changeIFrame;
-    account = document.getElementById("account").onclick = changeIFrame;
-    if (loggedIn) {
-        document.getElementById("login").innerHTML = accountLogged.name;
-    } else{
-        document.getElementById("login").innerHTML = 'Login';
-    }
+    document.getElementById("home").onclick = changeIFrame;
+    document.getElementById("personal").onclick = changeIFrame;
+    document.getElementById("account").onclick = changeIFrame;
+    document.getElementById("login").onclick = changeIFrame;
 }
 
 function changeIFrame(){

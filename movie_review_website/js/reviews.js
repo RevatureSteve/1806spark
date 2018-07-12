@@ -10,7 +10,7 @@ let testReview = {
 let testReview2 = {
     header: "Definitely worth seeing",
     author: "Marcin Salamon",
-    movieTitle: "Ant-Man and the Wasp",
+    movieTitle: "Ant Man and the Wasp",
     reviewBody: "A comedic masterpiece with solid plot and great action sequences",
     commentsArr: [{ commentAuthor: "John Doe", comment: "Great moview" },
     { commentAuthor: "destroyer", comment: "10/10 movie" }]
@@ -20,7 +20,11 @@ let reviews = [testReview, testReview2];
 
 window.onload = function () {
     console.log(window.parent.accountLogged);
-    // dynamically creates elements based on reviews in the reviews array
+    displayReviews();
+}
+
+// dynamically creates elements based on reviews in the reviews array
+function displayReviews() {
     for (
         // creates a div in which the review is contained
         let i = 0; i < reviews.length; i++) {
@@ -98,5 +102,4 @@ window.onload = function () {
         form.appendChild(commentButton);
         commentSection.appendChild(form);
     }
-
 }

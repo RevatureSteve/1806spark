@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/registration.css" />
+    <script src="js/validation.js"></script>
+</head>
+
+<body>
+    <div class='container'>
+        <div id='registrationBox' class='regBox'>
+            <form action="">
+                <span class='formPiece'>Login: </span>
+                <input id='username' required type="text" placeholder="login" minlength="3" maxlength="10">
+                <br>
+                <span class='formPiece'>Password: </span>
+                <input id='pwd1' type="password" required placeholder="password" minlength="8">
+                <br>
+                <span class='formPiece'>Confirm password: </span>
+                <input id='pwd2' type="password" required placeholder="confirm password" minlength="8">
+                <br>
+                <input id='submitIn' type="submit" class='sumBtn'>
+            </form>
+        </div>
+
+        <div id='requirements' class='regBox floatRight'>
+            <div>
+                Requirements!
+            </div>
+            <div>
+                <div>Login between 3 and 10 long</div>
+                <img id='usernameImg' class='floatRight' src="" alt="">
+            </div>
+            <br>
+            <div>
+                <div>Min 8 characters</div>
+                <img id='minLengthImg' class='floatRight' src="" alt="">
+            </div>
+            <br>
+            <div>
+                <div>Use one: !*.&#</div>
+                <img id='specialChar' class='floatRight' src="" alt="">
+            </div>
+            <br>
+            <div>
+                <div>One capital letter</div>
+                <img id='oneCap' class='floatRight' src="" alt="">
+            </div>
+            <br>
+            <div>
+                <div>Password confirmed</div>
+                <img id='compare' class='floatRight' src="" alt="">
+            </div>
+
+        </div>
+    </div>
+</body>
+
+</html>
