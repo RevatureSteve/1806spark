@@ -1,9 +1,22 @@
 
- var anthem = {Description: "This is a description.", Rating:5};
- var fallout76 = {Description: "This is a description", Rating:5};
- var pageImg;
- var targetId;
+ let games = [{name: "Anthem", description: "Anthem is an upcoming online multiplayer action role-playing video game being developed by BioWare " + 
+ "and published by Electronic Arts. The game is slated for a worldwide release on February 22, 2019, for Microsoft Windows, PlayStation 4 and Xbox One.",
+  rating:5}, 
+ {name: "Fallout 76", description: "Fallout 76 is an upcoming online multiplayer action role-playing video game developed by Bethesda Game Studios and published by Bethesda Softworks." 
+ + "It is the ninth game in the Fallout series and serves as a narrative prequel to the series.", rating:10},
+ {name:"Gears of War 5", description: "gears", rating:8},
+  {name:"The Elder Scrolls VI", description:"esv", rating:5}];
+  let title;
+  let description;
+  let rating;
+  let img;
+  let pageImg;
+  let targetId;
+  let x;
 window.onload = function(){
+  title = document.getElementById('displayTitle');
+  description = document.getElementById('displayDescription');
+  img = document.getElementById('displayContent');
   console.log("app.js is loaded");
   var coll = document.getElementsByClassName("collapsible");
   var i;
@@ -45,7 +58,14 @@ function addPageContents(){
   pageImg = event.target.src;
   targetId = event.target.id;
   console.log('pageImg = ' + pageImg);
-  document.getElementById('displayContent').src = pageImg;
-  document.getElementById('displayTitle').innerHTML = targetId;
-  document.getElementById('displayDescription').innerHTML = anthem.Description;
+  img.src = pageImg;
+  x = parseInt(targetId);
+  if(pageImg == undefined){
+    description.innerHTML = "";
+    title.innerHTML = "";
+  }
+  else{
+    description.innerHTML = games[x].description;
+    title.innerHTML = games[x].name;
+  }
 }
