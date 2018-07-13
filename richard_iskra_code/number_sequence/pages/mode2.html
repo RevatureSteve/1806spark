@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Game mode 2</title>
+    <link rel="stylesheet" href="../css/inGame.css">
+    <script src="../js/mode2.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<!-- Same as mode 1 but with more text in the table -->
+<body class="gamebg">
+    <ul>
+        <li class="nav">
+            <a href="/home" onclick="cancle()">Home</a>
+        </li>
+    </ul>
+    <center>
+        <table>
+            <tr>
+                <th>Hints</th>
+                <th>Guesses</th>
+                <th>Numbers</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="box">
+                        <ol id="hints">
+                            <li>2 in the right place and 0 in the wrong place</li>
+                            <li>1 in the right place and 1 in the wrong place</li>
+                            <li>1 in the right place and 0 in the wrong place</li>
+                            <li>0 in the right place and 1 in the wrong place</li>
+                        </ol>
+                    </div>
+                </td>
+                <td>
+                    <div class="box">
+                        <ol id="guesses">
+                            <li>212</li>
+                            <li>234</li>
+                            <li>441</li>
+                            <li>134</li>
+                        </ol>
+                    </div>
+                </td>
+                <td>
+                    <div class="box" id="guessdiv">
+                        <input type="text" name="guess" id="guessbox">
+                        <input type="button" name="submit" id="guessbutton" value="Submit" class="numbutton" onclick="attemptrun()">
+                        <input type="button" name="submit" id="guessbutton" value="Restart" class="numbutton" onclick="reset()">
+                        <ol id="Submit">
+                        </ol>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </center>
+</body>
+
+</html>

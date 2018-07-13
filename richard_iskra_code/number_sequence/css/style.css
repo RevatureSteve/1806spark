@@ -1,0 +1,195 @@
+/* navbar styling */
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: center;
+    overflow: hidden;
+    background-color: royalblue;
+    box-shadow: 3px 3px lightblue;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    width: 180px;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: darkblue;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+/* dropdown box styling */
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: royalblue;
+    min-width: 160px;
+    box-shadow: 3px 3px lightblue;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: darkblue}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* home page text boxes styling */
+
+.gamebox{
+    background-color: rgba(224, 220, 220, 0.801);
+    width: 470px;
+    height: 480px;
+    margin: 10px;
+}
+
+/* text styling */
+
+th{
+    font-size: 60;
+    color: white;
+    width: 500px;
+    padding: 5px;
+}
+
+h1{
+    font-size: 45;
+    padding: 20px;
+}
+
+h3{
+    font-size: 26;
+    padding: 15px;
+}
+
+#bg{
+    background: url(../image/blueUniverse.jpg) no-repeat fixed;
+}
+
+/* stying the login button on navbar and modal */
+
+.logbutton {
+    background: royalblue;
+    border: none;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    width: 280px;
+}
+
+.logbutton:hover{
+    background: darkblue;
+}
+
+.logbutton:active{
+    background: rgb(0, 0, 100);
+}
+
+/* make login button float right on navbar */
+
+.float-right {
+    float: right;
+}
+
+/* styling and positioning of modal contents */
+
+input {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid darkblue;
+    box-sizing: border-box;
+}
+
+.imgcontainer {
+    text-align: center;
+    margin: 24px 0 12px 0;
+    position: relative;
+}
+
+.container {
+    padding: 16px;
+}
+
+span.psw {
+    float: right;
+    padding-top: 16px;
+}
+
+/* modal background */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* dim everything when modal is present */
+    padding-top: 60px;
+}
+
+/* Modal Content/Box */
+.modal-content {
+    background-color: rgb(161, 210, 255);
+    margin: 5% auto 15% auto; /* set and center the position of the modal */
+    border: 3px solid rgb(177, 191, 255);
+    width: 80%;
+}
+
+/* The Close Button (x) */
+.close {
+    position: absolute;
+    right: 25px;
+    top: 0;
+    color: #000;
+    font-size: 35px;
+    font-weight: bold;
+}
+
+.close:hover, 
+.close:focus {
+    color: red;
+}
+
+/* make modal zoom in */
+.animate {
+    animation: animatezoom 0.6s
+}
+    
+@keyframes animatezoom {
+    from {transform: scale(0)} 
+    to {transform: scale(1)}
+}

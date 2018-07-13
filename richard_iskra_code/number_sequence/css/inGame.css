@@ -1,0 +1,89 @@
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: center;
+    overflow: hidden;
+    background-color: rgba(65, 105, 225, 0.5);
+    box-shadow: 3px 3px;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: darkblue;
+}
+
+th{
+    font-size: 60;
+    color: white;
+    width: 500px;
+    padding: 15px;
+}
+
+td{
+    text-align: center;
+    font-size: 20;
+}
+
+h5{
+    float: right;
+}
+
+#guessbox{
+    margin: 15px;
+    height: 50px;
+    font-size: 30px;
+    text-align: center;
+}
+
+.nav {
+    margin: auto;
+    width: 1500px;
+}
+
+.box{
+    background-color: rgba(224, 220, 220, 0.801);
+    width: 470px;
+    height: 550px;
+    margin: auto;
+}
+
+#guessdiv{
+    background-color: rgba(224, 220, 220, 0.801);
+    width: 470px;
+    height: 550px;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.gamebg{
+    background: url(https://78.media.tumblr.com/f42769328005fd92ad616f7901054f59/tumblr_ogquinbyl31vsjcxvo2_r1_640.gif) no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+.numbutton{
+    width: 120px;
+    height: 80px;
+    font-size: 30;
+    margin: 15px;
+    background: linear-gradient(white, rgb(201, 201, 201));
+    border: 1px solid gray;
+}
+
+.numbutton:hover{
+    background: linear-gradient(rgb(228, 228, 228), rgb(201, 201, 201));
+}
+
+.numbutton:active{
+    background: rgb(179, 179, 179);
+}
