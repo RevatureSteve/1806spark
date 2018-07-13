@@ -1,0 +1,155 @@
+<html>
+
+<head>
+
+    <title>LoL Champions</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/jungle.css">
+    <link rel="icon" href="https://vignette.wikia.nocookie.net/leagueoflegends/images/e/e9/Noxus_Crest.png/revision/latest?cb=20161117055949">
+    <script src="champions.js"></script>
+
+</head>
+
+<body>
+
+    <!-- Nav Bar Begin -->
+    
+    <ul id="navBar">
+            <li id="float_left">
+                <a href="index.html">Home</a>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Top</a>
+                <div class="dropdown-content">
+                    <a href="top.html">Volibear</a>
+                    <a href="#">Darius</a>
+                    <a href="#">Garen</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Jungle</a>
+                <div class="dropdown-content">
+                    <a href="jungle.html">Warwick</a>
+                    <a href="#">Master Yi</a>
+                    <a href="#">Shaco</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Mid</a>
+                <div class="dropdown-content">
+                    <a href="mid.html">Annie</a>
+                    <a href="#">Brand</a>
+                    <a href="#">Lux</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Bot</a>
+                <div class="dropdown-content">
+                    <a href="bot.html">Caitlyn</a>
+                    <a href="#">Miss Fortune</a>
+                    <a href="#">Jinx</a>
+                </div>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Support</a>
+                <div class="dropdown-content">
+                    <a href="support.html">Blitzcrank</a>
+                    <a href="#">Sona</a>
+                    <a href="#">Bard</a>
+                </div>
+            </li>
+            <li class="float_right">
+                <a href="register.html">Register</a>
+            </li>
+            <li class="float_right">
+                <a href="login.html">Login</a>
+            </li>
+        </ul>
+        
+        <!-- Nav Bar End -->
+
+    <!-- Character Info Starts -->
+
+    <header class="name">Warwick</header>
+    <header class="lore">the Uncaged Wrath of Zaun</header>
+
+    <!-- Character Info Ends -->
+
+    <br>
+    <br>
+
+    <h2 class="top-desc">Skin #1</h2>
+    <h2 class="top-desc">Skin #2</h2>
+    <h2 class="top-desc">Skin #3</h2>
+
+    <!-- Image Gallery Starts -->
+
+    <div class="gallery">
+        <a target="_blank" href="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_3.jpg">
+            <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_3.jpg" alt="Big Bad Warwick" width="402" height="286.5">
+        </a>
+        <div class="bot-desc">Big Bad Warwick</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_6.jpg">
+            <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_6.jpg" alt="Firefang Warwick" width="402" height="286.5">
+        </a>
+        <div class="bot-desc">Firefang Warwick</div>
+    </div>
+
+    <div class="gallery">
+        <a target="_blank" href="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_10.jpg">
+            <img src="https://ddragon.leagueoflegends.com/cdn/img/champion/splash/Warwick_10.jpg" alt="Lunar Guardian Warwick" width="402"
+                height="286.5">
+        </a>
+        <div class="bot-desc">Lunar Guardian Warwick</div>
+    </div>
+
+    <!-- Image Gallery Ends -->
+
+    <!-- Form Input Starts -->
+
+    <div>
+            Skin #
+            <br>
+            <input type="number" min="1" max="3" required>
+            <br>
+            <input class="vote-btn" type="button" value="Vote Now">
+    </div>
+
+    <!-- Form Input Ends -->
+
+    <!-- Comment Box Starts -->
+
+    <div id="commentDiv">
+            <input id="nameBox" type="text" maxlength="20" placeholder="Name">
+            <br>
+            <input id="commentBox" type="text" maxlength="300" placeholder="Leave a Comment">
+            <br>
+            <input id="commentBtn" type="button" value="Save">
+    </div>
+
+    <!-- Comment Box Ends -->
+
+    <!-- Pic Submit Starts -->
+
+    <div id="fileDiv">
+            <input id="nameBox2" type="text" maxlength="20" placeholder="Name">
+            <br> Image File:
+            <input id="fileBox" type="file">
+            <br>
+            <input id="commentBtn" type="button" value="Submit">
+    </div>
+
+    <!-- Pic Submit Ends -->
+
+    <div id="savedComment">
+        <ul id="commentList">
+
+        </ul>
+    </div>
+
+</body>
+
+</html>

@@ -1,15 +1,19 @@
 /* Nav Bar Begins */
-ul {
+#navBar {
     list-style-type: none;
     margin: auto;
     padding: 0;
     overflow: hidden;
     background-color: #333;
-    max-width: 400px;
+    text-align: center;
 }
 
-li {
+#float_left {
     float: left;
+}
+
+.float_right{
+    float: right;
 }
 
 li a, .dropbtn {
@@ -159,7 +163,7 @@ div.bot-desc {
     margin-left: 57.5px;
 }
 
-#commentButton{
+#commentBtn{
     width: 100px;
     margin-top: 5px;
     margin-left:357.5px;
@@ -172,4 +176,8 @@ div.bot-desc {
 
 #fileDiv{
     float: right;
+}
+
+#savedComment{
+    float: left;
 }
