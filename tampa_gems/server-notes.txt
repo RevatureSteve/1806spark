@@ -1,0 +1,27 @@
+ultimatecmd to stop any process: cntrl + c
+
+node.js
+    cmd: node :turns your terminal into a js interpeter
+    node file-name: executes the js file
+    cntl c -to exit the node mode or .exit
+    is a js server software
+    can handle requests and send back responses
+    ^(not recommended, requires to much work...)^
+
+Express (JavaScript Package)
+    a js framework
+    used with Node.js to make it easy to
+    handle requests and sent back responses(removes boilerplate code)
+
+
+Node package manager: allow me to qucikly download js packages like Express
+comand: npm -v
+Turn our tampa gems project into a node project
+cmd: npm init
+    npm init creates a package.json file which is the 
+    meta data of our project like 
+        -name
+        -verson
+        -dependencies (JavaScript Packages)
+        -description
+        -ect

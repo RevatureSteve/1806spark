@@ -7,7 +7,7 @@ function fibonacci(i, memo) {
 
     if (memo[i]) return memo[i];
     if(i <= 1) return 1;
-  
+    // recursion when a function calls itself
     return memo[i] = fibonacci(i -1, memo) + fibonacci(i - 2, memo);
   }
   /*
