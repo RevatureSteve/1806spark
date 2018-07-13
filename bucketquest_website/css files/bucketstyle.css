@@ -1,0 +1,92 @@
+/* copied and pasted code from w3schools.com template */
+.NavBarFormat{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+    font-size: 18px;
+}
+
+li {
+    float: left;
+    text-align: center
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/* Change the link color to #111 (black) on hover */
+/* hover = the color that the background becomes when you hover over the text */
+li a:hover {
+    background-color: rgb(26, 210, 223);
+    color: white;
+    text-decoration: none;
+}
+body{
+margin: 0;
+color: #333;
+font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+line-height: 1.4;
+background-image: url("data:image/png;base64,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");
+}
+
+
+
+/* Top of page text */
+.beginningtxt{
+    font-weight: bold;
+    font-size: 50px;
+    text-align: center;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif
+}
+/* Text within the body */
+.bodytxt{
+    font-size: 25px;
+    
+}
+/* Home page lower text */
+.bodytxt2{
+    font-size: 25px;
+    text-align: center;
+}
+
+ul{
+    text-align: center
+}
+
+
+#recommendbutton{
+    text-align: center;
+}
+
+#xpic{
+    text-align: center;
+    margin: auto;
+}
+
+#register{
+    float: right;
+}
+
+#rightForm{
+    float: right;
+    padding-right: 300px;
+}
+
+#leftForm{
+    float: left;
+    padding-left: 350px  
+}
+
+#regSubmit{
+    font-size: 30px;
+    
+    
+    
+}

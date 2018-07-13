@@ -1,0 +1,15 @@
+{
+  "name": "bucketquest_website",
+  "version": "1.0.0",
+  "description": "bucketquest .node attempt one",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Chris Holmes",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}
