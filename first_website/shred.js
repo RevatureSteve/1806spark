@@ -14,11 +14,11 @@ function body_part_selection() {
 
     console.log(body_part);
     if (body_part == "Chest") {
-        body_selection.href = "file:///C:/Users/Alex%20Moraga/my_git_repos/1806spark/first_website/Chest.html";
+        body_selection.href = "file:///C:/Users/Alex%20Moraga/my_git_repos/1806spark/first_website/pages/Chest.html";
         body_selection.innerHTML = ("Your " + body_part + " exercises are here! Click here to see! ");
 
     } else if (body_part == "Back") {
-        body_selection.href = "file:///C:/Users/Alex%20Moraga/my_git_repos/1806spark/first_website/Back.html";
+        body_selection.href = "file:///C:/Users/Alex%20Moraga/my_git_repos/1806spark/first_website/pages/Back.html";
         body_selection.innerHTML = ("Your " + body_part + " exercises are here! Click here to see! ");
     }
     else if (body_part == "Shoulder") {
@@ -32,6 +32,9 @@ function body_part_selection() {
     }
     else if (body_part == "Shoulder") {
         body_selection.innerHTML = ("Your " + body_part + " exercises are here! Click here to see! ");
+    }
+    else{
+        
     }
 
 }

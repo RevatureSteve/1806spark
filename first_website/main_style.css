@@ -50,6 +50,7 @@ body {
 }
 /*Text box in the first page of the website*/
 #start_page {
+    position: relative;
     background-color: rgba(167, 167, 167, 0.664);
     border: 5px solid black;
     text-align: center;
@@ -58,6 +59,7 @@ body {
 }
 /*Front page dumbbell picture*/
 #front_page_image {
+    position: static;
     width: 100%;
     height: 200px;
     background-size: 100%, 50%;
@@ -79,6 +81,17 @@ body {
     max-width: 400px;
     margin: -578px 0px 0px 700px;
 }
+
+/*Login registration form*/
+#login_form {
+    background-color: rgba(161, 145, 145, 0.452);
+    margin: 40px 0px 0px 225px;
+    max-width: 50%;
+    padding: 50px;
+    font-style: italic;
+
+}
+
 /*Workout Fillout Form*/
 #Fillout_Form {
     background-color: rgba(161, 145, 145, 0.452);
