@@ -1,0 +1,20 @@
+Ultimate command to stop process: ctrl + c
+
+node.js is a javascript server software
+can handle requests and send back responses
+(not recommended, because it requires too much work)
+
+Express (Javascript package)
+- A Javascript Framework
+ -Used with node.js to make it easy to
+        handle requets and sent back responses (remove boilerplate code)
+
+
+Node package manager: Allows me to quickly download Javascript packages like express
+command is npm (): no argument turns your terminal into a javascript interpreter 
+
+Turn our tampa gems program 
+command is init
+
+        npm init creates a package.jason file which is the meta data of the server
+

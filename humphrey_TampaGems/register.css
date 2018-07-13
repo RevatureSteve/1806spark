@@ -1,0 +1,29 @@
+/* login css: styles for the login page */
+
+/* html elements */
+header{
+    max-width: 100%;
+    margin: auto;
+    background-color: gray;
+    margin-top: 1px;
+    text-align: center;
+    font-size: 35px;
+    padding: 15px;
+}
+
+/* html id */
+
+#loginForm{
+    background-color: white;
+    border: dotted green;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+    /* center element */
+    max-width: 500px;
+    margin: auto;
+}
+
+#loginBody{
+    background-image: url("https://files.slack.com/files-pri/TBCU1B4N5-FBF2W8CM6/screenshot_2018-06-28-11-52-20.png");
+}

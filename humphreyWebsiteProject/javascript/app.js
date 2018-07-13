@@ -25,6 +25,11 @@ function changeSearch() {
     inputBoxGet.addEventListener("change", () => {
             getInputValue = inputBoxGet.value;
             alert(getInputValue);
+            if(document.contains(document.getElementById("title"))){
+            h1 = document.getElementById("title");
+            h1.innerHTML= "Search for: " + getInputValue
+            h1.style.marginLeft="290px";
+            }
             fetch("https://api.themoviedb.org/3/search/movie?api_key=de645bfacfad1d8fc5c6b13e4d3780ee&query=" + getInputValue).then(function (data) {
                 return data.json(); // reading response and looking for just the json
             }).then(function (jsonMovie) {
@@ -35,8 +40,8 @@ function changeSearch() {
                var createPosters = document.createElement("img");
                var divTag = document.getElementById("moviePosters")
                divTag.appendChild(createPosters);
-               createPosters.setAttribute("id","posterImages"+i);
-               selectPoster=document.getElementById("posterImages"+i);
+               createPosters.setAttribute("class","posterImagesCreate");
+               selectPoster=document.getElementsByClassName("posterImagesCreate")[i];
             //    var selectPosters = document.getElementsByClassName("posterImages")[i];
             if(jsonMovieResults.results[i].poster_path !== null) {
                selectPoster.src= "http://image.tmdb.org/t/p/w185//" + jsonMovieResults.results[i].poster_path;
