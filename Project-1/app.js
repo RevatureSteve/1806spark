@@ -1,4 +1,4 @@
-
+//defining all of the starting game objects
 let games = [{
   name: "Anthem", 
   description: "Anthem is an upcoming online multiplayer action role-playing video game being developed by BioWare " +
@@ -23,6 +23,7 @@ description: "The Elder Scrolls is an action role-playing open world video game 
 "by Bethesda Game Studios and published by Bethesda Softworks. " + 
 "The Elder Scrolls games take place in the fictional world of Nirn, on the continent of Tamriel.", 
 rating: 5 }];
+//variables for DOM manipulation
 let title;
 let description;
 let rating;
@@ -32,6 +33,8 @@ let targetId;
 let x;
 let tables;
 let headerRows;
+
+
 window.onload = function () {
   title = [document.getElementById('displayTitle'), document.getElementById('displayTitle2'),
   document.getElementById('displayTitle3')];
@@ -51,12 +54,12 @@ window.onload = function () {
     tables[0].addEventListener('click', addPageContents);
   }
 
-  if (document.getElementById("searchBtn")) {
+  if (document.getElementById("searchBtn")) {// checking to see if user is on database
     document.getElementById("searchBtn").addEventListener("click", dataBase);
 
   }
 
-  for (i = 0; i < coll.length; i++) {
+  for (i = 0; i < coll.length; i++) { //for loop for collapsing tabs
     coll[i].addEventListener("click", function () {
       this.classList.toggle("active");
       var content = this.nextElementSibling;
@@ -67,11 +70,12 @@ window.onload = function () {
       }
     });
   }
-}
+}//window.omload end
 function dataBase() {
   let api_key = '0eb1509b588973f865ac18529f73b70807505ccc';
   let request = document.getElementById('number').value;
   let appName = 'Beck\'s App'
+  //un-used vars for quick referance 
   fetch('http://www.giantbomb.com/api/game/3030-4725/?api_key=0eb1509b588973f865ac18529f73b70807505ccc').then(function (data) {
     return data.json();
   })
@@ -86,7 +90,7 @@ function addPageContents() {
   targetId = event.target.id;
   console.log('pageImg = ' + pageImg);
   x = parseInt(targetId);
-  if (pageImg == undefined) {
+  if (pageImg == undefined) {//if the user clicks on somthing that is not a image
     img[0].src = "";
     img[1].src = "";
     img[2].src = "";
@@ -97,6 +101,7 @@ function addPageContents() {
     description[2].innerHTML = "";
     title[2].innerHTML = "";
   }
+  //which table is the user clicking on
   else if(targetId < 4) {
     headerRows[0].scrollIntoView(true);
     img[0].src = pageImg;
