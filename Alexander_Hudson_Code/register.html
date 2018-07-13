@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title>
+            Digital Design
+        </title>
+        <link rel="stylesheet" href="style.css" />
+        <script src="portfolio.js"></script>
+    </head>
+    <body>
+            <ul class="ul">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+
+                  <img class="background2" src="images/Grendel.png"/>
+
+                  <ul class="subscribe">
+                        <li><a href="subscribe.html"> Subscribe</a></li>
+                        <li><a href="register.html"> Register</a></li>
+                  </ul>
+                  
+                  <div class="container">
+                        <h1 class="register">Register</h1>
+                      
+                        <hr>
+
+                        <div id="message">
+                        <label><b>Password Requirements:<br><br>
+                            <p id="length" class="invalid">Min of 8 letters</p><br>
+                            <p id="capital" class="invalid">One uppercase</p><br>
+                            <p id="number" class="invalid">One number</p><br>
+                            <p id="special" class="invalid">Special character(!,#,$,%)</p></b></label>
+                            <br><br><br>
+                            
+                        </div>
+                        <div>
+
+                        <label for="username"><b>Create Username</b></label>
+                        <input type="text" placeholder="Username" name="username" required>
+                        
+                        <label for="email"><b>Email</b></label>
+                        <input type="text" placeholder="Enter Email" name="email" required>
+                    
+                        <label for="psw" id="psw"><b>Password</b></label>
+                        <input type="password" placeholder="Enter Password" name="psw" required>
+                    
+                        <label for="psw-repeat"><b>Confirm Password</b></label>
+                        <input type="password" placeholder="Repeat Password" name="psw" required>
+                        <hr>
+                    
+                        <button type="submit" class="registerbtn">Register</button>
+                      </div>
+                    
+                      <div class="container signin">
+                        <p>Already have an account? <a href="#">Sign in</a>.</p>
+                      </div>
+    </body>
+</html>
