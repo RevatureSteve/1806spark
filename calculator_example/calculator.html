@@ -1,0 +1,54 @@
+<html>
+
+<head>
+    <title>Calculator</title>
+    <link rel="stylesheet" href="main_style.css">
+</head>
+
+<body>
+    <div id="title">
+        <h2>Calculator</h2>
+    </div>
+    <div id="calculator">
+
+        <form name="button_layout">
+            <input id="textbox" type="text" name="answer" />
+            <br>
+            <input type="button" value="1" onclick="button_layout.answer.value += '1'" />
+            <input type="button" value="2" onclick="button_layout.answer.value += '2'" />
+            <input type="button" value="3" onclick="button_layout.answer.value += '3'" />
+            <input type="button" value="+" onclick="button_layout.answer.value += '+'" />
+            <br>
+            <input type="button" value="4" onclick="button_layout.answer.value += '4'" />
+            <input type="button" value="5" onclick="button_layout.answer.value += '5'" />
+            <input type="button" value="6" onclick="button_layout.answer.value += '6'" />
+            <input type="button" value="-" onclick="button_layout.answer.value += '-'" />
+            <br>
+            <input type="button" value="7" onclick="button_layout.answer.value += '7'" />
+            <input type="button" value="8" onclick="button_layout.answer.value += '8'" />
+            <input type="button" value="9" onclick="button_layout.answer.value += '9'" />
+            <input type="button" value="x" onclick="button_layout.answer.value += '*'" />
+            <br>
+            <input type="button" value="c" onclick="button_layout.answer.value = ''" />
+            <input type="button" value="0" onclick="button_layout.answer.value += '0'" />
+            <input type="button" value="=" onclick="button_layout.answer.value = eval(button_layout.answer.value)" />
+            <input type="button" value="/" onclick="button_layout.answer.value += '/'" />
+            <br>
+        </form>
+    </div>
+    <div id="description">
+        <p>Press a calculator button to select: num1
+            <br> num1
+            <br> num2
+            <br> answer
+        </p>
+
+
+    </div>
+
+
+</body>
+
+
+
+</html>
