@@ -12,7 +12,8 @@ window.onload = function() {
     }
     
     
-    let stockInfo = null;             
+    let stockInfo = null; 
+    let jsonStr            
     function getStock() {
         console.log('getStock called/invoked');
         let stockSym = document.getElementById('stock').value;
@@ -26,11 +27,26 @@ window.onload = function() {
             stockInfo = json;
 
             console.log(stockInfo);
-            jsonStr = document.getElementById("stockData").innerHTML =  JSON.stringify(stockInfo["Time Series (Daily)"]);
+            jsonStr = JSON.stringify(stockInfo["Time Series (Daily)"]["2018-07-11"]);
+            document.getElementById("stockData").innerHTML =  jsonStr;
         });
 
+        
 
          }
+
+        //  console.log(jsonStr);
+         
+        //  var listDiv = document.getElementById('listContainer');
+        //  var ul=document.createElement('ul');
+        //  listDiv.appendChild(ul);
+        //  for (var i = 0; i < jsonStr.list.length; ++i) {
+         
+        //    var li=document.createElement('li');
+        //    var textnode = document.createTextNode(data.list[i]);    
+        //    li.appendChild(textnode);
+        //    ul.appendChild(li);                                 
+        //  }
         
     //     if(pokemonNumber > 151) {
     //         alert('Can\'t use a number bigger than 151');

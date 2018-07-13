@@ -2,8 +2,8 @@
 
 <head>
     <title>login</title>
-    <link rel="stylesheet" href="C:\Users\Joshua\my_git_repos\1806spark\joshua_maciejewski_code\website_project\style.css" />
-    <link rel="stylesheet" href="C:\Users\Joshua\my_git_repos\1806spark\joshua_maciejewski_code\website_project\login.css" />
+    <link rel="stylesheet" href="C:\Users\Joshua\my_git_repos\1806spark\joshua_maciejewski_code\website_project\css\style.css" />
+    <link rel="stylesheet" href="C:\Users\Joshua\my_git_repos\1806spark\joshua_maciejewski_code\website_project\css\login.css" />
 </head>
 
 <body>
@@ -20,9 +20,14 @@
             </span>
     </div>
     <!-- Navbar End-->
-    <header>
-        <h1>Login</h1>
-    </header>
+    <div id="formLogo">
+        <h1 id="logo">
+            <span id="dollar">Dollar</span> <span id="climb">Climb</span>
+            <span id="chart">
+                <img height= 75px; width = 100px; src="https://images.clipartuse.com/70a4b09b95a2a796a0f3cd7c4e59aced_profit-clip-art-at-clkercom-vector-clip-art-online-royalty-_600-500.png"/>
+            </span>
+        </h1>
+    </div>
     <div id="loginBody">
         <!--
             GET vs POST
@@ -30,12 +35,12 @@
             POST - form data hidden in the request body
         -->
         <form id="loginForm" method="POST" action="http://www.maw.com/login">
-            Enter username:
-            <input type="text" required> <br><br>
-            Enter password:
-            <input type="password" required><br><br>
+            <h1 id="signIn">Sign In</h1>          <br>
+            <div class="inputTxt">Enter username</div>  
+            <input class = "inputBoxes" type="text" required> <br><br>
+            <div class="inputTxt">Enter password</div>  
+            <input class="inputBoxes" type="password" required><br><br>
             <input class="success-btn" type="submit" value="Login">
-            <input class="success-btn" type="submit" value="Not a Member?">
         </form>
 
     </div>
