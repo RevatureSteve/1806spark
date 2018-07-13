@@ -44,4 +44,6 @@ background-color: black;
 
 #back_image {
     position: relative;
+    top: 10px;
+    left: 350px;
 }
