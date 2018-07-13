@@ -98,4 +98,3 @@ next();
 app.use("/personz", personez); //request body undefine
 app.use("/personz", jsonParser()); //use the new request body call
 app.use("/personz", personez); //
-

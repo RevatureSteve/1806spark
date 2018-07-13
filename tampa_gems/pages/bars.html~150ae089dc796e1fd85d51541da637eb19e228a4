@@ -1,7 +1,7 @@
-<html> 
+<html>
 
 <head>
-    <title>Tampa Hidden Gemini</title>
+    <title>Tampa Hidden Gems</title>
     <link rel="stylesheet" href="css/style.css" />
 </head>
 
@@ -28,9 +28,6 @@
         </li>
         <li class="float-right">
             <a href="login.html">Login</a>
-        </li>
-        <li class="float-right">
-            <a href="register.html">Register</a>
         </li>
     </ul>
     <!-- Navbar End-->
