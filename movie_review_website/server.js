@@ -1,8 +1,21 @@
-let express = require('express');
-let app = express();
+var express = require("express");
+var app = express();
+var reviewRoutes = require("./review-routes");
+var jsonParser = require("body-parser").json;
+app.use(jsonParser());
 
-app.listen(3000, function () {
-    console.log('Movie server is up');
+/*
+	connection to Database
+	Mongoose is the JavaScript Package used to talk to the mongo database
+*/
+var mongoose = require("mongoose");  // require the package from node_modules
+mongoose.connect("mongodb://localhost:27017/reviews"); // sets the configuration the specific database called qa
+var db = mongoose.connection; // a reference to the connection to allow us to use the connection
+db.on("error", function(err){	// call this function on errors 
+	console.error("connection error:", err);
+});
+db.once("open", function(){ // creates connections when requests
+	console.log("db connection successful");
 });
 
 app.use('/css', express.static('css'));
@@ -36,3 +49,24 @@ app.use("/home", function (req, resp, next) {
 
 
 })
+
+app.use("/reviews", reviewRoutes);
+
+app.use(function(req, res, next){
+	var err = new Error("Not Found");
+	err.status = 404;
+	next(err);
+});
+
+app.use(function(err, req, res, next){
+	res.status(err.status || 500);  // set the response status to err.status but if falsy set to 500
+	res.json({
+		error: {
+			message: err.message
+		}
+	});
+});
+
+app.listen(3000, function () {
+    console.log('Movie server is up');
+});

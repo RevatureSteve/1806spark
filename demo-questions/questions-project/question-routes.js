@@ -2,9 +2,9 @@
 
 var express = require("express");
 var router = express.Router();
+
+//next line is for mongoose
 var Question = require("./models").Question;
-
-
 
 // GET /questions
 // Route for questions collection
@@ -14,8 +14,10 @@ router.get("/", function(req, res, next){
 				// .sort({createdAt: -1})
 				.exec(function(err, questions){
 					if(err) return next(err);
+					console.log(questions)
 					res.json(questions);
 				});
+	
 });
 
 // POST /questions

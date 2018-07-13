@@ -9,7 +9,7 @@ app.use(jsonParser());
 	Mongoose is the JavaScript Package used to talk to the mongo database
 */
 var mongoose = require("mongoose");  // require the package from node_modules
-mongoose.connect("mongodb://localhost:27017/qa"); // sets the configuration the specific database called qa
+mongoose.connect("mongodb://localhost:27017/reviews"); // sets the configuration the specific database called qa
 var db = mongoose.connection; // a reference to the connection to allow us to use the connection
 db.on("error", function(err){	// call this function on errors 
 	console.error("connection error:", err);
@@ -43,7 +43,7 @@ app.use("/js", express.static('js'));
 	set / url to index.html
 */
 app.use("/home", function(req,resp, next){
-	resp.sendFile('/Users/steveace6/Documents/qa-rest-api/qa-rest-api-completed/index.html');
+	resp.sendFile('C:\\Users\\marci\\my_git_repos\\1806spark\\questions-project\\index.html');
 })
 
 // app.use(function(req, res, next){
