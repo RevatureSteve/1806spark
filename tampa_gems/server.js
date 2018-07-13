@@ -4,7 +4,8 @@ var app = express();
 var jsonParser = require('body-parser').json;
 var path = require('path');
 
-
+var barsRoutes = require('./route-bars');
+var restaurantsRoutes = require('./route-restaurant');
 
 app.listen(3000, function(){ console.log("hello, node server w/ express has started!");})
 
@@ -51,9 +52,7 @@ var jsonCheck = function(req, resp, next){
     next();
 }
 
-app.use('/param', jsonCheck);
-app.use('/param', jsonParser())
-app.use('/param', jsonCheck);
+
 
 app.use('/home', function(req, resp, next) {
     // resp.send('index.html');
@@ -64,5 +63,34 @@ app.use('/home', function(req, resp, next) {
     // resp.json({"response": "hello json"});
 })
 
+// 0 - completed
 app.use('/css', express.static('css'));
 app.use('/pages', express.static('pages'))
+
+
+// 1 -url params for GET!
+app.use('/diff/:id', function(req,resp, next){
+    console.log('Handling the HTTPRequest send to diff ' + 'id: ' + req.params.id + ' - 2nd stage');
+    resp.json({
+        "response": "your id: " + req.params.id,
+    })
+    // next();
+})
+
+
+// 2 -request body params for POST!
+// var jsonParser = require('body-parser').json;
+
+app.use('/param', jsonCheck);
+app.use('/param', jsonParser())
+app.use('/param', jsonCheck);
+/*
+    bars routes
+*/
+
+app.use('/bars', barsRoutes);
+
+/*
+    restaurant routes
+*/
+app.use('/restaurant', restaurantsRoutes);
