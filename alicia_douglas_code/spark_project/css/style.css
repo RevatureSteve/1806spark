@@ -19,6 +19,8 @@ li a, .dropbtn {
 /* Change the link color to green on hover */
 li a:hover {
     background-color: green;
+    color: white;
+    text-decoration: none;
 }
 
 li.dropdown {
@@ -106,6 +108,7 @@ li.dropdown {
     padding: 0;
     overflow: hidden;
     background-color: #333;
+    margin-bottom: 15px;
 }
 
 /* HTML IDs */

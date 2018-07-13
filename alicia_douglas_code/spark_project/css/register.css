@@ -27,8 +27,7 @@ footer {
     padding: 10px;
     border-radius: 15px;
     width: 150px;
-    margin-left: 148;
-    margin-top: -180;
+
 }
 
 .check {
@@ -40,6 +39,14 @@ footer {
 
 #passwordPopup{
     display: none;
+    margin-left: 148;
+    margin-top: -180;
+}
+
+#ConfirmPasswordPopup{
+    display: none;
+    margin-left: -235px;
+    margin-top: -140px;
 }
 
 
