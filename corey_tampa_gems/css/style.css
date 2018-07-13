@@ -76,8 +76,8 @@ li.dropdown {
 .success-btn {
     font-size: 20px;
     color: white; /* text color */
-    background-color: black;
-        min-width:  300px;
+    background-color: rgb(136, 255, 0);
+    min-width:  300px;
     height: 35px;
 }
 
@@ -85,6 +85,40 @@ li.dropdown {
     /*
         swap the color and background-color on mouse hover
     */
-    color: black;
+    color: rgb(136, 255, 0);
     background-color: white;
+}
+
+.right-text {
+    text-align: right;
+}
+.left-text {
+    text-align: left;
+}
+.center-text{
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 15px;
+
+}
+.col-med {
+    width: 250px;
+    height: 100px;
+    margin: 10px;
+    order: 3;
+    
+    /* position: relative; */
+    /* display: flex; */
+}
+.border-solid {
+    /* border: 3px solid black; */
+}
+
+.container { 
+    color: red;
 }

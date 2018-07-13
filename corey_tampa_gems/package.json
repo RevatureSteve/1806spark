@@ -1,0 +1,16 @@
+{
+  "name": "corey_tampa_gems",
+  "version": "1.0.0",
+  "description": "tampa files for server",
+  "main": "pokemon.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Corey Cyrus",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "devDependencies": {}
+}
