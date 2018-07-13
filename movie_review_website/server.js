@@ -1,6 +1,7 @@
 var express = require("express");
 var app = express();
 var reviewRoutes = require("./review-routes");
+var commentRoutes = require("./comment-routes");
 var jsonParser = require("body-parser").json;
 app.use(jsonParser());
 
@@ -51,6 +52,7 @@ app.use("/home", function (req, resp, next) {
 })
 
 app.use("/reviews", reviewRoutes);
+app.use("/comments", commentRoutes);
 
 app.use(function(req, res, next){
 	var err = new Error("Not Found");

@@ -20,9 +20,7 @@ router.get("/", function(req, res, next){
 // Route for creating reviews
 router.post("/", function(req, res, next){
 	console.log('Creating new review');
-	console.log(req.body);
 	var review = new Review(req.body);
-	console.log(review);
 	review.save(function(err, review){
 		if(err) return next(err);
 		res.status(201);
@@ -49,19 +47,3 @@ router.delete("/:qID/answers/:aID", function(req, res){
 });
 
 module.exports = router;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

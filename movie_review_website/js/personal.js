@@ -1,7 +1,7 @@
 
 var url = 'http://localhost:3000/reviews';
 window.onload = function () {
-
+/* legacy test code that pushes an item into the database
     let data = {
         "header": "This is a test review",
         "author": "John Doe",
@@ -23,4 +23,5 @@ window.onload = function () {
         console.log('post');
 
     });
+    */
 }

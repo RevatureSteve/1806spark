@@ -7,7 +7,7 @@ let testReview = {
     commentsArr: [{ commentAuthor: "Marcin Salamon", comment: "terrible review" },
     { commentAuthor: "John Doe", comment: "great review" }]
 }
-db.users.insertOne(
+db.reviews.insertOne(
 {
     header: "Definitely worth seeing",
     author: "Marcin Salamon",
@@ -31,6 +31,7 @@ let reviews = [testReview, testReview2];
 */
 
 var url = 'http://localhost:3000/reviews';
+var urlComment = 'http://localhost:3000/comments';
 var reviews = null;
 
 window.onload = function () {
@@ -122,12 +123,35 @@ function displayReviews(reviews) {
 
         // comment submittal form
         let form = this.document.createElement('form');
+        form.id = review._id;
         let commentInputBox = this.document.createElement('textarea');
         let commentButton = this.document.createElement('input');
         commentButton.type = 'submit';
+        commentButton.onclick = submitComment;
         commentInputBox.placeholder = "Insert comment here";
         form.appendChild(commentInputBox);
         form.appendChild(commentButton);
         commentSection.appendChild(form);
     }
+}
+
+function submitComment(){
+    console.log(this.parentElement);
+    let comment = this.parentElement.children[0].value;
+    let id = this.parentElement.id;
+
+    let data = {
+        "id": id,
+        "comment": comment
+    }
+
+    fetch(urlComment, {
+        method: 'POST', // or 'PUT'
+        body: JSON.stringify(data), // data can be `string` or {object}! Must be converted to JSON
+        headers:{
+          'Content-Type': 'application/json'
+        }
+    }).then(data=> data.json()).then(q => {
+            console.log(q);
+    });
 }
