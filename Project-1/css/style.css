@@ -51,7 +51,7 @@ h2{
     margin-top: 5%;
    width: 70%;
    height: fit-content;
-    background-color: rgba(33, 33, 33);
+    background-color: rgba(33, 33, 33, 0.952);
     columns: 100%;
 }
 #column2{
@@ -69,12 +69,12 @@ ul {
     margin-left: 0%;
     padding: 0;
     width: 14.9%;
-    background-color: #f1f1f1;
+    background-color: #f1f1f100;
 }
 #jumpbtn{
    margin-left: 84%;
     position: fixed;
-    background-color: rgb(33, 33, 33);
+    background-color: rgb(33, 33, 33, 0.952);
 }
 
 li a {
@@ -111,7 +111,7 @@ li a:hover:not(.active) {
 }
 /* Style the button that is used to open and close the collapsible content */
 .collapsible {
-    background-color:rgb(33, 33, 33);
+    background-color:rgba(33, 33, 33, 0.952);
     color:white;
     cursor: pointer;
     padding: 7px;
@@ -160,7 +160,7 @@ textarea{
 #number{
     margin-left: 5%;
    color: white;
-   background-color: rgb(33, 33, 33);
+   background-color: rgb(33, 33, 33, 0.952);
    width: 15%;
 }
 

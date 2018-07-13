@@ -22,7 +22,25 @@ description: "Called Gears 5 rather than Gears 'of War' 5" +
 description: "The Elder Scrolls is an action role-playing open world video game series developed " + 
 "by Bethesda Game Studios and published by Bethesda Softworks. " + 
 "The Elder Scrolls games take place in the fictional world of Nirn, on the continent of Tamriel.", 
-rating: 5 }];
+rating: 5 },
+{name:"Jagged hero",
+  description:"Jagged Hero is a action role-playing puzzle game developed by a small three man team. Still in development the beta has been released. Taking place in a historic Japanese themed location, the hero must fight through the landscape to regain his original form. ",
+  rating: 8},
+{name:"The Talos Principle",
+description:"The Talos Principle is a first-person puzzle video game created by the Croatian developer Croteam and published by Devolver Digital. It was simultaneously released on Linux, OS X and Windows in December 2014.",
+rating: 8},
+{name:"Qube 2",
+description:"Q.U.B.E. 2 is the sequel to the hit first-person puzzle game Q.U.B.E. You are Amelia Cross, a stranded archaeologist who has awoken among the ruins of an ancient alien landscape. With the distant help of another survivor you must solve the puzzles of this mysterious world and find a way back home.",
+rating: 8},
+{name:"Consortium",
+description:"",
+rating: 8},
+{name:"Maple Story 2",
+description:"",
+rating: 8},
+{name:"Black Clover",
+description:"",
+rating: 8}];
 //variables for DOM manipulation
 let title;
 let description;
@@ -70,13 +88,17 @@ window.onload = function () {
       }
     });
   }
-}//window.omload end
+}//window.onload end
 function dataBase() {
-  let api_key = '0eb1509b588973f865ac18529f73b70807505ccc';
+  let api_key = 'b0828bbd51e45123e3f736dba0884357';
   let request = document.getElementById('number').value;
   let appName = 'Beck\'s App'
   //un-used vars for quick referance 
-  fetch('http://www.giantbomb.com/api/game/3030-4725/?api_key=0eb1509b588973f865ac18529f73b70807505ccc').then(function (data) {
+  fetch(`https://api-endpoint.igdb.com/games/${request}`, {
+    headers: {
+      "user-key": api_key,
+      Accept: "application/json"
+    }}).then(function (data) {
     return data.json();
   })
     .then(function (jsonResults) {
@@ -103,21 +125,21 @@ function addPageContents() {
   }
   //which table is the user clicking on
   else if(targetId < 4) {
-    headerRows[0].scrollIntoView(true);
     img[0].src = pageImg;
     description[0].innerHTML = games[x].description;
     title[0].innerHTML = games[x].name;
+    headerRows[0].scrollIntoView(true);
   }
   else if(targetId > 3 && targetId < 8){
-    headerRows[1].scrollIntoView(true);
     img[1].src = pageImg;
     description[1].innerHTML = games[x].description;
     title[1].innerHTML = games[x].name;
+    headerRows[1].scrollIntoView(true);
   }
   else if(targetId > 7){
-    headerRows[2].scrollIntoView(true);
     img[2].src = pageImg;
     description[2].innerHTML = games[x].description;
     title[2].innerHTML = games[x].name;
+    headerRows[2].scrollIntoView(true);
   }
 }
