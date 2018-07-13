@@ -1,0 +1,33 @@
+header {
+    /* to center an element */
+    max-width: 100%;
+    margin: auto;
+
+    font-size: 35px;
+    background-color: rgba(94, 94, 94, 0.5);
+    text-align: center; /* center text */
+    padding: 15px;
+}
+
+/*
+    HTML IDs
+*/
+
+#loginForm {
+    background-color: rgb(145, 145, 233);
+    border: 1px solid black;
+    font-weight: bold;
+    text-align: center; /* text inside the element */
+    padding: 20px;
+    /* center loginForm element */
+    max-width: 500px;
+    margin: auto;
+}
+
+#loginBody {
+    background-image: url("https://cdn.pixabay.com/photo/2016/04/25/20/55/colorful-1353143_960_720.png");
+}
+
+#regBody {
+    background-image: url("https://png.pngtree.com/element_origin_min_pic/16/07/17/20578b7dc2c0ab0.jpg");
+}

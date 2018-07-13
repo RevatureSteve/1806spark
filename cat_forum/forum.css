@@ -1,0 +1,108 @@
+body {
+    background-color:rgb(137, 137, 196));
+    margin: 0px;
+    font-family:Tahoma, Geneva, sans-serif;
+ }
+ 
+ #backP{
+     background-image: url("https://www.publicdomainpictures.net/pictures/120000/velka/blue-checkerboard-cat-pattern.jpg");
+ }
+ 
+ #backQ{
+     background-image: url("https://www.publicdomainpictures.net/pictures/40000/velka/colorful-cats-wallpaper-background.jpg");
+ }
+
+ h1 {
+    text-align: center
+    border: 5px solid color:black 
+ }
+ 
+ 
+ #bigger{
+ font-size: 22px;
+ text-align: center;
+ font-family:Tahoma, Geneva, sans-serif;
+ }
+ ul {
+    list-style-type: none;
+    margin: 0;
+    width: 100%;
+    padding: 10px;
+    overflow: hidden;
+ }
+
+ #navC {
+    background-color: rgb(136, 130, 130);
+ }
+ 
+ li {
+    float: left;
+ }
+ 
+ li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+ }
+ 
+ li a:hover {
+    background-color: rgb(204, 91, 238);
+ }
+ 
+ .active {
+    background-color: #4CAF50;
+ }
+ 
+ .center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.541);
+    border: 3px solid rgb(127, 127, 168);
+    padding: 10px;
+    
+ 
+ 
+ 
+ }
+ 
+ .header {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+    background-color: rgba(255, 255, 255, 0.719);
+ }
+ 
+ .profile {
+    margin: 120px 0px 0px 120px
+ 
+ }
+ 
+ li {
+    border-right: 1px solid #bbb;
+ }
+ 
+ .character {
+    float: right;
+    padding-right: 300px;
+    padding-bottom: 100px;
+    min-width: 100px;
+    margin: -220px 30px 120px 20px 
+ }
+ 
+ #title {
+    float: right;
+    border: 5px;
+    margin: 120px 250px 0px 0px;
+    font-size: 40;
+    font-family:Tahoma, Geneva, sans-serif;
+ }
+ 
+ #body {
+    margin: auto;
+    max-width: 250px;
+ }
