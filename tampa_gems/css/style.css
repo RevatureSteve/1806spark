@@ -122,3 +122,8 @@ li.dropdown {
 .container { 
     color: red;
 }
+
+.picture {
+    height: 400px;
+    width: 50%;
+}
