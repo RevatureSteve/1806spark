@@ -1,0 +1,25 @@
+<html>
+
+<head>
+    <title>Quiz Questions</title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+    <script src="/js/app.js"></script>
+</head>
+<body>
+    <div id="navbar">
+
+    </div>
+    <h1> Submit a question</h1>
+    <div id="questionForm"> <!-- don't use a form tag since we are using javascript's fetch async request -->
+        Enter question: <input id="questionInput" type="text" placeholder="enter q.." name="question"> <br><br>
+        Enter answer: <input id="answerInput" type="text" placeholder="enter a.." name="answer"> <br><br>
+        <button id="questionBtn">Submit new Question</button>
+    </div>
+    <div id="newQuestionStatus">
+
+    </div>
+    <script src="/js/new-question.js"></script>
+</body>
+
+</html>
