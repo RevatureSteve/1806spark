@@ -1,8 +1,15 @@
 //Required libraries
 var express = require('express');
+var mongoose = require('mongoose');
 
 // Invoking libraries
 var app  = express();
+
+// Initialize mongoose
+var dpPort = 27017; //do not change
+
+// Setup mongoose
+mongoose.connect(`mongodb://localhost:${dpPort}/users`);
 
 // Initialize server
 app.listen(3000, () =>{ 
