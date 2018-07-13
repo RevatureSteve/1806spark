@@ -5,13 +5,14 @@
 /*
     HTML IDs
 */
-#loginLink {
-    float: right;
-}
+
 
 /*
     HTML Elements
 */
+body{
+    margin: 0;
+}
 ul {
     list-style-type: none;
     margin: 0;
@@ -67,3 +68,57 @@ li.dropdown {
     display: block;
 }
 
+
+.float-right {
+    float: right;
+}
+
+.success-btn {
+    font-size: 20px;
+    color: white; /* text color */
+    background-color: rgb(136, 255, 0);
+    min-width:  300px;
+    height: 35px;
+}
+
+.success-btn:hover {
+    /*
+        swap the color and background-color on mouse hover
+    */
+    color: rgb(136, 255, 0);
+    background-color: white;
+}
+
+.right-text {
+    text-align: right;
+}
+.left-text {
+    text-align: left;
+}
+.center-text{
+    text-align: center;
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 15px;
+
+}
+.col-med {
+    width: 250px;
+    height: 100px;
+    margin: 10px;
+    order: 3;
+    
+    /* position: relative; */
+    /* display: flex; */
+}
+.border-solid {
+    /* border: 3px solid black; */
+}
+
+.container { 
+    color: red;
+}
