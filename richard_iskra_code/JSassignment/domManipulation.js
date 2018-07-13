@@ -35,7 +35,6 @@ function getPeopleInSales() {
     }
 }
 
-
 /*
 3. Click Here
 Define function getAnchorChildren()
