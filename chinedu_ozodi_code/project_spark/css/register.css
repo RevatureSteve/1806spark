@@ -1,8 +1,6 @@
 /* TAGS */
 
 input{
-    display: block;
-    width: 100%;
     padding: 0.375rem 0.75rem;
     font-size: 1rem;
     line-height: 1.5;
@@ -13,6 +11,8 @@ input{
     border-radius: 0.25rem;
     transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
 }
+
+
 
 /* CLASSES */
 .form-center{
@@ -33,6 +33,10 @@ input{
     border-radius: 1mm;
 }
 
+.custum-btn{
+    /* display: block; */
+    width: 100%;
+}
 .custom-btn-top{
     border-bottom-left-radius: 0%;
     border-bottom-right-radius: 0%;

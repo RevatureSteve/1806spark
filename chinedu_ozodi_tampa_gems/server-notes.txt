@@ -1,0 +1,23 @@
+Node.js
+    Is a javascript server software
+    can handle requsts and send back responses
+
+Express (javascript package)
+    A javascript framework
+    used with Node.js to make is easy to 
+        handle requests and send back responses (removes boilerplate code)
+
+Node package manager: allows me to quickly download javascript packages like Express
+    cmd: npm
+        turns our project into a node project
+    cmd: npm init
+        turn into node.js package
+        metadata:
+            -name
+            -version #
+            -dependencies (javascript packages)
+            -author
+    cmd: node
+        enters javascript mode in the cmd terminal
+        press ctrl+C to quit
+

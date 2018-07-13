@@ -7,17 +7,23 @@
         <!-- Nav Bar Begin -->
         <ul>
                 <li class="active"><a href="index.html">Home</a></li>
-                <li><a href="restuarant.html">Restuarants</a></li>
-                <li><a href="bars.html">Bars</a></li>
-                <li><a href="beaches.html">Beaches</a></li>
-                <li><a href="sight_see.html">Sight Seeing</a></li>
-                <li><a href="movie_theaters.html">Movie Theaters</a></li>
-                <li><a href="amusement_parks.html">Amusement Parks</a></li>
-                <li><a href="nature.html">Nature</a></li>
-                <li class="float-right"><a href="login.html">Login</a></li>
-                <li class="float-right"> <a href="registration.html">Registration</a></li> 
+                <li><a href="pages/restuarant.html">Restuarants</a></li>
+                <li><a href="pages/bars.html">Bars</a></li>
+                <li><a href="pages/beaches.html">Beaches</a></li>
+                <li><a href="pages/sight_see.html">Sight Seeing</a></li>
+                <li><a href="pages/movie_theaters.html">Movie Theaters</a></li>
+                <li><a href="pages/amusement_parks.html">Amusement Parks</a></li>
+                <li><a href="pages/nature.html">Nature</a></li>
+                <li class="float-right"><a href="pages/login.html">Login</a></li>
+                <li class="float-right"> <a href="pages/registration.html">Registration</a></li> 
               </ul>
         <!-- Nav Bar End -->
         <h1>Welcome to Tampa!</h1>
+        <form id="indexForm" action="person" method="GET">
+            Enter Name: <input type="text" minlength="3" maxlength="12" placeholder="Enter name"  value="" name="name" required> <br> <br>
+            Enter Name: <input type="number" min="0" max="120" placeholder="Enter age"  value="" name="age" required> <br> <br>
+            <!-- Enter Password: <input type="password" minlength="5" maxlength="20" required> <br> <br> -->
+            <input class="success-btn" type="submit" value="Login">
+        </form>
     </body>
 </html>
