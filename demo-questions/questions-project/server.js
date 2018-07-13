@@ -43,7 +43,7 @@ app.use("/js", express.static('js'));
 	set / url to index.html
 */
 app.use("/home", function(req,resp, next){
-	resp.sendFile('/Users/steveace6/Documents/qa-rest-api/qa-rest-api-completed/index.html');
+	resp.sendFile('C:\\Users\\Steve Work PC\\my_git_repos\\1806spark\\demo-questions\\questions-project\\index.html');
 })
 
 // app.use(function(req, res, next){

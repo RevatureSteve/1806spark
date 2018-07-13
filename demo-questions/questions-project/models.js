@@ -10,7 +10,6 @@ var QuestionSchema = new Schema({
 	answer: String
 });
 
-
 var Question = mongoose.model("Question", QuestionSchema);
 
 module.exports.Question = Question;
