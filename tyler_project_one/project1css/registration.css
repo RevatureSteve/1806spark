@@ -123,4 +123,32 @@ Body {
     background-image:url("http://jonvilma.com/images/colors-6.jpg");
 }
 
+#startTest{
+  
+        height: 300px;
+        width: 300px;
+        text-align: center;
+        margin:auto;
+        display:block;
+        font-size:80;
+        font-weight:Bold;
+        border-radius: 50px;
+        padding: 10px;
+        box-shadow: 8px 16px rgb(153, 9, 153);
 
+} 
+#startTest:hover {
+    color: rgb(136, 255, 0);
+    background-color: rgb(153, 9, 153);
+} 
+    
+footer {
+    padding: 10px;
+    text-align: center;
+    background-color: black;
+    height: 50px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+}

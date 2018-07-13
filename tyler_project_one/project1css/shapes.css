@@ -196,3 +196,10 @@ li.dropdown {
     height: 400px;
     width: 50%;
 }
+
+#testBackground {
+    background-color:blue;
+    height:100%;
+    width:auto;
+    
+}

@@ -2,7 +2,7 @@
 
 <head>
     <title>OnClick Learning</title>
-    <link rel="stylesheet" href="project1.css">
+    <link rel="stylesheet" href="../project1css/project1.css">
 
 
 </head>
@@ -16,19 +16,19 @@
             <nav id="nav">
                 <ul>
                     <li class="active">
-                        <a href="project1.html">Homepage</a>
+                        <a href="project1/project1.html">Homepage</a>
                     </li>
                     <li class="dropdown">
                         <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
                         <div class="dropdown-content">
-                            <a href="shapesIndex.html">Shapes</a>
-                            <a href="numbersIndex.html">Numbers</a>
-                            <a href="colorsIndex.html">Colors</a>
+                            <a href="project1/shapesIndex.html">Shapes</a>
+                            <a href="project1/numbersIndex.html">Numbers</a>
+                            <a href="project1/colorsIndex.html">Colors</a>
                         </div>
                     </li>
                     <li class="float-right">
-                            <a href="login.html">Login</a>
-                            <a href="Register.html">Register</a>
+                            <a href="project1/login.html">Login</a>
+                            <a href="project1/Register.html">Register</a>
                     </li>
                 </ul>
             </nav>
@@ -47,11 +47,13 @@
                     GET - form data in the URL
                     POST - form data hidden in the request body
                 -->
-                <form id="loginForm" method="POST" action="http://www.maw.com/login">
+                <form id="loginForm" action="verifyUandP" method="POST" >
                     ENTER USERNAME:
-                    <input type="text" required minlength="7" maxlength="12"> <br><br>
+                    <input type="text" placeholder="Enter Username" required minlength="7" maxlength="25" 
+                    value="" name="username"> <br><br>
                     ENTER PASSWORD:
-                    <input type="password" required minlength="7" maxlength="12"><br><br>
+                    <input type="password" placeholder="Enter Password" required minlength="7" maxlength="20"
+                    value="" name="username" ><br><br>
                     <input class="success-btn" type="submit" value="Login">
                 </form>
         

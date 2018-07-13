@@ -14,27 +14,36 @@ var questions = [
     {
         question: "Select the Square",
         answers: {
-            a: "triangle.png",
+            a: "circle.png",
             b: "square.png",
-            c: "circle.png"
+            c: "triangle.png"
         },
         correctAnswer: 'b'
     },
     {
         question: "Select the Triangle",
         answers: {
-            a: "triangle",
-            b: "square",
-            c: "circle"
+            a: "triangle.png",
+            b: "circle.png",
+            c: "square.png"
         },
         correctAnswer: 'a'
     },
     {
         question: "Select the Triangle",
         answers: {
-            a: "triangle",
-            b: "square",
-            c: "circle"
+            a: "triangle.png",
+            b: "square.png",
+            c: "circle.png"
+        },
+        correctAnswer: 'a'
+    },
+    {
+        question: "Select the Triangle",
+        answers: {
+            a: "triangle.png",
+            b: "square.png",
+            c: "circle.png"
         },
         correctAnswer: 'a'
     }
@@ -103,3 +112,4 @@ function generateQuiz() {
     }
 
 }
+
