@@ -2,7 +2,7 @@
  Define function: reverseStr(someStr)
  Reverse and return the String.
 */
-
+//changes the string to an array when broken into letter, reverse is a method for arrays
 function reverse(s) {
     return s.split('').reverse().join('');
 }
@@ -69,7 +69,7 @@ The lengths should be one less than the original length.*/
 function spliceElement(someArr) {
     console.log("pre-splice array: " + someArr);
     console.log("this is the length of the array BEFORE i splice an element: " + someArr.length);
-    someArr.splice(2, 1);
+    someArr.splice(2, 1);   
     console.log("post-splice array: " + someArr);
     console.log("this is the length of the array AFTER i splice an element: " + someArr.length);
 }
