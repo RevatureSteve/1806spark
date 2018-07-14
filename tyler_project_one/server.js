@@ -1,46 +1,29 @@
-console.log('hello');
-var express = require('express');
-var app = express() //returns an express application to build a server with
-var jsonParser = require('body-parser').json;
-//callback function for when the server has started
-app.listen(3001, function(){
-    console.log('your node server with express is ready');
+var express = require("express");
+var app = express();
+var portNumber = 3001
+var getScore = require("./getScore-route");
+var giveScore = require("./giveScore-route");
+var jsonParser = require('body-parser');
 
-})
-//allow css static files to be found easily//
-app.use('/project1css', express.static('project1css'));
-//html files in folder pages//
-app.use('/project1', express.static('project1'));
+app.use(jsonParser());
 
-app.use(function(req, resp, next){
-    console.log('hey developer on teh server, I recieved a request');
-    console.log(req.headers);
-    console.log(req.method);
-    console.log(req.url);
-    next(); //go to next function
+app.listen(portNumber, function(){
+    console.log("Project 1 - Express server is listening on port 3001")
+});
 
-})
-app.use(function(req, resp, next){
-    console.log('Give request to next function....im now going to do something');
-    next(); //go to next function if no next then express knows we're done
-})
+// use mongoose JS package to connect to mongo db
 
-app.use("/hello" ,function(req, resp, next){
-    console.log('request recieved - hello');
-    next(); //go to next request
-    
-})
-app.use('/home', function(req, resp, next){ //add extra \\ so it doesn't read "escape \"//
-    resp.sendFile('C:\\Users\\tyler\\my_git_repos\\1806spark\\tyler_project_one\\project1.html');
-})
+var mongoose = require("mongoose");    
+mongoose.connect("mongodb://localhost:27017/tdb"); //projectOne DB
+var db = mongoose.connection; //reference connection and allow use
 
-var verifyUandP = function(req, resp, next){
-    if(req.body){
-        console.log('The color is:' + req.body.color);
-    }else{
-        console.log('There is no');
-    }
-    next();
-};
-app.use("/verifyUandP", jsonParser());
-app.use("/verifyUandP", verifyUandP);
+//error handling
+db.on("error", function(err){
+    console.error("connection error:", err);
+});
+db.once("open", function(){
+    console.log("Database Connection Successful!!");
+});
+
+app.use("/scores", getScore)
+app.use("/scoreboard", giveScore)
