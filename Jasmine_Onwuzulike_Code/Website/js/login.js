@@ -9,6 +9,8 @@ document.getElementById("createAcc").addEventListener("click", function() {
    console.log("You have started creating an account!")
 });
 
-
-
-console.log(`Thank you for creating a account`);
+let data = {
+   "firstName": firstName,
+   "lastName": lastName,
+   "email": email
+};
