@@ -7,7 +7,8 @@ var PictureSchema = new Schema({
     url: String,
     createdAt: {type: Date, default: Date.now},
     location: String,
-    descritpion: String
+    descritpion: String,
+    comments: Array
 });
 
 var Picture = mongoose.model('Picture', PictureSchema);

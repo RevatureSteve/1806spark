@@ -24,17 +24,43 @@
     </ul>
 
 
+    <!-- The Modal -->
+    <div id="imgPopup" class="modal">
+
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span id="closePopup" class="close">&times;</span>
+            <div>
+                <img  id="popupImg" src="" alt="">
+            </div>
+            <div id="comments">
+                Comments: <br>
+            </div>
+        </div>
+
+    </div>
+
+
+    <!-- <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Ic_favorite_outline_48px.svg/2000px-Ic_favorite_outline_48px.svg.png" alt="Add to Favs"> -->
+
     <ul class="sideNavBar">
-        <li class="sideli" id="home">Home</li>
-        <li class="sideli" id="upload">Upload</li>
-        <li class="sideli" id="favs">Favorites</li>
+        <li class="sideli" id="home">
+            <img id="homeIcon" src="https://svgsilh.com/svg/2088906.svg" alt="Home Btn">
+        </li>
+        <li class="sideli" id="upload">
+            <img id="uploadIcon" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Upload_alt_font_awesome.svg/1000px-Upload_alt_font_awesome.svg.png"
+                alt="Upload Btn">
+        </li>
+        <li class="sideli" id="favs">
+            <img id="favIcon" src="https://svgsilh.com/svg/154801.svg" alt="Favorites Btn">
+        </li>
     </ul>
 
 
     <div class="userHomeView" id="picView">
         <h2>Home</h2>
         <div class="posts">
-            <h3>User Name</h3>
+            <h3 class="userName">User Name</h3>
             <img class="pics" src="../css/pics/WP_20180530_11_32_31_Pro.jpg">
             <br>
             <div class="info">
