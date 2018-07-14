@@ -1,0 +1,249 @@
+/**body config**/
+body{
+    margin-top: 0;
+    margin: 0;
+    font-style: oblique;
+    background-color: rgb(226, 226, 226);
+}
+
+/**Navagation list**/
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+p {
+    margin-bottom: 0px;
+    
+}
+
+.p {
+    text-align: left;
+    margin-left: 22%;
+    margin-right: 15%;
+    margin-bottom: 10px
+    
+}
+
+/*navbar styling when you hover your mouse over the text*/
+li a:hover {
+    background-color: red;
+}
+
+/*the home tab*/
+.a {
+    float: left;
+}
+
+/*the sign up tab*/
+.b {
+    float: right;
+}
+
+
+
+
+
+/**Drop down list**/
+li a {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+/*header*/
+#signUp-headOne {
+    background-color:white;
+    text-align: center;
+    padding-top: 25px;
+    font-size: 50px; 
+    margin-top: 25%;
+    
+}
+
+/*div*/
+#signUp-start {
+    background-color: white;
+    text-align: center;
+    max-width: 85%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 5px auto;
+ 
+    font-size: 12px;
+    text-transform: uppercase;
+}
+
+hr {
+    margin-bottom: 0px;
+}
+
+/*div*/
+.signUp-div1 {
+    background-color: white;
+    text-align: center;
+    max-width: 60%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin: 10px auto;
+ 
+    font-size: 20px;
+}
+
+/*div element*/
+#signUp-div2 {
+    background-color: white;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    
+
+    font-size: 20px;
+}
+
+/*not used atm*/
+#signUp-div3 {
+    background-color: white;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    
+}
+
+.signUp-input1 {
+    background-color: white;
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+.signUp-input2 {
+    background-color: white;
+    text-align: left;
+    width: 55%;
+    height: 35px;
+    border: .5px solid #919191;
+    border-radius: 10px;
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 15px;
+
+}
+
+#signUp-input3 {
+    background-color: white;
+    text-align: left;
+    width: 55%;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-left: 22%;
+    margin-right: 0px;
+    
+    text-transform: uppercase;
+    font-size: 15px;
+}
+
+#signUp-uList {
+    background-color: white;
+    margin-bottom: 15px;
+    margin-left: 22%;
+}
+
+.valid {
+    color: green;
+}
+
+.valid:before {
+    content: "(>^.^)>[_]";
+} 
+
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+
+    content: "[_]<('.'<)";
+}
+
+#signUp-listItem0 {
+    background-color: white;
+    text-align: left;
+    list-style-type: disc;
+
+    font-size: 15px;
+}
+
+#signUp-listItem1 {
+    background-color: white;
+    text-align: left;
+    list-style-type: disc;
+
+    font-size: 15px;
+}
+#signUp-listItem2 {
+    background-color: white;
+    text-align: left;
+    list-style-type: disc;
+
+    font-size: 15px;
+}
+#signUp-listItem3 {
+    background-color: white;
+    text-align: left;
+    list-style-type: disc;
+
+    font-size: 15px;
+}
+#signUp-listItem4 {
+    background-color: white;
+    text-align: left;
+    list-style-type: disc;
+
+    font-size: 15px;
+}
+
+.signUp-submit {
+    width: 20%;
+    background-color: rgb(45, 134, 189);
+    color: white;
+    border-radius: 8px;
+    margin-right: 35%;
+    margin-bottom: 20px;
+    text-align: center;
+    font-size: 20px;
+}
+
+.signUp-submit:hover {
+    background-color: rgb(14, 10, 10);
+    color:  white;
+}
+
+.signUp-submit:active {
+    box-shadow: 0 5px #666;
+    transform: translateX(4px);
+    transform: translateY(4px);
+  }
+
+.signUp-checkbox {
+    font-size: 17px;
+    margin-bottom: 10px;
+}
+
+.signUp-bottom {
+    height: 50px;
+}
+
