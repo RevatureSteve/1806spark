@@ -17,7 +17,7 @@ body {
 
 }
 
-input {
+#inputBoxid {
     margin-top: 10px;
     /* margin-right: -100px; */
     /* float: right; */
@@ -100,7 +100,7 @@ li a:hover, li a:active {
 }
 
 #moviePosters {
-    padding: 100px
+    padding: 100px;
 }
 
 .posterImagesCreate {
@@ -120,7 +120,7 @@ font-size: 50px;
 position: absolute;
                     }
 
-                    #pagebody1 {
+                    .pagebody1 {
   border: 3.5px solid rgba(230, 190, 138, 0.664);
      margin: 100px 0px 0px 117px;
    height: 2000px;
@@ -132,4 +132,193 @@ position: absolute;
                         color: white;
                     
                     }
-                    
+
+#login {
+
+background-color: rgb(255, 255, 255);
+border-radius: 25px;
+border: 3.5px solid rgba(230, 190, 138, 0.521);
+margin: 200px 0px 0px 270px;
+width: 600px;
+height: 400px;
+color: black;
+}
+
+#navLogoLogin {
+margin: 40px 0px 0px 10px;
+
+}
+
+#loginUsername {
+
+    margin: 0px 0px 0px 170px;
+    padding: 10px;
+    border: 1.5px solid rgb(230, 190, 138);
+    border-radius: 15px;
+    width: 270px;
+}
+
+#loginPassword {
+
+    margin: 0px 0px 0px 170px;
+    padding: 10px;
+    border: 1.5px solid rgb(230, 190, 138);
+    border-radius: 15px;
+    width: 270px;
+}
+
+#loginBtn{
+
+    margin: 0px 0px 0px 280px;
+    border: 1.5px solid rgb(230, 190, 138);
+    border-radius: 15px;
+    background-color: rgba(230, 190, 138, 0.178);
+    font-weight: bold;
+}
+
+#loginSignin{
+    margin: 0px 0px 0px 270px;
+}
+
+.newUser{
+    margin: 0px 0px 0px 220px;
+}
+
+#moviePosters1 {
+    padding: 100px;
+}
+
+
+/*---------------------------------------------------------------------
+
+                     Unique CSS For Register Page */
+
+#registerTitle {
+margin: 40px 0px 0px 360px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 50px;
+position: absolute;
+}
+                        
+
+#register {
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    border: 3.5px solid rgba(230, 190, 138, 0.521);
+    margin: 200px 0px 0px 270px;
+    width: 600px;
+    height: 705px;
+    color: black;
+    }
+    
+    #navLogoregister {
+    margin: 40px 0px 0px 10px;
+    
+    }
+
+    #registerSignin{
+        margin: 0px 0px 0px 270px;
+    }
+
+    #registerFirstName {
+    
+        margin: 0px 0px 0px 35px;
+        padding: 10px;
+        border: 1.5px solid rgb(230, 190, 138);
+        border-radius: 15px;
+        width: 270px;
+    }
+    
+    #registerLastName {
+    
+        margin: 0px 0px 0px 35px;
+        padding: 10px;
+        border: 1.5px solid rgb(230, 190, 138);
+        border-radius: 15px;
+        width: 270px;
+    }
+
+    #registerEmail {
+    
+        margin: 0px 0px 0px 35px;
+        padding: 10px;
+        border: 1.5px solid rgb(230, 190, 138);
+        border-radius: 15px;
+        width: 270px;
+    }
+
+    #registerUsername {
+    
+        margin: 0px 0px 0px 35px;
+        padding: 10px;
+        border: 1.5px solid rgb(230, 190, 138);
+        border-radius: 15px;
+        width: 270px;
+    }
+    
+    #registerPassword {
+    
+        margin: 0px 0px 0px 35px;
+        padding: 10px;
+        border: 1.5px solid rgb(230, 190, 138);
+        border-radius: 15px;
+        width: 270px;
+    }
+
+    #confirmPassword {
+    
+        margin: 0px 0px 0px 35px;
+        padding: 10px;
+        border: 1.5px solid rgb(230, 190, 138);
+        border-radius: 15px;
+        width: 270px;
+    }
+    
+    #registerBtn{
+    
+        margin: 0px 0px 0px 230px;
+        border: 2px dotted rgb(230, 190, 138);
+        border-radius: 3px;
+        background-color: rgba(230, 190, 138, 0.178);
+        width: 160px;
+        height: 30px;
+        font-size: 20px;
+        font-weight: bold;
+    }
+
+    #registerForm{
+
+        display: absolute;
+
+    }
+
+    #registerText1 {
+
+        margin: -417px 0px 0px 340px;
+    }
+
+    #registerText2 {
+
+        margin: 38px 0px 0px 340px;
+    }
+
+    #registerText3 {
+
+        margin: 37px 0px 0px 340px;
+    }
+
+    #registerText4 {
+
+        margin: 35px 0px 0px 340px;
+    }
+
+    #registerText5 {
+
+        margin: 37px 0px 0px 340px;
+    }
+
+    #registerText6 {
+
+        margin: 37px 0px 0px 340px;
+    }

@@ -1,11 +1,15 @@
 window.onload = function () {
 
-    image.addEventListener("click", changeSearch)
+    var inputFirstName = document.getElementById("registerFirstName");
 
+    image.addEventListener("click", changeSearch);
 
+    inputFirstName.addEventListener("change", clientValidation1);
+
+    
 }
 
-var image = document.getElementById("searchIcon")
+var image = document.getElementById("searchIcon");
 var getInputValue = null;
 var jsonMovieResults = null;
 
@@ -22,13 +26,13 @@ function changeSearch() {
     inputBoxGet.addEventListener("change", () => {
             getInputValue = inputBoxGet.value;
             alert(getInputValue);
-            if(document.contains(document.getElementById("title"))){
-            h1 = document.getElementById("title");
+            if(document.contains(document.getElementById("registerTitle"))){
+            h1 = document.getElementById("registerTitle");
             h1.innerHTML= "Search for: " + getInputValue
             h1.style.marginLeft="290px";
             }
-            if(document.contains(document.getElementById("login"))){
-                loginField = document.getElementById("login");
+            if(document.contains(document.getElementById("register"))){
+                loginField = document.getElementById("register");
                 loginField.parentNode.removeChild(loginField);
                 }
             fetch("https://api.themoviedb.org/3/search/movie?api_key=de645bfacfad1d8fc5c6b13e4d3780ee&query=" + getInputValue).then(function (data) {
@@ -57,5 +61,31 @@ function changeSearch() {
     
     };
 
+function clientValidation1(){
 
+ var inputFirstName = document.getElementById("registerFirstName").value;
+
+ var arrayFirstName = inputFirstName.split("");
+
+ for (i=0; i < arrayFirstName.length;i++){
+
+    var x = parseInt(arrayFirstName[i]);
+   if(x === 0 ||x === 1 ||x === 2 ||x === 3 ||x === 4 ||x === 5 ||x === 6 ||x === 7 ||x === 8 ||x === 9){
+
+        var firstNameText = document.getElementById("registerText1");
+        firstNameText.innerHTML = "Must not contain a number";
+        firstNameText.style.color = "red";
+
+        
+    }
+    else{
+        var firstNameText = document.getElementById("registerText1");
+        document.getElementById("registerText1").innerHTML = "Yay";
+        firstNameText.style.color = "black";
+    }
+ }
+
+
+    
+}
 
