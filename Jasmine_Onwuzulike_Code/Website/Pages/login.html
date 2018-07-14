@@ -3,6 +3,7 @@
 <head>
     <title>35mm Photography</title>
     <link rel="stylesheet" href="/css/main.css" />
+  
 </head>
 
 <body>
@@ -32,15 +33,28 @@
                 <a href="login.html">Sign Up/ Login</a>
             </li>
     </ul>
+    <br>
+    <br>
  <!--Sign Up -->
 
+ <form class="frm" action="/login" method="GET">
+   
+Enter First Name:<input type="text"required name="firstName" placeholder="Enter first name">
+<br>
+<br>
+Enter Last Name:<input type="text" required name="lastName" placeholder="Enter Last Name">
+<br>
+<br>
+Enter Email Address:<input type="text" required name="email" placeholder="Enter email address"> 
+<br>
+<br>
+<button id="createAcc">Create New Account</button>
+<br>
+<br>
 
 
 
-
-
-
-
-
+</form>
+<script src="/js/login.js"></script>
     </body>
     </html>
