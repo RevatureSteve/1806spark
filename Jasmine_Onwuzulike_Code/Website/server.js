@@ -4,7 +4,6 @@ var loginPath = require("./login-paths");
 
 
 
-
 //Static pages.
 app.use('/css', express.static('css'));
 app.use('/js', express.static('js'))
