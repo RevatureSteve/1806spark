@@ -152,3 +152,7 @@ footer {
     bottom: 0;
     width: 100%;
 }
+.testImage {
+    height: 150px;
+    width: 150px;
+}

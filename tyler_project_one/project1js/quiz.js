@@ -30,23 +30,66 @@ var questions = [
         correctAnswer: 'a'
     },
     {
-        question: "Select the Triangle",
+        question: "Select the Star",
         answers: {
-            a: "triangle.png",
+            a: "star.png",
             b: "square.png",
             c: "circle.png"
         },
         correctAnswer: 'a'
     },
     {
-        question: "Select the Triangle",
+        question: "Select the One",
         answers: {
-            a: "triangle.png",
-            b: "square.png",
-            c: "circle.png"
+            a: "zero.png",
+            b: "one.png",
+            c: "nine.png"
+        },
+        correctAnswer: 'b'
+    },
+    {
+        question: "Select the Nine",
+        answers: {
+            a: "nine.png",
+            b: "one.png",
+            c: "five.png"
         },
         correctAnswer: 'a'
-    }
+    },
+    {
+        question: "Select the Five",
+        answers: {
+            a: "five.png",
+            b: "nine.png",
+            c: "zero.png"
+        },
+        correctAnswer: 'a'
+    },
+    {
+        question: "Select the BLUE Fish",
+        answers: {
+            a: "redfish.png",
+            b: "greenfish.png",
+            c: "bluefish.png"
+        },
+        correctAnswer: 'c'
+    },    {
+        question: "Select the GREEN fish",
+        answers: {
+            a: "greenfish.png",
+            b: "bluefish.png",
+            c: "yellowfish.png"
+        },
+        correctAnswer: 'a'
+    },    {
+        question: "Select the YELLOW fish",
+        answers: {
+            a: "redfish.png",
+            b: "yellowfish.png",
+            c: "bluefish.png"
+        },
+        correctAnswer: 'b'
+    },
 ];
 
 function generateQuiz() {
