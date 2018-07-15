@@ -1,0 +1,77 @@
+<html>
+
+<head>
+    <title>Pundit:</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+        <br>
+    <!-- beginning of nav bar -->
+    <ul id="navbar">
+        <li >
+        <a href="/home"> <img id="navLogo" src="/images/logo1.png"> </a>
+        </li>
+        <li>
+            <a class="navbar" href="#news">Releases</a>
+        </li>
+        <li>
+            <a class="navbar" href="login.html">Login</a>
+        </li>
+        <li>
+            <a class="navbar" href="register.html">Register</a>
+        </li>
+        <li>
+            <a class="navbar" href="#contact">Added</a>
+        </li>
+        <li>
+            <a class="navbar" href="plusAdd.html">+Add</a>
+        </li>
+    </ul>
+    <!-- end of nav bar -->
+    <form>
+            <a> <img id="searchIcon" src="https://meta-s3-cdn.freetls.fastly.net/original/3X/e/5/e55b9725b7a6da35e3e31e8adfe57b48d34e2e35.svg">
+            </form>
+            </a>
+<br><br><br>
+<section class="pageBody1">
+        <h1 id="addTitle">
+                Add Your Favorite Movie!
+                </h1>
+    <div id="addDiv">
+        <form id= "addForm">
+            <img id="navLogoAdd" src="/images/logo.png">
+            <h1 id="subtitleAdd">Add Movie to Database</h1>
+            <input id="addTitleInput" type="text" placeholder="Title of Movie..." required>
+            <input id="addReleaseInput" onfocus="(type='date')"  placeholder="Release Date" required>
+            <textarea id="addPlotInput" rows="10" cols="50" name="plot" form="usrform" >
+Plot of movie... </textarea>
+         <select id="addGenreSelect"name="genre" form="carform">
+            <option value="Select Genre">Select Genre</option>
+            <option value="Action/Adventure">Action/Adventure</option>
+            <option value="Comedy">Comedy</option>
+            <option value="Animated">Animated</option>
+            <option value="Drama">Drama</option>
+            <option value="Romance">Romance</option>
+            <option value="Horror">Horror</option>
+            <option value="Sci-Fi">Sci-Fi</option>
+        </select>
+            <input id="addCoverArtInput" type="url" placeholder="Movie Poster URL source...">
+            <br><br>
+            <input id="addSubmit" type="submit" value="+Add">
+            <img id="addGif" src="/images/add1.gif">
+        </form>
+        
+    </div>
+                
+    <div id="moviePosters1">
+
+    </div>
+
+
+</section>
+
+<script src="/javascript/register.js"> </script>
+</body>
+
+</html>

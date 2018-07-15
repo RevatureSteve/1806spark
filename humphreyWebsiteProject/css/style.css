@@ -296,29 +296,172 @@ position: absolute;
     #registerText1 {
 
         margin: -417px 0px 0px 340px;
+        position: absolute;
     }
 
     #registerText2 {
 
-        margin: 38px 0px 0px 340px;
+        margin: -362px 0px 0px 340px;
+        position: absolute;
     }
 
     #registerText3 {
 
-        margin: 37px 0px 0px 340px;
+        margin: -307px 0px 0px 340px;
+        position: absolute;
     }
 
     #registerText4 {
 
-        margin: 35px 0px 0px 340px;
+        margin: -252px 0px 0px 340px;
+        position: absolute;
     }
 
     #registerText5 {
 
-        margin: 37px 0px 0px 340px;
+        margin: -197px 0px 0px 340px;
+        position: absolute;
     }
 
     #registerText6 {
 
-        margin: 37px 0px 0px 340px;
+        margin: -142px 0px 0px 340px;
+        position: absolute;
     }
+
+    #gifCheck1 {
+        margin: -439px 0px 0px 345px;
+        position: absolute;
+    }
+
+    #gifCheck2 {
+        margin: -383px 0px 0px 345px;
+        position: absolute;
+    }
+
+    #gifCheck3 {
+        margin: -330px 0px 0px 345px;
+        position: absolute;
+    }
+    #gifCheck4 {
+        margin: -277px 0px 0px 345px;
+        position: absolute;
+    }
+
+    #gifCheck5 {
+        margin: -224px 0px 0px 345px;
+        position: absolute;
+    }
+    #gifCheck6 {
+        margin: -171px 0px 0px 345px;
+        position: absolute;
+    }
+
+    /*---------------------------------------------------------------------
+
+                     Unique CSS For +Add Page */
+#addTitle {
+margin: 40px 0px 0px 210px;
+font-family: Verdana, Geneva, Tahoma, sans-serif;
+font-size: 50px;
+position: absolute;
+}
+
+#addDiv {
+
+    background-color: rgb(255, 255, 255);
+    border-radius: 25px;
+    border: 3.5px solid rgba(230, 190, 138, 0.521);
+    margin: 200px 0px 0px 270px;
+    width: 600px;
+    height: 705px;
+    color: black;
+    }
+
+    #navLogoAdd {
+        margin: 40px 0px 0px 10px;
+        
+        }
+
+ #addForm{
+
+ display: absolute;
+    
+}
+
+#subtitleAdd{
+    margin: 0px 0px 0px 210px;
+}
+
+#addGif{
+    margin: 0px 0px 0px 2px;
+    position: absolute;
+    z-index: 1;
+}
+
+#addTitleInput {
+    
+    margin: 37px 0px 0px 245px;
+    padding: 10px;
+    border: 1.5px solid rgb(230, 190, 138);
+    border-radius: 15px;
+    width: 270px;
+    position: absolute;
+    z-index: 2;
+}
+#addReleaseInput {
+    
+    margin: 90px 0px 0px 305px;
+    padding: 10px;
+    border: 1.5px solid rgb(230, 190, 138);
+    border-radius: 15px;
+    width: 270px;
+    position: absolute;
+    z-index: 2;
+}
+#addPlotInput {
+    
+    margin: 143px 0px 0px 323px;
+    padding: 10px;
+    border: 1.5px solid rgb(230, 190, 138);
+    border-radius: 15px;
+    width: 270px;
+    position: absolute;
+    z-index: 2;
+}
+#addGenreSelect {
+    
+    margin: 315px 0px 0px 295px;
+    padding: 10px;
+    border: 1.5px solid rgb(230, 190, 138);
+    border-radius: 15px;
+    width: 270px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+}
+#addCoverArtInput {
+    
+    margin: 370px 0px 0px 199px;
+    padding: 10px;
+    border: 1.5px solid rgb(230, 190, 138);
+    border-radius: 15px;
+    width: 270px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+}
+#addSubmit {
+    
+    margin: 420px 0px 0px 249px;
+    padding: 7px;
+    border: 1.5px dotted rgb(230, 190, 138);
+    border-radius: 5px;
+    width: 100px;
+    height: 40px;
+    position: absolute;
+    z-index: 2;
+    background-color: rgba(230, 190, 138, 0.178);
+    font-size: 20px;
+    font-weight: bold;
+}
