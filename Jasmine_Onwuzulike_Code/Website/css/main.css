@@ -199,10 +199,6 @@ img:hover {
 }
 #shop-form {
     background-color: rgb(146, 70, 68);
-    margin-left: 200px;
-    margin-right: 200px;
-}
-#shop-form {
     margin-left: 300px;
     margin-right: 300px;
     visibility: hidden;

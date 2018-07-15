@@ -1,6 +1,18 @@
 var express = require('express');
 var app = express();
 
+//db information
+var mongoose = require('mongoose');
+mongoose.connect("mongodb://localhost:27017/entry");
+var db = mongoose.connection;
+db.on("error", function(err) {
+    console.log("Connection error", err)
+});
+db.once("connected", function() {
+    console.log("Successful connection to db.")
+});
+
+//Set static folders.
 var options = {
 	dotfiles: 'ignore',
 	etag: false,
