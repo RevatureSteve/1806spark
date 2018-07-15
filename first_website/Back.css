@@ -47,3 +47,36 @@ background-color: black;
     top: 10px;
     left: 350px;
 }
+/*Formating for boxes with image and text*/
+#picture_box_left {
+    margin: 50px 500x 50px 50px;
+    background-color: rgba(112, 107, 107, 0.795);
+    border: 2px;
+    padding: 10px;
+    left: 50px;
+    position: relative;
+    width: 500px;
+}
+
+.descrip_box {
+    background-color: rgba(255, 228, 196, 0.404);
+    position: absolute;
+    top: 50px;
+    right: 50px;
+    padding: 10px;
+    width: 200px;
+}
+
+.textbox {
+    position: relative;
+    border: 1px;
+    background-color: rgba(245, 245, 220, 0.397);
+    border-color: rgb(153, 153, 141);
+    padding: 10px;
+
+}
+
+.buttons {
+    position: relative;
+    left: 217px;
+}
