@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>foodsihate</title>
+        <link rel="stylesheet" href="../css/style.css"/>
+        <link rel="stylesheet" href="../css/login.css"/>
+        <link rel="stylesheet" href="/js/createBudget.js"/>
+
+
+
+   
+</head>
+
+<body>
+
+    <div class="topnav">
+        <a href="/home">Home</a>
+        <a href="stocks.html">Stocks</a>
+        <a href="createBudget.html">Create Budget</a>
+        <a href="viewBudget.html">View Budget</a>
+            <span class="float-right">
+                <a href="login.html">Login</a>
+            </span>
+    </div>
+
+    <div id="formLogo">
+        <h1 id="logo">
+            <span id="dollar">Dollar</span> <span id="climb">Climb</span>
+            <span id="chart">
+                <img height= 75px; width = 100px; src="https://images.clipartuse.com/70a4b09b95a2a796a0f3cd7c4e59aced_profit-clip-art-at-clkercom-vector-clip-art-online-royalty-_600-500.png"/>
+            </span>
+        </h1>
+    </div>
+
+    <div id="questionForm"> <!-- don't use a form tag since we are using javascript's fetch async request -->
+        Enter question: <input id="budgetInput" type="text" placeholder="enter q.." name="question"> <br><br>
+        Enter answer: <input id="budgetInput2" type="text" placeholder="enter a.." name="answer"> <br><br>
+        <button id="budgetBtn">Submit new Question</button>
+    </div>
+    <div id="budgetStatus">
+
+    </div>
+    <script src="/js/createBudget.js"></script>
+
+  
+    
+
+    
+</body>
+
+</html>
