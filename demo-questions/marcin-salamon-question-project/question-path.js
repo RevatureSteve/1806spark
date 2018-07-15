@@ -5,4 +5,8 @@
 var express = require('express');
 var questionPath = express.Router();
 
-questionPath.get('/')
+questionPath.get('/', function(req, resp, next){
+    console.log(req.url);
+})
+
+module.exports = questionPath;

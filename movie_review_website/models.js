@@ -8,7 +8,8 @@ var ReviewSchema = new Schema({
     author: String,
     movieTitle: String,
     reviewBody: String,
-    commentsArr: []
+    commentsArr: [],
+    commentsAuthors: []
 });
 
 

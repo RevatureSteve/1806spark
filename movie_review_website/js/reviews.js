@@ -113,12 +113,12 @@ function displayReviews(reviews) {
         for (let j = 0; j < review.commentsArr.length; j++) {
             let commentAuthor = this.document.createElement('div');
             commentSection.appendChild(commentAuthor);
-            commentAuthor.innerHTML = review.commentsArr[j].commentAuthor;
+            commentAuthor.innerHTML = review.commentsAuthors[j];
             commentAuthor.className = 'author';
             let sampleComment = this.document.createElement('p');
             sampleComment.className = 'comment';
             commentSection.appendChild(sampleComment);
-            sampleComment.innerHTML = review.commentsArr[j].comment;
+            sampleComment.innerHTML = review.commentsArr[j];
         }
 
         // comment submittal form
@@ -139,10 +139,11 @@ function submitComment(){
     console.log(this.parentElement);
     let comment = this.parentElement.children[0].value;
     let id = this.parentElement.id;
-
+    
     let data = {
         "id": id,
-        "comment": comment
+        "comment": comment,
+        "commentAuthor": window.parent.accountLogged.name
     }
 
     fetch(urlComment, {
