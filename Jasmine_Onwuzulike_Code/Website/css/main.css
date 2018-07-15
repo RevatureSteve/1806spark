@@ -133,7 +133,7 @@ h5 {
 }
 
 .gallery {
-    border: 1px solid rgb(156, 156, 156);
+    border: 1px solid rgb(58, 57, 57);
     max-width: 200px;
     display: inline;
 }
@@ -158,7 +158,7 @@ img:hover {
     margin-left: 100px;
 }
 #breadcrumbs {
-   margin: 0%;
+margin-left: 80px;
    padding: 3px;
    color: white;
    font-size: 15px;

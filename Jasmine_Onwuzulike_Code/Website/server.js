@@ -1,6 +1,7 @@
 var express = require('express');
 var app = express();
-
+//Allows use of login paths
+var loginPaths = require('./login-paths');
 //db information
 var mongoose = require('mongoose');
 mongoose.connect("mongodb://localhost:27017/entry");
@@ -36,8 +37,9 @@ app.get('/home', function(req, res, next) {
     res.sendFile('C:\\Users\\Jasmine C Onwuzulike\\My_Git_Repos\\1806spark\\Jasmine_Onwuzulike_Code\\Website\\home.html');
 });
 
+ app.use('/login' , loginPaths);
 
-
+//Start the server.
 app.listen('3000', function() {
     console.log('The server is ready.')
 });
