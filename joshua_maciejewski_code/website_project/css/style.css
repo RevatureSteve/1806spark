@@ -75,7 +75,7 @@ body {
   }
   
   /* Clear floats after image containers */
-  .row::after {
+  .row::after {  /*can this be fixed?*/
     content: "";
     clear: both;
     display: table;
