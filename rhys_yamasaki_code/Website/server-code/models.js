@@ -2,17 +2,17 @@
 var mongoose = require("mongoose");
 var Schema = mongoose.Schema;
 
-var UserRegistrationSchema = new Schema({
+var UserSchema = new Schema({
     firstName: String,
     lastName: String,
-    username: String,
     emailAddress: String,
     password: String,
     favoriteMovies: Array,
     favoriteActors: Array,
-    profilePicture: String,
     createdAt: {type: Date, default:Date.now}
 })
+
+UserSchema.add({username: String, profilePicture: String})
 
 var MovieInfoSchema = new Schema({
     title: String,
@@ -21,7 +21,7 @@ var MovieInfoSchema = new Schema({
 })
 
 var MovieInfo = mongoose.model("movieInfo", MovieInfoSchema);
-var UserRegistration = mongoose.model("userInfo", UserRegistrationSchema);
+var UserRegistration = mongoose.model("user", UserSchema);
 
 module.exports.UserRegistration = UserRegistration;
 module.exports.MovieInfo = MovieInfo;

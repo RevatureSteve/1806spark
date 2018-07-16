@@ -17,7 +17,7 @@ app.listen(portNumber, function() {
 })
 
 var mongoose = require("mongoose");
-mongoose.connect("mongodb://localhost:27017/userInfo");
+mongoose.connect("mongodb://localhost:27017/user");
 var db = mongoose.connection;
 db.on("error", (err) => {
     console.error(`connection error: ${err}`);

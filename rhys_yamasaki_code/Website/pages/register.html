@@ -12,7 +12,8 @@
 
 <body>
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <a class="navbar-brand" href="Main.html" id="navHead"><img class="headerIcon" src="/images/icons8-clapperboard-64.png"> Not Another Movie Database</a>
+        <a class="navbar-brand" href="Main.html" id="navHead">
+            <img class="headerIcon" src="/images/icons8-clapperboard-64.png"> Not Another Movie Database</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
@@ -38,53 +39,76 @@
         <h1 class="display-4" style="text-align: center">Register here!</h1>
     </div>
     <div id="registerForm">
-        <form>
             <div class="form-group">
                 <label for="firstName">First Name</label>
-                <input type="text" class="form-control" placeholder="Enter first name" name="firstName" required>
+                <input id="firstName" type="text" class="form-control" placeholder="Enter first name"  required>
             </div>
             <div class="form-group">
                 <label for="lastName">Last Name</label>
-                <input type="text" class="form-control" placeholder="Enter last name" name="lastName" required>
+                <input id="lastName" type="text" class="form-control" placeholder="Enter last name"  required>
             </div>
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" class="form-control" id="username" placeholder="Username" name="username" required>
+                <input type="text" class="form-control" id="username" placeholder="Enter username" required>
                 <small class="form-text text-muted"></small>
             </div>
             <div class="form-group">
                 <label>Email address</label>
-                <input type="email" class="form-control" id="emailInput" placeholder="Enter email" name="email" required>
+                <input type="email" class="form-control" id="emailInput" placeholder="Enter email" required>
                 <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
             </div>
             <div class="form-group">
                 <label>Password</label>
                 <div class="popup">
-                    <input type="password" class="form-control" id="password" placeholder="Password" name="password" maxlength="20"
-                    onfocus="myFunction()" onblur="myFunction()" required>
+                    <input type="password" class="form-control" id="password" placeholder="Password" maxlength="20"  required>
+                    <!-- onfocus="myFunction()"
+                        onblur="toggleCheck()" -->
                     <div class="popuptext" id="myPopup">
-                            <span class="validationDiv">Minimum of 6 characters<span><img src="/images/icons8-checkmark-64 (1).png" alt="" class="checkmark"></span></span>
-                            <span class="validationDiv">Contains one uppercase letter</span><span><img src="/images/icons8-checkmark-64 (1).png" alt="" class="checkmark"></span><br>
-                            <span class="validationDiv">Contains one lowercase letter</span><span><img src="/images/icons8-checkmark-64 (1).png" alt="" class="checkmark"></span><br>
-                            <span class="validationDiv">Contains one number<span><img src="/images/icons8-checkmark-64 (1).png" alt="" class="checkmark"></span></span>
-                            <span class="validationDiv">Contains one special character</span><span><img src="/images/icons8-checkmark-64 (1).png" alt="" class="checkmark"></span><br>
+                        <span class="validationDiv">8 - 20 characters
+                            <span>
+                                <img src="/images/icons8-checkmark-64 (1).png" alt="" class="checkmark">
+                            </span>
+                        </span>
+                        <br>
+                        <span class="validationDiv">Contains one uppercase letter</span>
+                        <span>
+                            <img src="/images/icons8-checkmark-64 (1).png" alt="" class="checkmark">
+                        </span>
+                        <br>
+                        <span class="validationDiv">Contains one lowercase letter</span>
+                        <span>
+                            <img src="/images/icons8-checkmark-64 (1).png" alt="" class="checkmark">
+                        </span>
+                        <br>
+                        <span class="validationDiv">Contains one number
+                            <span>
+                                <img src="/images/icons8-checkmark-64 (1).png" alt="" class="checkmark">
+                            </span>
+                        </span>
+                        <span class="validationDiv">Contains one special character</span>
+                        <span>
+                            <img src="/images/icons8-checkmark-64 (1).png" alt="" class="checkmark">
+                        </span>
+                        <br>
+                        <small>Examples of special characters: <br><span style="text-align: center">!?@#$&*.</span></small>
                     </div>
                 </div>
             </div>
+            <div class="valid-feedback">
+                Looks good!
+              </div>
+            <div class="invalid-feedback">
+                Not valid
+              </div>
             <div class="form-group">
                 <label>Confirm Password</label>
                 <input type="password" class="form-control" id="passwordCheck" placeholder="Confirm password" required>
             </div>
-            <button type="submit" class="btn btn-primary disabled" id="signup">Sign up</button>
-        </form>
+            <button class="btn btn-primary" id="signup">Register</button>
 
     </div>
-    <script>
-        function myFunction() {
-            var popup = document.getElementById("myPopup");
-            popup.classList.toggle("show");
-        }
-    </script>
+    <script src="../scripts/new-register.js"></script>
+    <script src="../scripts/users.js"></script>
 </body>
 
 </html>

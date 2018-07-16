@@ -1,6 +1,7 @@
-form {
+#registerForm {
     width: 500px;
     margin: auto;
+    padding-bottom: 50px;
 }
 
 /* class css */
@@ -39,7 +40,7 @@ form {
   position: absolute;
   top: 100%;
   left: 2%;
-  margin-left: -10px;
+  margin-left: -9px;
   margin-top: -15px;
   border-width: 5px;
   border-style: solid;
@@ -49,8 +50,8 @@ form {
 /* Toggle this class - hide and show the popup */
 .popup .show {
   visibility: visible;
-  -webkit-animation: fadeIn 2s;
-  animation: fadeIn 2s;
+  -webkit-animation: ease-in 1s;
+  animation: ease-in 1s;
 }
 
 /* .popup .hide {
@@ -64,8 +65,10 @@ form {
 }
 
 .checkmark {
-  width: 25px;
+  width: 23px;
   height: auto;
   position: relative;
   visibility: hidden;
 }
+
+
