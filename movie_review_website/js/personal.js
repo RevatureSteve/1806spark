@@ -1,14 +1,14 @@
 
 var url = 'http://localhost:3000/reviews';
 window.onload = function () {
-/* legacy test code that pushes an item into the database
+// legacy test code that pushes an item into the database
     let data = {
-        "header": "This is a test review",
-        "author": "John Doe",
-        "movieTitle": "Jurassic Park",
-        "reviewBody": "Great movie",
-        "commentsArr": [{ "commentAuthor": "Marcin Salamon", "comment": "terrible review" },
-        {"commentAuthor": "John Doe", "comment": "great review" }]
+        "header": "Greatest movie of the season",
+        "author": "Mr Fantastic",
+        "movieTitle": "Ant-Man and the Wasp",
+        "reviewBody": "Absolute masterpiece 10/10",
+        "commentsArr": ["great movie", "I concur!" ],
+        "commentsAuthors": ["Mrs. Fantastic", "Random Dude"]
     }
 
     console.log(data);
@@ -23,5 +23,5 @@ window.onload = function () {
         console.log('post');
 
     });
-    */
+    //*/
 }

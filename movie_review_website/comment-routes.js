@@ -27,19 +27,34 @@ router.post("/", function (req, res, next) {
     console.log(req.body.id);
     // Review.updateOne({_id : o_id}, {$push: {"commentsArr": 
     //     {"comment": "new review", "commentAuthor": "unknown"}}})
- 
-    
-    let testComment = {comment: "new comment", commentAuthor: "unknown"};
-    console.log(testComment); this code does not work right now between brackets
-    Review.update(
-        { _id: o_id },
+
+    let newComment = req.body.comment;
+    let newAuthor = req.body.commentAuthor;
+
+    Review.findByIdAndUpdate(
+        o_id,
         {
-            $push: { commentsArr: testComment }
+            $push: { "commentsArr": newComment }
+        },
+        { "new": true, "upsert": true },
+        function (err, managerparent) {
+            if (err) throw err;
+            console.log(managerparent);
         }
-    ); this code does not work rn
+    );
+    Review.findByIdAndUpdate(
+        o_id,
+        {
+            $push: { "commentsAuthors": newAuthor }
+        },
+        { "new": true, "upsert": true },
+        function (err, managerparent) {
+            if (err) throw err;
+            console.log(managerparent);
+        }
+    );
     console.log('successful find');
-    res.json(Review.find({ _id: o_id }));
-    
+
     // reviewToComment.commentsArr[reviewToComment.commentsArr.length]
     //     = { "comment": req.body.comment, "commentAuthor": "undefined yet" };
 
