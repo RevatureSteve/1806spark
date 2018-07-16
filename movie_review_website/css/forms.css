@@ -11,12 +11,12 @@ span{
 
 .container{
     width: 80%;
-    height: 130px;
+    height: auto;
     margin: auto;
     padding: 10px;
 }
 
-.regBox{
+.box{
     background-color: white;
     margin: 5px;
     margin-bottom: 10px;

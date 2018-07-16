@@ -9,7 +9,7 @@ var accountLogged = {
 
 window.onload = function() {
     document.getElementById("home").onclick = changeIFrame;
-    document.getElementById("personal").onclick = changeIFrame;
+    document.getElementById("new-review").onclick = changeIFrame;
     document.getElementById("account").onclick = changeIFrame;
     document.getElementById("login").onclick = changeIFrame;
     document.getElementById('login').innerHTML = accountLogged.name;
