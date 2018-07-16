@@ -7,7 +7,7 @@ var Review = require("./models").Review;
 // GET /reviews
 // Route for reviews collection
 router.get("/", function(req, res, next){
-	console.log('/reviews');
+
 	Review.find({})
 				// .sort({createdAt: -1})
 				.exec(function(err, reviews){
@@ -19,7 +19,6 @@ router.get("/", function(req, res, next){
 // POST /reviews
 // Route for creating reviews
 router.post("/", function(req, res, next){
-	console.log('Creating new review');
 	var review = new Review(req.body);
 	review.save(function(err, review){
 		if(err) return next(err);

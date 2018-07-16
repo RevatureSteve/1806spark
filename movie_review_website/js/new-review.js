@@ -1,4 +1,3 @@
-
 var url = 'http://localhost:3000/reviews';
 window.onload = function () {
     document.getElementById("submitNewReview").onclick = function () {
@@ -19,8 +18,8 @@ window.onload = function () {
         console.log(data);
 
         fetch(url, {
-            method: 'POST', // or 'PUT'
-            body: JSON.stringify(data), // data can be `string` or {object}! Must be converted to JSON
+            method: 'POST',
+            body: JSON.stringify(data),
             headers: {
                 'Content-Type': 'application/json'
             }

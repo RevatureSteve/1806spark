@@ -5,11 +5,6 @@ var commentRoutes = require("./comment-routes");
 var jsonParser = require("body-parser").json;
 app.use(jsonParser());
 
-/*
-	connection to Database
-	Mongoose is the JavaScript Package used to talk to the mongo database
-*/
-
 var mongoose = require("mongoose");  // require the package from node_modules
 mongoose.connect("mongodb://localhost:27017/reviews"); // sets the configuration the specific database called qa
 var db = mongoose.connection; // a reference to the connection to allow us to use the connection
@@ -21,7 +16,6 @@ db.once("open", function () { // creates connections when requests
 });
 
 app.use('/css', express.static('css'));
-//this will allow css folder to be loader can be place any where after the app.listen
 
 app.use('/pages', express.static('pages'));
 
@@ -40,15 +34,10 @@ app.use(function (req, resp, next) {
 app.use(function (req, resp, next) {
 	console.log('request processing');
 	next();
-	// then we are tellng express we are done
 })
 
 app.use("/home", function (req, resp, next) {
-
 	resp.sendFile('C:\\Users\\marci\\my_git_repos\\1806spark\\movie_review_website\\index.html');
-	//resp.sendfile('') // add javascript files
-	//next(): dont need this because as this function is sending the response
-
 
 })
 
@@ -62,7 +51,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(function (err, req, res, next) {
-	res.status(err.status || 500);  // set the response status to err.status but if falsy set to 500
+	res.status(err.status || 500);  
 	res.json({
 		error: {
 			message: err.message

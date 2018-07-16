@@ -1,38 +1,41 @@
 img{
     height: 17px;
 }
+
+h1{
+   text-align: center;
+}
+
 form{
     margin: 0;
 }
 
-span{
-    text-align: right;
-}
-
 .container{
-    width: 80%;
+    width: 60%;
     height: auto;
     margin: auto;
     padding: 10px;
 }
 
+.container div {
+    margin: auto;
+}
+
 .box{
     background-color: white;
-    margin: 5px;
-    margin-bottom: 10px;
+    /* margin: 5px;
+    margin-bottom: 10px; */
     padding: 5px;
     width: 380px;
-    float:left;
     border-style: solid;
     border-color: #fe921f;
 }
-
-
 
 .sumBtn{
     background-color: #fe921f;
 }
 
 #requirements{
-    width: 300px;
+    width: 250px;
+    margin-top: 10px;
 }

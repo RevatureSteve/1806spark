@@ -1,41 +1,10 @@
-/*
-let testReview = {
-    header: "This is a test review",
-    author: "John Doe",
-    movieTitle: "Jurassic Park",
-    reviewBody: "Great movie",
-    commentsArr: [{ commentAuthor: "Marcin Salamon", comment: "terrible review" },
-    { commentAuthor: "John Doe", comment: "great review" }]
-}
-db.reviews.insertOne(
-{
-    header: "Definitely worth seeing",
-    author: "Marcin Salamon",
-    movieTitle: "Ant Man and the Wasp",
-    reviewBody: "A comedic masterpiece with solid plot and great action sequences",
-    commentsArr: [{ commentAuthor: "John Doe", comment: "Great moview" },
-    { commentAuthor: "destroyer", comment: "10/10 movie" }]
-}
-)
-
-let testReview2 = {
-    header: "Definitely worth seeing",
-    author: "Marcin Salamon",
-    movieTitle: "Ant Man and the Wasp",
-    reviewBody: "A comedic masterpiece with solid plot and great action sequences",
-    commentsArr: [{ commentAuthor: "John Doe", comment: "Great moview" },
-    { commentAuthor: "destroyer", comment: "10/10 movie" }]
-}
-
-let reviews = [testReview, testReview2];
-*/
 
 var url = 'http://localhost:3000/reviews';
 var urlComment = 'http://localhost:3000/comments';
-var reviews = null;
+var omdbApiKey = '&apikey=2bffe9df';
 
 window.onload = function () {
-    //console.log(window.parent.accountLogged);
+    
 
     callReviews();
 }
@@ -47,8 +16,7 @@ function callReviews(){
     })
     .then((data)=> {
         console.log(data);
-        reviews = data;
-        displayReviews(reviews);
+        displayReviews(data);
     })
 }
 
@@ -69,7 +37,7 @@ function displayReviews(reviews) {
         let moviePoster = document.createElement('img');
         newDiv.appendChild(moviePoster);
 
-        fetch('http://www.omdbapi.com/?t=' + replaced + '&apikey=2bffe9df')
+        fetch('http://www.omdbapi.com/?t=' + replaced + omdbApiKey)
             .then(function (data) {
                 return data.json();
             })
