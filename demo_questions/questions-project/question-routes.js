@@ -2,6 +2,7 @@
 
 var express = require("express");
 var router = express.Router();
+//question modeals is for mongoose/omit for js files
 var Question = require("./models").Question;
 
 
@@ -10,6 +11,7 @@ var Question = require("./models").Question;
 // Route for questions collection
 router.get("/", function(req, res, next){
 	console.log('/questions');
+	//mongo kick in
 	Question.find({})
 				// .sort({createdAt: -1})
 				.exec(function(err, questions){

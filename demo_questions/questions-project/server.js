@@ -8,7 +8,10 @@ app.use(jsonParser());
 	connection to Database
 	Mongoose is the JavaScript Package used to talk to the mongo database
 */
+
+//can use this straight up in code for cat forum EXCEPT for qa
 var mongoose = require("mongoose");  // require the package from node_modules
+											//qa just refers to the name of the db so it will be cats for me
 mongoose.connect("mongodb://localhost:27017/qa"); // sets the configuration the specific database called qa
 var db = mongoose.connection; // a reference to the connection to allow us to use the connection
 db.on("error", function(err){	// call this function on errors 
@@ -43,7 +46,7 @@ app.use("/js", express.static('js'));
 	set / url to index.html
 */
 app.use("/home", function(req,resp, next){
-	resp.sendFile('/Users/steveace6/Documents/qa-rest-api/qa-rest-api-completed/index.html');
+	resp.sendFile('C:\\Users\\Nisat\\my_git_repos\\1806spark\\questions-project\\index.html');
 })
 
 // app.use(function(req, res, next){
