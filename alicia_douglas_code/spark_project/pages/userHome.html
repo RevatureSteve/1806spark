@@ -31,10 +31,19 @@
         <div class="modal-content">
             <span id="closePopup" class="close">&times;</span>
             <div>
-                <img  id="popupImg" src="" alt="">
+                <img id="popupImg" src="" alt="">
             </div>
             <div id="comments">
-                Comments: <br>
+                Comments:
+                <br>
+            </div>
+            <div>
+                Add a comment:
+                <br>
+                <textarea id="commentText" cols="50" rows="3" required>
+
+                </textarea>
+                <input type="button" id="commentBtn" value="Post Comment">
             </div>
         </div>
 
@@ -83,6 +92,7 @@ Picture taken from the top of Ben A'an.
         <img class="pics" id="newPic" src="" alt="Enter source location for new picture">
         <br>
         <div class="info">
+            <form id="uploadForm"></form>
             <b>Image source location:</b>
             <br>
             <input class="uploadInfo" id="src" type="text" required>
@@ -98,6 +108,7 @@ Picture taken from the top of Ben A'an.
         </textarea>
             <br>
             <input id="uploadBtn" type="submit" value="Upload Picture">
+            </form>
         </div>
     </div>
 
@@ -119,7 +130,6 @@ Picture taken from the top of Ben A'an.
                 </textarea>
         </div>
     </div>
-
 
 
 </body>

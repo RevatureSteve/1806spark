@@ -11,5 +11,21 @@ var PictureSchema = new Schema({
     comments: Array
 });
 
+
+
+var CommentSchema = new Schema({
+    url: String,
+    userName: String,
+    createdAt: {type: Date, default: Date.now},
+    comment: String
+})
+
+
+
 var Picture = mongoose.model('Picture', PictureSchema);
 module.exports.Picture = Picture;
+
+
+var Comment = mongoose.model('Comment', CommentSchema);
+module.exports.Comment = Comment;
+

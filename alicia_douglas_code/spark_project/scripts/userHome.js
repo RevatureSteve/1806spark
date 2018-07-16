@@ -17,21 +17,28 @@ window.onload = function () {
     upload.addEventListener("click", uploadFN);
     favs.addEventListener("click", favsFN);
     document.getElementById("src").addEventListener("input", insertPic);
-    document.getElementById("uploadBtn").addEventListener("click", postPic)
+    document.getElementById("uploadBtn").addEventListener("click", postPic);
+    // document.getElementById('uploadForm').addEventListener('submit', postPic);
     for (let i = 0; i < pics.length; i++){
         pics[i].addEventListener('click', modal);
     };
     document.getElementById('closePopup').addEventListener('click', () => {
         document.getElementById('imgPopup').style.display = 'none';
-    })
+    });
+    document.getElementById('commentBtn').addEventListener('click', postComment);
 }
 
 
 // Popup image with comments
 function modal(){
-    let comments;
+    let comments = [];
     document.getElementById('imgPopup').style.display = 'block';
     let img = event.target.src;
+    let element = document.getElementById('comments');
+    let comLength = document.getElementsByTagName('p').length;
+    for (let i = 0; i < comLength; i++){
+        element.removeChild(element.childNodes[1]);
+    }
     document.getElementById('popupImg').src = img;
     for (let i = 0; i < picture.length; i++){
         if (picture[i].url == img){
@@ -40,9 +47,8 @@ function modal(){
     };
     for (let f = 0; f < comments.length; f++){
         let para = document.createElement('p');
-        let node = document.createTextNode(comments[f]);
+        let node = document.createTextNode(comments[f].username + ": " + comments[f].comment);
         para.appendChild(node);
-        let element = document.getElementById('comments');
         element.appendChild(para);
     }
 }
@@ -98,6 +104,13 @@ function postPic() {
     let location = document.getElementById('newPicLocation').value;
     let description = document.getElementById("newPicDesc").value;
 
+    if (src == ""){
+        return alert('Please fill out the image source location field.');
+    };
+    if (location == ""){
+        return alert ('Please fill out the location field.');
+    }
+
     // Post Data
     let data = {
         // "userName": String,
@@ -119,6 +132,21 @@ function postPic() {
 }
 
 
+function postComment(){
+    // let comment = document.getElementById('commentText').value;
+    // let url = document.getElementById('popupImg').src;
+    // if (comment == ""){
+    //     return alert('Please add a comment');
+    // };
+    // let data = {
+    //     "url": url,
+    //     "userName": 'adouglas',
+    //     "comment": comment
+    // }
+
+}
+
+
 var picture = null;
 callPictures();
 
@@ -133,7 +161,7 @@ function callPictures() {
 }
 
 function setPictures(q) {
-    console.log('setting questions to page');
+    console.log('setting pictures to page');
     console.log(q);
     for (let i = 0; i < q.length; i++) {
         let div = document.getElementsByClassName("posts");

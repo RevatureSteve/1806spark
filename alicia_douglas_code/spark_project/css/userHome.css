@@ -1,9 +1,6 @@
 /* HTML Elements */
 
 body {
-    /* background-image: url("pics/048.JPG");
-    background-size: 1540px;
-    background-attachment: fixed; */
     background-color: rgb(70, 70, 70);
 }
 
@@ -130,13 +127,6 @@ h3 {
     color: white;
 }
 
-#src{
-
-}
-
-#newPicLocation {
-
-}
 
 #uploadBtn {
     width: 200px;
@@ -168,6 +158,12 @@ h3 {
     margin-left: 8px;
 }
 
+#popupImg{
+    width: 90%;
+    height: auto;
+    padding: 0% 5% 0% 5%;
+}
+
 
 
 
@@ -178,7 +174,7 @@ h3 {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 1; /* Sit on top */
-    padding-top: 100px; /* Location of the box */
+    padding-top: 20px; /* Location of the box */
     left: 0;
     top: 0;
     width: 100%; /* Full width */
@@ -194,7 +190,7 @@ h3 {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    max-width: 900px;
 }
 
 /* The Close Button */
