@@ -91,7 +91,7 @@ var questions = [
         correctAnswer: 'b'
     },
 ];
-
+var numCorrect;
 function generateQuiz() {
 
 
@@ -127,13 +127,13 @@ function generateQuiz() {
 
         quizContainer.innerHTML = output.join('');
     }
-
+    
     function showResults() {
         // gather answer containers
         var answerContainers = quizContainer.querySelectorAll('.answers');
         // track users answers
         var userAnswer = '';
-        var numCorrect = 0;
+        numCorrect = 0;
 
         // for each question
 
@@ -155,4 +155,57 @@ function generateQuiz() {
     }
 
 }
+
+
+function submitScoreFunction(){
+
+
+let url= 'http://localhost:3001/quiz';
+document.getElementById('results');
+
+let data = {
+    "score": numCorrect + 'out of' + questions.length,
+    
+}
+
+fetch(url, {
+    method: 'POST', 
+    body: JSON.stringify(data), 
+    headers:{
+      'Content-Type': 'application/json'
+    }
+}).then(data=> data.json()).then(q => {
+        console.log(q);
+    // newQuestionStatus.innerHTML = q.question + " " + q.answer;
+});
+
+
+}
+
+var trackedScores = null;
+
+callScores();
+
+function callScores(){
+    let url= 'http://localhost:3001/quiz';
+
+    fetch(url).then((resp) => {
+        return resp.json();
+    }).then((data)=> {
+        console.log(data);
+        trackedScores = data;
+        showScores(trackedScores);
+    })
+}
+
+function showScores(s) {
+    console.log('set scores to page');
+    console.log(s);
+    for (i = 0; i < s.length; i++) {
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(s[i].score));
+        document.getElementById("scoreList").appendChild(li);
+    }
+}
+
 

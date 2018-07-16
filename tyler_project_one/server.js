@@ -1,6 +1,6 @@
 var express = require("express");
 var app = express();
-var portNumber = 3001
+var portNumber = 3001;
 var getScore = require("./getScore-route");
 var giveScore = require("./giveScore-route");
 var jsonParser = require('body-parser');
@@ -11,6 +11,7 @@ app.listen(portNumber, function () {
 
 app.use('/project1css', express.static('project1css'));
 app.use('/project1', express.static('project1'));
+app.use('/project1js', express.static('project1js'));
 
 app.use(jsonParser());
 
@@ -23,7 +24,7 @@ app.use(function (req, resp, next) {
 
 })
 app.use('/home', function (req, resp, next) { //add extra \\ so it doesn't read "escape \"//
-resp.sendFile('C:\\Users\\tyler\\my_git_repos\\1806spark\\tyler_project_one\\project1.html');
+resp.sendFile('C:\\Users\\tyler\\my_git_repos\\1806spark\\tyler_project_one\\project1\\project1Index.html');
 })
 
 var verifyUandP = function (req, resp, next) {
@@ -51,7 +52,11 @@ var verifyUandP = function (req, resp, next) {
 
     app.use("/verifyUandP", jsonParser());
     app.use("/verifyUandP", verifyUandP);
-    app.use("/scores", getScore)
-    app.use("/scoreboard", giveScore)
+    // app.use("/project1/quiz.html", getScore)
+    app.use("/quiz", getScore, function(req,resp,next){
+
+        resp.sendFile("C:\\Users\\tyler\\my_git_repos\\1806spark\\tyler_project_one\\project1\\quiz.html");
+    })
+    // app.use("/scoreboard", giveScore)
 
   

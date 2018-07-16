@@ -35,22 +35,23 @@
 
 }
   
-.column {
-    flex: 33.33%;
+.shapesBackground {
     height: 600px;
-    width: 33.33%;
     padding:5px;
-  }
-#shapesColumn{
     background-color:  rgba(90, 129, 40, 0.432);
     text-align: center;
 }
 
-#soundBtnImg {
-    height: 100px;
-    width: 100px;
+
+.soundBtnImg {
+    height: 30px;
+    width: 30px;
+    border: 1px solid;
+    box-shadow: 5px 10px 18px black;
+    margin: 10px;
 
 }
+
 #audioBtn{
     height: 20px;
     width: 20px;
@@ -74,15 +75,21 @@
 
 }
 footer {
-    padding: 10px;
+    position: fixed;
     text-align: center;
+    left:0;
+    bottom:0;
+    width: 100%;
     background-color: black;
     height: 50px;
 }
 
 .testImage {
-    height: 150px;
-    width: 150px;
+    height: 250px;
+    width: 250px;
+    border: 1px solid;
+    box-shadow: 5px 10px 18px rgb(153, 9, 153);
+    
 }
 
 body{
@@ -157,9 +164,6 @@ li.dropdown {
 }
 
 .success-btn:hover {
-    /*
-        swap the color and background-color on mouse hover
-    */
     color: rgb(136, 255, 0);
     background-color: white;
 }
@@ -196,3 +200,32 @@ li.dropdown {
     height: 400px;
     width: 50%;
 }
+
+#testBackground {
+    background-color:blue;
+    height:100%;
+    width:auto;
+    
+}
+
+.popup .popuptext {
+    display: none;
+    background-color: #555;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    
+    }
+    .popup .show {
+    display: inherit;
+    -webkit-animation: fadeIn 1s;
+    animation: fadeIn 1s;
+    }
+    @-webkit-keyframes fadeIn {
+    from {opacity: 0;} 
+    to {opacity: 1;}
+    }
+    @keyframes fadeIn {
+    from {opacity: 0;}
+    to {opacity:1 ;}
+    }
