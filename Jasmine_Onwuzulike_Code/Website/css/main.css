@@ -1,8 +1,9 @@
 .container {
     background-image: url("https://i.ebayimg.com/images/i/182716299497-0-1/s-l1000.jpg");
     height: 100%;
-    background-repeat: no-repeat;
-    background-size: 100%;
+    background-repeat: repeat;
+    background-size: cover;
+    background-attachment: local;
 }
 h1 {
     text-align: center;
@@ -130,6 +131,7 @@ h5 {
     height: 200px;
     margin-right: 50px;
     margin-left: 50px;
+    border: 1px solid black;
 }
 
 .gallery {
@@ -222,9 +224,31 @@ iframe {
 }
 section {
     float: right;
+    margin-right: 40px;
+    background-color: rgb(146, 70, 68);
 }
 #create {
     color: black;
     width: 120px;
     height: 40px;
+}
+#tip-text {
+    text-align: center;
+}
+#guides {
+    display: inline;
+}
+.help-guides {
+width: 30em;
+height: 30em;
+margin-left: 60px;
+margin-top: 60px;
+border: 5px solid rgb(146, 70, 68);
+}
+
+#login-section {
+    background-color:rgb(146, 70, 68);
+    text-align: center;
+    border: 2px solid black;
+    width: 500p;
 }
