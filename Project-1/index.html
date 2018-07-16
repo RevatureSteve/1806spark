@@ -5,7 +5,7 @@
         Armada Home
     </title>
     <link rel="stylesheet" href="css/style.css">
-    <script src="app.js"></script>
+    <script src="/app.js"></script>
 </head>
 
 <body id="index">
@@ -13,7 +13,7 @@
         <button class="collapsible">About</button>
         <div class="content">
             <p>
-                Armada is a heaven for game developers, designers, and testers. Developers can upload builds and screen shots. Testers can
+                Armada is a haven for game developers, designers, and testers. Developers can upload builds and screen shots. Testers can
                 test, rate, and review any game they have access too. A unique feature of Armada is that anyone can be a
                 developer and/or a tester. Thank you for your participation in our journey.
             </p>
@@ -21,47 +21,73 @@
         <li>
             <button class="collapsible">Upload</button>
             <div class="content">
-                <input id='browse-bar' type="file" placeholder="Image Required" required>
-                <table>
-                    <tr>
-                        <td>
-                            <p>Public</p>
-                        </td>
-                        <td>
-                            <input type="checkbox" value="public">
-                        </td>
-                    </tr>
-                </table>
-                <textarea name="subject" placeholder="In a paragraph, write what the game is about..." cols="10" rows="10"></textarea>
-                <input class='btn' type="submit" value="Upload">
 
+                <form action="">
+                        <table>
+                                <tr>
+                                        <td>
+                                                <input type="text" placeholder="image url" required>
+                                        </td>
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <input type="text" placeholder="title" maxlength="20" required>
+                                    </td>
+                                </tr>
+                            </table>
+                            <textarea name="subject" placeholder="In a paragraph, write what the game is about..." maxlength="500" cols="10" rows="10"></textarea>
+                            <input class='btn' type="submit" value="Upload">
+                </form>
             </div>
         </li>
         <li>
             <button class="collapsible">Login</button>
             <div class="content">
-                <input type="text" placeholder="username" required>
-                <input type="password" placeholder="password" required>
-                <input class='btn' type="submit" value="Login">
-            </div>
+                <form action="">
+                        <input type="text" placeholder="username" maxlength="20" required>
+                        <input type="password" placeholder="password" maxlength="20" required>
+                        <input class='btn' type="submit" value="Login">
+                </form>
+               
+                <p>--- or ---<br>
+                
         </li>
+        <li>
+                <button id="regBtn"class="collapsible">Register</button>
+                <div class="content">
+                        <form action="">
+                                <div id="required"><p id="all">Password requirements:</p>
+                                    <p id="caps">capital letter</p>
+                                    <p id="passLength" >minimum of 8 characters</p>
+                                    <p id="num">one number</p>
+                                    <p id="spec">special character</p>
+                                    <p id="matching">passwords match</p></div>
+                                <input type="text" placeholder="create username" required>
+                                <input id="pass1" type="password" placeholder="create password" required>
+                                <input id="pass2" type="password" placeholder="confirm password" required>
+                                <input id="sbm" class='btn' type="submit" value="Register">
+                                </div>
+                        </form>
+                    </div>
+                
+                    </li>
     </ul>
 
-    <ul id="jumpbtn">
-        <li>
-            <a class="color-white" href="#trending-section">Trending</a>
-        </li>
-        <li>
-            <a class="color-white" href="#indie-section">Indie</a>
-        </li>
-        <li>
-            <a class="color-white" href="#latest-section">Latest</a>
-        </li>
-        <li>
-            <a class="color-white" href="searchApi.html">Search Database</a>
-        </li>
-
-    </ul>
+    <header id="main-header">
+            <ul id="jumpbtn">
+                    <li>
+                        <a id="trending" class="color-white" href="#trending-section">Trending</a>
+                    </li>
+                    <li>
+                        <a id='indie' class="color-white" href="#indie-section">Indie</a>
+                    </li>
+                    <li>
+                        <a id="latest" class="color-white" href="#latest-section">Latest</a>
+                    </li>
+            
+                </ul>
+    </header>
+   
 
     <div class=main-column>
         <h1>
@@ -73,6 +99,7 @@
                 <h1 class="displayTitle" id="displayTitle"></h1>
             <img class="displayContent" id="displayContent" src="" alt="">
             <p class="displayDescription" id="displayDescription"></p>
+           
         </div>
         <h2>
             <a id="trending-section">

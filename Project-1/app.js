@@ -51,9 +51,34 @@ let targetId;
 let x;
 let tables;
 let headerRows;
+let pass1;
+let pass2;
+let password;
+let pass2Length;
+let dist;
+let trend;
+let indie;
+let latest;
 
+
+//helper method
+let isInViewport = function (elem) {
+  let bounding = elem.getBoundingClientRect();
+  return (
+      bounding.top >= 0 &&
+      bounding.left >= 0 &&
+      bounding.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+      bounding.right <= (window.innerWidth || document.documentElement.clientWidth)
+  );
+};
 
 window.onload = function () {
+  pass1 = document.getElementById('pass1');
+  pass2 = document.getElementById('pass2');
+  trend = document.getElementById('trending-section');
+  indie = document.getElementById('indie-section');
+  latest = document.getElementById('latest-section');
+  
   title = [document.getElementById('displayTitle'), document.getElementById('displayTitle2'),
   document.getElementById('displayTitle3')];
   description = [document.getElementById('displayDescription'), document.getElementById('displayDescription2'),
@@ -64,8 +89,14 @@ window.onload = function () {
   document.getElementsByTagName('table')[3]];
   headerRows = [document.getElementsByTagName('hr')[0], document.getElementsByTagName('hr')[2], document.getElementsByTagName('hr')[4]]
   console.log("app.js is loaded");
-  var coll = document.getElementsByClassName("collapsible");
-  var i;
+  pass1.addEventListener('input', checkLength);
+  pass1.addEventListener('input', checkCaps);
+  pass1.addEventListener('input', checkNum);
+  pass1.addEventListener('input', checkSpec);
+  pass2.addEventListener('input', checkMatching);
+  let coll = document.getElementsByClassName("collapsible");
+  let i;
+  
   if (document.getElementById('index')) {
     tables[1].addEventListener('click', addPageContents);
     tables[2].addEventListener('click', addPageContents);
@@ -80,7 +111,7 @@ window.onload = function () {
   for (i = 0; i < coll.length; i++) { //for loop for collapsing tabs
     coll[i].addEventListener("click", function () {
       this.classList.toggle("active");
-      var content = this.nextElementSibling;
+      let content = this.nextElementSibling;
       if (content.style.display === "block") {
         content.style.display = "none";
       } else {
@@ -88,23 +119,28 @@ window.onload = function () {
       }
     });
   }
+
+
 }//window.onload end
-function dataBase() {
-  let api_key = 'b0828bbd51e45123e3f736dba0884357';
-  let request = document.getElementById('number').value;
-  let appName = 'Beck\'s App'
-  //un-used vars for quick referance 
-  fetch(`https://api-endpoint.igdb.com/games/${request}`, {
-    headers: {
-      "user-key": api_key,
-      Accept: "application/json"
-    }}).then(function (data) {
-    return data.json();
-  })
-    .then(function (jsonResults) {
-      game = jsonResults;
-      console.log(game);
-    })
+
+//run every scroll, check to see if element is in view
+window.onscroll = function(){
+ 
+  window.addEventListener('scroll', function (event) {
+    if (isInViewport(trend)) {
+      document.getElementById('trending').style.color = "orange";
+      document.getElementById('indie').style.color = "white";
+      document.getElementById('latest').style.color = "white";
+    }else if(isInViewport(indie)){
+      document.getElementById('trending').style.color = "white";
+      document.getElementById('indie').style.color = "orange";
+      document.getElementById('latest').style.color = "white";
+    }else if(isInViewport(latest)){
+      document.getElementById('trending').style.color = "white";
+      document.getElementById('indie').style.color = "white";
+      document.getElementById('latest').style.color = "orange";
+    }
+  }, false);
 }
 
 function addPageContents() {
@@ -143,3 +179,50 @@ function addPageContents() {
     headerRows[2].scrollIntoView(true);
   }
 }
+
+function checkLength(){
+  password = event.target.value;
+  console.log(password);
+  if (password.length > 7){
+    document.getElementById("passLength").style.color = "green";
+  }
+  else{
+    document.getElementById("passLength").style.color = "red";
+  }  
+}
+function checkMatching(){
+  pass2Length = event.target.value;
+  console.log(pass2Length);
+  if(password == pass2Length){
+    document.getElementById("matching").style.color = "green";
+  }
+  else{
+    document.getElementById("matching").style.color = "red";
+  }
+}
+function checkCaps(){
+  let regex = /^(?=.*[A-Z]).+$/;
+  if(regex.test(password)){
+    document.getElementById("caps").style.color = "green";
+  }else{
+    document.getElementById("caps").style.color = "red";
+  }
+}
+
+function checkNum(){
+  let regex = /^(?=.*[0-9]).+$/;
+  if(regex.test(password)){
+    document.getElementById("num").style.color = "green";
+  }else{
+    document.getElementById("num").style.color = "red";
+  }
+}
+function checkSpec(){
+  let regex = /^(?=.*[_\W]).+$/;
+  if(regex.test(password)){
+    document.getElementById("spec").style.color = "green";
+  }else{
+    document.getElementById("spec").style.color = "red";
+  }
+}
+
