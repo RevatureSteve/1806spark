@@ -80,3 +80,19 @@ background-color: black;
     position: relative;
     left: 217px;
 }
+
+#form_submission {
+    position: relative;
+    top: 30px;
+    background-color: rgb(190, 179, 179);
+    padding: 45px;
+    left: 360px;
+    max-width: 515px;
+
+}
+
+/*Form submission editing*/
+.textboxes {
+    width: 500px;
+    height: 80px;
+}

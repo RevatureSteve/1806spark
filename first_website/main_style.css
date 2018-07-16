@@ -81,6 +81,7 @@ body {
     max-width: 400px;
     margin: -578px 0px 0px 700px;
 }
+/*--------------------Login styling---------------------*/
 
 /*Login registration form*/
 #login_form {
@@ -89,7 +90,17 @@ body {
     max-width: 50%;
     padding: 50px;
     font-style: italic;
+}
 
+/*Requirement box popup*/
+.requirement_box {
+    position: relative;
+    background-color: rgba(122, 119, 119, 0.521);
+    width: 340px;
+    right: -210px;
+    top: -248px;
+    padding: 20px;
+    font-size: small;
 }
 
 /*Workout Fillout Form*/

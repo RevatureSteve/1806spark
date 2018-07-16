@@ -1,7 +1,7 @@
 //Javascript for the Shredding page
 window.onload = function () {
     console.log("hello!");
-    document.getElementById("submit").addEventListener('click', body_part_selection);
+    document.getElementById("submit").addEventListener("click", body_part_selection);
 }
 
 let body_part = null;
@@ -36,7 +36,6 @@ function body_part_selection() {
     else{
         
     }
-
 }
 
 
