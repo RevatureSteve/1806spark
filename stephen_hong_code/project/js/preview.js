@@ -1,23 +1,37 @@
-function compile() {
+/*
+    questions.js
+*/
+// No window.onload it has already been used by app.js
+var url = 'http://localhost:3001/preview';
+var codes = null;
+callCode();
 
-    var html = document.getElementById("html");
-    var css = document.getElementById("css");
-    var js = document.getElementById("js");
-    var code = document.getElementById("code").contentWindow.document;
+function callCode(){
+    fetch(url)
+    .then((resp) => {
+        return resp.json();
+    })
+    .then((data)=> {
+        console.log(data);
+        codes = data;
+        setCode(codes);
+    })
+}
 
-    document.body.onkeyup = function() {
-      code.open();
-      code.writeln(
-        html.value +
-          "<style>" +
-          css.value +
-          "</style>" +
-          "<script>" +
-          js.value +
-          "</script>"
-      );
-      code.close();
-    };
-  }
+function setCode(q){
+    console.log('setting code to page');
+    console.log(q);
+    var preview = document.getElementById('previewcode');
+    
+    for(let x = 0;x < q.length; x++){
+        let a = document.createElement("body");
+        a.innerHTML = q[x].html + "<style>" + q[x].css + "</style>" + "<script>" + q[x].js + "</script>";
+        preview.innerHTML = a.innerHTML;
+    }
 
-  compile();
+    // Execute script
+    var arr = preview.getElementsByTagName('script');
+    for (var n = 0; n < arr.length; n++){
+        eval(arr[n].innerHTML);
+    }
+}
