@@ -1,0 +1,47 @@
+header {
+    /* to center an element */
+    max-width: 100%;
+    margin: auto;
+    font-size: 35px;
+    background-color: rgba(94, 94, 94, 0.5);
+    text-align: center; 
+    padding: 15px;
+}
+
+/*
+    HTML IDs
+*/
+
+#loginForm {
+    background-color: rgb(145, 145, 233);
+    border: 1px solid black;
+    font-weight: 600;
+    font-family:verdana;
+    text-align: center; 
+    padding: 20px;
+    max-width: 500px;
+    margin: 50px 0px 0px 400px;
+}
+#regForm {
+    background-color: rgb(243, 191, 19);
+    border: 1px solid black;
+    font-weight: 600;
+    font-family:verdana;
+    text-align: center; 
+    padding: 20px;
+    max-width: 500px;
+    margin: 50px 0px 0px 400px;
+}
+
+#loginBody {
+    background-image: url("https://i.pinimg.com/originals/fa/89/44/fa8944447101d79bed502dd0af2b6bda.jpg");
+    height:500px;
+    position:relative;
+    z-index: -1;
+}
+
+#regBody {
+    background-image: url("http://1.bp.blogspot.com/-iO2rHyRgzI8/WdbTdhD-DWI/AAAAAAAABNk/DYrgxpGaIiQD5LXOtNTy_EJi_nxsoVsAACK4BGAYYCw/s1600/Cat%2Bface%2Bdoodle%2Bpattern.png");
+    height:780px;
+    
+}
