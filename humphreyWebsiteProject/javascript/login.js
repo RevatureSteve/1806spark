@@ -57,5 +57,66 @@ function changeSearch() {
     
     };
 
+    document.getElementById("loginBtn").addEventListener("click",() =>{
+
+        fetch("http://localhost:3001/register").then(function (data) {
+            return data.json(); // reading response and looking for just the json
+        }).then(function (registrationData) {
+
+            registerList = registrationData;
+            console.log(registerList);
+            username = document.getElementById("loginUsername").value;
+            password = document.getElementById("loginPassword").value;
+            for(i=0;i<registerList.length;i++){
+
+                if(registerList[i].username == username && registerList[i].password == password){
+                    console.log("Welcome " + registerList.firstname)
+                    if(document.contains(document.getElementById("invalidUser"))){
+                        deleteError=document.getElementById("invalidUser");
+                        deleteError.parentNode.removeChild(deleteError);}
+                    usernameBox = document.getElementById("loginUsername")
+                        usernameBox.parentNode.removeChild(usernameBox);
+                    passwordBox = document.getElementById("loginPassword")
+                        passwordBox.parentNode.removeChild(passwordBox);
+                    signinTitle = document.getElementById("loginSignin")
+                        signinTitle.parentNode.removeChild(signinTitle);
+                    loginButton = document.getElementById("loginBtn")
+                        loginButton.parentNode.removeChild(loginButton);
+                    bottomLink = document.getElementById("link")
+                        bottomLink.parentNode.removeChild(bottomLink);
+                    loginConfirmation = document.createElement("h3");
+                    loginConfirmation.setAttribute("id","loginConfirm")
+                    theDiv = document.getElementById("login");
+                    theDiv.appendChild(loginConfirmation);
+                    loginConfirmation.innerHTML = "Welcome Back, " + registerList[i].firstName + " " + registerList[i].lastName;
+                } 
+                
+                else if(document.contains(document.getElementById("invalidUser"))){
+                    deleteError=document.getElementById("invalidUser");
+                    deleteError.parentNode.removeChild(deleteError);
+                    error = document.createElement("h4");
+                    error.setAttribute("id","invalidUser")
+                    error.innerHTML = "Invalid Username or Password"
+                    parDiv = document.getElementById("login");
+                    parDiv.appendChild(error);
+                    } else{
+                        error = document.createElement("h4");
+                    error.setAttribute("id","invalidUser")
+                    error.innerHTML = "Invalid Username or Password"
+                    parDiv = document.getElementById("login");
+                    parDiv.appendChild(error);
+
+                    }
+                
+
+                
+
+            }
+        })
+
+
+
+    })
+
 
 

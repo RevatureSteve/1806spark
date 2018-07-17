@@ -5,6 +5,7 @@ app.use(jsonParser());
 
 var addMovieRoutes = require("./plusAdd-routes.js");
 var recentlyAddedPath = require("./recentlyAdded-route.js");
+var registerRoutes = require("./register-route.js");
 
 
 app.listen(3001,function(){
@@ -63,6 +64,10 @@ app.use(function(request,response,next){
     })
 
     app.use("/addMovies", addMovieRoutes,function(request,response,next){
+    
+    })
+
+    app.use("/register", registerRoutes,function(request,response,next){
     
     })
 

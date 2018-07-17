@@ -332,3 +332,32 @@ function clientValidation2(){
     }
        
    }
+
+   document.getElementById("registerBtn").addEventListener("click", () =>{
+    var fetchURL = "http://localhost:3001/register";
+    var firstNameValue = document.getElementById("registerFirstName").value
+    var lastNameValue = document.getElementById("registerLastName").value
+    var emailValue = document.getElementById("registerEmail").value
+    var usernameValue = document.getElementById("registerUsername").value
+    var passwordValue = document.getElementById("registerPassword").value
+
+
+    var data = {
+        firstName: firstNameValue,
+        lastName: lastNameValue,
+        email: emailValue,
+        username: usernameValue,
+        password: passwordValue
+    }
+
+    fetch(fetchURL, {
+     method: 'POST', // or 'PUT'
+     body: JSON.stringify(data), // data can be `string` or {object}! Must be converted to JSON
+     headers:{
+       'Content-Type': 'application/json'
+     }
+ }).then(function (data){ return data.json();}).then(function (newPerson) {
+         console.log(newPerson);
+     // newQuestionStatus.innerHTML = q.question + " " + q.answer;
+ })
+})

@@ -508,6 +508,18 @@ position: absolute;
     font-weight: bold;
 }
 
+#confirmAddition{
+    font-size: 45px;
+    margin: 100px 0px 0px 50px;
+    color: green;
+}
+
+#loginConfirm{
+    font-size: 30px;
+    margin: -80px 0px 0px 80px;
+    color: green;
+}
+
 
     /*---------------------------------------------------------------------
 
@@ -529,4 +541,9 @@ position: absolute;
 .posterImagesAdd {
     margin-top: 60px;
     padding: 20px;
+}
+
+#invalidUser{
+    margin: -208px 0px 0px 192px;
+    color: red;
 }

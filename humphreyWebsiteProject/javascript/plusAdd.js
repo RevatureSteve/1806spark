@@ -29,6 +29,27 @@ window.onload = function () {
             console.log(newMovie);
         // newQuestionStatus.innerHTML = q.question + " " + q.answer;
     });
+
+    gif = document.getElementById("addGif");
+    inputTitle = document.getElementById("addTitleInput");
+    inputRelease = document.getElementById("addReleaseInput");
+    inputPlot = document.getElementById("addPlotInput");
+    inputGenre = document.getElementById("addGenreSelect");
+    inputCoverArt = document.getElementById("addCoverArtInput");
+    submitBtn = document.getElementById("addSubmit");
+    gif.parentNode.removeChild(gif);
+    inputTitle.parentNode.removeChild(inputTitle);
+    inputRelease.parentNode.removeChild(inputRelease);
+    inputPlot.parentNode.removeChild(inputPlot);
+    inputGenre.parentNode.removeChild(inputGenre);
+    inputCoverArt.parentNode.removeChild(inputCoverArt);
+    submitBtn.parentNode.removeChild(submitBtn);
+    confirmation = document.createElement("h3");
+    confirmation.setAttribute("id","confirmAddition")
+    theDiv = document.getElementById("addDiv");
+    theDiv.appendChild(confirmation);
+    confirmation.innerHTML = "Thank you! \n You've Succesfully Added Movie";
+
     })
 
 
