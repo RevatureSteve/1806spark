@@ -1,3 +1,5 @@
+var url = 'http://localhost:3000/mode2';
+
 var winaudio = new Audio('../audio/capture.wav');
 winaudio.volume = 0.4;
 var loseaudio = new Audio('../audio/pldead.wav');
@@ -76,10 +78,4 @@ function reset() {          //start a new game
     document.getElementById("guessbox").value = "";
     document.getElementById("guessbutton").disabled = false;
     restart.play();
-}
-
-function cancle() { //audio for closing login modal
-    var cancle = new Audio('../audio/cancle.wav');
-    cancle.volume = 0.3;
-    cancle.play();
 }

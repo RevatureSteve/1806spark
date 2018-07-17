@@ -39,6 +39,12 @@ li.dropdown {
     display: inline-block;
 }
 
+/* make login button float right on navbar */
+
+.float-right {
+    float: right;
+}
+
 /* dropdown box styling */
 
 .dropdown-content {
@@ -117,12 +123,6 @@ h3{
     background: rgb(0, 0, 100);
 }
 
-/* make login button float right on navbar */
-
-.float-right {
-    float: right;
-}
-
 /* styling and positioning of modal contents */
 
 input {
@@ -147,6 +147,10 @@ input {
 span.psw {
     float: right;
     padding-top: 16px;
+}
+
+.passreq{
+    color:red;
 }
 
 /* modal background */

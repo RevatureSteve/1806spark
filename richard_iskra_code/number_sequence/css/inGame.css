@@ -6,6 +6,7 @@ ul {
     overflow: hidden;
     background-color: rgba(65, 105, 225, 0.5);
     box-shadow: 3px 3px;
+    width: 800px;
 }
 
 li a {
@@ -13,6 +14,13 @@ li a {
     color: white;
     text-align: center;
     padding: 14px 16px;
+    text-decoration: none;
+}
+li h1 {
+    float:right;
+    display: block;
+    color: white;
+    text-align: center;
     text-decoration: none;
 }
 
@@ -43,9 +51,21 @@ h5{
     text-align: center;
 }
 
+#Submit h1{
+    text-align: center;
+    width: 400px;
+}
+
+#currentscore{
+    color: white;
+    position: absolute;
+    top: -8px;
+    left: 550px;
+    font-size: 30;
+}
+
 .nav {
-    margin: auto;
-    width: 1500px;
+    width: 500px;
 }
 
 .box{
@@ -53,6 +73,10 @@ h5{
     width: 470px;
     height: 550px;
     margin: auto;
+}
+
+#currentscore{
+    float:right;
 }
 
 #guessdiv{

@@ -1,4 +1,5 @@
 // creating the audio objects
+var url = 'http://localhost:3000/mode1';
 
 var guessaudio = new Audio('../audio/shot.wav');
 guessaudio.volume = 0.4;
@@ -12,19 +13,20 @@ var warning = new Audio('../audio/warning.wav');
 warning.volume = 0.4;
 
 var attemptnum = 0;
-var attempts = 10;
+var attempts = 9;
 var answer = [];
 var ansLength = 4;
 var chars = 6;
 var digits2 = [];
 var answerholder = [];
+var scores;
 
 window.onload = function music() {       //plays music and creates the hidden answer
     var audio = new Audio('../audio/road3.wav');
     audio.volume = 0.3;
     audio.loop = true;
     audio.play();
-    restart.play();
+    //restart.play();
     document.getElementById("guessbox").value = "";
 
     for (var i = 0; i < ansLength; i++) {    //create answer
@@ -32,6 +34,7 @@ window.onload = function music() {       //plays music and creates the hidden an
     }
     console.log(answer);
     answerholder = answer.slice(0, 4);
+    callScore();
 }
 
 function attemptrun() {     //when the user clicks the submit button....
@@ -54,9 +57,12 @@ function attemptrun() {     //when the user clicks the submit button....
         winaudio.play();
         document.getElementById("guessbutton").disabled = true;
         var win = document.createElement("h1");
-        var winNode = document.createTextNode("Your guess is correct! the answer is " + answer);
+        var winNode = document.createTextNode("Your guess is correct! the answer is " + answer + ". You gained " + (1 + (attempts - attemptnum)) + " points.");
         win.appendChild(winNode);
         document.getElementById("Submit").appendChild(win);
+
+        postscore();
+
         return;
     } else {
         guessaudio.play();
@@ -164,10 +170,38 @@ function reset() {          //start a new game
     document.getElementById("guessbox").value = "";
     document.getElementById("guessbutton").disabled = false;
     restart.play();
+    callScore();
 }
 
 function cancle() { //audio for closing login modal
     var cancle = new Audio('../audio/cancle.wav');
     cancle.volume = 0.3;
     cancle.play();
+}
+
+function postscore() {
+    let data = {
+        "score": 1 + ((attempts - attemptnum) + scores)   //score from the game that just finished
+    }
+    fetch(url, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(data => data.json()).then(z => {
+        document.getElementById("currentscore").innerHTML = "score: " + z.score;
+    });
+}
+
+function callScore() {
+    fetch(url)
+        .then((resp) => {
+            return resp.json();
+        })
+        .then((data) => {
+            console.log(data);
+            scores = data[data.length - 1].score;
+            document.getElementById("currentscore").innerHTML = "score: " + scores;
+        })
 }

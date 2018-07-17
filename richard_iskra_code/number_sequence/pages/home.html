@@ -3,18 +3,19 @@
 <head>
     <title>Home Screen</title>
     <link rel="stylesheet" href="../css/style.css">
-    <!--<meta name="viewport" content="width=device-width, initial-scale=1">-->
+
     <script src="../js/home.js"></script>
 </head>
 
-<body id="bg"> <!-- id for background picture -->
+<body id="bg">
+    <!-- id for background picture -->
     <!--nav bar start-->
     <ul>
         <li>
             <a href="/home">Home</a>
         </li>
         <li class="dropdown">
-            <a href="javascript:void(0)" class="dropbtn">Play</a>
+            <a class="dropbtn">Play</a>
             <div class="dropdown-content">
                 <a href="pages/mode1.html">Mode 1</a>
                 <a href="pages/mode2.html">Mode 2</a>
@@ -30,7 +31,7 @@
     <!-- login modal start -->
     <div id="lodmod" class="modal">
 
-        <form id="myform" class="modal-content animate" onsubmit="login()">
+        <form id="myform" class="modal-content animate" onsubmit="if(!login()){event.preventDefault()}">
             <div class="imgcontainer">
                 <span onclick="document.getElementById('lodmod').style.display='none'; cancle()" class="close" title="Close Modal">&times;</span>
             </div>
@@ -38,16 +39,22 @@
                 <label for="uname">
                     <b>Username (between 8 and 20 characters)</b>
                 </label>
-                <input type="text" placeholder="Enter Username" id="usrbox" name="uname" required minlength='8' maxlength='20'>
+                <input type="text" placeholder="Enter Username" id="usrbox" name="uname" required oninput="uvalid()" minlength="8" maxlength="20">
 
                 <label for="psw">
-                    <b>Password (between 8 and 20 characters)
-                        Must have a number, uppercase, and lowercase letter.
-                    </b>
+                    <b>Password (between 8 and 20 characters)</b>
+                    <br>
+                    <b class="passreq" id="lower">Lowercase letter</b>
+                    <br>
+                    <b class="passreq" id="upper">Uppercase letter</b>
+                    <br>
+                    <b class="passreq" id="number">Number</b>
+                    <br>
+                    <b class="passreq" id="length">At least 8 long and no more than 20</b>
                 </label>
-                <input type="password" placeholder="Enter Password" id="passbox" name="psw" required pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" maxlength='20'>
+                <input type="password" placeholder="Enter Password" id="passbox" name="psw" required oninput="pvalid()" maxlength="20">
                 <!--pattern sets the requirnment of at least one number, lowercase letter, and uppercase letter and the minimum length of 8-->
-                <button type="submit" class="logbutton" onclick="failed()">Login</button>
+                <button type="submit" class="logbutton">Login</button>
             </div>
         </form>
     </div>
@@ -64,7 +71,7 @@
                     <div class="gamebox">
                         <h1>How To Play:</h1>
                         <h3>Your goal is to find the hidden sequence of 4 numbers. Each number is randomly picked between 1 and
-                            6. You have 10 guesses to find the sequence before its game over. With each guess, the game will
+                            6. You have 9 guesses to find the sequence before its game over. With each guess, the game will
                             tell you how many correct numbers you chose (if any) are in correct place and how many are in
                             the wrong place.
 
