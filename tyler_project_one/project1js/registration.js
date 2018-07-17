@@ -1,8 +1,8 @@
 
 function formValidation () {
 
-var x = document.forms["regForm"]["userName"].value;
-    if (x == "") {
+var w = document.forms["regForm"]["userName"].value;
+    if (w == "") {
         alert("Please Enter Your USERNAME!");
    
 }
@@ -11,13 +11,13 @@ var x = document.forms["regForm"]["password"].value;
         alert("Please Enter Your PASSWORD");
    
 }
-var x = document.forms["regForm"]["fullName"].value;
-    if (x == "") {
+var y = document.forms["regForm"]["fullName"].value;
+    if (y == "") {
         alert("Please Enter Your First and Last Name");
     
 }
-var x = document.forms["regForm"]["email"].value;
-    if (x == "") {
+var z = document.forms["regForm"]["email"].value;
+    if (z == "") {
         alert("Please Enter Your EMAIL!");
         return false;
     }

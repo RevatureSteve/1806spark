@@ -176,7 +176,7 @@ fetch(url, {
     }
 }).then(data=> data.json()).then(q => {
         console.log(q);
-    // newQuestionStatus.innerHTML = q.question + " " + q.answer;
+    
 });
 
 

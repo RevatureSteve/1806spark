@@ -19,7 +19,7 @@
                         <a href="/project1/project1index.html">Homepage</a>
                     </li>
                     <li class="dropdown">
-                        <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+                        <a href="javascript:void(0)" class="dropbtn">Go To:</a>
                         <div class="dropdown-content">
                             <a href="/project1/shapesIndex.html">Shapes</a>
                             <a href="/project1/numbersIndex.html">Numbers</a>
@@ -43,22 +43,18 @@
         </div>
 
         <div id="loginBody">
-                <!--
-                    GET vs POST
-                    GET - form data in the URL
-                    POST - form data hidden in the request body
-                -->
-                <form name="regForm" id="loginForm" onsubmit="return formValidation()" > 
+            
+                <form name="regForm" id="loginForm" onsubmit="return formValidation()"> 
                     ENTER USERNAME:
-                    <input name="userName" type="text" id="userid"> <br><br>
+                    <input name="userName" type="text" id="userid" placeholder="USERNAME" minlength="5" maxlength="20"> <br><br>
                     ENTER PASSWORD:
-                    <input name="password" type="password"  ><br><br>
+                    <input name="password" type="password" placeholder="PASSWORD" minlength="12" maxlength="25"  ><br><br>
                     NAME:
-                    <input name="fullName" type="text" > <br><br>
+                    <input name="fullName" type="text" placeholder="FIRST AND LAST NAME"minlength="6" maxlength="50"> <br><br>
                     EMAIL:
-                    <input name="email" type="text"  > <br><br>
+                    <input name="email" type="email" placeholder="address@email.com" minlength="6" maxlength="50" > <br><br>
                     AGE:
-                    <input name="age"type="number"  > <br><br>
+                    <input name="age" type="number" placeholder="AGE" > <br><br>
                     <input class="success-btn" type="submit" value="Login" onclick="formValidation()">
                 </form>
         

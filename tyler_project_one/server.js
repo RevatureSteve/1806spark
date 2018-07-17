@@ -29,7 +29,7 @@ resp.sendFile('C:\\Users\\tyler\\my_git_repos\\1806spark\\tyler_project_one\\pro
 
 var verifyUandP = function (req, resp, next) {
         if (req.body) {
-            console.log('The color is:' + req.body.color);
+            console.log('The unencrypted pswd is:' + req.body.pswd);
         } else {
             console.log('There is no');
         }

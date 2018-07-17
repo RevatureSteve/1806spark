@@ -197,3 +197,8 @@ footer {
     height: 150px;
     width: 150px;
 }
+
+#results{
+    font-size: 60px;
+    font-weight: bolder;
+}
