@@ -1,0 +1,18 @@
+
+
+#formLogo {
+    text-align: center;
+    padding: 35px 0px 15px;
+}
+
+
+#stockInputs {
+    background-color: white;
+    border: 1px solid #DEA527;
+    font-weight: bold;
+    text-align: center; /* text inside the element */
+    padding: 20px;
+    /* center loginForm element */
+    max-width: 450px;
+    margin: auto;
+}

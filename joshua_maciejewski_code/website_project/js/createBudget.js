@@ -4,17 +4,51 @@
 
 // can't use window.onload again as it is used in the app.js, reference at bottom instead
 
-let url = 'http://localhost:2001/viewBudget';
-document.getElementById('budgetBtn').addEventListener('click', newBudget);
-function newBudget(){
-    let budgetStatus = document.getElementById('budgetStatus');
-    let budget = document.getElementById('budgetInput').value;
-    let answer = document.getElementById('budgetInput2').value;
 
-let data = {
-    "budget": budget,
-    "answer": answer
+document.getElementById('budgetInput2').addEventListener('change', incomeCruncher);
+document.getElementById('budgetBtn').addEventListener('click', newBudget);
+
+
+function incomeCruncher(){
+    let income = document.getElementById('income').value;
+    let amount = document.getElementById('budgetInput2').value;
+    var newTotal = income - amount;
+
+        console.log(newTotal);
+        
+        document.getElementById('income').value = newTotal;
+
+        if(newTotal >= 0) {
+             document.getElementById('remainingInc').innerHTML = "good";
+        }else{
+            alert("Remaining income cannot be negative!")
+        }
+        
+
+
 }
+
+
+
+
+
+
+var url = 'http://localhost:2001/viewBudget';
+// document.getElementById('budgetBtn').addEventListener('click', newBudget);
+function newBudget(){
+    var budgetStatus = document.getElementById('budgetStatus');
+    var expense = document.getElementById('budgetInput').value;
+    var amount = document.getElementById('budgetInput2').value;
+
+
+    
+
+var data = {
+    "expense": expense,
+    "amount": amount
+}
+
+
 
 fetch(url, {
     method: 'POST', // or 'PUT'
@@ -24,6 +58,6 @@ fetch(url, {
     }
 }).then(data=> data.json()).then(b => {
         console.log(b);
-    budgetStatus.innerHTML = b.budget + " " + b.answer;
+    budgetStatus.innerHTML = b.expense + " " + b.amount;
 });
 }

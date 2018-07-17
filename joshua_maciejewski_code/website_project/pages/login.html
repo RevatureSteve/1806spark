@@ -34,14 +34,21 @@
             GET - form data in the URL
             POST - form data hidden in the request body
         -->
-        <form id="loginForm" method="POST" action="http://www.maw.com/login">
+        <form id="loginForm" action="http://localhost:2001/home">
             <h1 id="signIn">Sign In</h1>          <br>
             <div class="inputTxt">Enter username</div>  
             <input class = "inputBoxes" type="text" required> <br><br>
             <div class="inputTxt">Enter password</div>  
             <input class="inputBoxes" type="password" required><br><br>
-            <input class="success-btn" type="submit" value="Login">
+            <input id="success-btn" type="submit" value="Login">
         </form>
+
+        <br><br>
+        
+        <div id=notDiv>
+            <a id="notMem" href="http://localhost:2001/pages/register.html">Not a member?</a>
+        </div>    
+        
 
     </div>
 </body>

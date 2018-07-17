@@ -2,25 +2,28 @@
 
 
 <head>
-    <title>Login</title>
+    <title>register</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/register.css" />
+    <!-- <link rel="stylesheet" href="../css/login.css" /> -->
+    
+    
 
 <!-- REGISTER VALIDATION SCRIPT -->
-    <script language='javascript' type='text/javascript'>
+    <!-- <script language='javascript' type='text/javascript'>
         function check(input) {
             if (input.value != document.getElementById('password').value) {
                 input.setCustomValidity('Password Must be Matching.');
             } else {
-                // input is valid -- reset the error message
+                
                 input.setCustomValidity('');
             }
         }
-    </script>
+    </script> -->
  <!-- REGISTER VALIDATION SCRIPT -->
 </head>
 
-<body class="tampa">
+<!-- <body class="tampa"> -->
 
     <!-- Navbar begin -->
     <div class="topnav">
@@ -32,6 +35,80 @@
                 <a href="login.html">Login</a>
             </span>
     </div>
+    <!-- (?=.{8,}) -->
+  
+    <div id="formLogo">
+        <h1 id="logo">
+            <span id="dollar">Dollar</span> <span id="climb">Climb</span>
+            <span id="chart">
+                <img height= 75px; width = 100px; src="https://images.clipartuse.com/70a4b09b95a2a796a0f3cd7c4e59aced_profit-clip-art-at-clkercom-vector-clip-art-online-royalty-_600-500.png"/>
+            </span>
+        </h1>
+    </div>
+    <div class="loginForm">
+        <!-- <form action="/action_page.php"> -->
+         
+         
+        <form id="loginForm" action="http://localhost:2001/home">
+         
+         <!-- First Name:
+            <input type="text" minlength="1" maxlength="20" required>
+            <br><br>
+            Last Name:
+            <input type="text" max="25" min="1" required>
+            <br><br> -->
+            <h1 id="register">Register</h1>          <br>
+
+            <div class="inputTxt">Username</div>  
+            <input type="text">
+            <br><br>
+
+            <div id="message">
+            <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">An <b>uppercase</b> letter</p>
+            <p id="number" class="invalid">A <b>number</b></p>
+            <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            <p id="special" class="invalid">A <b>special character</b></p>
+            </div>
+
+            <div class="inputTxt">Password</div>  
+          <input class=inputTxt type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^*]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters, and special character" required>
+          <br><br>
+          
+          
+          <div class="inputTxt">Confirm Password</div>  
+          <input type="password" id="confirm" name="confirm" required onkeyup="checkPass(); return false;">
+         
+
+          <div id="confirmMessage" class="confirmMessage"></div>
+
+          <!-- ^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$ -->
+            <br><br>
+          <input id="success-btn" type="submit" value="Sign Up!">
+        </form>
+      </div>
+      
+      <!-- <div id="message">
+        <h6>Password must contain the following:</h6>
+        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+        <p id="capital" class="invalid">An <b>uppercase</b> letter</p>
+        <p id="number" class="invalid">A <b>number</b></p>
+        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+        <p id="special" class="invalid">A <b>special character</b></p>
+      </div> -->
+   
+      <!-- (?=.*[!@#$%^&*]) - Assert a string has at least one special character. -->
+  
+   
+   
+   
+        <script src= "/js/register.js"></script>
+   
+   
+   
+    </div>
+   
+   
     <!-- Navbar End-->
 <!-- <header>
         <h1>Register Here!</h1>
@@ -39,19 +116,21 @@
 
 <!-- LOGIN FORM -->
 
-<div id="registerBody">
+
+
+<!-- <div id="registerBody"> -->
     <!--
 get vs post
 get - form data in the url
 post - form data hidden in the request body
 -->
-<form id="registerForm" method="POST">
+<!-- <form id="registerForm" method="POST">
 
-Name:
-<input type="text" maxlength="20" minlength="3" required>
+First Name:
+<input type="text" minlength="1" maxlength="20" required>
 <br><br>
-Age:
-<input type="number" max="110" min="7" required>
+Last Name:
+<input type="text" max="25" min="1" required>
 <br><br>
 Date of Birth:
 <input type="date">
@@ -70,7 +149,8 @@ Confirm Password:
 
 </form>
 
-</div>
+
+</div> -->
 
 
 </body>

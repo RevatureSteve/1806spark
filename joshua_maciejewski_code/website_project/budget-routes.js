@@ -3,14 +3,14 @@
 var express = require('express');
 var router = express.Router();
 //question models is for mongoose
-var Budget = require('./models').Budget;
+var Budget1 = require('./models').Budget1;
 
 
 //GET /questions
 // Route for questions collection
 router.get('/', function(req, res, next){
     console.log('/budgets');
-    Budget.find({})
+    Budget1.find({})
             .exec(function(err, budget) {
                 if(err) return next(err);
                 res.json(budget);
@@ -23,7 +23,7 @@ router.get('/', function(req, res, next){
 router.post("/", function (req, res, next) {
     console.log('Creating new question');
     console.log(req.body);
-    var budget = new Budget(req.body);
+    var budget = new Budget1(req.body);
     console.log(budget);
     budget.save(function(err, budget) {
         if(err) return next(err);
@@ -45,7 +45,7 @@ router.get("/:qID", function(req, res, next){
 // DELETE /questions/:qID/answers/:aID
 // Delete a specific answer
 router.delete("/:qID/answers/:aID", function(req, res){
-	req.answer.remove(function(err){
+	req.answer.remove(function(err){ //might need to change this
 		req.budget.save(function(err, budget){
 			if(err) return next(err);
 			res.json(budget);

@@ -1,10 +1,170 @@
+
+body {
+    background-color:#f7f1ef;
+}
+
+
+#formLogo {
+    text-align: center;
+    padding: 35px 0px 15px;
+}
+
+#loginForm {
+    background-color: white;
+    border: 1px solid #DEA527;
+    font-weight: bold;
+    text-align: center; /* text inside the element */
+    padding: 20px;
+    /* center loginForm element */
+    max-width: 450px;
+    margin: auto;
+}
+
+/* .inputBoxes {
+    width: 100%; 
+    height: 5%;   
+    border-radius: 10px;
+    border: 2px solid  #1a2c56;
+  
+    
+} */
+
+/* Style all input fields */
+input {
+
+    width: 100%; 
+    height: 5%;   
+    border-radius: 10px;
+    border: 2px solid  #1a2c56;
+
+    /* width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px; */
+}
+
+/* Style the submit button */
+/* input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+} */
+#register {
+    padding: 1px 1px;
+    margin: 1px 1px;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.inputTxt {
+    text-align: left;
+    font-size: 15px;
+}
+
+#success-btn {
+    
+    font-size: 25px;
+    color: white; /* text color */
+    height: 35px;
+    background-color: #1a2c56;
+    border-radius: 10px;
+    width:  100%;
+    height: 35px;
+
+}
+
+/* Style the container for inputs */
+/* .container {
+    background-color: #f1f1f1;
+    padding: 20px;
+} */
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+    display:none;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: -20px;
+    margin-top: -20px;
+}
+
+#message p {
+    padding: 1px 1px;
+    font-size: 12px;
+}
+
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
+}
+
+
+#success-btn {
+    
+    font-size: 25px;
+    color: white; /* text color */
+    height: 35px;
+    background-color: #1a2c56;
+    border-radius: 10px;
+    width:  100%;
+    height: 35px;
+
+}
+
+#success-btn:hover {
+
+/* swap the color and background-color on mouse hover */
+color:  #1a2c56;
+background-color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 /* 
 Register.css: styles for the login page/component
 */
 
 /* HTML ELEMENTS */
 
-header {
+/* header {
     max-width: 100%;
     margin: auto;
     background-color: darkgray;
@@ -12,30 +172,30 @@ header {
     font-size: 35px;
     padding: 2px;
     border-bottom-color: 3zpx black
-}
+} */
 
 /* HTML IDs */
 
 
-
+/* 
 #registerForm {
     border: 3px dotted green;
     font-weight: bolder;
-/* center loginForm Elements */
+
 max-width: 500px;
 margin: auto;
 padding: 20px;
 background-color: white;
 text-align: center;
 
-}
+} */
 
 /* #registerBody {
     background-image: url(https://images.pexels.com/photos/51119/wall-stones-hauswand-structure-51119.jpeg?auto=compress&cs=tinysrgb&h=350);
 } */
 
 /* HTML Classes */
-
+/* 
 .tampa { 
     background: url(http://res.cloudinary.com/simpleview/image/upload/v1519761816/clients/tampabay/IMG_1420a_3__e412c32a-8344-4a0d-abc9-affe2af268e3.jpg) 
     no-repeat center center fixed; 
@@ -52,8 +212,5 @@ text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
-}
-
-/* .tampa {
-    background-image: url(http://res.cloudinary.com/simpleview/image/upload/v1519761816/clients/tampabay/IMG_1420a_3__e412c32a-8344-4a0d-abc9-affe2af268e3.jpg);
 } */
+

@@ -17,6 +17,9 @@ window.onload = function() {
     function getStock() {
         console.log('getStock called/invoked');
         let stockSym = document.getElementById('stock').value;
+        let date = document.getElementById('date').value;
+        let stat = document.getElementById('stat').value
+        console.log(date);
         console.log(stockSym);
 
                 fetch('https://www.alphavantage.co/query?function=TIME_SERIES_DAILY&symbol=' + stockSym + '&apikey=02CANEX07CURZ8RX')
@@ -27,9 +30,26 @@ window.onload = function() {
             stockInfo = json;
 
             console.log(stockInfo);
-            jsonStr = JSON.stringify(stockInfo["Time Series (Daily)"]["2018-07-11"]["1. open"]);
-            document.getElementById("stockData").innerHTML =  jsonStr;
+            jsonStr = JSON.stringify(stockInfo["Time Series (Daily)"]["2018-07-10"]);
+            jsonArr = JSON.parse(jsonStr);
+            console.log(jsonArr)
+            
+            let statName = stat.slice(3);
+            
+            document.getElementById("stockData").innerHTML = "The " + statName + " for " + stockSym + " was " +  jsonArr[stat];
 
+            
+            
+            
+            
+            // jsonArr = JSON.parse(jsonStr);
+            // console.log(newArr);
+            // var arr = jsonStr.split('"');
+            // console.log(arr);
+            
+            // let pos = jsonStr.search("2. high");
+            // console.log(pos);
+           
             //see if i can add this to a list
         });
 

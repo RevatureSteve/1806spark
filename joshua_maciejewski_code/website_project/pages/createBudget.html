@@ -2,10 +2,11 @@
 <html>
 
 <head>
-        <title>foodsihate</title>
+        <title>Create Budget</title>
         <link rel="stylesheet" href="../css/style.css"/>
         <link rel="stylesheet" href="../css/login.css"/>
-        <link rel="stylesheet" href="/js/createBudget.js"/>
+        <link rel="stylesheet" href="../css/createBudget.css">
+        <script rel="stylesheet" href="/js/createBudget.js"></script>
 
 
 
@@ -33,16 +34,28 @@
         </h1>
     </div>
 
-    <div id="questionForm"> <!-- don't use a form tag since we are using javascript's fetch async request -->
-        Enter question: <input id="budgetInput" type="text" placeholder="enter q.." name="question"> <br><br>
-        Enter answer: <input id="budgetInput2" type="text" placeholder="enter a.." name="answer"> <br><br>
-        <button id="budgetBtn">Submit new Question</button>
+
+<div id="infoForm"> 
+    <div>
+        Starting Monthly Income: <input id="income" type="number" name="income" required>
+    </div>
+
+    <div id="remainingInc">
+
+    </div>
+
+    <div> <!-- don't use a form tag since we are using javascript's fetch async request -->
+        Enter an Expense: <input id="budgetInput" type="text" placeholder="type an expense here" name="expense" required> <br><br>
+        Enter an Amount: <input id="budgetInput2" type="number" placeholder="$$$$$$$$" name="amount" required> <br><br>
+        <button id="budgetBtn">Add to your budget!!!</button>
     </div>
     <div id="budgetStatus">
 
     </div>
+    
     <script src="/js/createBudget.js"></script>
-
+</div>
+          
   
     
 

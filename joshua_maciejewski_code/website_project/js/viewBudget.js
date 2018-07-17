@@ -33,7 +33,7 @@ function setBudget(b){
 
     for(let x = 0; x< b.length; x++){
         let bDiv = document.createElement('div');
-        bDiv.innerHTML = "budget: " + b[x].budget + " money: " + b[x].answer;
+        bDiv.innerHTML = "budget: " + b[x].expense + " money: " + b[x].amount;
         budgetSection.appendChild(bDiv);
     }
 }

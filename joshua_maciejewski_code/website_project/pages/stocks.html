@@ -2,10 +2,11 @@
 <html>
 
 <head>
-        <title>Foodsilove</title>
+        <title>Stocks</title>
         <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="../css/login.css"/>
+        <link rel="stylesheet" href="../css/stocks.css"/>
         <script src= "/js/financialMarkets.js"></script>
-
    
 </head>
 
@@ -21,12 +22,31 @@
             </span>
     </div>
 
-    <h1>enter a stock symbol</h1>
-    <input id="stock" type="text" placeholder="enter stuff">
-    <button id = "stockButton">Get Stock Info</button>
-    <p id=stockData>stock info</p>
+    <div id="formLogo">
+            <h1 id="logo">
+                <span id="dollar">Dollar</span> <span id="climb">Climb</span>
+                <span id="chart">
+                    <img height= 75px; width = 100px; src="https://images.clipartuse.com/70a4b09b95a2a796a0f3cd7c4e59aced_profit-clip-art-at-clkercom-vector-clip-art-online-royalty-_600-500.png"/>
+                </span>
+            </h1>
+    </div>
 
-    <div id="listContainer">
+    <div id = stockInputs>
+        <h1>Enter Stock Info</h1>
+        <input id="stock" type="text" placeholder="enter stock symbol">
+        <input id="date" type="date" placeholder="pick a date">
+        <select id="stat">
+                <option value="1. open">open</option>
+                <option value="2. high">high</option>
+                <option value="3. low">low</option>
+                <option value="4. close">close</option>
+                <option value="5. volume">volume</option>
+              </select>
+        <button id = "stockButton">Get Stock Info</button>
+        <p id=stockData></p>
+    
+
+    
         
     </div>
 
