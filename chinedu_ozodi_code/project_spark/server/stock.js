@@ -2,8 +2,16 @@ var express = require('express');
 var Stock = require('./stock-model').Stock;
 var stock = express.Router();
 
-stock.get('/', (req, resp, next)=>{
-    console.log("route working");
+stock.post('/get', (req, resp, next)=>{
+    console.log(req.body);
+    let body = req.body;
+    Stock.find({user: body.username}).exec((err,stocks) =>{
+        if(err){
+            return next(err);
+        }
+        console.log(stocks);
+        resp.json(stocks);
+    })
 });
 
 stock.post('/', (req, resp, next)=>{
@@ -16,7 +24,6 @@ stock.post('/', (req, resp, next)=>{
         resp.status = 201;
         resp.json(stock);
     })
-}); 
-
+});
 
 module.exports = stock;
