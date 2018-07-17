@@ -99,6 +99,6 @@ nav{
     margin: auto;
 }
 
-#graphContainer img{
-    width: 100%;
+#graphContainer div{
+    width: 98%;
 }

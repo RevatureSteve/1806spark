@@ -4,6 +4,7 @@
   "description": "A project that focuses on  stock tracking",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.18.3",
     "bootstrap": "^4.1.1",
     "express": "^4.16.3",
     "mongoose": "^5.2.3"

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" type="text/css" media="screen" href="../css/login.css" />
+    <script src="../javascript/login.js"></script>
 </head>
 
 <body class="text-center color-main">
@@ -34,13 +35,13 @@
             </ul>
         </div>
     </nav>
-    <form class="form-center" method="POST">
+    <form class="form-center">
         <div class=" mb-3 mt-2 company-name">SoSo</div>
         <h1 class="h3 mb-3 font-weight-normal">Please Login</h1>
-        <label for="loginUsername" class="sr-only">Username/email</label>
-        <input id="loginUsername" placeholder="Username/Email" class="form-control" type="text" minlength="3" maxlength="20" required>
+        <label for="loginUsername" class="sr-only">Username</label>
+        <input id="loginUsername" name="username" placeholder="Username" class="form-control" type="text" minlength="3" maxlength="20" required>
         <label for="loginPassword" class="sr-only">Password</label>
-        <input id="loginPassword" placeholder="Password" class="form-control" type="password" minlength="5" maxlength="15" required>
+        <input id="loginPassword" name="password" placeholder="Password" class="form-control" type="password" minlength="5" maxlength="15" required>
         <p>No account, <a href="register.html">click to register now</a></p>
         <input id="loginSignIn" class="btn-secondary" type="submit" value="login">
     </form>

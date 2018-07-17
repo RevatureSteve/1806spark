@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/cover.css">
     <link rel="stylesheet" href="../css/searchc.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../javascript/app.js"></script>
 </head>
 
 <body class="text-center color-green">
@@ -26,8 +28,8 @@
 
 
             </ul>
-            <form class="form-inline mt-2 mt-md-0" action="search.html">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <form class="form-inline mt-2 mt-md-0" method="GET" action="search.html">
+                <input class="form-control mr-sm-2" type="text" id="search" name="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0 color-green-dark" type="submit">Search</button>
             </form>
         </div>
@@ -35,17 +37,18 @@
     <div class="container-fluid">
         <div class="row">
             <div id="graphContainer" class="col-sm">
-                <img src="http://journal.firsttuesday.us/wp-content/uploads/SP500PE-020218.png" alt="stock graph">
+                <div id="graph"></div>
+                <!-- <img src="http://journal.firsttuesday.us/wp-content/uploads/SP500PE-020218.png" alt="stock graph"> -->
             </div>
             <div id="stockBuySell" class="col-sm-2 color-green">
-                    <h6 class="stockName">Stock Name</h6>
-                    <p class="currentPrice">$154</p>
-                    <p class="todaysGain">(+12)</p>
-                <form method="get">
+                    <h6 class="stockName" id="stockName" >Stock Name</h6>
+                    <p class="currentPrice" id="currentPrice" >$154</p>
+                    <p class="todaysGain" id="stockPriceChange">(+12)</p>
+                <div>
                         <input type="number" id="stockAmount">
                         <button class="btn-outline-dark color-green" id="buyStock" type="submit">Buy Stock</button>
                         <button class="btn-outline-dark color-green" id="sellStock" type="submit">Sell Stock</button>
-                </form>
+                <div>
             </div>
         </div>
     </div>
@@ -56,6 +59,7 @@
         </footer>
     </div>
     <!-- Javascript files -->
+    <script src="../javascript/search.js"></script> 
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"

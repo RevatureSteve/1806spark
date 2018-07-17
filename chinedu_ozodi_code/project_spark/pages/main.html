@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="../node_modules/bootstrap/dist/css/bootstrap.css">
     <link rel="stylesheet" href="../css/main.css">
     <link rel="stylesheet" href="../css/cover.css">
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script src="../javascript/app.js"></script>
 </head>
 
 <body class="text-center color-green">
@@ -22,11 +24,9 @@
                     <a class="nav-link" href="../pages/search.html">Search
                     </a>
                 </li>
-
-
             </ul>
-            <form class="form-inline mt-2 mt-md-0" action="search.html">
-                <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+            <form class="form-inline mt-2 mt-md-0" method="GET" action="search.html">
+                <input class="form-control mr-sm-2" type="text" id="search" name="search" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success my-2 my-sm-0 color-green-dark" type="submit">Search</button>
             </form>
         </div>
@@ -34,13 +34,14 @@
     <div class="container-fluid">
         <div class="row">
             <div id="graphContainer" class="col-sm">
-                <img src="http://journal.firsttuesday.us/wp-content/uploads/SP500PE-020218.png" alt="stock graph">
+                <div id="graph"></div>
+                <!-- <img src="http://journal.firsttuesday.us/wp-content/uploads/SP500PE-020218.png" alt="stock graph"> -->
             </div>
             <div id="mainProfile" class="col-sm-2 color-green">
                 <div class="profileImg">
                     <img src="https://www.publicdomainpictures.net/pictures/170000/velka/woman-face-profile-illustration.jpg" alt="portrait image">
                 </div>
-                <h6 class="profileName">Profile Name</h6>
+                <h6 class="profileName" id="profileName">Profile Name</h6>
                 <p class="currentBalance">$9,001</p>
                 <p class="todaysGain">(+1)</p>
                 <a id="logoutBtn" href="../pages/login.html">Logout</a>
