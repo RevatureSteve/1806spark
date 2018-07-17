@@ -92,15 +92,49 @@ body {
     font-style: italic;
 }
 
-/*Requirement box popup*/
-.requirement_box {
+/*Requirement box popup when password box is clicked*/
+#requirement_box {
+    display: none;
     position: relative;
     background-color: rgba(122, 119, 119, 0.521);
     width: 340px;
-    right: -210px;
-    top: -248px;
-    padding: 20px;
+    right: -515px;
+    top: -320px;
+    padding: 25px;
     font-size: small;
+}
+
+#check_box {
+    display: none;
+    position: relative;
+    background-color: rgba(122, 119, 119, 0.521);
+    width: 340px;
+    right: -515px;
+    top: -320px;
+    padding: 25px;
+    font-size: small;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    /*content: "&#10004;";*/
+}
+
+/* Add a red text color and an "x" icon when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -10px;
+    /*content: "&#10006;";*/
 }
 
 /*Workout Fillout Form*/
@@ -111,3 +145,15 @@ body {
     padding: 50px;
 
 }
+
+#selection_box {
+    background-color: rgb(168, 160, 160);
+    position: relative;
+    padding: 10px;
+    right: -150px;
+    width: 320px;
+    top: 35px;
+    text-align: center;
+}
+
+

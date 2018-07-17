@@ -17,7 +17,7 @@ fitnessPath.get("/", function(req, resp, next){
 });
 
 // Create a post in /Back
-fitnessPath.post("We've posted your request", function(req, resp, next){
+fitnessPath.post("/", function(req, resp, next){
     console.log(req.url);
     var fitness = new Fitness(req.body);
     fitness.save(function(err, fitness){

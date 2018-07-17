@@ -38,7 +38,7 @@ app.use("/home", function(req, resp, next){
 /* 
     Linking fitness-path to the /Back page
 */
-app.use("/pages/Back", fitnessPath);
+app.use("/Back", fitnessPath);
 
 app.listen(portNumber, function(){
     console.log(`Express server is listening on port ${portNumber}`);

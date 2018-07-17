@@ -92,7 +92,8 @@ background-color: black;
 }
 
 /*Form submission editing*/
-.textboxes {
-    width: 500px;
-    height: 80px;
+#post {
+    position: relative;
+    background-color: beige;
+    
 }

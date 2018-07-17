@@ -1,11 +1,86 @@
-// console.log('hello');
+window.onload = function() {
 
-// // When the user clicks on div, open the popup
 
-// document.getElementsByClassName('requirement_box').addEventlister('click', popup_box);
-// let password_font = document.getElementsByClassName('requirement_box');
+var psw = document.getElementById("pass");
+var re_psw = document.getElementById("repass");
+var length = document.getElementById("length");
+var capital = document.getElementById("capital");
+var lowercase = document.getElementById("lowercase");
+var number = document.getElementById("number");
 
-// function popup_box() {
-//     var popup = document.getElementById("myPopup");
-//     popup.classList.toggle("show");
-// }
+
+
+// when the user clicksk on the password field, show the message box
+psw.onfocus = function(){
+    document.getElementById("requirement_box").style.display
+    = "block";
+}
+// box hides when user clicks outside the box
+psw.onblur = function() {
+    document.getElementById("requirement_box").style.display
+     = "none";
+}
+// When the user starts to type something inside
+psw.onkeyup = function(){
+// validate length
+    if(psw.value.length >= 8){
+        length.classList.remove("invalid");
+        length.classList.add("valid");
+
+    } else {
+        length.classList.remove("valid");
+        length.classList.add("invalid");
+    }
+// validate capital letter
+    var upperCaseLetter = /[A-Z]/g;
+    if(psw.value.match(upperCaseLetter)){
+        capital.classList.remove("invalid");
+        capital.classList.add("valid");
+    } else{
+        capital.classList.remove("valid");
+        capital.classList.add("invalid");
+    }
+// validate lowercase letter
+    var lowerCaseLetter = /[a-z]/g;
+    if(psw.value.match(lowerCaseLetter)){
+        lowercase.classList.remove("invalid");
+        lowercase.classList.add("valid");
+    } else{
+        lowercase.classList.remove("valid");
+        lowercase.classList.add("invalid");
+    }
+// validate numbers
+    var numbers = /^(?=.*[0-9_\W]).+$/g;
+    if(psw.value.match(numbers)){
+        number.classList.remove("invalid");
+        number.classList.add("valid");
+    } else{
+        number.classList.remove("valid");
+        number.classList.add("invalid");
+    }
+}
+
+// when the user clicks on the re-password field, show the message box
+re_psw.onfocus = function(){
+    document.getElementById("check_box").style.display
+    = "block";
+}
+// box hides when user clicks outside the box
+re_psw.onblur = function() {
+    document.getElementById("check_box").style.display
+     = "none";
+}
+// When the user starts to type something inside
+re_psw.onkeyup = function(){
+// validate length
+    if(re_psw.value == psw.value){
+        re_psw.classList.remove("invalid");
+        re_psw.classList.add("valid");
+    } else {
+        re_psw.classList.remove("valid");
+        re_psw.classList.add("invalid");
+    }
+}
+
+}
+

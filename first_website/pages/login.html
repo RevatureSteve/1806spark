@@ -13,38 +13,45 @@
 </ul>
 
 <body>
-    <div>
-        <form id="login_form" autocomplete="off"> <!--use action to send data to a page-->
+    <div id = "login_form">
+        <form autocomplete="off"> <!--use action to send data to a page-->
             <fieldset>
                 <legend>Registration Form to Success!:</legend>
                 <p>First name:</p>
-                <input type="text" name="firstname" placeholder="Alex" value="" required>
+                <input id="first" type="text" name="firstname" placeholder="Alex" value="" required>
                 <br>
                 <p>Last name:</p>
-                <input type="text" name="lastname" placeholder="Moraga" value="" required>
+                <input id="last" type="text" name="lastname" placeholder="Moraga" value="" required>
                 <br>
+                <!--Pattern is inside the password to set restrictions for submitting the form-->
                 <p>Password:</p>
-                <input type="password" name="password" value="" required>
+                <input id="pass" type="password" name="password" 
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required> 
                 <br>
                 <p>Re-enter Password:</p>
-                <input type="password" name="re-enter password" value="" required>
+                <input id="repass" type="password" name="re-enter password" 
+                    pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" required>
                 <br>
                 <br>
                 <input type="submit" value="submit">
             </fieldset>
-             <div class="requirement_box">
-                <p>Passwords be at least 8 characters long.</p>
-               
-                <p>Passwords must contain at least one uppercase letter.</p>
-               
-                <p>Password must contain at least on lowercase letter.</p>
-              
-                <p>Password must contain at least one numberical character.</p>
-                <p>Password must contain at least one special character.</p>
-            </div>
-        </form>
+        </form>       
+    </div>
 
-            
+    <div id="requirement_box">
+        <h3>Password must contain the following</h3>
+       <p id="length" class="invalid">At least 8 characters long.</p>
+      
+       <p id="capital" class="invalid">At least one uppercase letter.</p>
+      
+       <p id="lowercase" class="invalid">At least on lowercase letter.</p>
+     
+       <p id="number" class="invalid">At least one numberical or special character.</p>
+       
+   </div id="check_box">
+        <p id="confirmation">Password matches!</p>
+    <div>
+
     </div>
 
 </body>

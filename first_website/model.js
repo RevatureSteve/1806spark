@@ -8,8 +8,8 @@ var Schema = mongoose.Schema;
 var FitnessSchema = new Schema({
     rating: String,
     createdAt: { type: Date, default: Date.now},
-    pros: String,
-    cons: String
+    pro: String,
+    con: String
 });
 
 var Fitness = mongoose.model("Fitness", FitnessSchema);

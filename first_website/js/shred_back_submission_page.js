@@ -6,12 +6,12 @@ window.onload = function(){
 let rating = null;
 let pros = null;
 let cons = null;
-let url = 'http://localhost:3000/pages/Back';
+let url = 'http://localhost:3000/Back';
 
 function submission(){
     let rating = document.getElementById("rating").value;
-    let pros = document.getElementById('pro').value;
-    let cons = document.getElementById('con').value;
+    let pro = document.getElementById('pro').value;
+    let con = document.getElementById('con').value;
     //console.log(pros);
     
     // Post data/submission!

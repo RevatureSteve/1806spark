@@ -1,4 +1,4 @@
-var url = "http://localhost:3000/pages/Back"
+var url = "http://localhost:3000/Back"
 var fitness = null;
 callFitness();
 
@@ -20,7 +20,7 @@ function setFitness(f){
     var submissionSection = document.getElementById('post');
 
     for(let x = 0; x < f.length; x++){
-        let fDiv = document.createElement('div');
+        let fDiv = document.createElement('li');
         fDiv.innerHTML = "Pros: " + f[x].pro + " Cons: " + f[x].con 
                     + " Rating: " + f[x].rating;
         submissionSection.appendChild(fDiv);
