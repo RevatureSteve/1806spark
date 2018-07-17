@@ -10,3 +10,19 @@
     max-width: 450px;
     margin: auto;
 }
+
+#budget :nth-child(5n+0) {
+    color:#00b2f5  ;
+}
+#budget :nth-child(5n+1) {
+    color: #e64b40 ;
+}
+#budget :nth-child(5n+2) {
+    color: #faab19 ;
+}
+#budget :nth-child(5n+3) {
+    color:  #8ec738;
+}
+#budget :nth-child(5n+4) {
+    color: #b34fa0 ;
+}
