@@ -1,4 +1,17 @@
 let previewUrl = 'http://localhost:3001/preview';
+
+fetch(previewUrl).then(function(previewData){
+    return previewData.json();
+}).then(function (jsonPreview) {
+    jsonPreviewResults = jsonPreview;
+    console.log(jsonPreviewResults);
+    document.getElementById("name").value = jsonPreviewResults[1].name;
+    document.getElementById("description").value = jsonPreviewResults[1].description;
+    document.getElementById("html").value = jsonPreviewResults[1].html;
+    document.getElementById("css").value = jsonPreviewResults[1].css;
+    document.getElementById("js").value = jsonPreviewResults[1].js;
+});
+
 document.getElementById('previewBtn').addEventListener('click', preview);
 function preview(){
     let name = document.getElementById('name').value;

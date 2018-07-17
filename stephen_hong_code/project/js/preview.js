@@ -1,27 +1,27 @@
-var url = 'http://localhost:3001/preview';
+var previewUrl = 'http://localhost:3001/preview';
 var codes = null;
 callCode();
 
 function callCode(){
-    fetch(url)
+    fetch(previewUrl)
     .then((resp) => {
         return resp.json();
     })
-    .then((data)=> {
-        console.log(data);
-        codes = data;
+    .then((previewData)=> {
+        console.log(previewData);
+        codes = previewData;
         setCode(codes);
     })
 }
 
-function setCode(q){
+function setCode(c){
     console.log('setting code to page');
-    console.log(q);
+    console.log(c);
     var preview = document.getElementById('previewcode');''
     
-    for(let x = 0;x < q.length; x++){
+    for(let x = 0;x < c.length; x++){
         let a = document.createElement("body");
-        a.innerHTML = q[x].html + "<style>" + q[x].css + "</style>" + "<script>" + q[x].js + "</script>";
+        a.innerHTML = c[x].html + "<style>" + c[x].css + "</style>" + "<script>" + c[x].js + "</script>";
         preview.innerHTML = a.innerHTML;
     }
 
