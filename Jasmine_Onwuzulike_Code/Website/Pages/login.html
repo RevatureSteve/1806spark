@@ -41,13 +41,14 @@
 
 
    <div id="login-section">
-Enter First Name:<input id = "p_first" type="text"required name="firstName" placeholder="Enter first name">
+   <h4>Sign Up</h4>
+Enter First Name:<input id = "p_first" type="text"required name="firstName" placeholder="Enter first name" minlength="2" title="Must be two characters minimum">
 <br>
 <br>
-Enter Last Name:<input id="p_last" type="text" required name="lastName" placeholder="Enter Last Name">
+Enter Last Name:<input id="p_last" type="text" required name="lastName" placeholder="Enter Last Name" minlength="2" title="Must be two characters minimum.">
 <br>
 <br>
-Enter Email Address:<input  id="p_email" type="text" required name="email" placeholder="Enter email address"> 
+Enter Email Address:<input  id="p_email" type="text" required pattern="@" name="email" placeholder="Enter email address" title="Must be a valid email addrss containing a."> 
 <br>
 <br>
 <button id="createAcc">Create New Account</button>
@@ -57,24 +58,12 @@ Enter Email Address:<input  id="p_email" type="text" required name="email" place
 
 
 </div>
-
-<br>
-<br>
-<br>
+<div id="first-requirements">
+    <p>Must be a minimum of 2 characters.</p>
+</div>
 
 </div>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
-<br>
+
 
     </body>
     </html>
