@@ -2,6 +2,7 @@ var express = require('express');
 var app = express();
 var portNumber = 3001;
 var homeRoutes = require('./server-code/userHome-path');
+var commentRoutes = require('./server-code/comments-path');
 var jsonParser = require("body-parser").json;
 app.use(jsonParser());
 
@@ -29,6 +30,7 @@ app.use("/home", function(req, resp, next){
 
 
 app.use('/userHome', homeRoutes);
+app.use('/comments', commentRoutes);
 
 
 app.listen(portNumber, function(){
