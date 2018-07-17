@@ -124,6 +124,7 @@ li.dropdown {
 
 Body {
     background-image:url("http://jonvilma.com/images/colors-6.jpg");
+    
 }
 
 #startTest{
@@ -201,4 +202,14 @@ footer {
 #results{
     font-size: 60px;
     font-weight: bolder;
+}
+
+#quiz{
+    background-color: rgba(153, 9, 153, 0.781);
+    margin:25px;
+}
+
+#testRadio{
+    height: 25px;
+    width: 25px;
 }
