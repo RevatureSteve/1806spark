@@ -94,6 +94,8 @@ footer {
 
 body{
     margin: 0;
+    text-align: center;
+    background-color:rgba(61, 167, 126, 0.795);
 }
 ul {
     list-style-type: none;

@@ -1,0 +1,81 @@
+#ocLearning {
+    font-size: 80px;
+    
+}
+.navbar {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: black;
+    font-family: fantasy;
+    
+    
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: rgb(54, 221, 243);
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: rgb(153, 9, 153);
+}
+li.dropdown {
+    display: inline-block;
+}
+.float-right {
+    float: right;
+}
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.success-btn {
+    font-size: 20px;
+    color: rgb(153, 9, 153); /* text color */
+    background-color: rgb(136, 255, 0);
+    min-width:  300px;
+    height: 35px;
+}
+
+.success-btn:hover {
+    /*
+        swap the color and background-color on mouse hover
+    */
+    color: rgb(136, 255, 0);
+    background-color: rgb(153, 9, 153);
+}
+
+#listScores {
+    
+    font-size: 45px;
+    font-weight: bolder;
+    
+}
+
+body{
+    background-image:url("http://jonvilma.com/images/colors-6.jpg");
+    margin: 0;
+}
