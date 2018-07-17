@@ -1,0 +1,59 @@
+<html>
+
+<head>
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.1.0/css/all.css" integrity="sha384-lKuwvrZot6UHsBSfcMvOkWwlCMgc0TaWr+30HWe3a4ltaBwTZhyTEggF5tJv8tbt"
+        crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <div class="header">
+        <a href="/home" class="anchortitle">
+            <h1 class="navtitle">Project Spark</h1>
+        </a>
+        <div class="rightnav">
+            <a class="navbtn2" href="/pages/login.html">
+                <i class="fas fa-sign-in-alt"></i>
+            </a>
+        </div>
+    </div>
+    <div class="wrapper">
+        <div class="loginbox">
+            <div class="padding3">
+                <h1 class="boxtitle">Create New Account</h1>
+                <div class="padding3">
+                    <form name="login" action="/home">
+                        <input class="input1" type="text" maxlength="10" name="username" placeholder="Username" required>
+                        <input class="input1" type="email" maxlength="20" name="email" placeholder="Email" required>
+                        <input class="input1" id="pw" type="password" maxlength="12" name="password" placeholder="Password" required>
+                        <input class="input1" id="samepw" type="password" maxlength="12" name="confirmPassword" placeholder="Confirm Password" required>
+                        <div id="message">
+                            <h3>Password must contain the following:</h3>
+                            <p id="letter" class="invalid">A
+                              <b>lowercase</b> letter</p>
+                            <p id="capital" class="invalid">A
+                              <b>capital (uppercase)</b> letter</p>
+                            <p id="number" class="invalid">A
+                              <b>number</b>
+                            </p>
+                            <p id="length" class="invalid">Minimum
+                              <b>8 characters</b>
+                            </p>
+                            <p id="confirm" class="invalid">
+                                <b>Confirm</b> password
+                            </p>
+                        </div>
+                        <input class="signinbtn" type="submit" value="Register">
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="footer">
+        <p class="copyright">© 2018, Stephen Hong. All rights reserved.</p>
+    </div>
+    <script src="../js/validation.js"></script>
+</body>
+
+</html>

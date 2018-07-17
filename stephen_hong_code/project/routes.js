@@ -20,7 +20,7 @@ router.get("/", function(req, res, next){
 // POST /preview
 // Route for creating preview
 router.post("/", function(req, res, next){
-	console.log('Creating new question');
+	console.log('Creating new preview');
 	console.log(req.body);
 	var preview = new Preview(req.body);
 	console.log(preview);

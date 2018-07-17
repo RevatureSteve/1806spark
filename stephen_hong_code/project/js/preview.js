@@ -1,7 +1,3 @@
-/*
-    questions.js
-*/
-// No window.onload it has already been used by app.js
 var url = 'http://localhost:3001/preview';
 var codes = null;
 callCode();
@@ -21,7 +17,7 @@ function callCode(){
 function setCode(q){
     console.log('setting code to page');
     console.log(q);
-    var preview = document.getElementById('previewcode');
+    var preview = document.getElementById('previewcode');''
     
     for(let x = 0;x < q.length; x++){
         let a = document.createElement("body");

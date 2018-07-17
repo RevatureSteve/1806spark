@@ -5,6 +5,8 @@ var Schema = mongoose.Schema;
 
 
 var PreviewSchema = new Schema({
+	// name: String,
+	// description: String,
 	html: String,
 	css: String,
 	js: String,

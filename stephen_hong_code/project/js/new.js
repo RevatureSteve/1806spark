@@ -1,17 +1,16 @@
-/*
-    new-question.js
-*/
-
-// can't use window.onload again as it is used in the app.js, reference at bottom instead
 let url = 'http://localhost:3001/preview';
 document.getElementById('previewBtn').addEventListener('click', preview);
 function preview(){
+    let name = document.getElementById('name').value;
+    let description = document.getElementById('description').value;
     let html = document.getElementById('html').value;
     let css = document.getElementById('css').value;
     let js = document.getElementById('js').value;
     
     // Post data!
     let data = {
+        "name": name,
+        "description": description,
         "html": html,
         "css": css,
         "js": js
