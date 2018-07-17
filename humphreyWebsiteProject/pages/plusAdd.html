@@ -13,16 +13,13 @@
         <a href="/home"> <img id="navLogo" src="/images/logo1.png"> </a>
         </li>
         <li>
-            <a class="navbar" href="#news">Releases</a>
-        </li>
-        <li>
             <a class="navbar" href="login.html">Login</a>
         </li>
         <li>
             <a class="navbar" href="register.html">Register</a>
         </li>
         <li>
-            <a class="navbar" href="#contact">Added</a>
+            <a class="navbar" href="recentlyAdded.html">Recently Added</a>
         </li>
         <li>
             <a class="navbar" href="plusAdd.html">+Add</a>
@@ -42,11 +39,11 @@
         <form id= "addForm">
             <img id="navLogoAdd" src="/images/logo.png">
             <h1 id="subtitleAdd">Add Movie to Database</h1>
-            <input id="addTitleInput" type="text" placeholder="Title of Movie..." required>
-            <input id="addReleaseInput" onfocus="(type='date')"  placeholder="Release Date" required>
-            <textarea id="addPlotInput" rows="10" cols="50" name="plot" form="usrform" >
+            <input id="addTitleInput" type="text" placeholder="Title of Movie..." name="movieTitle" required>
+            <input id="addReleaseInput" onfocus="(type='date')"  placeholder="Release Date" name="releaseDate" required>
+            <textarea id="addPlotInput" rows="10" cols="50" name="plot" >
 Plot of movie... </textarea>
-         <select id="addGenreSelect"name="genre" form="carform">
+         <select id="addGenreSelect"name="genre">
             <option value="Select Genre">Select Genre</option>
             <option value="Action/Adventure">Action/Adventure</option>
             <option value="Comedy">Comedy</option>
@@ -56,9 +53,9 @@ Plot of movie... </textarea>
             <option value="Horror">Horror</option>
             <option value="Sci-Fi">Sci-Fi</option>
         </select>
-            <input id="addCoverArtInput" type="url" placeholder="Movie Poster URL source...">
+            <input id="addCoverArtInput" type="url" placeholder="Movie Poster URL source..." name="moviePoster">
             <br><br>
-            <input id="addSubmit" type="submit" value="+Add">
+            <input id="addSubmit" type="button" value="+Add">
             <img id="addGif" src="/images/add1.gif">
         </form>
         
@@ -71,7 +68,7 @@ Plot of movie... </textarea>
 
 </section>
 
-<script src="/javascript/register.js"> </script>
+<script src="/javascript/plusAdd.js"> </script>
 </body>
 
 </html>
