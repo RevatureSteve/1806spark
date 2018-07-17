@@ -19,8 +19,9 @@ function incomeCruncher(){
         document.getElementById('income').value = newTotal;
 
         if(newTotal >= 0) {
-             document.getElementById('remainingInc').innerHTML = "good";
+             document.getElementById('income').style.color = "green";
         }else{
+            document.getElementById('income').style.color = "red";
             alert("Remaining income cannot be negative!")
         }
         
