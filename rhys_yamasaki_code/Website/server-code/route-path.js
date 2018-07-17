@@ -2,7 +2,7 @@ var express = require("express");
 var registerPath = express.Router();
 var UserRegistration = require("./models").UserRegistration;
 
-registerPath.get("/user", function(req, resp, next) {
+registerPath.get("/users", function(req, resp, next) {
     console.log("reached step 1");
     console.log(req.url);
     UserRegistration.find({})
@@ -14,21 +14,6 @@ registerPath.get("/user", function(req, resp, next) {
     })
 })
 
-registerPath.post("/login", function(req, resp, next) {
-    var email = req.body.email;
-    var password = req.body.password;
-    UserRegistration.findOne({emailAddress: email, password: password}, function(err, user) {
-        if(err) {
-            console.log(err);
-            return resp.status(500).send();
-        }
-
-        if(!user) {
-            return resp.status(404).send();
-        }
-        return resp.status('200').send();
-    })
-}) 
 
 registerPath.post("/", function(req, resp, next){
     console.log(req.body);
@@ -41,5 +26,24 @@ registerPath.post("/", function(req, resp, next){
         resp.json(user);
     })
 })
+
+
+registerPath.post('/', function(req, res) {
+    User.findOne({ emailAddress: req.body.email }, function(err, user) {
+      if (!user) {
+        res.status(404).send('Invalid email or password.');
+      } else {
+        if (req.body.password === user.password) {
+          // sets a cookie with the user's info
+          req.session.user = user;
+          res.redirect('./pages/profile');
+        } else {
+          res.status(404).send('Invalid email or password.');
+        }
+      }
+    });
+  });
+
+
 
 module.exports = registerPath;

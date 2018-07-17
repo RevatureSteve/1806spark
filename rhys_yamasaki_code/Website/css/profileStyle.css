@@ -1,0 +1,15 @@
+#userInfo {
+    text-align: center;
+    background-color: maroon;
+    color: white;
+}
+
+#favoritesList {
+    width: 500px;
+    margin: auto;
+}
+
+#favoriteItems {
+    width: 500px;
+    margin: auto;
+}

@@ -25,15 +25,12 @@
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/movies">Movies
+                    <a class="nav-link" href="./movies.html">Movies
                     </a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="/actors">Actors</a>
                 </li>
             </ul>
         </div>
-        <a href="/login" class="btn btn-outline-primary loginBtn" role="button">Login</a>
+        <a href="./login.html" class="btn btn-outline-primary loginBtn" role="button">Login</a>
     </nav>
     <div class="jumbotron">
         <h1 class="display-4" style="text-align: center">Register here!</h1>
@@ -61,8 +58,6 @@
                 <label>Password</label>
                 <div class="popup">
                     <input type="password" class="form-control" id="password" placeholder="Password" maxlength="20"  required>
-                    <!-- onfocus="myFunction()"
-                        onblur="toggleCheck()" -->
                     <div class="popuptext" id="myPopup">
                         <span class="validationDiv">8 - 20 characters
                             <span>
@@ -94,12 +89,12 @@
                     </div>
                 </div>
             </div>
-            <div class="valid-feedback">
+            <!-- <div class="valid-feedback">
                 Looks good!
               </div>
             <div class="invalid-feedback">
                 Not valid
-              </div>
+              </div> -->
             <div class="form-group">
                 <label>Confirm Password</label>
                 <input type="password" class="form-control" id="passwordCheck" placeholder="Confirm password" required>
@@ -107,6 +102,7 @@
             <button class="btn btn-primary" id="signup">Register</button>
 
     </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <script src="../scripts/new-register.js"></script>
     <script src="../scripts/users.js"></script>
 </body>

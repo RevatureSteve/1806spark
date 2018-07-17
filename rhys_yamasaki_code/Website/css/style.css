@@ -5,6 +5,11 @@ body {
     margin: 0;
 }
 
+a {
+    text-decoration: none !important;
+
+}
+
 /* Class Elements */
 
 .moviePoster {
@@ -70,14 +75,6 @@ body {
     text-align: center;
 }
 
-#previousArrow {
-    size: 50%;
-}
-
-#nextArrow {
-    size: 50%;
-}
-
 /* Movie column spacing */
 .movieRow > .movieColumn{
     box-sizing: border-box;
@@ -89,5 +86,6 @@ body {
 
 .movieColumn:hover {
     transform: scale(1.1);
+    cursor: pointer;
 }
 
