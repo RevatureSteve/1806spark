@@ -2,10 +2,9 @@ var express = require("express");
 var app = express();
 var fitnessPath = require("./fitness-path");
 var portNumber = 3000;
+var jsonParser = require("body-parser").json; //Why?
 
-app.listen(portNumber, function(){
-    console.log(`Express server is listening on port ${portNumber}`);
-});
+app.use(jsonParser()); //why?
 
 /*
     Allows us to connect to the database
@@ -37,8 +36,10 @@ app.use("/home", function(req, resp, next){
 });
 
 /* 
-    Linking fitness-path to the server page
+    Linking fitness-path to the /Back page
 */
-app.use("/Back", fitnessPath);
+app.use("/pages/Back", fitnessPath);
 
-
+app.listen(portNumber, function(){
+    console.log(`Express server is listening on port ${portNumber}`);
+});

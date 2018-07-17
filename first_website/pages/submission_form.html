@@ -3,43 +3,51 @@
 <head>
     <title>Fitness Selector</title>
     <link rel="stylesheet" href="../css/Back.css" />
-    <script src="../js/shred_back_submission_page.js"></script>
+
 </head>
 
-<ul>
-    <li>
-        <a href="/pages/Website.html">Home</a>
-    </li>
-    <li>
-        <a href="/pages/Back.html">Go back</a>
-    </li>
-    <li style="float:right">
-        <a href="/pages/login.html">Login</a>
-    </li>
-</ul>
+<body>
+    <ul>
+        <li>
+            <a href="/pages/Website.html">Home</a>
+        </li>
+        <li>
+            <a href="/pages/Back.html">Go back</a>
+        </li>
+        <li style="float:right">
+            <a href="/pages/login.html">Login</a>
+        </li>
+    </ul>
 
-<div id="form_submission" autocomplete="off" method="post"><!--Use this method once learned how to connect to the server-->
-    <h2>Comment/Review submission for Lat Pulldowns</h2>
-    <br>
-    <form>
-        Rating from 1-10
+    <div id="form_submission" autocomplete="off">
+        <!--Use this method once learned how to connect to the server-->
+        <h2>Comment/Review submission for Lat Pulldowns</h2>
         <br>
-        <br>
-        <input id="rating" type="number" min="1" max="10" name="rating">
-        <br>
-        <h4>About the exercise: </h4>
-        The Pros:
-        <br>
-        <input id="pro" class="textboxes" type="text" name="pro_comment" placeholder="Tell us what'd you like">
-        <br>
-        <br> The Cons:
-        <br>
-        <input id="con" class="textboxes" type="text" name="con_comment" placeholder="Tell us something you didn't like">
-        <br>
-        <br>
-        <input id="button" type="button" value="submit">
+        <form>
+            Rating from 1-10
+            <br>
+            <br>
+            <input id="rating" type="number" min="1" max="10" name="rating" required>
+            <br>
+            <h4>About the exercise: </h4>
+            The Pros:
+            <br>
+            <input id="pro" class="textboxes" type="text" name="pro_comment" placeholder="Tell us what'd you like" required>
+            <br>
+            <br> The Cons:
+            <br>
+            <input id="con" class="textboxes" type="text" name="con_comment" placeholder="Tell us something you didn't like" required>
+            <br>
+            <br>
+            <button id="button">Post!</button>
 
-    </form>
-</div>
+        </form>
+    </div>
+
+    <div>
+        <p id="submissionBox"></p>
+    </div>
+    <script src="../js/shred_back_submission_page.js"></script>
+</body>
 
 </html>
