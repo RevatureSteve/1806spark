@@ -16,7 +16,7 @@ function getEntryData() {
 
 //POST Object 
 let data = {
-    "firstame": firstName,
+    "first_name": firstName,
     "last_name": lastName,
     "email": email
 }
@@ -33,6 +33,7 @@ fetch(url, {
 })
 .then(function(p) {
     console.log(p.first_name);
+    alert(`Thank you for signing up ${firstName}!!!! An email will be sent to ${email} shorty.`)
 })
 
 };

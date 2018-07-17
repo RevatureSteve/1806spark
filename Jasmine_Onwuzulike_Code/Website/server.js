@@ -7,7 +7,7 @@ var jsonParser = require("body-parser").json;
 app.use(jsonParser());
 //db information
 var mongoose = require('mongoose');
-mongoose.connect("mongodb://localhost:27017/entry");
+mongoose.connect("mongodb://localhost:27017/users");
 var db = mongoose.connection;
 db.on("error", function(err) {
     console.log("Connection error", err)
