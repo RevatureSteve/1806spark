@@ -26,9 +26,11 @@ psw.onkeyup = function(){
     if(psw.value.length >= 8){
         length.classList.remove("invalid");
         length.classList.add("valid");
+       // length.classList.add("image_check");
 
     } else {
         length.classList.remove("valid");
+        //length.classList.remove("image_check");
         length.classList.add("invalid");
     }
 // validate capital letter

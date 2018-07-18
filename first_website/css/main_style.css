@@ -110,11 +110,11 @@ body {
     background-color: black;
     width: 340px;
     right: -515px;
-    top: -375px;
+    top: -348px;
     padding: 10px;
-    font-size: 17px;
+    font-size: 16px;
     text-align: left;
-    height: 168px;
+    height: 239px;
 }
 
 #check_box {
@@ -128,13 +128,14 @@ body {
     font-size: 15px;
 }
 
-#image_check {
+.image_check {
+    display: none;
     position: absolute;
-    width: 80px;
-    height: 100px;
-    top: 239px;
-    left: 700px;
-    clip: rect(25px,57px,76px,21px);
+    width: 60;
+    height: 70px;
+    top: 253px;
+    left: 696px;
+    clip: rect(18px,43px,53px,18px);
     z-index: 10;
 }
 

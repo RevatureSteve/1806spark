@@ -58,6 +58,22 @@ background-color: black;
     left: 50px;
     position: relative;
     width: 500px;
+    -webkit-box-shadow: 9px 2px 76px 1px rgba(255,255,255,0.72);
+    -moz-box-shadow: 9px 2px 76px 1px rgba(255,255,255,0.72);
+    box-shadow: 9px 2px 76px 1px rgba(255,255,255,0.72);
+}
+#picture_box_right {
+    margin: 50px 500x 50px 50px;
+    background-color: rgba(112, 107, 107, 0.795);
+    border: 2px;
+    padding: 10px;
+    left: 734px;
+    position: absolute;
+    width: 500px;
+    top: 545px;
+    -webkit-box-shadow: 9px 2px 76px 1px rgba(255,255,255,0.72);
+    -moz-box-shadow: 9px 2px 76px 1px rgba(255,255,255,0.72);
+    box-shadow: 9px 2px 76px 1px rgba(255,255,255,0.72);
 }
 
 .descrip_box {
@@ -68,20 +84,26 @@ background-color: black;
     padding: 10px;
     width: 200px;
     height: 218px;
+    font-weight: bold;
 }
 
 .textbox {
     position: relative;
     border: 1px;
+    top: 3px;
+    right: -89px;
+    height: 83px;
+    width: 322px;
     background-color: rgba(245, 245, 220, 0.397);
     border-color: rgb(153, 153, 141);
-    padding: 10px;
+    padding: 2px;
 
 }
 
 .buttons {
     position: relative;
-    left: 217px;
+    left: 227px;
+    top: 9px;
 }
 
 #form_submission {
@@ -96,6 +118,14 @@ background-color: black;
 
 /*Form submission editing*/
 #post {
+    position: relative;
+    background-color: beige; 
+    width: 458px;
+    height: 132px;
+    overflow: scroll;
+}
+
+#postt {
     position: relative;
     background-color: beige; 
     width: 458px;

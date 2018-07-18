@@ -21,8 +21,9 @@ function setFitness(f){
 
     for(let x = 0; x < f.length; x++){
         let fDiv = document.createElement('li');
-        fDiv.innerHTML = "Pros: " + f[x].pro + " Cons: " + f[x].con 
-                    + " Rating: " + f[x].rating;
+        fDiv.innerHTML = "Pros: " + f[x].pro + "<br>" + " Cons: " + f[x].con + "<br>"
+                    + " Rating: " + f[x].rating + "<br>" +
+                    "--------------------------------------";
         submissionSection.appendChild(fDiv);
     }
 }
