@@ -36,7 +36,7 @@ fetch(graphUrl).then(resp => {
     console.log(myJson);
     for (let i = 0; i < myJson.length; i++) {
         if (i == 0) {
-            priceStart = myJson[i].open;
+            priceStart = myJson[i].marketOpen;
         }
         if (myJson[i].average > 0) {
             dates.push(myJson[i].label);
@@ -44,7 +44,7 @@ fetch(graphUrl).then(resp => {
             openData.push(myJson[i].open);
         }
         if (i == myJson.length - 1) {
-            priceEnd = myJson[i].close;
+            priceEnd = myJson[i].marketClose;
         }
     }
 
@@ -71,7 +71,7 @@ fetch(graphUrl).then(resp => {
     //Set other data
     currentPrice.innerHTML = priceEnd;
 
-    let priceChange = priceEnd - priceStart;
+    let priceChange = (priceEnd - priceStart).toFixed(2);
     if (priceChange >= 0) {
         stockPriceChange.innerHTML = `(+${priceChange})`;
         changeToGreen();
@@ -111,6 +111,11 @@ function postData(url = ``, data = {}) {
 function buySellStock(type) {
     let amount = stockAmount.value;
     postData(`/stock`, { type: type, amount: parseFloat(amount),  stock: search, user: username  , price: parseFloat(currentPrice.innerHTML) })
-        .then(data => {console.log(data);}) // JSON from `response.json()` call
+        .then(data => {
+            console.log(data);
+
+            alert(` Transaction processed: ${type} ${amount} ${search} stock at $${currentPrice.innerHTML}` );
+
+        }) // JSON from `response.json()` call
         .catch(error => {console.error(error);});
 }

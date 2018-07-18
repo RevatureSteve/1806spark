@@ -4,8 +4,18 @@ var user = express.Router();
 
 
 
-user.get('/', (req, resp, next)=>{
-    console.log("route working");
+user.post('/login', (req, resp, next)=>{
+    console.log("attempting to log in...");
+    console.log(req.body);
+    let body = req.body;
+    User.find({username: body.username, password: body.password}).exec((err,login) =>{
+        if(err){
+            return next(err);
+        }
+        console.log('Login attempt return:');
+        console.log(login);
+        resp.json(login);
+    });
 }); 
 user.post('/', (req, resp, next)=>{
     console.log(req.body);

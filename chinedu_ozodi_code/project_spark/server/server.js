@@ -52,11 +52,13 @@ app.use('/user',user);
 app.use('/stock',stock);
 // More use cases
 app.use('/index.html',(req, resp, next) =>{
-    resp.sendFile('C:\\Users\\Chinedu\\my_git_repos\\1806spark\\chinedu_ozodi_code\\project_spark\\index.html');
+    // resp.sendFile('C:\\Users\\Chinedu\\my_git_repos\\1806spark\\chinedu_ozodi_code\\project_spark\\index.html');
+    resp.sendFile('C:\\Users\\chinedu\\mygitrepos\\1806spark\\chinedu_ozodi_code\\project_spark\\index.html');
 });
 
 app.use('/',(req, resp, next) =>{
-    resp.sendFile('C:\\Users\\Chinedu\\my_git_repos\\1806spark\\chinedu_ozodi_code\\project_spark\\index.html');
+    // resp.sendFile('C:\\Users\\Chinedu\\my_git_repos\\1806spark\\chinedu_ozodi_code\\project_spark\\index.html');
+    resp.sendFile('C:\\Users\\chinedu\\mygitrepos\\1806spark\\chinedu_ozodi_code\\project_spark\\index.html');
 });
 
 // Initialize server

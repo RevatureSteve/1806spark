@@ -13,10 +13,30 @@ window.onload = () => {
 
 function login(){
     console.log('logging in...');
-    setCookie('username',username.value,1);
-    setCookie('password', password.value,1);
-    // redirect
-    window.location = 'http://localhost:3000/pages/main.html';
+
+    fetch('/user/login', {
+        method: "POST", // *GET, POST, PUT, DELETE, etc.
+        headers: {
+            "Content-Type": "application/json; charset=utf-8",
+            "Accept": "application/json"
+        },
+        body: JSON.stringify({ username: username.value, password: password.value }), // body data type must match "Content-Type" header
+    }).then(response => {
+        return response.json();
+    }).then(myJson => {
+
+        if (myJson.length > 0){
+            setCookie('username',username.value,1);
+            setCookie('password', password.value,1);
+            
+            // redirect
+            window.location = 'http://localhost:3000/pages/main.html';
+        }
+        else{
+            alert("Incorrect username or password");
+        }
+    })
+
 }
 
 function setCookie(cname, cvalue, exdays) {
