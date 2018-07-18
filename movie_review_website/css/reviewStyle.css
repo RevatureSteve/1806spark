@@ -21,8 +21,6 @@ img{
     margin-top: 8px;
     width: 80px;
     border:none;
-
-
 }
 
 .author{
@@ -56,8 +54,12 @@ textarea{
     height: 50px;
 }
 
-input{
-    background-color: limegreen;
+.sumBtn{
+    background-color: white;
+}
+
+.sumBtn:hover{
+    background-color: gray;
 }
 
 .commentAuthor{

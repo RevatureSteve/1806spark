@@ -1,5 +1,5 @@
 var express = require('express');
-<<<<<<< HEAD
+
 var app = express(); // return an expres application to build a server with
             // call back function for when the server has started
 var jsonParser = require('body-parser').json; //this dependancy will parse 
@@ -91,7 +91,7 @@ var personz = function(req, resp, next){
 app.use('/personz', personz);
 app.use('/personz', jsonParser());
 app.use('/personz', personz);
-=======
+
 var app = express(); // returns an express application to build a server with
 var jsonParser = require('body-parser').json; // this dependency will 
                                 // parse request body data that is in the form of json
@@ -181,5 +181,4 @@ var personz = function(req,resp, next){
 app.use("/personz", personz); // req.body undefine
 app.use("/personz", jsonParser()); // use the new request body tool
 app.use("/personz", personz);
->>>>>>> 150ae089dc796e1fd85d51541da637eb19e228a4
 

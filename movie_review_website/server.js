@@ -29,17 +29,17 @@ app.use(function (req, resp, next) {
 	console.log(req.method);
 	console.log(req.url);
 	next(); // go to the the nest function 
-})
+});
 
 app.use(function (req, resp, next) {
 	console.log('request processing');
 	next();
-})
+});
 
 app.use("/home", function (req, resp, next) {
 	resp.sendFile('C:\\Users\\marci\\my_git_repos\\1806spark\\movie_review_website\\index.html');
 
-})
+});
 
 app.use("/reviews", reviewRoutes);
 app.use("/comments", commentRoutes);

@@ -1,5 +1,5 @@
 
-var url = 'http://localhost:3000/reviews';
+var urlReview = 'http://localhost:3000/reviews';
 var urlComment = 'http://localhost:3000/comments';
 var omdbApiKey = '&apikey=2bffe9df';
 
@@ -10,13 +10,13 @@ window.onload = function () {
 }
 
 function callReviews(){
-    fetch(url)
+    fetch(urlReview)
     .then((resp) => {
         return resp.json();
     })
-    .then((data)=> {
-        console.log(data);
-        displayReviews(data);
+    .then((reviews)=> {
+        console.log(reviews);
+        displayReviews(reviews);
     })
 }
 
@@ -36,7 +36,6 @@ function displayReviews(reviews) {
 
         let moviePoster = document.createElement('img');
         newDiv.appendChild(moviePoster);
-
         fetch('http://www.omdbapi.com/?t=' + replaced + omdbApiKey)
             .then(function (data) {
                 return data.json();
@@ -81,12 +80,12 @@ function displayReviews(reviews) {
         for (let j = 0; j < review.commentsArr.length; j++) {
             let commentAuthor = this.document.createElement('div');
             commentSection.appendChild(commentAuthor);
-            commentAuthor.innerHTML = review.commentsAuthors[j];
+            commentAuthor.innerHTML = review.commentsArr[j].commentAuthor;
             commentAuthor.className = 'author';
             let sampleComment = this.document.createElement('p');
             sampleComment.className = 'comment';
             commentSection.appendChild(sampleComment);
-            sampleComment.innerHTML = review.commentsArr[j];
+            sampleComment.innerHTML = review.commentsArr[j].comment;
         }
 
         // comment submittal form
@@ -94,7 +93,8 @@ function displayReviews(reviews) {
         form.id = review._id;
         let commentInputBox = this.document.createElement('textarea');
         let commentButton = this.document.createElement('input');
-        commentButton.type = 'submit';
+        commentButton.className = 'sumBtn';
+        commentButton.type = 'submit';        
         commentButton.onclick = submitComment;
         commentInputBox.placeholder = "Insert comment here";
         form.appendChild(commentInputBox);
