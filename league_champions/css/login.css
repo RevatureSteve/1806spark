@@ -1,5 +1,14 @@
+body {
+    background-image: url("https://na.leagueoflegends.com/sites/default/files/upload/art/akali_vs_baron_3.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    }
+
 #loginBody{
     text-align: center;
     padding: 15px;
-    background-color: silver;
+    background-color: rgba(255, 255, 255, 0.5);
+    margin: auto;
+    width: 450px;
 }

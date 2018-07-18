@@ -25,7 +25,7 @@ li a, .dropbtn {
 }
 
 li a:hover, .dropdown:hover .dropbtn {
-    background-color: red;
+    background-color: rgb(0, 0, 85);
 }
 
 li.dropdown {
@@ -96,6 +96,7 @@ div.gallery {
     border: 1px solid #ccc;
     float: left;
     width: 400px;
+    background-color: black;
 }
 
 div.gallery:hover {
@@ -118,19 +119,32 @@ div.bot-desc {
 
 /* Image Gallery Ends */
 
-/* Form Input Starts */
-
-#voteForm {
-    color: white;
-    font-weight: bold;
-    font-size: 30px;
+.bot-total{
+    border: 0px solid rgba(0, 0, 255, 0);
     text-align: center;
-    max-width: 200px;
-    max-height: 125px;
-    margin: auto;
+    color: white;
+    float: left;
+    margin-left: 45px;
+    margin-right: 45px;
+    margin-top: -40px;
+    width: 400px;
+    padding: 15px;
 }
 
-.vote-btn {
+/* Vote Input Starts */
+
+#voteDiv{
+    margin: 57.5px;
+    margin-top: 0px;
+    border: 0px solid #ccc;
+    float: left;
+    width: 400px;
+    text-align: center;
+    font-size: 25px;
+    color: white;
+}
+
+.voteBtn {
     font-size: 20px;
     color: black;
     background-color: rgb(153, 44, 196);
@@ -139,12 +153,12 @@ div.bot-desc {
     margin-top: 10px;
 }
 
-.vote-btn:hover {
+.voteBtn:hover {
     color: white;
     background-color: black;
 }
 
-/* Form Input Ends */
+/* Vote Input Ends */
 
 /* Comment Box Starts */
 
@@ -152,32 +166,65 @@ div.bot-desc {
     color: white;
     background-color: black;
     width: 400px;
-    margin-left: 57.5px;
 }
 
 #commentBox{
     color: white;
     background-color: black;
     width: 400px;
-    height: 200px;
-    margin-left: 57.5px;
+    height: 100px;
 }
 
 #commentBtn{
     width: 100px;
     margin-top: 5px;
-    margin-left:357.5px;
-}
-/* Comment Box Ends */
-
-#commentDiv{
-    float: left;
-}
-
-#fileDiv{
     float: right;
 }
 
-#savedComment{
+#commentDiv{
+    margin: 57.5px;
+    margin-top: 0px;
+    border: 0px solid #ccc;
+    color: white;
+    text-align: center;
     float: left;
+    width: 400px;
+    margin-bottom: 0px;
+}
+
+/* Comment Box Ends */
+
+#fileDiv{
+    margin: 57.5px;
+    margin-top: 0px;
+    border: 0px solid #ccc;
+    float: left;
+    width: 400px;
+    text-align: center;
+    color: white;
+}
+
+#nameBox2{
+    color: white;
+    background-color: black;
+}
+
+#fileBox{
+  background-color: black;
+  color: white;
+}
+
+#fileBtn{
+    width: 100px;
+    margin-top: 5px;
+}
+
+#savedComment{
+    color: white;
+    background-color: rgba(0, 0, 0, 0.75);
+    position: absolute;
+    top: 975px;
+    margin-left: 57.5px;
+    margin-bottom: 50px;
+    font-size: 20px;
 }

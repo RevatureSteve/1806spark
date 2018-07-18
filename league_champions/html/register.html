@@ -4,17 +4,17 @@
     <title>LoL Champions</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/register.css">
-    <script src="register.js"></script>
+    <script src="../js/register.js"></script>
     <link rel="icon" href="https://vignette.wikia.nocookie.net/leagueoflegends/images/e/e9/Noxus_Crest.png/revision/latest?cb=20161117055949">
 </head>
 
 <body>
 
     <!-- Nav Bar Begin -->
-    
+
     <ul id="navBar">
         <li id="float_left">
-            <a href="index.html">Home</a>
+            <a href="/home">Home</a>
         </li>
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Top</a>
@@ -63,25 +63,112 @@
             <a href="login.html">Login</a>
         </li>
     </ul>
-    
+
     <!-- Nav Bar End -->
 
     <!-- Registration Starts -->
 
     <div id="registerBody">
-            First Name:   <input type="text" minlength="1" maxlength="20" placeholder="First Name" required>
-            <br><br> 
-            Last Name:    <input type="text" minlength="1" maxlength="20" placeholder="Last Name" required>
-            <br><br>
-            Date Of Birth:   <input type="date" placeholder="mm/dd/yyyy" required>
-            <br><br>
-            Username:  <input type="text" minlength="3" maxlength="12" placeholder="Username" required>
-            <br><br>
-            Password:  <input type="password" minlength="3" maxlength="12" placeholder="Password" required>
-            <br><br>
-            Confirm Password:  <input type="password" minlength="3" maxlength="12" placeholder="Confirm Password" required>
-            <br><br>
-            <input id="registerBtn" type="button" value="Register">
+        <h1>League of Legends</h1>
+        <h2>Welcome Summoner</h2>
+        First Name:
+        <input type="text" minlength="2" maxlength="15" placeholder="First Name">
+        <br>
+        <br> Last Name:
+        <input type="text" minlength="2" maxlength="15" placeholder="Last Name">
+        <br>
+        <br> Date Of Birth:
+        <input type="date">
+        <br>
+        <br> Username:
+        <input type="text" minlength="5" maxlength="15" placeholder="Username">
+        <br>
+        <br> Password:
+        <input id="pass" type="password" minlength="8" maxlength="20" placeholder="Password">
+        <br>
+        <br> Confirm Password:
+        <input type="password" minlength="3" maxlength="12" placeholder="Confirm Password">
+        <br>
+        <br>
+        <input id="registerBtn" type="button" value="Register">
+        <br>
+        <br>
+        <a href="login.html">Have an Account? Login.</a>
+
+        <div id="message">
+            <h3>Password must contain the following:</h3>
+            <p id="letter" class="invalid">A
+                <b>lowercase</b> letter</p>
+            <p id="capital" class="invalid">A
+                <b>capital (uppercase)</b> letter</p>
+            <p id="number" class="invalid">A
+                <b>number</b>
+            </p>
+            <p id="length" class="invalid">Minimum
+                <b>8 characters</b>
+            </p>
+        </div>
+
+        <script>
+            var myInput = document.getElementById("pass");
+            var letter = document.getElementById("letter");
+            var capital = document.getElementById("capital");
+            var number = document.getElementById("number");
+            var length = document.getElementById("length");
+
+            // When the user clicks on the password field, show the message box
+            myInput.onfocus = function () {
+                document.getElementById("message").style.display = "block";
+            }
+
+            // When the user clicks outside of the password field, hide the message box
+            myInput.onblur = function () {
+                document.getElementById("message").style.display = "none";
+            }
+
+            // When the user starts to type something inside the password field
+            myInput.onkeyup = function () {
+                // Validate lowercase letters
+                var lowerCaseLetters = /[a-z]/g;
+                if (myInput.value.match(lowerCaseLetters)) {
+                    letter.classList.remove("invalid");
+                    letter.classList.add("valid");
+                } else {
+                    letter.classList.remove("valid");
+                    letter.classList.add("invalid");
+                }
+
+                // Validate capital letters
+                var upperCaseLetters = /[A-Z]/g;
+                if (myInput.value.match(upperCaseLetters)) {
+                    capital.classList.remove("invalid");
+                    capital.classList.add("valid");
+                } else {
+                    capital.classList.remove("valid");
+                    capital.classList.add("invalid");
+                }
+
+                // Validate numbers
+                var numbers = /[0-9]/g;
+                if (myInput.value.match(numbers)) {
+                    number.classList.remove("invalid");
+                    number.classList.add("valid");
+                } else {
+                    number.classList.remove("valid");
+                    number.classList.add("invalid");
+                }
+
+                // Validate length
+                if (myInput.value.length >= 8) {
+                    length.classList.remove("invalid");
+                    length.classList.add("valid");
+                } else {
+                    length.classList.remove("valid");
+                    length.classList.add("invalid");
+                }
+            }
+        </script>
+
     </div>
 
     <!-- Registration ends -->

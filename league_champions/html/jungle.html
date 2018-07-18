@@ -6,67 +6,67 @@
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/jungle.css">
     <link rel="icon" href="https://vignette.wikia.nocookie.net/leagueoflegends/images/e/e9/Noxus_Crest.png/revision/latest?cb=20161117055949">
-    <script src="champions.js"></script>
-
+    <script src="../js/newComment.js"></script>
+    <script src="../js/comments.js"></script>
 </head>
 
 <body>
 
     <!-- Nav Bar Begin -->
-    
+
     <ul id="navBar">
-            <li id="float_left">
-                <a href="index.html">Home</a>
-            </li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Top</a>
-                <div class="dropdown-content">
-                    <a href="top.html">Volibear</a>
-                    <a href="#">Darius</a>
-                    <a href="#">Garen</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Jungle</a>
-                <div class="dropdown-content">
-                    <a href="jungle.html">Warwick</a>
-                    <a href="#">Master Yi</a>
-                    <a href="#">Shaco</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Mid</a>
-                <div class="dropdown-content">
-                    <a href="mid.html">Annie</a>
-                    <a href="#">Brand</a>
-                    <a href="#">Lux</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Bot</a>
-                <div class="dropdown-content">
-                    <a href="bot.html">Caitlyn</a>
-                    <a href="#">Miss Fortune</a>
-                    <a href="#">Jinx</a>
-                </div>
-            </li>
-            <li class="dropdown">
-                <a href="javascript:void(0)" class="dropbtn">Support</a>
-                <div class="dropdown-content">
-                    <a href="support.html">Blitzcrank</a>
-                    <a href="#">Sona</a>
-                    <a href="#">Bard</a>
-                </div>
-            </li>
-            <li class="float_right">
-                <a href="register.html">Register</a>
-            </li>
-            <li class="float_right">
-                <a href="login.html">Login</a>
-            </li>
-        </ul>
-        
-        <!-- Nav Bar End -->
+        <li id="float_left">
+            <a href="/home">Home</a>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Top</a>
+            <div class="dropdown-content">
+                <a href="top.html">Volibear</a>
+                <a href="#">Darius</a>
+                <a href="#">Garen</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Jungle</a>
+            <div class="dropdown-content">
+                <a href="jungle.html">Warwick</a>
+                <a href="#">Master Yi</a>
+                <a href="#">Shaco</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Mid</a>
+            <div class="dropdown-content">
+                <a href="mid.html">Annie</a>
+                <a href="#">Brand</a>
+                <a href="#">Lux</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Bot</a>
+            <div class="dropdown-content">
+                <a href="bot.html">Caitlyn</a>
+                <a href="#">Miss Fortune</a>
+                <a href="#">Jinx</a>
+            </div>
+        </li>
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Support</a>
+            <div class="dropdown-content">
+                <a href="support.html">Blitzcrank</a>
+                <a href="#">Sona</a>
+                <a href="#">Bard</a>
+            </div>
+        </li>
+        <li class="float_right">
+            <a href="register.html">Register</a>
+        </li>
+        <li class="float_right">
+            <a href="login.html">Login</a>
+        </li>
+    </ul>
+
+    <!-- Nav Bar End -->
 
     <!-- Character Info Starts -->
 
@@ -108,47 +108,53 @@
 
     <!-- Image Gallery Ends -->
 
-    <!-- Form Input Starts -->
-
-    <div>
-            Skin #
-            <br>
-            <input type="number" min="1" max="3" required>
-            <br>
-            <input class="vote-btn" type="button" value="Vote Now">
-    </div>
-
-    <!-- Form Input Ends -->
+    <h1 class="bot-total" id="skinOne">0</h1>
+    <h1 class="bot-total" id="skinTwo">0</h1>
+    <h1 class="bot-total" id="skinThree">0</h1>
 
     <!-- Comment Box Starts -->
 
     <div id="commentDiv">
-            <input id="nameBox" type="text" maxlength="20" placeholder="Name">
-            <br>
-            <input id="commentBox" type="text" maxlength="300" placeholder="Leave a Comment">
-            <br>
-            <input id="commentBtn" type="button" value="Save">
+        <h2>Leave a Comment!</h2>
+        <input id="nameBox" type="text" maxlength="20" placeholder="Name">
+        <br>
+        <input id="commentBox" type="text" maxlength="300" placeholder="Leave a Comment">
+        <br>
+        <input id="commentBtn" type="button" value="Comment">
     </div>
 
     <!-- Comment Box Ends -->
 
+    <!-- Skin Input Starts -->
+
+    <div id="voteDiv">
+        Skin #
+        <br>
+        <input id="skinNum" type="number" min="1" max="3">
+        <br>
+        <input class="voteBtn" id="skinBtn" type="button" value="Vote Now">
+    </div>
+
+    <!-- SKin Input Ends -->
+
     <!-- Pic Submit Starts -->
 
     <div id="fileDiv">
-            <input id="nameBox2" type="text" maxlength="20" placeholder="Name">
-            <br> Image File:
-            <input id="fileBox" type="file">
-            <br>
-            <input id="commentBtn" type="button" value="Submit">
+        <h2>Submit a Skin!</h2>
+        <input id="nameBox2" type="text" maxlength="20" placeholder="Name">
+        <br> Image Address:
+        <input id="fileBox" type="text" placeholder="Image Address">
+        <br>
+        <input id="fileBtn" type="button" value="Submit">
     </div>
 
     <!-- Pic Submit Ends -->
-
+    
     <div id="savedComment">
-        <ul id="commentList">
 
-        </ul>
     </div>
+    
+    <script src="../js/jungle.js"></script>
 
 </body>
 

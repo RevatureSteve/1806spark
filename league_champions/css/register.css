@@ -1,7 +1,7 @@
 /* Background Begins*/
 
 body {
-    background-image: url("");
+    background-image: url("https://na.leagueoflegends.com/sites/default/files/upload/art/teambuilder-wallpaper.jpg");
     background-size: cover;
     background-attachment: fixed;
     background-repeat: no-repeat;
@@ -68,7 +68,46 @@ li.dropdown {
 /* Nav Bar Ends */
 
 #registerBody{
-    background-color: silver;;
+    background-color: rgba(255, 255, 255, 0.5);
     padding: 15px;
     text-align: center;
+    width: 450px;
+    margin: auto;
+}
+
+/* The message box is shown when the user clicks on the password field */
+#message {
+    display:none;
+    background: rgba(255, 255, 255, 0.75);
+    color: #000;
+    position: relative;
+    padding: 5px;
+    margin-top: 10px;
+}
+
+#message p {
+    padding: 0px 35px;
+    font-size: 18px;
+}
+
+/* Add a green text color and a checkmark when the requirements are right */
+.valid {
+    color: green;
+}
+
+.valid:before {
+    position: relative;
+    left: -35px;
+    content: "✔";
+}
+
+/* Add a red text color and an "x" when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+.invalid:before {
+    position: relative;
+    left: -35px;
+    content: "✖";
 }

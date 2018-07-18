@@ -4,6 +4,7 @@
     <title>LoL Champions</title>
     <link rel="stylesheet" href="../css/style.css">
     <link rel="stylesheet" href="../css/login.css">
+    <script src="../js/login.js"></script>
     <link rel="icon" href="https://vignette.wikia.nocookie.net/leagueoflegends/images/e/e9/Noxus_Crest.png/revision/latest?cb=20161117055949">
 </head>
 
@@ -13,7 +14,7 @@
 
     <ul id="navBar">
         <li id="float_left">
-            <a href="index.html">Home</a>
+            <a href="/home">Home</a>
         </li>
         <li class="dropdown">
             <a href="javascript:void(0)" class="dropbtn">Top</a>
@@ -65,12 +66,19 @@
 
     <!-- Nav Bar End -->
     <div id="loginBody">
-        Username:   <input type="text" minlength="3" maxlength="12" placeholder="First Name" required>
-        <br><br>
-        Password:   <input type="password" minlength="3" maxlength="12" placeholder="Last Name" required>
-        <p>New User?
-            <a href="register.html">Create an account!</a>
-        </p>
+        <h1>League of Legends</h1>
+        <h2>Welcome back Summoner</h2>
+        Username:
+        <input id="user" type="text" minlength="5" maxlength="15" placeholder="Username">
+        <br>
+        <br> Password:
+        <input id="pass" type="password" minlength="8" maxlength="20" placeholder="Password">
+        <br>
+        <br>
+        <input id="loginBtn" type="button" value="Login">
+        <br>
+        <br>
+        <a href="register.html">New User? Create an account.</a>
     </div>
 
 

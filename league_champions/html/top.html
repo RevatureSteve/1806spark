@@ -15,7 +15,7 @@
     
     <ul id="navBar">
             <li id="float_left">
-                <a href="index.html">Home</a>
+                <a href="/home">Home</a>
             </li>
             <li class="dropdown">
                 <a href="javascript:void(0)" class="dropbtn">Top</a>
@@ -106,16 +106,53 @@
 
         <!-- Image Gallery Ends -->
 
-        <!-- Form Input Starts -->
-        
-        <div>
-            <form id="voteForm" action="vote" method="POST">
-                Skin # <br> <input type="number" min="1" max="3" required> <br>
-                <input class="vote-btn" type="submit" value="Vote Now">
-            </form>
-        </div>
+        <h1 class="bot-total" id="skinOne">0</h1>
+    <h1 class="bot-total" id="skinTwo">0</h1>
+    <h1 class="bot-total" id="skinThree">0</h1>
 
-        <!-- Form Input Ends -->
+    <!-- Comment Box Starts -->
+
+    <div id="commentDiv">
+        <h2>Leave a Comment!</h2>
+        <input id="nameBox" type="text" maxlength="20" placeholder="Name">
+        <br>
+        <input id="commentBox" type="text" maxlength="300" placeholder="Leave a Comment">
+        <br>
+        <input id="commentBtn" type="button" value="Comment">
+    </div>
+
+    <!-- Comment Box Ends -->
+
+    <!-- Skin Input Starts -->
+
+    <div id="voteDiv">
+        Skin #
+        <br>
+        <input id="skinNum" type="number" min="1" max="3">
+        <br>
+        <input class="voteBtn" id="skinBtn" type="button" value="Vote Now">
+    </div>
+
+    <!-- SKin Input Ends -->
+
+    <!-- Pic Submit Starts -->
+
+    <div id="fileDiv">
+        <h2>Submit a Skin!</h2>
+        <input id="nameBox2" type="text" maxlength="20" placeholder="Name">
+        <br> Image Address:
+        <input id="fileBox" type="text" placeholder="Image Address">
+        <br>
+        <input id="fileBtn" type="button" value="Submit">
+    </div>
+
+    <!-- Pic Submit Ends -->
+
+    <div id="savedComment">
+
+    </div>
+    
+    <script src="../js/jungle.js"></script>
 
     </body>
 
