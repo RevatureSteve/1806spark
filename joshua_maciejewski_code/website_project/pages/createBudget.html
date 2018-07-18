@@ -46,34 +46,20 @@
 
     <div id="infoForm"> <!-- don't use a form tag since we are using javascript's fetch async request -->
         <h1 id="title">Create Your Budget</h1> <br>
-        <div class="inputTxt">Remaining Income </div> 
+        <div class="inputTxt">Income </div> 
         <input id="income" type="number" name="income" required> <br><br>
         <div class="inputTxt">Enter an Expense</div> 
         <input id="budgetInput" type="text"  name="expense" required> <br><br>
         <div class="inputTxt">Enter an Amount</div> 
         <input id="budgetInput2" type="number"  name="amount" required> <br><br>
-        <button id="budgetBtn">Add Expense</button>
+        <button id="budgetBtn">Add Expense</button>  <br><br>
+        <div id="budgetStatus"></div>
+   
+        <script src="/js/createBudget.js"></script>
     </div>
-
-    <!-- <form id="loginForm" action="http://localhost:2001/home">
-        <h1 id="signIn">Sign In</h1>          <br>
-        <div class="inputTxt">Enter username</div>  
-        <input class = "inputBoxes" type="text" required> <br><br>
-        <div class="inputTxt">Enter password</div>  
-        <input class="inputBoxes" type="password" required><br><br>
-        <input id="success-btn" type="submit" value="Login">
-    </form> -->
-
-
-
-
-
-
-    <div id="budgetStatus">
-
-    </div>
+ 
     
-    <script src="/js/createBudget.js"></script>
+    
 </div>
           
   

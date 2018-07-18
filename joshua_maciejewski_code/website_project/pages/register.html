@@ -5,25 +5,9 @@
     <title>register</title>
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/register.css" />
-    <!-- <link rel="stylesheet" href="../css/login.css" /> -->
-    
-    
 
-<!-- REGISTER VALIDATION SCRIPT -->
-    <!-- <script language='javascript' type='text/javascript'>
-        function check(input) {
-            if (input.value != document.getElementById('password').value) {
-                input.setCustomValidity('Password Must be Matching.');
-            } else {
-                
-                input.setCustomValidity('');
-            }
-        }
-    </script> -->
- <!-- REGISTER VALIDATION SCRIPT -->
 </head>
 
-<!-- <body class="tampa"> -->
 
     <!-- Navbar begin -->
     <div class="topnav">
@@ -35,7 +19,6 @@
                 <a href="login.html">Login</a>
             </span>
     </div>
-    <!-- (?=.{8,}) -->
   
     <div id="formLogo">
         <h1 id="logo">
@@ -46,21 +29,15 @@
         </h1>
     </div>
     <div class="loginForm">
-        <!-- <form action="/action_page.php"> -->
          
          
         <form id="loginForm" action="http://localhost:2001/home">
          
-         <!-- First Name:
-            <input type="text" minlength="1" maxlength="20" required>
-            <br><br>
-            Last Name:
-            <input type="text" max="25" min="1" required>
-            <br><br> -->
+      
             <h1 id="register">Register</h1>          <br>
 
             <div class="inputTxt">Username</div>  
-            <input type="text">
+            <input id="username" type="text" required>
             <br><br>
 
             <div id="message">
@@ -72,7 +49,7 @@
             </div>
 
             <div class="inputTxt">Password</div>  
-          <input class=inputTxt type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^*]).{8,}" title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters, and special character" required>
+          <input  type="password" id="psw" name="psw" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^*]).{8,}" title="You must meet password requirements." required>
           <br><br>
           
           
@@ -88,16 +65,7 @@
         </form>
       </div>
       
-      <!-- <div id="message">
-        <h6>Password must contain the following:</h6>
-        <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
-        <p id="capital" class="invalid">An <b>uppercase</b> letter</p>
-        <p id="number" class="invalid">A <b>number</b></p>
-        <p id="length" class="invalid">Minimum <b>8 characters</b></p>
-        <p id="special" class="invalid">A <b>special character</b></p>
-      </div> -->
-   
-      <!-- (?=.*[!@#$%^&*]) - Assert a string has at least one special character. -->
+     
   
    
    
@@ -109,48 +77,7 @@
     </div>
    
    
-    <!-- Navbar End-->
-<!-- <header>
-        <h1>Register Here!</h1>
-</header> -->
 
-<!-- LOGIN FORM -->
-
-
-
-<!-- <div id="registerBody"> -->
-    <!--
-get vs post
-get - form data in the url
-post - form data hidden in the request body
--->
-<!-- <form id="registerForm" method="POST">
-
-First Name:
-<input type="text" minlength="1" maxlength="20" required>
-<br><br>
-Last Name:
-<input type="text" max="25" min="1" required>
-<br><br>
-Date of Birth:
-<input type="date">
-<br><br>
-Username:
-<input type="text" maxlength="20" minlength="3" required>
-<br><br>
-Password:
-<input name="password" required="required" type="password" id="password" />
-<br><br>
-Confirm Password:
-<input name="password_confirm" required="required" type="password" id="password_confirm" oninput="check(this)" />
-<br /><br />
-
-<input class="signupbutton" type="submit" value="Sign up!">
-
-</form>
-
-
-</div> -->
 
 
 </body>

@@ -1,8 +1,6 @@
-/*
-    new-question.js
-*/
 
-// can't use window.onload again as it is used in the app.js, reference at bottom instead
+
+
 
 
 document.getElementById('budgetInput2').addEventListener('change', incomeCruncher);
@@ -16,16 +14,16 @@ function incomeCruncher(){
 
         console.log(newTotal);
         
-        document.getElementById('income').value = newTotal;
-
-        if(newTotal >= 0) {
-             document.getElementById('income').style.color = "green";
-        }else{
-            document.getElementById('income').style.color = "red";
-            alert("Remaining income cannot be negative!")
-        }
         
 
+        if(newTotal < 0) {
+            alert("Remaining income cannot be negative!");
+            document.getElementById('income').value = income;
+            document.getElementById('budgetInput2').value= ""
+
+        }else{
+            document.getElementById('income').value = newTotal;
+         }
 
 }
 
@@ -62,3 +60,6 @@ fetch(url, {
     budgetStatus.innerHTML = b.expense + " " + b.amount;
 });
 }
+
+
+// document.getElementById('budgetInput').select();

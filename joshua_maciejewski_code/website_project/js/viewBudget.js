@@ -1,13 +1,7 @@
-/*
-    questions.js
-*/
-// No window.onload it has already been used by app.js
 
 let port = 2001;
 window.onload = function() {
-    // get navbar html fragment
     setBudget();
-    
 }
 
 var url = 'http://localhost:2001/viewBudget';
@@ -26,16 +20,60 @@ function callBudget(){
     })
 }
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 function setBudget(b){
-    console.log('setting budget to page');
     console.log(b);
     var budgetSection = document.getElementById('budget');
 
     for(let x = 0; x< b.length; x++){
         let bDiv = document.createElement('div');
-        bDiv.innerHTML = b[x].expense + "\xa0\xa0\xa0\xa0\xa0$" + b[x].amount;
+        bDiv.innerHTML = b[x].expense + "  \xa0\xa0$" + b[x].amount;
         budgetSection.appendChild(bDiv);
 
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
         // {/* <script type="text/javascript"> */}
 // Load google charts
 
@@ -66,25 +104,25 @@ function setBudget(b){
 }
 
 
-google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
+// google.charts.load('current', {'packages':['corechart']});
+// google.charts.setOnLoadCallback(drawChart);
 
-var columns = Budget1.keys(results[0]);
-var data = results.map(function (result) {
-  var tableRow = [];
-  columns.forEach(function (col) {
-    tableRow.push(result[col]);
-  });
-  return tableRow;
-});
-// data will contain the table rows to be rendered by google chart.
+// var columns = Budget1.keys(results[0]);
+// var data = results.map(function (result) {
+//   var tableRow = [];
+//   columns.forEach(function (col) {
+//     tableRow.push(result[col]);
+//   });
+//   return tableRow;
+// });
+// // data will contain the table rows to be rendered by google chart.
 
-var dataTable = new google.visualization.DataTable(document.getElementById('piechart'));
-columns.forEach(function (columnName) {
-  dataTable.addColumn(columnName);
-});
+// var dataTable = new google.visualization.DataTable(document.getElementById('piechart'));
+// columns.forEach(function (columnName) {
+//   dataTable.addColumn(columnName);
+// });
 
-dataTable.addRows(data);
-chart.draw(dataTable, options);
+// dataTable.addRows(data);
+// chart.draw(dataTable, options);
 
 

@@ -23,13 +23,39 @@
     font-family: Arial, Helvetica, sans-serif
 }
 
-.inputBoxes {
+.label {
+    text-align: left;
+    font-size: 15px;
+}
+
+#stock {
+    font-size: 25px;
     width: 100%; 
-    height: 5%;   
+    height: 30px;   
     border-radius: 10px;
     border: 2px solid  #1a2c56;
-  
-    
+}
+
+
+
+
+
+#date {
+    font-size: 25px;
+    width: 100%; 
+    height: 37px;   
+    border-radius: 10px;
+    border: 2px solid  #1a2c56;
+}
+
+#stat {
+    font-size: 25px;
+    /* color: #1a2c56; text color */
+        /* background-color: #1a2c56; */
+    border-radius: 10px;
+    width:  100%;
+    height: 37px;
+    border: 2px solid  #1a2c56;
 }
 
 .inputTxt {
@@ -37,7 +63,7 @@
     font-size: 15px;
 }
 
-#success-btn {
+#stockButton {
     
         font-size: 25px;
         color: white; /* text color */
@@ -49,7 +75,7 @@
     
 }
 
-#success-btn:hover {
+#StockButton:hover {
 
     /* swap the color and background-color on mouse hover */
     color:  #1a2c56;
@@ -57,22 +83,9 @@
 
 }
 
-#notDiv {
-    max-width: 450;
-    /* padding: 20px; */
-    margin: auto;
-    text-align: center;
+#stockData {
+    color: #1a2c56;
+    font-size: 25px;
+
 }
 
-#notMem {
-    color: black;
-    text-decoration: none;
-    text-align: center;
-}
-
-#notMem:hover {
-    color: #DEA527;
-}
-/* #loginBody {
-    background-image: url(https://png.pngtree.com/thumb_back/fw800/back_pic/03/51/49/735791be81aff4a.jpg);
-} */

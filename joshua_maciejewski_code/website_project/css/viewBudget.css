@@ -4,25 +4,34 @@
     background-color: white;
     border: 1px solid #DEA527;
     font-weight: bold;
-    text-align: center; /* text inside the element */
+    text-align: center; 
     padding: 20px;
-    /* center loginForm element */
     max-width: 450px;
     margin: auto;
 }
 
 #budget :nth-child(5n+0) {
-    color:#00b2f5  ;
+    font-size: 30px;
+    color:#00b2f5;
+    text-align: center;
 }
 #budget :nth-child(5n+1) {
+    font-size: 30px;
     color: #e64b40 ;
+    text-align: center;
 }
 #budget :nth-child(5n+2) {
+    font-size: 30px;
     color: #faab19 ;
+    text-align: center;
 }
 #budget :nth-child(5n+3) {
+    font-size: 30px;
     color:  #8ec738;
+    text-align: center;
 }
 #budget :nth-child(5n+4) {
+    font-size: 30px;
     color: #b34fa0 ;
+    text-align: center;
 }

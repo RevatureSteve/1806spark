@@ -32,17 +32,30 @@
     </div>
 
     <div id = stockInputs>
-        <h1 id="title">Enter Stock Info</h1>
-        <input id="stock" type="text" placeholder="enter stock symbol">
-        <input id="date" type="date" placeholder="pick a date">
-        <select id="stat">
+        <h1 id="title">Enter Stock Info</h1> <br>
+        <h2 class = "label">Enter Stock Symbol </h2>
+        <input id="stock" type="text" required> <br><br>
+        <h2 class = "label">Enter Desired Date </h2>
+        <input id="date" type="date" placeholder="pick a date" required> <br><br>
+        <h2 class = "label">Enter Desired Stat   </h2>  
+          <select id="stat" required>
+            <option value="1. open">open</option>
+            <option value="2. high">high</option>
+            <option value="3. low">low</option>
+            <option value="4. close">close</option>
+            <option value="5. volume">volume</option>
+          </select>    
+        
+        <!-- <select id="stat" required>
                 <option value="1. open">open</option>
                 <option value="2. high">high</option>
                 <option value="3. low">low</option>
                 <option value="4. close">close</option>
                 <option value="5. volume">volume</option>
-              </select>
+              </select> -->
+        <br> <br>  <br>
         <button id = "stockButton">Get Stock Info</button>
+        <br><br>
         <p id=stockData></p>
     </div>
 
