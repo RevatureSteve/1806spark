@@ -35,16 +35,16 @@ fetch(graphUrl).then(resp => {
     let openData = [];
     console.log(myJson);
     for (let i = 0; i < myJson.length; i++) {
-        if (i == 0) {
-            priceStart = myJson[i].marketOpen;
+        if (!priceStart) {
+            priceStart = parseFloat(myJson[i].open);
         }
         if (myJson[i].average > 0) {
             dates.push(myJson[i].label);
             averageData.push(myJson[i].average);
             openData.push(myJson[i].open);
         }
-        if (i == myJson.length - 1) {
-            priceEnd = myJson[i].marketClose;
+        if (myJson[i].close) {
+            priceEnd = parseFloat(myJson[i].close);
         }
     }
 
