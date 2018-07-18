@@ -1,9 +1,6 @@
 let url = "http://localhost:3000/register";
 document.getElementById("signup").addEventListener('click', newUser);
 
-// var express = require("express");
-// var router = express.router();
-// var UserRegistration = require("../server-code/models").UserRegistration;
 
 function newUser() {
     let firstName = document.getElementById("firstName").value;
@@ -63,10 +60,8 @@ function passwordValidation() {
     let checkLower = /[a-z]/.test(value);
     let checkSpecial = /[!?@#$&*.]/.test(value);
     let checkNum = /\d/.test(value);
-    //let checkSpace = /[^/S]/.test(value);
     let checked;
     console.log("check for length: " + length);
-    // if (visibility.classList.contains("show")) {
     if (length > 7 && length < 21) {
         console.log("You have a good length of: " + length);
         checked = document.getElementsByClassName("checkmark")[0];
@@ -138,5 +133,11 @@ function matchPassword() {
         console.log("passwords don't match");
     }
 }
+
+function noNumbers() {
+    let firtName = document.getElementById("firstName").value;
+}
+
+
 
 

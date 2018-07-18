@@ -2,6 +2,7 @@
 
 <head>
     <title>Not Just Another Movie Database</title>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB"
         crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
@@ -37,6 +38,16 @@
         <br>
         <h4 class="lead" style="text-align: center">Look up information on the movies you want to know about</h4>
     </div>
+    <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h3 id="modalMovieTitle"></h3>
+                <img id="modalMoviePoster" src="" alt="">
+                <p id="modalMovieSummary"></p>
+            </div>
+        </div>
     <div id="movieSearch">
         <h1 class="display-4" style="padding-left: 50px">Search for movies</h1>
         <form class="form-inline">
@@ -49,7 +60,6 @@
     </div>
 
     <script src="/scripts/search.js"></script>
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
 </body>
 
 </html>

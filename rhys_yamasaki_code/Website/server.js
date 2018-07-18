@@ -10,7 +10,27 @@ var session = require("express-session");
 app.use(jsonParser());
 
 
-app.use(session({secret:"dsjfalksdjfsldkfjsd", resave:true, saveUninitialized:true}));
+app.use(session({secret:"dsjfalksdjfsldkfjsd", resave:true, saveUninitialized:true, cookie: {secure: true}}));
+
+app.use(session({
+    genid: function(req) {
+      return genuuid() 
+    },
+    secret: 'keyboard cat'
+  }))
+
+  app.get('/', function(req, res, next) {
+    if (req.session.views) {
+      req.session.views++
+      res.setHeader('Content-Type', 'text/html')
+      res.write('<p>views: ' + req.session.views + '</p>')
+      res.write('<p>expires in: ' + (req.session.cookie.maxAge / 1000) + 's</p>')
+      res.end()
+    } else {
+      req.session.views = 1
+      res.end('welcome to the session demo. refresh!')
+    }
+  })
 
 app.use('/images', express.static('images'));
 
@@ -36,9 +56,9 @@ app.listen(portNumber, function() {
 
 
 app.use((req, resp, next ) => {
-    // console.log(req.headers);
-    // console.log(req.method);
-    // console.log(req.url);
+    console.log(req.headers);
+    console.log(req.method);
+    console.log(req.url);
     console.log(req.cookies);
     console.log(req.session);
     next();
@@ -51,33 +71,3 @@ app.use("/register", registerPath);
 app.use("/home", (req, resp, next) => {
     resp.sendFile("C:\\Users\\lolitsrhys\\my_git_repos\\1806spark\\rhys_yamasaki_code\\Website\\Main.html");
 })
-
-// app.use("/home/user", (req, resp, next) => {
-//     resp.sendFile("C:\\Users\\lolitsrhys\\my_git_repos\\1806spark\\rhys_yamasaki_code\\Website\\pages\\movieDetails.html");
-// })
-
-
-
-// app.use("/home/user", (req, resp, next) => {
-//     resp.sendFile("C:\\Users\\lolitsrhys\\my_git_repos\\1806spark\\rhys_yamasaki_code\\Website\\pages\\homeloggedin.html");
-// })
-
-// app.use("/profile", (req, resp, next) => {
-//     resp.sendFile("C:\\Users\\lolitsrhys\\my_git_repos\\1806spark\\rhys_yamasaki_code\\Website\\pages\\profile.html");
-// })
-
-// app.use("/actors", (req, resp, next) => {
-//     resp.sendFile("C:\\Users\\lolitsrhys\\my_git_repos\\1806spark\\rhys_yamasaki_code\\Website\\pages\\actors.html");
-// })
-
-// app.use("/login", (req, resp, next) => {
-//     resp.sendFile("C:\\Users\\lolitsrhys\\my_git_repos\\1806spark\\rhys_yamasaki_code\\Website\\pages\\login.html");
-// })
-
-// app.use("/movies", (req, resp, next) => {
-//     resp.sendFile('C:\\Users\\lolitsrhys\\my_git_repos\\1806spark\\rhys_yamasaki_code\\Website\\pages\\movies.html');
-// })
-
-// app.use('/register', (req, resp, next) => {
-//     resp.sendFile('C:\\Users\\lolitsrhys\\my_git_repos\\1806spark\\rhys_yamasaki_code\\Website\\pages\\register.html');
-// })

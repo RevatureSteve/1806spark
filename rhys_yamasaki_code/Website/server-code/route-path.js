@@ -45,5 +45,4 @@ registerPath.post('/', function(req, res) {
   });
 
 
-
 module.exports = registerPath;
