@@ -11,7 +11,7 @@ stock.post('/get', (req, resp, next)=>{
         }
         console.log(stocks);
         resp.json(stocks);
-    })
+    });
 });
 
 stock.post('/', (req, resp, next)=>{

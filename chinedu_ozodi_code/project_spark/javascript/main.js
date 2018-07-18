@@ -57,7 +57,7 @@ if (user) {
                 let stockTotal = stockDataRows[myJson[i].stock + " total"];
                 stockRow.appendChild(stockTotal);
                 stockTotal.classList.add('col-sm');
-                stockTotal.innerHTML = parseInt(myJson[i].amount) * parseFloat(myJson[i].price);
+                stockTotal.innerHTML = (parseFloat(myJson[i].amount) * parseFloat(myJson[i].price)).toFixed(2);
             }
             else {
                 let stockPrice = stockDataRows[myJson[i].stock + " price"];
