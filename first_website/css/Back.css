@@ -11,6 +11,7 @@ ul {
     width: 100%;
     border: 1px solid darkgray;
     box-shadow: 0px 20px 50px 0px rgba(161, 158, 158, 0.377);
+    z-index: 10;
 }
 
 li {
@@ -46,6 +47,7 @@ background-color: black;
     position: relative;
     top: 10px;
     left: 350px;
+    
 }
 /*Formating for boxes with image and text*/
 #picture_box_left {
@@ -65,6 +67,7 @@ background-color: black;
     right: 50px;
     padding: 10px;
     width: 200px;
+    height: 218px;
 }
 
 .textbox {
@@ -94,6 +97,8 @@ background-color: black;
 /*Form submission editing*/
 #post {
     position: relative;
-    background-color: beige;
-    
+    background-color: beige; 
+    width: 458px;
+    height: 132px;
+    overflow: scroll;
 }

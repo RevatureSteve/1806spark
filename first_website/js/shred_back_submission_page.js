@@ -1,4 +1,4 @@
-//Javascript for Shredding back submission page
+//Serverside Javascript for Shredding back submission page
 window.onload = function(){
     document.getElementById("button").addEventListener("click", submission);
 }

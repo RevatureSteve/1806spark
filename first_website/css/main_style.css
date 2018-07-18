@@ -66,20 +66,31 @@ body {
     border: 1px;
 }
 /*Shredding picture*/
+.container {
+    display: flex; /* or inline-flex */
+  }
 #shred {
+    display: flex;
     background-color: rgb(133, 133, 133);
     border: 3px solid black;
     padding: 10px;
     max-width: 400px;
-    margin: 130px 30px 50px 50px;
+    margin: 160px 26px 50px 192px;
+    -webkit-box-shadow: -1px -1px 78px 9px rgba(255,255,255,0.67);
+    -moz-box-shadow: -1px -1px 78px 9px rgba(255,255,255,0.67);
+    box-shadow: -1px -1px 78px 9px rgba(255,255,255,0.67);
 }
 /*Maintaining picture*/
 #maintain {
+    display: flex;
     background-color: rgb(133, 133, 133);
     border: 3px solid black;
     padding: 10px;
     max-width: 400px;
     margin: -578px 0px 0px 700px;
+    -webkit-box-shadow: -1px -1px 78px 9px rgba(255,255,255,0.67);
+    -moz-box-shadow: -1px -1px 78px 9px rgba(255,255,255,0.67);
+     box-shadow: -1px -1px 78px 9px rgba(255,255,255,0.67);
 }
 /*--------------------Login styling---------------------*/
 
@@ -96,23 +107,35 @@ body {
 #requirement_box {
     display: none;
     position: relative;
-    background-color: rgba(122, 119, 119, 0.521);
+    background-color: black;
     width: 340px;
     right: -515px;
-    top: -320px;
-    padding: 25px;
-    font-size: small;
+    top: -375px;
+    padding: 10px;
+    font-size: 17px;
+    text-align: left;
+    height: 168px;
 }
 
 #check_box {
     display: none;
     position: relative;
-    background-color: rgba(122, 119, 119, 0.521);
+    background-color:black;
     width: 340px;
     right: -515px;
     top: -320px;
     padding: 25px;
-    font-size: small;
+    font-size: 15px;
+}
+
+#image_check {
+    position: absolute;
+    width: 80px;
+    height: 100px;
+    top: 239px;
+    left: 700px;
+    clip: rect(25px,57px,76px,21px);
+    z-index: 10;
 }
 
 /* Add a green text color and a checkmark when the requirements are right */

@@ -10,7 +10,7 @@ var number = document.getElementById("number");
 
 
 
-// when the user clicksk on the password field, show the message box
+// when the user clicks on the password field, show the message box
 psw.onfocus = function(){
     document.getElementById("requirement_box").style.display
     = "block";
@@ -72,13 +72,14 @@ re_psw.onblur = function() {
 }
 // When the user starts to type something inside
 re_psw.onkeyup = function(){
-// validate length
+// validate password
     if(re_psw.value == psw.value){
-        re_psw.classList.remove("invalid");
-        re_psw.classList.add("valid");
+        confirmation.classList.remove("invalid");
+        confirmation.classList.add("valid");
+
     } else {
-        re_psw.classList.remove("valid");
-        re_psw.classList.add("invalid");
+        confirmation.classList.remove("valid");
+        confirmation.classList.add("invalid");
     }
 }
 

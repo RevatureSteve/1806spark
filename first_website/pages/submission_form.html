@@ -3,7 +3,7 @@
 <head>
     <title>Fitness Selector</title>
     <link rel="stylesheet" href="../css/Back.css" />
-
+    <script src="../js/shred_back_sub(2).js"></script>
 </head>
 
 <body>
@@ -39,15 +39,22 @@
             <input id="con" class="textboxes" type="text" name="con_comment" placeholder="Tell us something you didn't like" required>
             <br>
             <br>
-            <button id="button">Post!</button>
-
+            <button id="button" type="button" onclick="delayRedirect()" value="Click to Redirect"
+                >Post!</button>
+            <div id="delayMsg"></div>
         </form>
     </div>
 
     <div>
         <p id="submissionBox"></p>
     </div>
+
+    
+    
+
     <script src="../js/shred_back_submission_page.js"></script>
+    
+
 </body>
 
 </html>
