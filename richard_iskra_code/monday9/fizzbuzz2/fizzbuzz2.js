@@ -29,9 +29,17 @@ fizz
 fizzbuzz
 */
 
+
 function fizzbuzz() {
+
+    var hints = document.getElementById("list");  //remove hints
+    while (hints.hasChildNodes()) {
+        hints.removeChild(hints.firstChild);
+    }
+
     var res = document.getElementById("guessbox").value;
-    for (var i = 1; i <= res; i++) {
+    var res2 = document.getElementById("guessbox2").value;
+    for (var i = res; i <= res2; i++) {
         if (i % 3 == 0 && i % 5 != 0) {
             var num = document.createElement("li");
             var t = document.createTextNode("Fizz");
