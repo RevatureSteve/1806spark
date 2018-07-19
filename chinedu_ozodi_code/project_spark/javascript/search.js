@@ -69,6 +69,11 @@ fetch(graphUrl).then(resp => {
     Plotly.newPlot(graph, data, layout, { staticPlot: true });
 
     //Set other data
+    let img = document.createElement('img');
+    img.src = `https://storage.googleapis.com/iex/api/logos/${search.toUpperCase()}.png`
+    let stockPicDiv = document.getElementById('stockImg');
+    stockPicDiv.appendChild(img);
+
     currentPrice.innerHTML = priceEnd;
 
     let priceChange = (priceEnd - priceStart).toFixed(2);

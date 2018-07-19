@@ -36,10 +36,13 @@ if (user) {
                 stockList.push(myJson[i].stock);
 
                 stockDataRows[myJson[i].stock + " name"] = document.createElement('div');
+                let a = document.createElement('a');
+                a.href = `http://localhost:3000/pages/search.html?search=${myJson[i].stock}`;
                 let stockName = stockDataRows[myJson[i].stock + " name"];
                 stockRow.appendChild(stockName);
                 stockName.classList.add('col-sm');
-                stockName.innerHTML = myJson[i].stock;
+                a.innerHTML = myJson[i].stock.toUpperCase();
+                stockName.appendChild(a);
 
                 stockDataRows[myJson[i].stock + " price"] = document.createElement('div');
                 let stockPrice = stockDataRows[myJson[i].stock + " price"];
