@@ -8,14 +8,15 @@ Print For each multiple of 3, display "Fizz" instead of the number inside the un
 Print For each multiple of 5, display "Buzz" instead of the number inside the unordered list of the html page. 
 Print For numbers which are multiples of both 3 and 5, display "FizzBuzz" instead of the number inside the unordered list of the html page.
 */
-
-document.getElementById("userNum").addEventListener("change", fizzbuzz);
+window.onload = function(){
+document.getElementById("num1").addEventListener("change", fizzbuzz);
+}
 
 function fizzbuzz() {
-    var liLength = document.getElementByTagName("li").length;
-    var list = document.getElementByTagName("ul");
+    var liLength = document.getElementsByTagName("li").length;
+    var list = document.getElementsByTagName("ul");
     for (var i = 0; i < liLength; i++) {
-        list.removeChild(list.childNodes[1]);
+        list.removeChild(list.childNodes[0]);
     }
     var N = parseInt(event.target.value);
     for (var i = 1; i <= N; i++) {
@@ -32,7 +33,7 @@ function fizzbuzz() {
             show += i;
         }
         var item = document.createElement("li");
-        item.appendChild(document.createTextNode(value));
+        item.appendChild(document.createTextNode(show));
         list.appendChild(item);
     }
 }
