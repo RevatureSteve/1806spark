@@ -276,3 +276,9 @@ input:valid {
 input:invalid {
     border: 2px solid rgb(153, 49, 49);
 }
+#getQuote {
+    margin-top: 40px;
+  height: 30px;
+width: 200px;
+}
+

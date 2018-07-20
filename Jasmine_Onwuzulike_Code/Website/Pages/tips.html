@@ -58,19 +58,28 @@
     <div id="guides">
         <img class = "help-guides" src="https://cdn.davemorrowphotography.com/wp-content/uploads/2017/02/Exposure-Triangle-Cheat-Sheet-Photography.png">
         <img class = "help-guides" src="http://eternafilms.com/wp-content/uploads/2017/06/picture-guide-to-aperture-shutter-speed-iso-full.jpg">
+      
+        <!--Submit a Tip-->
         <section>
           <center>
                 <h5>Add a Tip</h5>
-            Tip/Advice <input type="text" required>
+            Tip/Advice <input id="advice" type="text" required>
             <br>
             <br>
-            Submitted By<input type="text" required>
+            Submitted By<input id = "submitter" type="text" required>
             <br>
             <br>   
             <input type="submit" value="Submit">
           </center>
         </section>
+        <section id="displayTip">
+            <p id="old">You submitted:</p>
+            <p id="tip"></p>
+        </section>
     </div>
+    
+
+
     
     <!--New input section-->
     <!-- <div class = "first">
@@ -89,7 +98,7 @@
     <br>
     <br>
 </div>
-
+<script src="/js/tip.js"></script>
     </body>
 
     </html>

@@ -8,6 +8,7 @@ window.onload = function() {
     document.getElementById("submit").addEventListener("click", submitItem);
 }
 
+//Message saying submission was sent.
 submitItem = () => {
     let item = document.getElementById("name").value;
     let source = document.getElementById("source").value;

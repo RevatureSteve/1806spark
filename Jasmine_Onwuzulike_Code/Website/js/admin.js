@@ -1,5 +1,7 @@
 let adminUrl = "http://localhost:3000/login";
 var nameList = null;
+setUp();
+
 function setUp() {
     fetch(adminUrl)
     .then(function(res) {

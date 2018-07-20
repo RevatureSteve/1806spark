@@ -1,12 +1,22 @@
 
 function getInput() {
     var x = document.getElementById("first").value;
+    var y = document.getElementById("second").value
     var list = document.getElementById("demo");
     var count = [];
-    for (var i = 0; i <= x; i++) {
-    console.log(i);
-        count.push(i);
-   
+
+
+    if (x < y) {
+        for (var i = x; i <= y; i++) {
+            console.log(i);
+                count.push(i);
+            }
+    }
+    else if (y < x) {
+        for (var i = y; i <= x; i++) {
+            console.log(i);
+            count.push(i);
+        }
     }
 
 //Check if number is a multiple.

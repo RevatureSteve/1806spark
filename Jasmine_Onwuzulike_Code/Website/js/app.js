@@ -15,3 +15,7 @@ document.getElementById('submit').addEventListener("click", function() {
 document.getElementById('cancel-item').addEventListener("click", function() {
     document.getElementById('shop-form').style.visibility = 'hidden';
 });
+
+
+
+
