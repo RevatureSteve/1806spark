@@ -15,16 +15,3 @@ var ReviewSchema = new Schema({
 var Review = mongoose.model("Review", ReviewSchema);
 
 module.exports.Review = Review;
-
-
-
-
-
-
-
-
-
-
-
-
-

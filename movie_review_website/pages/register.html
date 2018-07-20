@@ -4,19 +4,25 @@
     <link rel="stylesheet" href="../css/style.css" />
     <link rel="stylesheet" href="../css/forms.css" />
     <script src="../js/validation.js"></script>
-    <script src="../js/login.js"></script>
+    <script src="../js/register.js"></script>
 </head>
 
 <body>
     <div class='container'>
         <div id='registrationBox' class='box'>
             <form action="">
+                <label for="email">Email: </label>
+                <input required autocomplete="off" placeholder="email" type="email" id="email">
+                <br>
                 <label for="username" class='formPiece'>Username: </label>
                 <input id='username' required type="text" autocomplete="off" placeholder="login" minlength="3" maxlength="10">
                 <br>
                 <label for="pwd1" class='formPiece'>Password: </label>
                 <input id='pwd1' type="password" required placeholder="password" minlength="8">
-                
+                <br>
+                <label for="pwd2" class='formPiece'>Confirm password: </label>
+                <input id='pwd2' type="password" required placeholder="confirm password" minlength="8">
+                <br>
                 <input id='submitIn' type="submit" class='sumBtn'>
             </form>
         </div>
@@ -39,6 +45,10 @@
            
             <div>
                 <div>One capital letter <img id='oneCap' class='floatRight' src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt=""></div>
+            </div>
+            
+            <div>
+                <div>Password confirmed <img id='compare' class='floatRight' src="data:image/gif;base64,R0lGODlhAQABAAAAACwAAAAAAQABAAA=" alt=""></div>
             </div>
 
         </div>

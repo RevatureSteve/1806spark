@@ -2,45 +2,45 @@
 
 var express = require("express");
 var router = express.Router();
-var Review = require("./models").Review;
+var Login = require("./userInfoModel").Login;
 
-// GET /reviews
-// Route for reviews collection
+// GET /logins
+// Route for logins collection
 router.get("/", function (req, res, next) {
-
-	Review.find({})
+	Login.find({})
 		// .sort({createdAt: -1})
-		.exec(function (err, reviews) {
+		.exec(function (err, logins) {
 			if (err) return next(err);
-			res.json(reviews);
+			res.json(logins);
 		});
 });
 
-// POST /reviews
-// Route for creating reviews
+// POST /logins
+// Route for creating logins
 router.post("/", function (req, res, next) {
-	var review = new Review(req.body);
-	review.save(function (err, review) {
+	var login = new Login(req.body);
+	console.log(login);
+	login.save(function (err, login) {
 		if (err) return next(err);
 		res.status(201);
-		res.json(review);
+		res.json(login);
 	});
 });
 
-// GET /reviews/:id
-// Route for specific reviews
+// GET /logins/:id
+// Route for specific logins
 router.get("/:qID", function (req, res, next) {
-	res.json(req.review);
+	res.json(req.login);
 });
 
 
-// DELETE /reviews/:qID/answers/:aID
+// DELETE /logins/:qID/answers/:aID
 // Delete a specific answer
 router.delete("/:qID/answers/:aID", function (req, res) {
 	req.answer.remove(function (err) {
-		req.review.save(function (err, review) {
+		req.login.save(function (err, login) {
 			if (err) return next(err);
-			res.json(review);
+			res.json(login);
 		});
 	});
 });

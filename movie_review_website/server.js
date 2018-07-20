@@ -2,12 +2,16 @@ var express = require("express");
 var app = express();
 var reviewRoutes = require("./review-routes");
 var commentRoutes = require("./comment-routes");
+var registerRoutes = require("./register-routes");
+var loginRoutes = require("./login-routes");
 var jsonParser = require("body-parser").json;
 app.use(jsonParser());
 
+
 var mongoose = require("mongoose");  // require the package from node_modules
-mongoose.connect("mongodb://localhost:27017/reviews"); // sets the configuration the specific database called qa
+mongoose.connect("mongodb://localhost:27017/reviews"); // sets the configuration the specific database called reviews
 var db = mongoose.connection; // a reference to the connection to allow us to use the connection
+
 db.on("error", function (err) {	// call this function on errors 
 	console.error("connection error:", err);
 });
@@ -43,6 +47,8 @@ app.use("/home", function (req, resp, next) {
 
 app.use("/reviews", reviewRoutes);
 app.use("/comments", commentRoutes);
+app.use("/register", registerRoutes);
+app.use("/login", loginRoutes);
 
 app.use(function (req, res, next) {
 	var err = new Error("Not Found");

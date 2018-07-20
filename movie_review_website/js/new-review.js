@@ -1,4 +1,4 @@
-var url = 'http://localhost:3000/reviews';
+var reviewUrl = 'http://localhost:3000/reviews';
 window.onload = function () {
     document.getElementById("submitNewReview").onclick = function () {
         let head = document.getElementById('header').value;
@@ -17,7 +17,7 @@ window.onload = function () {
 
         console.log(data);
 
-        fetch(url, {
+        fetch(reviewUrl, {
             method: 'POST',
             body: JSON.stringify(data),
             headers: {
