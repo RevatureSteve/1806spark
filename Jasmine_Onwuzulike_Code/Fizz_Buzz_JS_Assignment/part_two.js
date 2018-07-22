@@ -11,7 +11,16 @@ var count = [];
 
 if ( x < y) {
     for (var i = x; i <= y; i++) {
-        console.log(i);
+        if ( i % 3 ==0 && i % 5 == 0) {
+            i = "fizzbuzz"
+        }
+        else if ( i % 3 == 0) {
+            i = "fizz"
+        }
+        else if (i % 5 == 0 ) {
+            i = "buzz"
+        }
+    console.log(i);
         count.push(i);
         
     }
