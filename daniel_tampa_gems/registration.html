@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title>Tampa Hidden Gems</title>
+        <link rel="stylesheet" href="css/style.css">
+    </head>
+    <body>
+        <!-- Nav Bar Begin -->
+        <ul>
+                <li><a href="index.html">Home</a>
+                </li>
+                <li><a href="restaurant.html">Restaurants</a>
+                </li>
+                <li><a href="bars.html">Bars</a>
+                </li> 
+                <li class="dropdown">
+                  <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+                  <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                  </div>
+                </li>
+                <li class="float-right">
+                    <a href="login.html">login</a>
+                </li>
+                <li class="float-right">
+                        <a href="registration.html">registration</a>
+                    </li>
+              </ul>
+        <!-- Nav Bar End -->
+        
+        <div id="registrationBody">
+            <form id="registrationForm" action="login" method="POST">
+                
+                Name: <input type="text" minlength="1" maxlength="30" required> <br> <br>
+                age: <input type="number" minlength="0" maxlength="300" required> <br> <br>
+                DOB: <input type="date" minlength="3" maxlength="12" placeholder="mm/dd/yyyy" required> <br> <br>
+                Username: <input type="text" minlength="3" maxlength="12" required> <br> <br>
+                Password: <input type="password" minlength="3" maxlength="12" required> <br> <br>
+                Confirm Password: <input type="password" minlength="3" maxlength="12" required> <br> <br>
+                <input class="register-btn" type="submit" value="Sign Up!">
+            </form>
+        </div>
+    </body>
+</html>
