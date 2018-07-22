@@ -215,6 +215,13 @@ hr {
 
     font-size: 15px;
 }
+#signUp-listItem5 {
+    background-color: white;
+    text-align: left;
+    list-style-type: disc;
+
+    font-size: 15px;
+}
 
 .signUp-submit {
     width: 20%;
@@ -225,6 +232,15 @@ hr {
     margin-bottom: 20px;
     text-align: center;
     font-size: 20px;
+}
+
+#signup-success {
+    margin-top: 2px;
+    font-size: 30px;
+    font-family: 'Times New Roman', Times, serif;
+    text-transform: uppercase;
+    text-decoration-line: underline;
+    color: green;
 }
 
 .signUp-submit:hover {

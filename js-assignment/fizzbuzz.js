@@ -32,34 +32,42 @@ fizz
 fizzbuzz 
 
 */
-var N;
-function fizzBuzz(){
 
-    //N =document.getElementById('num').value;
-    //var ul = document.getElementById('list');
-    var list = [];
 
-    //while (ul.hasChildNodes()) {
-    //    ul.removeChild(ul.firstChild);
+    document.getElementById('button').addEventListener('click', fizzbuzz);
+    /* this is my event listener. I get the element with the eventlistener 
+        within the () I put the event, what i want to apply it to
+    */
 
-    for(var i = 0; i < N; i++){
+    function fizzbuzz(){
 
-        var x = list.push(i);
+    var list = document.getElementById('list');
+    // ^ object to represent the ul within the html
+
+    var N = document.getElementById('input').value;
+    // ^ string for the html
+    
+    for(var i = 1; i <= N; i++){
+
+        var x = document.createElement('li')
+        //^ used to create the information of the list
+
         //console.log(x);
 
-        var A = x % 3;
-        var B = x % 5;
+        var A = i % 3;
+        var B = i % 5;
 
         if((A == 0) && (B == 0)){
-            console.log('fizzbuzz');
+            x.innerHTML = 'fizzbuzz';
         } else
         if(A == 0){
-            console.log('fizz');
+            x.innerHTML = 'fizz';
         } else 
         if(B == 0){
-            console.log('buzz');
+            x.innerHTML = 'buzz';
         } else {
-            console.log(x);
+            x.innerHTML = i;
         }   
+    list.appendChild(x);
     }
 }

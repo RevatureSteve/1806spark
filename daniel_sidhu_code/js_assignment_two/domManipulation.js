@@ -84,7 +84,7 @@ function getAnchorChildren() {
     Find all checked options in the 'skills' select element.
     Print the value and the contents.
 */
-//INCOMPLETE
+//INCOMPLETE 
 var z = document.getElementsByTagName('select');
 
 function getHobbies() {

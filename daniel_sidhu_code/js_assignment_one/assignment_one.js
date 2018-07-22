@@ -102,13 +102,14 @@ function factorial(someNum){
     console.log('The factoral of ' + someNum + '! is ' + fac);
 }
 */
-
+// 3
 function factorial(someNum) {
 
     var fac;
     if (someNum == 1) {
         return 1;
     } else {
+                // 6=3* 2=2*1=1*1
         fac = someNum * factorial(someNum - 1);
     }
     return fac;
@@ -160,15 +161,27 @@ var someNum = 4;
 
 //INCOMPLETE
 function isEven() {
-    for (i = 0; i < someNum; i++) {
 
-    var x = someNum / 2;
+    if(someNum != 0){
+        var xx;
+        xx = someNum/2;
+
+    } else if(xx != 0){
+        var yy;
+        yy = Math.round(xx);
+
+    } else if(yy != 0){
+        var zz;
+        zz = yy*2;
+
+    } else if(zz == someNum){
+        return true;
+
+    } else {
+        return false;
     }
-        if (x == 0) {
-            return true;
-        }else{
-            return false;
-        }
-    }
+}
+
+
 
 
