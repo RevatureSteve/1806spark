@@ -1,0 +1,7 @@
+.gitignore
+vs
+node_modules
+*.log
+.settings
+bin
+Servers
