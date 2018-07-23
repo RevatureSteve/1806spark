@@ -30,7 +30,7 @@
                 </li>
             </ul>
         </div>
-        <a href="./profile.html" class="btn btn-outline-primary loginBtn" role="button">Profile</a>
+        <a href="./profile.html" class="btn btn-outline-secondary registerBtn" role="button">Profile</a>
         <a href="/home" class="btn btn-outline-primary loginBtn" role="button">Logout</a>
     </nav>
     <div class="jumbotron">
@@ -43,9 +43,13 @@
             <!-- Modal content -->
             <div class="modal-content">
                 <span class="close">&times;</span>
+                <span id="idNum" class="hidden"></span>
                 <h3 id="modalMovieTitle"></h3>
+                <span id='modalMovieRelease'></span>
                 <img id="modalMoviePoster" src="" alt="">
                 <p id="modalMovieSummary"></p>
+                <span id="responseToAdd">Click the plus to add to your favorites</span>
+                <img id="addToFaves" src="../images/icons8-plus-64.png" alt="">
             </div>
         </div>
     <div id="movieSearch">
@@ -59,7 +63,7 @@
     <div class="movieRow">
     </div>
 
-    <script src="/scripts/search.js"></script>
+    <script src="/scripts/search-in.js"></script>
 </body>
 
 </html>

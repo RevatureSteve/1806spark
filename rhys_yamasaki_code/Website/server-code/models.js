@@ -15,8 +15,11 @@ var UserSchema = new Schema({
 UserSchema.add({username: String, profilePicture: {type: String, default: "../images/OFxuvcKhqInd2RX01yK9BCfj_400x400.png"}})
 
 var MovieInfoSchema = new Schema({
+    id: Number,
     title: String,
-    cast: Array
+    poster_path: String,
+    overview: String,
+    release_date: String
 })
 
 var MovieInfo = mongoose.model("movieInfo", MovieInfoSchema);

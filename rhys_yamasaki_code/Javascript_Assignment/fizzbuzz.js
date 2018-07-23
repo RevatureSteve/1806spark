@@ -39,11 +39,12 @@ function appendItems() {
 
     for (let i = 1; i <= getValue; i++) {
         var char = "";
-        (i % 3 == 0) ? char += "fizz" : char;
-        (i % 5 == 0) ? char += "buzz": char;
+        (i % 3 == 0) ? char += "Fizz" : char;
+        (i % 5 == 0) ? char += "Buzz": char;
         (i % 3 !== 0 && i % 5 !== 0) ? char += i : char;
         var node = document.createElement("li");
         node.appendChild(document.createTextNode(char));
         ul.appendChild(node);
     }
 }
+

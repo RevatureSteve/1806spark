@@ -31,6 +31,7 @@ fetch('https://api.themoviedb.org/3/discover/movie?api_key=0c204b4eaedfebc5b97ce
                     title: jsonObject.results[i].title,
                     poster_path: 'https://image.tmdb.org/t/p/w185//' + jsonObject.results[i].poster_path,
                     overview: jsonObject.results[i].overview,
+                    release_date: jsonObject.results[i].release_date.toLocalDateString("en-US", options),
                     release_date: jsonObject.results[i].release_date
                 })
             }
@@ -44,7 +45,6 @@ var modal = document.getElementById('myModal');
 var span = document.getElementsByClassName("close")[0];
 function openModal() {
     var btnCheck = event.target.currentSrc;
-    
     var btn = document.getElementsByClassName("modalInfoBtn");
     for (let i = 0; i < movieObject.length; i++) {
         if (btnCheck == movieObject[i].poster_path) {
@@ -54,7 +54,7 @@ function openModal() {
                 document.getElementById("modalMovieTitle").innerHTML = movieObject[i].title;
                 document.getElementById("modalMoviePoster").src = movieObject[i].poster_path;
                 document.getElementById("modalMovieSummary").innerHTML = movieObject[i].overview;
-                document.getElementById("modalMovieRelease").innerHTML = "Release date: " + releaseDateFormatted.toDateString();
+                document.getElementById("modalMovieRelease").innerHTML = "Release date:" + releaseDateFormatted.toDateString();
             }
         }
         // When the user clicks on <span> (x), close the modal

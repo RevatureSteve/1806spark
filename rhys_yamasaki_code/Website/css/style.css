@@ -19,19 +19,8 @@ a {
     margin: auto;
 }
 
-.next {
-    float: right;
-    margin-top: -60px; 
-    /* display: inline-block; */
-    z-index: 1; 
-    /* position: absolute; */
-}
-
-.previous {
-    float: left;
-    margin-top: -60px; 
-    /* display: inline-block; */
-    z-index: 1;
+.hidden {
+    display: none;
 }
 
 .movieTitleHome {
@@ -110,7 +99,7 @@ a {
     margin: auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 80%;
+    width: 50%;
 }
 
 /* The Close Button */
@@ -140,4 +129,9 @@ a {
 
 #modalMovieSummary {
     margin-top: 20px;
+}
+
+#modalMovieRelease {
+    text-align: center;
+    margin-bottom: 5px;
 }

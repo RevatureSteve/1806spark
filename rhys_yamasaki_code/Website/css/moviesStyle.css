@@ -51,4 +51,14 @@ h2 {
     margin-top: 20px;
 }
 
+#addToFaves {
+    width: 30px;
+    height: auto;
+    margin: auto;
+}
+
+#responseToAdd {
+    text-align: center;
+    size: 12pt;
+}
 /* Genre movie spacing */

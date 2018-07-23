@@ -26,13 +26,19 @@ let arrayTest = [7, 6, 9, 1, 8, 3, 5, 4, 2];
 
 function bubbleSort(numArray) {
     let temp;
+    swapFlag =false;
     for (let i = 0; i < numArray.length; i++) {
         for (let j = 1; j < numArray.length; j++) {
             if (numArray[j - 1] > numArray[j]) {
+                swap = !swap; 
                 temp = numArray[j - 1]; // takes the first item in arr and saves it to temp
                 numArray[j - 1] = numArray[j];
                 numArray[j] = temp;
             }
+         
+        }
+        if(swapFlag != true){
+            break;
         }
     }
     console.log(numArray);

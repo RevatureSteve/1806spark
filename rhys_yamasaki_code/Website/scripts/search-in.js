@@ -1,6 +1,7 @@
 window.onload = () => {
     document.getElementById("searchBtn").addEventListener("click", search);
     document.addEventListener('click', openModal);
+    document.getElementById("addToFaves").addEventListener('click', addFavorite);
 }
 
 var storedObject = [];
@@ -56,27 +57,56 @@ function openModal() {
         // Get the button that opens the modal
         // When the user clicks the button, open the modal  
         if (btnCheck == storedObject[i].poster_path) {
-                modal.style.display = "block";
-                let dateFormat = storedObject[i].release_date;
-                let releaseDateFormatted = new Date(dateFormat); 
-                document.getElementById("modalMovieTitle").innerHTML = storedObject[i].title;
-                document.getElementById("modalMoviePoster").src = storedObject[i].poster_path;
-                document.getElementById("modalMovieSummary").innerHTML = storedObject[i].overview;
-                document.getElementById("modalMovieRelease").innerHTML = "Release date: " + releaseDateFormatted.toDateString();
-            }
-        }
-        
-        // When the user clicks on <span> (x), close the modal
-        span.onclick = function () {
-            modal.style.display = "none";
-        }
-
-        // When the user clicks anywhere outside of the modal, close it
-        window.onclick = function (event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
+            modal.style.display = "block";
+            let dateFormat = storedObject[i].release_date;
+            let releaseDateFormatted = new Date(dateFormat);
+            document.getElementById("idNum").innerHTML = storedObject[i].id;
+            document.getElementById("modalMovieTitle").innerHTML = storedObject[i].title;
+            document.getElementById("modalMoviePoster").src = storedObject[i].poster_path;
+            document.getElementById("modalMovieSummary").innerHTML = storedObject[i].overview;
+            document.getElementById("modalMovieRelease").innerHTML = "Release date: " + releaseDateFormatted.toDateString();
         }
     }
 
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function () {
+        modal.style.display = "none";
+    }
 
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+}
+
+var urlDb = "http://localhost:3000/movies";
+
+function addFavorite() {
+    document.getElementById('addToFaves').src = "../images/icons8-smiley-ok-64.png";
+    document.getElementById('responseToAdd').innerHTML = "Successfully Added!"
+    let idNum = document.getElementById('idNum').innerHTML;
+    let title = document.getElementById("modalMovieTitle").innerHTML;
+    let poster_path = document.getElementById('modalMoviePoster').innerHTML;
+    let overview = document.getElementById('modalMovieSummary').innerHTML;
+    let release_date = document.getElementById('modalMovieRelease').innerHTML;
+
+    let data = {
+        "id": idNum,
+        "title": title,
+        "post_path": poster_path,
+        "overview": overview,
+        "release_date": release_date
+    }
+
+    fetch(urlDb, {
+        method: 'POST',  // to post data to the db
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(data => data.json()).then(u => {
+        console.log(u);
+    })
+}
