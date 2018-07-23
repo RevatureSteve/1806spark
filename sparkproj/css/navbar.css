@@ -1,0 +1,80 @@
+a:link    {
+   
+    text-decoration:  none;
+    color:            rgba(0, 0, 0, 0.74);
+    } 
+  a:visited {
+  
+    text-decoration:  none;
+    background-color: #ddd;
+    color:            rgb(0, 0, 0);
+    } 
+  a:hover   {
+ 
+    text-decoration:  none;
+    color:            rgba(255, 255, 255, 0.281);
+    } 
+
+.nav {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+
+}
+button {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    justify-content: space-evenly;
+    
+}
+button a {
+    padding: 0px;
+    color: white;
+    font-weight: bold;
+    
+    text-align: center;
+}
+
+
+/* #li1 {
+background-color: rgba(0, 128, 0, 0.5);
+box-shadow: 0px 5px 3px rgba(0, 128, 0, 0.5);
+font-size: 40px;
+width: 20%;
+font-family: 'Trebuchet MS';
+} */
+#li2 {
+background-color: rgba(9, 0, 128, 0.5);
+box-shadow: 0px 5px 3px rgba(9, 0, 128, 0.5);
+font-size: 40px;
+width: 33%;
+font-family: 'Trebuchet MS';
+}
+/* #li3 {
+background-color: rgba(128, 115, 0, 0.5);
+box-shadow: 0px 5px 3px rgba(128, 115, 0, 0.5);
+font-size: 40px;
+width: 20%;
+font-family: 'Trebuchet MS';
+} */
+#li4 {
+background-color: rgba(0, 128, 126, 0.5);
+box-shadow: 0px 5px 3px rgba(0, 128, 126, 0.5);
+font-size: 40px;
+width: 33%;
+font-family: 'Trebuchet MS';
+}
+#li5 {
+    background-color: rgba(128, 0, 0, 0.5);
+    box-shadow: 0px 5px 3px rgba(128, 0, 0, 0.5);
+    font-family: 'Trebuchet MS';
+    font-size: 40px;
+    width: 33%;
+    }
