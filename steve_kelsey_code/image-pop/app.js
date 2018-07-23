@@ -16,7 +16,9 @@ var mouseY = 0;
 var imageArray = [
     "https://worldwideinterweb.com/wp-content/uploads/2015/09/epic-gaming-pics.jpg",
     "https://worldwideinterweb.com/wp-content/uploads/2016/12/epic-awesome-pictures.png",
-    "https://worldwideinterweb.com/wp-content/uploads/2016/12/epic-cat-pictures.png"
+    "https://worldwideinterweb.com/wp-content/uploads/2016/12/epic-cat-pictures.png",
+    "https://worldwideinterweb.com/wp-content/uploads/2016/12/epic-image.png",
+    
 
 ];
 /*
@@ -36,7 +38,7 @@ function imagePopBtnClick() {
     console.log('Image Pop Btn Clicked!');
 
     var img = document.createElement('img');
-    imageIndex = Math.floor(Math.random() * 3);
+    imageIndex = Math.floor(Math.random() * 4);
     img.src = imageArray[imageIndex];
     document.getElementsByTagName('body')[0].appendChild(img);
 }

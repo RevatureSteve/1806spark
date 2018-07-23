@@ -1,0 +1,56 @@
+<!doctype html>
+<html>
+
+<head>
+    <title> Tampa Hidden Gems</title>
+    <link rel="stylesheet" href="../css/style.css" type="text/css">
+    <link rel="stylesheet" href="../css/login.css" type="text/css">
+</head>
+
+<body>
+    <!-- nav bar begin -->
+    <nav>
+        <ul>
+            <li>
+                <a href="#home">Home</a>
+            </li>
+            <li>
+                <a href="#news">News</a>
+            </li>
+            <li class="dropdown">
+                <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+                <div class="dropdown-content">
+                    <a href="#">Link 1</a>
+                    <a href="#">Link 2</a>
+                    <a href="#">Link 3</a>
+                </div>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- nav bar end -->
+    <header>
+        <h1>Login</h1>
+    </header>
+    <div id="loginBody">
+        <!-- get vs post
+            get-form data in the url
+            post- form data hidden in resuest body
+         -->
+        <form id="loginform">
+            <label> Enter UserName</label>
+            <input type="text" name="User Name" required>
+            <br>
+            <br>
+            <label> Enter Password</label>
+            <input type="password" name="input password" value="" required>
+            <br> 
+            <br>
+            <input class="success-btn" type="submit" name="login" value="login">
+        </form>
+
+    </div>
+    <!-- <h1> Welcome To Tampa!</h1> -->
+</body>
+
+</html>

@@ -1,0 +1,17 @@
+ultimate cmd to stop process : control c to exit
+
+node.js 
+    is a Javascript server side software
+    can handle requests and send back reponse (not rcommended, required too much work....)
+
+    express.js - this a form of Javascript package
+        A Javascript Framework
+        used with node.js to make it easy to 
+        handle requests and sent back response (remoce boilerplate code)
+
+    node package manager - allows me to quickly download Javascript packages like 
+    
+
+    to turn on and off terminal press control ` (button on the top left above tab key)
+
+    ultimate cmd to stop process : control c to exit

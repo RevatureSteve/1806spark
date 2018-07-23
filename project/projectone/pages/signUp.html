@@ -1,0 +1,89 @@
+<!DOCTYPEhtml>
+<html>
+
+<head>
+    <title>
+        SignUp ALready! Wait no more
+    </title>
+
+    <link rel="stylesheet" type="text/css" href="../css/newSignUp.css">
+    <link rel="stylesheet" type="text/css" href="../css/mainStyle.css">
+    <script src="../scripts/signUp.js" defer></script>
+</head>
+
+<body>
+    <div class="navarea">
+        <nav id="navbar" alt="the main nav bar">
+            <!-- turn this into a class since it will be at the top and bottom nav area -->
+            <ul class="allNav">
+                <li>
+                    <a href="/home" alt="home page" title="myreview">Review </a>
+                </li> &nbsp;
+
+                <li>
+                    <a href="/pages/peerReview.html" alt="home page" title="UserReviews">User Review </a> &nbsp;
+                </li> &nbsp;
+
+
+                <li class="listRight">
+                    <a href="/pages/login.html" alt="Login Button">Login</a>
+                </li>
+                <li class="listRight">
+                    <a href="/pages/signUp.html" alt="signUp">Sign Up</a>
+                </li>
+
+            </ul>
+
+        </nav>
+    </div>
+
+
+
+
+    <h1> </h1>
+    <div id="formBackground">
+        <div id="formHolder" >
+            <div class="former">
+                <label class="formLabel">First Name</label>
+                <br>
+                <input id="yourname" type="text" name="firstName" placeholder=" Enter First Name" required>
+                <br>
+
+                <label class="formLabel">Last Name</label>
+                <br>
+                <input type="text" name="lastName" placeholder=" Enter Last Name" required>
+                <br>
+
+                <label class="formLabel">Email Address</label>
+                <br>
+                <input type="email" name="email" placeholder="Enter Your Email" required>
+                <br>
+
+                <label class="formLabel">Enter Password</label>
+                <br>
+                <input id="password" type="password" name="password" placeholder="Enter Your Password" minlength="7" maxlength="10" required>
+                <br>
+
+                <label class="formLabel"> Re-Enter Password</label>
+                <br>
+                <input id="repassword" type="password" name="reenterPassword" placeholder="Re-enter Your Password" minlength="7" maxlength="10" required>
+                <br>
+
+                <label class="formLabel">Select Gender</label>
+                <br>
+                <input type="radio" name="gender" value="male"> Male
+                <br>
+                <input type="radio" name="gender" value="female"> Female
+                <br>
+                <input type="radio" name="gender" value="other"> Unknown
+                <br>
+
+                <div id="formSubmitBtn">
+                    <button id="signedUp">Submit</button>
+                </div>
+        </div>
+        </div>
+    </div>
+</body>
+
+</html>
