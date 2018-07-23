@@ -5,8 +5,8 @@ var Movie = require("./models").Movie;
 
 
 
-// GET /questions
-// Route for questions collection
+// GET recently added movies
+// Route for Pundit movie collection
 addMovieRoutes.get("/", function(req, res, next){
 	console.log(req.url);
 	Movie.find({})
@@ -17,8 +17,8 @@ addMovieRoutes.get("/", function(req, res, next){
 				});
 });
 
-// POST /questions
-// Route for creating questions
+// POST new movies
+// Route for adding movies to database
 addMovieRoutes.post("/", function(req, res, next){
 	console.log('Creating new movie');
 	console.log(req.body);
@@ -32,29 +32,6 @@ addMovieRoutes.post("/", function(req, res, next){
 		
 	});
 });
-
-// GET /questions/:id
-// Route for specific questions
-addMovieRoutes.get("/:qID", function(req, res, next){
-	res.json(req.newMovie);
-});
-
-
-
-
-// DELETE /questions/:qID/answers/:aID
-// Delete a specific answer
-addMovieRoutes.delete("/:qID/answers/:aID", function(req, res){
-	req.answer.remove(function(err){
-		req.createdMovie.save(function(err, movieDB){
-			if(err) return next(err);
-			res.json(movieDB);
-		
-		});
-	});
-});
-
-
 
 module.exports = addMovieRoutes;
 

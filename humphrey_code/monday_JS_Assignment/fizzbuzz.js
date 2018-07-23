@@ -32,6 +32,7 @@ fizzbuzz
 function print() {
 
    var inputValue = document.getElementById("inputNum").value;
+   var inputValue2 = document.getElementById("inputNum2").value;
    var unorderedLi = document.getElementsByTagName("ul")[0];
    var listItem = document.createElement("li");
 

@@ -4,7 +4,6 @@ var jsonParser = require("body-parser").json;
 app.use(jsonParser());
 
 var addMovieRoutes = require("./plusAdd-routes.js");
-var recentlyAddedPath = require("./recentlyAdded-route.js");
 var registerRoutes = require("./register-route.js");
 
 
