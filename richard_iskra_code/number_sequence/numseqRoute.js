@@ -3,7 +3,7 @@ var express = require("express");
 var scorePath = express.Router();
 var Score = require('./score-model').Score;
 
-scorePath.get("", function(req,resp,next){
+scorePath.get("/", function(req,resp,next){
     console.log(req.url);
     Score.find({}).exec(
         function(err, score){

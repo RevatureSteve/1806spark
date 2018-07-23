@@ -26,7 +26,6 @@ window.onload = function music() {       //plays music and creates the hidden an
     audio.volume = 0.3;
     audio.loop = true;
     audio.play();
-    //restart.play();
     document.getElementById("guessbox").value = "";
 
     for (var i = 0; i < ansLength; i++) {    //create answer
@@ -68,7 +67,7 @@ function attemptrun() {     //when the user clicks the submit button....
         guessaudio.play();
     }
 
-    gethints(digits, answerholder);  //get hints for the right column
+    getHints(digits, answerholder);  //get hints for the right column
     answerholder = answer.slice(0, 4);
 
     document.getElementById("guessbox").value = "";
@@ -101,17 +100,19 @@ function check(digits, answer) {                //check if given value matches t
 
 function valid(num) {      //check if given value is valid (same length as answer and consists of valid numbers)
     if (num.length != ansLength) {
+        alert("Your guess must contain 4 numbers");
         return false;
     }
     for (var i = 0; i < num.length; i++) {
         if (num[i].charCodeAt() < 49 || num[i].charCodeAt() > 57 || num[i] > chars) {
+            alert("All numbers must be between 1 and 6");
             return false;
         }
     }
     return true;
 }
 
-function gethints(digits, ans) {
+function getHints(digits, ans) {
     for (var p = 0; p < ansLength; p++) {
         ans[p] = ans[p].toString();
 
@@ -180,16 +181,16 @@ function cancle() { //audio for closing login modal
 }
 
 function postscore() {
-    let data = {
+    let scoreData = {
         "score": 1 + ((attempts - attemptnum) + scores)   //score from the game that just finished
     }
     fetch(url, {
         method: 'POST',
-        body: JSON.stringify(data),
+        body: JSON.stringify(scoreData),
         headers: {
             'Content-Type': 'application/json'
         }
-    }).then(data => data.json()).then(z => {
+    }).then(scoreData => scoreData.json()).then(z => {
         document.getElementById("currentscore").innerHTML = "score: " + z.score;
     });
 }
@@ -199,9 +200,9 @@ function callScore() {
         .then((resp) => {
             return resp.json();
         })
-        .then((data) => {
-            console.log(data);
-            scores = data[data.length - 1].score;
+        .then((scoreData) => {
+            console.log(scoreData);
+            scores = scoreData[scoreData.length - 1].score;
             document.getElementById("currentscore").innerHTML = "score: " + scores;
         })
 }

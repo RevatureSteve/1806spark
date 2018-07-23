@@ -12,7 +12,7 @@ var ansLength = 3;
 var chars = 4;
 
 window.onload = function music() {
-    var audio = new Audio('../audio/road3.wav');
+    var audio = new Audio('../audio/road2.wav');
     audio.volume = 0.3;
     audio.loop = true;
     audio.play();

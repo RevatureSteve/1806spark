@@ -87,12 +87,20 @@ h5{
     margin-top: 20px;
 }
 
-.gamebg{
+#gamebg{
     background: url(https://78.media.tumblr.com/f42769328005fd92ad616f7901054f59/tumblr_ogquinbyl31vsjcxvo2_r1_640.gif) no-repeat fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
+}
+
+#gamebg2{
+    background: url(http://gifimage.net/wp-content/uploads/2017/06/water-gif-11.gif)  no-repeat fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover; 
 }
 
 .numbutton{
