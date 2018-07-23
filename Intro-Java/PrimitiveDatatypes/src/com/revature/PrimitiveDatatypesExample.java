@@ -18,6 +18,7 @@ public class PrimitiveDatatypesExample {
 		
 		//not found in com.revature but in com.revature.animals must use the import keyword
 		Animal a = new Animal();		
+		a.altPairs("kitten");
 	}
 
 	public static void primitives() {
