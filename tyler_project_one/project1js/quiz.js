@@ -125,15 +125,15 @@ function generateQuiz() {
 
         // output list to string and display on page
 
-        quizContainer.innerHTML = output.join('');
+        quizContainer.innerHTML = output.join('answers');
     }
     
     function showResults() {
         // gather answer containers
-        var answerContainers = quizContainer.querySelectorAll('.answers');
+        var answerContainers = quizContainer.querySelectorAll('answers');
         // track users answers
-        var userAnswer = '';
-        let numCorrect = 0;
+        var userAnswer = 'answers';
+        var numCorrect = 0;
 
         // for each question
 
@@ -142,15 +142,15 @@ function generateQuiz() {
                
            if(userAnswer===questions[i].correctAnswer){
            // add to number of correct answers
-                console.log(numCorrect);
+            
                 numCorrect++;
             }else {
-                numCorrect--;
+                answerContainers[i].style.color= 'red';
             }
  
         }
         // show number correct out of total
-        resultsContainer.innerHTML = numCorrect + 'out of' + myQuestions.length;
+        resultsContainer.innerHTML = numCorrect + ' out of ' + myQuestions.length;
 
     }
 
@@ -170,7 +170,7 @@ let url= 'http://localhost:3001/quiz';
 document.getElementById('results');
 
 let data = {
-    "score": numCorrect + 'out of' + questions.length,
+    "score": numCorrect + ' out of ' + questions.length,
     
 }
 
