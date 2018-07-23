@@ -1,0 +1,66 @@
+<html>
+    <head>
+        <title>
+            Digital Design
+        </title>
+        <link rel="stylesheet" href="../CSSFiles/style.css" />
+    </head>
+    <body>
+            
+            <ul class="ul">
+                    <li><a href="/home">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                  </ul>
+
+                  <img class="background2" src="images/Grendel.png"/>
+
+                  <ul class="subscribe">
+                        <li><a href="upload.html" >Upload</a></li>
+                        <li><a href="subscribe.html"> Subscribe</a></li>
+                        <li><a href="register.html"> Register</a></li>
+                        <li><a href="login.html" >Login</a></li>
+
+                  </ul>
+                  
+                  <div class="container">
+                        <h1 class="register">Register</h1>
+                      
+                        <hr>
+
+                        <div>
+                            <form action="">
+                                <label><b>Create Username</b></label>
+                                <input type="text" placeholder="Username" name="username" required>
+                                
+                                <label><b>Email</b></label>
+                                <input type="text" placeholder="Enter Email" name="email" required>
+                            
+                                <label><b>Password</b></label>
+                                <input id="psw" type="password" placeholder="Enter Password" name="psw" required>
+                            
+                                <label><b>Confirm Password</b></label>
+                                <input id="psw2" type="password" placeholder="Repeat Password" name="psw" required>
+                                <hr>
+
+                        <div id="message">
+                                        <label><b>Password Requirements:<br><br>
+                                            <p id="length" class="invalid">Min of 8 letters</p>
+                                            <p id="capital" class="invalid">One uppercase</p>
+                                            <p id="number" class="invalid">One number</p>
+                                            <p id="special" class="invalid">Special character(!,#,$,%)</p></b></label>
+                                            <br><br>
+                                            
+                        </div>
+                            
+                                <button onclick="alertRg()" type="submit" class="registerbtn">Register </button>
+                        </div>
+                            
+                        <div class="container signin">
+                                <p>Already have an account? <a href="#">Sign in</a>.</p>
+                        </div>
+                              <script src="/JsFiles/portfolio.js"></script>
+                </form>                                  
+    </body>
+</html>
