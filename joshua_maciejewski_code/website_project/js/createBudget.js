@@ -50,8 +50,8 @@ var data = {
 
 
 fetch(url, {
-    method: 'POST', // or 'PUT'
-    body: JSON.stringify(data), // data can be `string` or {object}! Must be converted to JSON
+    method: 'POST', 
+    body: JSON.stringify(data), 
     headers:{
       'Content-Type': 'application/json'
     }

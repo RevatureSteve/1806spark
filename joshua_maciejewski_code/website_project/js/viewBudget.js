@@ -1,5 +1,5 @@
 
-let port = 2001;
+// let port = 2001;
 window.onload = function() {
     setBudget();
 }
@@ -19,17 +19,6 @@ function callBudget(){
         setBudget(budget);
     })
 }
-
-
-
-
-
-
-
-
-
-
-
 
 
 

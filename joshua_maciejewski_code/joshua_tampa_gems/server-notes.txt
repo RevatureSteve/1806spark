@@ -1,0 +1,25 @@
+
+ultimate cmd to stop process: ctrl + c 
+Node.js
+    : node(no argument): turns your terminal into a javascript interpretor
+    node file-name: executes the JavaScript file
+    is a javascript server software
+    can handle requests and sent back responses
+        (not recommened, requires too much work...)
+
+Express (JavaScript package)
+    a yavascript framework
+    used with Node.js to make it easy to 
+        handle requests and sent back responses (remove boilerplate code)
+
+Node package manager: allows me to quickly download JavaScript packages like express
+cmd:npm
+Turn our Tampa gems project into a node project
+cmd: npm init
+    npm init creates a package.json file which is the metadata of our project   
+        -name
+        -version #
+        -dependencies (JS packages)
+        -description
+        -etc.
+

@@ -6,7 +6,7 @@ var router = express.Router();
 var Budget1 = require('./models').Budget1;
 
 
-//GET /questions
+//GET /budget
 // Route for questions collection
 router.get('/', function(req, res, next){
     console.log('/budgets');
