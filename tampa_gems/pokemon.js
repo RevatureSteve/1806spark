@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 /* pokemon.js
 */
 
@@ -107,6 +108,8 @@ var foo = function(){};
 // function arrow syntax...same but short.
 // typically used for one-and-done functions that dont need to be named.
 =======
+=======
+>>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4
 /*
     pokemon.js
 */
@@ -181,4 +184,7 @@ var foo = function() {}
 
 
 
+<<<<<<< HEAD
 >>>>>>> 150ae089dc796e1fd85d51541da637eb19e228a4
+=======
+>>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4

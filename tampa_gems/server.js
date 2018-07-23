@@ -1,5 +1,6 @@
 var express = require('express');
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 var app = express(); // returns an express application to build a server with.
 
@@ -69,6 +70,8 @@ app.use("/person/:id",function(req,resp,next){
         resp.json({
             "response":"your id is really high",
 =======
+=======
+>>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4
 var app = express(); // returns an express application to build a server with
 var jsonParser = require('body-parser').json; // this dependency will 
                                 // parse request body data that is in the form of json
@@ -129,11 +132,15 @@ app.use("/person/:id", function(req, resp, next){
     if(req.params.id > 50) {
         resp.json({
             "response": "Your ID is really high",
+<<<<<<< HEAD
 >>>>>>> 150ae089dc796e1fd85d51541da637eb19e228a4
+=======
+>>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4
             "ID": req.params.id
         });
     }else{
         resp.json({
+<<<<<<< HEAD
 <<<<<<< HEAD
             "response":"your id is really low",
             "ID": req.params.id,
@@ -162,6 +169,8 @@ app.use("/personz",personz); //req.body undefine
 app.use("/personz",jsonParser()); //use the new request body tool
 app.use("/personz",personz); //req.body with data
 =======
+=======
+>>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4
             "response": "Your ID is really low",
             "ID": req.params.id,
             "movie": ["batman", "superman", "avengers", "Spiderman"]
@@ -187,5 +196,8 @@ var personz = function(req,resp, next){
 app.use("/personz", personz); // req.body undefine
 app.use("/personz", jsonParser()); // use the new request body tool
 app.use("/personz", personz);
+<<<<<<< HEAD
 >>>>>>> 150ae089dc796e1fd85d51541da637eb19e228a4
+=======
+>>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4
 
