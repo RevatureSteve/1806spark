@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Maw</title>
+  <!--<link rel="stylesheet" href="/css/MAWstyle.css">-->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <style>
+  .fakeimg {
+      height: 200px;
+      background: purple;
+  }
+  </style>
+</head>
+<body>
+
+<div class="text-center" style="margin-bottom:-10px">
+  <h1>𝓝𝓤𝓡É </h1>
+  <p></p> 
+</div>
+
+<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"></li>
+        <li><a href="../home">HOME</a></li>
+        <li><a href="/pages/Music.html">MUSIC</a></li>
+        <li><a href="/pages/Clothes.html">CLOTHES</a></li>
+        <li><a href="/pages/Food.html">FOOD</a></li>
+        <li><a href="/pages/Feedback.html">FEEDBACK</a></li>
+        <li><a href="/pages/login.html">Login</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+</div>
+<div id="feedback">
+    <h1> Give us a feedback!</h1>
+    <div id="feedbackForm"> <!-- don't use a form tag since we are using javascript's fetch async request -->
+         Here: <input id="feedbackInput" type="text" height="50%" size="50%" name="feedback" onfocus="this.value=''" placeholder="Please leave us a feedback..."> <br><br>
+        <button id="feedbackBtn">Submit Feedback</button>
+    </div>
+  <div id="newFeedbackStatus">
+
+    </div>
+    
+</div>
+<script src="/js/feedback.js"></script>
+<!--<form action="/action_page.php" id="usrform">
+  Name: <input type="text" name="usrname">
+  <input type="submit">
+</form>
+<br>
+<textarea rows="10" cols="70" name="comment" onfocus="this.value=''" value="Please leave us a feedback..." form="usrform">
+Please leave us a feedback...</textarea>-->
+</body>
+</html>
+

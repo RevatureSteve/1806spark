@@ -1,0 +1,17 @@
+{
+  "name": "demo-questions",
+  "version": "1.0.0",
+  "description": "class demo on mongoose",
+  "main": "index.js",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Obosa NI",
+  "license": "ISC"
+}
