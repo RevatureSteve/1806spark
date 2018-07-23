@@ -1,0 +1,17 @@
+{
+  "name": "class-question-project",
+  "version": "1.0.0",
+  "description": "question class example node project w/ express and mongoose (to connect to mongoDB)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Steve K",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.3"
+  }
+}
