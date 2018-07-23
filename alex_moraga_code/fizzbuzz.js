@@ -1,8 +1,8 @@
-document.addEventListener("input", fizzbuzz);
+document.addEventListener("click", fizzbuzz);
 
 function fizzbuzz() {
 
-    var N = document.getElementById("water").value;
+    var N = document.getElementById("box_one").value;
     //document.getElementsByTagName("li")[0].innerHTML = list;
     var list = document.getElementById("unordered");
 
