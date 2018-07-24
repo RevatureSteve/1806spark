@@ -1,6 +1,6 @@
 package com.ex.classes;
 
-public class Dog {
+public class Dog extends Pet {
 	
 	private String name;
 	private int age;

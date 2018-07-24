@@ -11,9 +11,22 @@ public class Launcher {
 		
 		Dog skippy = new Dog("skippy", 5, true, "husky");
 		System.out.println(skippy.getName());
+		
+		Bird tucan = new Bird("tucan", 6, true);
+		System.out.println(tucan.getName());
+		
+		Fish carl = new Fish("carl", 3, true, 1);
+		System.out.println(carl.getName());
+		
+//		Pet[] pets = new Pet[5];
+//		pet[0] = sparky;
+//		pet[1] = nemo;
+//		pet[2] = skippy;
+//		pet[3] = tucan;
+//		pet[4] = carl;
+//		
+//		for()
 	}
 	
-	public static void name() {
-
-	}
+		
 }
