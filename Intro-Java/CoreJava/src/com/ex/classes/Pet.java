@@ -1,6 +1,6 @@
 package com.ex.classes;
 
-public class Pet {
+public abstract class Pet {
 	private String name;
 	private int age;
 	private boolean isAlive;
@@ -41,4 +41,9 @@ public class Pet {
 		this.isAlive = isAlive;
 	}
 
+	/**
+	 * Lets the pet speak in its own way
+	 */
+	public abstract void speak();
+	
 }

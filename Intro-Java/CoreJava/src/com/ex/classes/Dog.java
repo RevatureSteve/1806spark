@@ -21,4 +21,9 @@ public class Dog extends Pet {
 		this.breed = breed;
 	}
 
+	@Override
+	public void speak() {
+		System.out.println(this.getName() + " barks");
+	}
+
 }

@@ -21,4 +21,9 @@ public class Fish extends Pet {
 		this.numberFins = numberFins;
 	}
 
+	@Override
+	public void speak() {
+		System.out.println(this.getName() + " bubbles");
+	}
+
 }
