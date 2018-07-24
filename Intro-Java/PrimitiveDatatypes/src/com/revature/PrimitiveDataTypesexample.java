@@ -2,7 +2,7 @@ package com.revature;
 
 import com.revature.animals.Animal; // reference other java files like the require() in JavaScript
 
-public class PrimitiveDatatypesExample {
+public class PrimitiveDataTypesexample {
 
 	// entry point of the application
 	public static void main(String[] args) {
