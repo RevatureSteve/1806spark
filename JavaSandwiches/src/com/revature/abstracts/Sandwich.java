@@ -1,5 +1,7 @@
 package com.revature.abstracts;
 
+import com.revature.exception.NoNegativeArgumentException;
+
 /**
 *sandwich class is going to a template for creating subclasses for specific sandwiches
 *we are going to make this class abstract
@@ -22,7 +24,7 @@ public abstract class Sandwich {
 	private String[] meats;
 	private String[] toppings;
 	private String name;
-	protected int size; //proctected available to: the class, the package, the subclass
+	protected int size; //protected available to: the class, the package, the subclass
 	/*private boolean isToasted;*/
 	
 	//NO-ARGs constructor by convention: future frameworks will require
@@ -66,14 +68,16 @@ public abstract class Sandwich {
 	 *	getting the property in slicesOfBread 
 	 *		do not pass a negative number as an arg, if you do I will set it to 0 
 	 * @param slicesOfBread
+	 * @throws NoNegativeArgumentException 
 	 */
-	public void setSlicesOfBread(int slicesOfBread) {
-		if(slicesOfBread < 0) {
+	public void setSlicesOfBread(int slicesOfBread) throws NoNegativeArgumentException  {//ducking
+//		if(slicesOfBread < 0) {
 			System.out.println("not enough bread, setting it to 0");
 			this.slicesOFBread = 0;
-		} else {			
-			this.slicesOFBread = slicesOfBread; 
-		}
+			throw new NoNegativeArgumentException();
+//		} else {			
+//			this.slicesOFBread = slicesOfBread; 
+//		}
 	}
 		
 	
