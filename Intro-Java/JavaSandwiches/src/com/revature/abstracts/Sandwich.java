@@ -1,5 +1,7 @@
 package com.revature.abstracts;
 
+import com.revature.exceptions.NoNegativeArgumentException;
+
 /*
  * 	abstract keyword can be used in 2 locations:
  * 			-classes
@@ -69,11 +71,13 @@ public abstract class Sandwich {
 	 *  Setting the property int slicesOfBread
 	 *  	do not pass a negative number as an agrument if you do I will set it to 0
 	 * @param slicesOfBread
+	 * @throws NoNegativeArgumentException 
 	 */
-	public void setSlicesOfBread(int slicesOfBread) {
+	public void setSlicesOfBread(int slicesOfBread) throws NoNegativeArgumentException {
 		if(slicesOfBread < 0) {
-			System.out.println("cannot have a negative value for slicesOfBread, setting it to 0");
 			this.slicesOfBread = 0;
+			throw new NoNegativeArgumentException();
+			
 		}else {
 			this.slicesOfBread = slicesOfBread;
 		}
