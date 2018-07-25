@@ -14,6 +14,7 @@ public class AssignmentOp {
 		
 		int y = 5;
 		y += 2; //translates into y = y + 2
+		y += 10;
 		System.out.println("y += 2:\t\t" + y);
 		
 		
