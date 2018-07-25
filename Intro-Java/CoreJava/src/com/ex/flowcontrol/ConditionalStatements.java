@@ -62,7 +62,7 @@ public class ConditionalStatements {
 		switch (x) {
 		case 8:
 			System.out.println("x == 8");
-			break;
+			break; // exit switch (or exit loop). 'continue' will end iteration and continue to next
 		case 9:
 			System.out.println("x == 9");
 			break;

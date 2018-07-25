@@ -12,7 +12,10 @@ public class DefineArrays {
 		 * 1D arrays
 		 */
 		int[] intArr1D_1 = new int[5];
-		int intArr1D_2[] = new int[5];
+		
+		intArr1D_1[0]= 10; //how to set properties. have to do int here because it is int
+		
+		int intArr1D_2[] = new int[5];    //same as line 14
 		int[] intArr1D_3 = {4,3,2,1};	//Instantiate and Populate array in one line
 		
 		/*

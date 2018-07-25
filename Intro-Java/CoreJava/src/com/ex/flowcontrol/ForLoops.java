@@ -13,10 +13,10 @@ public class ForLoops {
 			System.out.println(i);
 		}
 
-		//Infinite loop
-		for (;;) {
-			System.out.println("forever");
-		}
+//		//Infinite loop
+//		for (;;) {
+//			System.out.println("forever");
+//		}
 
 	}
 }

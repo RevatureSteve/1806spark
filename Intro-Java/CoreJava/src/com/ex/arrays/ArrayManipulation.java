@@ -16,7 +16,7 @@ public class ArrayManipulation {
 		intArr[3] = 25;
 		intArr[4] = 9;
 //		intArr[-1] = 3; //ArrayIndexOutOfBoundsException
-//		intArr[5] = 3; //ArrayIndexOutOfBoundsException
+//		intArr[5] = 3; //ArrayIndexOutOfBoundsException               exception is recoverable disruption. 
 		
 		/*
 		 * Let's print out the array
@@ -39,8 +39,8 @@ public class ArrayManipulation {
 		 * equals   (overridden from Object class)
 		 * 
 		 */
-		System.out.println(Arrays.toString(intArr));
-		Arrays.sort(intArr);
+		System.out.println(Arrays.toString(intArr));  //toString is a static member because Arrays is capital ***** referencing a Capital class with a . then referencing a static member
+		Arrays.sort(intArr);  
 		System.out.println(Arrays.toString(intArr));
 		
 		System.out.println(Arrays.binarySearch(intArr, 25)); //returns index of element
