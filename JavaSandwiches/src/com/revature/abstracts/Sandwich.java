@@ -72,8 +72,8 @@ public abstract class Sandwich {
 	 */
 	public void setSlicesOfBread(int slicesOfBread) /*throws NoNegativeArgumentException*/  {// <-- this exception is called "ducking"
 //		if(slicesOfBread < 0) {
-			System.out.println("not enough bread, setting it to 0");
-			this.slicesOFBread = 0;
+//			System.out.println("not enough bread, setting it to 0");
+//			this.slicesOFBread = 0;
 			throw new NoNegativeArgumentException();
 //		} else {			
 //			this.slicesOFBread = slicesOfBread; 

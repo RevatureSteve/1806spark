@@ -8,6 +8,7 @@ package com.revature.exception;
  * 		exception - checked, the dev must handle w/ a try/catch for the time the code doesn't work
  * 		runtimeException -unchecked, the dev needs to code around the issue and NOT use try/catch
  */
+@SuppressWarnings("serial")
 public class NoNegativeArgumentException extends RuntimeException {// the compilation error occurs b/c I got rid of Runtime
 
 	public NoNegativeArgumentException() {
