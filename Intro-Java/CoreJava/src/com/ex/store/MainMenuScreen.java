@@ -18,7 +18,7 @@ public class MainMenuScreen implements Screen {
 		
 		switch (input) {
 		case "1":
-			return new InteractWithPets();
+			return new InteractWithPetsScreen();
 		case "2":
 			return new ViewAvailablePetsScreen();
 		case "3":
