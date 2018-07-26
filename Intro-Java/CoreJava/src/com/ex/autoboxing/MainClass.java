@@ -19,7 +19,11 @@ public class MainClass {
 		 */
 		int 	num1 = 5;
 		Integer num2 = new Integer(num1);
+<<<<<<< HEAD
 		
+=======
+
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		
 		
 		/*

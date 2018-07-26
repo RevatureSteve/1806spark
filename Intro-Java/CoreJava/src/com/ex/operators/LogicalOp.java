@@ -32,12 +32,17 @@ public class LogicalOp {
 		System.out.println();
 
 		System.out.println("|| LOGICAL OR (short circuit)");
+<<<<<<< HEAD
 		System.out.println("true  || true:  " + (true || true));
+=======
+		System.out.println("true  || true:  " + (returnTrue() || returnFalse()));
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		System.out.println("true  || false: " + (true || false));
 		System.out.println("false || true:  " + (false || true));
 		System.out.println("false || false: " + (false || false));
 		System.out.println();
 
+<<<<<<< HEAD
 		System.out.println("! LOGICAL NOT");
 		System.out.println("!true:  " + (!true));
 		System.out.println("!false: " + (!false));
@@ -68,6 +73,38 @@ public class LogicalOp {
 	}
 
 
+=======
+//		System.out.println("! LOGICAL NOT");
+//		System.out.println("!true:  " + (!true));
+//		System.out.println("!false: " + (!false));
+//		System.out.println();
+
+		// BITWISE
+//		System.out.println("& BITWISE AND");
+//		System.out.println("true  & true:  " + (true & true));
+//		System.out.println("true  & false: " + (true & false));
+//		System.out.println("false & true:  " + (false & true));
+//		System.out.println("false & false: " + (false & false));
+//		System.out.println();
+//
+//		System.out.println("| BITWISE OR");
+//		System.out.println("true  | true:  " + (true | true));
+//		System.out.println("true  | false: " + (true | false));
+//		System.out.println("false | true:  " + (false | true));
+//		System.out.println("false | false: " + (false | false));
+//		System.out.println();
+//
+//		System.out.println("^ BITWISE XOR");
+//		System.out.println("true  ^ true:  " + (true ^ true));
+//		System.out.println("true  ^ false: " + (true ^ false));
+//		System.out.println("false ^ true:  " + (false ^ true));
+//		System.out.println("false ^ false: " + (false ^ false));
+//		System.out.println();
+
+	}
+	
+	
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 	public static boolean returnTrue() {
 		System.out.println("returnTrue called");
 		return true;

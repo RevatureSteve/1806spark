@@ -5,6 +5,7 @@ public class HelloWorld {
 	int x;
 	int y;
 <<<<<<< HEAD
+<<<<<<< HEAD
 	String z;
 
 	// Start execution here!
@@ -19,6 +20,8 @@ public class HelloWorld {
 		HelloWorld hw;
 		hw = new HelloWorld();
 =======
+=======
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 //	String z; 
 	
 	
@@ -33,7 +36,10 @@ public class HelloWorld {
 						// create an object of type HelloWorld;
 		HelloWorld hw;
 		 hw = new HelloWorld();
+<<<<<<< HEAD
 >>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4
+=======
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		hw.foo();
 		hw.x = 5;
 		hw.y = 10;
@@ -43,6 +49,7 @@ public class HelloWorld {
 		hw1.y = 1000;
 		
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 		System.out.println(hw.x + " " + hw.y);
 		System.out.println(hw1.x + " " + hw1.y);
@@ -51,6 +58,8 @@ public class HelloWorld {
 	
 	public static void foo() {
 =======
+=======
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		System.out.println(hw.x + " " + hw.y);
 		System.out.println(hw1.x + " " + hw1.y);
 		
@@ -58,7 +67,10 @@ public class HelloWorld {
 	
 	
 	public void foo() {
+<<<<<<< HEAD
 >>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4
+=======
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		System.out.println("foo");
 	}
 }

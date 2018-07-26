@@ -22,6 +22,9 @@ public class Launcher {
 			p.speak();
 		}
 	}
+<<<<<<< HEAD
 	
 	
+=======
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 }

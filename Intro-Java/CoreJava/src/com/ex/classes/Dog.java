@@ -25,6 +25,11 @@ public class Dog extends Pet {
 	public void speak() {
 		System.out.println(this.getName() + " barks");
 	}
+<<<<<<< HEAD
 	
 	
 }
+=======
+
+}
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e

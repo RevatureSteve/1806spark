@@ -1,10 +1,14 @@
 package com.revature;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import com.revature.animals.Animal; // reference other Java files like the require() in JS
 =======
 import com.revature.animals.Animal; // reference other java files like the require() in JavaScript
 >>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4
+=======
+import com.revature.animals.Animal; // reference other java files like the require() in JavaScript
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 
 public class PrimitiveDatatypesExample {
 
@@ -13,6 +17,7 @@ public class PrimitiveDatatypesExample {
 //		primitives();
 		
 <<<<<<< HEAD
+<<<<<<< HEAD
 		// 2 classes found in the same package (folder) they can automatically be referenced without any issue
 		Person p;
 		Person tom = new Person("Tom", 45, 10.5, true, 'm'); // instantiated/created a Person object
@@ -20,17 +25,23 @@ public class PrimitiveDatatypesExample {
 		Person bobbert = new Person("Bobbert", 55, 11); // another instantiated object of Person
 		bobbert.name = "Bobbert";
 =======
+=======
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		// 2 classes found in the same package (folder) they can automatically be referenced without issue!
 		Person p;
 		Person tom = new Person("Tom", 45, 10.5, true,'m'); // instantiated/created a Person object
 		tom.name = "tom";
 		Person bobbert = new Person("Bobbert",55,11); // another instantiated object of Person
 		bobbert.name = "bobbert";
+<<<<<<< HEAD
 >>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4
+=======
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		
 		System.out.println(tom.toString());
 		System.out.println(bobbert);
 		
+<<<<<<< HEAD
 <<<<<<< HEAD
 		// Animal class is not found in com.revature but in com.revature.animals. Must use the import keyword
 		Animal a;
@@ -63,6 +74,8 @@ public class PrimitiveDatatypesExample {
 		double d2 = 40.45;
 	}
 =======
+=======
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		//Animal class is not found in com.revature but in com.revature.animals must use the import keyword!
 		Animal a;
 		
@@ -96,5 +109,8 @@ public class PrimitiveDatatypesExample {
 		
 	}
 	
+<<<<<<< HEAD
 >>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4
+=======
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 }

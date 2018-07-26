@@ -16,7 +16,11 @@ public class DefineArrays {
 		intArr1D_1[1] = 50;
 		intArr1D_1[2] = 100;
 		
+<<<<<<< HEAD
 		int intArr1D_2[] = new int[5];
+=======
+		int intArr1D_2[] = new int[5];	// same as line 14
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		int[] intArr1D_3 = {4,3,2,1};	//Instantiate and Populate array in one line
 		
 		/*
@@ -25,7 +29,12 @@ public class DefineArrays {
 		int[][] intArr2D_1 = new int[5][2];
 		int intArr2D_2[][] = new int[5][2];
 		int[] intArr2D_3[] = new int[5][2];
+<<<<<<< HEAD
 		int[][] intArr2D_4 = {{1},{2,3},{4,5,6},{7,8,9,0}};	//Instantiate and Populate array in one line
+=======
+		int[][] intArr2D_4 = { {1},{2,3},{4,5,6},{7,8,9,0} };	//Instantiate and Populate array in one line
+		
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		
 		
 		/*
