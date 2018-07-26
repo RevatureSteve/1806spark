@@ -133,11 +133,6 @@ for (var i = 0; i < employees.length; i++) {
 
 function show_hide(){
     var element = event.target;
-    // if (element.style.visibility === "hidden"){
-    //     element.style.visibility = "visible";
-    // } else {
-    //     element.style.visibility = "hidden";
-    // }
     if (element.style.opacity == 0){
         element.style.opacity = 1;
     } else {

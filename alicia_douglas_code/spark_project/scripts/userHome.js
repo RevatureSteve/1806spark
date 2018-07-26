@@ -1,6 +1,8 @@
 
 let url = 'http://localhost:3001/userHome';
-let commentUrl = 'http://localhost:3001/comments'
+let commentUrl = 'http://localhost:3001/comments';
+let userUrl = 'http://localhost:3001/user';
+let favUrl = 'http://localhost:3001/favorite';
 
 
 
@@ -13,13 +15,13 @@ window.onload = function () {
     let uploadView = document.getElementById("uploadView");
     let favView = document.getElementById("favView");
     let pics = document.getElementsByClassName('pics');
+    let favBtn = this.document.getElementsByClassName('addFav');
     // Event Listeners
     home.addEventListener("click", homeFN);
     upload.addEventListener("click", uploadFN);
     favs.addEventListener("click", favsFN);
     document.getElementById("src").addEventListener("input", insertPic);
     document.getElementById("uploadBtn").addEventListener("click", postPic);
-    // document.getElementById('uploadForm').addEventListener('submit', postPic);
     for (let i = 0; i < pics.length; i++) {
         pics[i].addEventListener('click', modal);
     };
@@ -31,6 +33,9 @@ window.onload = function () {
         }
     });
     document.getElementById('commentBtn').addEventListener('click', postComment);
+    for (let i = 0; i < favBtn.length; i++){
+        favBtn[i].addEventListener('click', addFav);
+    }
 }
 
 
@@ -104,7 +109,7 @@ function postPic() {
     let src = document.getElementById('src').value;
     let location = document.getElementById('newPicLocation').value;
     let description = document.getElementById("newPicDesc").value;
-
+    let userName = 'adouglas';
     if (src == "") {
         return alert('Please fill out the image source location field.');
     };
@@ -114,7 +119,7 @@ function postPic() {
 
     // Post Data
     let data = {
-        // "userName": String,
+        "userName": userName,
         "url": src,
         "location": location,
         "descritpion": description
@@ -139,7 +144,9 @@ function postPic() {
     document.getElementsByClassName('pics')[index].src = src;
     document.getElementsByClassName('location')[index].value = location;
     document.getElementsByClassName('description')[index].value = description;
-
+    document.getElementById('src').value = "";
+    document.getElementById('newPicLocation').value = "";
+    document.getElementById("newPicDesc").value = "";
 }
 
 // Add comment to database
@@ -161,7 +168,6 @@ function postComment() {
             'comment': comment
         }
     }
-
     fetch(commentUrl, {
         method: 'POST',
         body: JSON.stringify(data),
@@ -172,13 +178,23 @@ function postComment() {
         console.log(q);
     })
 
-    // add comment to modal right away
+    // // add comment to modal right away
     let para = document.createElement('p');
     let node = document.createTextNode(user + ": " + comment);
     para.appendChild(node);
     commentArea.appendChild(para);
+    document.getElementById('commentText').value = "";
+    callPicturesAgain();
 }
 
+function callPicturesAgain(){
+    fetch(url).then((resp) => {
+        return resp.json();
+    }).then((data) => {
+        console.log(data);
+        picture = data;
+    })
+}
 
 var picture = null;
 callPictures();
@@ -194,18 +210,54 @@ function callPictures() {
 }
 
 
-// upload new picture
-function setPictures(q) {
+// Call all the users info
+var users = null;
+callUsers();
+
+function callUsers() {
+    fetch(userUrl).then((resp) => {
+        return resp.json();
+    }).then((data) => {
+        console.log(data);
+        users = data;
+    })
+}
+
+// Setting pictures to the page
+function setPictures(p) {
     console.log('setting pictures to page');
-    console.log(q);
-    for (let i = 0; i < q.length; i++) {
+    for (let i = 0; i < p.length; i++) {
         let div = document.getElementsByClassName("posts");
         let clone = div[0].cloneNode(true);
         document.getElementById('picView').appendChild(clone);
         let index = div.length - 1;
-        // document.getElementsByClassName('userName')[index].innerHTML = q[i].userName;
-        document.getElementsByClassName('pics')[index].src = q[i].url;
-        document.getElementsByClassName('location')[index].value = q[i].location;
-        document.getElementsByClassName('description')[index].value = q[i].descritpion;
+        document.getElementsByClassName('userName')[index].innerHTML = p[i].userName;
+        document.getElementsByClassName('pics')[index].src = p[i].url;
+        document.getElementsByClassName('location')[index].value = p[i].location;
+        document.getElementsByClassName('description')[index].value = p[i].descritpion;
     }
+}
+
+function addFav(){
+    let userId = users[0]._id;
+    let favId = null;
+    let favpic = event.target.parentElement.children[1].src;
+    for (let i = 0; i < picture.length; i++) {
+        if (favpic == picture[i].url) {
+            favId = picture[i]._id;
+        }
+    }
+    let data = {
+        'id': userId,
+        'favorites': favId
+    }
+    fetch(favUrl, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+            'Content-Type': 'application/json'
+        }
+    }).then(data => data.json()).then(q => {
+        console.log(q);
+    })
 }

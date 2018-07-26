@@ -12,12 +12,13 @@ var PictureSchema = new Schema({
 });
 
 
-
-var CommentSchema = new Schema({
-    url: String,
+var UserSchema = new Schema({
+    name: String,
+    emailAddress: String,
+    dob: Date,
     userName: String,
-    createdAt: {type: Date, default: Date.now},
-    comment: String
+    password: String,
+    favorites: Array
 })
 
 
@@ -26,6 +27,6 @@ var Picture = mongoose.model('Picture', PictureSchema);
 module.exports.Picture = Picture;
 
 
-var Comment = mongoose.model('Comment', CommentSchema);
-module.exports.Comment = Comment;
+var User = mongoose.model('User', UserSchema);
+module.exports.User = User;
 

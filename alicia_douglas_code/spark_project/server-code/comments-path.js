@@ -8,7 +8,6 @@ commentsPath.post('/', function(req,resp,next){
     let id = req.body.id;
     let o_id = new ObjectId(id);
     let newComment = req.body.comment;
-    let newAuthor = req.body.commentUser;
 
     Picture.findByIdAndUpdate(o_id,{
         $push: {'comments': newComment}

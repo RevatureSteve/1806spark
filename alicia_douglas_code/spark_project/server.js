@@ -3,13 +3,15 @@ var app = express();
 var portNumber = 3001;
 var homeRoutes = require('./server-code/userHome-path');
 var commentRoutes = require('./server-code/comments-path');
+var userPath = require('./server-code/user-path');
+var favoritePath = require("./server-code/favorite-path");
 var jsonParser = require("body-parser").json;
 app.use(jsonParser());
 
 
 // Connect to the database
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost:27017/test');
+mongoose.connect('mongodb://localhost:27017/imageDB');
 var db = mongoose.connection;
 db.on('error',function(err){
     console.error('connection error: ' + err);
@@ -31,6 +33,8 @@ app.use("/home", function(req, resp, next){
 
 app.use('/userHome', homeRoutes);
 app.use('/comments', commentRoutes);
+app.use('/user', userPath);
+app.use("/favorite", favoritePath);
 
 
 app.listen(portNumber, function(){

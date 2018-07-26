@@ -159,9 +159,9 @@ h3 {
 }
 
 #popupImg{
-    width: 90%;
+    width: 100%;
     height: auto;
-    padding: 0% 5% 0% 5%;
+
 }
 
 
@@ -188,7 +188,7 @@ h3 {
 .modal-content {
     background-color: #fefefe;
     margin: auto;
-    padding: 20px;
+    padding: 40px;
     border: 1px solid #888;
     max-width: 900px;
 }
@@ -206,4 +206,23 @@ h3 {
     color: #000;
     text-decoration: none;
     cursor: pointer;
+}
+
+
+.commmentIcon{
+    width: 40px;
+    position: absolute;
+    margin-top: 10px;
+    /* margin-right: 100px; */
+    margin-left: 710px;
+    z-index: 1;
+    /* background-color: white; */
+}
+
+
+.addFav{
+    width: 40px;
+    position: absolute;
+    margin-left: 720px;
+    margin-top: 15px;
 }
