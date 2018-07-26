@@ -1,116 +1,89 @@
 package com.revature.abstracts;
 
+import com.revature.exceptions.NoNegativeArgumentException;
+
+/*
+ * 	abstract keyword can be used in 2 locations:
+ * 			-classes
+ * 			-methods
+ * 	no such thing as an abstract variable
+ */
 /**
  * Sandwich class is going to be a template for creating subclasses for specific
- * sandwiches
- * 
- * We are going to make this class abstract
+ * sandwiches We are going to make this class abstract
  * 
  * subclass examples: -club -dagwood -cuban
- * 
- * @author chin2
- *
  */
 public abstract class Sandwich {
-	/*
-	 * abstract keyword can be used in 2 locations: -classes -methods no such thing
-	 * as an abstract variable
-	 */
-	private String name;
-	private int slicesOfBread; // Not going to make protected because I handle the validation here for all of them
+
+	// State aka variables
+	private int slicesOfBread; // not going to make protected because I handle the validation here for all of them
 	private String[] meats;
 	private String[] toppings;
-	protected int size; //protected - package and sub-classes can access it
-//	private boolean isToasted;
+	private String name;
+	protected int size; // protected variable available to: the class, the package, the subclass
 
-	// No-Args constructor
+//		private boolean isToasted;
+
+	// NO-ARGS Constructor by convention: future frameworks will require
 	public Sandwich() {
-		super();
 	}
-
-	public Sandwich(String name, int slicesOfBread, String[] meats, String[] toppings, int size) {
+	public Sandwich(int slicesOfBread, String[] meats, String[] toppings, String name, int size) {
 		super();
-		this.name = name;
 		this.slicesOfBread = slicesOfBread;
 		this.meats = meats;
 		this.toppings = toppings;
+		this.name = name;
 		this.size = size;
 	}
-	
-	
+
 	// Behavior
 	
-	public String getName() {
-		return name;
-	}
-
-	public void setName(String name) {
-		this.name = name;
-	}
-
-	public int getSlicesOfBread() {
-		return slicesOfBread;
-	}
-
-	/**
-	 * Setting the property int slicesOfBread
-	 * 		do not pass a negative number as an argument (will be set to 0)
-	 * @param slicesOfBread number of bread slices
-	 */
-	public void setSlicesOfBread(int slicesOfBread) {
-		if(slicesOfBread < 0) {
-			System.out.println("cannot have a negative value for slicesOfBread, setting it to 0");
-			this.slicesOfBread = 0;
-		}
-		else {
-			this.slicesOfBread = slicesOfBread;
-		}
-	}
-
-	public String[] getMeats() {
-		return meats;
-	}
-
-	public void setMeats(String[] meats) {
-		this.meats = meats;
-	}
-
-	public String[] getToppings() {
-		return toppings;
-	}
-
-	public void setToppings(String[] toppings) {
-		this.toppings = toppings;
-	}
-
-	public int getSize() {
-		return size;
-	}
-
-	public void setSize(int size) {
-		this.size = size;
-	}
-
-	public abstract void prepTime();
+	public abstract void prepping();
 	
+
 	/**
-	 * takeBit() decrements the sandwich size by 1
+	 * takeBite() decrements the sandwich by 1
 	 * 
 	 * @return remaining size of sandwich
 	 */
-	public int takeBit() {
+	public int takeBite() {
+		// this. is not required because there is no other size variable in the
+		// parameter or in the method
 		this.size--;
-		return size < 0 ? 0: this.size;
+		return this.size;
+	}
+
+	public int takeBite(int biteSize) {
+		this.size -= biteSize; // same as: this.size = this.size - biteSize;
+		return this.size;
+	}
+
+	
+	/*
+	 * 	creating a getter and setter for the private variable slicesOfBread
+	 */
+	public int getSlicesOfBread() {
+		return slicesOfBread;
 	}
 	
 	/**
-	 * decrements the sandwich by biteSize
-	 * @param biteSize size of bite
-	 * @return remaining size of sandwich
+	 *  Setting the property int slicesOfBread
+	 *  	do not pass a negative number as an agrument if you do I will set it to 0
+	 * @param slicesOfBread
+	 * @throws NoNegativeArgumentException 
 	 */
-	public int takeBit(int biteSize) {
-		this.size -= biteSize;
-		return size < 0 ? 0: this.size;
+	public void setSlicesOfBread(int slicesOfBread) throws NoNegativeArgumentException {
+		if(slicesOfBread < 0) {
+			this.slicesOfBread = 0;
+			throw new NoNegativeArgumentException();
+			
+		}else {
+			this.slicesOfBread = slicesOfBread;
+		}
 	}
+	
+	
+	
 
 }
