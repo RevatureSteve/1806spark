@@ -4,6 +4,10 @@ public class MainClass {
 	public static void main(String[] args) {
 		
 		/*
+		 * 	Every primitive datatype has a corresponding object called wrapper classes
+		 */
+		
+		/*
 		 * Boxing
 		 */
 		int 	num1 = 5;
