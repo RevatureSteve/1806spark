@@ -1,4 +1,7 @@
+
 package com.revature.abstracts;
+
+import com.revature.exceptions.NoNegativeArgumentException;
 
 /*
  * abstract keyword can be used in 2 locations:
@@ -76,7 +79,7 @@ public abstract class Sandwich {           //this abstract allows you to have ab
 	 * 		
 	 * @param slicesOfBread
 	 */
-	public void setSlicesOfBread(int slicesOfBread) {   //slicesOfBread in parenthesis has to shadow 
+	public void setSlicesOfBread(int slicesOfBread) throws NoNegativeArgumentException {   //slicesOfBread in parenthesis has to shadow 
 		if(slicesOfBread < 0) {
 			this.slicesOfBread = 0;
 			throw new NoNegativeArgumentException();
@@ -86,3 +89,5 @@ public abstract class Sandwich {           //this abstract allows you to have ab
 	}	
 	
 }
+
+

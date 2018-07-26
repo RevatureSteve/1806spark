@@ -15,10 +15,15 @@ public class Driver {
 		
 //		Sandwich s = new Sandwich();    cannot instantiate a Sandwich since it is abstract 
 		
+		
+		
 		Club c = new Club();
-		c.setSlicesOfBread(-100);
+		int userInput = -100;
 		if(userInput >= 0) {
-			c.getSlicesOfBread(userInput);}
+			c.setSlicesOfBread(userInput);
+		}
+		
+		System.out.println(c.getSlicesOfBread());
 	}
 
 }

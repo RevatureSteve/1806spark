@@ -1,7 +1,9 @@
 package com.revature.pojo;
 
-public class Shirt {
-	public int sleeveLength;
+import com.revature.abstracts.Clothes;
+
+public class Shirt extends Clothes {
+	private int sleeveLength;
 	private String occassion;
 	public boolean hasButtons;
 	
@@ -27,14 +29,34 @@ public class Shirt {
 	}
 
 
+	public int getSleeveLength() {
+		return sleeveLength;
+	}
 
 
-	public Shirt(int sleeveLength, String occassion) {
-		super();
+	public void setSleeveLength(int sleeveLength) {
 		this.sleeveLength = sleeveLength;
+	}
+
+
+	public String getOccassion() {
+		return occassion;
+	}
+
+
+	public void setOccassion(String occassion) {
 		this.occassion = occassion;
 	}
-	
+
+
+	@Override
+	public String toString() {
+		return "Shirt [sleeveLength=" + sleeveLength + ", occassion=" + occassion + ", hasButtons=" + hasButtons + "]";
+	}
+
+
+
+
 	
 	
 	

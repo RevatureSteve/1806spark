@@ -11,11 +11,19 @@ package com.revature.exceptions;
  */
 public class NoNegativeArgumentException extends RuntimeException {
 
-	
-	public NoNegativeArgumentException() {
-	}
 	public NoNegativeArgumentException(String message) {
 		super(message);
+		
 	}
 
+	
+	public NoNegativeArgumentException() {
+		super();
+		
+	}
+	
+	
+	
+	
+	
 }
