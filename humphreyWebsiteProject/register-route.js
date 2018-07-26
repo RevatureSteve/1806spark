@@ -4,8 +4,8 @@ var Person = require("./modelRegister").Person;
 
 
 
-// GET /Registration Information
-// Route for registration Collection
+// GET /questions
+// Route for questions collection
 registerRoutes.get("/", function(req, res, next){
 	console.log(req.url);
 	Person.find({})
@@ -16,8 +16,8 @@ registerRoutes.get("/", function(req, res, next){
 				});
 });
 
-// POST /New Registration
-// Route for creating new registration
+// POST /questions
+// Route for creating questions
 registerRoutes.post("/", function(req, res, next){
 	console.log('Creating new Person');
 	console.log(req.body);
@@ -31,6 +31,29 @@ registerRoutes.post("/", function(req, res, next){
 		
 	});
 });
+
+/* // GET /questions/:id
+// Route for specific questions
+addMovieRoutes.get("/:qID", function(req, res, next){
+	res.json(req.newMovie);
+}); */
+
+
+
+
+/* // DELETE /questions/:qID/answers/:aID
+// Delete a specific answer
+addMovieRoutes.delete("/:qID/answers/:aID", function(req, res){
+	req.answer.remove(function(err){
+		req.createdMovie.save(function(err, movieDB){
+			if(err) return next(err);
+			res.json(movieDB);
+		
+		});
+	});
+}); */
+
+
 
 module.exports = registerRoutes;
 
