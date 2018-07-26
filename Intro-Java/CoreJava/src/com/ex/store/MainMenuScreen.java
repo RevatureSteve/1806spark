@@ -3,7 +3,11 @@ package com.ex.store;
 import java.util.Scanner;
 
 public class MainMenuScreen implements Screen {
+<<<<<<< HEAD
 	// Scanner is used to take in a user input
+=======
+	// Scanner is used to take in user input
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 	private Scanner scan = new Scanner(System.in);
 
 	@Override
@@ -19,6 +23,7 @@ public class MainMenuScreen implements Screen {
 			return new InteractWithPetsScreen();
 		case "2":
 			return new ViewAvailablePetsScreen();
+<<<<<<< HEAD
 		case "3":
 			System.out.println("feature not yet implemented");
 			break;
@@ -27,6 +32,15 @@ public class MainMenuScreen implements Screen {
 		}
 
 		return this; // reruns MainMenuScreen
+=======
+
+		case "3":
+			System.out.println("feature not yet implemented");
+			break;
+		}
+
+		return this;
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 	}
 
 }

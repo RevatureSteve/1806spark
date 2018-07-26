@@ -4,6 +4,7 @@ public class MainClass {
 	public static void main(String[] args) {
 		
 		/*
+<<<<<<< HEAD
 		 * Every primitive datatype has a corresponding object called Wrapper Classes
 		 * 		int -> Integer
 		 * 		char -> Character
@@ -11,11 +12,25 @@ public class MainClass {
 		 * 		etc.
 		 */
 		
+=======
+		 * 	Every primitive datatype has a corresponding object called Wrapper Classes
+		 * 		int -> Integer
+		 * 		char -> Character
+		 * 		boolean -> Boolean
+		 * 			etc.
+		 * 
+		 * 	This is to allow primitive datatypes to be used as Objects
+		 */
+		
+		
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 		/*
 		 * Boxing: primitive to Object (old way)
 		 */
 		int 	num1 = 5;
 		Integer num2 = new Integer(num1);
+
+		
 		
 		/*
 		 * Unboxing: Object to primitive
