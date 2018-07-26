@@ -1,0 +1,18 @@
+package com.ex.store;
+
+public class InteractWithPetScreen implements Screen {
+	private Scanner scan = new Scanner(System.in);
+	
+	@Override
+	public Screen start() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	
+	
+	
+	
+	
+	
+}

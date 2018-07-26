@@ -9,6 +9,7 @@ public class ArrayManipulation {
 		System.out.println(intArr[0]); //Arrays are base 0
 		System.out.println(intArr[4]); //This is the last index
 //		System.out.println(intArr[5]); //ArrayIndexOutOfBoundsException
+//		System.out.println("After the excepetion has been thrown");
 		
 		intArr[0] = 7;
 		intArr[1] = 9;
@@ -39,12 +40,12 @@ public class ArrayManipulation {
 		 * equals   (overridden from Object class)
 		 * 
 		 */
+		System.out.println(Arrays.toString(intArr)); // toString is a static member because Arrays is capital, also to print out a pretty array
+		Arrays.sort(intArr); // sort is a static method, this will sort your arrays
 		System.out.println(Arrays.toString(intArr));
-		Arrays.sort(intArr);
-		System.out.println(Arrays.toString(intArr));
-		
-		System.out.println(Arrays.binarySearch(intArr, 25)); //returns index of element
-		System.out.println(Arrays.binarySearch(intArr, 2));  //returns -1 if not found
-		
+//		
+//		System.out.println(Arrays.binarySearch(intArr, 25)); //returns index of element
+//		System.out.println(Arrays.binarySearch(intArr, 2));  //returns -1 if not found
+//		
 	}
 }

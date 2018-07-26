@@ -1,0 +1,30 @@
+package com.ex.classes;
+
+public class Fish extends Pet {
+	private int fins;
+
+	public Fish() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Fish(String name, int age, boolean isAlive, String[] nicknames, int fins) {
+		super(name, age, isAlive, nicknames);
+		this.fins = fins;
+	}
+
+	public int getFins() {
+		return fins;
+	}
+
+	public void setFins(int fins) {
+		this.fins = fins;
+	}
+	
+	
+
+	
+	
+		
+		
+}

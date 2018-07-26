@@ -1,0 +1,13 @@
+package com.ex.classes;
+
+public class Launcher {
+	
+	public static void main(String[] args) {
+		Dog sparky = new Dog("sparky", 48, false, "zombie");
+		System.out.println(sparky.getName());
+		Fish nemo = new Fish("Nemo", 50, true, 1);
+		System.out.println(nemo.getFins());
+		
+	}
+	
+}

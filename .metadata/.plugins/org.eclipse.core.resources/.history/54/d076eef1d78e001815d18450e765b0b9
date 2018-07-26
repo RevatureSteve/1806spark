@@ -1,0 +1,22 @@
+package oops;
+
+public class Student {
+	public String name = "noname";
+	public int rollno = 0;
+	public int age = 15;
+	
+	public void introduce() {
+		System.out.println("My name is " + name);
+		System.out.println("My rollno is " + rollno);
+		System.out.println("My age is " + age);
+	}
+	
+	public void sayNumbers(int start, int end){
+		int counter;
+		
+		for(counter = start; counter <= end; counter++) {
+			System.out.println(counter);
+		}
+	
+}
+}

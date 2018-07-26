@@ -1,0 +1,7 @@
+package com.revature.pojo;
+
+import com.revature.abstracts.Sandwiches;
+
+public class Club extends Sandwiches {
+
+}

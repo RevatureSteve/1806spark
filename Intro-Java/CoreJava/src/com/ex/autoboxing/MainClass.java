@@ -4,13 +4,25 @@ public class MainClass {
 	public static void main(String[] args) {
 		
 		/*
-		 * Boxing
+		 * Every single primitive datatype has a corresponding object
+		 * 
+		 * 		int-> Integer
+		 * 		char -> Character
+		 * 		boolean -> Boolean
+		 * 		etc...
+		 * 
+		 * 	This is to allow primitve datatypes to be used as objects
+		 */
+		
+		/*
+		 * Boxing: primitive to Object (old way)
 		 */
 		int 	num1 = 5;
 		Integer num2 = new Integer(num1);
 		
 		/*
-		 * Unboxing
+		 * Unboxing: Object to primitive
+		 * 	automatically converts primitive to objects without the new keyword
 		 */
 		Integer num3 = new Integer(5);
 		int 	num4 = num3.intValue();
@@ -21,6 +33,7 @@ public class MainClass {
 		 */
 		int 	num5 = 5;
 		Integer num6 = num5;
+		
 		
 		
 		/*

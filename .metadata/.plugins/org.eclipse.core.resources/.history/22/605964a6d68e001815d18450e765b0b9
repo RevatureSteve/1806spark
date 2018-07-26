@@ -1,0 +1,15 @@
+package oops;
+
+public class Student {
+	public String name;
+	public int rollno;
+	public int age;
+	
+	public void introduce() {
+		System.out.println("My name is " + name);
+		System.out.println("My rollno is " + rollno);
+		System.out.println("My age is " + age);
+	}
+	
+	
+}

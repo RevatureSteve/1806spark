@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+C:\Users\Alex Moraga\my_git_repos\1806spark\.metadata\.plugins\org.eclipse.jdt.core
+1958659352.index

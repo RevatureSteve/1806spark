@@ -1,0 +1,24 @@
+package com.revature;
+
+public class Taco {
+	
+	private String tacoName;
+	public boolean cheese;
+	private int numOfToppings;
+	
+	public Taco() {
+		super();
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+}

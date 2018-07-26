@@ -1,0 +1,9 @@
+package oops;
+
+public class Student {
+	public String name;
+	
+	public void introduce() {
+		System.out.println("Hey I am" + name);
+	}
+}

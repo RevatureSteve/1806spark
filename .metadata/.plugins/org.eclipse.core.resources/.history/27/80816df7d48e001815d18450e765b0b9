@@ -1,0 +1,10 @@
+package oops;
+
+public class Tutorials {
+
+	public static void main(String[] args) {
+		
+		Student alex = new Student();
+		
+	}
+}

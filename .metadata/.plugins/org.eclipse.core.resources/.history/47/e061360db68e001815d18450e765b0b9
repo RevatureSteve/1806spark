@@ -1,0 +1,13 @@
+package com.ex.classes;
+
+public class Fish extends Pet {
+	private int fins;
+	
+	public Fish() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+	
+
+}

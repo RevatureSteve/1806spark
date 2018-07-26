@@ -1,0 +1,28 @@
+package com.ex.classes;
+
+public class Bird extends Pet {
+	private int color;
+
+	public Bird() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Bird(String name, int age, boolean isAlive, String[] nicknames, int color) {
+		super(name, age, isAlive, nicknames);
+		this.color = color;
+	}
+
+	public int getColor() {
+		return color;
+	}
+
+	public void setColor(int color) {
+		this.color = color;
+	}
+
+	
+	
+	
+
+}

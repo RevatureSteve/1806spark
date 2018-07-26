@@ -1,0 +1,14 @@
+package oops;
+
+public class Tutorials {
+
+	public static void main(String[] args) {
+		
+		Student alex = new Student();
+		alex.name = "Alex Moraga";
+		alex.rollno = 1;
+		alex.age = 23;
+		alex.introduce();
+		
+	}
+}

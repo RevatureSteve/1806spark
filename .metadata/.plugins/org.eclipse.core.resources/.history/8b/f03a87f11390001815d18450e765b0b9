@@ -1,0 +1,28 @@
+package com.revature.abstracts;
+
+public class Sandwiches {
+
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	public abstract class Sandwich {
+		
+		private int sliceOfBread;
+	}
+	
+	
+	
+	
+	
+}

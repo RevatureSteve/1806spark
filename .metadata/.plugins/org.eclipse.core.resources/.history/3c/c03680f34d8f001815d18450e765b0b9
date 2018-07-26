@@ -1,0 +1,16 @@
+package com.ex.store;
+
+public class MainMenuScreen implements Screen {
+	// Scanner is used to take in user input
+	private Scanner scan = new Scanner(System.in);
+	
+	
+	@Override
+	public Screen start() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+	
+	
+
+}

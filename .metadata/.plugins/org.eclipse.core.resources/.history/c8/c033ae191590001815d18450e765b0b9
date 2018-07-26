@@ -1,0 +1,37 @@
+package com.revature.abstracts;
+
+public class Sandwiches {
+
+	
+	
+	
+	
+	
+	/*
+	 * 
+	 * 
+	 * 		subclass examples:
+	 * 			-club
+	 * 			-dagwood
+	 * 			-cuban
+	 * 
+	 * 
+	 */
+	
+	
+	
+	
+	
+	
+	
+	
+	public abstract class Sandwich {
+		
+		private int sliceOfBread;
+	}
+	
+	
+	
+	
+	
+}

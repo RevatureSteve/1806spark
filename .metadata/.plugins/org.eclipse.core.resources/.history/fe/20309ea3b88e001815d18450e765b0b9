@@ -1,0 +1,55 @@
+package com.ex.classes;
+
+public class Pet {
+	private String name;
+	private int age;
+	private boolean isAlive;
+	private String[] petnames = new String[3];
+	
+	public Pet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Pet(String name, int age, boolean isAlive, String[] petnames) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.isAlive = isAlive;
+		this.petnames = petnames;
+	}
+
+	public String[] getPetnames() {
+		return petnames;
+	}
+
+	public void setPetnames(String[] petnames) {
+		this.petnames = petnames;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public int getAge() {
+		return age;
+	}
+
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	public boolean isAlive() {
+		return isAlive;
+	}
+
+	public void setAlive(boolean isAlive) {
+		this.isAlive = isAlive;
+	}
+	
+	
+}

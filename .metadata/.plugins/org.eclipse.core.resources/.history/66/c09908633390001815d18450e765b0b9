@@ -1,0 +1,25 @@
+package com.revature.pojo;
+
+public class Taco {
+
+	public int NumOfTacos;
+	public int NumOfTopping;
+	private String[] NameOfTaco;
+	
+	
+	//NO-ARGS Constructor
+	public Taco() {
+		
+	}
+
+	public Taco(int numOfTacos, int numOfTopping, String[] nameOfTaco) {
+		super();
+		NumOfTacos = numOfTacos;
+		NumOfTopping = numOfTopping;
+		NameOfTaco = nameOfTaco;
+	}
+	
+	
+	
+	
+}

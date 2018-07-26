@@ -1,0 +1,32 @@
+package com.revature.abstracts;
+
+public class Sandwiches {
+
+	/*
+	 * 
+	 * 
+	 * subclass examples: -club -dagwood -cuban
+	 * 
+	 */
+	public abstract class Sandwich {
+		// State aka variables
+		private int slicseOfBread;
+		private String[] meats;
+		private String[] toppings;
+		private String[] name;
+		private int size;
+//		private boolean isToasted;
+
+		// NO-ARGS Constructor by convention: future frameworks will require
+		public Sandwich() {
+		}
+		
+		// Behavior
+		public int takeBite() {
+			this.size--;
+			return this.size
+		}
+
+	}
+
+}

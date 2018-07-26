@@ -1,0 +1,31 @@
+package com.ex.classes;
+
+public class Dog extends Pet { 
+	private String breed;
+
+	public Dog() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Dog(String name, int age, boolean isAlive, String[] nicknames, String breed) {
+		super(name, age, isAlive, nicknames);
+		this.breed = breed;
+	}
+
+	public String getBreed() {
+		return breed;
+	}
+
+	public void setBreed(String breed) {
+		this.breed = breed;
+	}
+	
+	
+
+	
+	
+	
+	
+	
+}

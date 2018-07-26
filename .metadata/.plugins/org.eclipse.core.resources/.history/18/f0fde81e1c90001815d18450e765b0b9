@@ -1,0 +1,61 @@
+package com.revature.abstracts;
+
+/**
+ * Java Docs comment are in blue, regular comment are in green
+ * 
+ * @author Alex Moraga
+ *
+ *         Sandwich class is going to be a template for creating subclasses for
+ *         specific sandwiches. We are goint to make thie classs abstract.
+ * 
+ *         subclass examples: -club -dagwood -cuban
+ *
+ */
+
+public abstract class Sandwiches {
+
+	/*
+	 * abstract keyword can be used in 2 locations: -classes -methods no such thing
+	 * as an abstract variable
+	 * 
+	 */
+	// State aka variables
+	private int slicseOfBread;
+	private String[] meats;
+	private String[] toppings;
+	private String[] name;
+	private int size;
+//		private boolean isToasted;
+
+	// NO-ARGS Constructor by convention: future frameworks will require
+	public Sandwiches() {
+	}
+	public Sandwiches(int slicseOfBread, String[] meats, String[] toppings, String[] name, int size) {
+	super();
+	this.slicseOfBread = slicseOfBread;
+	this.meats = meats;
+	this.toppings = toppings;
+	this.name = name;
+	this.size = size;
+}
+
+
+	// Behavior
+
+	/**
+	 * takeBite() decrements the sandwich by 1
+	 * 
+	 * @return remaining size of the sandwich
+	 */
+	public int takeBite() {
+		// this. is not required but there is not other size variable in the parameter
+		// or the method
+		this.size--;
+		return this.size;
+	}
+	public int takeBite(int biteSize) {
+		this.size -= biteSize; // same as: this.size = this.size - biteSize;
+		return this.size;
+	}
+}
+

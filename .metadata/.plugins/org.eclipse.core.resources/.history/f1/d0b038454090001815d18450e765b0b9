@@ -1,0 +1,20 @@
+package com.revature.exceptions;
+
+	/*
+	 *  IQ: What is the difference between error and exception?
+	 *  	Error: Errors can happen at runtime or compile time
+	 *  		2 types of errors:
+	 *  			runtime
+	 *  			compilation
+	 *  	Exception: Exceptions only happen at runtime!
+	 *  
+	 *  	So... then what is the difference between a runtime error and exception?
+	 *  
+	 *  	Exception: recoverable disrupt in the flow of execution
+	 *  	Error (runtime): fatal disrupt in the flow of execution
+	 * 			e.g. of runtime errors:
+	 * 						-OutOfMemoryError: created too many objects no room left
+	 */
+public class ExceptionsExample {
+	System.out.println("Exceptions..");
+}

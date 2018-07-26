@@ -1,0 +1,7 @@
+package com.revature.pojo;
+
+public class Taco {
+
+	public int NumOfTacos
+	public int NumOfTopping
+}
