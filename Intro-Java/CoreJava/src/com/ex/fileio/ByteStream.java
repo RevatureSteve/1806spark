@@ -56,6 +56,10 @@ public class ByteStream {
 		String filename = "bin/com/ex/fileio/ByteStream.class";
 		try(InputStream is = new FileInputStream(filename)){
 			
+			/*
+			 * Easter Egg
+			 * first 4 bytes of a java class : cafebabe
+			 */
 			byte[] first4Bytes = new byte[4];
 			is.read(first4Bytes);
 			

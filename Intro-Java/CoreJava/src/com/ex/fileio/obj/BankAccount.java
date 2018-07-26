@@ -9,7 +9,7 @@ public class BankAccount {
 	public BankAccount(){}
 
 	public BankAccount(int bankAccountNumber, String customerName, double balance) {
-		super();
+		super();//the super constructor i.e the parent
 		this.bankAccountNumber = bankAccountNumber;
 		this.customerName = customerName;
 		this.balance = balance;
