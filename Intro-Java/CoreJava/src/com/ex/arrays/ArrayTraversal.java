@@ -2,6 +2,11 @@ package com.ex.arrays;
 
 public class ArrayTraversal {
 	public static void main(String[] args) {
+<<<<<<< HEAD
+=======
+		
+		
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 		int[][] intArr2D_4 = {{1},{2,3},{4,5,6},{7,8,9,0}};	//Instantiate and Populate array in one line
 		
 		for(int i = 0; i < intArr2D_4.length; i++){

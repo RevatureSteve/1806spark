@@ -1,5 +1,6 @@
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 //classes must be capitalized
 public class HelloWorld {
 	public HelloWorld() {
@@ -11,6 +12,8 @@ public class HelloWorld {
 	}
 }
 =======
+=======
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 public class HelloWorld {
 	
 	// Declare variables
@@ -48,4 +51,7 @@ public class HelloWorld {
 		System.out.println("foo");
 	}
 }
+<<<<<<< HEAD
 >>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4
+=======
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
