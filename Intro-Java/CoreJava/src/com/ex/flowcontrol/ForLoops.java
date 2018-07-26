@@ -14,9 +14,9 @@ public class ForLoops {
 		}
 
 		//Infinite loop
-		for (;;) {
-			System.out.println("forever");
-		}
+//		for (;;) {
+//			System.out.println("forever");
+//		}
 
 	}
 }

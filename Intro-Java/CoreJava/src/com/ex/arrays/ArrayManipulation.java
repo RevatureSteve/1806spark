@@ -39,7 +39,7 @@ public class ArrayManipulation {
 		 * equals   (overridden from Object class)
 		 * 
 		 */
-		System.out.println(Arrays.toString(intArr));
+		System.out.println(Arrays.toString(intArr)); // toString is a static member because Arrays is capital (static method)
 		Arrays.sort(intArr);
 		System.out.println(Arrays.toString(intArr));
 		
