@@ -1,13 +1,21 @@
 {
   "name": "class-question-project",
   "version": "1.0.0",
+<<<<<<< HEAD
   "description": "",
+=======
+  "description": "question class example node project w/ express and mongoose (to connect to mongoDB)",
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js"
   },
+<<<<<<< HEAD
   "author": "Stephen Hong",
+=======
+  "author": "Steve K",
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
