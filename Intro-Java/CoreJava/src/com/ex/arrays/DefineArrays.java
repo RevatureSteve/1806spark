@@ -21,7 +21,7 @@ public class DefineArrays {
 		int[][] intArr2D_1 = new int[5][2];
 		int intArr2D_2[][] = new int[5][2];
 		int[] intArr2D_3[] = new int[5][2];
-		int[][] intArr2D_4 = {{1},{2,3},{4,5,6},{7,8,9,0}};	//Instantiate and Populate array in one line
+		int[][] intArr2D_4 = { {1},{2,3},{4,5,6},{7,8,9,0} };	//Instantiate and Populate array in one line
 		
 		
 		/*

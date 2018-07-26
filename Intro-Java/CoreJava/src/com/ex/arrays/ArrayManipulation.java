@@ -8,15 +8,15 @@ public class ArrayManipulation {
 		int[] intArr = new int[5];
 		System.out.println(intArr[0]); //Arrays are base 0
 		System.out.println(intArr[4]); //This is the last index
-//		System.out.println(intArr[5]); //ArrayIndexOutOfBoundsException
+		System.out.println(intArr[5]); //ArrayIndexOutOfBoundsException
 		
 		intArr[0] = 7;
 		intArr[1] = 9;
 		intArr[2] = 1000;
 		intArr[3] = 25;
 		intArr[4] = 9;
-//		intArr[-1] = 3; //ArrayIndexOutOfBoundsException
-//		intArr[5] = 3; //ArrayIndexOutOfBoundsException
+		intArr[-1] = 3; //ArrayIndexOutOfBoundsException
+		intArr[5] = 3; //ArrayIndexOutOfBoundsException
 		
 		/*
 		 * Let's print out the array
@@ -39,7 +39,7 @@ public class ArrayManipulation {
 		 * equals   (overridden from Object class)
 		 * 
 		 */
-		System.out.println(Arrays.toString(intArr));
+		System.out.println(Arrays.toString(intArr)); //toString is a static member because Arrays is capital.
 		Arrays.sort(intArr);
 		System.out.println(Arrays.toString(intArr));
 		
