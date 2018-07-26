@@ -25,9 +25,9 @@ public class LogicalOp {
 
 		// LOGICAL
 		System.out.println("&& LOGICAL AND (short circuit)");
-		System.out.println("true  && true:  " + (true && true));
-		System.out.println("true  && false: " + (true && false));
-		System.out.println("false && true:  " + (false && true));
+		System.out.println("true  && true:  " + (true && false));
+		System.out.println("true  && false: " + (true && returnFalse()));
+		System.out.println("false && true:  " + (returnFalse() && true));
 		System.out.println("false && false: " + (false && false));
 		System.out.println();
 
@@ -65,5 +65,15 @@ public class LogicalOp {
 		System.out.println("false ^ false: " + (false ^ false));
 		System.out.println();
 
+	}
+	
+	public static boolean returnTrue() {
+		System.out.println("returnTrue called");
+		return true;
+	}
+	
+	public static boolean returnFalse() {
+		System.out.println("returnFalse called");
+		return false;
 	}
 }

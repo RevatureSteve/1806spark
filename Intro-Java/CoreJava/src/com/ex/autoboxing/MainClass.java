@@ -2,7 +2,12 @@ package com.ex.autoboxing;
 
 public class MainClass {
 	public static void main(String[] args) {
-		
+		/*
+		 * every primitive datatype has a corresponding object called a Wrapper Class
+		 * int -> Integer
+		 * char -> Character
+		 * boolean -> Boolean
+		 */
 		/*
 		 * Boxing
 		 */
