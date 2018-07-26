@@ -1,6 +1,5 @@
 package com.ex.classes;
 
-<<<<<<< HEAD
 public class Fish {
 
 	private String name;	
@@ -11,16 +10,10 @@ public class Fish {
 	
 	
 	
-=======
-public class Fish extends Pet {
-	private int numberFins;
-
->>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 	public Fish() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-<<<<<<< HEAD
 	
 	
 	public Fish(String name, int age, boolean isAlive, int numberFins) {
@@ -62,25 +55,4 @@ public class Fish extends Pet {
 		
 		
 	
-=======
-
-	public Fish(String name, int age, boolean isAlive, int numberFins) {
-		super(name, age, isAlive);
-		this.numberFins = numberFins;
-	}
-
-	public int getNumberFins() {
-		return numberFins;
-	}
-
-	public void setNumberFins(int numberFins) {
-		this.numberFins = numberFins;
-	}
-
-	@Override
-	public void speak() {
-		System.out.println(this.getName() + " bubbles");
-	}
-
->>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 }
