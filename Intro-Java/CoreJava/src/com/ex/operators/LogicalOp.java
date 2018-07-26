@@ -66,4 +66,13 @@ public class LogicalOp {
 		System.out.println();
 
 	}
+	
+	public static boolean returnTrue() {
+		System.out.println("returnTrue called");
+		return true;
+	}
+	public static boolean returnFalse() {
+		System.out.println("returnFalse called");
+		return true;
+	}
 }
