@@ -1,7 +1,10 @@
 package com.ex.classes;
 
 public class Fish extends Pet {
+<<<<<<< HEAD
 	
+=======
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 	private int numberFins;
 
 	public Fish() {
@@ -12,7 +15,10 @@ public class Fish extends Pet {
 	public Fish(String name, int age, boolean isAlive, int numberFins) {
 		super(name, age, isAlive);
 		this.numberFins = numberFins;
+<<<<<<< HEAD
 		// TODO Auto-generated constructor stub
+=======
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 	}
 
 	public int getNumberFins() {
@@ -22,12 +28,19 @@ public class Fish extends Pet {
 	public void setNumberFins(int numberFins) {
 		this.numberFins = numberFins;
 	}
+<<<<<<< HEAD
 	
+=======
+
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 	@Override
 	public void speak() {
 		System.out.println(this.getName() + " bubbles");
 	}
+<<<<<<< HEAD
 	
 	
+=======
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 
 }
