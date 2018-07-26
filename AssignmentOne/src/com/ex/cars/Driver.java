@@ -2,6 +2,7 @@ package com.ex.cars;
 
 public class Driver {
 	
+	//static - memory location doesn't change but the variable can change 
 	public static void main(String[] args) {
 		System.out.println("the showcase of cars");//make sure it works
 		
