@@ -1,0 +1,34 @@
+package com.ex.practice;
+
+public class People {
+	private String name;
+	private int age;
+	private boolean isAlive;
+	
+	public People(String name, int age, boolean isAlive) {
+		super();
+		this.name = name;
+		this.age = age;
+		this.isAlive = isAlive;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getAge() {
+		return age;
+	}
+	public void setAge(int age) {
+		this.age = age;
+	}
+	public boolean isAlive() {
+		return isAlive;
+	}
+	public void setAlive(boolean isAlive) {
+		this.isAlive = isAlive;
+	}
+	
+	
+}
