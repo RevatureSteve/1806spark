@@ -1,8 +1,10 @@
 <html>
 
 <head>
-    <link rel="stylesheet" href="bucketstyle.css" />
-
+    <link rel="stylesheet" href="/css/bucketstyle.css" />
+    <title>
+        recommendations
+    </title>
 </head>
 
 <body>
@@ -33,24 +35,40 @@
             </li>
         </ul>
 
-
-        <div class="beginningtxt">Submit recommendations on artists, games, music, athletes, and anime for me to take note of.</div>
-        <br>
-        <img id="xpic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUE-Gn0eMEE7uF2nXYlOHFbuWcL0B-ADdmbBfB9Hf3T17yJyys9w"
-            alt="">
-
-        <div id="recommendbutton">
-
-
-
-
+        <div id="submissions">
+            <h1>
+                <div class="beginningtxt">Submit recommendations on artists, games, music, athletes, and anime for me to take note of.</div>
+            </h1>
             <br>
-            <input type="text" maxlength="20" min="2">
-            <br>
-            <input type="submit">
+            <img id="xpic" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTUE-Gn0eMEE7uF2nXYlOHFbuWcL0B-ADdmbBfB9Hf3T17yJyys9w"
+                alt="" onclick="picChange()">
+                <br>
+            <div class="textborder">
+                <form action="mongodb://localhost:27017/recommendations" method="post">
+                    <div id="recommendbutton">
 
 
 
+
+                        <br>
+                        <input type="text" id="recsubmit" maxlength="20" min="2">
+                        <br>
+                        <!-- same name allows selection of only one radio button-->
+                        <input type="radio" name="type" value="Anime" checked "Anime">Anime
+                        <br>
+                        <input type="radio" name="type" value="Music" checked "Music">Music
+                        <br>
+                        <input type="radio" name="type" value="Video Game" checked "Video Game">Video Game
+                        <br>
+                        <input type="radio" name="type" value="Athlete" checked "Athlete">Athlete
+                        <br>
+                        <input id="recommendationBtn" type="button" value="Submit Recommendation">
+
+
+
+                    </div>
+            </div>
+            </form>
         </div>
 
 
@@ -64,9 +82,9 @@
 
 
 
-
     </center>
-    <script src="bucketquest.js"></script>
+    <script src="../js/bucketquest.js"></script>
+    <script src="../js/recommendations.js"></script>
 </body>
 
 

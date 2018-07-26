@@ -1,33 +1,37 @@
 var express = require('express');
 var app = express();
-app.listen(3001, function(){
-    console.log(' Your node server with express is ready');
-})
+var jsonParser = require('body-parser').json;
+var recommendationsPath = require("./recommendations-path");
+app.use(jsonParser());
+//app.listen(3001, function(){
+   // console.log(' Your node server with express is ready');
+//})
+
 // allow CSS files to be found
-app.use('/css files', express.static('css files'));
+app.use('/css', express.static('css'));
+
+app.use('/js', express.static('js'));
 
 //allow the html files
-app.use('/htmlPages', express.static('htmlPages'));
+app.use(express.static('htmlPages'));
 
-// requests hit here
-app.use(function(req, resp, next){
-    console.log('request recieved')
-    console.log(req. headers)
-    console.log(req. method)
-    console.log(req. url)
-    next();// do whatever function comes next
-})
+var mongoose = require("mongoose")
+//require the mongoose package
 
-app.use(function(req,resp,next){
-    console.log('the server now does something with the request')
-    next();
-})
+mongoose.connect("mongodb://localhost:27017/recommendations");
+var db = mongoose.connection; 
+// a reference to the connection so i can use it
 
-app.use("/Bucketquest", function(req,resp,next){
-    console.log('the server has recieved the request')
-    next();
-})
+db.once("open", function(){// creates connections when requests come through
+    console.log("db connection successful")
+});
 
-app.use(function(req,resp,next){
-    resp.sendfile('/Users/christopherholmes/my_git_repos/1806spark/bucketquest_website/htmlPages/Bucketquest.html')
-})
+/*
+set routes
+*/
+app.use("/recommendations", recommendationsPath);
+
+//START THE APP
+app.listen(3001, function(){
+    console.log(`Express server is listening on port: + ${3001}!`);
+}) //starts application on this port

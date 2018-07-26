@@ -26,6 +26,8 @@ function print3() {
  }
  
  document.getElementsByTagName("input")[0].addEventListener("input",print3)
+
+ 
  
  
  
