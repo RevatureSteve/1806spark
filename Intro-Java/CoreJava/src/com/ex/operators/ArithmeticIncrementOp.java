@@ -12,10 +12,7 @@ package com.ex.operators;
  * --	decrement
  */
 public class ArithmeticIncrementOp {
-<<<<<<< HEAD
-=======
 	
->>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 	public static void main(String[] args) {
 		
 		int a = 10;
@@ -28,15 +25,15 @@ public class ArithmeticIncrementOp {
 		printInt(++b);
 		System.out.println(b);
 
-<<<<<<< HEAD
 		System.out.println("10++: "  + (a++) + "\t" + a); //evaluated then incremented
 		System.out.println("++10: "  + (++b) + "\t" + b); //incremented then evaluated
 		System.out.println("10--: "  + (c--) + "\t" + c); //evaluated then decremented
-=======
 		System.out.println("10++: "  + (a++) + "\t" + a + "\n"); //evaluated then incremented
 		System.out.println("++10: "  + (++b) + "\t" + b); //incremented then evaluated
 		System.out.println("10--: "  + (c--) + "\t" + c + "\n"); //evaluated then decremented
->>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
+		System.out.println("10++: "  + (a++) + "\t" + a + "\n"); //evaluated then incremented
+		System.out.println("++10: "  + (++b) + "\t" + b); //incremented then evaluated
+		System.out.println("10--: "  + (c--) + "\t" + c + "\n"); //evaluated then decremented
 		System.out.println("--10:  " + (--d) + "\t" + d); //decremented then evaluated
 	}
 	

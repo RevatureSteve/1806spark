@@ -2,7 +2,11 @@
   "name": "class-question-project",
   "version": "1.0.0",
 <<<<<<< HEAD
+<<<<<<< HEAD
   "description": "",
+=======
+  "description": "question class example node project w/ express and mongoose (to connect to mongoDB)",
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 =======
   "description": "question class example node project w/ express and mongoose (to connect to mongoDB)",
 >>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
@@ -12,7 +16,11 @@
     "start": "node server.js"
   },
 <<<<<<< HEAD
+<<<<<<< HEAD
   "author": "Stephen Hong",
+=======
+  "author": "Steve K",
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 =======
   "author": "Steve K",
 >>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e

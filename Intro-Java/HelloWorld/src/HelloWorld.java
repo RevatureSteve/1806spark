@@ -6,6 +6,7 @@ public class HelloWorld {
 	int y;
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 	String z;
 
 	// Start execution here!
@@ -20,6 +21,8 @@ public class HelloWorld {
 		HelloWorld hw;
 		hw = new HelloWorld();
 =======
+=======
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 =======
 >>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 //	String z; 
@@ -37,7 +40,10 @@ public class HelloWorld {
 		HelloWorld hw;
 		 hw = new HelloWorld();
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4
+=======
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 =======
 >>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		hw.foo();
@@ -50,6 +56,7 @@ public class HelloWorld {
 		
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		
 		System.out.println(hw.x + " " + hw.y);
 		System.out.println(hw1.x + " " + hw1.y);
@@ -60,6 +67,8 @@ public class HelloWorld {
 =======
 =======
 >>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
+=======
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		System.out.println(hw.x + " " + hw.y);
 		System.out.println(hw1.x + " " + hw1.y);
 		
@@ -68,7 +77,10 @@ public class HelloWorld {
 	
 	public void foo() {
 <<<<<<< HEAD
+<<<<<<< HEAD
 >>>>>>> 1d2362eb26499c820219011f2c853fc0e02e8dc4
+=======
+>>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 =======
 >>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		System.out.println("foo");

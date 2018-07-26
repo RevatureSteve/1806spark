@@ -43,16 +43,10 @@ public class ArrayManipulation {
 		 */
 		System.out.println(Arrays.toString(intArr)); // toString is a static member because Arrays is capital
 		Arrays.sort(intArr);
-		System.out.println(Arrays.toString(intArr));
-<<<<<<< HEAD
 		
-		System.out.println(Arrays.binarySearch(intArr, 25)); //returns index of element
-		System.out.println(Arrays.binarySearch(intArr, 2));  //returns -1 if not found
-=======
 //		
 //		System.out.println(Arrays.binarySearch(intArr, 25)); //returns index of element
 //		System.out.println(Arrays.binarySearch(intArr, 2));  //returns -1 if not found
->>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
 		
 	}
 }

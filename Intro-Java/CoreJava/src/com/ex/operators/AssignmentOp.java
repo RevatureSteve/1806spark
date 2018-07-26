@@ -14,10 +14,8 @@ public class AssignmentOp {
 		
 		int y = 5;
 		y += 2; //translates into y = y + 2
-<<<<<<< HEAD
-=======
 		y += 10;
->>>>>>> d475e543ae45678c0e0ef13aa404b494ea00a41e
+		y += 10;
 		System.out.println("y += 2:\t\t" + y);
 		
 		
