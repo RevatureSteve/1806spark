@@ -1,0 +1,59 @@
+package com.ex.classes;
+
+public class Fish extends Pet {
+<<<<<<< HEAD
+	private int fins;
+=======
+	private int numberFins;
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
+
+	public Fish() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+<<<<<<< HEAD
+	public Fish(String name, int age, boolean isAlive, int fins) {
+		super(name, age, isAlive);
+		this.fins = fins;
+	}
+
+	public int getFins() {
+		return fins;
+	}
+
+	public void setFins(int fins) {
+		this.fins = fins;
+	}
+	
+=======
+	public Fish(String name, int age, boolean isAlive, int numberFins) {
+		super(name, age, isAlive);
+		this.numberFins = numberFins;
+	}
+
+	public int getNumberFins() {
+		return numberFins;
+	}
+
+	public void setNumberFins(int numberFins) {
+		this.numberFins = numberFins;
+	}
+
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
+	@Override
+	public void speak() {
+		System.out.println(this.getName() + " bubbles");
+	}
+<<<<<<< HEAD
+	
+	
+
+	
+	
+		
+		
+=======
+
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
+}
