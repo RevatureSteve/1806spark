@@ -25,19 +25,28 @@ public class LogicalOp {
 
 		// LOGICAL
 		System.out.println("&& LOGICAL AND (short circuit)");
+<<<<<<< HEAD
 		System.out.println("true  && true:  " + (true && returnFalse()));
+=======
+		System.out.println("true  && true:  " + (returnFalse() && returnTrue()));
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 		System.out.println("true  && false: " + (true && false));
 		System.out.println("false && true:  " + (false && true));
 		System.out.println("false && false: " + (false && false));
 		System.out.println();
 
 		System.out.println("|| LOGICAL OR (short circuit)");
+<<<<<<< HEAD
 		System.out.println("true  || true:  " + (true || true));
+=======
+		System.out.println("true  || true:  " + (returnTrue() || returnFalse()));
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 		System.out.println("true  || false: " + (true || false));
 		System.out.println("false || true:  " + (false || true));
 		System.out.println("false || false: " + (false || false));
 		System.out.println();
 
+<<<<<<< HEAD
 		System.out.println("! LOGICAL NOT");
 		System.out.println("!true:  " + (!true));
 		System.out.println("!false: " + (!false));
@@ -76,5 +85,45 @@ public class LogicalOp {
 		System.out.println("Return false");
 		return false;
 		
+=======
+//		System.out.println("! LOGICAL NOT");
+//		System.out.println("!true:  " + (!true));
+//		System.out.println("!false: " + (!false));
+//		System.out.println();
+
+		// BITWISE
+//		System.out.println("& BITWISE AND");
+//		System.out.println("true  & true:  " + (true & true));
+//		System.out.println("true  & false: " + (true & false));
+//		System.out.println("false & true:  " + (false & true));
+//		System.out.println("false & false: " + (false & false));
+//		System.out.println();
+//
+//		System.out.println("| BITWISE OR");
+//		System.out.println("true  | true:  " + (true | true));
+//		System.out.println("true  | false: " + (true | false));
+//		System.out.println("false | true:  " + (false | true));
+//		System.out.println("false | false: " + (false | false));
+//		System.out.println();
+//
+//		System.out.println("^ BITWISE XOR");
+//		System.out.println("true  ^ true:  " + (true ^ true));
+//		System.out.println("true  ^ false: " + (true ^ false));
+//		System.out.println("false ^ true:  " + (false ^ true));
+//		System.out.println("false ^ false: " + (false ^ false));
+//		System.out.println();
+
+	}
+	
+	
+	public static boolean returnTrue() {
+		System.out.println("returnTrue called");
+		return true;
+	}
+	
+	public static boolean returnFalse() {
+		System.out.println("returnFalse called");
+		return false;
+>>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 	}
 }
