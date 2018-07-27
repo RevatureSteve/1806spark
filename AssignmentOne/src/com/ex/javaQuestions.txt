@@ -1,0 +1,29 @@
+Java Questions and Answer
+
+	1. True/False Strings are immutable?
+			True
+	
+	2. True/False Local variables livewithing the Memory Heap.
+			False
+	
+	3. Name the 4 access modifiers.
+			public, private, protected, default
+			
+	4. What does it mean when a method is final? 
+			it cannot be overridden 
+	
+	5. What is the syntax for a NO-ARGS constructor?
+			public class() {}
+			
+	6. Name 3 things particular Interfaces
+			- cannot be instatiated
+			- does not contain any constructors 
+			- all methods are abstract
+	
+	7. What are the 2 errors that applications cannot recover from?
+			- OutOfMemoryError
+			-StackOverflowError
+			
+	8. Give an example of the syntax of an Implicit Conversion.
+			byte item = 10;
+			int variable = item;
