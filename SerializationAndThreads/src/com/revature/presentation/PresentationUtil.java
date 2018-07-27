@@ -28,7 +28,6 @@ public class PresentationUtil {
 		System.out.println("--New Student--");
 		System.out.println("enter student name: ");
 		String studName = scan.nextLine();
-		
 		System.out.println("Enter GPA: ");
 		double studGpa = scan.nextDouble();
 		
@@ -36,7 +35,7 @@ public class PresentationUtil {
 		int studSsn = scan.nextInt();
 		*/
 		Student stud = new Student(55, studName, studGpa);
-		scan.close();
+//		scan.close();
 		return stud;
 	}
 	

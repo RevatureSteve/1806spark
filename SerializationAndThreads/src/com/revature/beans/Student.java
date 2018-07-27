@@ -25,6 +25,11 @@ public class Student implements Serializable, Teachable {
 	private int id;
 	private String name;
 	private double gpa;
+	//private transient int ssn;
+	/*
+	 * transient keyword is only used in serialization
+	 * 		ignore any state that is marked transient during serialization
+	 */
 	
 	public Student() {}
 	

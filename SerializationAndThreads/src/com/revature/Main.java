@@ -29,6 +29,10 @@ public class Main {
 	 * 		throws and exception is an ok answer. . but which one? 
 	 * 			InvalidClassException
 	 * 
+	 * what is the transient keyword?
+	 * 		during serialization, ignore the variables marked transient instead
+	 * 			give them the default value of that datatype
+	 * 
 	 */
 	public static void main(String[] args) {
 		

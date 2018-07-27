@@ -1,11 +1,12 @@
 Java Questions and Answer
-
+(EASY)
 	1. True/False Strings are immutable?
 			True
 	
 	2. True/False Local variables live within the Memory Heap.
 			False
-	
+			
+(MEDIUM)	
 	3. Name the 4 access modifiers.
 			public, private, protected, default
 			
@@ -15,15 +16,16 @@ Java Questions and Answer
 	5. What is the syntax for a NO-ARGS constructor?
 			public class() {}
 			
-	6. Name 3 things particular to Interfaces
-			- cannot be instatiated
-			- does not contain any constructors 
-			- all methods are abstract
-	
+	6. Give an example of the syntax of an Implicit Conversion.
+			byte item = 10;
+			int variable = item;
+			
+(HARD)	
 	7. What are the 2 errors that applications cannot recover from?
 			- OutOfMemoryError
 			-StackOverflowError
 			
-	8. Give an example of the syntax of an Implicit Conversion.
-			byte item = 10;
-			int variable = item;
+	8. Name 3 things particular to Interfaces
+			- cannot be instantiated
+			- does not contain any constructors 
+			- all methods are abstract
