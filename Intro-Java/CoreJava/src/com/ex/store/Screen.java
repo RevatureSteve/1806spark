@@ -18,13 +18,10 @@ package com.ex.store;
 public interface Screen {
 	Screen start();
 	
-<<<<<<< HEAD
 	//implicit public abstract
 	//equivalent to 
 	//public abstract Screen start
-=======
 	// implicit public abstract
 	// so equivalent to
 	// public abstract Screen start();
->>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 }
