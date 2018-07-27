@@ -1,15 +1,11 @@
 package com.revature;
 
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.io.ObjectOutputStream;
-
-import org.omg.CORBA.ExceptionList;
+import java.util.Scanner;
 
 import com.revature.beans.Student;
+import com.revature.dao.StudentDao;
+import com.revature.presentation.PresentationUtil;
 
 public class Main {
 
@@ -22,8 +18,9 @@ public class Main {
 	 * from them are allowed to be serialized
 	 * 
 	 * *serializable is a "Marker Interface" marker interfaces tells the JVM
-	 * something special marker interfaces have no methods!! 1. the class must
-	 * implement Serializable (whitelist) 2. add a SerialVersionUID
+	 * something special marker interfaces have no methods!! 
+	 * 1. the class must implement Serializable (whitelist) 
+	 * 2. add a SerialVersionUID
 	 * 
 	 * 	what is the point of the serialVersionUID? 
 	 * 		to match the version when deserializing
@@ -34,61 +31,66 @@ public class Main {
 	 * 
 	 */
 	public static void main(String[] args) {
-		System.out.println("test");
-
-		String filePathAndName = "src/com/revature/person.txt";
+		
+		Scanner scan = new Scanner(System.in);
+		
+		while(true) {
+			PresentationUtil.WelcomeMenu();//we know welcomeMenu() is static b/c PresentationUtil is capital
+			int userInput = scan.nextInt();
+			System.out.println("User entered " + userInput);
+			
+			switch (userInput) {
+			case 1:
+				promptUserForNewStudentAndPersist();
+				break;
+	
+			case 2:
+				getStudentAndDisplay();
+				break;
+			
+			case 3:
+				System.out.println("exiting");
+				System.exit(1);
+			}
+			
+			
+		}
+		//Student stud = PresentationUtil.creatingNewStudent();
+		//System.out.println("User created: " + stud);
+		
 
 		// create the object from a class marked as Serializable
-		Student john = new Student(1, "John", 4.0);
+		//Student john = new Student(1, "John", 4.0);
 
-		serializeStudent(john, filePathAndName);
-		Student stud = deserializeStudent(filePathAndName);
+		//serializeStudent(john, filePathAndName); //create of CRUD
+		//Student stud1 = StudentDao.deserializeStudent(); //read of CRUD
 		
-		System.out.println(stud);
+		//System.out.println(stud);
 
 	}
-
-
-
-	public static void serializeStudent(Student stud, String filePathAndName) {
-
-
-
-		// serialiaze to student to a file
-		try (FileOutputStream os = new FileOutputStream(filePathAndName);
-				ObjectOutputStream oos = new ObjectOutputStream(os)) {
-			oos.writeObject(stud);
-
-		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		} catch (IOException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		} catch (Exception e2) {
-
-		}
-	}
-
-
-	public static Student deserializeStudent(String filePathAndName) {
 	
-		Student john = null;
-		try (FileInputStream is = new FileInputStream(filePathAndName);
-				ObjectInputStream ois = new ObjectInputStream(is)) {
-			
-		john = (Student) ois.readObject();
-			
-		} catch (FileNotFoundException e) {
-			e.printStackTrace();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		} catch (ClassNotFoundException e2) {
+	public static void promptUserForNewStudentAndPersist( ) {
+		//first prompt user and retrieve input
+		Student stud = PresentationUtil.creatingNewStudent();
+		
+		//persist student to file
+		try {
+			StudentDao.serializeStudent(stud);
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
-			e2.printStackTrace();
+			PresentationUtil.errorView("error");
+			
 		}
 		
-		return john; 
+		
+	}
+	
+	public static void getStudentAndDisplay() {
+		//retrieve student from StudentDao 
+		Student stud = StudentDao.deserializeStudent();
+			//probably should of ducked the exceptions in the StudentDao and handled them here w/ try/catch
+		PresentationUtil.presentStudent(stud);
 		
 	}
 }
+
