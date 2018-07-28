@@ -9,7 +9,7 @@ public class Driver {
 		
 		/*Sandwich s = new Sandwich(); cannot instatiate a Sandwich since it is abstract*/
 		Club c = new Club(); 
-		c.setSlicesOfBread(100);//forced to handle w/ try/catch 
+		c.setSlicesOfBread(2);//forced to handle w/ try/catch 
 		System.out.println(c.getSlicesOfBread());
 	}
 
