@@ -67,7 +67,4 @@ public class MathTeamAB extends MathTeam implements LikeCupcakes{
 		}
 		return false;
 	}
-	
-	
-
 }
