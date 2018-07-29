@@ -13,6 +13,7 @@ public class PresentationUtil {
 	}
 	
 	public static Student creatingNewStudent() {
+		@SuppressWarnings("resource")
 		Scanner scan = new Scanner(System.in);
 		System.out.println("-------New Student-------");
 		System.out.println("Enter Student Name: ");
@@ -21,9 +22,10 @@ public class PresentationUtil {
 		double studGPA = scan.nextDouble();
 		System.out.println("Enter ID: ");
 		int studID = scan.nextInt();
+		System.out.println("Enter SSN: ");
+		int studSSN = scan.nextInt();
 		
-		scan.close();
-		return new Student(studID, studName, studGPA);
+		return new Student(studID, studName, studGPA, studSSN);
 	}
 	
 	public static void presentStudent(Student stud) {

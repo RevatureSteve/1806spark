@@ -9,8 +9,6 @@ import com.revature.presentations.PresentationUtil;
 
 public class Driver {
 
-	
-
 	/*
 	 * serialization: Java Objects to byte code deserialization: byte code to Java
 	 * Objects
@@ -29,36 +27,36 @@ public class Driver {
 	 * happens? Throws an exception... InvalidClassException
 	 */
 	public static void main(String[] args) {
+		
+
 		Scanner scan = new Scanner(System.in);
+		while (true) {
+			PresentationUtil.welcomeMenu();
+			int input = scan.nextInt();
+			System.out.println("User input: " + input);
 
-		PresentationUtil.welcomeMenu();
-
-		int input = scan.nextInt();
-		System.out.println("User input: " + input);
-
-		if (input == 1) {
-			promptUserAndPersist();
-		} else if (input == 2) {
-			getStudentAndDisplay();
-		} else if (input == 3) {
-			scan.close();
-			return;
+			if (input == 1) {
+				promptUserAndPersist();
+			} else if (input == 2) {
+				getStudentAndDisplay();
+			} else if (input == 3) {
+				scan.close();
+				System.exit(0);
+			}
 		}
-
-		scan.close();
 	}
-	
+
 	public static void promptUserAndPersist() {
 		Student stud = PresentationUtil.creatingNewStudent();
-		
+
 		try {
 			StudentDao.serializeStudent(stud);
 		} catch (IOException e) {
 			System.out.println("File is corrupt");
 		}
-		
+
 	}
-	
+
 	public static void getStudentAndDisplay() {
 		Student stud = null;
 		try {

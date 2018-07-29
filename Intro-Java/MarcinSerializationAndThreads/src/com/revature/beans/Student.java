@@ -22,6 +22,7 @@ public class Student implements Serializable{
 	private int id;
 	private String name;
 	private double gpa;
+	private transient int ssn;
 	
 	/**
 	 * 
@@ -42,9 +43,24 @@ public class Student implements Serializable{
 		this.gpa = gpa;
 	}
 
+	/**
+	 * @param id
+	 * @param name
+	 * @param gpa
+	 * @param ssn
+	 */
+	public Student(int id, String name, double gpa, int ssn) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.gpa = gpa;
+		this.ssn = ssn;
+	}
+
+	
 	@Override
 	public String toString() {
-		return "Student [id=" + id + ", name=" + name + ", gpa=" + gpa + "]";
+		return "Student [id=" + id + ", name=" + name + ", gpa=" + gpa + ", ssn=" + ssn + "]";
 	}
 
 	public int getId() {

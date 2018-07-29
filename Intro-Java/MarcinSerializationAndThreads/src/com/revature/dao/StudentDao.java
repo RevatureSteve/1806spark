@@ -1,7 +1,6 @@
 package com.revature.dao;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.ObjectInputStream;
@@ -22,6 +21,7 @@ public class StudentDao {
 		FileOutputStream os = new FileOutputStream(filePathAndName);
 		ObjectOutputStream oos = new ObjectOutputStream(os);
 		oos.writeObject(stud);
+		oos.close();
 
 	}
 
@@ -30,6 +30,7 @@ public class StudentDao {
 		FileInputStream is = new FileInputStream(filePathAndName);
 		ObjectInputStream ois = new ObjectInputStream(is);
 		stud = (Student) ois.readObject();
+		ois.close();
 
 		return stud;
 	}

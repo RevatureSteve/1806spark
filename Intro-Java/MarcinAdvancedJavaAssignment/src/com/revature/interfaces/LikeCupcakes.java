@@ -1,6 +1,6 @@
 package com.revature.interfaces;
 
-public interface LabelCupcake {
+public interface LikeCupcakes {
 	
 	boolean likesCupcakes();
 }

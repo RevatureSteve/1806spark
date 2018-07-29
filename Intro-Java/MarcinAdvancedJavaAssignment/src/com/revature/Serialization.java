@@ -7,13 +7,14 @@ import java.io.IOException;
 import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 
-import com.revature.abstracts.LabelA;
+import com.revature.abstracts.MathTeam;
 
-public class FileSerialization {
-	public static void serialize(LabelA a) {
+public class Serialization {
+	private static String filepath = "file1.txt";
+	public static void serialize(MathTeam a) {
 		try {
 			// write object to file
-			FileOutputStream fos = new FileOutputStream("file1.ser");
+			FileOutputStream fos = new FileOutputStream(filepath);
 			ObjectOutputStream oos = new ObjectOutputStream(fos);
 			oos.writeObject(a);
 			oos.close();
@@ -24,13 +25,13 @@ public class FileSerialization {
 		} 
 	}
 
-	public static LabelA deserialize(String filepath) {
+	public static MathTeam deserialize() {
 		// read object from file
 		FileInputStream fis;
 		try {
 			fis = new FileInputStream(filepath);
 			ObjectInputStream ois = new ObjectInputStream(fis);
-			LabelA result = (LabelA) ois.readObject();
+			MathTeam result = (MathTeam) ois.readObject();
 			ois.close();
 			return result;
 		} catch (FileNotFoundException e) {
@@ -42,6 +43,5 @@ public class FileSerialization {
 			e.printStackTrace();
 		}
 		return null;
-		
 	}
 }

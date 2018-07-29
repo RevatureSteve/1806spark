@@ -1,18 +1,21 @@
 package com.revature.classes;
 
-import com.revature.abstracts.LabelA;
-import com.revature.interfaces.LabelCupcake;
+import com.revature.abstracts.MathTeam;
+import com.revature.interfaces.LikeCupcakes;
 
-public class LabelAB extends LabelA implements LabelCupcake{
+public class MathTeamAB extends MathTeam implements LikeCupcakes{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = -7929231081700749854L;
 	private int result;
 	
 
 	/**
 	 * @param sum
 	 */
-	public LabelAB(int sum, int a, int b) {
+	public MathTeamAB(int a, int b) {
 		super(a,b);
-		System.out.println(this.toString());
 	}
 
 	public int getResult() {
@@ -50,9 +53,11 @@ public class LabelAB extends LabelA implements LabelCupcake{
 		this.setB(temp);
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return super.toString() + "LabelAB [result=" + result + "]";
+		return super.toString() +  "MathTeamAB [result=" + result + "]";
 	}
 
 	@Override

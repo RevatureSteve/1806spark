@@ -2,7 +2,13 @@ package com.revature.abstracts;
 
 import java.io.Serializable;
 
-public abstract class LabelA implements Serializable{
+import com.revature.interfaces.LikeCupcakes;
+
+public abstract class MathTeam implements Serializable, LikeCupcakes{
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 7587198893489651873L;
 	private int a;
 	private int b;
 	
@@ -10,7 +16,7 @@ public abstract class LabelA implements Serializable{
 	/**
 	 * 
 	 */
-	public LabelA() {
+	public MathTeam() {
 		super();
 	}
 
@@ -18,7 +24,7 @@ public abstract class LabelA implements Serializable{
 	 * @param a
 	 * @param b
 	 */
-	public LabelA(int a, int b) {
+	public MathTeam(int a, int b) {
 		super();
 		this.a = a;
 		this.b = b;
@@ -56,8 +62,8 @@ public abstract class LabelA implements Serializable{
 
 	@Override
 	public String toString() {
-		return "LabelA [a=" + a + ", b=" + b + "]";
+		return "MathTeam [a=" + a + ", b=" + b + "]";
 	}
-	
+
 	
 }
