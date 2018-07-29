@@ -6,7 +6,7 @@ import com.revature.Serialization;
 import com.revature.abstracts.MathTeam;
 import com.revature.classes.WinningMathTeamAB;
 import com.revature.classes.WinningMathTeamBA;
-import com.revature.runnable.Deserialize;
+import com.revature.runnable.DeserializeRunnable;
 
 public class IOHandler {
 	public static void getInputs(Scanner scan) {
@@ -16,9 +16,9 @@ public class IOHandler {
 		System.out.println("3 does the Previous Team like cupcakes");
 		int menu1 = scan.nextInt();
 		if (menu1 == 1) {
-			System.out.println(Thread.currentThread());
-			Deserialize des = new Deserialize();
-			des.run();
+			DeserializeRunnable des = new DeserializeRunnable();
+			Thread t = new Thread(des);
+			t.start();
 		} else if (menu1 == 2) {
 			System.out.println("Select from the menu:");
 			System.out.println("1 for Winning Math Team AB");

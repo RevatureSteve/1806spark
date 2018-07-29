@@ -44,9 +44,8 @@ public class ThreadsExample {
 		Thread t1 = new ChildThread();
 		t1.setPriority(10);
 		t1.start();
-		EmailHr hr = new EmailHr();
-		hr.run();
-		Thread t2 = new Thread();
+		EmailHr hr = new EmailHr();		
+		Thread t2 = new Thread(hr);
 		t2.start();
 		for(int i = 0; i<10; i++) {
 			System.out.println(Thread.currentThread() + " i" + i);
