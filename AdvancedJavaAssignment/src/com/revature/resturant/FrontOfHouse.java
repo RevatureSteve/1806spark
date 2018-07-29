@@ -7,6 +7,7 @@ public class FrontOfHouse extends Employees {
 	private String frontJobTitle;
 	
 	
+	
 	public void Serving() {
 		System.out.println("The hostess will now seat you");
 	}
