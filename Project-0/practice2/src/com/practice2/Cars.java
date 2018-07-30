@@ -1,6 +1,6 @@
 package com.practice2;
 
-public class Cars {
+public class Cars extends Wheels implements Convertible {
 	
 	private String engine;
 	public int doors;
@@ -8,7 +8,7 @@ public class Cars {
 	
 	public Cars() {}
 
-	public Cars(String engine, boolean isGasoline) {
+	public Cars(String engine, boolean isGasoline, int doors) {
 		super();
 		this.engine = engine;
 		this.doors = doors;
@@ -43,6 +43,12 @@ public class Cars {
 	@Override
 	public String toString() {
 		return "Cars [engine=" + engine + ", doors=" + doors + ", isGasoline=" + isGasoline + "]";
+	}
+
+	@Override
+	public boolean isConvertible() {
+		
+		return false;
 	}
 	
 	

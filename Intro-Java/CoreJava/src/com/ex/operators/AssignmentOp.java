@@ -9,7 +9,11 @@ public class AssignmentOp {
 	public static void main(String[] args) {
 		
 		int x = 5;
+		
 		x = x + 2; // assignment operator(=) is evaluated last!
+
+		x = x + 2;
+
 		System.out.println("x = x + 2:\t" + x);
 		
 		int y = 5;
