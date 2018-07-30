@@ -4,7 +4,6 @@ import java.util.Scanner;
 
 public class MainMenuScreen implements Screen {
 	// Scanner is used to take in user input
-	// Scanner is used to take in user input
 	private Scanner scan = new Scanner(System.in);
 
 	@Override

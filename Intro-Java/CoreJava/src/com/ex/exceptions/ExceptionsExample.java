@@ -3,8 +3,9 @@ package com.ex.exceptions;
 public class ExceptionsExample {
 
 	/*
-	 * IQ: What is the difference between error and exception? Error: Errors can
-	 * happen at runtime or compile time 2 types of errors: runtime compilation
+	 * IQ: What is the difference between error and exception?
+	 * 
+	 * Error: Errors can happen at runtime or compile time 2 types of errors: runtime compilation
 	 * Exception: Exceptions only happen at runtime
 	 * 
 	 * Exceptions: recoverable disrupt in the flow of execution
