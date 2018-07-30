@@ -14,6 +14,7 @@ public class IOHandler {
 		System.out.println("1 for read Previous Team");
 		System.out.println("2 for create new winning team");
 		System.out.println("3 does the Previous Team like cupcakes");
+		System.out.println("4 for performing math");
 		int menu1 = scan.nextInt();
 		if (menu1 == 1) {
 			DeserializeRunnable des = new DeserializeRunnable();
@@ -38,8 +39,36 @@ public class IOHandler {
 				math = new WinningMathTeamBA(x, a, b);
 			}
 			Serialization.serialize(math);
-		} else if(menu1 == 3) {
+		} else if (menu1 == 3) {
 			System.out.println(Serialization.deserialize().likesCupcakes());
+		} else if (menu1 == 4) {
+			System.out.println("Select from the menu:");
+			System.out.println("1 add");
+			System.out.println("2 subtract");
+			System.out.println("3 multiplication");
+			System.out.println("4 division");
+			int winner = scan.nextInt();
+			MathTeam m = Serialization.deserialize();
+			switch (winner) {
+			case 1:
+				m.add();
+				break;
+			case 2:
+				try {
+					m.subtract();
+				} catch (Exception e) {
+					System.out.println(m.returnString());
+					System.out.println("Result is zero");
+				}
+				break;
+			case 3:
+				m.multiply();
+				break;
+			case 4:
+				m.divide();
+				break;
+			}
+			Serialization.serialize(m);
 		}
 	}
 
