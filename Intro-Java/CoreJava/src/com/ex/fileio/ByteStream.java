@@ -55,10 +55,13 @@ public class ByteStream {
 	static void readThisClassFile(){
 		String filename = "bin/com/ex/fileio/ByteStream.class";
 		try(InputStream is = new FileInputStream(filename)){
-			
+			/*
+			 * Easter Egg in Java.
+			 * first 4 bytes of java class file toHex: cafebabe.
+			 * */
 			byte[] first4Bytes = new byte[4];
 			is.read(first4Bytes);
-			
+			//enhanced for loop.
 			for(byte b:first4Bytes){				
 				System.out.print(Integer.toHexString(b).substring(6));
 			}

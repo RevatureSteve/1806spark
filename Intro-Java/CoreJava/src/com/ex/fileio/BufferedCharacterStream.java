@@ -16,10 +16,10 @@ public class BufferedCharacterStream {
 	}
 	
 	static void writeCharacterStream(String filename) {
-		
+		// anything that FileWriter is, it's children are as well. BufferedWriter is child of FW.
 		try(BufferedWriter writer = new BufferedWriter(new FileWriter(filename));){
 			
-			writer.write("Hello world\n");
+			writer.write("Hello world\n"); //THE \LINE IS LIKE PRESSING THE ENTER KEY OR USING A BREAK.
 			writer.write("again\n");
 			writer.write("Buffered Streams are faster and easier to use\n");
 			
