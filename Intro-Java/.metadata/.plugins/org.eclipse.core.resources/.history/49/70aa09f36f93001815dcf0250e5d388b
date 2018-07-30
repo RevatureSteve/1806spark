@@ -1,0 +1,11 @@
+package com.project;
+
+import java.util.Scanner;
+
+public class Launcher {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+	}
+	
+}

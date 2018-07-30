@@ -1,0 +1,22 @@
+package com.pojo.utils;
+
+import com.pojo.abstracts.Pojo;
+
+public class Transport extends Pojo {
+
+	
+	public Transport(String modelNumber, int numberOfWheels, boolean isActive)
+	
+	
+	
+	@Override
+	public void move() {
+		System.out.println("Transport rumbles along.");
+		// TODO Auto-generated method stub
+		
+	}
+
+}
+
+
+}

@@ -1,0 +1,39 @@
+//LABEL A
+package com.project.objs;
+
+import com.project.Interface;
+
+public abstract class Cutter implements Interface {
+
+	public String name;
+	private int degreeSharpness;
+	abstract slice();
+	public Cutter(String name, int degreeSharpness) {
+		super();
+		this.name = name;
+		this.degreeSharpness = degreeSharpness;
+	}
+	public Cutter() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getDegreeSharpness() {
+		return degreeSharpness;
+	}
+	public void setDegreeSharpness(int degreeSharpness) {
+		this.degreeSharpness = degreeSharpness;
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "Cutter [name=" + name + ", degreeSharpness=" + degreeSharpness + "]";
+	}
+	
+}

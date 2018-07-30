@@ -1,0 +1,14 @@
+
+
+public abstract class Pojos {
+
+private String modelNumber;
+private int numberOfWheels;
+private boolean isActive;
+	
+public abstract void move();
+
+public Pojos() {};
+
+public Pojos() {};
+}

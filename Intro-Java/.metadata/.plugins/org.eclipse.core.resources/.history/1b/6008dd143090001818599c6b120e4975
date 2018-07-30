@@ -1,0 +1,11 @@
+
+public class Transport extends Pojos {
+
+	@Override
+	public void move() {
+		System.out.println("Transport rumbles along.");
+		// TODO Auto-generated method stub
+		
+	}
+
+}

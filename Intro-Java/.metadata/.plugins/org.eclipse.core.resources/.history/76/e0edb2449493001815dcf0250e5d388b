@@ -1,0 +1,58 @@
+package com.project;
+
+import java.util.Scanner;
+
+import com.project.dao.Dao;
+import com.project.objs.Cutter;
+import com.project.objs.Knife;
+
+public class Launcher {
+
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		Navigation.startMenu();
+		int key = scan.nextInt();
+		
+		switch (key) {
+		case 1:
+			System.out.println("Knife chosen.");
+			getKnife();
+			break;
+		case 2:
+			System.out.println("Chainsaw chosen.");
+			getChainSaw();
+			break;
+		case 3:
+			System.out.println("Creating new blade.");
+			getNew();
+			break;
+		}
+		
+	}
+	
+	public static void getKnife() {
+	Knife cutter =	Navigation.creatingNewKnife();
+	try{Dao.serializeBlade(cutter);
+	
+	}catch (Exception e) {
+		System.out.println("File could not transfer.");};
+	}
+	public static void getChainSaw() {
+		Navigation.chainSawMenu();
+	}
+	public static void getNew() {
+	Navigation.persistMenu();
+	int userInput = scan.nextInt();
+	switch (userInput) {
+	case 1: Navigation.creatingNewKnife();
+		break;
+	case 2: Navigation.creatingNewKnife();
+		break;
+	}
+	}
+	 
+	
+	
+	
+}

@@ -1,0 +1,17 @@
+// label B
+package com.project.objs;
+
+import com.project.Interface;
+
+public class Knife extends Cutter{
+
+	
+	public Knife(String name, int degreeSharpness) {
+		name = "Knife";
+		degreeSharpness = 0;
+		// TODO Auto-generated constructor stub
+	}
+
+	
+
+}

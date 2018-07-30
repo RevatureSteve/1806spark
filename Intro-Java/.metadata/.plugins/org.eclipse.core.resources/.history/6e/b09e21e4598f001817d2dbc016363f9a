@@ -1,0 +1,24 @@
+package bank;
+
+public class pin {
+		private int pin = 1337;
+
+		public pin() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
+
+		public pin(int pin) {
+			super();
+			this.pin = pin;
+		}
+
+		public int getPin() {
+			return pin;
+		}
+
+		public void setPin(int pin) {
+			this.pin = pin;
+		}
+		
+	}

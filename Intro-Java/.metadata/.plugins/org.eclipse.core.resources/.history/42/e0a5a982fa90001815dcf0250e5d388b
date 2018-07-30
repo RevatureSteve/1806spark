@@ -1,0 +1,38 @@
+package com.project.objs;
+
+public abstract class Cutter {
+
+	public String type;
+	private int productionCode;
+	abstract String slice();
+	
+	public Cutter(String type, int productionCode) {
+		super();
+		this.type = type;
+		this.productionCode = productionCode;
+		this.slice();
+	}
+	public Cutter() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+	
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public int getProductionCode() {
+		return productionCode;
+	}
+
+	public void setProductionCode(int productionCode) {
+		this.productionCode = productionCode;
+	}
+	
+	
+}

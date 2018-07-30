@@ -1,0 +1,15 @@
+package com.project;
+
+import java.util.Scanner;
+
+public interface Interface {
+	default void pageChange() {
+		System.out.println("Changing pages...");
+	}
+	
+public void sharpenBlade();
+
+abstract void canChangeBlade();
+
+Interface start();
+};

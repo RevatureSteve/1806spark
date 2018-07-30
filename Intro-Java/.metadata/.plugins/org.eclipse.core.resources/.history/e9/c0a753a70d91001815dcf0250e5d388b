@@ -1,0 +1,14 @@
+package com.project;
+
+public interface Interface {
+	default void pageChange() {
+		System.out.println("Changing pages...");
+	}
+public boolean cutter = true;
+	
+public void sharpenBlade();
+
+abstract void changeBlade();
+
+Interface start();
+};

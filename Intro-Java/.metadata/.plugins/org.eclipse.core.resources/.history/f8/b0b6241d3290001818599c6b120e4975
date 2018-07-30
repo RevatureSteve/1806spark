@@ -1,0 +1,11 @@
+package com.pojo;
+
+public class Driver {
+
+	public static void main(String[] args) {
+		System.out.println("90J0 MACHINE: INACTIVE");
+		// TODO Auto-generated method stub
+
+	}
+
+}

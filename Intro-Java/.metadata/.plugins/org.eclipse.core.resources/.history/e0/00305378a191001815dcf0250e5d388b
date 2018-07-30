@@ -1,0 +1,6 @@
+package com.revature.abstracts;
+
+public interface Teachables {
+
+	public void learn ();
+}

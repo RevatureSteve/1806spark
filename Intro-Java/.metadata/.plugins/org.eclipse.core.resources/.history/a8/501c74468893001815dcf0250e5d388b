@@ -1,0 +1,56 @@
+package com.project;
+
+import java.util.Scanner;
+
+import com.project.objs.*;
+
+public class Navigation  {
+	
+
+	
+public static void knifeMenu() {
+	Knife knife = new Knife();
+	Scanner scan = new Scanner(System.in);
+	
+	System.out.println("Interact with your blade.");
+	System.out.println("1. Examine Knife");
+	System.out.println("2. Slice");
+	System.out.println("3. Return");
+	
+	int input = scan.nextInt();
+	
+switch (input) {
+case 1: 
+	System.out.println(knife);
+	
+break;
+case 2: knife.Slice();
+	
+break;
+case 3: 
+System.out.println("You cannot wield it.");
+break;
+}
+};
+
+
+
+public static void chainSawMenu() {
+	System.out.println("Select a Cutter");
+	System.out.println("1. Sharpen");
+	System.out.println("2. Change Blade.");
+	System.out.println("3. Return");
+
+switch (input) {
+case "1":
+
+case "2":
+return 
+
+
+case "3":
+System.out.println("You cannot wield it.");
+break;
+}
+};
+}

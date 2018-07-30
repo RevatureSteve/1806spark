@@ -1,0 +1,18 @@
+package com.pojo.abstracts;
+
+public class Pojo {
+
+		public String modelNumber;
+		private int numberOfWheels;
+		private boolean isActive;
+
+		public Pojo() {};
+
+		public Pojo(String modelNumber, int numberOfWheels, boolean isActive) {
+			super();
+			this.modelNumber = modelNumber;
+			this.numberOfWheels = numberOfWheels;
+			this.isActive = isActive;
+		}
+
+		

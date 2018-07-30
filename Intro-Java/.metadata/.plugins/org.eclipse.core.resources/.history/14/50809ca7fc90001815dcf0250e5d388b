@@ -1,0 +1,10 @@
+package com.project;
+
+public interface Interface {
+	
+public static	Interface sharpenBlade() {
+	System.out.println("You sharpen the blade.");
+	return null;
+};
+abstract Interface changeBlade();
+};

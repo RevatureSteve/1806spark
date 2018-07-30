@@ -1,0 +1,11 @@
+package com.project;
+
+public interface Interface {
+	
+public boolean cutter = true;
+	
+public void sharpenBlade();
+
+abstract void changeBlade();
+
+};

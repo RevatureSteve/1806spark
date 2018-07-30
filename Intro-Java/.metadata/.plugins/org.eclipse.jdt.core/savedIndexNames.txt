@@ -1,0 +1,2 @@
+INDEX VERSION 1.131+/Users/prjctmedia/my_git_repos/1806spark/Intro-Java/.metadata/.plugins/org.eclipse.jdt.core
+645088474.index

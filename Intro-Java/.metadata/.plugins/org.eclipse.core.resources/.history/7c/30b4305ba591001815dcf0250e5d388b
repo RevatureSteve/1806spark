@@ -1,0 +1,40 @@
+package com.revature;
+
+import com.revature.beans.Student;
+
+public class Driver {
+	/*
+	 * 
+	 * 
+	 * 
+	 * Serialization: Java Obj to Byte Code
+	 * DeSerialization: Byte Code to Java Objs
+	 * 
+	 * First Note: All Java Objs are blacklisted,
+	 * meaining you cannot do serialization.
+	 * You must whitelist each individual class so
+	 * that the object created from them are allowed
+	 * to be serialized.
+	 * 
+	 * Serializable is a "Marker Interface"
+	 * 		Marker Interfaces tells the JVM something special
+	 * 		- different per-case.
+	 * 		Marker Interfaces have no methods.
+	 * 		The something special about Serializable is the whitelisting.
+	 * 1. Class must implement Serializable (whitelist)
+	 * 		2. Add a serialVersionUID
+	 * 
+	 */
+	public static void main(String[] args) {
+		
+System.out.println("test1");
+	}
+	//when you have files youre going to use, you would put these files
+	// in a special package that you could easily find.
+	// separating non-Java files into a "resources" folder.
+	String filePathAndName = "src/com/revature/person.txt";
+	
+	Student john = new Student(1,"John",4.0)
+	
+
+}

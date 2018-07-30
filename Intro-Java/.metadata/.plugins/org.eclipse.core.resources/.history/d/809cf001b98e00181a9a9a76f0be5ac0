@@ -1,0 +1,53 @@
+package com.ex.classes;
+
+public class Launcher {
+	
+public static void main (String[] args) {
+	Dog sparky = new Dog ("Sparky", 48, false, "zombie");
+	System.out.println(sparky.getName());
+	
+	Fish johnson = new Fish ("Johnson" , 45 , true , "twelve");
+	System.out.println(johnson.isAlive());
+	
+	Fish billy = new Fish ("Billy" , 45 , true , "twelve");
+	System.out.println(johnson.isAlive());
+	
+pet[] petArray = {sparky, johnson, billy};
+	
+	for(pet element: petArray) {
+		
+		System.out.println(element.getName());
+
+}
+	
+	
+	
+	
+//	int[] intArray = new int[5];
+//	intArray[0] = 10;
+//	intArray[1] = 11;
+//	intArray[2] = 12;
+//	intArray[3] = 13;
+//	intArray[4] = 14;
+//	
+//	/*
+//	 * for loop
+//	 */
+//	for(int i = 0; i < intArray.length; i++){
+//		System.out.println(intArray[i]);
+//	}
+//
+//	
+//	System.out.println();
+//	
+//	
+//	/*
+//	 * enhanced for loop (for each loop)
+//	 */
+//	for(int element: intArray){
+//		System.out.println(element);
+//	}
+//	
+//}
+}
+}

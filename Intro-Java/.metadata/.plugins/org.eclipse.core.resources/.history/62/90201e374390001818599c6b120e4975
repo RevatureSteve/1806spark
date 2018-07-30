@@ -1,0 +1,14 @@
+package com.ex.exceptions;
+
+public class ExceptionsExamples {
+/**
+ * IQ: What is the difference between an error and an exception?
+ * Error: Errors happen at runtime or compile time
+ * Exception: Exceptions only happen at runtime?
+ * 
+ * */
+	
+	public static void main(String[] args) {
+		
+	}
+}

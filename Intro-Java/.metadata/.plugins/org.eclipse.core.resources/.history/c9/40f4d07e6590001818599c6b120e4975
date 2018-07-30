@@ -1,0 +1,28 @@
+package com.exercise;
+
+public class Gym {
+	public static void main(String[] args) {
+		
+
+		System.out.println("Gym made a sale");
+		// TODO Auto-generated method stub
+	
+	
+	public String clubMember;
+	private int exerciseLength;
+	private int lengthOpen;
+	
+		
+		public Gym() {
+		};
+		
+public Gym(String clubMember, int exerciseLength, int lengthOpen) {
+			super();
+			this.clubMember = clubMember;
+			this.exerciseLength = exerciseLength;
+			this.lengthOpen = lengthOpen;
+		}
+	};
+
+
+	

@@ -1,0 +1,38 @@
+// label B
+package com.project.objs;
+
+import com.project.Interface;
+
+public class Knife extends Cutter implements Interface{
+
+	public Knife() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Knife(String name, int degreeSharpness) {
+		super(name, degreeSharpness);
+		// TODO Auto-generated constructor stub
+	}
+
+	@Override
+	public void sharpenBlade() {
+		// TODO Auto-generated method stub
+		System.out.println("You drag a whetstone across your blade.");
+
+	}
+
+	@Override
+	public void changeBlade() {
+		// TODO Auto-generated method stub
+		System.out.println("That cannot happen.");
+	}
+
+	@Override
+	String slice() {
+		// TODO Auto-generated method stub
+		System.out.println("You swing at nothing. Nice.");
+	}
+
+	
+}

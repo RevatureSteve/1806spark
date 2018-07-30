@@ -1,0 +1,24 @@
+package com.project;
+
+import java.util.Scanner;
+
+public class Launcher {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		int key = scan.nextInt();
+		
+		switch (key) {
+		case value:
+			
+			break;
+
+		default:
+			break;
+		}
+		
+	}
+	
+	
+	 
+}

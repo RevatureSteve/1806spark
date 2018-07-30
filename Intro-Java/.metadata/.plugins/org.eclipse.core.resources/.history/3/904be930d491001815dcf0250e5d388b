@@ -1,0 +1,5 @@
+package com.revature.threads;
+								//is a concrete class. not an abstract w/ concrete methods.
+public class ChildThread extends Thread {
+
+}

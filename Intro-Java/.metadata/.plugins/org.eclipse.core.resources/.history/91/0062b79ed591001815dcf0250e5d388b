@@ -1,0 +1,10 @@
+package com.revature.threads;
+								//is a concrete class. not an abstract w/ concrete methods.
+public class ChildThread extends Thread {
+	
+	@Override
+public void run() {
+	// this code will execute when creating a new thread.
+	System.out.println("\t\t in a different thread.");
+}
+}

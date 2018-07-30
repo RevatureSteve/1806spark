@@ -1,0 +1,25 @@
+package com.pojo.utils;
+
+import com.pojo.abstracts.Pojo;
+
+public class Transport extends Pojo {
+
+	
+	
+
+	public Transport() {};
+	
+	public Transport(int passengerCount) {
+		this.passengerCount = passengerCount;
+	};
+	
+	private int passengerCount;
+	
+	@Override
+	public void move() {
+		System.out.println("Transport rumbles along with" + passengerCount);
+		// TODO Auto-generated method stub
+		
+	}
+
+}

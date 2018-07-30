@@ -1,0 +1,25 @@
+package com.revature;
+
+public class Driver {
+
+	public static void main(String[] args) {
+		/*
+		 * Serialization: Java Obj to Byte Code
+		 * DeSerialization: Byte Code to Java Objs
+		 * 
+		 * First Note: All Java Objs are blacklisted,
+		 * meaining you cannot do serialization.
+		 * You must whitelist each individual class so
+		 * that the object created from them are allowed
+		 * to be serialized.
+		 * 
+		 * 1. Class must implement Serializable(whitelist)
+		 * 		Serializable is a "Marker Interface"
+		 * 		Marker Interfaces tells the JVM something special
+		 * 		Marker Interfaces have no methods.
+		 * 
+		 */
+System.out.println("test1");
+	}
+
+}

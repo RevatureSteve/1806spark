@@ -1,0 +1,17 @@
+package com.exercise;
+
+Driver()
+
+public class Driver {
+	public static void Driver(String[] args) {
+		
+	
+	Gym empty = new Gym() {};
+	
+	Gym bobby = new Gym("Tom",30,30) {
+		bobby = bobby.toString();
+		System.out.println(bobby);
+	
+
+};
+}

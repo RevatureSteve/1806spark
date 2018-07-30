@@ -1,0 +1,21 @@
+package com.revature.beans;
+
+/*
+ * Student class is not just a POJO
+ * It is a JavaBean, stricter version of POJO.
+ * 
+ * 1. State must be fully encapsulated, not random access.
+ * 2. Provide getters and setters where needed.
+ * - i may want it to be read only.
+ * 3. must have a no-args constructor.
+ * 4. class must implement Serializable.
+ * 5. Override toString() method.
+ * 
+ * */
+import java.io.Serializable;
+	
+public class Student implemenets Serializable {
+
+	public String name;
+	public int year;
+};

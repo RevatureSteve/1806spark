@@ -1,0 +1,32 @@
+package com.project;
+
+import java.util.Scanner;
+
+public class Launcher {
+
+	public static void main(String[] args) {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Welcome, please choose a blade:");
+		System.out.println("1: Knife");
+		System.out.println("2: Chainsaw");
+		
+		int key = scan.nextInt();
+		
+		switch (key) {
+		case 1:
+			System.out.println("Knife chosen.");
+			getKnife();
+			break;
+		case 2:
+			System.out.println("Chainsaw chosen.");
+			getChainSaw();
+			break;
+		}
+		
+	}
+	
+	public static void getKnife() {
+		Navigation.knifeMenu();
+	}
+	 
+}

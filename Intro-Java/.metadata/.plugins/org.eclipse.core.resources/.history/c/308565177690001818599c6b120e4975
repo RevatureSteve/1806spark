@@ -1,0 +1,9 @@
+package com.exercise;
+
+public class Driver {
+	public static void main(String[] args) {
+		
+	
+	Gym empty = new Gym() {};
+};
+};

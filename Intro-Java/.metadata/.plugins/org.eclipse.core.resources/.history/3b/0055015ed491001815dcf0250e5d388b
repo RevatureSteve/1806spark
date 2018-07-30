@@ -1,0 +1,23 @@
+package com.revature.threads;
+
+public class ThreadsExample {
+/*
+ * What is a thread?
+ * INDIVIDUAL TASK, PROCESS
+ * Each thread in java gets its own Memory Stack.
+ * It will have the access to the same Heap.
+ * 
+ * MultiThreading...
+ * Multiple threads in a single application.
+ * 
+ * How do we create threads in Java?
+ * 	Two ways:
+ * Create a class that...
+ * -Extends Threads class
+ * -implements Runnable.
+ * */
+public static void main(String[] args) {
+	System.out.println("Threads");
+	
+}
+}

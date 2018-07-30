@@ -1,0 +1,42 @@
+// label B
+package com.project.objs;
+
+import com.project.Interface;
+
+public class Knife extends Cutter{
+
+
+
+	public Knife() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	public Knife(String name, int degreeSharpness) {
+		super(name, degreeSharpness);
+		name = "Knife";
+		degreeSharpness = 0;
+	}
+	@Override
+	public void Slice(){
+		if(this.getDegreeSharpness() < 1) {
+			System.out.println("You mash the bread.");
+		}else{
+		System.out.println( "You slice the bread.");
+			}
+		}
+	
+	public void Sha
+		// TODO Auto-generated method stub
+
+	@Override
+	public String toString() {
+		return "[Name=" + getName() + ", Sharpness()=" + getDegreeSharpness()+"]";
+	}
+
+	
+	}
+
+	
+
+

@@ -1,0 +1,34 @@
+//LABEL A
+package com.project.objs;
+
+import com.project.Interface;
+
+public abstract class Cutter implements Interface {
+
+	private String name;
+	private int degreeSharpness;
+	
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
+	}
+	public int getDegreeSharpness() {
+		return degreeSharpness;
+	}
+	public void setDegreeSharpness(int degreeSharpness) {
+		this.degreeSharpness = degreeSharpness;
+		System.out.println("You've sharpened your blade.");
+	}
+	
+	abstract void slice();
+	public Cutter(String name, int degreeSharpness) {
+		super();
+		this.getName();
+		this.getDegreeSharpness();
+		
+	}
+	
+	
+}

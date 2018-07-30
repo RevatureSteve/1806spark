@@ -1,0 +1,25 @@
+package bank;
+
+public abstract class pin {
+
+		public pin() {
+			super();
+			// TODO Auto-generated constructor stub
+		}
+
+		public pin(String pin) {
+			super();
+			this.pin = pin;
+		}
+
+		public String getPin() {
+			return pin;
+		}
+
+		public void setPin(String pin) {
+			this.pin = pin;
+		}
+		
+		public abstract void pinNum();
+		
+	}

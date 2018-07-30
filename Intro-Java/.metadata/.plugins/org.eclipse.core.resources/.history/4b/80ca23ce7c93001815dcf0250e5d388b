@@ -1,0 +1,13 @@
+package com.project;
+
+
+public interface Interface {
+	
+		
+		static void isSharp() {
+		};
+		
+		default int examineBlade() {
+			return Interface.degreeSharpness;
+		}
+};

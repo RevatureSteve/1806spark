@@ -1,0 +1,7 @@
+package com.project;
+
+public interface Interface {
+	
+public	Interface start();
+abstract Interface end();
+};

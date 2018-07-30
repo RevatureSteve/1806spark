@@ -1,0 +1,28 @@
+package com.revature.pojo;
+
+import com.revature.abstracts.Sandwich;
+
+/*THIS HAS A NO ARGS CONSTRUCTOR!
+ * public class Club extends Sandwich {
+
+	@Override
+	public void prepping() {
+		// TODO Auto-generated method stub
+		System.out.println("Club being made, will toast!");
+	}*/
+	
+public class Club extends Sandwich {
+
+	// state
+	private boolean isToasted;
+	private int numberOfToothpicks;
+	
+	
+	@Override
+	public void prepping() {
+		// TODO Auto-generated method stub
+		System.out.println("Club being made, will toast!");
+	}
+
+	
+}

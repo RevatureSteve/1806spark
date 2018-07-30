@@ -1,0 +1,31 @@
+// label B
+package com.project.objs;
+
+import com.project.Interface;
+
+public class Knife extends Cutter{
+
+	public Knife(String name, int degreeSharpness) {
+		super(name, degreeSharpness);
+		name = "Knife";
+		degreeSharpness = 0;
+	}
+
+	public static sharpen() {
+		System.out.println("You've sharpened your blade.")
+	}
+	
+	
+	
+	@Override
+	void slice(){
+			
+		}
+		// TODO Auto-generated method stub
+	
+	
+	}
+
+	
+
+

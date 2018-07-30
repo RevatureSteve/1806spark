@@ -1,0 +1,13 @@
+package com.project;
+
+public interface Interface {
+	default void pageChange() {
+		System.out.println("Changing pages...");
+	}
+	
+public void sharpenBlade();
+
+abstract void canChangeBlade(boolean);
+
+Interface start();
+};

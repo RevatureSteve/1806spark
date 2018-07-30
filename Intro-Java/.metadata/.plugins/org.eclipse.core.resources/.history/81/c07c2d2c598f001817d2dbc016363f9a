@@ -1,0 +1,5 @@
+package bank;
+
+public class pin {
+		private int pin = 1337;
+	}

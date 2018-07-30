@@ -1,0 +1,16 @@
+package com.exercise;
+
+
+	public static void main(String[] args) {
+		public class Driver {
+		// TODO Auto-generated method stub
+
+	
+	private String clubMember;
+	private int exerciseLength;
+	
+	
+		};
+
+	};
+};

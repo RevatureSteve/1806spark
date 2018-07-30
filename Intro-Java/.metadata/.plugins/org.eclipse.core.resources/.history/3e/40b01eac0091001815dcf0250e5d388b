@@ -1,0 +1,6 @@
+package com.project;
+import java.util.Scanner;
+public class MainScreen implements Interface {
+
+	private Scanner scan
+}

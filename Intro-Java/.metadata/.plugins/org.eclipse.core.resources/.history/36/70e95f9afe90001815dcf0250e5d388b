@@ -1,0 +1,41 @@
+//LABEL A
+package com.project.objs;
+
+import com.project.Interface;
+
+public abstract class Cutter implements Interface {
+
+	public String type;
+	private int productionCode;
+	abstract String slice();
+	
+	public Cutter(String type, int productionCode) {
+		super();
+		this.type = type;
+		this.productionCode = productionCode;
+		this.slice();
+	}
+	public Cutter() {
+		super();
+
+	}
+	
+
+	public String getType() {
+		return type;
+	}
+
+	public void setType(String type) {
+		this.type = type;
+	}
+
+	public int getProductionCode() {
+		return productionCode;
+	}
+
+	public void setProductionCode(int productionCode) {
+		this.productionCode = productionCode;
+	}
+	
+	
+}

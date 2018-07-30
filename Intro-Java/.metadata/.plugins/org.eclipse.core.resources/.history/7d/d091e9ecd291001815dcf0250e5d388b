@@ -1,0 +1,14 @@
+package com.revature.threads;
+
+public class ThreadsExample {
+/*
+ * What is a thread?
+ * INDIVIDUAL TASK, PROCESS
+ * Each thread in java gets its own Stack.
+ * 
+ * */
+public static void main(String[] args) {
+	System.out.println("Threads");
+	
+}
+}

@@ -1,0 +1,20 @@
+package com.exercise;
+
+public class Driver {
+	public static void main(String[] args) {
+		
+	
+	Gym empty = new Gym() {};
+	
+	Gym bobby = new Gym("Tom",30,30) {
+		Gym bobby = bobby.toString();
+		System.out.println(bobby);
+		printTicket(bobby);
+		
+	}
+	
+
+}
+public printTicket(Gym mem) {
+	System.out.println(mem);
+}

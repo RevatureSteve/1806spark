@@ -1,0 +1,120 @@
+package com.revature;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.Scanner;
+
+import com.revature.beans.Student;
+import com.revature.presentation.PresentationUtil;
+
+public class Driver {
+	/*
+	 * Serialization: Java Obj to Byte Code
+	 * DeSerialization: Byte Code to Java Objs
+	 * 
+	 * First Note: All Java Objs are blacklisted,
+	 * meaining you cannot do serialization.
+	 * You must whitelist each individual class so
+	 * that the object created from them are allowed
+	 * to be serialized.
+	 * 
+	 * Serializable is a "Marker Interface"
+	 * 		Marker Interfaces tells the JVM something special
+	 * 		- different per-case.
+	 * 		Marker Interfaces have no methods.
+	 * 		The something special about Serializable is the whitelisting.
+	 * 1. Class must implement Serializable (whitelist)
+	 * 		2. Add a serialVersionUID to the class
+	 * 3. Use the ObjectOutputStream or Object Inputstream
+	 * 
+	 * IQ!!!!!!
+	 * What is the point of the serialVersionUID?
+	 * to match the version when deserializing.
+	 * IFthe serialVersionUID doesnt match when deserializing?
+	 * THROWS AN EXCEPTION, InvalidClassException.
+	 */
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		PresentationUtil.welcomeMenu();
+		int userInput = scan.nextInt();
+		System.out.println("User entered" + userInput);
+		
+		Student stud = PresentationUtil.creatingNewStudent();
+		
+		System.out.println("User created" + stud);
+		
+		
+	//when you have files youre going to use, you would put these files
+	// in a special package that you could easily find.
+	// separating non-Java files into a "resources" folder.
+	String filePathAndName = "src/com/revature/person.txt";
+	
+	// created the obj from a class marked as Serializable
+	Student john = new Student(1,"John",4.0, 555);
+	
+//	serializeStudent(john, filePathAndName); //the Create of Crud
+	
+//	deserializeStudent(filePathAndName); // C. Read of cRud
+	
+//	Student stud = deserializeStudent(filePathAndName);
+	
+	System.out.println(stud);
+	}
+	
+	// to serialize a student, i will need student and filepath. THIS IS NOT SHADOWING.
+	// I have two variables with same name, but, theyre not in the same scope.
+public static void serializeStudent(Student stud, String filePathAndName) {
+	// Serialize Student to a file.
+	
+	//the blank template of this only provides constructors to take arguments, cant take no args.
+	
+	//ObjectOutputStream is better than FileOutputStream.
+		try( FileOutputStream os = new FileOutputStream(filePathAndName);
+				// ill add an additional catch clause to my catch.
+				ObjectOutputStream oos = new ObjectOutputStream(os);) {
+			oos.writeObject(stud);
+			
+		} catch (FileNotFoundException e) {
+			//WILL ONLY CATCH ITSELF.
+			e.printStackTrace();
+		} catch (IOException e1) {
+			// IOEXCEPTION WILL CATCH ITSELF AND FILENOTFOUND
+			e1.printStackTrace();
+		} catch (Exception e2) {
+			// EXCEPTION WILL CATCH IOEXCEPTION AND FILENOTFOUNDEXCEPTION
+			
+		}
+		
+	
+}
+public static Student deserializeStudent(String filePathAndName) {
+	
+	// CONVERT BYTECODE BACK INTO A JAVA OBJECT.
+	
+	Student john = null; // DECLARE JOHN OUTSIDE OF THE TRY BLOCK TO GET A BIGGER LOCAL SCOPE.
+	try (FileInputStream is = new FileInputStream(filePathAndName);
+		ObjectInputStream ois = new ObjectInputStream(is);){
+		
+		// ois.readObject(); will ONLY read an obj, it doesnt know what kind!
+		// must downcast to a student.
+		john = (Student) ois.readObject();
+		
+	} catch (FileNotFoundException e) {
+		
+		e.printStackTrace();
+	} catch (IOException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	} catch (ClassNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	
+	return john; //another way of saying TODO.
+}
+}

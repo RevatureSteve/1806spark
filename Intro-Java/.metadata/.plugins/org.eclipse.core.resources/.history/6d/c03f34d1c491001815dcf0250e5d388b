@@ -1,0 +1,7 @@
+package com.revature.dao;
+
+
+//A CLASS SPECIFICALLY MADE TO ACCESS DATA ABOUT STUDENTS
+public class StudentDao {
+
+}

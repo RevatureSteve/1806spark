@@ -1,0 +1,20 @@
+package com.revature.presentation;
+
+public class PresentationUtil {
+	
+	/*useful class that will hold views or presentation logic.
+	*/
+	
+	/*
+	 * welcomeMenu is static, which means we will access it in another class
+	 * by ClassName.methodName() OR ClassName.variableName
+	 * 	PresentationUtil.welcomeMenu()
+	 */
+	//as a static, it is viewable for the class itself.
+	public static void welcomeMenu() {
+	System.out.println("Welcome, please select from the list below:");
+	System.out.println("1 Create new student");
+	System.out.println("2 Read current student");
+	System.out.println("3 Exit");
+	}
+}

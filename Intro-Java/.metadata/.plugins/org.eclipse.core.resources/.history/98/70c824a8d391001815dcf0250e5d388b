@@ -1,0 +1,14 @@
+package com.revature.threads;
+
+public class ThreadsExample {
+/*
+ * What is a thread?
+ * INDIVIDUAL TASK, PROCESS
+ * Each thread in java gets its own Memory Stack.
+ * It will have the access to the same Heap.
+ * */
+public static void main(String[] args) {
+	System.out.println("Threads");
+	
+}
+}

@@ -1,0 +1,17 @@
+//LABEL A
+package com.project.objs;
+
+import com.project.Interface;
+
+public abstract class Cutter implements Interface {
+
+	public String name;
+	public int degreeSharpness;
+	abstract void slice();
+	public Cutter(String name, int degreeSharpness) {
+		super();
+		this.name = name;
+		this.degreeSharpness;
+	}
+	
+}

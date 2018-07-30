@@ -1,0 +1,8 @@
+package com.project;
+
+public class ThrowSomethingException {
+public ThrowSomethingException() {};
+public ThrowSomethingException(String message) {
+	super(message);
+};
+}

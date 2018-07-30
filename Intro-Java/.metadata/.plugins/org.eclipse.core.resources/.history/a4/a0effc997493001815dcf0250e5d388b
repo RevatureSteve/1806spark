@@ -1,0 +1,44 @@
+package com.project;
+
+import java.util.Scanner;
+
+public class Navigation {
+
+public static void knifeMenu() {
+	System.out.println("Select a Cutter");
+	System.out.println("1. Sharpen");
+	System.out.println("2. Change Blade.");
+	System.out.println("3. Return");
+	String input = Scanner.nextLine();
+
+switch (input) {
+case "1":
+break;
+case "2":
+break;
+case "3":
+System.out.println("You cannot wield it.");
+break;
+}
+};
+
+public static void chainSawMenu() {
+	System.out.println("Select a Cutter");
+	System.out.println("1. Sharpen");
+	System.out.println("2. Change Blade.");
+	System.out.println("3. Return");
+	String input = Scanner.nextLine();
+
+switch (input) {
+case "1":
+
+case "2":
+return 
+
+
+case "3":
+System.out.println("You cannot wield it.");
+break;
+}
+};
+}

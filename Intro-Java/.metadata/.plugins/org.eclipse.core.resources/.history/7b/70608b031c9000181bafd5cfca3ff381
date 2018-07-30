@@ -1,0 +1,14 @@
+package com.revature.pojo;
+
+import com.revature.abstracts.Sandwich;
+
+public class Club extends Sandwich {
+
+	@Override
+	public void prepping() {
+		// TODO Auto-generated method stub
+		System.out.println("Club being made, will toast!");
+	}
+
+	
+}
