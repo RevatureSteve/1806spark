@@ -7,11 +7,15 @@ public class Grouper extends Fish implements Splash{
 	private String howsTaste = "great";
 	
 	
-	public Grouper(boolean isLazy, String howsTaste) {
-		super();
+	public Grouper(boolean isLazy, String howsTaste, Boolean canSwim, Boolean HasScales) {
+		super(canSwim, HasScales);
 		this.isLazy = isLazy;
 		this.howsTaste = howsTaste;
 		System.out.println("okay, this should taste good");
+	}
+
+	public Grouper(Boolean canSwim, Boolean hasScales) {
+		super(canSwim, hasScales);
 	}
 
 	public boolean isLazy() {
@@ -30,7 +34,6 @@ public class Grouper extends Fish implements Splash{
 		this.howsTaste = howsTaste;
 		if(howsTaste.equals("")) {
 			System.out.println("enter SOMETHING about the taste, (preferrably, great)");
-			throw new WrongTasteException();
 		}
 		
 	}
@@ -43,13 +46,6 @@ public class Grouper extends Fish implements Splash{
 		
 	}
 	
-	
-	
-	@Override
-	public void splash() {
-		
-		
-	}
 
 	@Override
 	public void swim() {

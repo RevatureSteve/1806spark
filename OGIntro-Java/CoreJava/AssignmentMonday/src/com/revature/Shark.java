@@ -1,6 +1,13 @@
 package com.revature;
 
+import com.revature.WrongSizeException;
+
 public class Shark extends Fish implements Splash{
+
+	/**
+	 * 
+	 */
+	
 
 	private boolean smellsBlood = true;
 	
@@ -8,7 +15,7 @@ public class Shark extends Fish implements Splash{
 	
 	
 	
-	public boolean isSmellsBlood() {
+	public boolean getSmellsBlood() {
 		return smellsBlood;
 	}
 
@@ -24,7 +31,7 @@ public class Shark extends Fish implements Splash{
 	
 
 	public void setSizeFt(int sizeFt) throws WrongSizeException {
-		this.sizeFt = sizeFt; //the sizeFt for the new instantiated shark will equal this variable
+		//this.sizeFt = sizeFt; //the sizeFt for the new instantiated shark will equal this variable
 		if (sizeFt < 10) { // if the sizeFt is less than 10
 			System.out.println("BIG SHARKS ONLY");// then print out this
 			this.sizeFt = 10; // and change the sizeFt to 10
@@ -34,8 +41,8 @@ public class Shark extends Fish implements Splash{
 		}
 	}
 
-	public Shark(boolean smellsBlood, int sizeFt) {
-		super();
+	public Shark(boolean smellsBlood, int sizeFt, Boolean canSwim, Boolean HasScales) {
+		super(canSwim, HasScales);
 		this.smellsBlood = smellsBlood;
 		this.sizeFt = sizeFt;
 		System.out.println("okay, you're gonna die");
@@ -46,15 +53,6 @@ public class Shark extends Fish implements Splash{
 	}
 	
 	private void quickSwim () { 
-		
-	}
-	
-	
-	
-	
-	@Override
-	public void splash() {
-		
 		
 	}
 
@@ -68,6 +66,12 @@ public class Shark extends Fish implements Splash{
 	public Splash start() {
 		// TODO Auto-generated method stub
 		return null;
+	}
+
+	@Override
+	public String toString() {
+		return "Shark [smellsBlood=" + smellsBlood + ", sizeFt=" + sizeFt;
+				//+ "can swim?" + canSwim"]";
 	}
 
 }

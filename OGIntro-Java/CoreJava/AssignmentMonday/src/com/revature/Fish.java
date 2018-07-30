@@ -1,14 +1,16 @@
 package com.revature;
 
-public abstract class Fish { // can i change this into an interface from a class?
-	
-	public abstract void splash (); //ABSTRACT METHOD any class that extends Fish must implement splash
+import java.io.Serializable;
 
+public abstract class Fish implements Serializable { // can i change this into an interface from a class?
+	
+	
+		private static final long serialVersionUID = 7979;
 		private Boolean canSwim;
 		private Boolean HasScales;
 		@Override
 		public String toString() {
-			return "Fish [canSwim=" + canSwim + ", HasScales=" + HasScales + "]";
+			return "Fish [canSwim=" + getCanSwim() + ", HasScales=" + HasScales + "]";
 		}
 		public Boolean getCanSwim() {
 			return canSwim;
@@ -22,6 +24,14 @@ public abstract class Fish { // can i change this into an interface from a class
 		public void setHasScales(Boolean hasScales) {
 			HasScales = hasScales;
 		}
+		public Fish(Boolean canSwim, Boolean hasScales) {
+			super();
+			this.setCanSwim(canSwim);
+			HasScales = hasScales;
+		}
+		public Fish() {
+			super();
+		}
 	
-		
+	
 }
