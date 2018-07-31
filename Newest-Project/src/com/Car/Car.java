@@ -4,7 +4,7 @@ public interface Car {
 
 	String sound = "Vroom Vroom";
 	
-	public void drive();
+	public String drive();
 	
 	default String exhaustNote() {
 		

@@ -4,7 +4,7 @@
 package com.Car;
 
 
-public class SportsCar extends AllCars {
+public class SportsCar extends AllCars{
 	
 	
 	public int horsePower;

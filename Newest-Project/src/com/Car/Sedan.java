@@ -1,6 +1,8 @@
+//C
+
 package com.Car;
 
-public class Sedan implements Car{
+public class Sedan{
 	
 	private int advancedFeatures;
 	private int cylinder;
@@ -49,11 +51,7 @@ public class Sedan implements Car{
 		this.model = model;
 	}
 
-	@Override
-	public void drive() {
-		System.out.println("The car drives!");
-		
-	}
+	
 
 	@Override
 	public String toString() {

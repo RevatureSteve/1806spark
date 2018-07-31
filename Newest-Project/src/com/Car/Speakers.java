@@ -2,7 +2,7 @@
 
 package com.Car;
 
-public class Speakers extends Sedan {
+public class Speakers extends Sedan implements Car {
 
 	private int speakers;
 	
@@ -11,6 +11,7 @@ public class Speakers extends Sedan {
 	public Speakers(int advancedFeatures, int cylinder, int seats, String model, int speakers) {
 		super(advancedFeatures, cylinder, seats, model);
 		this.speakers = speakers;
+		System.out.println(drive());
 	}
 
 	public int getSpeakers() {
@@ -24,6 +25,11 @@ public class Speakers extends Sedan {
 	@Override
 	public String toString() {
 		return super.toString() + "Speakers [speakers=" + speakers + "]";
+	}
+	@Override
+	public String drive() {
+		return "Your Sedan is in your inventory!";
+		
 	}
     
     
