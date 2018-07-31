@@ -1,0 +1,1 @@
+LabelC [intC=4, stringC=, getBaseInt()=4, getBaseString()=2, getClass()=class com.revature.labels.LabelC, hashCode()=1444989115, toString()=com.revature.labels.LabelC@5620c8bb]
