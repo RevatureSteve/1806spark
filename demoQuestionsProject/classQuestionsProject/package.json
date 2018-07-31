@@ -1,0 +1,16 @@
+{
+  "name": "demoquestionsproject",
+  "version": "1.0.0",
+  "description": "question class project example node project w/ express and mongoos (to connect to DB)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Humphrey Minott",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "mongoose": "^5.2.3"
+  }
+}

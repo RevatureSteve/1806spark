@@ -1,0 +1,3 @@
+2018-07-18 16:44:15,554 [Worker-12: Auto share git projects] WARN  org.eclipse.jgit.util.FS - null
+2018-07-19 09:11:50,933 [main] WARN  org.eclipse.jgit.util.FS - null
+2018-07-20 09:06:35,661 [main] WARN  org.eclipse.jgit.util.FS - null
