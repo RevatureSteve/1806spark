@@ -33,6 +33,10 @@ public class Driver {
 	 * 			to match the version when deserializing
 	 * 		If the serialVersionUID doesn't match when deserializing what happens?
 	 * 			Throws an exception...but which one? InvalidClassException
+	 * 
+	 * 		What is the transient keyword?
+	 * 			During serialization, ignore the variables marked transient instead give them
+	 * 				the default value of that datatype	
 	 * 			
 	 */
 	public static void main(String[] args) {

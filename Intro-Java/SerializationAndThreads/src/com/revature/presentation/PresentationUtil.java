@@ -36,7 +36,6 @@ public class PresentationUtil {
 		int studSsn = scan.nextInt();
 		
 		Student stud = new Student(55,studName, studGpa, studSsn);
-		scan.close();
 		return stud;
 	}
 	
