@@ -8,7 +8,7 @@ package com.revature.pojo;
  * 			1. control the constructor by encapsulating them w/ private
  * 			2. static self reference line 13. 
  * 			3. public static get method for the reference 
- * 			4. create the state like any other pojo/javabean 
+ * 			4. create the state/behavior like any other pojo/javabean 
  * 
  */
 public class Hercules {

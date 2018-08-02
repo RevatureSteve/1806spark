@@ -14,6 +14,7 @@ public class Cal {
 		firstNumber = dan.nextDouble();
 		System.out.println("--enter second number--");
 		secondNumber = dan.nextDouble();
+		System.out.println(firstNumber + " plus " + secondNumber + " equals: "  );
 		answer = firstNumber + secondNumber;
 		
 		System.out.println(answer);
