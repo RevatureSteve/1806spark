@@ -1,11 +1,17 @@
-package com.revature.pojo;
+package com.revature.beans;
+
+import java.io.Serializable;
 
 import com.revature.abstracts.Attractions;
 import com.revature.exceptions.NoEmptyStringException;
 import com.revature.exceptions.NoNegativeException;
 
-public class Lighthouses extends Attractions {
+public class Lighthouses extends Attractions implements Serializable{
 
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 	private String location;
 	private int height;
 	private boolean isWorking;
@@ -20,10 +26,11 @@ public class Lighthouses extends Attractions {
 		this.isWorking = isWorking;
 	}
 
+	
+
 	@Override
 	public String toString() {
-		return "Name: " + name + "\nLocation: " + location + "\nHeight: " + height + "\nWorking: " + isWorking
-				+ "\nOpen: " + isOpen() + "\n";
+		return "Lighthouses [location=" + location + ", height=" + height + ", isWorking=" + isWorking + "]";
 	}
 
 	public int getHeight() {

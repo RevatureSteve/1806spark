@@ -1,8 +1,8 @@
 package com.revature;
 
 import com.revature.abstracts.Attractions;
+import com.revature.beans.Lighthouses;
 import com.revature.exceptions.NoEmptyStringException;
-import com.revature.pojo.Lighthouses;
 
 public class Driver {
 

@@ -1,1 +1,1 @@
-Lighthouse [name=d location=e height=3, isWorking=false]
+Lighthouse [name=d location=r height=4, isWorking=false]

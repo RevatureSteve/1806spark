@@ -10,19 +10,19 @@ import com.revature.interfaces.Visitable;
 import com.revature.pojo.Lighthouse;
 import com.revature.pojo.NationalParks;
 import com.revature.presentation.PresentationUtil;
-import com.revature.threads.LighthousePersistThreat;
+import com.revature.threads.LighthousePersistThread;
 import com.revature.threads.NationalParkPersistThread;
 
 public class Driver {
 
 	public static void main(String[] args) {
 		
-		Lighthouse currituck = new Lighthouse("Currituck", "Corolla, NC", 162, true);
-		NationalParks acadia = new NationalParks("Acadia", "Maine", "hiking", 46856);
-		currituck.findAttraction();
-		Visitable.visiting(currituck.getName());
-		currituck.visited();
-		acadia.whatToDo();
+//		Lighthouse currituck = new Lighthouse("Currituck", "Corolla, NC", 162, true);
+//		NationalParks acadia = new NationalParks("Acadia", "Maine", "hiking", 46856);
+//		currituck.findAttraction();
+//		Visitable.visiting(currituck.getName());
+//		currituck.visited();
+//		acadia.whatToDo();
 		
 		
 		
@@ -61,7 +61,7 @@ public class Driver {
 			e.printStackTrace();
 		}
 
-		Thread t1 = new LighthousePersistThreat();
+		Thread t1 = new LighthousePersistThread();
 		t1.start();
 	}
 	

@@ -153,6 +153,8 @@ BEGIN
 END;
 /
 
+
+
 --4.2 Stored Procedure Input Parameters
 --Task – Create a stored procedure that updates the personal information of an employee.
 --CREATE OR REPLACE PROCEDURE update_employee_info(emp_id IN INT, )
@@ -199,6 +201,48 @@ BEGIN
 END;
 /
 
+
+--5.0 Transactions
+--In this section you will be working with transactions. Transactions are usually nested within a stored
+--procedure.
+
+--Task – Create a transaction that given a invoiceId will delete that invoice (There may be constraints that
+--rely on this, find out how to resolve them).
+CREATE OR REPLACE PROCEDURE delete_invoice (in_id IN INT)
+IS 
+BEGIN
+    DELETE FROM invoiceline WHERE invoiceid = in_id;
+    DELETE FROM invoice WHERE invoiceid = in_id;
+END;
+/
+
+BEGIN
+    delete_invoice (10);
+END;
+/
+
+--Task – Create a transaction nested within a stored procedure that inserts a new record in the Customer
+--table
+CREATE OR REPLACE PROCEDURE insert_customer_record(customerid IN INT, firstname IN VARCHAR2, lastname IN VARCHAR2,
+company IN VARCHAR2, address IN VARCHAR2, city IN VARCHAR2, state IN VARCHAR2, country IN VARCHAR2, postalcode IN VARCHAR2,
+phone IN VARCHAR2, fax IN VARCHAR2, email IN VARCHAR2, supportedid IN NUMBER)
+IS
+BEGIN
+    INSERT INTO customer VALUES (customerid, firstname, lastname, company, address, city, state, country, postalcode, phone, 
+            fax, email, supportedid);
+    commit;
+END;
+/
+
+DELETE FROM customer
+WHERE customerid = 66;
+
+BEGIN
+    insert_customer_record(66,'Alicia','Douglas','Revature','1112 Dr.','Tampa','FL','USA','11232','+1 (322) 323-2131'
+        ,'+1 (322) 243-3211', 'ad@gmail.com',3);
+END;
+/
+
 --6.0 Triggers
 --In this section you will create various kinds of triggers that work when certain DML statements are
 --executed on a table.
@@ -207,13 +251,49 @@ END;
 --Task - Create an after insert trigger on the employee table fired after a new record is inserted into the
 --table.
 
-`
+CREATE OR REPLACE TRIGGER after_employee_insert_trigger
+AFTER INSERT ON employee
+FOR EACH ROW 
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('New employee inserted');
+END;
+/
 
+DELETE FROM employee
+WHERE employeeid = 10;
 
+INSERT INTO employee VALUES (10, 'Smith', 'Steve', 'Manager', 1, TO_DATE('19780321','YYYYMMDD'),
+TO_DATE('19821102','YYYYMMDD'),'1423 ln.', 'Edmonton', 'AB', 'Canada', 'T5K 2N1', '+1 (780) 800-3243', 
+'+1 (780) 800-2432','steve_smith@chinookcorp.com');
 
+--Task – Create an after update trigger on the album table that fires after a row is inserted in the table
+CREATE OR REPLACE TRIGGER after_album_update_trigger
+AFTER UPDATE ON album
+FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Album data updated');
+END;
+/
 
+UPDATE album 
+SET title = 'For Those About To Rock We Salute You'
+WHERE albumid = 1;
 
+--Task – Create an after delete trigger on the customer table that fires after a row is deleted from the
+--table.
+CREATE OR REPLACE TRIGGER after_customer_delete_trigger
+AFTER DELETE ON customer 
+FOR EACH ROW
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('Cutomer row deleted');
+END;
+/
 
+INSERT INTO Customer (CustomerId, FirstName, LastName, Address, City, State, Country, Email, SupportRepId) 
+VALUES (62, 'Kyle', 'Smith', '23890 ct.', 'Rochester', 'NY', 'USA', 'ksmith@gmail.com', 2);
+
+DELETE FROM customer
+WHERE customerid = 62;
 
 
 --7.0 JOINS

@@ -68,7 +68,7 @@ public class Lighthouse extends Attractions implements Serializable, Visitable{
 
 	@Override
 	public String toString() {
-		return "Lighthouse [name=" + getName() + " location=" + getLocation()  + " height=" + height + ", isWorking=" + isWorking + "]";
+		return "Lighthouse [name=" + super.getName() + " location=" + super.getLocation()  + " height=" + height + ", isWorking=" + isWorking + "]";
 	}
 
 
