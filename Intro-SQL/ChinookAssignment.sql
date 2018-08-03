@@ -131,9 +131,87 @@ AND TO_DATE('20040301','YYYYMMDD');
 SAVEPOINT G;
 --Delete a record in Customer table where the name is Robert Walter (There may be constraints
 --that rely on this, find out how to resolve them).
+SELECT * FROM Customer;
+
+UPDATE Customer
+SET SupportRepId = NULL
+WHERE CustomerId = 32;
+
+DELETE FROM Invoice  
+WHERE CustomerId = 32;
+
+SELECT * FROM Invoice
+WHERE CustomerId = 32;
+
 SELECT * FROM Customer
---WHERE FirstName = 'Robert' 
---AND LastName = 'Walter'
---AND 
 WHERE CustomerId = 32; 
+
+DELETE FROM Customer
+WHERE CustomerId = 32;
+
+SELECT * FROM InvoiceLine;
+
+--==============================================================================================================================
+--  3.1 SYSTEM DEFINED FUNCTIONS 
+--==============================================================================================================================
+
+--Create a function that returns the current time.
+
+SELECT CURRENT_TIMESTAMP FROM dual;
+
+
+--ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MON-YYYY HH24:MI:SS';
+--SELECT SESSIONTIMEZONE, CURRENT_TIMESTAMP FROM DUAL;
+
+--edits a new time and not part of assignment, just for me
+SELECT NEW_TIME(TO_DATE('11-10-09 01:23:45', 'MM-DD-YY HH24:MI:SS'), 'AST', 'PST')
+         "New Date and Time"
+  FROM DUAL;
+
+--create a function that returns the length of a mediatype from the mediatype table
+SELECT * FROM MediaType;
+
+CREATE OR REPLACE FUNCTION getLength (name in Varchar2)
+RETURN length as
+    Begin
+        Select * INTO Length;
+        return Length;
+END;
+/
+SELECT getlength(MediaType.name) FROM DUAL;
+
+--==============================================================================================================================
+--  3.2 SYSTEM DEFINED AGGREGATE FUNCTIONS
+--==============================================================================================================================
+
+--Create a function that returns the average total of all invoices
+
+SELECT * FROM Invoice;
+
+SELECT AVG(Total)
+FROM Invoice;
+
+--Create a function that returns the most expensive track
+SELECT MAX(Total)
+FROM Invoice;
+
+--==============================================================================================================================
+--  3.3 USER DEFINED SCALAR FUNCTIONS
+--==============================================================================================================================
+
+--Create a function that returns the average price of invoiceline items in the invoiceline table
+
+SELECT * FROM InvoiceLine;
+
+SELECT AVG(Total)
+FROM Invoice;
+
+--==============================================================================================================================
+--  3.4 USER DEFINED TABLE VALUED FUNCTIONS
+--==============================================================================================================================
+--Create a function that returns all employees who are born after 1968.
+
+SELECT * FROM Employee;
+
+
 
