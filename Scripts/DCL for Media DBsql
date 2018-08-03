@@ -1,0 +1,29 @@
+--DDL for meida_DB
+DROP TABLE actor;
+CREATE TABLE actor (
+actor_id INT PRIMARY KEY, 
+name VARCHAR2(4000) NOT NULL UNIQUE,
+film VARCHAR2(4000),
+birth_date DATE,
+years_acting INT DEFAULT 0
+);
+--ALTER name can be broked down to first name last name
+ALTER TABLE actor 
+ADD first_name VARCHAR2(4000), last_name VARCHAR2(4000);
+
+ALTER TABLE actor 
+DROP name;
+
+
+TRUNCATE TABLE actor;
+
+CREATE TABLE role (
+role_id INT,
+role_name VARCHAR(4000)
+)
+
+
+
+
+
+

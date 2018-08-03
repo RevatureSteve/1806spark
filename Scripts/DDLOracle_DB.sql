@@ -1,0 +1,2 @@
+CREATE USER bank_DB IDENTIFIED BY p4ssw0rd;
+GRANT connect , RESOURCE TO bank_DB;
