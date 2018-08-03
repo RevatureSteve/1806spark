@@ -1,18 +1,20 @@
-package com.screens.banking;
+package com.revature.screens;
 
 import java.util.Scanner;
 
-import com.interfaces.banking.Screen;
+import com.revature.interfaces.Screen;
+import com.revature.iohandler.IOHandler;
 
-public class BalanceOperationScreen implements Screen {
-
+public class MainMenuScreen implements Screen {
 	private Scanner scan = new Scanner(System.in);
+	
+	public MainMenuScreen() {
+		
+	}
+
 	@Override
 	public Screen start() {
-		System.out.println("Please select one of the choices");
-		System.out.println("1 to deposit");
-		System.out.println("2 to to withdraw");
-		System.out.println("3 to main menu");
+		IOHandler.displayMainMenuScreen();
 		String input = scan.nextLine();
 		
 		switch (input) {
@@ -21,10 +23,12 @@ public class BalanceOperationScreen implements Screen {
 		case "2":
 			return new BalanceOperationScreen();
 		case "3":
-			return new MainMenuScreen();
+			return new LoginScreen();
 		default:
 			System.out.println("Not a recognized input");
 		}
+		
+		
 		return this;
 	}
 

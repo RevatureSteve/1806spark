@@ -60,37 +60,74 @@ DELETE FROM customer
 WHERE firstname = 'Robert'
 AND lastname = 'Walter';
 --3.1 task A Create a function that returns the current time.
-CREATE OR REPLACE FUNCTION getDate
-RETURN TIME
-    IS currDate TIME;
+CREATE OR REPLACE FUNCTION get_date
+RETURN TIMESTAMP
+    IS currDate TIMESTAMP;
 BEGIN
-    SELECT CONVERT (TIME, CURRENT_TIMESTAMP)
+    SELECT systimestamp
     INTO currDate
     FROM dual;
     RETURN (currDate);
 END;
 /
-SELECT sysdate FROM dual;
 --3.1 task B create a function that returns the length of a mediatype from the mediatype table
-SELECT LENGTH(name) AS LengthOfMediatype
-FROM mediatype;
+CREATE OR REPLACE FUNCTION get_media_length (iter INT)
+RETURN INT
+    IS media_length INT;
+BEGIN
+    SELECT LENGTH(mediatype.name)
+    INTO media_length
+    FROM mediatype
+    WHERE mediatypeid = iter;
+    RETURN media_length;
+END;
+/
 --3.2 task A Create a function that returns the average total of all invoices
-SELECT AVG(total) FROM invoice;
+CREATE OR REPLACE FUNCTION get_invoice_avg
+RETURN NUMBER
+    IS invoice_avg NUMBER;
+BEGIN
+    SELECT AVG(total) 
+    INTO invoice_avg
+    FROM invoice;
+    RETURN invoice_avg;
+END;
+/
 --3.2 task B Create a function that returns the most expensive track
-SELECT * FROM track
-WHERE unitprice = (SELECT MAX(unitprice) FROM track);
+CREATE OR REPLACE FUNCTION get_most_expensive_track
+RETURN TABLE
+    IS price TABLE;
+BEGIN
+    SELECT * 
+    INTO price
+    FROM track
+    WHERE unitprice = (SELECT MAX(unitprice) FROM track);
+    RETURN invoice_avg;
+END;
+/
+
 --3.3 Create a function that returns the average price of invoiceline items in the invoiceline table
-SELECT AVG(unitprice) FROM invoiceline;
+CREATE OR REPLACE FUNCTION get_average_price 
+RETURN NUMBER
+    IS avgprice NUMBER;
+BEGIN
+    SELECT AVG(unitprice) 
+    INTO avgprice
+    FROM invoiceline
+    WHERE unitprice = (SELECT MAX(unitprice) FROM track);
+    RETURN avgprice;
+END;
+/
+
 --3.4 Create a function that returns all employees who are born after 1968.
 SELECT * FROM employee
 WHERE birthdate > TO_DATE('19680101', 'YYYYMMDD');
 --4.1 Create a stored procedure that selects the first and last names of all the employees.
-DROP PROCEDURE first_last_name;
-CREATE PROCEDURE  first_last_name  AS
+CREATE OR REPLACE PROCEDURE  first_last_name (firstn IN VARCHAR) IS
    BEGIN
-      SELECT title 
-      INTO title
-      FROM album;
+      SELECT firstname
+      INTO firstn
+      FROM employee;
 
    END first_last_name;
 /

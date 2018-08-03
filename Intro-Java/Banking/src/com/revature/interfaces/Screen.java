@@ -1,4 +1,4 @@
-package com.interfaces.banking;
+package com.revature.interfaces;
 
 public interface Screen {
 	
