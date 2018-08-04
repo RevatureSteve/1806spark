@@ -143,21 +143,7 @@ BEGIN
 END;
 /
 
-DECLARE
-    employee_after_1968 SYS_REFCURSOR;
-    emp_fname employee.firstname%TYPE;
-    emp_lname employee.lastname%TYPE;
-BEGIN
-    employee_after_1968 := get_employee_after_1968();
-    LOOP
-        FETCH employee_after_1968 INTO emp_fname, emp_lname;
-        EXIT WHEN employee_after_1968%NOTFOUND;
-    
-        DBMS_OUTPUT.PUT_LINE(emp_fname || ' ' || emp_lname );
-  END LOOP;
-  CLOSE employee_after_1968;
-END;
-/
+
 
 
 
