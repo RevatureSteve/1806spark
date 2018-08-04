@@ -64,11 +64,11 @@ public class Launch {
 	
 	public static void write(String filePath, Shark printShark) { //Method that writes shark to FishPrints
 try(BufferedWriter bw = new BufferedWriter(new FileWriter(filePath));){		//connecting to the file, closes the connection after 
-				bw.write(printShark.getSizeFt() + ":" + printShark.getSmellsBlood()+ ":" + printShark.getCanSwim() + ":" + printShark.getHasScales() + "\n");
+				bw.write(printShark.getSizeFt() + ":" + printShark.getSmellsBlood()+ ":" + printShark.getCanSwim() + ":" + printShark.getHasScales() + "\n"); // defining how I want the object to be printed
 			
 			
-		} catch (IOException e) {
-			e.printStackTrace();
+		} catch (IOException e) { 
+			e.printStackTrace();// if I get an exception, TELL ME WHERE IT HAPPENED
 		}
 	}
 
