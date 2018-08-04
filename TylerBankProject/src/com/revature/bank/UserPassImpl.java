@@ -22,14 +22,14 @@ public class UserPassImpl implements UserPassDao {
 	}
 	
 	@Override
-	public boolean verifyUsername(UsersPojo user) {
+	public boolean verifyUsernameAndPassword(UsersPojo user) {
 		
 		try(Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);){
 			
 			Scanner scan = new Scanner(System.in);
 			
 			
-			String sql = "SELECT * FROM users WHERE USERNAME = '" + user.getUsername() + "'";
+			String sql = "SELECT * FROM users WHERE USERNAME = '" + user.getUsername() + "' AND PASSWORD = '" + user.getPassword() + "'";
 			Statement statement = conn.createStatement();
 			ResultSet rs = statement.executeQuery(sql);
 			

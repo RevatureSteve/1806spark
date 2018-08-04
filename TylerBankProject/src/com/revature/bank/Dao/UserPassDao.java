@@ -17,7 +17,7 @@ public interface UserPassDao {
 
 //READ
 
-	public boolean verifyUsername(UsersPojo user);
+	public boolean verifyUsernameAndPassword(UsersPojo user);
 	public void verifyPassword();
 
 

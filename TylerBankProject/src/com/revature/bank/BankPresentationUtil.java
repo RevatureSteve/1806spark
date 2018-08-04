@@ -4,6 +4,8 @@ import java.util.Scanner;
 
 import com.revature.bank.pojo.UsersPojo;
 import com.revature.bank.UserPassImpl;
+
+
 public class BankPresentationUtil {
 	public static UserPassImpl userDao = new UserPassImpl();
 	
@@ -30,7 +32,7 @@ public class BankPresentationUtil {
 		user.setUsername(userName);
 		user.setPassword(userPass);
 		
-		if(userDao.verifyUsername(user)) {
+		if(userDao.verifyUsernameAndPassword(user)) {
 			return user;
 		}else {
 			System.out.println("Invalid Login, please enter information again...");

@@ -19,35 +19,36 @@ public class Driver  {
 	
     UsersPojo user = BankPresentationUtil.loginSwitch();
 	
-    System.out.println(user.getFname() + " " + user.getLname());
-    /*
+    System.out.println("Welcome to the Iron Bank of Braavos, " + user.getFname() + " " + user.getLname());
+    
+   
 	BankPresentationUtil.mainMenu();
 	
-		while(true) {
-			
-			int userInput = scan.nextInt();
-			
-			System.out.println("Welcome to the Bank, Please Select an option");
-			
-			switch (userInput) {
-			case 1:
-				System.out.println("logout successful");
-				System.exit(1);
-				break;
-			case 2:
-				System.out.println("Heres your Balance");
-				break;
-			case 3:
-				System.out.println("Thank's for the cash, your balance is: ");
-				break;
-			case 4:
-				System.out.println("Withdrawl completed, your balance is");
-				break;
-			
-			}
-			
-		}
-		*/
+//		while(true) {
+//			
+//			int userInput = scan.nextInt();
+//			
+//			System.out.println("Welcome to the Bank, Please Select an option");
+//			
+//			switch (userInput) {
+//			case 1:
+//				System.out.println("logout successful");
+//				System.exit(1);
+//				break;
+//			case 2:
+//				System.out.println("Heres your Balance");
+//				break;
+//			case 3:
+//				System.out.println("Thank's for the cash, your balance is: ");
+//				break;
+//			case 4:
+//				System.out.println("Withdrawl completed, your balance is");
+//				break;
+//			
+//			}
+//			
+//		}
+		
 	
 	}
 
