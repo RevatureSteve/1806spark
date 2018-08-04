@@ -3,7 +3,9 @@ package com.revature.presentation;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import com.revature.abstractClasses.UserDao;
 import com.revature.concreteClasses.User;
+import com.revature.dao.UserDaoImplementation;
 
 
 public class PresentationLogic {
@@ -19,6 +21,19 @@ public class PresentationLogic {
 		System.out.println("\tEnter 2: Register for an HCB Account");
 		System.out.println("\tEnter 3: Leave banking application\n");
 	}
+																																					
+	public static void AfterLoginScreen() {
+		
+		System.out.println();
+		System.out.println("\tPlease select a menu option:\n");
+		System.out.println("\tEnter 1: View account balance");
+		System.out.println("\tEnter 2: Make a deposit");
+		System.out.println("\tEnter 2: Withdraw money from account");
+		System.out.println("\tEnter 2: View recent transactions");
+		System.out.println("\tEnter 3: Sign Out\n");
+	}
+	
+	
 	
 	public static User creatingNewUser() {
 		Scanner scanny1 = new Scanner(System.in);
@@ -31,19 +46,6 @@ public class PresentationLogic {
 		System.out.print("\tEnter your last name: ");
 		String lname = scanny1.nextLine();
 		System.out.println();
-		int userId;
-		while (true){
-			try{
-				Scanner scanny2 = new Scanner(System.in);
-				System.out.print("\tCreate a User ID #: ");
-				userId = scanny2.nextInt();
-			break;
-			}catch (InputMismatchException e){
-			System.out.println("\n\tUser ID must be a number!\n");
-			continue;
-			}
-			}
-		System.out.println();
 		System.out.print("\tCreate a Username: ");
 		String username= scanny1.nextLine();
 		System.out.println();
@@ -54,27 +56,23 @@ public class PresentationLogic {
 		String password2= scanny1.nextLine();
 		while((!password2.equals(password1)))
 			{
+				System.out.println();
 				System.out.println("\tPasswords do not match! Try Again...\n\n");
-				System.out.println("\tCreate a password: ");
+				System.out.print("\tCreate a password: ");
 				password1 = scanny1.nextLine();
 				System.out.println();
-				System.out.println("\tConfirm password: ");
+				System.out.print("\tConfirm password: ");
 				password2= scanny1.nextLine();
 			}
 		System.out.println();
 		System.out.println();
-		System.out.println("\t\t\t\t\t\t\tYou've Successfully Created an account with Humphrey Central Bank");
-		System.out.println("\t\t\t\t\t\t\t\t\t\tNow, login to your account");
-		User newCustomer = new User(userId, fname, lname, username, password1);
-//		Runnable persist = new NewThread(musical);
-//		Thread runner = new Thread(persist);
-//		runner.start();
+		User newCustomer = new User(0, username, password1, fname, lname);
 		return newCustomer;
-	
 	}
 	
 	public static void loginScreen() {
 		Scanner scanny1 = new Scanner(System.in);
+		User registerCustomer = null;
 		System.out.println("\n\n*******************************************************************************************************************************************************************************************\n\n");
 		System.out.println("\t\t\t\t\t\t\t\t\t\tLogin!\n\n");
 		System.out.println("*************************************************************************************************************************************************************************************************\n");
@@ -82,7 +80,40 @@ public class PresentationLogic {
 		String username = scanny1.nextLine();
 		System.out.println();
 		System.out.print("\tEnter your password: ");
-		String password = scanny1.nextLine();		
+		String password = scanny1.nextLine();	
+		UserDao lookUpCustomer = new UserDaoImplementation();
+		registerCustomer = lookUpCustomer.getUserByUsername(username);
+		while(registerCustomer == null) {
+			System.out.println("\n\tIncorrect Username or Password\n\tTry again!");
+			System.out.print("\n\tEnter your username: ");
+			username = scanny1.nextLine();
+			System.out.println();
+			System.out.print("\n\tEnter your password: ");
+			password = scanny1.nextLine();
+			registerCustomer = lookUpCustomer.getUserByUsername(username);
+		}
+			while(!(registerCustomer.getPassword().equals(password))) {
+				System.out.println("\n\tIncorrect Username or Password\n\tTry again!");
+				System.out.print("\n\tEnter your username: ");
+				username = scanny1.nextLine();
+				System.out.println();
+				System.out.print("\n\tEnter your password: ");
+				password = scanny1.nextLine();
+				registerCustomer = lookUpCustomer.getUserByUsername(username);
+			}
+		System.out.println("\n\t\t\t\t\t\t\t\t\tWelcome Back, " + registerCustomer.getFname() + " " + registerCustomer.getLname());
+		
+		
+	}
+	
+	public static void successMessage() {
+		System.out.println("\t\t\t\t\t\t\tYou've Successfully Created an account with Humphrey Central Bank");
+		System.out.println("\t\t\t\t\t\t\t\t\t\tNow, login to your account");
+	}
+	
+	public static void errorMessage() {
+		System.out.println("\t\t\t\t\t\t\tOops...Sorry, something went wrong... \\nRegsitration Failed");
+		System.out.println("\t\t\t\t\t\t\t\t\t\tThis error is logged, try again later");
 	}
 
 	
