@@ -51,6 +51,7 @@ CREATE TABLE Artist
     CONSTRAINT PK_Artist PRIMARY KEY  (ArtistId)
 );
 
+--DROP TABLE Customer;
 CREATE TABLE Customer
 (
     CustomerId NUMBER NOT NULL,

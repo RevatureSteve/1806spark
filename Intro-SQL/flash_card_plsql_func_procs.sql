@@ -16,11 +16,20 @@ PRIMARY KEY(fc_id)
 INSERT INTO flash_cards VALUES (1, 'some question', 'some answer');
 INSERT INTO flash_cards (fc_id, fc_question) VALUES(2, 'what is java?');
 
+INSERT INTO flash_cards VALUES (4, 'hey patrick, what is funnier than 24', '25');
+INSERT INTO flash_cards (fc_id, fc_question) VALUES(2, 'what is java?');
+
+
 INSERT INTO flash_cards (fc_question, fc_answer) VALUES('what is life?', '42');
+
 COMMIT;
 
 --DML select
 SELECT fc_id, fc_question q, fc_answer an FROM flash_cards; 
+
+SELECT * FROM flash_cards
+WHERE fc_id = 2;
+
 
 --DML update
 UPDATE flash_cards SET fc_answer = 'awesome' WHERE fc_question = 'what is java?';

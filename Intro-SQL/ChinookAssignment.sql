@@ -156,21 +156,23 @@ SELECT * FROM InvoiceLine;
 --==============================================================================================================================
 
 --Create a function that returns the current time.
+CREATE OR REPLACE FUNCTION get_time 
+RETURN TIMESTAMP AS 
+BEGIN
+RETURN CURRENT_TIMESTAMP;
+END get_time;
+/
 
+SELECT get_time FROM dual;
+
+--just to reference
 SELECT CURRENT_TIMESTAMP FROM dual;
 
 
---ALTER SESSION SET NLS_DATE_FORMAT = 'DD-MON-YYYY HH24:MI:SS';
---SELECT SESSIONTIMEZONE, CURRENT_TIMESTAMP FROM DUAL;
-
---edits a new time and not part of assignment, just for me
-SELECT NEW_TIME(TO_DATE('11-10-09 01:23:45', 'MM-DD-YY HH24:MI:SS'), 'AST', 'PST')
-         "New Date and Time"
-  FROM DUAL;
-
 --create a function that returns the length of a mediatype from the mediatype table
-SELECT * FROM MediaType;
+SELECT LENGTH(Name) FROM MediaType;
 
+--was trying a code, didn't work
 CREATE OR REPLACE FUNCTION getLength (name in Varchar2)
 RETURN length as
     Begin
@@ -178,7 +180,7 @@ RETURN length as
         return Length;
 END;
 /
-SELECT getlength(MediaType.name) FROM DUAL;
+
 
 --==============================================================================================================================
 --  3.2 SYSTEM DEFINED AGGREGATE FUNCTIONS
@@ -188,11 +190,11 @@ SELECT getlength(MediaType.name) FROM DUAL;
 
 SELECT * FROM Invoice;
 
-SELECT AVG(Total)
+SELECT AVG(Total)"Total of all Invoices"
 FROM Invoice;
 
 --Create a function that returns the most expensive track
-SELECT MAX(Total)
+SELECT MAX(Total)"Most Expensive Track"
 FROM Invoice;
 
 --==============================================================================================================================
@@ -203,15 +205,188 @@ FROM Invoice;
 
 SELECT * FROM InvoiceLine;
 
-SELECT AVG(Total)
+SELECT AVG(Total) "Average of all Invoices"
 FROM Invoice;
 
 --==============================================================================================================================
 --  3.4 USER DEFINED TABLE VALUED FUNCTIONS
 --==============================================================================================================================
 --Create a function that returns all employees who are born after 1968.
+DECLARE
+SELECT BirthDate FROM Employee; 
+BEGIN
+    IF Birthdate > TO_DATE('19680101','YYYYMMDD') THEN        
+        SELECT *
+        FROM Employee
+        WHERE Birthdate > TO_DATE('19680101','YYYYMMDD');
+    END IF;
+        DBMS_OUTPUT.PUT_LINE('There is nothing to show');
+END;
+/
+--==============================================================================================================================
+--  4.1 BASIC STORED PROCEDURE
+--==============================================================================================================================
+--Create a stored procedure that selects the first and last names of all the employees.
+CREATE PROCEDURE get_entire_name (name OUT SYS_REFCURSOR)
+IS
+BEGIN
+    OPEN Name FOR
+    SELECT FirstName, LastName FROM Employee;
+END;
+/
 
-SELECT * FROM Employee;
+DECLARE
+    name SYS_REFCURSOR;
+    somefn employee.firstname%TYPE;
+    someln employee.lastname%TYPE;
+BEGIN
+    get_entire_name (name);
+    LOOP
+        FETCH name INTO somefn, someln;
+        EXIT WHEN name%NOTFOUND;
+
+        DBMS_OUTPUT.PUT_LINE(somefn || ' ' || someln);
+        
+    END LOOP;
+    CLOSE name;
+END;
+/
+--==============================================================================================================================
+--  4.2 STORED PROCEDURE INPUT PARAMETERS
+--==============================================================================================================================
+--Create a stored procedure that updates the personal information of an employee
+
+--Create a stored procedure that returns the managers of an employee.
+
+
+--==============================================================================================================================
+--  4.3 STORED PROCEDURE OUTPUT PARAMETERS
+--==============================================================================================================================
+--Create a stored procedure that returns the name and company of a customer.
+CREATE PROCEDURE get_company_and_customer (custid IN INT, firstname OUT VARCHAR2, lastname OUT VARCHAR2, company OUT VARCHAR2)
+IS BEGIN
+    SELECT firstname, lastname, company
+    INTO firstname, lastname, company
+    FROM customer
+    WHERE customerid = custid;
+END;
+/
+
+DECLARE 
+    firstname VARCHAR2(4000);
+    lastname VARCHAR2(4000);
+    company VARCHAR2(4000);
+BEGIN
+    get_company_and_customer(1, firstname, lastname, company);
+    DBMS_OUTPUT.PUT_LINE(firstname||' '||lastname|| ' '|| company);
+END;
+/
+
+--==============================================================================================================================
+--  5.0 TRANSACTIONS                      
+--==============================================================================================================================
+--Create a transaction that given a invoiceId will delete that invoice (There may be constraints that
+--rely on this, find out how to resolve them).
+CREATE PROCEDURE delete_invoice (in_id IN INT)
+IS BEGIN
+    DELETE FROM InvoiceLine WHERE InvoiceId = in_id;
+    DELETE FROM Invoice WHERE InvoiceId = in_id;
+END;
+/
+
+BEGIN
+    delete_invoice(10);
+END;
+/
+
+--Create a transaction nested within a stored procedure that inserts a new record in the Customer table
+CREATE PROCEDURE insert_new_customer1(customeId IN INT, firstname IN VARCHAR2, lastname IN VARCHAR2,
+company IN VARCHAR2, address IN VARCHAR2, city IN VARCHAR2, state IN VARCHAR2, country IN VARCHAR2, 
+postalcode IN VARCHAR2, phone IN VARCHAR2, fax IN VARCHAR2, email IN VARCHAR2, supportId IN NUMBER)
+IS BEGIN 
+    INSERT INTO customer VALUES (customerId, FirstName, LastName, Company, Address, City, State, 
+        Country, Postalcode, Phone, Fax, Email, SupportId);
+    COMMIT;
+END;
+/
+
+BEGIN 
+    insert_customer_record(61, 'Kenji', 'Romain', 'Intel', '1775 St.', 'Houston', 'TX', 
+        'United States', '14509', '+9 (858) 345-7874', '+9 (800) 543-8743', 'ditto@yahoo.com', 4);
+END;
+/
+
+
+--==============================================================================================================================
+--  6.1 AFTER/FOR                     
+--==============================================================================================================================
+--Create an after insert trigger on the employee table fired after a new record is inserted into the
+--table.
+
+--Create an after update trigger on the album table that fires after a row is inserted in the table
+
+--Create an after delete trigger on the customer table that fires after a row is deleted from the table.
+
+
+--==============================================================================================================================
+--  7.1 INNER                     
+--==============================================================================================================================
+--Create an inner join that joins customers and orders and specifies the name of the customer and
+--the invoiceId.
+
+SELECT FirstName, LastName, InvoiceId
+FROM Customer ctm
+INNER JOIN Invoice inv
+ON ctm.CustomerId = inv.CustomerId;
+
+--==============================================================================================================================
+--  7.2 OUTER                    
+--==============================================================================================================================
+--Create an outer join that joins the customer and invoice table, specifying the CustomerId,
+--firstname, lastname, invoiceId, and total.
+
+SELECT ctm.CustomerId, ctm.FirstName, ctm.LastName, inv.InvoiceId, inv.Total
+FROM Customer ctm
+FULL OUTER JOIN Invoice inv
+ON ctm.CustomerId = inv.CustomerId;
+
+--==============================================================================================================================
+--  7.3 RIGHT                    
+--==============================================================================================================================
+--Create a right join that joins album and artist specifying artist name and title.
+
+SELECT name, Title
+FROM Artist art
+RIGHT JOIN album albm
+ON art.ArtistId = albm.ArtistId;
+
+--==============================================================================================================================
+--  7.4 CROSS                    
+--==============================================================================================================================
+--Create a cross join that joins album and artist and sorts by artist name in ascending order.
+
+SELECT name, Title
+FROM Artist
+CROSS JOIN Album
+ORDER BY name ASC;
+
+--==============================================================================================================================
+--  7.5 SELF                     
+--==============================================================================================================================
+--Perform a self-join on the employee table, joining on the reportsto column.
+
+SELECT *
+FROM Employee a, Employee b
+WHERE a.ReportsTo = b.ReportsTo;
+
+--==============================================================================================================================
+--  9.0 ADMINISTRATION           
+--==============================================================================================================================
+--In this section you will be creating backup files of your database. After you create the backup file you
+--will also restore the database. Research or try random things then communicate with batchmates, do
+--not ask trainer.
+
+--Create a .bak file for the Chinook database.
 
 
 
