@@ -56,6 +56,8 @@ public class ByteStream {
 		String filename = "bin/com/ex/fileio/ByteStream.class";
 		try(InputStream is = new FileInputStream(filename)){
 			
+//		first 4 byte in a java class file toHex : cafebabe
+			
 			byte[] first4Bytes = new byte[4];
 			is.read(first4Bytes);
 			
