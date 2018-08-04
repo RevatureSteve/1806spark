@@ -108,14 +108,56 @@ SELECT MAX(unitprice) as "Most Expensive Track" FROM track;
 
 --3.3 User Defined Scalar Functions
 --Task – Create a function that returns the average price of invoiceline items in the invoiceline table
-SELECT AVG(unitprice) FROM invoiceline;
+CREATE OR REPLACE FUNCTION get_average_price
+RETURN NUMBER
+IS
+    average_price NUMBER;
+BEGIN
+    SELECT AVG(unitprice) INTO average_price FROM invoiceline;
+    RETURN average_price;
+END;
+/
+
+DECLARE
+    average_price NUMBER;
+BEGIN    
+    average_price := get_average_price();
+    DBMS_OUTPUT.PUT_LINE('Average price is: ' || average_price);
+END;
+/
 
 --3.4 User Defined Table Valued Functions
 --Task – Create a function that returns all employees who are born after 1968.
 SELECT * FROM employee
 WHERE birthdate > TO_DATE ('1968','YYYY');
 
+CREATE OR REPLACE FUNCTION get_employee_after_1968
+RETURN SYS_REFCURSOR
+IS
+    employee_after_1968 SYS_REFCURSOR;
+BEGIN
+    OPEN employee_after_1968 FOR
+    SELECT * FROM employee
+    WHERE birthdate > TO_DATE('1968','YYYY');
+    RETURN employee_after_1968;
+END;
+/
 
+DECLARE
+    employee_after_1968 SYS_REFCURSOR;
+    emp_fname employee.firstname%TYPE;
+    emp_lname employee.lastname%TYPE;
+BEGIN
+    employee_after_1968 := get_employee_after_1968();
+    LOOP
+        FETCH employee_after_1968 INTO emp_fname, emp_lname;
+        EXIT WHEN employee_after_1968%NOTFOUND;
+    
+        DBMS_OUTPUT.PUT_LINE(emp_fname || ' ' || emp_lname );
+  END LOOP;
+  CLOSE employee_after_1968;
+END;
+/
 
 
 
@@ -153,32 +195,46 @@ BEGIN
 END;
 /
 
-
-
 --4.2 Stored Procedure Input Parameters
 --Task – Create a stored procedure that updates the personal information of an employee.
---CREATE OR REPLACE PROCEDURE update_employee_info(emp_id IN INT, )
+CREATE OR REPLACE PROCEDURE update_employee_info(emp_id IN INT, fname IN VARCHAR2, lname IN VARCHAR2)
+IS BEGIN
+    UPDATE employee
+    SET firstname = fname, lastname = lname
+    WHERE employeeid = emp_id;
+END;
+/
 
-
-
-
-
-
+BEGIN
+    update_employee_info(9, 'Jen', 'Blessing');
+END;
+/
 
 --Task – Create a stored procedure that returns the managers of an employee.
---CREATE OR REPLACE PROCEDURE get_employee_manager(fname IN VARCHAR, lname IN VARCHAR, manager OUT VARCHAR)
---IS BEGIN
+CREATE OR REPLACE PROCEDURE get_employee_manager(fname IN VARCHAR2, lname IN VARCHAR2, managerfn OUT VARCHAR2, managerln OUT VARCHAR2)
+IS 
+    managerid INT;
+BEGIN
+    SELECT reportsto INTO managerid
+    FROM employee 
+    WHERE firstname = fname
+    AND lastname = lname;
+    
+    SELECT firstname, lastname 
+    INTO managerfn, managerln
+    FROM employee
+    WHERE employeeid = managerid;
+END;
+/
 
-
-
-
-
-
-
-
-
-
-
+DECLARE
+    mfn VARCHAR2 (4000);
+    mln VARCHAR2 (4000);
+BEGIN
+    get_employee_manager('Nancy','Edwards',mfn,mln);
+    DBMS_OUTPUT.PUT_LINE('Manager: ' || mfn || ' ' || mln);
+END;
+/
 
 --4.3 Stored Procedure Output Parameters
 --Task – Create a stored procedure that returns the name and company of a customer.
@@ -200,7 +256,6 @@ BEGIN
     dbms_output.put_line(fname || ' ' || lname || ' ' || company);
 END;
 /
-
 
 --5.0 Transactions
 --In this section you will be working with transactions. Transactions are usually nested within a stored
@@ -334,7 +389,14 @@ ORDER BY name ASC;
 --Task – Perform a self-join on the employee table, joining on the reportsto column.
 SELECT *
 FROM employee a, employee b
-WHERE a.reportsto = b.reportsto;
+WHERE a.reportsto = b.employeeid;
+
+--9.0 Administration
+--In this section you will be creating backup files of your database. After you create the backup file you
+--will also restore the database. Research or try random things then communicate with batchmates, do
+--not ask trainer.
+
+--Task – Create a .bak file for the Chinook database.
 
 
 
