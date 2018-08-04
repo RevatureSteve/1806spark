@@ -6,8 +6,8 @@ public class DepositScreen implements Screen{
 
 	@Override
 	public Screen start() {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("Deposit");
+		return new MainMenuScreen().start();
 	}
 
 }

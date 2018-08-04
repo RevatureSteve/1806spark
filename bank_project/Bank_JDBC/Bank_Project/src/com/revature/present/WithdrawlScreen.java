@@ -6,8 +6,8 @@ public class WithdrawlScreen implements Screen{
 
 	@Override
 	public Screen start() {
-		// TODO Auto-generated method stub
-		return null;
+		System.out.println("Withdrawl");
+		return new MainMenuScreen().start();
 	}
 
 }

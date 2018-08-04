@@ -23,6 +23,7 @@ public class MainMenuScreen implements Screen{
 			case 2:
 				return new DepositScreen().start();
 			case 3:
+				System.out.println("User is logging out...");
 				System.exit(1);
 		}
 		
