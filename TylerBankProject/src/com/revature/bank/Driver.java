@@ -2,18 +2,25 @@ package com.revature.bank;
 
 import java.util.Scanner;
 
+import com.revature.bank.pojo.UsersPojo;
+
 public class Driver  {
+	
+	private static final String USERNAME= "bank_db";
+	private static final String PASSWORD= "p4ssw0rd";
+	private static final String URL= "jdbc:oracle:thin:@tylertraining.cnmoc1mujdcw.us-east-2.rds.amazonaws.com:1521:ORCL";
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
 
 
+	//Scanner scan = new Scanner(System.in);
 	
-	Scanner scan = new Scanner(System.in);
 	
-	System.out.println("Hello Please Log In");
-	BankPresentationUtil.loginSwitch();
 	
+    UsersPojo user = BankPresentationUtil.loginSwitch();
+	
+    System.out.println(user.getFname() + " " + user.getLname());
+    /*
 	BankPresentationUtil.mainMenu();
 	
 		while(true) {
@@ -40,6 +47,7 @@ public class Driver  {
 			}
 			
 		}
+		*/
 	
 	}
 
