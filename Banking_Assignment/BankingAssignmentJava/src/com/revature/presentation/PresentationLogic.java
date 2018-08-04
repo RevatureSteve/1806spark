@@ -28,9 +28,9 @@ public class PresentationLogic {
 		System.out.println("\tPlease select a menu option:\n");
 		System.out.println("\tEnter 1: View account balance");
 		System.out.println("\tEnter 2: Make a deposit");
-		System.out.println("\tEnter 2: Withdraw money from account");
-		System.out.println("\tEnter 2: View recent transactions");
-		System.out.println("\tEnter 3: Sign Out\n");
+		System.out.println("\tEnter 3: Withdraw money from account");
+		System.out.println("\tEnter 4: View recent transactions");
+		System.out.println("\tEnter 5: Sign Out\n");
 	}
 	
 	
@@ -47,7 +47,8 @@ public class PresentationLogic {
 		String lname = scanny1.nextLine();
 		System.out.println();
 		System.out.print("\tCreate a Username: ");
-		String username= scanny1.nextLine();
+		String usernameFormat= scanny1.nextLine();
+		String username = usernameFormat.toLowerCase();
 		System.out.println();
 		System.out.print("\tCreate a password: ");
 		String password1 = scanny1.nextLine();
@@ -77,7 +78,8 @@ public class PresentationLogic {
 		System.out.println("\t\t\t\t\t\t\t\t\t\tLogin!\n\n");
 		System.out.println("*************************************************************************************************************************************************************************************************\n");
 		System.out.print("\tEnter your username: ");
-		String username = scanny1.nextLine();
+		String usernameFormat = scanny1.nextLine();
+		String username = usernameFormat.toLowerCase();
 		System.out.println();
 		System.out.print("\tEnter your password: ");
 		String password = scanny1.nextLine();	

@@ -19,4 +19,5 @@ END;
 /
 
 SELECT * FROM users;
-
+SELECT * FROM bank_account;
+DELETE FROM users WHERE users_id=179;
