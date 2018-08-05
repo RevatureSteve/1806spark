@@ -2,15 +2,19 @@ package com.revature.screens;
 
 import java.util.Scanner;
 
-import com.revature.databaseconnection.DatabaseConnector;
+import com.revature.dao.BankAccountDao;
 import com.revature.interfaces.Screen;
 import com.revature.iohandler.IOHandler;
+import com.revature.pojos.BankAccount;
+import com.revature.singletons.LoggedUser;
 
 public class BalanceScreen implements Screen {
 	private Scanner scan = new Scanner(System.in);
 	@Override
 	public Screen start() {
-		IOHandler.displayBalanceScreen(DatabaseConnector.getBalance());
+		BankAccountDao baDao = new BankAccountDao();
+		BankAccount ba = baDao.getBankAccountByUserId(LoggedUser.getUser().getUserId());
+		IOHandler.displayBalanceScreen(ba.getBalance());
 		String input = scan.nextLine();
 		
 		switch (input) {

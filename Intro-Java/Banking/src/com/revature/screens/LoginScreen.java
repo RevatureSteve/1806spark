@@ -1,8 +1,8 @@
 package com.revature.screens;
 
-import com.revature.information.LoggedUser;
 import com.revature.interfaces.Screen;
 import com.revature.iohandler.IOHandler;
+import com.revature.singletons.LoggedUser;
 
 public class LoginScreen implements Screen {
 
@@ -13,10 +13,9 @@ public class LoginScreen implements Screen {
 
 	@Override
 	public Screen start() {
-		IOHandler.getLogin();
-		IOHandler.getPassword();
+		IOHandler.getUser();
 		
-		if(LoggedUser.getUsername().equals("Marcin")&&LoggedUser.getPassword().equals("Salamon")) {
+		if(LoggedUser.getUser().getUsername().equals("")) {
 			return new MainMenuScreen();
 		}
 		System.out.println("Wrong login or password");

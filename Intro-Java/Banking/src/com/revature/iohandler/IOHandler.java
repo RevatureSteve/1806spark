@@ -2,19 +2,17 @@ package com.revature.iohandler;
 
 import java.util.Scanner;
 
-import com.revature.information.LoggedUser;
+import com.revature.singletons.LoggedUser;
 
 public class IOHandler {
-	public static void getLogin() {
+	public static void getUser() {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Please provide login");
-		LoggedUser.setUsername(scan.nextLine());
-		
-	}
-	public static void getPassword() {
-		Scanner scan = new Scanner(System.in);
+		String username = scan.nextLine();
 		System.out.println("Please provide password");
-		LoggedUser.setPassword(scan.nextLine());
+		String password = scan.nextLine();
+		int userId = 1; 							//Marcin pls remember to change this shitty code
+		LoggedUser.createUser(username, password, userId);
 	}
 	
 	public static void displayBalanceScreen(int balance) {

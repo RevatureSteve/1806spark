@@ -123,16 +123,41 @@ END;
 SELECT * FROM employee
 WHERE birthdate > TO_DATE('19680101', 'YYYYMMDD');
 --4.1 Create a stored procedure that selects the first and last names of all the employees.
-CREATE OR REPLACE PROCEDURE  first_last_name (firstn IN VARCHAR) IS
-   BEGIN
-      SELECT firstname
-      INTO firstn
-      FROM employee;
-
-   END first_last_name;
-/
+CREATE OR REPLACE PROCEDURE first_last_name(cursorParam OUT SYS_REFCURSOR)
+IS
 BEGIN
-    first_last;
+  OPEN cursorParam FOR
+  SELECT firstname, lastname FROM employee;
+END;
+/
+--4.2 task A Create a stored procedure that updates the personal information of an employee.
+CREATE OR REPLACE PROCEDURE update_employee(employee_id IN INT, 
+    last_name IN VARCHAR2, first_name IN VARCHAR2)
+IS
+BEGIN
+  UPDATE employee SET lastname = last_name, firstname = first_name WHERE employeeid = employee_id;
+END;
+/
+--4.2 task B Create a stored procedure that returns the managers of an employee.
+CREATE OR REPLACE PROCEDURE getmanager(employee_id IN INT, cursorParam OUT SYS_REFCURSOR)
+IS
+BEGIN
+    OPEN cursorParam FOR
+    SELECT *
+    FROM employee
+    WHERE employeeid = (SELECT reportsto
+        FROM employee
+        WHERE employeeid = employee_id);
+END;
+/
+--4.3 Create a stored procedure that returns the name and company of a customer.
+CREATE OR REPLACE PROCEDURE return_customer_details(customer_id IN INT, cursorParam OUT SYS_REFCURSOR)
+IS
+BEGIN
+    OPEN cursorParam FOR
+    SELECT firstname, lastname, company
+    FROM customer
+    WHERE customerid = customer_id;
 END;
 /
 --7.1 Create an inner join that joins customers and orders and specifies the name of the customer and
