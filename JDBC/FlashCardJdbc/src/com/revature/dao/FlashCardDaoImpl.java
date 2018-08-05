@@ -103,7 +103,6 @@ public class FlashCardDaoImpl implements FlashCardDao {
 			 * jar
 			 */
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return myFlashCards;// get me the flashcards
@@ -120,7 +119,7 @@ public class FlashCardDaoImpl implements FlashCardDao {
 				fc = new FlashCard(rs.getInt("fc_id"), rs.getString(2), rs.getString("fc_answer"));
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		return fc;
 	}

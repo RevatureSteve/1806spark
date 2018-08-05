@@ -10,6 +10,7 @@ public class Menus {
 		System.out.println("Welcome to Flashcards");
 	}
 
+	@SuppressWarnings("resource")
 	public static FlashCard createFlashCardMenu() {
 		Scanner scan = new Scanner(System.in);
 		

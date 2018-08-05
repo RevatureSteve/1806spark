@@ -13,6 +13,7 @@ import java.io.Serializable;
  *@author sidhu
  *
  */
+@SuppressWarnings("serial")
 public class FlashCard implements Serializable {
 	
 	//constructor
