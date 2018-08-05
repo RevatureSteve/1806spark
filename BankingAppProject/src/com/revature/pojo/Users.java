@@ -12,7 +12,7 @@ public class Users {
 	private String lname;
 	
 	
-	public static Users prelimUser() {
+	public static Users getUser() {
 		if (user == null) {
 			user = new Users();
 		}

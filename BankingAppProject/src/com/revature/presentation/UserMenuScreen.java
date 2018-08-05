@@ -14,22 +14,25 @@ public class UserMenuScreen implements Screen {
 		System.out.println("Enter 1 to view your balance");
 		System.out.println("Enter 2 to make a deposit");
 		System.out.println("Enter 3 to withdraw");
-		System.out.println("Enter 4 to logout");
+		System.out.println("Enter 4 to view transaction history");
+		System.out.println("Enter 5 to logout");
 		String choice = scan.nextLine();
 		
 		switch (choice) {
 		case "1":
-			System.out.println("This is for the viewing balance menu");
 			return new ViewBalanceScreen();
 		case "2":
-			System.out.println("This is for making a deposit");
 			return new DepositScreen();
 		case "3":
-			System.out.println("This is for widthdrawing");
 			return new WithdrawScreen();
 		case "4":
+			System.out.println("View transaction history is not implemented yet");
+			return this;
+		case "5":
 			System.out.println("Goodbye!");
 			System.exit(1);
+		default:
+			System.out.println("Invalid input.  Please try again.");
 		}
 		return this;
 	}

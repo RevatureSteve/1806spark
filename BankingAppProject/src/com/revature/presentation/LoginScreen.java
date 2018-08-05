@@ -11,20 +11,20 @@ public class LoginScreen implements Screen{
 	@Override
 	public Screen start() {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Hello, please login to your account");
+		System.out.println("Please login to your account");
 		System.out.println("Please enter your username:");
 		String username = scan.nextLine();
-		System.out.println("Please enter your password");
+		System.out.println("Please enter your password:");
 		String password = scan.nextLine();
 		
 		
-		if (BL.validateUser(username, password) == null) {
+		if (BL.validateUser(username, password)) {
+			return new UserMenuScreen();
+		} else {
 			System.out.println("Sorry, your username and/or password were invalid");
 			System.out.println("Please try again");
 			System.out.println();
 			return this;
-		} else {
-			return new UserMenuScreen();
 		}
 		//System.out.println(password);
 		//System.out.println(Driver.bd.getUsersByUsername(username).getPassword());

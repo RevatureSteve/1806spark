@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 
 import java.sql.DriverManager;
@@ -36,7 +37,6 @@ public class BankDaoImpl implements BankDao{
 			ResultSet rs = ps.executeQuery();
 			
 			if(rs.next()) {
-				// Boilerplate code
 				ba = new BankAccount(rs.getInt(1), rs.getDouble(2), rs.getInt(3));
 			}
 		} catch (SQLException e) {
@@ -57,9 +57,8 @@ public class BankDaoImpl implements BankDao{
 			ResultSet rs = ps.executeQuery();
 			
 			if(rs.next()) {
-				// Boilerplate code
 				us = new Users(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
-				Users temp = Users.prelimUser();
+				Users temp = Users.getUser();
 				temp.setId(rs.getInt(1));
 				temp.setUsername(rs.getString(2));
 				temp.setPassword(rs.getString(3));
@@ -73,7 +72,37 @@ public class BankDaoImpl implements BankDao{
 	}
 
 
+
+	//UPDATE Methods
 	
 	
+	@Override
+	public void depositToBankAccount(double amt, int accNum) {
+		try(Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			String sql = "{call deposit_into_account(?,?)}";
+			
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setDouble(1, amt);
+			cs.setInt(2, accNum);
+			int rowsAffected = cs.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	@Override
+	public void withdrawFromBankAccount(double amt, int accNum) {
+		try(Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			String sql = "{call withdraw_from_account(?,?)}";
+			
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setDouble(1, amt);
+			cs.setInt(2, accNum);
+			int rowsAffected = cs.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	
 }

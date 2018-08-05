@@ -14,6 +14,8 @@ public interface BankDao {
 	public BankAccount getBankAccountInfo(int id);
 	
 	//Update
+	public void depositToBankAccount(double amt, int accNum);
+	public void withdrawFromBankAccount(double amt, int accNum);
 	
 	
 	//Delete

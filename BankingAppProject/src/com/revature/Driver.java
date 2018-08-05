@@ -1,8 +1,5 @@
 package com.revature;
 
-import com.revature.dao.BankDao;
-import com.revature.dao.BankDaoImpl;
-import com.revature.pojo.Users;
 import com.revature.presentation.LoginScreen;
 
 public class Driver {

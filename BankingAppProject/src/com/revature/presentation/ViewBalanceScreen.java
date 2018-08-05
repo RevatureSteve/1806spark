@@ -13,7 +13,7 @@ public class ViewBalanceScreen implements Screen{
 	@Override
 	public Screen start() {
 		BankDao bd = new BankDaoImpl();
-		BankAccount ba = bd.getBankAccountInfo(Users.prelimUser().getId());
+		BankAccount ba = bd.getBankAccountInfo(Users.getUser().getId());
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Here is your balance: $" + ba.getBalance());
 		System.out.println();
@@ -26,16 +26,13 @@ public class ViewBalanceScreen implements Screen{
 		
 		switch (choice) {
 		case "1":
-			System.out.println("Makes a deposit");
 			return new DepositScreen();
 		case "2":
-			System.out.println("Make a withdraw");
 			return new WithdrawScreen();
 		case "3":
-			System.out.println("Viewing transaction history");
 			return new ViewBalanceScreen();
 		case "4":
-			System.out.println("Exiting program");
+			System.out.println("Thank you!  Have a nice day!");
 			System.exit(1);
 		}
 		
