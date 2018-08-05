@@ -71,7 +71,7 @@ public class PresentationLogic {
 		return newCustomer;
 	}
 	
-	public static void loginScreen() {
+	public static User loginScreen() {
 		Scanner scanny1 = new Scanner(System.in);
 		User registerCustomer = null;
 		System.out.println("\n\n*******************************************************************************************************************************************************************************************\n\n");
@@ -105,7 +105,7 @@ public class PresentationLogic {
 			}
 		System.out.println("\n\t\t\t\t\t\t\t\t\tWelcome Back, " + registerCustomer.getFname() + " " + registerCustomer.getLname());
 		
-		
+		return registerCustomer;
 	}
 	
 	public static void successMessage() {

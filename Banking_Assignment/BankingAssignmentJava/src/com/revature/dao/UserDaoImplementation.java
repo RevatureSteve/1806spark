@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.abstractClasses.UserDao;
+import com.revature.concreteClasses.BankAccount;
 import com.revature.concreteClasses.User;
 
 
@@ -82,14 +83,36 @@ public class UserDaoImplementation implements UserDao {
 			ps.setString(1, username);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
+				do {
 				user = new User(rs.getInt("USERS_ID"),rs.getString("USERNAME"),rs.getString("PASSWORD"),rs.getString("FNAME"),rs.getString("LNAME"));
-			}
+			} while (rs.next());}
 			connection.commit();
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return user;
+	}
+
+	@Override
+	public BankAccount getUserBalance(User person) {
+		BankAccount account = null;
+		try(Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD)) {
+			connection.setAutoCommit(false);
+			String sql = "SELECT * FROM bank_account WHERE users_id = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, person.getUserID());
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				account = new BankAccount(rs.getInt("Account_Number"),rs.getInt("Balance"),rs.getInt("Users_Id"));
+			}
+			connection.commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return account;
+			
 	}
 	
 	

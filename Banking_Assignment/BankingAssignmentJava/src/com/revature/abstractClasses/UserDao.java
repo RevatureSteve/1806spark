@@ -2,6 +2,7 @@ package com.revature.abstractClasses;
 
 import java.util.List;
 
+import com.revature.concreteClasses.BankAccount;
 import com.revature.concreteClasses.User;
 
 public interface UserDao {
@@ -22,6 +23,7 @@ public interface UserDao {
 		public List<User> getAllUsers();
 		public User getUserById(int id);
 		public User getUserByUsername(String username);
+		public BankAccount getUserBalance(User person);
 		
 		
 		//UPDATE: A method that will use an update SQL statement
