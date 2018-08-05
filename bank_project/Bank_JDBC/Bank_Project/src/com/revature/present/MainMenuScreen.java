@@ -8,6 +8,9 @@ public class MainMenuScreen implements Screen{
 
 	@Override
 	public Screen start() {
+		
+		
+		
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.println("Please choose one of the following options:");
