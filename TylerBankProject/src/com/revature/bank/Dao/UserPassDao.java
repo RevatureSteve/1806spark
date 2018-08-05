@@ -18,12 +18,12 @@ public interface UserPassDao {
 //READ
 
 	public boolean verifyUsernameAndPassword(UsersPojo user);
-	public void verifyPassword();
+	
 
 
 //UPDATE
 
-	
+	public int bankDeposit(int depositNum, double depositAmount);
 
 
 

@@ -9,10 +9,13 @@ public class Driver  {
 	private static final String USERNAME= "bank_db";
 	private static final String PASSWORD= "p4ssw0rd";
 	private static final String URL= "jdbc:oracle:thin:@tylertraining.cnmoc1mujdcw.us-east-2.rds.amazonaws.com:1521:ORCL";
+    
+		public static void main(String[] args) {
 
-	public static void main(String[] args) {
-
-
+		
+		
+		
+		
 	Scanner scan = new Scanner(System.in);
 	
 	

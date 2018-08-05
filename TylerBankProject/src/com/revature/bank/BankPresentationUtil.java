@@ -2,11 +2,13 @@ package com.revature.bank;
 
 import java.util.Scanner;
 
+import com.revature.bank.pojo.Bank_AccountPojo;
 import com.revature.bank.pojo.UsersPojo;
 import com.revature.bank.UserPassImpl;
 
 
 public class BankPresentationUtil {
+	
 	public static UserPassImpl userDao = new UserPassImpl();
 	
 //	public static void userLogin() {
@@ -42,6 +44,32 @@ public class BankPresentationUtil {
 		
 	}
 	
+	
+		
+		public static void bankDeposit() {
+			
+//			Bank_AccountPojo deposit = new Bank_AccountPojo();
+			UserPassImpl deposit = new UserPassImpl();
+			
+			
+			Scanner scan = new Scanner(System.in);
+			
+			while (true) {
+				System.out.println("Please enter your user id (future acct#): ");
+				int id = scan.nextInt();
+				
+				System.out.println("Enter amount of deposit: ");
+				double amount = scan.nextInt();
+				
+				deposit.bankDeposit(id, amount);
+				
+			}
+				
+			}
+
+				
+//			}
+	
 
 	
 	public static void mainMenu() {
@@ -70,7 +98,7 @@ public class BankPresentationUtil {
 				System.out.println("Heres your Balance");
 				break;
 			case 3:
-				System.out.println("Thank's for the cash, your balance is: ");
+				bankDeposit();
 				break;
 			case 4:
 				System.out.println("Withdrawl completed, your balance is");

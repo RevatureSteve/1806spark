@@ -1,7 +1,9 @@
 package com.revature.bank;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
@@ -56,33 +58,7 @@ public class UserPassImpl implements UserPassDao {
 		
 	}
 	
-	
-	
-
-//	@Override
-//	public String verifyUsername(String userName) {
-//		
-//		try(Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);){
-//			
-//			String sql = "SELECT USERNAME FROM users WHERE USERNAME = " + userName ;
-//			Statement statement = conn.createStatement();
-//			ResultSet rs = statement.executeQuery(sql);
-//			
-//			System.out.println(rs);
-//			
-//			
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		return null;
-//		
-//	}
 		
-	
-	
-	
-	
 	
 	@Override
 	public void createPassword() {
@@ -90,10 +66,30 @@ public class UserPassImpl implements UserPassDao {
 			
 		}	
 	
-	@Override
-	public void verifyPassword() {
-		// TODO Auto-generated method stub
+
+
+	
+	public int bankDeposit(int id, double amount) {
+	
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			
+			String sql ="{CALL UPDATE_ACCOUNT (?, ?)}";
+			CallableStatement cs = conn.prepareCall(sql);
+//			cs.setInt(1, 1);
+//			cs.setInt(2, 100);
+			cs.setInt(1, id);
+			cs.setDouble(2, amount);
+			int rowsAffected = cs.executeUpdate();
+			System.out.println("rows affected: " + rowsAffected);
+			
+
 		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return 0;
 	}
 
 	

@@ -3,6 +3,8 @@ GRANT CONNECT, RESOURCE TO bank_db;
 
 SELECT * FROM users;
 INSERT INTO users (username, password, fname, lname) VALUES ('DragonMom1', 'rhaegaristhebest22@@', 'Daenerys', 'Targaryen');
+SELECT USERNAME FROM users WHERE USERNAME = 'DragonMom1';
+SELECT USERNAME FROM users WHERE USERNAME = 'DragonMom1' AND PASSWORD = 'rhaegaristhebest22@@';
 
 SELECT * FROM bank_account;
 INSERT INTO bank_account (balance, users_id) VALUES ('1258345.78', '7');
@@ -76,6 +78,23 @@ BEGIN
 END;
 /
 
+--procedure to change account balance-----
+
+
+CREATE OR REPLACE PROCEDURE update_account(some_userID IN NUMBER, amount IN NUMBER)
+IS
+BEGIN
+    
+    UPDATE bank_account
+    SET balance = balance + amount
+    WHERE users_ID = some_userid;
+    COMMIT;
+END;
+/
+
+EXECUTE  UPDATE_ACCOUNT (1 ,100.00);
+SELECT * FROM BANK_ACCOUNT;
+
 --Bank Transaction
 CREATE TABLE Bank_Tx (
 tx_id INT,
@@ -87,6 +106,8 @@ PRIMARY KEY (tx_id),
 FOREIGN KEY (account_number) REFERENCES bank_account(account_number),
 FOREIGN KEY (tx_type_id) REFERENCES bank_tx_type(tx_type_id)
 );
+
+
 
 --bank transaction sequence
 CREATE SEQUENCE trans_num_seq
