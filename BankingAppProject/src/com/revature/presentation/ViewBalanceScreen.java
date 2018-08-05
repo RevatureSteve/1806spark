@@ -12,14 +12,11 @@ public class ViewBalanceScreen implements Screen{
 
 	@Override
 	public Screen start() {
-		Users user = Users.prelimUser();
 		BankDao bd = new BankDaoImpl();
-		BankAccount ba = new BankAccount(bd.getBankAccountInfo(user.getId()));
+		BankAccount ba = bd.getBankAccountInfo(Users.prelimUser().getId());
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Here is your balance:");
-		System.out.println(ba.getBalance());
+		System.out.println("Here is your balance: $" + ba.getBalance());
 		System.out.println();
-		// Enter method to display the business logic
 		System.out.println("What would you like to do?");
 		System.out.println("Enter 1 to make a deposit");
 		System.out.println("Enter 2 to withdraw");

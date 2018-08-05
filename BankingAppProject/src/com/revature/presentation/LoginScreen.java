@@ -19,8 +19,9 @@ public class LoginScreen implements Screen{
 		
 		
 		if (BL.validateUser(username, password) == null) {
-			System.out.println("Sorry, wrong user");
+			System.out.println("Sorry, your username and/or password were invalid");
 			System.out.println("Please try again");
+			System.out.println();
 			return this;
 		} else {
 			return new UserMenuScreen();

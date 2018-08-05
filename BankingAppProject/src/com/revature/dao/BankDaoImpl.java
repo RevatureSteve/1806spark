@@ -29,7 +29,7 @@ public class BankDaoImpl implements BankDao{
 	public BankAccount getBankAccountInfo(int id) {
 		BankAccount ba = null;
 		try(Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
-			String sql = "SELECT * FROM bank_account WHERE user_id = ?";
+			String sql = "SELECT * FROM bank_account WHERE users_id = ?";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
