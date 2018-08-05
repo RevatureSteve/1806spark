@@ -1,13 +1,18 @@
 package com.revature;
 
+import com.revature.Pojos.User;
+import com.revature.Screen.Screen;
+
 public class Driver {
 	
 	public static void main(String[] args) {
-		Screen currentScreen = new SignIn();
 		System.out.println("Welcome to the Cookie Bank!");
-		while(true) {
-			currentScreen = currentScreen.start();
-		}
+		CookieBankDao cbd = new CookieBankDao();
+		User you = Screen.login();
+		System.out.println(you);
+		User databaseUser = cbd.thatUser(you.getUsename());
+		System.out.println(databaseUser);
+		
 	}
 
 }
