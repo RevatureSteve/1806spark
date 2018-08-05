@@ -22,8 +22,9 @@ public class Driver {
 			switch (userSelection) {
 			
 			case 1:
+				
 					User me = PresentationLogic.loginScreen();
-							while(userSelection1 != 5)	{
+							while(userSelection1 != 5 && me.getUserID() != 138)	{
 							PresentationLogic.AfterLoginScreen();
 								userSelection1 = scanny.nextInt();
 							switch (userSelection1) {

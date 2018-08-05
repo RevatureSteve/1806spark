@@ -6,7 +6,7 @@ CREATE SEQUENCE theUserId_sequence
   START WITH 138
   INCREMENT BY 41;
   
-  
+  commit;
 
 -- Use sequence in trigger that will be invoked before an insert on users table
 CREATE OR REPLACE TRIGGER userId_sequence_trigger BEFORE INSERT ON users FOR EACH ROW
@@ -88,7 +88,19 @@ END;
 -------------------------------
 CREATE OR REPLACE PROCEDURE withdraw_account(some_userID IN NUMBER, amount IN NUMBER, errormsg OUT VARCHAR2)
 IS
+ balance NUMBER(8,2);
+ 
+ cursor resultset is
+     SELECT balance
+     FROM bank_account
+     WHERE users_id = some_userid;
+  
+     
 BEGIN
+
+   open resultset;
+   fetch resultset into balance;
+   close resultset;
   
   IF  
   
@@ -101,6 +113,7 @@ BEGIN
   
   WHERE users_ID = some_userid;
   
+  
   COMMIT;
   
   END IF;
@@ -108,7 +121,15 @@ BEGIN
   EXCEPTION
   WHEN OTHERS THEN
   errormsg := SQLERRM;
-  
 END;
 /
 
+DECLARE 
+  errormsg VARCHAR2(4000);
+BEGIN
+  
+  withdraw_account(1901, 800, errormsg);
+END;
+/
+
+SELECT * FROM bank_account;

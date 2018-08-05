@@ -90,29 +90,43 @@ public class PresentationLogic {
 		Scanner scanny1 = new Scanner(System.in);
 		User registerCustomer = null;
 		System.out.println("\n\n*******************************************************************************************************************************************************************************************\n\n");
-		System.out.println("\t\t\t\t\t\t\t\t\t\tLogin!\n\n");
+		System.out.println("\t\t\t\t\t\t\t\t\t\tLogin! Enter Exit to Go back to main menu\n\n");
 		System.out.println("*************************************************************************************************************************************************************************************************\n");
 		System.out.print("\tEnter your username: ");
 		String usernameFormat = scanny1.nextLine();
 		String username = usernameFormat.toLowerCase();
+		if(username.equalsIgnoreCase("exit")) {
+			return new User(138,"hminott","junior1996","Humphrey","Minott");
+		}
 		System.out.println();
 		System.out.print("\tEnter your password: ");
 		String password = scanny1.nextLine();	
+		if(username.equalsIgnoreCase("exit")) {
+			return new User(138,"hminott","junior1996","Humphrey","Minott");
+		}
 		UserDao lookUpCustomer = new UserDaoImplementation();
 		registerCustomer = lookUpCustomer.getUserByUsername(username);
 		while(registerCustomer == null) {
 			System.out.println("\n\tIncorrect Username or Password\n\tTry again!");
 			System.out.print("\n\tEnter your username: ");
-			username = scanny1.nextLine();
+			String usernameFormat2 = scanny1.nextLine();
+			username = usernameFormat2.toLowerCase();
+			if(username.equalsIgnoreCase("exit")) {
+				return new User(138,"hminott","junior1996","Humphrey","Minott");
+			}
 			System.out.println();
 			System.out.print("\n\tEnter your password: ");
 			password = scanny1.nextLine();
+			if(username.equalsIgnoreCase("exit")) {
+				return new User(138,"hminott","junior1996","Humphrey","Minott");
+			}
 			registerCustomer = lookUpCustomer.getUserByUsername(username);
 		}
 			while(!(registerCustomer.getPassword().equals(password))) {
 				System.out.println("\n\tIncorrect Username or Password\n\tTry again!");
 				System.out.print("\n\tEnter your username: ");
-				username = scanny1.nextLine();
+				String usernameFormat3 = scanny1.nextLine();
+				username = usernameFormat3.toLowerCase();
 				System.out.println();
 				System.out.print("\n\tEnter your password: ");
 				password = scanny1.nextLine();
@@ -129,7 +143,7 @@ public class PresentationLogic {
 	}
 	
 	public static void errorMessage() {
-		System.out.println("\t\t\t\t\t\t\tOops...Sorry, something went wrong... \\nRegsitration Failed");
+		System.out.println("\t\t\t\t\t\t\tOops...Sorry, something went wrong... \nRegsitration Failed");
 		System.out.println("\t\t\t\t\t\t\t\t\t\tThis error is logged, try again later");
 	}
 
