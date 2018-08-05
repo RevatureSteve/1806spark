@@ -2,72 +2,48 @@ package com.revature.bank.presentation;
 
 import java.util.Scanner;
 
+import com.revature.bank.dao.BankDao;
+import com.revature.bank.exceptions.NoInputException;
 import com.revature.bank.pojo.User;
 
 public class Presentation {
-	
+
 	// scanner used to take user inpuSt
 	private static Scanner scan = new Scanner(System.in);
-	
-	public static User login() {
-		System.out.println("Username: ");
+
+	public static User login() throws NoInputException{
+		System.out.println("Whats your Username? ");
 		String uname = scan.nextLine();
-		System.out.println("Password: ");
+		System.out.println("and your Password? ");
 		String pass = scan.nextLine();
-		User u = new User(0, uname, pass);
+		User u = new User(0, "", "", uname, pass);
 		return u;
 	}
 
-	public static void UserMainMenu() {
+	public static String UserMainMenu() {
 		System.out.println("How may I help you?:");
 		System.out.println("1 to view balance");
 		System.out.println("2 to make a deposite");
 		System.out.println("3 to make a withdrawl");
+		System.out.println("x to leave");
 		String input = scan.nextLine();
+		return input;
 	}
 
-	public static void Deposit() {
+	public static String Deposit() {
 		System.out.println("How much would you like to deposite (no $ symbol please):");
-		System.out.println("x to cancle transaction.");
 		String input = scan.nextLine();
-		switch (input) {
-		case "x":
-			UserMainMenu();
-		default:
-			System.out.println("$" + input + " has been deposited.");
-		}
+		return input;
 	}
-	/*
-	public static void Withdrawl() {
-		while (true) {
+
+	public static String Withdrawl(User u) {
 			System.out.println("How much would you like to withdraw (no $ symbol please):");
-			System.out.println("You currently have: $" + balance);
-			System.out.println("x to cancle transaction.");
+			System.out.println("You currently have: $" + u.getBalance());
 			String input = scan.nextLine();
-			switch (input) {
-			case "x":
-				UserMainMenu();
-			default:
-				if (Double.parseDouble(input) > balance) {
-					System.out.println("Im sorry but you dont have that much. try again?");
-					System.out.println("1 for yes");
-					System.out.println("2 for no");
-					String again = scan.nextLine();
-					switch (again) {
-					case "1":
-						continue;
-					case "2":
-						UserMainMenu();
-					}
-				}
-				final double newBalance = balance - Double.parseDouble(input);
-				System.out.println("$" + input + " has been withdrawn.");
-				System.out.println("Your new balance is: $" + newBalance);
-				UserMainMenu();
-			}
-		}
+			return input;
 	}
-	public interface ViewBalanceScreen{
-		public double balance = 785.50;
-	}*/
+
+	public static double ViewBalance(User u) {
+		return u.getBalance();
+	}
 }
