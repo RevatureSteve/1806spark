@@ -70,8 +70,19 @@ public class BankAccountDao implements Dao {
 	
 	@Override
 	public int update(Object obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		BankAccount account = (BankAccount) obj;
+		int rowsAffected = 0;
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			String sql = "UPDATE bank_account SET balance = (?) WHERE account_number = (?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setDouble(1, account.getBalance());
+			ps.setInt(2, account.getAccountNumber());
+			rowsAffected = ps.executeUpdate();
+			System.out.println("SUCCESS!!");
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rowsAffected;
 	}
 
 }
