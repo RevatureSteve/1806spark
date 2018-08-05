@@ -44,6 +44,7 @@ public class FlashCardDaoImpl implements FlashCardDao {
 	
 	@Override
 	public void createFlashcardProc(FlashCard fc) {
+		
 		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
 			String sql = "{call insert_fc_procedure(?, ?, ?)}";
 			String msg = "";
