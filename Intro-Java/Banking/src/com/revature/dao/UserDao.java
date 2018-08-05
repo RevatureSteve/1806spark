@@ -14,12 +14,13 @@ public class UserDao {
 	private static final String URL = "jdbc:oracle:thin:@marcin-salamon-oracle.ch2v7k2we1qt.us-east-2.rds.amazonaws.com:1521:ORCL";
 	private static final String USERNAME = "bank_db";
 	private static final String PASSWORD = "p4ssw0rd";
+
 	public List<User> getAllUsers() {
 		ArrayList<User> users = new ArrayList<User>();
-		try (Connection conn = DriverManager.getConnection(URL, LoggedUser.getUser().getUsername(),
-				LoggedUser.getUser().getPassword());) {
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME,
+				PASSWORD);) {
 			String sql = "SELECT * FROM users";
-			PreparedStatement ps = conn.prepareStatement(sql); 
+			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				users.add(new User(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5)));
@@ -32,8 +33,8 @@ public class UserDao {
 
 	public User getUserBy(int id) {
 		User user = null;
-		try (Connection conn = DriverManager.getConnection(URL, LoggedUser.getUser().getUsername(),
-				LoggedUser.getUser().getPassword());) {
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME,
+				PASSWORD);) {
 			String sql = "SELECT * FROM users WHERE user_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
@@ -45,5 +46,22 @@ public class UserDao {
 			// TODO: handle exception
 		}
 		return user;
+	}
+
+	public boolean validateUser(String username, String password) {
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME,
+				PASSWORD);) {
+			String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, username);
+			ps.setString(2, password);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				return true;
+			}
+		} catch (Exception e) {
+			// TODO: handle exception
+		}
+		return false;
 	}
 }

@@ -17,11 +17,10 @@ public class LoginScreen implements Screen {
 		IOHandler.getUser();
 		UserDao ud = new UserDao();
 		
-		if(LoggedUser.getUser().getUsername().equals("")) {
+		if(ud.validateUser(LoggedUser.getUser().getUsername(), LoggedUser.getUser().getPassword())) {
 			return new MainMenuScreen();
 		}
 		System.out.println("Wrong login or password");
 		return this;
 	}
-
 }
