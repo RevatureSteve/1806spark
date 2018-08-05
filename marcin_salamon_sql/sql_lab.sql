@@ -85,7 +85,7 @@ END;
 --3.2 task A Create a function that returns the average total of all invoices
 CREATE OR REPLACE FUNCTION get_invoice_avg
 RETURN NUMBER
-    IS invoice_avg NUMBER;
+    IS invoice_avg NUMBER(20,2);
 BEGIN
     SELECT AVG(total) 
     INTO invoice_avg
@@ -95,14 +95,14 @@ END;
 /
 --3.2 task B Create a function that returns the most expensive track
 CREATE OR REPLACE FUNCTION get_most_expensive_track
-RETURN TABLE
-    IS price TABLE;
+RETURN SYS_REFCURSOR
+    AS curso SYS_REFCURSOR;
 BEGIN
-    SELECT * 
-    INTO price
-    FROM track
-    WHERE unitprice = (SELECT MAX(unitprice) FROM track);
-    RETURN invoice_avg;
+    OPEN curso
+        FOR SELECT *
+        FROM track
+        WHERE unitprice = (SELECT MAX(unitprice) FROM track);
+    RETURN curso;
 END;
 /
 
@@ -120,8 +120,17 @@ END;
 /
 
 --3.4 Create a function that returns all employees who are born after 1968.
-SELECT * FROM employee
-WHERE birthdate > TO_DATE('19680101', 'YYYYMMDD');
+CREATE OR REPLACE FUNCTION born_after_1968
+RETURN SYS_REFCURSOR
+    AS curso SYS_REFCURSOR;
+BEGIN
+    OPEN curso
+        FOR SELECT * FROM employee
+        WHERE birthdate > TO_DATE('19680101', 'YYYYMMDD');
+    RETURN curso;
+END;
+/
+
 --4.1 Create a stored procedure that selects the first and last names of all the employees.
 CREATE OR REPLACE PROCEDURE first_last_name(cursorParam OUT SYS_REFCURSOR)
 IS
@@ -158,6 +167,52 @@ BEGIN
     SELECT firstname, lastname, company
     FROM customer
     WHERE customerid = customer_id;
+END;
+/
+--5.0 task A Create a transaction that given a invoiceId will delete that invoice (There may be constraints that 
+--rely on this, find out how to resolve them).
+CREATE OR REPLACE PROCEDURE delete_invoice_by_id(invoice_id INT)
+IS
+BEGIN
+    DELETE FROM invoiceline
+    WHERE invoiceid  = invoice_id;
+    DELETE FROM invoice
+    WHERE invoiceid = invoice_id;
+    COMMIT;
+END;
+/
+--5.0 task B Create a transaction nested within a stored procedure that inserts a new record in the Customer
+--table
+CREATE OR REPLACE PROCEDURE create_new_customer(customer_id INT, first_name VARCHAR2, last_name VARCHAR2, company VARCHAR2,
+    email VARCHAR2, supportrepid INT)
+IS
+BEGIN
+    INSERT INTO customer(customerid, lastname, firstname, company, email, supportrepid)
+    VALUES(customer_id, last_name, first_name, company, email, supportrepid);
+    COMMIT;
+END;
+/
+--6.1 Tast A Create an after insert trigger on the employee table fired after a new record is inserted into the
+--table.
+CREATE OR REPLACE TRIGGER after_employee_insert_trigger
+AFTER INSERT ON employee
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('after employee insert trigger');
+END;
+/
+--6.1 Task B Create an after update trigger on the album table that fires after a row is inserted in the table
+CREATE OR REPLACE TRIGGER after_album_insert_trigger
+AFTER INSERT ON album
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('after album insert trigger');
+END;
+/
+--6.1 Task C Create an after delete trigger on the customer table that fires after a row is deleted from the
+--table.
+CREATE OR REPLACE TRIGGER after_customer_delete
+AFTER DELETE ON customer
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('after album insert trigger');
 END;
 /
 --7.1 Create an inner join that joins customers and orders and specifies the name of the customer and
