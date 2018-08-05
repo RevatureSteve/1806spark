@@ -23,7 +23,8 @@ public class MainMenuScreen implements Screen{
 		System.out.println("Please choose one of the following options:");
 		System.out.println("Enter 1 to make a withdrawl");
 		System.out.println("Enter 2 to make a deposit");
-		System.out.println("Enter 3 to logout");
+		System.out.println("Enter 3 to view transactions");
+		System.out.println("Enter 4 to logout");
 		
 		int userInput = scan.nextInt();
 		
@@ -33,6 +34,8 @@ public class MainMenuScreen implements Screen{
 			case 2:
 				return new DepositScreen().start();
 			case 3:
+				return new TransactionScreen().start();
+			case 4:
 				System.out.println("User is logging out...");
 				System.exit(1);
 		}

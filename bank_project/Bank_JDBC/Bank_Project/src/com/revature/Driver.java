@@ -13,16 +13,7 @@ public class Driver {
 		System.out.println("**Welcome to Traveler's Bank**");
 		System.out.println("******************************");
 		
-		
-//		UserDao users = new UserDao();
-//		List<Object> userList = users.read();
-//		System.out.println(userList);
-		
-//		BankAccountDao bankaccounts = new BankAccountDao();
-//		List<Object> bankList = bankaccounts.read();
-//		System.out.println(bankList);
-		
-		
+
 		new LoginScreen().start();
 	}
 
