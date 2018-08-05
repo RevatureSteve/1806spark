@@ -90,13 +90,20 @@ CREATE OR REPLACE PROCEDURE withdraw_account(some_userID IN NUMBER, amount IN NU
 IS
 BEGIN
   
+  IF  
+  
+  balance >= amount THEN
+ 
   UPDATE bank_account 
   
   SET balance = balance - amount
   
+  
   WHERE users_ID = some_userid;
   
   COMMIT;
+  
+  END IF;
   
   EXCEPTION
   WHEN OTHERS THEN

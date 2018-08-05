@@ -139,6 +139,28 @@ public class UserDaoImplementation implements UserDao {
 		return rowsAffected;
 	}
 	
+	@Override
+	public int withdrawMoney(User person, int amount) {
+		int rowsAffected = 0;
+		try(Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD)) {
+			connection.setAutoCommit(false);
+			String sql = "{call withdraw_account(?,?,?)}";
+			String msg = "";
+			CallableStatement callables = connection.prepareCall(sql);
+			callables.setInt(1,person.getUserID());
+			callables.setInt(2,amount);
+			callables.setString(3,msg);
+			rowsAffected = callables.executeUpdate();
+			connection.commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return rowsAffected;
+	}
+	
 	
 	
 	

@@ -29,7 +29,7 @@ public interface UserDao {
 		//UPDATE: A method that will use an update SQL statement
 		
 		public int depositMoney(User person, int amount);
-		
+		public int withdrawMoney(User person, int amount);
 		
 		//DELETE: A method that will use a delete SQL statement
 		

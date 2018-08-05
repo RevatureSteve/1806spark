@@ -31,16 +31,24 @@ public class Driver {
 										System.out.println("\n\tYou have " + x.getUserBalance(me) + "$ in your account");	
 									break;
 									case 2:
-										int amount = PresentationLogic.depositScreen();
-										x.depositMoney(me,amount);
-										PresentationLogic.successDepositMessage();
+										int depositAmount = PresentationLogic.depositScreen();
+										int success = x.depositMoney(me,depositAmount);
+										if (success > 0) {
+											PresentationLogic.successDepositMessage();
+											}
+											else {
+											PresentationLogic.failDepositMessage();
+											}
 									break;
 									case 3:
-										
-										
-										
-										
-										
+										int withdrawalAmount = PresentationLogic.withdrawScreen();
+										int successOrFail = x.withdrawMoney(me,withdrawalAmount);
+										if (successOrFail > 0) {
+										PresentationLogic.successWithdrawMessage();
+										}
+										else {
+										PresentationLogic.failWithdrawMessage();
+										}
 									break;	
 									case 4:
 										

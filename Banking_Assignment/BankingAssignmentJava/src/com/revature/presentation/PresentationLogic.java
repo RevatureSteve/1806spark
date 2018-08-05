@@ -41,6 +41,14 @@ public class PresentationLogic {
 		return amount;
 	}
 	
+	public static int withdrawScreen() {
+		Scanner scanny1 = new Scanner(System.in);
+		System.out.println();
+		System.out.println("\tPlease enter the amount you would like to withdraw: ");
+		int amount = scanny1.nextInt();
+		return amount;
+	}
+	
 	
 	public static User creatingNewUser() {
 		Scanner scanny1 = new Scanner(System.in);
@@ -128,6 +136,20 @@ public class PresentationLogic {
 	public static void successDepositMessage() {
 		System.out.println("\t\t\t\t\t\tYou've Successfully deposited money into your account with Humphrey Central Bank");
 		System.out.println("\t\t\t\t\t\t\t\t\t\tHave a nice day!");
+	}
+	public static void failDepositMessage() {
+		System.out.println("\t\t\t\t\t\tOops... We encountered a problem when trying to deposit funds into your account");
+		System.out.println("\t\t\t\t\t\t\t\t\t\tHave a nice day!");
+	}
+	
+	public static void successWithdrawMessage() {
+		System.out.println("\t\t\t\t\t\tYou've Successfully withdrew money from your account at Humphrey Central Bank");
+		System.out.println("\t\t\t\t\t\t\t\t\t\tHave a nice day!");
+	}
+	
+	public static void failWithdrawMessage() {
+		System.out.println("\t\t\t\t\t\tOops... We encountered a problem when trying to deposit funds into your account");
+		System.out.println("\t\t\t\t\t\t\t\t\t\tYou do not have enough funds in your account!");
 	}
 	
 }
