@@ -18,9 +18,9 @@ public class Driver {
 //		List<Object> userList = users.read();
 //		System.out.println(userList);
 		
-		BankAccountDao bankaccounts = new BankAccountDao();
-		List<Object> bankList = bankaccounts.read();
-		System.out.println(bankList);
+//		BankAccountDao bankaccounts = new BankAccountDao();
+//		List<Object> bankList = bankaccounts.read();
+//		System.out.println(bankList);
 		
 		
 		new LoginScreen().start();

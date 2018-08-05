@@ -5,6 +5,11 @@ import java.util.List;
 import com.revature.interfaces.Dao;
 
 public class TransactionDao implements Dao{
+	
+	private final static String USERNAME = "bank_db";
+	private final static String PASSWORD = "p4ssw0rd";
+	private final static String URL = "jdbc:oracle:thin:@mydbinstance.cu3okwucelpd.us-east-2.rds.amazonaws.com:1521:ORCL";
+	
 
 	@Override
 	public int create(Object obj) {

@@ -3,6 +3,7 @@ package com.revature.present;
 import java.nio.charset.MalformedInputException;
 import java.util.Scanner;
 
+import com.revature.buisnesslogic.BuisnessLogic;
 import com.revature.interfaces.Screen;
 
 public class LoginScreen implements Screen{
@@ -17,7 +18,14 @@ public class LoginScreen implements Screen{
 		System.out.println("Enter password: ");
 		String password = scan.nextLine();
 		
-		return new MainMenuScreen().start();
+		if (BuisnessLogic.userExists(userName, password)) {
+			return new MainMenuScreen().start();
+		}
+		
+		System.out.println("Login failed");
+		return this.start();
+		
+		
 	}
 
 }
