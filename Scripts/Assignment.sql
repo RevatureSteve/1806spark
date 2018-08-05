@@ -172,25 +172,43 @@ commit;
 --Create a stored procedure that selects the first and last names of all the employees.
 CREATE OR REPLACE PROCEDURE get_emp_names  
 IS
-name1 VARCHAR2(4000);
-name2 VARCHAR2(4000);
+full_name VARCHAR2(4000);
+first_name VARCHAR(4000);
+last_name VARCHAR(4000);
    BEGIN
-     SELECT firstname, lastname INTO name1, name2 FROM Employee;
-   END;
-
+   for emp in
+   ( SELECT firstname, lastname FROM employee)
+   loop
+        first_name := emp.firstname;
+       last_name := emp.lastname;
+      full_name :=  CONCAT (first_name, last_name);
+        DBMS_OUTPUT.PUT_LINE(full_name);
+   end loop;
+   end;
+   /
+   set serveroutput on;
+   BEGIN
+        get_emp_names();
+    END;
+/
+commit;
    --4.2
    --Create a stored procedure that updates the personal information of an employee.
 CREATE OR REPLACE PROCEDURE upd_pers_info 
-( first_name VARCHAR2 , last_name VARCHAR2 , phone VARCHAR2 )
+(e_id IN NUMBER,  first_name IN VARCHAR2 , last_name IN VARCHAR2)
 IS
 BEGIN
-INSERT INTO employee
-(firstname, lastname, phone)
-VALUES
-(first_name, last_name, phone);
+
+UPDATE  employee
+SET firstname = first_name, lastname = last_name
+WHERE employeeid = e_id;
+ DBMS_OUTPUT.PUT_LINE(first_name || last_name);
+ 
 END;
-
-
+set serveroutput on;
+BEGIN
+upd_pers_info(9,'Billy', 'Murri');
+END;
 -- Create a stored procedure that returns the managers of an employee.
 SELECT * FROM employee;
 
@@ -198,14 +216,23 @@ SELECT * FROM employee;
    IS
   e_name VARCHAR2(4000);
    m_name VARCHAR2(4000);
-   
 BEGIN
-   SELECT a.firstname,b.firstname INTO e_name, m_name
+for e in (
+   SELECT a.firstname AS first,b.firstname AS last
    FROM Employee a, Employee b
-   WHERE b.employeeid = a.reportsto;
+   WHERE b.employeeid = a.reportsto)
+   LOOP
+   e_name := e.first;
+   m_name := e.last;
+   DBMS_OUTPUT.PUT_LINE(e_name || m_name);
+   END LOOP;
    END;
    
-
+   set serveroutput on
+   BEGIN
+   return_manager();
+   END;
+COMMIT;
 
    
 -------------------------------------------------6.0 Section Triggers
