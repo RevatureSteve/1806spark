@@ -2,14 +2,21 @@ package com.revature.present;
 
 import java.util.Scanner;
 
+import com.revature.buisnesslogic.BuisnessLogic;
 import com.revature.interfaces.Screen;
+import com.revature.pojo.BankAccount;
+import com.revature.pojo.Users;
 
 public class MainMenuScreen implements Screen{
 
 	@Override
 	public Screen start() {
 		
+		Users currentUser = Users.getCurrentUser();
 		
+		System.out.println("Welcome Back " + currentUser.getFirstName());
+		BuisnessLogic.findAndSetUserAccount(currentUser.getUserId());
+		System.out.println(BankAccount.getCurrentAccount());
 		
 		Scanner scan = new Scanner(System.in);
 		
@@ -32,7 +39,7 @@ public class MainMenuScreen implements Screen{
 		
 		
 		
-		return this;
+		return this.start();
 	}
 
 }

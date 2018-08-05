@@ -28,9 +28,7 @@ public class BankAccountDao implements Dao {
 
 	@Override
 	public List<Object> read() {
-
 		List<Object> bankAccounts = new ArrayList<>();
-
 		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
 			String sql = "SELECT * FROM bank_account";
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -46,6 +44,30 @@ public class BankAccountDao implements Dao {
 
 	}
 
+	
+	public BankAccount getById(int userId) {
+		BankAccount account = null;
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);){
+			String sql = "SELECT * FROM bank_account WHERE users_id = (?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, userId);
+			ResultSet rs = ps.executeQuery();
+			
+			if (rs.next()) {
+				account = new BankAccount(rs.getInt(1), rs.getDouble(2), rs.getInt(3));
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return account;
+	}
+	
+	
+	
+	
 	@Override
 	public int update(Object obj) {
 		// TODO Auto-generated method stub

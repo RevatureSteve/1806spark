@@ -6,6 +6,8 @@ public class BankAccount {
 	private Double balance;
 	private int userId;
 	
+	private static BankAccount currentAccount = null;
+
 	public BankAccount() {}
 
 	public BankAccount(int accountNumber, Double balance, int userId) {
@@ -37,6 +39,14 @@ public class BankAccount {
 
 	public void setUserId(int userId) {
 		this.userId = userId;
+	}
+	
+	public static BankAccount getCurrentAccount() {
+		return currentAccount;
+	}
+
+	public static void setCurrentAccount(BankAccount currentAccount) {
+		BankAccount.currentAccount = currentAccount;
 	}
 
 	@Override

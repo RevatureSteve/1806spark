@@ -2,6 +2,8 @@ package com.revature.pojo;
 
 public class Users {
 
+	private static Users currentUser = null;
+	
 	private int userId;
 	private String userName;
 	private String password;
@@ -77,8 +79,16 @@ public class Users {
 		return "Users [userId=" + userId + ", userName=" + userName + ", password=" + password + ", firstName="
 				+ firstName + ", lastName=" + lastName + "]";
 	}
-	
-	
+
+
+	public static Users getCurrentUser() {
+		return currentUser;
+	}
+
+
+	public static void setCurrentUser(Users currentUser) {
+		Users.currentUser = currentUser;
+	}
 	
 	
 	
