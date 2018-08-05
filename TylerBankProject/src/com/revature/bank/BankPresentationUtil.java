@@ -42,15 +42,43 @@ public class BankPresentationUtil {
 		
 	}
 	
-//	public static void userAndPassword() {
-//		sysoutSystem.out.println(userName + userPass);
-//	}
+
 	
 	public static void mainMenu() {
-		System.out.println("Enter 1 to Logout");
-		System.out.println("Enter 2 View Balance");
-		System.out.println("Enter 3 Deposit");
-		System.out.println("Enter 4 Withdraw");
+		
+		Scanner scan = new Scanner(System.in);
+		
+		while(true) {
+			System.out.println("-------------------------------------------------------------------");
+			System.out.println("-------------------------------------------------------------------");
+			System.out.println("Enter 1 to Logout");
+			System.out.println("Enter 2 View Balance");
+			System.out.println("Enter 3 Deposit");
+			System.out.println("Enter 4 Withdraw");
+			System.out.println("-------------------------------------------------------------------");
+			
+			int userInput = scan.nextInt();
+			
+			
+			
+			switch (userInput) {
+			case 1:
+				System.out.println("logout successful");
+				System.exit(1);
+				break;
+			case 2:
+				System.out.println("Heres your Balance");
+				break;
+			case 3:
+				System.out.println("Thank's for the cash, your balance is: ");
+				break;
+			case 4:
+				System.out.println("Withdrawl completed, your balance is");
+				break;
+			
+			}
+			
+		}
 
 	}
 	
