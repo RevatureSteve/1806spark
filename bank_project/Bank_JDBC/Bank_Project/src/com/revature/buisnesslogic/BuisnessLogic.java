@@ -3,8 +3,10 @@ package com.revature.buisnesslogic;
 import java.util.List;
 
 import com.revature.dao.BankAccountDao;
+import com.revature.dao.TransactionDao;
 import com.revature.dao.UserDao;
 import com.revature.pojo.BankAccount;
+import com.revature.pojo.BankTransaction;
 import com.revature.pojo.Users;
 
 public class BuisnessLogic {
@@ -49,6 +51,8 @@ public class BuisnessLogic {
 		if (balance - amount > 0) {
 			account.setBalance(balance - amount);
 			new BankAccountDao().update(account);
+			BankTransaction trans = new BankTransaction(amount, "Withdrawal", account.getAccountNumber());
+			new TransactionDao().create(trans);
 		}
 	}
 	
@@ -61,6 +65,8 @@ public class BuisnessLogic {
 		Double balance = account.getBalance();
 		account.setBalance(balance + amount);
 		new BankAccountDao().update(account);
+		BankTransaction trans = new BankTransaction(amount, "Deposit", account.getAccountNumber());
+		new TransactionDao().create(trans);
 	}
 
 }

@@ -13,6 +13,11 @@ public class BankTransaction {
 	
 	public BankTransaction() {}
 
+	public BankTransaction(Double transactionAmt, String transactionType, int accountNumber) {
+		this.transactionAmt = transactionAmt;
+		this.transactionType = transactionType;
+		this.accountNumber = accountNumber;
+	}
 
 	public BankTransaction(int transactionId, Date transactionTimeStamp, Double transactionAmt, String transactionType,
 			int accountNumber) {
