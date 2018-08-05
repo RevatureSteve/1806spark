@@ -33,6 +33,13 @@ public class PresentationLogic {
 		System.out.println("\tEnter 5: Sign Out\n");
 	}
 	
+	public static int depositScreen() {
+		Scanner scanny1 = new Scanner(System.in);
+		System.out.println();
+		System.out.println("\tPlease enter the amount you would like to deposit: ");
+		int amount = scanny1.nextInt();
+		return amount;
+	}
 	
 	
 	public static User creatingNewUser() {
@@ -118,5 +125,9 @@ public class PresentationLogic {
 		System.out.println("\t\t\t\t\t\t\t\t\t\tThis error is logged, try again later");
 	}
 
+	public static void successDepositMessage() {
+		System.out.println("\t\t\t\t\t\tYou've Successfully deposited money into your account with Humphrey Central Bank");
+		System.out.println("\t\t\t\t\t\t\t\t\t\tHave a nice day!");
+	}
 	
 }

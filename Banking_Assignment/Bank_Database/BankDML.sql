@@ -17,11 +17,11 @@ BEGIN
   END IF;
 END;
 /
-
+SELECT * FROM users WHERE username = 'hminott4';
 SELECT * FROM users;
 SELECT * FROM bank_account;
 DELETE FROM users WHERE users_id=179;
-INSERT INTO  users (username,password,fname,lname) values('hminott3','junior1996','humphrey3','minott3');
+INSERT INTO  users (username,password,fname,lname) values('hminott5','junior1996','humphrey4','minott4');
 
 
 --Create a sequence that will be used in trigger for Bank_Account table
@@ -51,11 +51,57 @@ BEGIN
      INSERT INTO bank_account (balance,users_id) values(0,:new.users_id);
 
 END;
+/
  
- 
+
+
+CREATE OR REPLACE PROCEDURE update_account(some_userID IN NUMBER, amount IN NUMBER, errormsg OUT VARCHAR2)
+IS
+BEGIN
+  
+  UPDATE bank_account 
+  
+  SET balance = balance + amount
+  
+  WHERE users_ID = some_userid;
+  
+  COMMIT;
+  
+  EXCEPTION
+  WHEN OTHERS THEN
+  errormsg := SQLERRM;
+  
+END;
+/
 
 
 
+DECLARE 
+  errormsg VARCHAR2(4000);
+BEGIN
+  
+  update_account(1901, 100, errormsg);
+END;
+/
 
 
+-------------------------------
+CREATE OR REPLACE PROCEDURE withdraw_account(some_userID IN NUMBER, amount IN NUMBER, errormsg OUT VARCHAR2)
+IS
+BEGIN
+  
+  UPDATE bank_account 
+  
+  SET balance = balance - amount
+  
+  WHERE users_ID = some_userid;
+  
+  COMMIT;
+  
+  EXCEPTION
+  WHEN OTHERS THEN
+  errormsg := SQLERRM;
+  
+END;
+/
 

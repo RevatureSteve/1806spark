@@ -23,12 +23,12 @@ public interface UserDao {
 		public List<User> getAllUsers();
 		public User getUserById(int id);
 		public User getUserByUsername(String username);
-		public BankAccount getUserBalance(User person);
+		public int getUserBalance(User person);
 		
 		
 		//UPDATE: A method that will use an update SQL statement
 		
-		
+		public int depositMoney(User person, int amount);
 		
 		
 		//DELETE: A method that will use a delete SQL statement

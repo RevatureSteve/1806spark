@@ -28,15 +28,12 @@ public class Driver {
 								userSelection1 = scanny.nextInt();
 							switch (userSelection1) {
 									case 1:
-										BankAccount money = x.getUserBalance(me);
-										System.out.println("\n\tYou have " + money.getBalance() + "$ in your account");	
+										System.out.println("\n\tYou have " + x.getUserBalance(me) + "$ in your account");	
 									break;
 									case 2:
-										
-										
-										
-										
-										
+										int amount = PresentationLogic.depositScreen();
+										x.depositMoney(me,amount);
+										PresentationLogic.successDepositMessage();
 									break;
 									case 3:
 										
