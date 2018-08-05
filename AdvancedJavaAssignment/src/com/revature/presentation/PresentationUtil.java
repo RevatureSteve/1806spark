@@ -82,7 +82,7 @@ public class PresentationUtil {
 	}
 	
 	
-	public static void presentDrinks() {
+	public static void presentDrinks(Drinks drk) {
 		System.out.println("-----Current Drinks-----");
 		System.out.println(DrinksDao.readDrinks());
 	}

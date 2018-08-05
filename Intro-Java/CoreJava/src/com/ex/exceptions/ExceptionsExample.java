@@ -1,7 +1,6 @@
 package com.ex.exceptions;
 
 public class ExceptionsExample {
-<<<<<<< HEAD
 	
 	/*
 	 * IQ: What is the difference between error and exception
@@ -45,7 +44,6 @@ public class ExceptionsExample {
 	// MOST COMMON EXCEPTION!!!!
 //	Object object;
 //	object.toString();
-=======
 
 	/*
 	 * IQ: 
