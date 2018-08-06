@@ -17,14 +17,20 @@ public class WithdrawScreen implements Screen{
 		BankAccount ba = bd.getBankAccountInfo(Users.getUser().getId());
 		Scanner scan = new Scanner(System.in);
 		System.out.println("How much would you like to withdraw?");
-		double amount = scan.nextInt();
+		try {
+		double amount = scan.nextDouble();
 		if(BusinessLogic.withdrawFromAccount(amount, ba.getAccount_number())) {
 			System.out.println("Withdraw successful!");
 			System.out.println("You withdrew: $" + amount);
+			System.out.println();
 			return new UserMenuScreen();
 		} else {
 			return this;
-		}		
+		}
+		} catch(Exception e) {
+			System.out.println("You did not input a number.  Please input a number.");
+			return this;
+		}
 	}
 
 }

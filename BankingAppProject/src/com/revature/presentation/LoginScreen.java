@@ -11,7 +11,8 @@ public class LoginScreen implements Screen{
 	@Override
 	public Screen start() {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Please login to your account");
+		System.out.println();
+		System.out.println("Please login");
 		System.out.println("Please enter your username:");
 		String username = scan.nextLine();
 		System.out.println("Please enter your password:");
@@ -26,16 +27,6 @@ public class LoginScreen implements Screen{
 			System.out.println();
 			return this;
 		}
-		//System.out.println(password);
-		//System.out.println(Driver.bd.getUsersByUsername(username).getPassword());
-		//apply method from business logic class to check if user is valid
-//		if (Driver.bd.getUsersByUsername(username).getPassword().equals(password)) {
-//			System.out.println("Instantiating new User!");
-//			Users u = new Users(0, username, password);
-//			System.out.println(u);
-//			return new UserMenu();
-//		}
-		//return this;
 	}
 
 }

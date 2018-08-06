@@ -17,17 +17,20 @@ public class DepositScreen implements Screen{
 		BankAccount ba = bd.getBankAccountInfo(Users.getUser().getId());
 		Scanner scan = new Scanner(System.in);
 		System.out.println("How much would you like to deposit?");
-		double amount = scan.nextDouble();
+		try {
+			double amount = scan.nextDouble();
 		if(BusinessLogic.depositToAccount(amount, ba.getAccount_number())) {
 			System.out.println("Deposit successful!");
 			System.out.println("You have deposited: $" + amount);
+			System.out.println();
 			return new UserMenuScreen();
 		} else {
 			return this;
 		}
-		// Some function to do business logic and calculate the deposit for the thing
-		// if passes sysout deposit successful!
-		// wrap in try/catch block for type input
+		} catch(Exception e) {
+			System.out.println("You did not input a number.  Please input a number.");
+			return this;
+		}
 	}
 	
 }

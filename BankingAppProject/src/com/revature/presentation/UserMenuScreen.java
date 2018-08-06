@@ -28,7 +28,7 @@ public class UserMenuScreen implements Screen {
 		case "4":
 			return new ViewTransactionHistory();
 		case "5":
-			System.out.println("Goodbye!");
+			System.out.println("Thanks for stopping by! We'll catch you later!");
 			System.exit(1);
 		default:
 			System.out.println("Invalid input.  Please try again.");

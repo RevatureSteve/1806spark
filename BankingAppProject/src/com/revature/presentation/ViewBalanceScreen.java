@@ -15,7 +15,7 @@ public class ViewBalanceScreen implements Screen{
 		BankDao bd = new BankDaoImpl();
 		BankAccount ba = bd.getBankAccountInfo(Users.getUser().getId());
 		Scanner scan = new Scanner(System.in);
-		System.out.println("Here is your balance: $" + ba.getBalance());
+		System.out.println("Your current balance is: $" + ba.getBalance());
 		System.out.println();
 		System.out.println("What would you like to do?");
 		System.out.println("Enter 1 to make a deposit");
@@ -32,7 +32,7 @@ public class ViewBalanceScreen implements Screen{
 		case "3":
 			return new ViewTransactionHistory();
 		case "4":
-			System.out.println("Thank you!  Have a nice day!");
+			System.out.println("TThanks for stopping by! We'll catch you later!");
 			System.exit(1);
 		default:
 			System.out.println("Invalid input.  Please try again.");

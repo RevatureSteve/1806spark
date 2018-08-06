@@ -48,8 +48,6 @@ public class BusinessLogic {
 	}
 	
 	public static List<BankTransaction> getTransactionHistory(int accNum) {
-		
-		//List<BankTransaction> btx = new ArrayList<>();
 		return bd.getBankTransactions(accNum);
 	}
 

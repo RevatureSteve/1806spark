@@ -82,10 +82,6 @@ public class BankDaoImpl implements BankDao {
 					"    INNER JOIN bank_tx_type t ON tx.tx_type_id = t.tx_type_id\r\n" + 
 					"    WHERE tx.account_number = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
-			//String sql = "{call get_transaction_history_proc(?)}";
-			//CallableStatement cs = conn.prepareCall(sql);
-			//cs.setInt(1, accNum);
-			//cs.setString(2, "SYS_REFCURSOR");
 			ps.setInt(1, accNum);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
