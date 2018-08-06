@@ -28,10 +28,11 @@ public class UserPassImpl implements UserPassDao {
 			
 			Scanner scan = new Scanner(System.in);
 			
-			
-			String sql = "SELECT * FROM users WHERE USERNAME = '" + user.getUsername() + "' AND PASSWORD = '" + user.getPassword() + "'";
-			Statement statement = conn.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
+			String sql = "SELECT * FROM users WHERE USERNAME = ? AND PASSWORD = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, user.getUsername());
+			ps.setString(2, user.getPassword());
+			ResultSet rs = ps.executeQuery();
 			
 			if (!rs.isBeforeFirst() && rs.getRow() == 0) {
 				return false;
@@ -102,54 +103,30 @@ public class UserPassImpl implements UserPassDao {
 	}
 
 
-//VIEW BALANCE
-//	public Bank_AccountPojo viewBalance(int uid) {
-//		
-//		Bank_AccountPojo bal = null;
-//		
-//		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
-//			
-//			String sql = "SELECT balance FROM bank_account WHERE users_id = " + uid;
-//			Statement statement = conn.createStatement();
-//			ResultSet rs = statement.executeQuery(sql);
-//			
-//			if(rs.next()) {
-//				bal = new Bank_AccountPojo(rs.getInt(1), rs.getDouble(2), rs.getString(3));
-//			}
-//			
-//		} catch (SQLException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-//		
-//		return bal;
-//	}
 
 
 	public Bank_AccountPojo viewBalance(int uid) {
-		
+	
 		Bank_AccountPojo bal = null;
+	
+	try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
 		
-		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
-			
-			String sql = "SELECT * FROM bank_account WHERE users_id = " + uid;
-			Statement statement = conn.createStatement();
-			ResultSet rs = statement.executeQuery(sql);
-			
-			if(rs.next()) {
-				bal = new Bank_AccountPojo(rs.getInt(1), rs.getDouble(2), rs.getString(3));
-			}
-			
-		} catch (SQLException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
+		String sql = "SELECT * FROM bank_account WHERE users_id = ?";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.setInt(1, uid);
+		
+		ResultSet rs = ps.executeQuery();
+		
+		if(rs.next()) {
+			bal = new Bank_AccountPojo(rs.getInt(1), rs.getDouble(2), rs.getString(3));
 		}
 		
-		return bal;
+
+	} catch (SQLException e) {
+		e.printStackTrace();
 	}
-
-
-
+	return bal;
 	
 	
+}
 }
