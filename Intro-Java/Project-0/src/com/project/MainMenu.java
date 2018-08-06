@@ -148,6 +148,7 @@ public class MainMenu implements HomeScreen{
 			break;
 
 		default:
+			bal = AccountDao.getBal(uId);
 			int x = Integer.valueOf(input);
 			if(x > bal) {
 				System.out.println("You can't withdraw that much \n You only have " + bal + " Sedish Fish...");
@@ -160,6 +161,7 @@ public class MainMenu implements HomeScreen{
 				String value = scan.nextLine();
 				switch (value) {
 				case "y":
+					TransDao.newTransaction(uId, trans);
 					System.out.println("Transaction completed");
 					return this.Valid(user);
 				case "n":
@@ -195,7 +197,7 @@ public class MainMenu implements HomeScreen{
 			String value = scan.nextLine();
 			switch (value) {
 			case "y":
-				TransDao.depositNewBal(uId, trans);
+				TransDao.newTransaction(uId, trans);
 				System.out.println("Transaction completed");
 				return this.Valid(user);
 			case "n":

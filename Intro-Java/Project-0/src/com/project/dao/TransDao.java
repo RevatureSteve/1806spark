@@ -28,18 +28,14 @@ public class TransDao implements Dao {
 		// TODO Auto-generated method stub
 		return 0;
 	}
-	public static int depositNewBal(int uId, int newBal) {
+	public static int newTransaction(int uId, int newBal) {
 		try (Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);){
 			String sql = "UPDATE bank_account SET balance = (?) WHERE users_id = (?)";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, newBal);
 			ps.setInt(2, uId);
 			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				return 1;
-			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return 0;
