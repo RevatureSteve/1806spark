@@ -3,7 +3,7 @@ package com.revature.presentation;
 import java.util.Scanner;
 
 import com.revature.Screen;
-import com.revature.bl.BL;
+import com.revature.bl.BusinessLogic;
 import com.revature.dao.BankDao;
 import com.revature.dao.BankDaoImpl;
 import com.revature.pojo.BankAccount;
@@ -17,7 +17,7 @@ public class ViewTransactionHistory implements Screen{
 		BankAccount ba = bd.getBankAccountInfo(Users.getUser().getId());
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Here is your transaction history:");
-		System.out.println(BL.getTransactionHistory(ba.getAccount_number()));
+		System.out.println(BusinessLogic.getTransactionHistory(ba.getAccount_number()));
 		// printing out transaction history here		
 		
 		System.out.println("What would you like to do?");

@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.revature.Driver;
 import com.revature.Screen;
 import com.revature.pojo.Users;
-import com.revature.bl.BL;;
+import com.revature.bl.BusinessLogic;;
 public class LoginScreen implements Screen{
 
 	@Override
@@ -18,7 +18,7 @@ public class LoginScreen implements Screen{
 		String password = scan.nextLine();
 		
 		
-		if (BL.validateUser(username, password)) {
+		if (BusinessLogic.validateUser(username, password)) {
 			return new UserMenuScreen();
 		} else {
 			System.out.println("Sorry, your username and/or password were invalid");

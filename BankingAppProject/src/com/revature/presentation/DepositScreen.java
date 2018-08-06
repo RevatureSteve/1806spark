@@ -3,7 +3,7 @@ package com.revature.presentation;
 import java.util.Scanner;
 
 import com.revature.Screen;
-import com.revature.bl.BL;
+import com.revature.bl.BusinessLogic;
 import com.revature.dao.BankDao;
 import com.revature.dao.BankDaoImpl;
 import com.revature.pojo.BankAccount;
@@ -18,7 +18,7 @@ public class DepositScreen implements Screen{
 		Scanner scan = new Scanner(System.in);
 		System.out.println("How much would you like to deposit?");
 		double amount = scan.nextDouble();
-		if(BL.depositToAccount(amount, ba.getAccount_number())) {
+		if(BusinessLogic.depositToAccount(amount, ba.getAccount_number())) {
 			System.out.println("Deposit successful!");
 			System.out.println("You have deposited: $" + amount);
 			return new UserMenuScreen();

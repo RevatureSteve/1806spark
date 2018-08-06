@@ -9,7 +9,7 @@ import com.revature.pojo.BankAccount;
 import com.revature.pojo.BankTransaction;
 import com.revature.pojo.Users;
 
-public class BL {
+public class BusinessLogic {
 
 	static BankDao bd = new BankDaoImpl();
 
