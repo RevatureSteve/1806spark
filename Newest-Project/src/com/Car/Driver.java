@@ -43,7 +43,7 @@ public class Driver {
 				break;
 			
 			case 5:
-				System.out.println("Who would'nt want to build a car? Bye!");
+				System.out.println("Who would'nt want to build a car? \n Goodbye...");
 				System.exit(1);
 				break;
 

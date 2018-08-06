@@ -1,0 +1,60 @@
+--DML: Data Manipulation Language
+-- insert, select, update, delete
+
+INSERT INTO
+actor VALUES(1, 'BIG DADDY 3', TO_DATE('19960725', 'YYYYMMDD'),50, 'Adam', 'Sandler');
+
+INSERT INTO
+actor VALUES(2, 'Avengers', TO_DATE('19800830', 'YYYYMMDD'),77, 'Chris', 'Pratt');
+
+INSERT INTO
+actor VALUES(3, 'Doctor Strange', TO_DATE('19950727', 'YYYYMMDD'),500, 'Ben', 'Cumberbatch');
+
+SELECT * FROM actor;
+
+UPDATE actor SET years_acting = 15
+WHERE a_id = 1;
+
+DELETE FROM actor 
+WHERE first_name = 'Ben';
+--What is the differance between truncate and delete
+--delete doesn't require a where clause so it act the same as a truncate
+--but truncate is faster because it is auto commited and cannot be rolledback
+-- when deleting that will do an extra step for temporarily saving it to a file
+--incase of a rollback, truncate will not do this step, it straight up removes it and commits
+
+--add data to role table, which primarily will be a look up table
+INSERT INTO role VALUES(1, 'Lead');
+INSERT INTO role VALUES(2, 'Supporting Female');
+INSERT INTO role VALUES(3, 'Supporting Male');
+INSERT INTO role VALUES(4, 'Wise Old Guy');
+INSERT INTO role VALUES(5, 'Villan');
+
+SELECT * FROM role;
+
+
+
+--inster roles for actors
+INSERT INTO a_role VALUES (1,4);
+INSERT INTO a_role VALUES (2,5);
+INSERT INTO a_role VALUES (2,1);
+
+
+-- WE NOW HAVE RELATIOSHIPS FOR ACTORS AND ROLSE BUT HOW CAN WE USE THEM?
+--USING SQL JOINS: JOINING 2 OR MORE TABLES FOR A RESULTSET
+--ONLY JOIN ON PRIMARY KEY FOREIGN KEY RELATIONSHIPS!
+SELECT * FROM actor 
+INNER JOIN a_role ON actor.a_id = a_role.a_id
+INNER JOIN role ON a_role.role_id = role.role_id;
+
+
+
+
+
+
+
+
+
+
+
+

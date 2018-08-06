@@ -45,7 +45,7 @@ public class ScreenUtil {
 		
 		Scanner scan = new Scanner(System.in);
 		Scanner scan2 = new Scanner(System.in);
-		System.out.println("---New Car---");
+		System.out.println("---New Sedan---");
 		System.out.println("How many cylinders does your car have?");
 		int cylNum = scan.nextInt();
 		System.out.println("How many Advanced features?");

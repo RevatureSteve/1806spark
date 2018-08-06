@@ -1,2 +1,2 @@
 ---Current Car---
-Sedan [advancedFeatures=42, cylinder=8, seats=5, model=S]Speakers [speakers=12]
+Sedan [advancedFeatures=52, cylinder=8, seats=12, model=Limo]Speakers [speakers=32]
