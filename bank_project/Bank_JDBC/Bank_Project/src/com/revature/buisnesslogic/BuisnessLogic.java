@@ -68,5 +68,48 @@ public class BuisnessLogic {
 		BankTransaction trans = new BankTransaction(amount, "Deposit", account.getAccountNumber());
 		new TransactionDao().create(trans);
 	}
+	
+	
+	/**
+	 * Checks to make sure the passwords match
+	 * @param password
+	 * @param confPass
+	 * @return true if they match
+	 */
+	public static Boolean passwordCheck(String password, String confPass) {
+		if (password.equals(confPass)) {
+			return true;
+		}
+		return false;
+	}
+	
+	/**
+	 * Checks if username is available
+	 * @param Username
+	 * @return true if username is available
+	 */
+	public static boolean checkUsername(String username) {
+		Users user = new UserDao().getUserByUserName(username);
+		if(user == null) {
+			return true;
+		}
+		return false;
+	}
 
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 }

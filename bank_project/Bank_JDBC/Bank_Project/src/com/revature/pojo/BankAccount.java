@@ -10,6 +10,13 @@ public class BankAccount {
 
 	public BankAccount() {}
 
+	
+	public BankAccount(Double balance, int userId) {
+		this.balance = balance;
+		this.userId = userId;
+	}
+	
+	
 	public BankAccount(int accountNumber, Double balance, int userId) {
 		super();
 		this.accountNumber = accountNumber;

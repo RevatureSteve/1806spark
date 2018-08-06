@@ -22,8 +22,22 @@ public class BankAccountDao implements Dao {
 	
 	@Override
 	public int create(Object obj) {
-		// TODO Auto-generated method stub
-		return 0;
+		BankAccount account = (BankAccount) obj;
+		
+		int rowsAffected = 0;
+
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);){
+			String sql = "INSERT INTO bank_account (balance, users_id) VALUES (?,?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setDouble(1, account.getBalance());
+			ps.setInt(2, account.getUserId());
+			rowsAffected = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return rowsAffected;
 	}
 
 	@Override
