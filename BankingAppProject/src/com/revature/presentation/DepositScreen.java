@@ -28,8 +28,6 @@ public class DepositScreen implements Screen{
 		// Some function to do business logic and calculate the deposit for the thing
 		// if passes sysout deposit successful!
 		// wrap in try/catch block for type input
-		
-		
 	}
 	
 }

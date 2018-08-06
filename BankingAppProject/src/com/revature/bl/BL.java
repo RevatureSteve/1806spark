@@ -1,11 +1,13 @@
 package com.revature.bl;
 
-import com.revature.pojo.BankAccount;
-import com.revature.pojo.Users;
-import com.revature.presentation.DepositScreen;
-import com.revature.Screen;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.revature.dao.BankDao;
 import com.revature.dao.BankDaoImpl;
+import com.revature.pojo.BankAccount;
+import com.revature.pojo.BankTransaction;
+import com.revature.pojo.Users;
 
 public class BL {
 
@@ -43,6 +45,12 @@ public class BL {
 		}
 		bd.withdrawFromBankAccount(amt, accNum);
 		return true;
+	}
+	
+	public static List<BankTransaction> getTransactionHistory(int accNum) {
+		
+		//List<BankTransaction> btx = new ArrayList<>();
+		return bd.getBankTransactions(accNum);
 	}
 
 }

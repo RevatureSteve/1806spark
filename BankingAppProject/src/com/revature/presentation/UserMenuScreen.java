@@ -26,8 +26,7 @@ public class UserMenuScreen implements Screen {
 		case "3":
 			return new WithdrawScreen();
 		case "4":
-			System.out.println("View transaction history is not implemented yet");
-			return this;
+			return new ViewTransactionHistory();
 		case "5":
 			System.out.println("Goodbye!");
 			System.exit(1);
