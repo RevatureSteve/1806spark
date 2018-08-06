@@ -1,9 +1,11 @@
 package com.revature.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,8 +19,7 @@ public class UserDao {
 
 	public List<User> getAllUsers() {
 		ArrayList<User> users = new ArrayList<User>();
-		try (Connection conn = DriverManager.getConnection(URL, USERNAME,
-				PASSWORD);) {
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
 			String sql = "SELECT * FROM users";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
@@ -33,8 +34,7 @@ public class UserDao {
 
 	public User getUserBy(int id) {
 		User user = null;
-		try (Connection conn = DriverManager.getConnection(URL, USERNAME,
-				PASSWORD);) {
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
 			String sql = "SELECT * FROM users WHERE user_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
@@ -48,20 +48,20 @@ public class UserDao {
 		return user;
 	}
 
-	public boolean validateUser(String username, String password) {
-		try (Connection conn = DriverManager.getConnection(URL, USERNAME,
-				PASSWORD);) {
-			String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, username);
-			ps.setString(2, password);
-			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				return true;
-			}
-		} catch (Exception e) {
-			// TODO: handle exception
+	public int insertUser(User user) {
+		int rowsAffected = 0;
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			String sql = "{call create_new_user(?,?,?,?)}";
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setString(1, user.getUsername());
+			cs.setString(2, user.getPassword());
+			cs.setString(3, user.getFirstname());
+			cs.setString(4, user.getLastname());
+			rowsAffected =  cs.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		return false;
+		return rowsAffected;
 	}
 }

@@ -23,7 +23,7 @@ public class BalanceScreen implements Screen {
 		case "2":
 			return new BalanceOperationScreen();
 		case "3":
-			return new LoginScreen();
+			System.exit(0);
 		default:
 			System.out.println("Not a recognized input");
 		}

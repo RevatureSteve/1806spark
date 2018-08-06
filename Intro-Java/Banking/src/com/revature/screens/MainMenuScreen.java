@@ -23,7 +23,9 @@ public class MainMenuScreen implements Screen {
 		case "2":
 			return new BalanceOperationScreen();
 		case "3":
-			return new LoginScreen();
+			return new TransactionScreen();
+		case "4":
+			System.exit(0);
 		default:
 			System.out.println("Not a recognized input");
 		}

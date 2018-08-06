@@ -15,11 +15,11 @@ public class LoggedUser {
 		return password;
 	}
 
-	private LoggedUser(String username, String password, int userId) {
+	private LoggedUser(String username, String password) {
 		super();
 		this.username = username;
 		this.password = password;
-		this.userId = userId;
+
 	}
 
 	public static LoggedUser getUser() {
@@ -27,12 +27,16 @@ public class LoggedUser {
 
 	}
 
-	public static void createUser(String username, String password, int userId) {
-		user = new LoggedUser(username, password, userId);
+	public static void createUser(String username, String password) {
+		user = new LoggedUser(username, password);
 	}
 
 	public int getUserId() {
 		return userId;
+	}
+	
+	public void setUserId(int userId) {
+		this.userId = userId;
 	}
 
 }

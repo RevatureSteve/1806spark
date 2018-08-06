@@ -44,6 +44,15 @@ public class User {
 		this.firstname = firstname;
 		this.lastname = lastname;
 	}
+	
+	public User(String username, String password, String firstname, String lastname) {
+		super();
+		this.id = -1;
+		this.username = username;
+		this.password = password;
+		this.firstname = firstname;
+		this.lastname = lastname;
+	}
 	@Override
 	public String toString() {
 		return "User [username=" + username + ", password=" + password + ", id=" + id + ", firstname=" + firstname
