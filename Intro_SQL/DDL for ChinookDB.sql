@@ -1,0 +1,3 @@
+--Connection to the DB -> User -> Schema
+--Connection to the DB -> RevatureEddie -> Eddie's schema
+--Connection to the DB -> Chinook's schema
