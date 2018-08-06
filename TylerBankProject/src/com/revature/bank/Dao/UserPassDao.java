@@ -24,6 +24,7 @@ public interface UserPassDao {
 //UPDATE
 
 	public int bankDeposit(int depositNum, double depositAmount);
+	public int bankWithdraw(int depositNum, double depositAmount);
 
 
 

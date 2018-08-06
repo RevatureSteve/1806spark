@@ -78,7 +78,7 @@ BEGIN
 END;
 /
 
---procedure to change account balance-----
+--procedure to deposit to account-----
 
 
 CREATE OR REPLACE PROCEDURE update_account(some_userID IN NUMBER, amount IN NUMBER)
@@ -94,6 +94,23 @@ END;
 
 EXECUTE  UPDATE_ACCOUNT (1 ,100.00);
 SELECT * FROM BANK_ACCOUNT;
+
+--Procedure to withdrawl from account---
+
+CREATE OR REPLACE PROCEDURE update_account_withdraw(some_userID IN NUMBER, amount IN NUMBER)
+IS
+BEGIN
+    
+    UPDATE bank_account
+    SET balance = balance - amount
+    WHERE users_ID = some_userid;
+    COMMIT;
+END;
+/
+
+EXECUTE  UPDATE_ACCOUNT_WITHDRAW (1 ,100.00);
+SELECT * FROM BANK_ACCOUNT;
+
 
 --Bank Transaction
 CREATE TABLE Bank_Tx (

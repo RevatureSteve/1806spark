@@ -68,17 +68,37 @@ public class UserPassImpl implements UserPassDao {
 	
 
 
-	
+//Bank Deposit 
 	public int bankDeposit(int id, double amount) {
 	
 		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
 			
 			String sql ="{CALL UPDATE_ACCOUNT (?, ?)}";
 			CallableStatement cs = conn.prepareCall(sql);
-//			cs.setInt(1, 1);
-//			cs.setInt(2, 100);
 			cs.setInt(1, id);
 			cs.setDouble(2, amount);
+			int rowsAffected = cs.executeUpdate();
+			System.out.println("rows affected: " + rowsAffected);
+			
+
+		
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return 0;
+	}
+
+//Bank Withdraw
+	public int bankWithdraw(int wNum, double wAmount) {
+
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			
+			String sql ="{CALL UPDATE_ACCOUNT_WITHDRAW (?, ?)}";
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setInt(1, wNum);
+			cs.setDouble(2, wAmount);
 			int rowsAffected = cs.executeUpdate();
 			System.out.println("rows affected: " + rowsAffected);
 			

@@ -45,10 +45,11 @@ public class BankPresentationUtil {
 	}
 	
 	
-		
+//take user input for bank deposit
+	
 		public static void bankDeposit() {
 			
-//			Bank_AccountPojo deposit = new Bank_AccountPojo();
+
 			UserPassImpl deposit = new UserPassImpl();
 			
 			
@@ -59,16 +60,53 @@ public class BankPresentationUtil {
 				int id = scan.nextInt();
 				
 				System.out.println("Enter amount of deposit: ");
-				double amount = scan.nextInt();
+				double amount = scan.nextDouble();
 				
 				deposit.bankDeposit(id, amount);
+				
+				System.out.println("Thank You for your deposit, ");
+				System.out.println("This money will be used to fund Queen Cersei's war!");
+				
+				
+				BankPresentationUtil.mainMenu();
 				
 			}
 				
 			}
 
 				
-//			}
+//take user input for bank withdraw
+	
+		public static void bankWithdraw() {
+			
+
+			UserPassImpl withdraw = new UserPassImpl();
+			
+			
+			Scanner scan = new Scanner(System.in);
+			
+			while (true) {
+				System.out.println("Please enter your user id (future acct#): ");
+				int wNum = scan.nextInt();
+				
+				System.out.println("Enter amount of withdraw: ");
+				double wAmount = scan.nextDouble();
+				
+				wAmount = -wAmount;
+				
+				withdraw.bankDeposit(wNum, wAmount);
+				
+				System.out.println("Are you sure you don't need more? ");
+				System.out.println("WINTER IS COMING!");
+				
+				
+				BankPresentationUtil.mainMenu();
+				
+			}
+				
+			}
+
+
 	
 
 	
@@ -101,7 +139,7 @@ public class BankPresentationUtil {
 				bankDeposit();
 				break;
 			case 4:
-				System.out.println("Withdrawl completed, your balance is");
+				bankWithdraw();
 				break;
 			
 			}
