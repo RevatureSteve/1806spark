@@ -9,6 +9,12 @@ public class User {
 
 	public User() {}
 
+
+	public User( String user_name, String password) {
+	super();
+	this.user_name = user_name;
+	this.password = password;
+}
 	public User(int user_id, String user_name, String password, String first_name, String last_name) {
 		super();
 		this.user_id = user_id;
