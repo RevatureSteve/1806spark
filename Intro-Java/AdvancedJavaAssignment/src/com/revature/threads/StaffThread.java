@@ -16,6 +16,6 @@ public class StaffThread implements Runnable{
 		}
 		f = InventoryUtil.usingNewStaff();
 		Launcher.writeStaff(staffPath, f);
-		System.out.println(f);
+		
 	}
 }

@@ -21,7 +21,7 @@ import java.util.Scanner;
 
 public class Launcher {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws CheckedException {
 //		Sword s = new Sword(); // instanciating new object
 //		s.setDamage(-100);
 //		try {
@@ -75,6 +75,8 @@ public class Launcher {
 				}
 				break;
 			case 4:
+				Staff f1 =readStaff("src/com/revature/staff.txt");
+				System.out.println(f1);
 				break;
 			case 5:
 				System.out.println("Exiting...");

@@ -11,8 +11,8 @@ public class InventoryUtil {
 		System.out.println("Welcome! What would you like to do?");
 		System.out.println("Enter 1 to equip new sword");
 		System.out.println("Enter 2 to read sword detail");
-		System.out.println("Enter 3 to equip new staff and read staff detail");
-		System.out.println("Enter 4 to read staff detail(NEEDS FIX)");
+		System.out.println("Enter 3 to equip new staff");
+		System.out.println("Enter 4 to read staff detail");
 		System.out.println("Enter 5 to exit");
 	}
 	

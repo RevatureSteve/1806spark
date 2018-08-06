@@ -27,6 +27,7 @@ public abstract class Weapons implements Inventory, Serializable {
 	}
 	public void setDamage(int damage) {
 		if(damage < 0) {
+		this.damage = 0;
 			throw new UncheckedException();
 		}
 		this.damage = damage;
