@@ -2,6 +2,8 @@ package com.revature.pojo;
 
 public class Users {
 	
+	private static Users currentUser = null;
+	
 	private int userId;
 	private String userName;
 	private String password;
@@ -63,6 +65,15 @@ public class Users {
 		this.lName = lName;
 	}
 
+	public static Users getCurrentUser() {
+		return currentUser;
+	}
+
+	public static void setCurrentUser(Users currentUser) {
+		Users.currentUser = currentUser;
+	}
+	
+	
 	//toString()
 	@Override
 	public String toString() {
