@@ -38,4 +38,18 @@ public class IOHandler {
 		System.out.println("3 to main menu");
 
 	}
+
+	public static void displayDepositScreen() {
+		System.out.println("Select the amount of money to deposit: ");
+	}
+	
+	public static void displayWithdrawScreen() {
+		System.out.println("Select the amount of money to withdraw: ");
+	}
+	
+	public static int getAmountOfMoney() {
+		Scanner scan = new Scanner(System.in);
+		int money = scan.nextInt();
+		return money;
+	}
 }

@@ -16,9 +16,9 @@ public class BalanceOperationScreen implements Screen {
 		
 		switch (input) {
 		case "1":
-			return new BalanceScreen();
+			return new DepositScreen();
 		case "2":
-			return new BalanceOperationScreen();
+			return new WithdrawScreen();
 		case "3":
 			return new MainMenuScreen();
 		default:

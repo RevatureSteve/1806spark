@@ -1,9 +1,11 @@
 package com.revature.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import com.revature.pojos.BankAccount;
 
@@ -26,12 +28,12 @@ public class BankAccountDao {
 		return bankAccounts;
 	}
 
-	public BankAccount getBankAccountByUserId(int id) {
+	public BankAccount getBankAccountByUserId(int account_number) {
 		BankAccount bankAccount = null;
 		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)) {
 			String sql = "SELECT * FROM bank_account WHERE users_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql); 
-			ps.setInt(1, id);
+			ps.setInt(1, account_number);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				bankAccount = new BankAccount(rs.getInt(1), rs.getInt(2), rs.getInt(3));
@@ -43,8 +45,28 @@ public class BankAccountDao {
 	}
 	
 	public void deposit(int moneyAmmount, int bankAccountId) {
-		
+		try(Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			String sql = "{call deposit_money(?,?)}"; 
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setInt(1, bankAccountId);
+			cs.setInt(2, moneyAmmount);
+			cs.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 	}
-	
-	
+
+	public void withdraw(int moneyAmmount, int bankAccountId) {
+		try(Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			String sql = "{call withdraw_money(?,?)}";
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setInt(1, bankAccountId);
+			cs.setInt(2, moneyAmmount);
+			cs.executeUpdate();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
 }
