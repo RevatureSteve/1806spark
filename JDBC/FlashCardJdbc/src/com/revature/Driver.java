@@ -78,7 +78,8 @@ public class Driver {
 		int findFlashCard = Menus.getFlashCardMenu();
 		//System.out.println(findFlashCard);
 		
-		System.out.println(fcDao.getFlashCardById(findFlashCard));
+//		System.out.println(fcDao.getFlashCardById(findFlashCard));
+		System.out.println(fcDao.getAllFlashCards());
 //		FlashCard userInputFlashCard = Menus.createFlashCardMenu();
 //		System.out.println(userInputFlashCard);
 //		
