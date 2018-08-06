@@ -10,7 +10,7 @@ public class TransactionScreen implements Screen{
 
 	@Override
 	public Screen start() {
-		System.out.println("Transactions");
+		System.out.println("~~~~~~~View Transactions~~~~~~~");
 		
 		List<Object> transactions = new TransactionDao().read();
 		

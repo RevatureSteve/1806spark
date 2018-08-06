@@ -92,7 +92,6 @@ public class BankAccountDao implements Dao {
 			ps.setDouble(1, account.getBalance());
 			ps.setInt(2, account.getAccountNumber());
 			rowsAffected = ps.executeUpdate();
-			System.out.println("SUCCESS!!");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}

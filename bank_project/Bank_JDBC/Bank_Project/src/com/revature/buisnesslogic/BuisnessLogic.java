@@ -5,6 +5,8 @@ import java.util.List;
 import com.revature.dao.BankAccountDao;
 import com.revature.dao.TransactionDao;
 import com.revature.dao.UserDao;
+import com.revature.exceptions.NotEnoughMoneyException;
+import com.revature.exceptions.UserDoesNotExist;
 import com.revature.pojo.BankAccount;
 import com.revature.pojo.BankTransaction;
 import com.revature.pojo.Users;
@@ -30,6 +32,9 @@ public class BuisnessLogic {
 		return false;
 	}
 	
+	
+
+	
 	/**
 	 * Finds the current users bank account
 	 * @param userId
@@ -44,15 +49,19 @@ public class BuisnessLogic {
 	 * Make a withdraw from account
 	 * Checks to see balance after withdraw is not < 0
 	 * @param amount
+	 * @throws NotEnoughMoneyException 
 	 */
-	public static void makeWithdrawl(Double amount) {
+	public static void makeWithdrawl(Double amount) throws NotEnoughMoneyException {
 		BankAccount account = BankAccount.getCurrentAccount();
 		Double balance = account.getBalance();
 		if (balance - amount > 0) {
 			account.setBalance(balance - amount);
 			new BankAccountDao().update(account);
 			BankTransaction trans = new BankTransaction(amount, "Withdrawal", account.getAccountNumber());
+			System.out.println("Withdrawal successful");
 			new TransactionDao().create(trans);
+		} else {
+			throw new NotEnoughMoneyException();
 		}
 	}
 	

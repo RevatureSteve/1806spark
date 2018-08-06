@@ -33,7 +33,6 @@ public class TransactionDao implements Dao{
 			cs.setDouble(1, trans.getTransactionAmt());
 			cs.setString(2, trans.getTransactionType());
 			cs.setInt(3, trans.getAccountNumber());
-			System.out.println("TRANS SUCCESS");
 			rowsAffected = cs.executeUpdate();
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -58,7 +57,6 @@ public class TransactionDao implements Dao{
 				transaction.add(trans);
 			}
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		

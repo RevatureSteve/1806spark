@@ -1,7 +1,11 @@
 package com.revature;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import com.revature.buisnesslogic.BuisnessLogic;
+import com.revature.exceptions.NotEnoughMoneyException;
+import com.revature.present.EnterScreen;
 import com.revature.present.LoginScreen;
 import com.revature.present.RegisterScreen;
 
@@ -16,22 +20,8 @@ public class Driver {
 						+ "   \\_/\\_/\\___|_\\__\\___/_|_|_\\___|  \\__\\___/   |_||_| \\__,_|\\_/\\___|_\\___|_|   /__/ |___/\\__,_|_||_|_\\_\\ \r\n"
 						+ "                                                                                                        ");
 
-		Scanner scan = new Scanner(System.in);
+		new EnterScreen().start();
 
-		while (true) {
-			System.out.println("Already a user. Enter 1 to login:");
-			System.out.println("New user. Enter 2 to create an account:");
-			int userInput = scan.nextInt();
-			
-			switch(userInput) {
-				case 1:
-					new LoginScreen().start();
-				case 2:
-					new RegisterScreen().start();
-			}
-
-		}
-
-}
+	}
 
 }

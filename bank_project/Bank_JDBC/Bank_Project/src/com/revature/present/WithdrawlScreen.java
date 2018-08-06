@@ -1,26 +1,34 @@
 package com.revature.present;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.revature.buisnesslogic.BuisnessLogic;
+import com.revature.exceptions.NotEnoughMoneyException;
 import com.revature.interfaces.Screen;
 
-import oracle.net.ns.MarkerPacket;
 
-public class WithdrawlScreen implements Screen{
+public class WithdrawlScreen implements Screen {
 
 	@Override
 	public Screen start() {
-		System.out.println("Make a withdrawl");
+		System.out.println("*******Make a withdrawl*******");
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Enter the amount you wish to withdrawl: ");
-		Double amount = scan.nextDouble();
-		BuisnessLogic.makeWithdrawl(amount);
-		
-		
-		
-		
+
+		try {
+			Double amount = scan.nextDouble();
+			BuisnessLogic.makeWithdrawl(amount);
+		} catch (NotEnoughMoneyException e) {
+			System.out.println("You do not have enough money to make withdrawal!");
+
+		} catch (InputMismatchException e) {
+			System.out.println("You have to enter a number!");
+			return this.start();
+		}
+
 		return new MainMenuScreen().start();
+
 	}
 
 }

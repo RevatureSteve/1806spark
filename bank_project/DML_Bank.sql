@@ -6,6 +6,8 @@ INSERT INTO bank_tx_type VALUES (2, 'Deposit');
 --Inserting test values into user 
 INSERT INTO users VALUES (1, 'ad', '111', 'a', 'd');
 INSERT INTO users VALUES (2, 'ad1', '111', 'a', 'd');
+INSERT INTO users (username, password, fname, lname) VALUES ('ad2', '111', 'a', 'd');
+
 
 --Inserting test values into bank account
 INSERT INTO bank_account VALUES (1, 23000, 1);
@@ -85,9 +87,28 @@ END;
 /
   
 BEGIN
-    insert_bank_tx (2000,1,1);
+    insert_bank_tx (30320,'Withdrawal',2);
 END;
 /
+  
+  
+--get transactions and join tranasction
+CREATE OR REPLACE PROCEDURE get_transactions (account_num IN INT, transactions OUT SYS_REFCURSOR)
+IS 
+BEGIN
+    OPEN transactions FOR
+    SELECT * FROM bank_tx b
+    INNER JOIN bank_tx_type bt
+    ON b.tx_type_id = bt.tx_type_id
+    WHERE b.account_number = account_num;
+END;
+/
+
+
+
+    
+  
+  
   
   
   
