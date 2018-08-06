@@ -10,6 +10,7 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 import com.revature.bank.Dao.UserPassDao;
+import com.revature.bank.pojo.Bank_AccountPojo;
 import com.revature.bank.pojo.UsersPojo;
 
 public class UserPassImpl implements UserPassDao {
@@ -17,12 +18,9 @@ public class UserPassImpl implements UserPassDao {
 	private static final String USERNAME= "bank_db";
 	private static final String PASSWORD= "p4ssw0rd";
 	private static final String URL= "jdbc:oracle:thin:@tylertraining.cnmoc1mujdcw.us-east-2.rds.amazonaws.com:1521:ORCL";
-	@Override
-	public void createUsername() {
-		// TODO Auto-generated method stub
-		
-	}
+
 	
+//Verify Username and password	
 	@Override
 	public boolean verifyUsernameAndPassword(UsersPojo user) {
 		
@@ -58,16 +56,7 @@ public class UserPassImpl implements UserPassDao {
 		
 	}
 	
-		
 	
-	@Override
-	public void createPassword() {
-	// TODO Auto-generated method stub
-			
-		}	
-	
-
-
 //Bank Deposit 
 	public int bankDeposit(int id, double amount) {
 	
@@ -111,6 +100,55 @@ public class UserPassImpl implements UserPassDao {
 		
 		return 0;
 	}
+
+
+//VIEW BALANCE
+//	public Bank_AccountPojo viewBalance(int uid) {
+//		
+//		Bank_AccountPojo bal = null;
+//		
+//		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+//			
+//			String sql = "SELECT balance FROM bank_account WHERE users_id = " + uid;
+//			Statement statement = conn.createStatement();
+//			ResultSet rs = statement.executeQuery(sql);
+//			
+//			if(rs.next()) {
+//				bal = new Bank_AccountPojo(rs.getInt(1), rs.getDouble(2), rs.getString(3));
+//			}
+//			
+//		} catch (SQLException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		return bal;
+//	}
+
+
+	public Bank_AccountPojo viewBalance(int uid) {
+		
+		Bank_AccountPojo bal = null;
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			
+			String sql = "SELECT * FROM bank_account WHERE users_id = " + uid;
+			Statement statement = conn.createStatement();
+			ResultSet rs = statement.executeQuery(sql);
+			
+			if(rs.next()) {
+				bal = new Bank_AccountPojo(rs.getInt(1), rs.getDouble(2), rs.getString(3));
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return bal;
+	}
+
+
 
 	
 	

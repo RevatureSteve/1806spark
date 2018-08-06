@@ -5,6 +5,7 @@ import java.util.Scanner;
 import com.revature.bank.pojo.Bank_AccountPojo;
 import com.revature.bank.pojo.UsersPojo;
 import com.revature.bank.UserPassImpl;
+import com.revature.bank.Dao.UserPassDao;
 
 
 public class BankPresentationUtil {
@@ -106,6 +107,26 @@ public class BankPresentationUtil {
 				
 			}
 
+		
+		
+		
+		public static void getBalance() {
+			
+			UserPassDao userBalance = new UserPassImpl();
+			
+			Scanner scan = new Scanner(System.in);
+			
+			while (true) {
+				System.out.println("Enter user id to check your balance: ");
+				int uid = scan.nextInt();
+		
+		System.out.println("Your current Balance is: ");
+         System.out.println(userBalance.viewBalance(uid).getBalance() + " Golden Dragons");
+            
+         BankPresentationUtil.mainMenu();
+				
+			}
+		}
 
 	
 
@@ -133,7 +154,7 @@ public class BankPresentationUtil {
 				System.exit(1);
 				break;
 			case 2:
-				System.out.println("Heres your Balance");
+				BankPresentationUtil.getBalance();
 				break;
 			case 3:
 				bankDeposit();

@@ -60,6 +60,43 @@ PRIMARY KEY (account_number),
 FOREIGN KEY (users_id) REFERENCES users(users_id)
 );
 
+SELECT * FROM Bank_Account;
+
+--function to view balance
+
+--CREATE OR REPLACE PROCEDURE view_balance
+--(some_userID IN NUMBER)
+--
+--    RETURN number
+--IS
+--    bnumber number;
+--
+--cursor b1 is
+--
+SELECT * FROM bank_account WHERE users_id = 1;
+--
+--BEGIN
+--    
+--   open b1;
+--   fetch b1 into bnumber;
+--   
+--   if b1%notfound then
+--    bnumber := 9999;
+--   end if;
+--   
+--   close b1;
+--   
+--RETURN bnumber;
+--    
+--END;
+--/
+--
+--BEGIN 
+--view_balance(1);
+--END;
+--/
+--EXECUTE view_balance(1);
+
 --bank account sequence
 
 CREATE SEQUENCE account_num_seq
@@ -102,7 +139,7 @@ IS
 BEGIN
     
     UPDATE bank_account
-    SET balance = balance - amount
+    SET balance = balance + (-1* amount)
     WHERE users_ID = some_userid;
     COMMIT;
 END;

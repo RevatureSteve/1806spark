@@ -1,5 +1,6 @@
 package com.revature.bank.Dao;
 
+import com.revature.bank.pojo.Bank_AccountPojo;
 import com.revature.bank.pojo.UsersPojo;
 
 /**
@@ -10,15 +11,14 @@ import com.revature.bank.pojo.UsersPojo;
 public interface UserPassDao {
 	
 //CREATE
-	public void createUsername();
-	public void createPassword();
+
 
 
 
 //READ
 
 	public boolean verifyUsernameAndPassword(UsersPojo user);
-	
+	public Bank_AccountPojo viewBalance(int uid);
 
 
 //UPDATE
