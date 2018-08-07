@@ -1,0 +1,56 @@
+/* HTML Elements */
+
+body {
+    background-image: url("pics/WP_20171123_17_02_58_Panorama.jpg");
+    background-size: 2000px;
+    background-attachment: fixed;
+}
+
+footer {
+    background-color: rgba(12, 11, 11, 0.5);
+    color: white;
+    font-size: 40px;
+    font-style: italic;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 110px;
+    text-align: center;
+}
+
+/* Classes */
+
+.popupText {
+    background-color: rgba(39, 36, 36);
+    color: white;
+    text-align: center;
+    position: absolute;
+    padding: 10px;
+    border-radius: 15px;
+    width: 150px;
+
+}
+
+.check {
+    width: 18px;
+    height: auto;
+}
+
+/* HTML IDs */
+
+#passwordPopup{
+    display: none;
+    margin-left: 148;
+    margin-top: -180;
+}
+
+#ConfirmPasswordPopup{
+    display: none;
+    margin-left: -235px;
+    margin-top: -140px;
+}
+
+
+
+
+
+

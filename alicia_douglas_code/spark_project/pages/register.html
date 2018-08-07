@@ -1,0 +1,64 @@
+<html>
+
+<head>
+    <title>Travel Guide</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/register.css">
+    <script src="../scripts/register.js"></script>
+</head>
+
+<body>
+    <h1 id="title">Travel Guide</h1>
+    <ul class="topNavBar">
+        <li>
+            <a href="/home">Home</a>
+        </li>
+        <li class="float-right">
+            <a href="login.html">Login</a>
+        </li>
+        <li class="float-right">
+            <a href="register.html">Register</a>
+        </li>
+
+    </ul>
+
+    <form id="registerForm" class="login_register_form">
+        Name: 
+        <input id="name"class="register_login_inputField" type="text" required maxlength="30"><br><br>
+        Email Address:
+        <input id="emailAddress" class="register_login_inputField" type="email" required maxlength="30"><br><br>
+        Date of Birth: 
+        <input id="dob" class="register_login_inputField" type="date" required><br><br>
+        Username: 
+        <input id="userName" class="register_login_inputField" type="text" required minlength="5" maxlength="15"><br><br>
+        Password:
+        <input id="password" class="register_login_inputField" type="password" required><br><br>
+            <span class="popupText" id="passwordPopup">
+                Min length 8 <img class="check" src="../css/pics/tick-305245_960_720.png"> <br>
+                Capital Letter <img class="check" src="../css/pics/tick-305245_960_720.png"><br>
+                Lowercase Letter<img  class="check" src="../css/pics/tick-305245_960_720.png"> <br>
+                Number <img class="check" src="../css/pics/tick-305245_960_720.png"><br>
+                Special Character <img class="check" src="../css/pics/tick-305245_960_720.png"><br>
+            </span>
+        Confirm Password:
+        <input id="confirmPassword" class="register_login_inputField" type="password" required><br><br>
+            <span class="popupText" id="ConfirmPasswordPopup">
+                Passwords match <img class="check" src="../css/pics/tick-305245_960_720.png"> <br>
+            </span>
+        <div class="submitButtonDiv">
+            <input id="register_button" class="register_login_button" type="submit" required value="Register">
+        </div>
+        
+    </form>
+
+    <footer>
+        <p>
+            "A good traveler has no fixed plans, and is not intent on arriving"
+            <br> -Lao Tzu
+        </p>
+    </footer>
+
+
+</body>
+
+</html>
