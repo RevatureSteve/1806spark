@@ -129,23 +129,39 @@ BEGIN
 END;
 /
 
-EXECUTE  UPDATE_ACCOUNT (1 ,100.00);
+EXECUTE  UPDATE_ACCOUNT (1025 ,8.00);
 SELECT * FROM BANK_ACCOUNT;
 
 --Procedure to withdrawl from account---
-
+DROP PROCEDURE update_account_withdraw;
 CREATE OR REPLACE PROCEDURE update_account_withdraw(some_userID IN NUMBER, amount IN NUMBER)
 IS
+    balance NUMBER(10,2);
+    
+    cursor resultset is
+        SELECT balance
+        FROM bank_account
+        WHERE account_number = some_userID;
+        
 BEGIN
     
+    open resultset;
+    fetch resultset into balance;
+    close resultset;
+    
+    IF
+    
+    balance >= amount THEN
     UPDATE bank_account
-    SET balance = balance + (-1* amount)
+    SET balance = balance +(-1* amount)
     WHERE account_number = some_userid;
+    
+    END IF;
     COMMIT;
 END;
 /
 
-EXECUTE  UPDATE_ACCOUNT_WITHDRAW (1005 ,100.00);
+EXECUTE  UPDATE_ACCOUNT_WITHDRAW (1025 ,1.00);
 SELECT * FROM BANK_ACCOUNT;
 
 COMMIT;

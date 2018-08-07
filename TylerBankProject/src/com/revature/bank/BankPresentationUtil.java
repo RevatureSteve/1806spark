@@ -1,5 +1,6 @@
 package com.revature.bank;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.revature.bank.pojo.Bank_AccountPojo;
@@ -49,11 +50,13 @@ public class BankPresentationUtil {
 			
 			
 			Scanner scan = new Scanner(System.in);
-			
+		
+		
 			while (true) {
-				System.out.println("Please enter your user id (future acct#): ");
+				System.out.println("Please enter your 4 digit account number ####: ");
+			try {
 				int id = scan.nextInt();
-				
+			
 				System.out.println("Enter amount of deposit: ");
 				double amount = scan.nextDouble();
 				
@@ -63,24 +66,31 @@ public class BankPresentationUtil {
 				
 				deposit.bankDeposit(id, amount);
 				
+			} catch (InputMismatchException e) {
+				System.out.println("Invalid input, please use only numbers");
+				BankPresentationUtil.mainMenu();
+			}
+				
 				System.out.println("Thank You for your deposit, ");
 				System.out.println("This money will be used to fund Queen Cersei's war!");
-				
+			
+			
 				
 				BankPresentationUtil.mainMenu();
 				
 			}
+		}
 				
-			}
+			
 
 				
 //take user input for bank withdraw
 	
-		public static void bankWithdraw() {
+		public static void bankWithdraw() throws BankException {
 			
 
 			UserPassImpl withdraw = new UserPassImpl();
-			
+			UserPassDao userBalance = new UserPassImpl();
 			
 			Scanner scan = new Scanner(System.in);
 			
@@ -91,9 +101,22 @@ public class BankPresentationUtil {
 				System.out.println("Enter amount of withdraw: ");
 				double wAmount = scan.nextDouble();
 				
+				if(wAmount < 0) {
+					throw new BankException("Please Enter a positive Value");
+				}
+				
 				wAmount = -wAmount;
 				
-				withdraw.bankDeposit(wNum, wAmount);
+				if (userBalance.viewBalance(wNum).getBalance() > Math.abs(wAmount)) {
+					
+					withdraw.bankDeposit(wNum, wAmount);
+				}else {
+					System.out.println("You do not have enough gold");
+					System.out.println("balane test is: "+userBalance.viewBalance(wNum).getBalance());
+					System.out.println("amount test " + wAmount);
+				}
+				
+				
 				
 				System.out.println("Are you sure you don't need more? ");
 				System.out.println("WINTER IS COMING!");
@@ -108,11 +131,13 @@ public class BankPresentationUtil {
 		
 		
 		
-		public static void getBalance() {
+		public static double getBalance() {
 			
 			UserPassDao userBalance = new UserPassImpl();
 			
 			Scanner scan = new Scanner(System.in);
+			
+			double amt = 0.0;
 			
 			while (true) {
 				System.out.println("Enter your account number to check your balance: ");
@@ -122,8 +147,10 @@ public class BankPresentationUtil {
          System.out.println(userBalance.viewBalance(uid).getBalance() + " Golden Dragons");
             
          BankPresentationUtil.mainMenu();
-				
+         return userBalance.viewBalance(uid).getBalance();
+     	
 			}
+		
 		}
 
 	
@@ -163,7 +190,12 @@ public class BankPresentationUtil {
 				}
 				break;
 			case 4:
-				bankWithdraw();
+				try {
+					bankWithdraw();
+				} catch (BankException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			
 			}
