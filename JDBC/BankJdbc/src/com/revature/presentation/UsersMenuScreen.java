@@ -38,6 +38,7 @@ public class UsersMenuScreen implements Screen {
 	System.out.println("enter 2 to make a deposit");
 	System.out.println("enter 3 to make a withdrawl");
 	System.out.println("enter 4 to view transaction history");
+	System.out.println("enter 5 to return to the Main Menu");
 	
 	int input = scan.nextInt();
 	
@@ -49,10 +50,8 @@ public class UsersMenuScreen implements Screen {
 		currentUser = account.getUserByUserName(username);
 		BankAccountDaoImpl balance = new BankAccountDaoImpl(); 
 		BankAccount x = balance.getBankAccountByUserId(currentUser.getUserId());//we use the "method.get" to pull the users bankaccount
-		
 		System.out.println("balance is: " + x.getBalance());//display balance
 		
-		//System.out.println(BankAccount.getCurrentAccount());
 		System.out.println("balance is blank");
 		break;
 	case 2:

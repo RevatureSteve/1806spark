@@ -52,4 +52,10 @@ public class UserDaoImpl implements MainDao {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+	@Override
+	public void depositIntoBank(double txAmount, int accountId) {
+		// TODO Auto-generated method stub
+		
+	}
 }

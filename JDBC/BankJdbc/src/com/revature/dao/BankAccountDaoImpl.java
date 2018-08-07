@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -14,6 +15,15 @@ public class BankAccountDaoImpl implements MainDao{
 		private final static String USERNAME = "bank_db";//name of our data base
 		private final static String PASSWORD = "p4ssw0rd";//password to access out database
 		private final static String URL = "jdbc:oracle:thin:@octocat.cxwq5mzpnovv.us-east-2.rds.amazonaws.com:1521:ORCL";//endpoint of our database
+		
+		
+		//CREATE
+		@Override
+		public int create(Object obj) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+		
 		
 		/*
 		 * THIS IS MY VIEW BANK ACCOUNT USERCASE!!
@@ -39,16 +49,24 @@ public class BankAccountDaoImpl implements MainDao{
 			return account;//we return the "account" variable 
 		}
 		
-		//CREATE
-		@Override
-		public int create(Object obj) {
-			// TODO Auto-generated method stub
-			return 0;
-		}
-
 		@Override
 		public Users getUserByUserName(String userName) {
 			// TODO Auto-generated method stub
 			return null;
+		}
+
+		//UPDATE
+		@Override
+		public void depositIntoBank(double txAmount, int userId) {
+			try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+				String sql = "{call get_tx(?, ?)}";
+				String name = null;
+				CallableStatement cs = conn.prepareCall(sql);
+				cs.setInt(1, userId);
+				cs.setDouble(2, txAmount);
+				cs.executeUpdate();
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
 		}
 }
