@@ -1,17 +1,23 @@
 package com.revature.pojo;
 
+/*
+ * This here is my users pojo that I will use to persist data to sql using my register method
+ * 		I will also use this very same pojo to access the users table in sql to display user info such as:
+ * 			balance, transaction history, withdrawls and deposits.
+ */
+
 public class Users {
 	
 	private static Users currentUser = null;
 	
 	private int userId;
-	private String userName;
-	private String password;
-	private String fName;
-	private String lName;
+	private String userName;//user name
+	private String password;//password
+	private String fName;//first name
+	private String lName;//last name
 	
 	
-	//constructor using field
+	//constructor using fields
 	public Users(int userId, String userName, String password, String fName, String lName) {
 		super();
 		this.userId = userId;

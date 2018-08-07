@@ -6,6 +6,7 @@ import com.revature.Screen;
 
 public class MainMenuScreen implements Screen {
 
+	@SuppressWarnings("resource")
 	@Override
 	public Screen Start() {
 		Scanner scan = new Scanner(System.in); 
