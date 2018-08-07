@@ -1,6 +1,9 @@
 package com.revature.screens;
 
+import org.omg.IOP.IORHolder;
+
 import com.revature.dao.BankAccountDao;
+import com.revature.exceptions.NegativeInputException;
 import com.revature.exceptions.OverdraftPreventionException;
 import com.revature.exceptions.WrongInputTypeException;
 import com.revature.interfaces.Screen;
@@ -20,6 +23,8 @@ public class WithdrawScreen implements Screen {
 		} catch (WrongInputTypeException e1) {
 			System.out.println("Wrong input type, input a number, please.");
 			return this;
+		} catch (NegativeInputException e) {
+			System.out.println("Please don't input a negative withdraw amount.");
 		}
 		BankAccount ba = badao.getBankAccountByUserId(LoggedUser.getUser().getUserId());
 		
@@ -28,6 +33,7 @@ public class WithdrawScreen implements Screen {
 		} catch (OverdraftPreventionException e) {
 			System.out.println("Withdrawal too high!");
 		}
+		IOHandler.successfulTransaction();
 		return new MainMenuScreen();
 	}
 	

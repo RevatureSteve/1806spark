@@ -38,7 +38,17 @@ CREATE SEQUENCE tx_id_seq
 CREATE SEQUENCE users_id_seq
   START WITH 1
   INCREMENT BY 1;
-  
+
+CREATE OR REPLACE TRIGGER users_trigger
+BEFORE INSERT ON users 
+FOR EACH ROW
+BEGIN
+    IF :new.users_id IS NULL THEN
+        SELECT users_id_seq.nextval
+        INTO :new.users_id FROM dual;
+    END IF;
+END;
+/
  SELECT * FROM users WHERE username = 'rhys' AND password = 'rhys';
  SELECT * FROM bank_tx;
  SELECT * FROM bank_tx_type;

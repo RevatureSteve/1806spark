@@ -4,7 +4,9 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.List;
 
+import com.revature.pojos.User;
 import com.revature.singletons.LoggedUser;
 
 public class ValidationTool {
@@ -27,5 +29,15 @@ public class ValidationTool {
 			// TODO: handle exception
 		}
 		return false;
+	}
+	
+	public boolean containsNewUser(User user, List<User> listOfUsers) {
+		for(User u : listOfUsers) {
+			if(user.getUsername().equals(u.getUsername())) {
+				return true;
+			}
+		}
+		return false;
+		
 	}
 }

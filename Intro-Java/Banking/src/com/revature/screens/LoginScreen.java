@@ -9,12 +9,8 @@ public class LoginScreen implements Screen {
 
 	@Override
 	public Screen start() {
-		int create = IOHandler.getUser();
+		IOHandler.getUser();
 		ValidationTool vt = new ValidationTool();
-		if(create == 0) {
-			System.out.println("Creating new user!");
-			return new CreateUserScreen();
-		}
 		
 		if(vt.validateUser(LoggedUser.getUser().getUsername(), LoggedUser.getUser().getPassword())) {
 			return new MainMenuScreen();

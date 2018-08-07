@@ -20,7 +20,7 @@ public class BalanceOperationScreen implements Screen {
 		case "2":
 			return new WithdrawScreen();
 		case "3":
-			System.exit(0);
+			return new MainMenuScreen();
 		default:
 			System.out.println("Not a recognized input");
 		}

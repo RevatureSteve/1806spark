@@ -19,7 +19,7 @@ public class BalanceScreen implements Screen {
 		
 		switch (input) {
 		case "1":
-			return new BalanceScreen();
+			return new MainMenuScreen();
 		case "2":
 			return new BalanceOperationScreen();
 		case "3":
