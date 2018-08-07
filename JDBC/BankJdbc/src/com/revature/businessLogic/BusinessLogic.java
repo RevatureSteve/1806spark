@@ -1,8 +1,8 @@
 package com.revature.businessLogic;
 
-import java.util.List;
-
+import com.revature.dao.BankAccountDaoImpl;
 import com.revature.dao.UserDaoImpl;
+import com.revature.pojo.BankAccount;
 import com.revature.pojo.Users;
 
 public class BusinessLogic {
@@ -21,12 +21,22 @@ public class BusinessLogic {
 		//List<Object> userList = users.read();
 		//Users user = new Users();
 		
-		UserDaoImpl x = new UserDaoImpl();//here we declare a variable for our  dao implementation
-		Users y = x.getUserByUserName(userName);//here we declare a variable for
-		String x1 = y.getPassword();//here we declare a variable to retrive our password from the databse
-		if (x1.equals(password)) {//we then compare the password in the sql vs the one we type into the console
+		UserDaoImpl userDao = new UserDaoImpl();//here we declare a variable for our  dao implementation
+		Users username = userDao.getUserByUserName(userName);//here we declare a variable for
+		String pw = username.getPassword();//here we declare a variable to retrive our password from the databse
+		if (pw.equals(password)) {//we then compare the password in the sql vs the one we type into the console
 			return true;//returns true and we can access the LoginScreen 
 		}
 		return false;//returns false and the LoginScreen takes care of the problem by providing a sysout
+	}
+	
+	/**
+	 * This displays the current users bank account
+	 * @param userId
+	 */
+	public static void getUserAccount(int userId) {
+		BankAccountDaoImpl accountDao = new BankAccountDaoImpl();
+		BankAccount userAccount = accountDao.getBankAccountByUserId(userId);
+		BankAccount.setCurrentAccount(userAccount);
 	}
 }

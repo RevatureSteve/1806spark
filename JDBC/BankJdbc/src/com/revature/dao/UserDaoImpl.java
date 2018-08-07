@@ -19,41 +19,10 @@ public class UserDaoImpl implements MainDao {
 	private final static String URL = "jdbc:oracle:thin:@octocat.cxwq5mzpnovv.us-east-2.rds.amazonaws.com:1521:ORCL";//endpoint of our database
 	
 	//CREATE
+	@Override
 	public int create(Object obj) {
-		Users user = (Users) obj;
-		int rowsAffected = 0;
-		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
-			String sql = "INSERT INTO users (username, password, fname, lname) VALUES (?, ?, ?)";
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, user.getUserName());
-			ps.setString(2, user.getPassword());
-			ps.setString(3, user.getfName());
-			ps.setString(4, user.getlName());
-			rowsAffected = ps.executeUpdate();
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-		return rowsAffected;
-	}
-	
-	//READ
-	public List<Object> read() {
-		
-		List<Object> users = new ArrayList<>();
-		
-		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
-			String sql = "SELECT * FROM users";
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ResultSet rs = ps.executeQuery();
-			
-			while (rs.next()) {
-				Users user = new Users(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
-				users.add(user);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return users;
+		// TODO Auto-generated method stub
+		return 0;
 	}
 	
 	/*
@@ -77,30 +46,10 @@ public class UserDaoImpl implements MainDao {
 		}
 		return user;//we return the "user" variable 
 	}
-
-	//UPDATE
-	//note: it is not being used atm
+	
 	@Override
-	public int update(Object obj) {
+	public BankAccount getBankAccountByUserId(int userId) {
 		// TODO Auto-generated method stub
-		return 0;
+		return null;
 	}
-
-/*	@Override
-	public BankAccount getUserByUserId(int userId) {
-		Users user = null;
-		
-		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
-			String sql = "SELECT * FROM users WHERE username = (?)";
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setString(1, userName);
-			ResultSet rs = ps.executeQuery();
-			while (rs.next()) {
-				user = new Users(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
-		return user;
-	}*/
 }

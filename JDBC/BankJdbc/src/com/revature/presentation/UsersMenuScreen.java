@@ -1,13 +1,36 @@
 package com.revature.presentation;
 
+/*
+ * THIS IS THE USER SCREEN!
+ * This is after you have logged in/ registered
+ */
 import java.util.Scanner;
 
 import com.revature.Screen;
+import com.revature.dao.BankAccountDaoImpl;
+import com.revature.dao.UserDaoImpl;
+import com.revature.pojo.BankAccount;
+import com.revature.pojo.Users;
 
 public class UsersMenuScreen implements Screen {
 	
+	private String username;
+	
+	public UsersMenuScreen() {
+		super();
+	}
+	
+	public UsersMenuScreen(String username) {
+		super();
+		this.username = username;
+	}
+	
+	@SuppressWarnings("resource")
 	public Screen Start() {
-		
+	
+	Users currentUser = null;
+	//BusinessLogic.getUserAccount(currentUser.getUserId());
+	
 	Scanner scan = new Scanner(System.in);
 	
 	System.out.println("Welcome user");
@@ -21,6 +44,15 @@ public class UsersMenuScreen implements Screen {
 	
 	switch (input) {
 	case 1:
+		
+		UserDaoImpl account = new UserDaoImpl();//create userdaoimpl object to use the method
+		currentUser = account.getUserByUserName(username);
+		BankAccountDaoImpl balance = new BankAccountDaoImpl(); 
+		BankAccount x = balance.getBankAccountByUserId(currentUser.getUserId());//we use the "method.get" to pull the users bankaccount
+		
+		System.out.println("balance is: " + x.getBalance());//display balance
+		
+		//System.out.println(BankAccount.getCurrentAccount());
 		System.out.println("balance is blank");
 		break;
 	case 2:
@@ -41,6 +73,7 @@ public class UsersMenuScreen implements Screen {
 	}
 	return this;
 	}
+
 	
 	
 }

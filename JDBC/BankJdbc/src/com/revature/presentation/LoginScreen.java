@@ -1,14 +1,16 @@
 package com.revature.presentation;
-
+/*
+ * THIS IS THE LOGIN PAGE!
+ * This is the login screen display where you enter your username and password
+ */
 import java.util.Scanner;
 
 import com.revature.Screen;
 import com.revature.businessLogic.BusinessLogic;
-import com.revature.dao.UserDaoImpl;
-import com.revature.pojo.Users;
 
 public class LoginScreen implements Screen {
 
+	@SuppressWarnings("resource")
 	@Override
 	public Screen Start() {
 		Scanner scan = new Scanner(System.in);
@@ -19,14 +21,10 @@ public class LoginScreen implements Screen {
 		String password = scan.nextLine();
 		
 		if(BusinessLogic.userExsists(userName, password)) {
-			return new UsersMenuScreen().Start();
+			return new UsersMenuScreen(userName).Start();
 		}
 		System.out.println("The Login has Failed");
 		return this;
 	}
 
 }
-
-/*UserDaoImpl x = new UserDaoImpl();
-Users y = x.getUserByUserName(userName);
-y.getPassword();*/

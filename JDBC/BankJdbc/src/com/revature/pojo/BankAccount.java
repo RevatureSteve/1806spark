@@ -2,6 +2,8 @@ package com.revature.pojo;
 
 public class BankAccount {
 	
+	private static BankAccount currentAccount = null;
+
 	//states
 	private int accountNumber;
 	private double balance;
@@ -43,9 +45,16 @@ public class BankAccount {
 		this.usersId = usersId;
 	}
 
-	//toString()
+	public static BankAccount getCurrentAccount() {
+		return currentAccount;
+	}
+
+	public static void setCurrentAccount(BankAccount currentAccount) {
+		BankAccount.currentAccount = currentAccount;
+	}
+	
 	@Override
 	public String toString() {
-		return "BankAccount [accountNumber=" + accountNumber + ", balance=" + balance + ", usersId=" + usersId + "]";
+		return "Account Number=" + accountNumber + ", Balance=" + balance ;
 	}
 }

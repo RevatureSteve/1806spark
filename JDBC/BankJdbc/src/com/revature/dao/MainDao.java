@@ -2,6 +2,7 @@ package com.revature.dao;
 
 import java.util.List;
 
+import com.revature.pojo.BankAccount;
 import com.revature.pojo.Users;
 
 /*
@@ -12,21 +13,19 @@ public interface MainDao {
 	//CREATE
 	public int create(Object obj);
 	
-	
 	//READ
 	/*
 	 * This is where I use the getUserByUserName to get the username and password from sql using the SELECT statement
 	 * 		I seperated the implementation for this and placed it within the UserDaoImpl 
 	 * 
-	 * 
 	 */
-	public List<Object> read();
+	//public List<Object> read();
 	public Users getUserByUserName(String userName);
-	//public Users getUserByUserId(int userId);
+	public BankAccount getBankAccountByUserId(int userId);
 	
 	
 	//UPDATE
-	public int update(Object obj);
+	//public int update(Object obj);
 	
 	//DELETE
 	
