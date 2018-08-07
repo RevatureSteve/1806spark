@@ -276,6 +276,25 @@ ORDER BY artist.name ASC;
 --In this section you will be creating backup files of your database. After you create the backup file you will also restore the database. Research or try random things then communicate with batchmates, do not ask trainer.
 --Task – Create a .bak file for the Chinook database.
 
+--backup database customer_db to
+--
+--disk =’E:\mssql\bkups\customer_db_02022010.bak’
+--
+--backup log customer_db to
+--
+--disk=’E:\mssql\bkups\customer_db_log_02022010.trn’
 
+--or use RMAN >run
+--RMAN> run {
+--
+--allocate channel disk1 device type disk;
+--
+--backup database plus archivelog;
+--
+--}
+--
+--This command will back up the database with 
+--the archive logs and write
+--the backup file to disk.
 
 
