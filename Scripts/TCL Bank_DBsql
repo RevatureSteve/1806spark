@@ -1,0 +1,56 @@
+--Procedure to make a witdrawl.
+CREATE OR REPLACE PROCEDURE make_witdrawl (sub  NUMBER)
+AS
+b_number NUMBER;
+BEGIN 
+UPDATE bank_account
+SET balance = balance - sub
+WHERE users_id = 2;
+END;
+
+set SERVEROUT on;
+BEGIN
+make_witdrawl(10);
+END;
+
+CREATE OR REPLACE PROCEDURE make_deposit  (deposit   NUMBER)
+AS
+b_number NUMBER;
+BEGIN 
+UPDATE bank_account
+SET balance = balance  + deposit
+WHERE users_id = 2;
+END;
+
+set SERVEROUT on;
+BEGIN
+make_deposit (200);
+END;
+commit;
+
+
+--Create a new account.
+CREATE OR REPLACE PROCEDURE create_account( user_name IN VARCHAR2, pass_word IN VARCHAR2)
+AS
+BEGIN
+INSERT INTO users VALUES (4, user_name, pass_word, 'Hope', 'Law') ;
+END;
+
+BEGIN
+create_account('bb', 'cc');
+END;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

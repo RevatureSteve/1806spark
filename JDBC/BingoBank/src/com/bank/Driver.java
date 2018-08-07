@@ -14,12 +14,12 @@ public class Driver {
 		
 		//Gets all users in DB.
 		//bdao.getAllUsers();
-		//bdao.getUserLogin("Hope", "Law");
-		
+	
+		//Login for user.
 		bdao.getUserLogin("hlaw", "hlaw456");
-		bdao.getBalance();
+		
 		//Main Menu
-		//menu.mainMenu();
+		menu.mainMenu();
 
 		
 		

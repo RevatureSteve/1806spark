@@ -1,5 +1,6 @@
 package com.bank.dao;
 
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -17,6 +18,7 @@ public class BankDao {
 	 //Gets all the users in DB.
 	 public void getAllUsers() {
 		 try(Connection conn = DriverManager.getConnection(URL, D_USERNAME, D_PASSWORD)) {
+			 conn.setAutoCommit(false);
 			 String sql = "SELECT * FROM users";
 			 PreparedStatement pstatement = conn.prepareStatement(sql);
 			 pstatement.executeQuery();
@@ -65,32 +67,53 @@ public class BankDao {
 	}
 	
 	
-	
-	
-	
 	//Make a deposit.
+	public void makeDeposit(int deposit) {
+		try (Connection conn = DriverManager.getConnection(URL, D_USERNAME, D_PASSWORD)) {
+			String sql = "SELECT balance FROM bank_account WHERE users_id = 2";
+			String p_sql = "{call make_deposit(?)}";
+			PreparedStatement pstatement = conn.prepareStatement(sql);
+			pstatement.executeQuery();
+			ResultSet rs = pstatement.getResultSet();
+			while (rs.next()) {
+				int balance = rs.getInt(1);
+				balance += deposit;
+				System.out.println("Your new balane plus your deposit of " + deposit + " bingos is " + balance + " bingos.");
+			}
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
 
 	//Make a withdrawl.
-		public int makeWithdrawl() {
+		public void makeWithdrawl(int sub) {
 			try (Connection conn = DriverManager.getConnection(URL, D_USERNAME, D_PASSWORD)) {
-				String sql = "";
+				String sql = "SELECT balance FROM bank_account WHERE users_id = 2";
 				PreparedStatement pstatement = conn.prepareStatement(sql);
-				
-				
-				
+				pstatement.executeQuery();
+				ResultSet rs = pstatement.getResultSet();
+				while (rs.next()) {
+					int balance = rs.getInt(1);
+					balance -= sub;
+					System.out.println("Your new balance minus your witdrawl of " + sub + " bingos is " + balance + " bingos.");
+				}
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
-			
-			
-			
-			
-			return 0;
+		}
+	//Create an account.
+	public void createAccount() {
+		try (Connection conn = DriverManager.getConnection(URL, D_USERNAME, D_PASSWORD))  {
+			String sql = "";
+			CallableStatement cstatement = conn.prepareCall(sql);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
 		}
 	
 	
-	
-	
-	
+
 	
 }

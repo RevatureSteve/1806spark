@@ -108,62 +108,34 @@ AND lastname = 'Walter';
 ----------------------------------------------------3.0 Section SQL Functions
 --3.1
 --Create a function that returns the current time.
-CREATE OR REPLACE FUNCTION current_time
-RETURN TIMESTAMP
-AS
-c_time TIMESTAMP;
-BEGIN
-  SELECT current_date into c_time from dual;
-END;
+
+  SELECT current_date   from dual;
+
 commit;
 
 --Create a function that returns the length of a mediatype from the mediatype table.
-CREATE OR REPLACE FUNCTION media_length_function
-RETURN  NUMBER
-AS
-m_length NUMBER;
-BEGIN
-SELECT length(name) into m_length FROM mediatype;
-END;
+
+SELECT length(name)  FROM mediatype;
+commit;
 
 --3.2
 --Create a function that returns the average total of all invoices. 
-CREATE OR REPLACE FUNCTION avg_invoices
-RETURN NUMBER
-AS
-a_invo NUMBER;
-BEGIN
-SELECT AVG(total) into a_invo FROM invoice;
-END;
+SELECT AVG(total) FROM invoice;
+
 commit;
 
 --Create a function that returns the most expensive track.
-CREATE OR REPLACE FUNCTION expensive_track
-RETURN NUMBER
-AS
-e_track NUMBER;
-BEGIN
-SELECT MAX(unitprice) into e_track FROM Track;
-END;
+SELECT MAX(unitprice)  FROM Track;
 COMMIT;
 --3.3
 --Create a function that returns the average price of invoiceline items in the invoiceline table.
-CREATE OR REPLACE FUNCTION average_invoiceline
-RETURN NUMBER
-AS
-a_invoiceline NUMBER;
-BEGIN
-SELECT AVG(unitprice) into a_invoiceline FROM invoiceline;
-END;
+SELECT AVG(unitprice)  FROM invoiceline;
+
 --3.4
 --Create a function that returns all employees born after 1968.
-CREATE OR REPLACE FUNCTION old_emp
-RETURN VARCHAR2
-AS name VARCHAR2(4000);
-BEGIN
-SELECT firstname into name FROM employee
+SELECT firstname, birthdate  FROM employee
 WHERE birthdate > '12-DEC-68';
-END;
+
 
 commit;
 
