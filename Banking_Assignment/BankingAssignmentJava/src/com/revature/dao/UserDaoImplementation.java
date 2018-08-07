@@ -14,6 +14,7 @@ import java.util.List;
 import com.revature.abstractClasses.UserDao;
 import com.revature.concreteClasses.BankAccount;
 import com.revature.concreteClasses.User;
+import com.revature.exceptions.UserAlreadyExistsException;
 
 //Probably allow user to close account, but they have to have a $0 balance first
 
@@ -166,7 +167,29 @@ public class UserDaoImplementation implements UserDao {
 	}
 	
 	
-	
+	public User checkIfExists(String username) throws UserAlreadyExistsException{
+		User user = null;
+		try(Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD)) {
+			connection.setAutoCommit(false);
+			String sql = "SELECT * FROM users WHERE username = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setString(1, username);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				do {
+				user = new User(rs.getInt("USERS_ID"),rs.getString("USERNAME"),rs.getString("PASSWORD"),rs.getString("FNAME"),rs.getString("LNAME"));
+			} while (rs.next());}
+			connection.commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		if(user != null) {
+			throw new UserAlreadyExistsException();
+		}
+		return user;
+		
+	}
 	
 	
 	

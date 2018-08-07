@@ -7,6 +7,7 @@ import java.util.Scanner;
 import com.revature.abstractClasses.UserDao;
 import com.revature.concreteClasses.User;
 import com.revature.dao.UserDaoImplementation;
+import com.revature.exceptions.UserAlreadyExistsException;
 
 
 public class PresentationLogic {
@@ -54,6 +55,7 @@ public class PresentationLogic {
 	
 	
 	public static User creatingNewUser() {
+		User check = new User();
 		Scanner scanny1 = new Scanner(System.in);
 		System.out.println("\n\n************************************************************************************************************************************************************************************************\n\n");
 		System.out.println("\t\t\t\t\t\t\tCreating A New HCB Account! Or Type Exit (at anytime) to go back to main menu\n\n");
@@ -70,12 +72,21 @@ public class PresentationLogic {
 			return new User(138,"hminott","junior1996","Humphrey","Minott");
 		}
 		System.out.println();
-		System.out.print("\tCreate a Username: ");
-		String usernameFormat= scanny1.nextLine();
-		if(usernameFormat.equalsIgnoreCase("exit")) {
-			return new User(138,"hminott","junior1996","Humphrey","Minott");
+		UserDaoImplementation use = new UserDaoImplementation();
+		String username = "";
+		while(check != null)
+		try {
+			System.out.print("\tCreate a Username: ");
+			String usernameFormat= scanny1.nextLine();
+			if(usernameFormat.equalsIgnoreCase("exit")) {
+				return new User(138,"hminott","junior1996","Humphrey","Minott");
+			}
+			username = usernameFormat.toLowerCase();
+			check = use.checkIfExists(username);
+		} catch (UserAlreadyExistsException e) {
+			System.out.println("\n\t\t\t\t\t\t\t\tThe Username is already taken! Try a different one");
+			
 		}
-		String username = usernameFormat.toLowerCase();
 		System.out.println();
 		System.out.print("\tCreate a password: ");
 		String password1 = scanny1.nextLine();
