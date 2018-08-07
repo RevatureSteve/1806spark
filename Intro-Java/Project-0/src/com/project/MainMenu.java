@@ -2,6 +2,7 @@ package com.project;
 
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 import com.project.dao.UserDao;
 import com.project.dao.AccountDao;
@@ -9,6 +10,7 @@ import com.project.dao.TransDao;
 import com.project.exception.InvalidInputException;
 import com.project.logic.Logic;
 import com.project.pojo.BankBal;
+import com.project.pojo.BankTrans;
 import com.project.pojo.BankUsers;
 
 
@@ -77,6 +79,7 @@ public class MainMenu implements HomeScreen{
 		System.out.println("Tpye 'bal' to see your balance.");
 		System.out.println("Tpye 'depo' to deposit.");
 		System.out.println("Tpye 'with' to withdraw.");
+		System.out.println("Tpye 'history' to view your transaction history.");
 		System.out.println("Type 'exit' to logout...");
 		String input = scan.nextLine();
 		switch (input) {
@@ -88,6 +91,9 @@ public class MainMenu implements HomeScreen{
 			break;
 		case "with":
 			Withdraw(user);
+			break;
+		case "history":
+			transactionHistory(user);
 			break;
 		case "exit":
 			System.out.println("\n" + 
@@ -212,8 +218,40 @@ public class MainMenu implements HomeScreen{
 		return this;
 	}
 	
+	public HomeScreen transactionHistory(String user) {
+		System.out.println("Here is your transaction history, " + user);
+		System.out.println("Type return to return...");
+	
+		String input = scan.nextLine();
+		switch (input) {
+		case "return":
+			
+			break;
+
+		default:
+			InvalidInputThrow();
+			break;
+		}
+		
+		
+		return this;
+	}
+	
 	public void InvalidInputThrow() {
-		throw new InvalidInputException("Invalid input...");
+		try {
+			throw new InvalidInputException("Invalid input...");
+		} catch (Exception e) {
+			try {
+				TimeUnit.SECONDS.sleep(1);
+				System.out.println("Logging out...");
+				Start();
+			} catch (InterruptedException e1) {
+				System.out.println("Logging out...");
+				Start();
+			}
+			
+		}
+		
 	}
 	}
 

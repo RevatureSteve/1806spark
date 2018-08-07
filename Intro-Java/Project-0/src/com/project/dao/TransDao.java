@@ -5,6 +5,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.project.Dao;
@@ -20,8 +21,8 @@ public class TransDao implements Dao {
 	}
 	@Override
 	public List<Object> read() {
-		// TODO Auto-generated method stub
 		return null;
+
 	}
 	@Override
 	public int update(Object obj) {
