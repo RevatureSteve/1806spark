@@ -145,8 +145,7 @@ FOR emp IN
 LOOP
     first_name := emp.firstname;
     last_name := emp.lastname;
-    full_name := CONCAT (first_name, last_name);
-    DBMS_OUTPUT.PUT_LINE(full_name);
+    DBMS_OUTPUT.PUT_LINE(first_name || ' ' || last_name);
 END LOOP;
 END;
     
@@ -235,10 +234,38 @@ END;
 --In this section you will be working with transactions. Transactions are usually nested within a stored procedure.
 --Task – Create a transaction that given a invoiceId will delete that invoice
 --(There may be constraints that rely on this, find out how to resolve them).
+CREATE OR REPLACE PROCEDURE delete_invoice (in_id IN INT)
+IS 
+BEGIN
+    DELETE FROM invoiceline WHERE invoiceid = in_id;
+    DELETE FROM invoice WHERE invoiceid = in_id;
+END;
+/
 
+BEGIN
+    delete_invoice (10);
+END;
+/
 
 --Task – Create a transaction nested within a stored procedure that inserts a new record in the Customer table
+CREATE OR REPLACE PROCEDURE insert_customer_record(customerid IN INT, firstname IN VARCHAR2, lastname IN VARCHAR2,
+company IN VARCHAR2, address IN VARCHAR2, city IN VARCHAR2, state IN VARCHAR2, country IN VARCHAR2, postalcode IN VARCHAR2,
+phone IN VARCHAR2, fax IN VARCHAR2, email IN VARCHAR2, supportedid IN NUMBER)
+IS
+BEGIN
+    INSERT INTO customer VALUES (customerid, firstname, lastname, company, address, city, state, country, postalcode, phone, 
+            fax, email, supportedid);
+    commit;
+END;
+/
 
+DELETE FROM customer
+WHERE customerid = 62;
+
+BEGIN
+    insert_customer_record(62, 'John', 'Doe', '', '123 Sesame St', 'Tampa', 'FL', 'United States', 12345, '+1 (123) 456-7890', '', 'john@chinookcorp.com', 3);
+END;
+/
 
 --6.0 Triggers
 --In this section you will create various kinds of triggers that work when certain DML statements are executed on a table
@@ -247,6 +274,7 @@ END;
 CREATE OR REPLACE TRIGGER after_insert_trigger
 AFTER INSERT
 ON employee
+FOR EACH ROW
 BEGIN
     DBMS_OUTPUT.PUT_LINE('After insert trigger fired');
 END;
@@ -260,6 +288,7 @@ WHERE employeeid = 9;
 CREATE OR REPLACE TRIGGER after_update_trigger
 AFTER UPDATE
 ON album
+FOR EACH ROW
 BEGIN
     DBMS_OUTPUT.PUT_LINE('After update trigger fired');
 END;
@@ -268,7 +297,8 @@ END;
 --Task – Create an after delete trigger on the customer table that fires after a row is deleted from the table.
 CREATE OR REPLACE TRIGGER after_delete_trigger
 AFTER DELETE
-ON employee
+ON customer
+FOR EACH ROW
 BEGIN
     DBMS_OUTPUT.PUT_LINE('After delete trigger fired');
 END;
