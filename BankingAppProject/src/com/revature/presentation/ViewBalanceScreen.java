@@ -32,7 +32,7 @@ public class ViewBalanceScreen implements Screen{
 		case "3":
 			return new ViewTransactionHistory();
 		case "4":
-			System.out.println("TThanks for stopping by! We'll catch you later!");
+			System.out.println("Thanks for stopping by! We'll catch you later!");
 			System.exit(1);
 		default:
 			System.out.println("Invalid input.  Please try again.");
