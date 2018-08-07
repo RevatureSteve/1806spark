@@ -120,53 +120,56 @@ SELECT getAverage FROM dual;
 
 --Task B – Create a function that returns the most expensive track*
 
-CREATE FUNCTION findExpensive
-RETURN INT
-    IS expense INT(38,2);
+CREATE OR REPLACE FUNCTION findExpensive
+RETURN SYS_REFCURSOR
+    IS expense SYS_REFCURSOR;
 BEGIN
+OPEN expense FOR
 SELECT unitprice 
-INTO expense
 FROM track
 WHERE unitprice = ( 
     SELECT MAX(unitprice)
     FROM track
     );
-RETURN (expense);
+RETURN expense;
 END;
 
 SELECT findExpensive FROM dual;
 
 --3.3 User Defined Scalar Functions
 --Task A – Create a function that returns the average price of invoiceline items in the invoiceline table
-CREATE FUNCTION averagePrice
+CREATE OR REPLACE FUNCTION averagePrice
 RETURN NUMBER
     IS price NUMBER;
 BEGIN
-    SELECT ROUND(unitprice)
+    SELECT AVG(unitprice)
     INTO price
     FROM invoiceline;
     RETURN price;
 END;
-
+/
 SELECT averagePrice FROM dual;
+
 
 --3.4 User Defined Table Valued Functions
 --Task – Create a function that returns all employees who are born after 1968.
---CREATE FUNCTION bornAfter(beep DATE)
---RETURNS employee
---    AS
---RETURN
---    SELECT e.name
---    INTO afteryear
---    FROM employee e
---    WHERE birthdate > '01-Jan-69';
---END;
---BEGIN
+/
 
---END;
+CREATE OR REPLACE FUNCTION born_after_1968
+RETURN SYS_REFCURSOR
+    IS emp_born_after SYS_REFCURSOR;
+BEGIN
+    OPEN emp_born_after FOR
+    SELECT *
+    FROM employee
+    WHERE birthdate > '01-jan-69';
+    RETURN emp_born_after;
+END;
+/
 
---SELECT * FROM employee
---WHERE birthdate > '01-Jan-69';
+SELECT born_after_1968() FROM dual;
+/
+
 
 --4.1 Basic Stored Procedure
 --Task – Create a stored procedure that selects the first and last names of all the employees.
@@ -175,36 +178,80 @@ CREATE OR REPLACE PROCEDURE get_all_names(cursorParam OUT SYS_REFCURSOR)
 IS
 BEGIN
   OPEN cursorParam FOR
-  SELECT * FROM employee;
+  SELECT firstname, lastname FROM employee;
 END;
 /
 
 --Anonymous test of Stored Proc with Cursor
 DECLARE
-  fc_cursor SYS_REFCURSOR;
-  someId firstname.fc_id%TYPE;
-  someQ lastname.fc_question%TYPE;
+  emp_cursor SYS_REFCURSOR;
+  fname employee.firstname%TYPE;
+  lname employee.lastname%TYPE;
 BEGIN
   
-  get_all_fc_procedure(fc_cursor);
+  get_all_names(emp_cursor);
   LOOP
-    FETCH fc_cursor INTO someId, someQ;
-    EXIT WHEN fc_cursor%NOTFOUND;
+    FETCH emp_cursor INTO fname, lname;
+    EXIT WHEN emp_cursor%NOTFOUND;
     
-    DBMS_OUTPUT.PUT_LINE(someId || ' ' || someQ);
+    DBMS_OUTPUT.PUT_LINE(fname || ' ' || lname);
     
   END LOOP;
-  CLOSE fc_cursor;
+  CLOSE emp_cursor;
 END;
-
+/
 --4.2 Stored Procedure Input Parameters
 --Task A – Create a stored procedure that updates the personal information of an employee.
 CREATE OR REPLACE PROCEDURE updateInfo(lname VARCHAR2, fname VARCHAR2, address VARCHAR2, city VARCHAR2, s VARCHAR2, 
-                                        country VARCHAR2, phoneNum VARCHAR2, faxNum VARCHAR2, mail VARCHAR2)
+                                        country VARCHAR2, zip VARCHAR2, phoneNum VARCHAR2, faxNum VARCHAR2, mail VARCHAR2, eid INT)
 AS
 BEGIN 
-    UPDATE employee SET  
+    UPDATE employee e SET e.lastname = lname, e.firstname = fname, e.address = address, e.city = city, e.state = s,
+    e.country = country, e.postalcode = zip, e.phone = phoneNum, e.fax = faxNum, e.email = mail
+    WHERE e.employeeId = eid;
 END;
+/
+BEGIN 
+    updateInfo('lname', 'fname', 'address', 'city', 's', 'country', '5555', '111111', '222222', '12@12.com', 8);
+END;
+/
+SELECT * FROM employee;
+
+--Task B – Create a stored procedure that returns the managers of an employee.
+
+CREATE OR REPLACE PROCEDURE get_manager(eid INT, emp OUT VARCHAR2)
+AS 
+BEGIN
+    SELECT firstname
+    INTO emp
+    FROM employee
+    WHERE reportsto = eid;
+END;
+/
+DECLARE
+  emp VARCHAR2(4000);
+BEGIN
+ get_manager(2,emp);
+ DBMS_OUTPUT.PUT_LINE(emp);
+END;
+/
+--4.3 Stored Procedure Output Parameters
+--Task – Create a stored procedure that returns the name and company of a customer.
+
+CREATE OR REPLACE PROCEDURE get_name_company(cid IN NUMBER, emp OUT VARCHAR2)
+AS
+BEGIN
+SELECT firstname INTO emp FROM customer WHERE customerid = cid;
+SELECT company INTO emp FROM customer WHERE customerid = cid;
+END;
+/
+Declare
+    emp VARCHAR2(400);
+BEGIN
+    get_name_company(1, emp);
+    DBMS_OUTPUT.PUT_LINE(emp);
+END;
+
 
 
 --5.0 Transactions
@@ -268,8 +315,6 @@ FOR EACH ROW
 BEGIN
     DBMS_OUTPUT.PUT_LINE('Good job for deleting!');
 END;
-
-
 
 
 
