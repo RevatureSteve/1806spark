@@ -4,15 +4,14 @@ INSERT INTO bank_tx_type VALUES (2, 'Deposit');
 
 
 --Inserting test values into user 
-INSERT INTO users VALUES (1, 'ad', '111', 'a', 'd');
-INSERT INTO users VALUES (2, 'ad1', '111', 'a', 'd');
+INSERT INTO users VALUES (1, 'adoug', '111', 'Alicia', 'Douglas');
+INSERT INTO users VALUES (2, 'skyedoug', '111', 'Skye', 'Douglas');
 INSERT INTO users (username, password, fname, lname) VALUES ('ad2', '111', 'a', 'd');
 
 
 --Inserting test values into bank account
 INSERT INTO bank_account VALUES (1, 23000, 1);
 INSERT INTO bank_account (balance, users_id) VALUES (200,2);
-
 
 
 commit;
@@ -100,7 +99,8 @@ BEGIN
     SELECT * FROM bank_tx b
     INNER JOIN bank_tx_type bt
     ON b.tx_type_id = bt.tx_type_id
-    WHERE b.account_number = account_num;
+    WHERE b.account_number = account_num
+    ORDER BY tx_timestamp DESC;
 END;
 /
 

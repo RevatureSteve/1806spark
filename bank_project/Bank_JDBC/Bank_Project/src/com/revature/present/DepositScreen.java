@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.revature.buisnesslogic.BuisnessLogic;
+import com.revature.exceptions.NoNegativeNumber;
 import com.revature.interfaces.Screen;
 
 public class DepositScreen implements Screen{
@@ -20,9 +21,10 @@ public class DepositScreen implements Screen{
 		} catch (InputMismatchException e) {
 			System.out.println("You have to enter a number!");
 			return this.start();
+		} catch (NoNegativeNumber e) {
+			System.out.println("You cannont enter a neagtive number");
+			return this.start();
 		}
-		
-		
 		return new MainMenuScreen().start();
 	}
 

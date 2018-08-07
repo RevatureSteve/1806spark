@@ -40,7 +40,7 @@ public class MainMenuScreen implements Screen{
 				return new TransactionScreen().start();
 			case 4:
 				System.out.println("User is logging out...");
-				System.exit(1);
+				return new EnterScreen().start();
 		}
 		} catch (InputMismatchException e) {
 			System.out.println("You have to enter a number!");
