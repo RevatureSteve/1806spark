@@ -1,5 +1,8 @@
 package com.revature;
 
+import com.revature.domain.User;
+import com.revature.service.AppService;
+
 public class Driver {
 
 	/*
@@ -29,6 +32,28 @@ public class Driver {
 	 */
 	public static void main(String[] args) {
 		System.out.println("testing...");
+		//start implementing some of the use cases 
+		//maybe start w/ login - what's needed?
+		//		login()
+		//		compare usernameInput w/ usernameDb
+		//		compare pwInput w/ pwDb
+		
+		// UserDao
+		//		get Username/pw
+		
+		//	POJO
+		//		user: uId, username, pw
+		//		task: tId, uId, tName, tsId, tsLevel  
+		
+		
+		String usernameInput = "steve";
+		String pwInput = "123";
+		
+		User validUser = new AppService().login(new User(0, usernameInput, pwInput));
+		System.out.println("is the user valid: " + validUser);
+		//UserDao userDao = new UserDaoImpl().getUserByUsername(usernameInput); cannot do method chaining
+		
 	}
+	
 
 }
