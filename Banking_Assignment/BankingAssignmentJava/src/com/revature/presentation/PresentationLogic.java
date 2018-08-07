@@ -20,8 +20,7 @@ public class PresentationLogic {
 		System.out.println("\tPlease select a menu option:\n");
 		System.out.println("\tEnter 1: Login to your account");
 		System.out.println("\tEnter 2: Register for an HCB Account");
-		System.out.println("\tEnter 3: Close current account with Humphrey Central Bank\n");
-		System.out.println("\tEnter 4: Leave banking application\n");
+		System.out.println("\tEnter 3: Leave banking application\n");
 	}
 																																					
 	public static void AfterLoginScreen() {
@@ -32,7 +31,8 @@ public class PresentationLogic {
 		System.out.println("\tEnter 2: Make a deposit");
 		System.out.println("\tEnter 3: Withdraw money from account");
 		System.out.println("\tEnter 4: View recent transactions");
-		System.out.println("\tEnter 5: Sign Out\n");
+		System.out.println("\tEnter 5: Close your existing account");
+		System.out.println("\tEnter 6: Sign Out\n");
 	}
 	
 	public static int depositScreen() {
@@ -157,7 +157,7 @@ public class PresentationLogic {
 				System.out.println();
 				System.out.print("\n\tEnter your password: ");
 				password = scanny1.nextLine();
-				if(username.equalsIgnoreCase("exit")) {
+				if(password.equalsIgnoreCase("exit")) {
 					return new User(138,"hminott","junior1996","Humphrey","Minott");
 				}
 				registerCustomer = lookUpCustomer.getUserByUsername(username);
@@ -165,6 +165,32 @@ public class PresentationLogic {
 		System.out.println("\n\t\t\t\t\t\t\t\t\tWelcome Back, " + registerCustomer.getFname() + " " + registerCustomer.getLname());
 		
 		return registerCustomer;
+	}
+	
+	public static int validateUserAgain(User person) {
+		User validateCustomer = null;
+		UserDao lookUpCustomer = new UserDaoImplementation();
+		Scanner scanny1 = new Scanner(System.in);
+		System.out.println();
+		System.out.println("\t\t\t\t\t\t\t\t\t\tPermissions");
+		System.out.println("\t\t\t\t\tRevalidate User Authentication (Type exit at anytime to return to previous screen)");
+		System.out.println();
+		System.out.print("\n\tEnter your password: ");
+		String password = scanny1.nextLine();
+		if(password.equalsIgnoreCase("exit")) {
+			return 1;
+		}
+		validateCustomer = lookUpCustomer.getUserByUsername(person.getUsername());
+		while(!(validateCustomer.getPassword().equals(password))) {
+			System.out.println("\n\tIncorrect Password\n\t\t\t\t\tTry again or Exit!");
+			System.out.print("\n\tEnter your password: ");
+			password = scanny1.nextLine();
+			if(password.equalsIgnoreCase("exit")) {
+				return 1;
+			}
+		}
+		
+		return 0;
 	}
 	
 	public static void successMessage() {

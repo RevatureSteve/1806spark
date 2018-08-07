@@ -12,6 +12,7 @@ public class Driver {
 	
 	static UserDao x = new UserDaoImplementation();
 	static int userSelection1;
+	static User me = null;
 
 	public static void main(String[] args) {	
 		Scanner scanny = new Scanner(System.in);
@@ -23,14 +24,14 @@ public class Driver {
 			
 			case 1:
 				
-					User me = PresentationLogic.loginScreen();
-							while(userSelection1 != 5 && me.getUserID() != 138)	{
+					 me = PresentationLogic.loginScreen();
+							while(userSelection1 != 6 && me.getUserID() != 138)	{
 							PresentationLogic.AfterLoginScreen();
 								userSelection1 = scanny.nextInt();
 							switch (userSelection1) {
 									case 1:
 										System.out.println("\n\tYou have " + x.getUserBalance(me) + "$ in your account");	
-									break;
+									continue;
 									case 2:
 										int depositAmount = PresentationLogic.depositScreen();
 										int success = x.depositMoney(me,depositAmount);
@@ -53,7 +54,7 @@ public class Driver {
 									break;	
 									case 4:
 										
-										
+										System.out.println("view recent?");
 										
 										
 										
@@ -61,10 +62,17 @@ public class Driver {
 									case 5:
 										
 										
-										System.out.println("Signing Out...Thank You");
+										PresentationLogic.validateUserAgain(me);
 										
 										
-									break;	
+									continue;	
+									case 6:
+										
+										
+										System.out.println("\n\tSigning Out...Thank You");
+										
+										
+										break;	
 									default: 
 										System.out.print("Enter a number 1 - 5");
 									break;
@@ -85,12 +93,6 @@ public class Driver {
 					else PresentationLogic.successMessage();
 				break;
 			case 3:
-					User me2 = PresentationLogic.loginScreen();
-					
-					
-				System.exit(1);
-				break;
-			case 4:
 				System.out.println("\nExiting...\nThank you for using Humphrey Central Bank!");
 				System.exit(1);
 				break;
