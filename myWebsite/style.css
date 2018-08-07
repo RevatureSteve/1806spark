@@ -1,0 +1,118 @@
+/* HTML Elements */
+
+body {
+    background-color: lightgray;
+}
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #333;
+}
+
+li {
+    float: left;
+}
+
+li a, .dropbtn {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover, .dropdown:hover .dropbtn {
+    background-color: green;
+}
+
+li.dropdown {
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content a:hover {background-color: darkgray}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Change the link color to green on hover */
+li a:hover {
+    background-color: green;
+}
+
+
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    float: left;
+    padding: 10px;
+}
+
+/* Left side */
+.column.side {
+    width: 47%;
+}
+
+/* Middle column */
+.column.middle {
+    width: 47%;
+}
+
+/* Clear floats after the columns */
+.row:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.picsize {
+    width: auto;
+    height: 45%;
+    padding: 15px;
+}
+
+#title {
+    color: green;
+    text-align: center;
+    background-color: lightgray;
+    margin: 0;
+    padding: 15px;
+    font-size: 40px;
+}
+
+#homescreen {
+    background-image: url("pics/WP_20171123_17_02_58_Panorama.jpg");
+    background-size: 2000px;
+}
+
+#quote {
+    background-color: rgba(12, 11, 11, 0.575);
+    color: white;
+    font-size: 40px;
+    font-style: italic;
+    max-width: 700px;
+    margin: auto;
+    position: absolute;
+    bottom: 8px;
+    right: 400px;
+}

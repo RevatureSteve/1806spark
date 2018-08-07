@@ -1,0 +1,1 @@
+Lighthouse [name=d location=r height=4, isWorking=false]

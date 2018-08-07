@@ -1,0 +1,12 @@
+package com.revature.service;
+
+public class AppService {
+
+	/*
+	 * business logic like login validation
+	 * 		validate models before persisting
+	 * 		manipulate models before persisting
+	 * 		validate user before pulling sensitive data
+	 * 		etc...
+	 */
+}

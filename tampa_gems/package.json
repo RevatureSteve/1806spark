@@ -6,7 +6,11 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
   "author": "Steve K",
+=======
+  "author": "Alicia",
+>>>>>>> e578e4eb21533b1db4848e1606eafb56cd35c0ee
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.18.3",
