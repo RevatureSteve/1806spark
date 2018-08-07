@@ -68,19 +68,18 @@ WHERE hiredate BETWEEN '01-JUN-03' AND '01-MAR-04';
 
 --2.7 DELETE
 
---Task – Delete a record in Customer table where the name is Robert Walter (There may be constraints that rely on this, find out how to reso.lve them)
---SELECT*FROM Customer
---ORDER BY firstname asc;
---DELETE FROM Customer
---WHERE customerid = 32; 
---
---SELECT * FROM invoice
---ORDER BY billingaddress asc;
---
---DELETE FROM Invoice
---WHERE billingaddress = '696_Osborne_Street';
-
---DELETE FROM Invoiceline
+DELETE FROM invoiceline
+WHERE invoiceid IN (SELECT invoiceid FROM invoice 
+WHERE customerid IN (SELECT customerid FROM customer
+WHERE firstname = 'Robert'
+AND lastname = 'Walter'));
+DELETE FROM invoice
+WHERE customerid IN (SELECT customerid FROM customer
+WHERE firstname = 'Robert'
+AND lastname = 'Walter');
+DELETE FROM customer
+WHERE firstname = 'Robert'
+AND lastname = 'Walter';
 
 --3.0 SQL Functions
 --In this section you will be using the Oracle system functions, as well as your own functions, to perform various actions against the database
@@ -150,39 +149,93 @@ SELECT empAfter FROM DUAL;
 --In this section you will be creating and executing stored procedures. You will be creating various types of stored procedures that take input and output parameters.
 --4.1 Basic Stored Procedure
 --Task – Create a stored procedure that selects the first and last names of all the employees.
-CREATE OR REPLACE PROCEDURE select_names
+CREATE OR REPLACE PROCEDURE select_names (cursorParam OUT SYS_REFCURSOR)
 IS
 BEGIN
-    SELECT firstname,lastname FROM EMPLOYEE;
+   OPEN cursorParam FOR
+   SELECT firstname, lastname FROM employee;
    
     END;
 /
 
+EXECUTE select_names;
+
 --4.2 Stored Procedure Input Parameters
 --Task – Create a stored procedure that updates the personal information of an employee.
+CREATE OR REPLACE PROCEDURE updatePersonal (last_name IN VARCHAR2, first_name IN VARCHAR2, employee_id IN INT)
 
+IS
+BEGIN
+  UPDATE employee SET lastname = last_name, firstname = first_name WHERE employeeid = employee_id;
+END;
+/
+--4.2 task B Create a stored procedure that returns the managers of an employee.
 
---Task – Create a stored procedure that returns the managers of an employee.
-
+CREATE OR REPLACE PROCEDURE getManager (employee_id IN INT, cursorParam OUT SYS_REFCURSOR)
+IS
+BEGIN
+    OPEN cursorParam FOR
+    SELECT * FROM employee
+    WHERE employeeid = 
+    (SELECT reportsto FROM employee WHERE employeeid = employee_id);
+END;
+/
 
 --4.3 Stored Procedure Output Parameters
 --Task – Create a stored procedure that returns the name and company of a customer.
 
+CREATE OR REPLACE PROCEDURE return_customer_details(customer_id IN INT, cursorParam OUT SYS_REFCURSOR)
+IS
+BEGIN
+    OPEN cursorParam FOR
+    SELECT firstname, lastname, company
+    FROM customer
+    WHERE customerid = customer_id;
+END;
+/
+
 --5.0 Transactions
 --In this section you will be working with transactions. Transactions are usually nested within a stored procedure.
 --Task – Create a transaction that given a invoiceId will delete that invoice (There may be constraints that rely on this, find out how to resolve them).
-
+CREATE OR REPLACE PROCEDURE delete_invoice_by_id(invoice_id INT)
+IS
+BEGIN
+    DELETE FROM invoiceline
+    WHERE invoiceid  = invoice_id;
+    DELETE FROM invoice
+    WHERE invoiceid = invoice_id;
+    COMMIT;
+END;
+/
 
 --Task – Create a transaction nested within a stored procedure that inserts a new record in the Customer table
 --6.0 Triggers
 --In this section you will create various kinds of triggers that work when certain DML statements are executed on a table.
 --6.1 AFTER/FOR
 --Task - Create an after insert trigger on the employee table fired after a new record is inserted into the table.
+CREATE OR REPLACE TRIGGER after_employee_insert_trigger
+AFTER INSERT ON employee
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('after employee insert trigger');
+END;
+/
 
 --Task – Create an after update trigger on the album table that fires after a row is inserted in the table
+CREATE OR REPLACE TRIGGER after_album_insert_trigger
+AFTER INSERT ON album
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('after album insert trigger');
+END;
+/
+
 
 --Task – Create an after delete trigger on the customer table that fires after a row is deleted from the table.
-
+CREATE OR REPLACE TRIGGER after_customer_delete
+AFTER DELETE ON customer
+BEGIN
+    DBMS_OUTPUT.PUT_LINE('after album insert trigger');
+END;
+/
 
 --7.0 JOINS
 --In this section you will be working with combing various tables through the use of joins. You will work with outer, inner, right, left, cross, and self joins.
