@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Types;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +15,7 @@ import com.revature.abstractClasses.UserDao;
 import com.revature.concreteClasses.BankAccount;
 import com.revature.concreteClasses.User;
 
+//Probably allow user to close account, but they have to have a $0 balance first
 
 public class UserDaoImplementation implements UserDao {
 
@@ -144,14 +146,16 @@ public class UserDaoImplementation implements UserDao {
 		int rowsAffected = 0;
 		try(Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD)) {
 			connection.setAutoCommit(false);
-			String sql = "{call withdraw_account(?,?,?)}";
-			String msg = "";
+			String sql = "{call withdraw_account2(?,?,?)}";
+			int affected = 0;
 			CallableStatement callables = connection.prepareCall(sql);
+			callables.registerOutParameter(3, Types.INTEGER);
 			callables.setInt(1,person.getUserID());
 			callables.setInt(2,amount);
-			callables.setString(3,msg);
+			callables.setInt(3,affected);
 			rowsAffected = callables.executeUpdate();
 			connection.commit();
+			rowsAffected = callables.getInt(3);
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

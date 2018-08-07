@@ -44,7 +44,7 @@ public class Driver {
 									case 3:
 										int withdrawalAmount = PresentationLogic.withdrawScreen();
 										int successOrFail = x.withdrawMoney(me,withdrawalAmount);
-										if (successOrFail > 0) {
+										if (successOrFail == 1) {
 										PresentationLogic.successWithdrawMessage();
 										}
 										else {
@@ -74,6 +74,9 @@ public class Driver {
 				break;
 			case 2:
 					User newCustomer = PresentationLogic.creatingNewUser();
+					if(newCustomer.getUserID() == 138) {
+						break;
+					}
 					UserDao persistCustomer = new UserDaoImplementation();
 					int numRowsUpdated = persistCustomer.createUser(newCustomer);
 					if(numRowsUpdated < 1) {
@@ -82,7 +85,13 @@ public class Driver {
 					else PresentationLogic.successMessage();
 				break;
 			case 3:
-					System.out.println("\nExiting...\nThank you for using Humphrey Central Bank!");
+					User me2 = PresentationLogic.loginScreen();
+					
+					
+				System.exit(1);
+				break;
+			case 4:
+				System.out.println("\nExiting...\nThank you for using Humphrey Central Bank!");
 				System.exit(1);
 				break;
 			default: 

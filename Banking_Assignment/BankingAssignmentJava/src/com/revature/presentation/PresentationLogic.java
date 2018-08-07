@@ -1,6 +1,7 @@
 package com.revature.presentation;
 
 import java.util.InputMismatchException;
+
 import java.util.Scanner;
 
 import com.revature.abstractClasses.UserDao;
@@ -19,7 +20,8 @@ public class PresentationLogic {
 		System.out.println("\tPlease select a menu option:\n");
 		System.out.println("\tEnter 1: Login to your account");
 		System.out.println("\tEnter 2: Register for an HCB Account");
-		System.out.println("\tEnter 3: Leave banking application\n");
+		System.out.println("\tEnter 3: Close current account with Humphrey Central Bank\n");
+		System.out.println("\tEnter 4: Leave banking application\n");
 	}
 																																					
 	public static void AfterLoginScreen() {
@@ -38,6 +40,7 @@ public class PresentationLogic {
 		System.out.println();
 		System.out.println("\tPlease enter the amount you would like to deposit: ");
 		int amount = scanny1.nextInt();
+		
 		return amount;
 	}
 	
@@ -53,32 +56,53 @@ public class PresentationLogic {
 	public static User creatingNewUser() {
 		Scanner scanny1 = new Scanner(System.in);
 		System.out.println("\n\n************************************************************************************************************************************************************************************************\n\n");
-		System.out.println("\t\t\t\t\t\t\t\t\tCreating A New HCB Account!\n\n");
+		System.out.println("\t\t\t\t\t\t\tCreating A New HCB Account! Or Type Exit (at anytime) to go back to main menu\n\n");
 		System.out.println("******************************************************************************************************************************************************************************************************\n");
 		System.out.print("\tEnter your first name: ");
 		String fname = scanny1.nextLine();
+		if(fname.equalsIgnoreCase("exit")) {
+			return new User(138,"hminott","junior1996","Humphrey","Minott");
+		}
 		System.out.println();
 		System.out.print("\tEnter your last name: ");
 		String lname = scanny1.nextLine();
+		if(lname.equalsIgnoreCase("exit")) {
+			return new User(138,"hminott","junior1996","Humphrey","Minott");
+		}
 		System.out.println();
 		System.out.print("\tCreate a Username: ");
 		String usernameFormat= scanny1.nextLine();
+		if(usernameFormat.equalsIgnoreCase("exit")) {
+			return new User(138,"hminott","junior1996","Humphrey","Minott");
+		}
 		String username = usernameFormat.toLowerCase();
 		System.out.println();
 		System.out.print("\tCreate a password: ");
 		String password1 = scanny1.nextLine();
+		if(password1.equalsIgnoreCase("exit")) {
+			return new User(138,"hminott","junior1996","Humphrey","Minott");
+		}
 		System.out.println();
 		System.out.print("\tConfirm password: ");
 		String password2= scanny1.nextLine();
+		if(password2.equalsIgnoreCase("exit")) {
+			return new User(138,"hminott","junior1996","Humphrey","Minott");
+		}
 		while((!password2.equals(password1)))
 			{
 				System.out.println();
 				System.out.println("\tPasswords do not match! Try Again...\n\n");
 				System.out.print("\tCreate a password: ");
 				password1 = scanny1.nextLine();
+				if(password1.equalsIgnoreCase("exit")) {
+					return new User(138,"hminott","junior1996","Humphrey","Minott");
+				}
 				System.out.println();
 				System.out.print("\tConfirm password: ");
 				password2= scanny1.nextLine();
+				if(password2.equalsIgnoreCase("exit")) {
+					return new User(138,"hminott","junior1996","Humphrey","Minott");
+				}
 			}
 		System.out.println();
 		System.out.println();
@@ -90,7 +114,7 @@ public class PresentationLogic {
 		Scanner scanny1 = new Scanner(System.in);
 		User registerCustomer = null;
 		System.out.println("\n\n*******************************************************************************************************************************************************************************************\n\n");
-		System.out.println("\t\t\t\t\t\t\t\t\t\tLogin! Enter Exit to Go back to main menu\n\n");
+		System.out.println("\t\t\t\t\t\t\t\tLogin! Or Type Exit (at anytime) to Go back to main menu\n\n");
 		System.out.println("*************************************************************************************************************************************************************************************************\n");
 		System.out.print("\tEnter your username: ");
 		String usernameFormat = scanny1.nextLine();
@@ -101,13 +125,13 @@ public class PresentationLogic {
 		System.out.println();
 		System.out.print("\tEnter your password: ");
 		String password = scanny1.nextLine();	
-		if(username.equalsIgnoreCase("exit")) {
+		if(password.equalsIgnoreCase("exit")) {
 			return new User(138,"hminott","junior1996","Humphrey","Minott");
 		}
 		UserDao lookUpCustomer = new UserDaoImplementation();
 		registerCustomer = lookUpCustomer.getUserByUsername(username);
 		while(registerCustomer == null) {
-			System.out.println("\n\tIncorrect Username or Password\n\tTry again!");
+			System.out.println("\n\n\tIncorrect Username or Password\n\tTry again!");
 			System.out.print("\n\tEnter your username: ");
 			String usernameFormat2 = scanny1.nextLine();
 			username = usernameFormat2.toLowerCase();
@@ -117,19 +141,25 @@ public class PresentationLogic {
 			System.out.println();
 			System.out.print("\n\tEnter your password: ");
 			password = scanny1.nextLine();
-			if(username.equalsIgnoreCase("exit")) {
+			if(password.equalsIgnoreCase("exit")) {
 				return new User(138,"hminott","junior1996","Humphrey","Minott");
 			}
 			registerCustomer = lookUpCustomer.getUserByUsername(username);
 		}
 			while(!(registerCustomer.getPassword().equals(password))) {
-				System.out.println("\n\tIncorrect Username or Password\n\tTry again!");
+				System.out.println("\n\tIncorrect Username or Password\n\t\t\t\t\tTry again!");
 				System.out.print("\n\tEnter your username: ");
 				String usernameFormat3 = scanny1.nextLine();
 				username = usernameFormat3.toLowerCase();
+				if(username.equalsIgnoreCase("exit")) {
+					return new User(138,"hminott","junior1996","Humphrey","Minott");
+				}
 				System.out.println();
 				System.out.print("\n\tEnter your password: ");
 				password = scanny1.nextLine();
+				if(username.equalsIgnoreCase("exit")) {
+					return new User(138,"hminott","junior1996","Humphrey","Minott");
+				}
 				registerCustomer = lookUpCustomer.getUserByUsername(username);
 			}
 		System.out.println("\n\t\t\t\t\t\t\t\t\tWelcome Back, " + registerCustomer.getFname() + " " + registerCustomer.getLname());
@@ -162,8 +192,8 @@ public class PresentationLogic {
 	}
 	
 	public static void failWithdrawMessage() {
-		System.out.println("\t\t\t\t\t\tOops... We encountered a problem when trying to deposit funds into your account");
-		System.out.println("\t\t\t\t\t\t\t\t\t\tYou do not have enough funds in your account!");
+		System.out.println("\t\t\t\t\t\tOops... We encountered a problem when trying to withdraw funds from your account");
+		System.out.println("\t\t\t\t\t\t\t\t\t\tInsufficient funds, cannot have a negative balance :(");
 	}
 	
 }

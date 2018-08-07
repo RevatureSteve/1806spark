@@ -65,7 +65,6 @@ BEGIN
   
   WHERE users_ID = some_userid;
   
-  COMMIT;
   
   EXCEPTION
   WHEN OTHERS THEN
@@ -73,7 +72,7 @@ BEGIN
   
 END;
 /
-
+commit;
 
 
 DECLARE 
@@ -114,7 +113,7 @@ BEGIN
   WHERE users_ID = some_userid;
   
   
-  COMMIT;
+
   
   END IF;
   
@@ -133,3 +132,40 @@ END;
 /
 
 SELECT * FROM bank_account;
+
+CREATE OR REPLACE PROCEDURE withdraw_account2(some_userID IN NUMBER, amount IN NUMBER, rowsAffected OUT NUMBER)
+IS
+ balance NUMBER(8,2);
+ 
+ cursor resultset is
+     SELECT balance
+     FROM bank_account
+     WHERE users_id = some_userid;
+  
+     
+BEGIN
+
+   open resultset;
+   fetch resultset into balance;
+   close resultset;
+  
+  IF  
+  
+  balance >= amount THEN
+ 
+  UPDATE bank_account 
+  
+  SET balance = balance - amount
+  
+  
+  WHERE users_ID = some_userid;
+  rowsAffected := 1;
+  
+  
+
+  
+  END IF;
+  commit;
+END;
+/
+commit;
