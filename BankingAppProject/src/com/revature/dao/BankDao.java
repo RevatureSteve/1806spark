@@ -10,6 +10,7 @@ public interface BankDao {
 	
 	
 	//Create
+	public void createNewUser(String username, String password, String fname, String lname);
 	
 	
 	//Read

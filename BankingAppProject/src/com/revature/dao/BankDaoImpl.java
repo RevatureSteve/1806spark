@@ -23,6 +23,35 @@ public class BankDaoImpl implements BankDao {
 	private final static String PASSWORD = "p4ssw0rd";
 	private final static String URL = "jdbc:oracle:thin:@octodog.cgxuhcbbspdy.us-east-2.rds.amazonaws.com:1521:ORCL";
 
+	
+	/**
+	 * CREATE methods
+	 */
+	
+	@Override
+	public void createNewUser(String username, String password, String fname, String lname) {
+		Users temp = Users.getUser();
+		try(Connection conn = DriverManager.getConnection(URL,USERNAME, PASSWORD);) {
+			String sql = "{call create_user_and_bank_account(?,?,?,?)}";
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setString(1, username);
+			cs.setString(2, password);
+			cs.setString(3, fname);
+			cs.setString(4, lname);
+			cs.executeQuery();
+			temp.setUsername(username);
+			temp.setPassword(password);
+			temp.setFname(fname);
+			temp.setLname(lname);			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+	}
+	
+	
+	
+	
+	
 	/**
 	 * READ methods will be used to read and get info from db to the console
 	 */
@@ -78,14 +107,15 @@ public class BankDaoImpl implements BankDao {
 		List<BankTransaction> usersBankTransactions = new ArrayList<>();
 		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
 			String sql = "SELECT tx.tx_timestamp, tx.tx_amt, t.tx_type, tx.account_number\r\n" + 
-					"    FROM bank_tx tx\r\n" + 
-					"    INNER JOIN bank_tx_type t ON tx.tx_type_id = t.tx_type_id\r\n" + 
-					"    WHERE tx.account_number = ?";
+					"    FROM bank_tx tx\r\n" + "    INNER JOIN bank_tx_type t ON tx.tx_type_id = t.tx_type_id\r\n" + 
+					"    WHERE tx.account_number = ?" + 
+					"	 ORDER BY tx.tx_timestamp DESC";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, accNum);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				BankTransaction btx = new BankTransaction(rs.getString(1), rs.getDouble(2), rs.getString(3), rs.getInt(4));
+				BankTransaction btx = new BankTransaction(rs.getString(1), rs.getDouble(2), rs.getString(3),
+						rs.getInt(4));
 				usersBankTransactions.add(btx);
 			}
 		} catch (SQLException e) {
@@ -128,5 +158,9 @@ public class BankDaoImpl implements BankDao {
 			e.printStackTrace();
 		}
 	}
+
+	
+	
+	
 
 }

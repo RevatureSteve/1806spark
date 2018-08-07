@@ -18,8 +18,7 @@ public class ViewTransactionHistory implements Screen{
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Here is your transaction history:");
 		System.out.println(BusinessLogic.getTransactionHistory(ba.getAccount_number()));
-		// printing out transaction history here		
-		
+		System.out.println();
 		System.out.println("What would you like to do?");
 		System.out.println("Enter 1 to make a deposit");
 		System.out.println("Enter 2 to withdraw");

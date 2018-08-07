@@ -4,11 +4,13 @@ import java.util.Scanner;
 
 import com.revature.Driver;
 import com.revature.Screen;
+import com.revature.bl.BusinessLogic;
 
 public class UserMenuScreen implements Screen {
 
 	@Override
 	public Screen start() {
+		BusinessLogic.getUserIdByUsername();
 		Scanner scan = new Scanner(System.in);
 		System.out.println("What would you like to do?");
 		System.out.println("Enter 1 to view your balance");

@@ -6,15 +6,7 @@ public class BankAccount {
 	private int account_number;
 	private Double balance;
 	private int users_id;
-	
-//	public static BankAccount ba;
-	
-//	public BankAccount getBankAccount() {
-//		if (ba == null) {
-//			ba = new BankAccount();
-//		}
-//		return ba;
-//	}
+
 	
 	public BankAccount() {
 		
