@@ -1,5 +1,6 @@
 package com.revature.presentation;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.revature.dao.BankAccount;
@@ -45,20 +46,34 @@ public class Console {
 
 	public static void deposit(int usersId) {
 		BankDao bank = new BankAccount();
-		Scanner scan = new Scanner(System.in);
+		double depositAmount = 0.0;
 
-		System.out.println("How much would you like deposit?");
-		double depositAmount = scan.nextDouble();
-
+		do{
+		System.out.println("How much would you like to deposit?");
+		try {
+			Scanner scan = new Scanner(System.in);
+			depositAmount = scan.nextDouble();
+		} catch (InputMismatchException in){
+			System.out.println("Invalid Format.  Please use correct format *0.00*\n");
+		}
+		}while(depositAmount == 0.0);
+		
 		bank.setDepositAmount(usersId, depositAmount);
 	}
 
 	public static void withdraw(int usersId) {
 		BankDao bank = new BankAccount();
-		Scanner scan = new Scanner(System.in);
+		double withdrawAmount = 0.0;
 
-		System.out.println("How much would you like withdraw?");
-		double withdrawAmount = scan.nextDouble();
+		do{
+		System.out.println("How much would you like to withdraw?");
+		try {
+			Scanner scan = new Scanner(System.in);
+			withdrawAmount = scan.nextDouble();
+		} catch (InputMismatchException in){
+			System.out.println("Invalid Format.  Please use correct format *0.00*\n");
+		}
+		}while(withdrawAmount == 0.0);
 
 		bank.setWithdrawAmount(usersId, withdrawAmount);
 	}

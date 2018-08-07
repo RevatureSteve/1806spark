@@ -7,6 +7,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
+import java.util.InputMismatchException;
 
 import com.revature.pogo.Account;
 import com.revature.pogo.Users;
@@ -18,7 +19,7 @@ public class BankAccount implements BankDao {
 	private static final String URL = "jdbc:oracle:thin:@octowolf.crtsillkaxup.us-east-2.rds.amazonaws.com:1521:ORCL";
 
 	// CEATE
-
+	
 	// READ
 	@Override
 	public Users confirmUser(String userName, String passWord) {
@@ -82,7 +83,7 @@ public class BankAccount implements BankDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		} 
 
 	}
 
@@ -104,7 +105,7 @@ public class BankAccount implements BankDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		}
+		} 
 
 	}
 
