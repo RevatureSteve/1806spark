@@ -111,7 +111,7 @@ public class UserPassImpl implements UserPassDao {
 	
 	try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
 		
-		String sql = "SELECT * FROM bank_account WHERE users_id = ?";
+		String sql = "SELECT * FROM bank_account WHERE account_number = ?";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setInt(1, uid);
 		

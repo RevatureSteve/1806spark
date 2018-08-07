@@ -12,13 +12,7 @@ public class BankPresentationUtil {
 	
 	public static UserPassImpl userDao = new UserPassImpl();
 	
-//	public static void userLogin() {
-//		System.out.println("1 to Enter Username");
-//		System.out.println("2 to Enter Password");
-//		System.out.println("3 to Register");
-//		System.out.println("4 to return to Main Menu");
-//	}
-//	
+
 	public static UsersPojo loginSwitch() {
 		
 		UsersPojo user = new UsersPojo();
@@ -48,7 +42,7 @@ public class BankPresentationUtil {
 	
 //take user input for bank deposit
 	
-		public static void bankDeposit() {
+		public static void bankDeposit() throws BankException {
 			
 
 			UserPassImpl deposit = new UserPassImpl();
@@ -62,6 +56,10 @@ public class BankPresentationUtil {
 				
 				System.out.println("Enter amount of deposit: ");
 				double amount = scan.nextDouble();
+				
+				if(amount < 0) {
+					throw new BankException("You can not deposit a negative amount");
+				}
 				
 				deposit.bankDeposit(id, amount);
 				
@@ -87,7 +85,7 @@ public class BankPresentationUtil {
 			Scanner scan = new Scanner(System.in);
 			
 			while (true) {
-				System.out.println("Please enter your user id (future acct#): ");
+				System.out.println("Please enter your account number to make a withdraw: ");
 				int wNum = scan.nextInt();
 				
 				System.out.println("Enter amount of withdraw: ");
@@ -117,7 +115,7 @@ public class BankPresentationUtil {
 			Scanner scan = new Scanner(System.in);
 			
 			while (true) {
-				System.out.println("Enter user id to check your balance: ");
+				System.out.println("Enter your account number to check your balance: ");
 				int uid = scan.nextInt();
 		
 		System.out.println("Your current Balance is: ");
@@ -157,7 +155,12 @@ public class BankPresentationUtil {
 				BankPresentationUtil.getBalance();
 				break;
 			case 3:
-				bankDeposit();
+				try {
+					bankDeposit();
+				} catch (BankException e) {
+					// TODO Auto-generated catch block
+					e.printStackTrace();
+				}
 				break;
 			case 4:
 				bankWithdraw();

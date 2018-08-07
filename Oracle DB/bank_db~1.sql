@@ -73,7 +73,7 @@ SELECT * FROM Bank_Account;
 --
 --cursor b1 is
 --
-SELECT * FROM bank_account WHERE users_id = 1;
+SELECT *  FROM bank_account WHERE users_id = 1;
 --
 --BEGIN
 --    
@@ -124,7 +124,7 @@ BEGIN
     
     UPDATE bank_account
     SET balance = balance + amount
-    WHERE users_ID = some_userid;
+    WHERE ACCOUNT_NUMBER = some_userid;
     COMMIT;
 END;
 /
@@ -140,15 +140,15 @@ BEGIN
     
     UPDATE bank_account
     SET balance = balance + (-1* amount)
-    WHERE users_ID = some_userid;
+    WHERE account_number = some_userid;
     COMMIT;
 END;
 /
 
-EXECUTE  UPDATE_ACCOUNT_WITHDRAW (1 ,100.00);
+EXECUTE  UPDATE_ACCOUNT_WITHDRAW (1005 ,100.00);
 SELECT * FROM BANK_ACCOUNT;
 
-
+COMMIT;
 --Bank Transaction
 CREATE TABLE Bank_Tx (
 tx_id INT,
