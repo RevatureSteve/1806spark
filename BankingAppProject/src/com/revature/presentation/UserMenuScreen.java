@@ -18,8 +18,13 @@ public class UserMenuScreen implements Screen {
 		System.out.println("Enter 3 to withdraw");
 		System.out.println("Enter 4 to view transaction history");
 		System.out.println("Enter 5 to logout");
-		String choice = scan.nextLine();
-		
+		String choice = "";
+		try {
+		choice = scan.nextLine();
+		} catch (RuntimeException e) {
+			System.err.println("Invalid input please try again");
+			return this;
+		}
 		switch (choice) {
 		case "1":
 			return new ViewBalanceScreen();

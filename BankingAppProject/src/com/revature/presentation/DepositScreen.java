@@ -17,7 +17,7 @@ public class DepositScreen implements Screen {
 		BankDao bd = new BankDaoImpl();
 		BankAccount ba = bd.getBankAccountInfo(Users.getUser().getId());
 		System.out.println("How much would you like to deposit?");
-		double amount = BusinessLogic.checkException();
+		double amount = new BusinessLogic().checkDoubleInputException();
 		if (amount == 0) {
 			return this;
 		}

@@ -17,11 +17,11 @@ public class WithdrawScreen implements Screen {
 		BankDao bd = new BankDaoImpl();
 		BankAccount ba = bd.getBankAccountInfo(Users.getUser().getId());
 		System.out.println("How much would you like to withdraw?");
-		double amount = BusinessLogic.checkException();
+		double amount = new BusinessLogic().checkDoubleInputException();
 		if (amount == 0) {
 			return this;
 		}
-		if (BusinessLogic.withdrawFromAccount(amount, ba.getAccount_number())) {
+		if (new BusinessLogic().withdrawFromAccount(amount, ba.getAccount_number())) {
 			System.out.println("Withdraw successful!");
 			System.out.println("You withdrew: $" + amount);
 			System.out.println();

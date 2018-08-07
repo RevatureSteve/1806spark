@@ -16,8 +16,13 @@ public class RegisterScreen  implements Screen{
 		System.out.println();
 		System.out.println("Register here!");		
 		System.out.println("Please enter the username you want to use:");
-		String username = scan.nextLine();
-		if (!BusinessLogic.validateUsername(username)) {
+		String username = "";
+				try {
+					username = scan.nextLine();
+				} catch (Exception e) {
+					System.out.println("Input invalid");
+				}
+		if (!new BusinessLogic().validateUsername(username)) {
 			return this;
 		}
 		System.out.println("Please enter a password:");

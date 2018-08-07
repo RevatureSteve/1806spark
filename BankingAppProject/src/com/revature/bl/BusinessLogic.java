@@ -30,23 +30,32 @@ public class BusinessLogic {
 		return false;
 	}
 	
-	public static boolean validateUsername(String username) {
+	
+	// Validate whether the username exists somewhere in the db
+	public boolean validateUsername(String username) {
 		Users user = Users.getUser();
-		if (bd.getUsersByUsername(username) == null) {
+		if (bd.getUsersByUsername(username) == null && username != "") {
 			System.out.println(username + " is acceptable!");
 			return true;
-		}
+		} else {
 		System.out.println(username + " is taken, please try another username!");
 		return false;
+		}
 	}
 
 	
+	// After user creation, get the id for the user singleton
 	public static void getUserIdByUsername() {
 		Users user = Users.getUser();
+		try {
 		bd.getUsersByUsername(user.getUsername());
+		} catch (Exception e) {
+			System.out.println("There was an issue on our side we apologize for the inconvenience");
+		}
 	}
 	
 	
+	// checks to see if there is a negative value in the user input before depositing amt
 	public static boolean depositToAccount(double amt, int accNum) {
 
 		if (amt < 0) {
@@ -58,6 +67,7 @@ public class BusinessLogic {
 		}
 	}
 
+	// checks if user is overdrafting, as well as withdrawing a negative amount
 	public static boolean withdrawFromAccount(double amt, int accNum) {
 
 		BankAccount ba = bd.getBankAccountInfo(Users.getUser().getId());
@@ -74,28 +84,32 @@ public class BusinessLogic {
 		}
 	}
 	
-	
+	// gets users transaction history and puts it in a list
 	public static List<BankTransaction> getTransactionHistory(int accNum) {
 		return bd.getBankTransactions(accNum);
 	}
 	
-	
-	public static double checkException() throws WrongInputException{
+	// checking the users input for a none double input
+	public double checkDoubleInputException() throws WrongInputException{
 		Scanner scan = new Scanner(System.in);
 		double amount = 0;
 		try {
 			amount = scan.nextDouble();
 		} catch (WrongInputException e) {
-			System.out.println("You did not input a number or value can't be 0.");
+			System.out.println("You did not input a number.");
 			System.out.println("Please try again");
 		}
 		catch (RuntimeException e)
 		{		
-			System.out.println("You did not input a number or value can't be 0.");
+			System.out.println("You did not input a number.");
+			System.out.println("Please try again");
+		} catch (Exception e) {
+			System.out.println("You did not input a number.");
 			System.out.println("Please try again");
 		}
 		return amount;
 		
 	}
+	
 
 }

@@ -22,7 +22,13 @@ public class ViewBalanceScreen implements Screen{
 		System.out.println("Enter 2 to withdraw");
 		System.out.println("Enter 3 to view transaction history");
 		System.out.println("Enter 4 to exit");
-		String choice = scan.nextLine();
+		String choice = "";
+		try {
+				choice = scan.nextLine();
+		} catch (RuntimeException e) {
+			System.out.println("Wrong input type. Please try again.");
+			return this;
+		}
 		
 		switch (choice) {
 		case "1":
@@ -36,9 +42,9 @@ public class ViewBalanceScreen implements Screen{
 			System.exit(1);
 		default:
 			System.out.println("Invalid input.  Please try again.");
+			return this;
 		}
 		
-		return this;
 	}
 	
 	
