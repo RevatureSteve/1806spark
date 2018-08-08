@@ -3,8 +3,10 @@ package com.project.logic;
 import java.util.List;
 
 import com.project.dao.AccountDaoImpl;
+import com.project.dao.TransactionDaoImpl;
 import com.project.dao.UserDaoImpl;
 import com.project.pojo.BankBal;
+import com.project.pojo.BankTrans;
 import com.project.pojo.BankUsers;
 
 public class Logic {
@@ -56,6 +58,16 @@ public class Logic {
 			
 		}
 		return userId;
+	}
+	
+	public static String TransHistory(int user_id) {
+		String history = null;
+		TransactionDaoImpl trans = new TransactionDaoImpl();
+		List<BankTrans> transList = trans.getTransactions(user_id);
+		history = transList.toString();
+		
+		return history;
+		
 	}
 	
 }

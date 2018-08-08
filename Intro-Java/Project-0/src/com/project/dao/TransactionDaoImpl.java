@@ -10,6 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.project.Dao;
+import com.project.pojo.BankTrans;
 
 public class TransactionDaoImpl implements Dao {
 	private final static String USERNAME = "bank_db";
@@ -53,6 +54,23 @@ public class TransactionDaoImpl implements Dao {
 			e.printStackTrace();
 		}
 		return rowsAffected;
+	}
+	@Override
+	public List<BankTrans> getTransactions(int user_id) {
+		List<BankTrans> usersBankTransactions = new ArrayList<>();
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			String sql = "SELECT * FROM bank_tx WHERE account_number = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, user_id);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				BankTrans btx = new BankTrans(rs.getInt(1), rs.getString(2), rs.getInt(4), rs.getInt(5));
+				usersBankTransactions.add(btx);
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return usersBankTransactions;
 	}
 	
 	

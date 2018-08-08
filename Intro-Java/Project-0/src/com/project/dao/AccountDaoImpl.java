@@ -12,6 +12,7 @@ import java.util.List;
 
 import com.project.Dao;
 import com.project.pojo.BankBal;
+import com.project.pojo.BankTrans;
 
 public class AccountDaoImpl implements Dao{
 	
@@ -79,6 +80,12 @@ public class AccountDaoImpl implements Dao{
 		// TODO Auto-generated method stub
 		return 0;
 	}
+	@Override
+	public List<BankTrans> getTransactions(int user_id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
 	
 	
 	

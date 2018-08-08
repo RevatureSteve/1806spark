@@ -12,13 +12,11 @@ public class BankTrans {
 	
 	public BankTrans() {}
 
-	public BankTrans(int transId, String transTimeStamp, int transAmount, String transType, int accountNum) {
+	public BankTrans(int transId, String transTimeStamp, int transAmount, int accountNum) {
 		super();
-		SimpleDateFormat date = new SimpleDateFormat("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
 		this.transId = transId;
-		this.transTimeStamp = date.format(transTimeStamp);
+		this.transTimeStamp = transTimeStamp;
 		TransAmount = transAmount;
-		this.transType = transType;
 		this.accountNum = accountNum;
 	}
 
@@ -65,8 +63,8 @@ public class BankTrans {
 
 	@Override
 	public String toString() {
-		return "BankTrans [transId=" + transId + ", transTimeStamp=" + transTimeStamp + ", TransAmount=" + TransAmount
-				+ ", transType=" + transType + ", accountNum=" + accountNum + "]";
+		return "Transaction ID: " + transId + ", TimeStamp = " + transTimeStamp + ", TransAmount = " + TransAmount
+				+ ", Account Number = " + accountNum + " \n ";
 	}
 	
 	

@@ -50,6 +50,7 @@ VALUES(A_NEW_TRANSACTION.nextval, CURRENT_TIMESTAMP, deposit, user_id);
 END;
 /
 
+SELECT * FROM bank_tx;
 
 BEGIN
 new_transaction(1, 200);

@@ -115,7 +115,7 @@ public class MenuMaster implements HomeScreen{
 		System.out.println("Tpye 'bal' to see your balance.");
 		System.out.println("Tpye 'depo' to deposit.");
 		System.out.println("Tpye 'with' to withdraw.");
-		//System.out.println("Tpye 'history' to view your transaction history.");
+		System.out.println("Tpye 'history' to view your transaction history.");
 		System.out.println("Type 'exit' to logout...");
 		String input = scan.nextLine();
 		switch (input) {
@@ -198,7 +198,13 @@ public class MenuMaster implements HomeScreen{
 			break;
 
 		default:
-			int x = Integer.valueOf(input);
+			int x = 0;
+			try {
+				x = Integer.valueOf(input);
+			} catch (Exception e) {
+				System.err.println("Invalid input...Try again...");
+				Withdraw(user);
+			}
 			int y =- 0 - x;
 			if(x > bal) {
 				System.out.println("You can't withdraw that much \n You only have " + bal + " Sedish Fish...");
@@ -242,7 +248,13 @@ public class MenuMaster implements HomeScreen{
 			break;
 			
 		default:
-			int x = Integer.valueOf(input);
+			int x = 0;
+			try {
+				x = Integer.valueOf(input);
+			} catch (Exception e) {
+				System.err.println("Invalid input...Try again...");
+				Deposit(user);
+			}
 			int trans = bal + x;
 			System.out.println("You are about to deposit " + x + " Swedish Fish");
 			System.out.println("This will give you a total of " +  trans + " Swedish Fish");
@@ -272,8 +284,8 @@ public class MenuMaster implements HomeScreen{
 	public HomeScreen transactionHistory(String user) {
 		System.out.println("Here is your transaction history, " + user);
 		System.out.println("Type return to return...");
-	
-		String input = scan.nextLine();
+		System.out.println(Logic.TransHistory(uId));
+	    String input = scan.nextLine();
 		switch (input) {
 		case "return":
 			
@@ -290,7 +302,7 @@ public class MenuMaster implements HomeScreen{
 		}
 		
 		
-		return this;
+		return this.Valid(user);
 	}
 	
 		}
