@@ -1,10 +1,10 @@
---Procedure to make a witdrawl.
-CREATE OR REPLACE PROCEDURE make_witdrawl (sub  NUMBER)
+--Witdrawl Procedure.
+CREATE OR REPLACE PROCEDURE make_witdrawl (witdrawl  IN NUMBER)
 AS
-b_number NUMBER;
 BEGIN 
 UPDATE bank_account
-SET balance = balance - sub
+SET balance  =
+(balance - witdrawl)
 WHERE users_id = 2;
 END;
 
@@ -13,12 +13,16 @@ BEGIN
 make_witdrawl(10);
 END;
 
+commit;
+
+--Deposit Procedure.
 CREATE OR REPLACE PROCEDURE make_deposit  (deposit   NUMBER)
 AS
 b_number NUMBER;
 BEGIN 
 UPDATE bank_account
-SET balance = balance  + deposit
+SET balance =
+(balance  + deposit)
 WHERE users_id = 2;
 END;
 
@@ -33,24 +37,46 @@ commit;
 CREATE OR REPLACE PROCEDURE create_account( user_name IN VARCHAR2, pass_word IN VARCHAR2)
 AS
 BEGIN
-INSERT INTO users VALUES (4, user_name, pass_word, 'Hope', 'Law') ;
+INSERT INTO bank_account
+()
+VALUES
+():
 END;
 
+set SERVEROUT ON;
 BEGIN
 create_account('bb', 'cc');
 END;
 
+--Sequence for new id in users.
+CREATE SEQUENCE new_id_seq
+START WITH 1
+INCREMENT BY 1;
+
+--Trigger for new id in users. 
+CREATE OR REPLACE TRIGGER next_id
+BEFORE INSERT ON users
+FOR EACH ROW  
+BEGIN
+  IF :new.users_id IS NULL 
+  THEN
+    SELECT new_id_seq.nextval INTO :new.users_id FROM DUAL;
+  END IF;
+END;
+
+
+--Trigger for inseting a new account number
+CREATE OR REPLACE TRIGGER new_acct_num
+BEFORE INSERT ON bank_account
+FOR EACH ROW
+BEGIN
+if :new account_number IS NULL
+THEN
+SELECT new_acct_num.nextval into :new.account_number FROM DUAL
 
 
 
-
-
-
-
-
-
-
-
+SELECT * FROM bank_account;
 
 
 

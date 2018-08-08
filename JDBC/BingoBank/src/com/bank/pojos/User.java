@@ -15,6 +15,15 @@ public class User {
 	this.user_name = user_name;
 	this.password = password;
 }
+	
+	public User(int user_id, String first_name, String last_name) {
+		super();
+		this.user_id = user_id;
+		this.first_name = first_name;
+		this.last_name = last_name;
+	}
+
+
 	public User(int user_id, String user_name, String password, String first_name, String last_name) {
 		super();
 		this.user_id = user_id;
