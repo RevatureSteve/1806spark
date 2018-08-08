@@ -85,9 +85,16 @@ public class MenuMaster implements HomeScreen{
 			}
 			
 		}else {
-			AccountDaoImpl.newAcc(username, password, fname, lname);
-			System.out.println("Account created!");
-			Login();
+			try {
+				AccountDaoImpl.newAcc(username, password, fname, lname);
+				System.out.println("Account created!");
+				Login();
+			} catch (Exception e) {
+				System.err.println("Username taken!");
+				Start();
+			}
+			
+			Start();
 		}
 
 	}
@@ -201,6 +208,10 @@ public class MenuMaster implements HomeScreen{
 			int x = 0;
 			try {
 				x = Integer.valueOf(input);
+				if(x <= 0 ) {
+					System.err.println("Invalid value!");
+					Withdraw(user);
+				}
 			} catch (Exception e) {
 				System.err.println("Invalid input...Try again...");
 				Withdraw(user);
@@ -251,10 +262,15 @@ public class MenuMaster implements HomeScreen{
 			int x = 0;
 			try {
 				x = Integer.valueOf(input);
+				if(x <= 0 ) {
+					System.err.println("Invalid value!");
+					Deposit(user);
+				}
 			} catch (Exception e) {
 				System.err.println("Invalid input...Try again...");
 				Deposit(user);
 			}
+			
 			int trans = bal + x;
 			System.out.println("You are about to deposit " + x + " Swedish Fish");
 			System.out.println("This will give you a total of " +  trans + " Swedish Fish");
