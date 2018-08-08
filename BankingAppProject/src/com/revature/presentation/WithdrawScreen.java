@@ -23,7 +23,7 @@ public class WithdrawScreen implements Screen {
 		}
 		if (new BusinessLogic().withdrawFromAccount(amount, ba.getAccount_number())) {
 			System.out.println("Withdraw successful!");
-			System.out.println("You withdrew: $" + amount);
+			System.out.println("You withdrew: ¤ " + amount);
 			System.out.println();
 			return new UserMenuScreen();
 		} else {

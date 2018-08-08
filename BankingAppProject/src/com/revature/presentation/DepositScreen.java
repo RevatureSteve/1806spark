@@ -2,6 +2,7 @@ package com.revature.presentation;
 
 import java.util.Scanner;
 
+import com.revature.ConsoleColors;
 import com.revature.Screen;
 import com.revature.bl.BusinessLogic;
 import com.revature.dao.BankDao;
@@ -16,14 +17,14 @@ public class DepositScreen implements Screen {
 	public Screen start() throws RuntimeException {
 		BankDao bd = new BankDaoImpl();
 		BankAccount ba = bd.getBankAccountInfo(Users.getUser().getId());
-		System.out.println("How much would you like to deposit?");
+		System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT +"How much would you like to deposit?"+ConsoleColors.RESET);
 		double amount = new BusinessLogic().checkDoubleInputException();
 		if (amount == 0) {
 			return this;
 		}
 		if (BusinessLogic.depositToAccount(amount, ba.getAccount_number())) {
-			System.out.println("Deposit successful!");
-			System.out.println("You have deposited: $" + amount);
+			System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT +"Deposit successful!"+ConsoleColors.RESET);
+			System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT +"You have deposited: ¤ " + amount + ConsoleColors.RESET);
 			System.out.println();
 			return new UserMenuScreen();
 		} else {

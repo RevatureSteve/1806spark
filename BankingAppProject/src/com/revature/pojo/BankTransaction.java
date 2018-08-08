@@ -50,7 +50,7 @@ public class BankTransaction implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Transaction Time: " + time_stamp + " | Transaction Amount: $" + tx_amount +  " | Transaction Type: " + tx_type + " | Account Number: "
+		return "Transaction Time: " + time_stamp + " | Transaction Amount: ¤ " + tx_amount +  " | Transaction Type: " + tx_type + " | Account Number: "
 				+ bank_account_number  + "\n";
 	}
 

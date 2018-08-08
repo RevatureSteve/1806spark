@@ -1,8 +1,8 @@
 package com.revature.exceptions;
 
-import java.lang.RuntimeException;
+import java.util.InputMismatchException;
 
-public class WrongInputException extends RuntimeException{
+public class WrongInputException extends InputMismatchException{
 
 	public WrongInputException() {
 		super();

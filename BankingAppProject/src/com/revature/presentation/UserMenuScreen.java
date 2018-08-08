@@ -2,6 +2,7 @@ package com.revature.presentation;
 
 import java.util.Scanner;
 
+import com.revature.ConsoleColors;
 import com.revature.Driver;
 import com.revature.Screen;
 import com.revature.bl.BusinessLogic;
@@ -12,12 +13,13 @@ public class UserMenuScreen implements Screen {
 	public Screen start() {
 		BusinessLogic.getUserIdByUsername();
 		Scanner scan = new Scanner(System.in);
-		System.out.println("What would you like to do?");
-		System.out.println("Enter 1 to view your balance");
-		System.out.println("Enter 2 to make a deposit");
-		System.out.println("Enter 3 to withdraw");
-		System.out.println("Enter 4 to view transaction history");
-		System.out.println("Enter 5 to logout");
+		System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"What would you like to do?" + ConsoleColors.RESET);
+		System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"Enter 1 to view your balance"+ ConsoleColors.RESET);
+		System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"Enter 2 to make a deposit"+ ConsoleColors.RESET);
+		System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"Enter 3 to withdraw"+ ConsoleColors.RESET);
+		System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"Enter 4 to view transaction history"+ ConsoleColors.RESET);
+		System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"Enter 5 to logout"+ ConsoleColors.RESET);
+		System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"Enter 6 to logout and exit"+ ConsoleColors.RESET);
 		String choice = "";
 		try {
 		choice = scan.nextLine();
@@ -35,7 +37,10 @@ public class UserMenuScreen implements Screen {
 		case "4":
 			return new ViewTransactionHistory();
 		case "5":
-			System.out.println("Thanks for stopping by! We'll catch you later!");
+			System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"You have logged out successfully!"+ ConsoleColors.RESET);
+			return new MainMenuScreen();
+		case "6":
+			System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"Thanks for stopping by! Live long and prosper!"+ ConsoleColors.RESET);
 			System.exit(1);
 		default:
 			System.out.println("Invalid input.  Please try again.");

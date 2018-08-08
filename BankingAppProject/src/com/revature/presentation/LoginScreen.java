@@ -2,6 +2,7 @@ package com.revature.presentation;
 
 import java.util.Scanner;
 
+import com.revature.ConsoleColors;
 import com.revature.Driver;
 import com.revature.Screen;
 import com.revature.pojo.Users;
@@ -14,16 +15,16 @@ public class LoginScreen implements Screen {
 	public Screen start() {
 		Scanner scan = new Scanner(System.in);
 		System.out.println();
-		System.out.println("Please login");
-		System.out.println("Please enter your username:");
+		System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"Please login"+ ConsoleColors.RESET);
+		System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"Please enter your username:"+ ConsoleColors.RESET);
 		String username = "";
 		try {
 			username = scan.nextLine();
-		} catch (Exception e) {
+		} catch (WrongInputException e) {
 			System.out.println("Invalid input, please try again");
 			return this;
 		}
-		System.out.println("Please enter your password:");
+		System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"Please enter your password:" + ConsoleColors.RESET);
 		String password = "";
 		try {
 			password = scan.nextLine();
@@ -31,7 +32,7 @@ public class LoginScreen implements Screen {
 			System.out.println("Invalid input, please try again");
 			return this;
 		}
-		if (BusinessLogic.validateLogin(username, password)) {
+		if (new BusinessLogic().validateLogin(username, password)) {
 			return new UserMenuScreen();
 		} else {
 			System.out.println("Sorry, your username and/or password were invalid");

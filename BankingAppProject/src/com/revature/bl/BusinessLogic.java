@@ -16,21 +16,19 @@ import com.revature.pojo.Users;
 public class BusinessLogic {
 
 	static BankDao bd = new BankDaoImpl();
-	
+
 	// Validate username and password for login
-	public static boolean validateLogin(String username, String password) {
+	public boolean validateLogin(String username, String password) {
 		Users user = Users.getUser();
 		if (bd.getUsersByUsername(username) != null) {
 			if (user.getPassword().equals(password)) {
-				System.out.println("Welcome " + user.getFname());
 				System.out.println();
 				return true;
 			}
 		}
 		return false;
 	}
-	
-	
+
 	// Validate whether the username exists somewhere in the db
 	public boolean validateUsername(String username) {
 		Users user = Users.getUser();
@@ -38,24 +36,23 @@ public class BusinessLogic {
 			System.out.println(username + " is acceptable!");
 			return true;
 		} else {
-		System.out.println(username + " is taken, please try another username!");
-		return false;
+			System.out.println(username + " is taken, please try another username!");
+			return false;
 		}
 	}
 
-	
 	// After user creation, get the id for the user singleton
 	public static void getUserIdByUsername() {
 		Users user = Users.getUser();
 		try {
-		bd.getUsersByUsername(user.getUsername());
+			bd.getUsersByUsername(user.getUsername());
 		} catch (Exception e) {
 			System.out.println("There was an issue on our side we apologize for the inconvenience");
 		}
 	}
-	
-	
-	// checks to see if there is a negative value in the user input before depositing amt
+
+	// checks to see if there is a negative value in the user input before
+	// depositing amt
 	public static boolean depositToAccount(double amt, int accNum) {
 
 		if (amt < 0) {
@@ -68,7 +65,7 @@ public class BusinessLogic {
 	}
 
 	// checks if user is overdrafting, as well as withdrawing a negative amount
-	public static boolean withdrawFromAccount(double amt, int accNum) {
+	public boolean withdrawFromAccount(double amt, int accNum) {
 
 		BankAccount ba = bd.getBankAccountInfo(Users.getUser().getId());
 		if (ba.getBalance() - amt < 0) {
@@ -79,18 +76,18 @@ public class BusinessLogic {
 			System.out.println("You cannot withdraw a negative amount");
 			return false;
 		} else {
-		bd.withdrawFromBankAccount(amt, accNum);
-		return true;
+			bd.withdrawFromBankAccount(amt, accNum);
+			return true;
 		}
 	}
-	
+
 	// gets users transaction history and puts it in a list
 	public static List<BankTransaction> getTransactionHistory(int accNum) {
 		return bd.getBankTransactions(accNum);
 	}
-	
+
 	// checking the users input for a none double input
-	public double checkDoubleInputException() throws WrongInputException{
+	public double checkDoubleInputException() {
 		Scanner scan = new Scanner(System.in);
 		double amount = 0;
 		try {
@@ -98,9 +95,7 @@ public class BusinessLogic {
 		} catch (WrongInputException e) {
 			System.out.println("You did not input a number.");
 			System.out.println("Please try again");
-		}
-		catch (RuntimeException e)
-		{		
+		} catch (RuntimeException e) {
 			System.out.println("You did not input a number.");
 			System.out.println("Please try again");
 		} catch (Exception e) {
@@ -108,8 +103,7 @@ public class BusinessLogic {
 			System.out.println("Please try again");
 		}
 		return amount;
-		
+
 	}
-	
 
 }

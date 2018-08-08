@@ -2,6 +2,7 @@ package com.revature.presentation;
 
 import java.util.Scanner;
 
+import com.revature.ConsoleColors;
 import com.revature.Screen;
 import com.revature.bl.BusinessLogic;
 import com.revature.dao.BankDao;
@@ -25,7 +26,7 @@ public class RegisterScreen  implements Screen{
 		if (!new BusinessLogic().validateUsername(username)) {
 			return this;
 		}
-		System.out.println("Please enter a password:");
+		System.out.println(ConsoleColors.CYAN_BOLD_BRIGHT+"Please enter a password:");
 		String password = scan.nextLine();
 		System.out.println();
 		System.out.println("Please enter your first name:");
@@ -40,7 +41,7 @@ public class RegisterScreen  implements Screen{
 			System.out.println("There was an issue creating your account.  Please try again.");
 			return this;
 		}
-		System.out.println("User created!  Welcome!");
+		System.out.println("User created!  Welcome " + username + "!" + ConsoleColors.RESET);
 		return new UserMenuScreen();
 	}
 
