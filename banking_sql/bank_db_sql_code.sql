@@ -50,7 +50,7 @@ BEGIN
     END IF;
 END;
 /
- SELECT * FROM users WHERE username = 'rhys' AND password = 'rhys';
+ SELECT * FROM users;
  SELECT * FROM bank_tx;
  SELECT * FROM bank_tx_type;
 SELECT bank_tx.tx_id, bank_tx.tx_timestamp, bank_tx.tx_amt, bank_tx_type.tx_type, bank_tx.account_number
