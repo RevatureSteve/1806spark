@@ -1,12 +1,11 @@
 package com.revature.bank;
 
+import java.text.DecimalFormat;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
-import com.revature.bank.pojo.Bank_AccountPojo;
-import com.revature.bank.pojo.UsersPojo;
-import com.revature.bank.UserPassImpl;
 import com.revature.bank.Dao.UserPassDao;
+import com.revature.bank.pojo.UsersPojo;
 
 
 public class BankPresentationUtil {
@@ -95,7 +94,9 @@ public class BankPresentationUtil {
 			Scanner scan = new Scanner(System.in);
 			
 			while (true) {
+				
 				System.out.println("Please enter your account number to make a withdraw: ");
+			try {
 				int wNum = scan.nextInt();
 				
 				System.out.println("Enter amount of withdraw: ");
@@ -112,12 +113,15 @@ public class BankPresentationUtil {
 					withdraw.bankDeposit(wNum, wAmount);
 				}else {
 					System.out.println("You do not have enough gold");
-					System.out.println("balane test is: "+userBalance.viewBalance(wNum).getBalance());
-					System.out.println("amount test " + wAmount);
+					System.out.println("Your Balance Is: "+userBalance.viewBalance(wNum).getBalance());
+					System.out.println("You have requested: " + wAmount);}
+				
+				} catch (InputMismatchException e) {
+					System.out.println("Invalid input, please use only numbers");
+					BankPresentationUtil.mainMenu();
+				}catch (Exception e) {
 				}
-				
-				
-				
+			
 				System.out.println("Are you sure you don't need more? ");
 				System.out.println("WINTER IS COMING!");
 				
@@ -133,6 +137,8 @@ public class BankPresentationUtil {
 		
 		public static double getBalance() {
 			
+			DecimalFormat df = new DecimalFormat("#,###.00");
+			
 			UserPassDao userBalance = new UserPassImpl();
 			
 			Scanner scan = new Scanner(System.in);
@@ -140,19 +146,22 @@ public class BankPresentationUtil {
 			double amt = 0.0;
 			
 			while (true) {
+				try {
 				System.out.println("Enter your account number to check your balance: ");
 				int uid = scan.nextInt();
 		
 		System.out.println("Your current Balance is: ");
-         System.out.println(userBalance.viewBalance(uid).getBalance() + " Golden Dragons");
+         System.out.println(df.format(userBalance.viewBalance(uid).getBalance()) + " Golden Dragons");
             
          BankPresentationUtil.mainMenu();
          return userBalance.viewBalance(uid).getBalance();
      	
-			}
+			} catch (InputMismatchException e) {
+				System.out.println("Invalid input, please use only numbers");
+				BankPresentationUtil.mainMenu();}}
 		
 		}
-
+			
 	
 
 	
