@@ -59,15 +59,19 @@ public class Driver {
 									case 4:
 										
 										List<Transaction> recent =x.viewTransaction(me.getUserID());
+										if(recent.size() == 0) {
+											System.out.println("\n\t\t\t\t\t\t\t\tNo recent transactions");
+										}
+										else {
 										for (Transaction view : recent) {
 											if(view.getTx_type_id()==2) {
 											 System.out.println("\n\t\t\t\t\t\tTransaction (Withdrawal): " + view.getTx_timestamp() + " -$" + view.getTx_amount());
 											}
-											else {
+											else if (view.getTx_type_id()==1) {
 												System.out.println("\n\t\t\t\t\t\tTransaction (Deposit): " + view.getTx_timestamp() + " $" + view.getTx_amount());
 											}
 											}
-										
+										}
 									break;	
 									case 5:
 										

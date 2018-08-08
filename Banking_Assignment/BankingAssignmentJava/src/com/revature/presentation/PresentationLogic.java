@@ -1,9 +1,5 @@
 package com.revature.presentation;
-
-import java.util.InputMismatchException;
-
 import java.util.Scanner;
-
 import com.revature.abstractClasses.UserDao;
 import com.revature.concreteClasses.User;
 import com.revature.dao.UserDaoImplementation;
@@ -39,8 +35,9 @@ public class PresentationLogic {
 	public static int depositScreen() {
 		Scanner scanny1 = new Scanner(System.in);
 		System.out.println();
-		System.out.println("\tPlease enter the amount you would like to deposit: ");
+		System.out.print("\tPlease enter the amount you would like to deposit: ");
 		int amount = scanny1.nextInt();
+		System.out.println();
 		
 		return amount;
 	}
@@ -48,8 +45,9 @@ public class PresentationLogic {
 	public static int withdrawScreen() {
 		Scanner scanny1 = new Scanner(System.in);
 		System.out.println();
-		System.out.println("\tPlease enter the amount you would like to withdraw: ");
+		System.out.print("\tPlease enter the amount you would like to withdraw: ");
 		int amount = scanny1.nextInt();
+		System.out.println();
 		return amount;
 	}
 	

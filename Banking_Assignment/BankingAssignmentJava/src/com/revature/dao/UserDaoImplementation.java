@@ -7,13 +7,9 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Timestamp;
 import java.sql.Types;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.List;
-
 import com.revature.abstractClasses.UserDao;
 import com.revature.concreteClasses.BankAccount;
 import com.revature.concreteClasses.Transaction;
@@ -257,7 +253,6 @@ public class UserDaoImplementation implements UserDao {
 	public List<Transaction> viewTransaction(int id) {
 		List<Transaction> userTxs = new ArrayList<>();
 		BankAccount account = null;
-		int rowsAffected = 0;
 		try(Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD)) {
 			connection.setAutoCommit(false);
 			String sql = "SELECT * FROM bank_account WHERE users_id = ?";
@@ -282,8 +277,5 @@ public class UserDaoImplementation implements UserDao {
 			e.printStackTrace();
 		}
 		return userTxs;
-	
-	
-
 }
 }
