@@ -2,8 +2,8 @@ package com.project.logic;
 
 import java.util.List;
 
-import com.project.dao.AccountDao;
-import com.project.dao.UserDao;
+import com.project.dao.AccountDaoImpl;
+import com.project.dao.UserDaoImpl;
 import com.project.pojo.BankBal;
 import com.project.pojo.BankUsers;
 
@@ -12,7 +12,7 @@ public class Logic {
 	
 	
 	public static boolean userInDb(String username, String password) {
-		UserDao users = new UserDao();
+		UserDaoImpl users = new UserDaoImpl();
 		List<Object> userList = users.read();
 		for(Object obj : userList) {
 			BankUsers user = (BankUsers) obj;
@@ -29,7 +29,7 @@ public class Logic {
 	public static String getFirstName(String username, String password) {
 		String validUser = null;
 		
-		UserDao users = new UserDao();
+		UserDaoImpl users = new UserDaoImpl();
 		List<Object> userList = users.read();
 		for(Object obj : userList) {
 			BankUsers user = (BankUsers) obj;
@@ -45,7 +45,7 @@ public class Logic {
 		
 		BankUsers userId = null;
 		
-		UserDao users = new UserDao();
+		UserDaoImpl users = new UserDaoImpl();
 		List<Object> userList = users.read();
 		for(Object obj : userList) {
 			

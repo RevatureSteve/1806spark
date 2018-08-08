@@ -4,9 +4,9 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
-import com.project.dao.UserDao;
-import com.project.dao.AccountDao;
-import com.project.dao.TransDao;
+import com.project.dao.UserDaoImpl;
+import com.project.dao.AccountDaoImpl;
+import com.project.dao.TransactionDaoImpl;
 import com.project.exception.InvalidInputException;
 import com.project.logic.Logic;
 import com.project.pojo.BankBal;
@@ -14,7 +14,7 @@ import com.project.pojo.BankTrans;
 import com.project.pojo.BankUsers;
 
 
-public class MainMenu implements HomeScreen{
+public class MenuMaster implements HomeScreen{
 
 	private Scanner scan = new Scanner(System.in);//this takes in input
 	private int uId;
@@ -36,6 +36,7 @@ public class MainMenu implements HomeScreen{
 				"");
 		
 		System.out.println("Type 'login' to login.");
+		System.out.println("type 'new' to create a new account!");
 		System.out.println("Type 'exit' to exit...");
 		
 		String input = scan.nextLine();
@@ -45,17 +46,50 @@ public class MainMenu implements HomeScreen{
 			Login();
 			break;
 		
+		case "new":
+			newAccount();
+			break;
+		
 		case "exit":
 			System.out.println("Adjö! *Goodbye*");
 			System.exit(1);
 			break;
 		default:
-			InvalidInputThrow();
-			break;
+			try {
+				throw new InvalidInputException();
+			} catch (Exception e) {
+				System.err.println("Invalid input... Please try again.");	
+				Start();
+			}
 		
 			
 		}
 		return this;// this returns current screen
+	}
+	private void newAccount() {
+		System.out.println("Please enter a new username");
+		String username = scan.nextLine();
+		System.out.println("Please enter a new password");
+		String password = scan.nextLine();
+		System.out.println("What is your first name?");
+		String fname = scan.nextLine();
+		System.out.println("What is your last name?");
+		String lname = scan.nextLine();
+		if(Logic.userInDb(username, password)) {
+			System.err.println("Username is taken...");
+			try {
+				TimeUnit.SECONDS.sleep(2);
+				newAccount();
+			} catch (InterruptedException e) {
+				Login();
+			}
+			
+		}else {
+			AccountDaoImpl.newAcc(username, password, fname, lname);
+			System.out.println("Account created!");
+			Login();
+		}
+
 	}
 	public HomeScreen Login() {
 		System.out.println("Username: ");
@@ -70,16 +104,18 @@ public class MainMenu implements HomeScreen{
 		    
 			Valid(username);
 		}
-		System.out.println("Invalid login...");
+		System.err.println("Invalid login...");
+
 		
 		return this.Login();
 }
 	public HomeScreen Valid(String user) {
+		bal = AccountDaoImpl.getBal(uId);
 		System.out.println("Welcome back " + user);
 		System.out.println("Tpye 'bal' to see your balance.");
 		System.out.println("Tpye 'depo' to deposit.");
 		System.out.println("Tpye 'with' to withdraw.");
-		System.out.println("Tpye 'history' to view your transaction history.");
+		//System.out.println("Tpye 'history' to view your transaction history.");
 		System.out.println("Type 'exit' to logout...");
 		String input = scan.nextLine();
 		switch (input) {
@@ -120,15 +156,19 @@ public class MainMenu implements HomeScreen{
 			break;
 
 		default:
-			InvalidInputThrow();
-			break;
+			try {
+				throw new InvalidInputException();
+			} catch (Exception e) {
+				System.err.println("Invalid input... Please try again.");	
+				Valid(user);
+			}
 		}
 		return this;
 	}
 	
 	public HomeScreen Balance(String user) {
 		
-		bal = AccountDao.getBal(uId);
+		bal = AccountDaoImpl.getBal(uId);
 		BankUsers bu = new BankUsers();
 		System.out.println(user + ", you have a balance of: " + bal + " Swedish Fish");
 		System.out.println("or type 'return' to return to previous menu...");
@@ -139,8 +179,12 @@ public class MainMenu implements HomeScreen{
 			break;
 
 		default:
-			InvalidInputThrow();
-			break;
+			try {
+				throw new InvalidInputException();
+			} catch (Exception e) {
+				System.err.println("Invalid input... Please try again.");	
+				Balance(user);
+			}
 		}
 		return this;
 	}
@@ -154,8 +198,8 @@ public class MainMenu implements HomeScreen{
 			break;
 
 		default:
-			bal = AccountDao.getBal(uId);
 			int x = Integer.valueOf(input);
+			int y =- 0 - x;
 			if(x > bal) {
 				System.out.println("You can't withdraw that much \n You only have " + bal + " Sedish Fish...");
 				return this.Withdraw(user);
@@ -167,7 +211,7 @@ public class MainMenu implements HomeScreen{
 				String value = scan.nextLine();
 				switch (value) {
 				case "y":
-					TransDao.newTransaction(uId, trans);
+					TransactionDaoImpl.newTransaction(uId, trans, y);
 					System.out.println("Transaction completed");
 					return this.Valid(user);
 				case "n":
@@ -175,8 +219,12 @@ public class MainMenu implements HomeScreen{
 					return this.Valid(user);
 
 				default:
-					InvalidInputThrow();
-					break;
+					try {
+						throw new InvalidInputException();
+					} catch (Exception e) {
+						System.err.println("Invalid input... Please try again.");	
+						Withdraw(user);
+					}
 				}
 			}
 			break;
@@ -194,7 +242,6 @@ public class MainMenu implements HomeScreen{
 			break;
 			
 		default:
-			bal = AccountDao.getBal(uId);
 			int x = Integer.valueOf(input);
 			int trans = bal + x;
 			System.out.println("You are about to deposit " + x + " Swedish Fish");
@@ -203,7 +250,7 @@ public class MainMenu implements HomeScreen{
 			String value = scan.nextLine();
 			switch (value) {
 			case "y":
-				TransDao.newTransaction(uId, trans);
+				TransactionDaoImpl.newTransaction(uId, trans, x);
 				System.out.println("Transaction completed");
 				return this.Valid(user);
 			case "n":
@@ -211,8 +258,12 @@ public class MainMenu implements HomeScreen{
 				return this.Valid(user);
 
 			default:
-				InvalidInputThrow();
-				break;
+				try {
+					throw new InvalidInputException();
+				} catch (Exception e) {
+					System.err.println("Invalid input... Please try again.");	
+					Deposit(user);
+				}
 			}
 		}
 		return this;
@@ -229,29 +280,18 @@ public class MainMenu implements HomeScreen{
 			break;
 
 		default:
-			InvalidInputThrow();
-			break;
+			try {
+				throw new InvalidInputException();
+			} catch (Exception e) {
+				System.err.println("Invalid input... Please try again.");	
+				transactionHistory(user);
+			}
+			
 		}
 		
 		
 		return this;
 	}
 	
-	public void InvalidInputThrow() {
-		try {
-			throw new InvalidInputException("Invalid input...");
-		} catch (Exception e) {
-			try {
-				TimeUnit.SECONDS.sleep(1);
-				System.out.println("Logging out...");
-				Start();
-			} catch (InterruptedException e1) {
-				System.out.println("Logging out...");
-				Start();
-			}
-			
 		}
-		
-	}
-	}
 

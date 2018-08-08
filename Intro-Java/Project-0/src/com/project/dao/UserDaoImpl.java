@@ -12,7 +12,7 @@ import com.project.Dao;
 import com.project.pojo.BankBal;
 import com.project.pojo.BankUsers;
 
-public class UserDao implements Dao {
+public class UserDaoImpl implements Dao {
 	
 	private final static String USERNAME = "bank_db";
 	private final static String PASSWORD = "p4ssw0rd";
@@ -48,6 +48,7 @@ public class UserDao implements Dao {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
 
 
 	
