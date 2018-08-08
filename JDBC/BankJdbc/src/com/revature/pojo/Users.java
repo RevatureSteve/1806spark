@@ -8,7 +8,7 @@ package com.revature.pojo;
 
 public class Users {
 	
-	private static Users currentUser = null;
+	private static Users currentUser;
 	
 	private int userId;
 	private String userName;//user name
@@ -16,6 +16,14 @@ public class Users {
 	private String fName;//first name
 	private String lName;//last name
 	
+	public static Users getUsers(int userID, String userName, String password, String fname, String lname) {
+		if(currentUser == null) {
+			currentUser = new Users(userID,userName, password, fname, lname);
+		} return currentUser; 
+	}
+	public static Users getUsers() {
+		return currentUser;
+		}
 	
 	//constructor using fields
 	public Users(int userId, String userName, String password, String fName, String lName) {

@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 import com.revature.Screen;
 import com.revature.dao.BankAccountDaoImpl;
-import com.revature.dao.UserDaoImpl;
 import com.revature.pojo.BankAccount;
 import com.revature.pojo.Users;
 
@@ -26,6 +25,7 @@ public class UsersMenuScreen implements Screen {
 	}
 	
 	@SuppressWarnings("resource")
+	@Override
 	public Screen Start() {
 	
 	Users currentUser = null;
@@ -41,37 +41,39 @@ public class UsersMenuScreen implements Screen {
 	System.out.println("enter 5 to return to the Main Menu");
 	
 	int input = scan.nextInt();
-	
+	BankAccountDaoImpl account = new BankAccountDaoImpl();//create BankAccountDaoImpl object to use the method
 	
 	switch (input) {
 	case 1:
 		
-		UserDaoImpl account = new UserDaoImpl();//create userdaoimpl object to use the method
 		currentUser = account.getUserByUserName(username);
 		BankAccountDaoImpl balance = new BankAccountDaoImpl(); 
-		BankAccount x = balance.getBankAccountByUserId(currentUser.getUserId());//we use the "method.get" to pull the users bankaccount
+		BankAccount x = BankAccount.getCurrentAccount();//we use the "method.get" to pull the users bankaccount
 		System.out.println("balance is: " + x.getBalance());//display balance
 		
-		System.out.println("balance is blank");
-		break;
+		return this;
 	case 2:
-		System.out.println("add money");
-		break;
+		
+		return new DepositScreen().Start();
+		
 	case 3:
-		System.out.println("take money");
-		break;
+		
+		return new WithdrawScreen().Start();
+
 	case 4:
 		System.out.println("look at your mistakes");
 		break;
 	case 5:
 		System.out.println("log out");
-		return new MainMenuScreen().Start();
+		System.exit(1);
 	default:
 		break;
 		
 	}
 	return this;
 	}
+
+
 
 	
 	

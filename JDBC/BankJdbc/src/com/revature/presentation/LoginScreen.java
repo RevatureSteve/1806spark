@@ -7,6 +7,7 @@ import java.util.Scanner;
 
 import com.revature.Screen;
 import com.revature.businessLogic.BusinessLogic;
+import com.revature.pojo.Users;
 
 public class LoginScreen implements Screen {
 
@@ -21,6 +22,7 @@ public class LoginScreen implements Screen {
 		String password = scan.nextLine();
 		
 		if(BusinessLogic.userExsists(userName, password)) {
+			if(BusinessLogic.getUserAccount(Users.getCurrentUser().getUserId()))
 			return new UsersMenuScreen(userName).Start();
 		}
 		System.out.println("The Login has Failed");

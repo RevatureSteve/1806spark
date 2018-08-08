@@ -27,6 +27,7 @@ public interface MainDao {
 	//UPDATE
 	//public int update(Object obj);
 	public void depositIntoBank(double txAmount, int accountId);
+	public void withdrawFromBank(double txAmount, int accountId);
 	
 	//DELETE
 	

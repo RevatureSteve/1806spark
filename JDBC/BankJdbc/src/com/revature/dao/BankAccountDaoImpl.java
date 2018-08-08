@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
 import com.revature.pojo.BankAccount;
 import com.revature.pojo.Users;
 
@@ -41,6 +42,7 @@ public class BankAccountDaoImpl implements MainDao{
 				
 				if (rs.next()) {
 					account = new BankAccount(rs.getInt("account_number"), rs.getDouble("Balance"), rs.getInt("users_id"));
+					BankAccount.getBankAccount(rs.getInt("account_number"), rs.getDouble("Balance"), rs.getInt("users_id"));
 				}
 				
 			} catch (SQLException e) {
@@ -49,22 +51,52 @@ public class BankAccountDaoImpl implements MainDao{
 			return account;//we return the "account" variable 
 		}
 		
-		@Override
-		public Users getUserByUserName(String userName) {
-			// TODO Auto-generated method stub
-			return null;
-		}
+		public Users getUserByUserName(String userName) {//using both my pojo and a new method ("getUserByUserName") to get the userName in SQL
+			Users user = null;//must make this variable local so it can be used
+			try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {//establish connection to the database
+				String sql = "SELECT * FROM users WHERE username = (?)";//declare the statement we want to use to call the userName in SQL, note: you must supply a value in place of the "?" otherwise it will not intiate
+				PreparedStatement ps = conn.prepareStatement(sql);//prepare a statement to be used in SQL which we did above
+				ps.setString(1, userName);//this tells me where to place the values in the "?" and it is placed within position "1" with a value of "userName"
+				ResultSet rs = ps.executeQuery();//this is and object where it stores the database result set of whatever we executed in the "String sql" statement above 
+				while (rs.next()) {//here we use a pointer "rs.next" alon with a while loop through our result set of usernames
+					user = new Users(rs.getInt("users_id"), rs.getString("username"), rs.getString("password"), rs.getString("fname"), rs.getString("lname"));
+					Users.getUsers(rs.getInt("users_id"), rs.getString("username"), rs.getString("password"), rs.getString("fname"), rs.getString("lname"));
 
+					
+				}//the above line we are pulling the user and the result set of the sql table "users"
+			} catch (SQLException e) {//here to catch any sort of error with the try/catch block
+				e.printStackTrace();//prints out the error
+			}
+			return user;//we return the "user" variable 
+		}	
+
+		
 		//UPDATE
-		@Override
 		public void depositIntoBank(double txAmount, int userId) {
+			
 			try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
-				String sql = "{call get_tx(?, ?)}";
-				String name = null;
+				String sql = "{call deposit (?, ?)}";
 				CallableStatement cs = conn.prepareCall(sql);
-				cs.setInt(1, userId);
-				cs.setDouble(2, txAmount);
-				cs.executeUpdate();
+				cs.setDouble(1, txAmount);
+				cs.setInt(2, userId);
+				int rowsAffected = cs.executeUpdate();
+				System.out.println("rows affected" + rowsAffected);
+				BankAccount.deposit(txAmount);
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+		}
+		
+		public void withdrawFromBank(double txAmount, int userId) {
+			
+			try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+				String sql = "{call withdrawl (?, ?)}";
+				CallableStatement cs = conn.prepareCall(sql);
+				cs.setDouble(1, txAmount);
+				cs.setInt(2, userId);
+				int rowsAffected = cs.executeUpdate();
+				System.out.println("rows affected" + rowsAffected);
+				BankAccount.withdraw(txAmount);
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

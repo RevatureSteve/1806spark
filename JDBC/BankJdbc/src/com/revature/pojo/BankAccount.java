@@ -2,7 +2,23 @@ package com.revature.pojo;
 
 public class BankAccount {
 	
-	private static BankAccount currentAccount = null;
+	private static BankAccount currentAccount;
+	
+	public static BankAccount getBankAccount(int accountNumber, double balance, int userId) {
+		if(currentAccount == null) {
+			currentAccount = new BankAccount(accountNumber, balance, userId);
+		} return currentAccount; 
+	}
+	
+	public static void deposit(double txAmount) {
+		currentAccount.balance = currentAccount.balance + txAmount;
+		//currentAccount.balance += txAmount;
+	}
+	
+	public static void withdraw(double txAmount) {
+		currentAccount.balance = currentAccount.balance - txAmount;
+		//currentAccount.balance += txAmount;
+	}
 
 	//states
 	private int accountNumber;
@@ -57,4 +73,5 @@ public class BankAccount {
 	public String toString() {
 		return "Account Number=" + accountNumber + ", Balance=" + balance ;
 	}
+
 }
