@@ -1,6 +1,6 @@
 package com.revature.screens;
 
-import com.revature.dao.BankAccountDao;
+import com.revature.dao.BankAccountDaoImpl;
 import com.revature.exceptions.NegativeInputException;
 import com.revature.exceptions.WrongInputTypeException;
 import com.revature.interfaces.Screen;
@@ -13,7 +13,7 @@ public class DepositScreen implements Screen {
 	@Override
 	public Screen start() {
 		IOHandler.displayDepositScreen();
-		BankAccountDao badao = new BankAccountDao();
+		BankAccountDaoImpl badao = new BankAccountDaoImpl();
 		double money = 0;
 		try {
 			money = IOHandler.getAmountOfMoney();

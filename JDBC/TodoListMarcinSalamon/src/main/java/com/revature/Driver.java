@@ -1,5 +1,8 @@
 package com.revature;
 
+import com.revature.domain.User;
+import com.revature.service.AppService;
+
 public class Driver {
 
 	/*
@@ -27,6 +30,12 @@ public class Driver {
 	public static void main(String[] args) {
 		System.out.println("testing maven project");
 
+		//start implementing some of the use cases
+		//maybe start with login
+		String usernameInput = "Marcin";
+		String pwInput = "123";
+		User validUser = new AppService().login(new User(0, usernameInput, pwInput));
+		System.out.println(validUser);
 	}
 
 }

@@ -2,7 +2,7 @@ package com.revature.screens;
 
 import org.omg.IOP.IORHolder;
 
-import com.revature.dao.BankAccountDao;
+import com.revature.dao.BankAccountDaoImpl;
 import com.revature.exceptions.NegativeInputException;
 import com.revature.exceptions.OverdraftPreventionException;
 import com.revature.exceptions.WrongInputTypeException;
@@ -16,7 +16,7 @@ public class WithdrawScreen implements Screen {
 	@Override
 	public Screen start() {
 		IOHandler.displayWithdrawScreen();
-		BankAccountDao badao = new BankAccountDao();
+		BankAccountDaoImpl badao = new BankAccountDaoImpl();
 		double money = 0;
 		try {
 			money = IOHandler.getAmountOfMoney();

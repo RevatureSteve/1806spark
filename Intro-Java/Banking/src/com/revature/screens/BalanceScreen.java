@@ -2,7 +2,7 @@ package com.revature.screens;
 
 import java.util.Scanner;
 
-import com.revature.dao.BankAccountDao;
+import com.revature.dao.BankAccountDaoImpl;
 import com.revature.interfaces.Screen;
 import com.revature.iohandler.IOHandler;
 import com.revature.pojos.BankAccount;
@@ -12,7 +12,7 @@ public class BalanceScreen implements Screen {
 	private Scanner scan = new Scanner(System.in);
 	@Override
 	public Screen start() {
-		BankAccountDao baDao = new BankAccountDao();
+		BankAccountDaoImpl baDao = new BankAccountDaoImpl();
 		BankAccount ba = baDao.getBankAccountByUserId(LoggedUser.getUser().getUserId());
 		IOHandler.displayBalanceScreen(ba.getBalance());
 		String input = scan.nextLine();

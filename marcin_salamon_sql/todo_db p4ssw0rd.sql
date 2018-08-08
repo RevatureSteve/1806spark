@@ -35,4 +35,6 @@ INSERT INTO task_status VALUES (1, 'pending');
 INSERT INTO task_status VALUES (2, 'done');
 INSERT INTO task_status VALUES (3, 'cancelled');
 
-SELECT * FROM task;
+SELECT * FROM users;
+
+COMMIT;

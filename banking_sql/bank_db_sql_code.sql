@@ -22,7 +22,8 @@ BEGIN
 END;
 /
 
-CREATE OR REPLACE PROCEDURE create_new_user (username VARCHAR2, password VARCHAR2, firstname VARCHAR2, lastname VARCHAR2)
+CREATE OR REPLACE PROCEDURE create_new_user 
+(username VARCHAR2, password VARCHAR2, firstname VARCHAR2, lastname VARCHAR2)
 AS
     seq INT;
 BEGIN

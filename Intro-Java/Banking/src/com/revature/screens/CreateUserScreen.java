@@ -2,10 +2,10 @@ package com.revature.screens;
 
 import java.util.List;
 
-import com.revature.dao.UserDao;
+import com.revature.dao.UserDaoImpl;
 import com.revature.interfaces.Screen;
 import com.revature.iohandler.IOHandler;
-import com.revature.iohandler.ValidationTool;
+import com.revature.iohandler.Service;
 import com.revature.pojos.User;
 
 public class CreateUserScreen implements Screen {
@@ -13,8 +13,8 @@ public class CreateUserScreen implements Screen {
 	@Override
 	public Screen start() {
 		User user = IOHandler.displayCreateUserScreen();
-		UserDao udao = new UserDao();
-		ValidationTool vt = new ValidationTool();
+		UserDaoImpl udao = new UserDaoImpl();
+		Service vt = new Service();
 		List<User> listOfUsers = udao.getAllUsers();
 		if(!vt.containsNewUser(user, listOfUsers)) {
 			int rowsAffected = udao.insertUser(user);

@@ -9,7 +9,7 @@ import java.util.List;
 import com.revature.pojos.User;
 import com.revature.singletons.LoggedUser;
 
-public class ValidationTool {
+public class Service {
 	private static final String URL = "jdbc:oracle:thin:@marcin-salamon-oracle.ch2v7k2we1qt.us-east-2.rds.amazonaws.com:1521:ORCL";
 	private static final String USERNAME = "bank_db";
 	private static final String PASSWORD = "p4ssw0rd";
@@ -39,5 +39,14 @@ public class ValidationTool {
 		}
 		return false;
 		
+	}
+	
+	public double round(double value, int places) {
+	    if (places < 0) throw new IllegalArgumentException();
+
+	    long factor = (long) Math.pow(10, places);
+	    value = value * factor;
+	    long tmp = Math.round(value);
+	    return (double) tmp / factor;
 	}
 }
