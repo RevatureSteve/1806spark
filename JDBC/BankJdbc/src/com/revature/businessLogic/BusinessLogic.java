@@ -44,7 +44,7 @@ public class BusinessLogic {
 		Users user = Users.getCurrentUser();
 		
 		if (txAmount < 0) {
-			System.out.println("No negatives numbers");
+			//System.out.println("IVALID INPUT, NO NEGATIVE NUMBER");
 			return false;
 		} else {
 			Dao.depositIntoBank(txAmount, user.getUserId() );
@@ -62,7 +62,7 @@ public class BusinessLogic {
 			Dao.withdrawFromBank(txAmount, user.getUserId());
 			return false;
 		} else {
-			System.out.println("not enough funds");
+			System.out.println("OVERDRAFT");
 			return true;
 		}
 	}	

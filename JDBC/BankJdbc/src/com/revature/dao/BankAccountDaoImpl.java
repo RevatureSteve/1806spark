@@ -75,14 +75,15 @@ public class BankAccountDaoImpl implements MainDao{
 		public void depositIntoBank(double txAmount, int userId) {
 			
 			try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+				conn.setAutoCommit(false);
 				String sql = "{call deposit (?, ?)}";
 				CallableStatement cs = conn.prepareCall(sql);
 				cs.setDouble(1, txAmount);
 				cs.setInt(2, userId);
-				//int rowsAffected = cs.executeUpdate();
-				//System.out.println("rows affected" + rowsAffected);
+				int rowsAffected = cs.executeUpdate();
+				//System.out.println("rows affected");
 				BankAccount.deposit(txAmount);
-				//conn.commit();
+				conn.commit();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -95,7 +96,7 @@ public class BankAccountDaoImpl implements MainDao{
 				CallableStatement cs = conn.prepareCall(sql);
 				cs.setDouble(1, txAmount);
 				cs.setInt(2, userId);
-				//int rowsAffected = cs.executeUpdate();
+				int rowsAffected = cs.executeUpdate();
 				//System.out.println("rows affected" + rowsAffected);
 				BankAccount.withdraw(txAmount);
 				//conn.commit();

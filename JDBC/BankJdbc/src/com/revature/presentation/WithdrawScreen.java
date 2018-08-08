@@ -17,7 +17,7 @@ public class WithdrawScreen implements Screen {
 		if (!BusinessLogic.validWithdraw(txAmount)) {
 			return new UsersMenuScreen();
 		} else {
-			System.out.println("please enter positive number");
+			System.out.println("WITHDRAW INPUT EXCEEDS CURRENT BALANCE");
 			return this;
 		}
 		

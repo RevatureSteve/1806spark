@@ -114,7 +114,7 @@ IS
 BEGIN
     UPDATE bank_account
     SET balance = (balance - withdrawl)
-    WHERE account_id = account_number;
+    WHERE account_number = account_id;
     
     INSERT INTO bank_tx
     (tx_timestamp, tx_amt, tx_type_id, account_number)
@@ -123,11 +123,11 @@ BEGIN
 END;
 /
 
-
 select * from users;
 select * from bank_tx_type;
 select * from bank_account;
 select * from bank_tx order by tx_timestamp desc;
+
 COMMIT;
 
 
