@@ -169,3 +169,35 @@ BEGIN
 END;
 /
 commit;
+
+INSERT INTO bank_tx_type VALUES(1,'Deposit');
+INSERT INTO bank_tx_type VALUES(2,'withdrawal');
+
+CREATE OR REPLACE TRIGGER txId_sequence_trigger BEFORE INSERT ON bank_tx FOR EACH ROW
+BEGIN
+  IF :new.tx_id IS NULL THEN
+    SELECT theUserId_Sequence.nextval INTO :new.tx_id FROM DUAL;
+    
+  END IF;
+END;
+/
+
+
+
+INSERT INTO bank_tx(tx_amt,tx_type_id,account_number) VALUES(5,1,1831);
+SELECT * FROM bank_tx;
+SELECT * FROM bank_tx_TYPE;
+
+
+
+commit;
+
+CREATE OR REPLACE TRIGGER timestamp_trigger BEFORE INSERT ON bank_tx FOR EACH ROW
+BEGIN
+  IF :new.tx_timestamp IS NULL THEN
+  
+    :new.tx_timestamp:=CURRENT_TIMESTAMP;
+    
+  END IF;
+END;
+/

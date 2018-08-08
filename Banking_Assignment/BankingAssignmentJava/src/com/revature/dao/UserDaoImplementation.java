@@ -1,18 +1,22 @@
 package com.revature.dao;
 
 import java.sql.CallableStatement;
+
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.sql.Timestamp;
 import java.sql.Types;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
 import com.revature.abstractClasses.UserDao;
 import com.revature.concreteClasses.BankAccount;
+import com.revature.concreteClasses.Transaction;
 import com.revature.concreteClasses.User;
 import com.revature.exceptions.UserAlreadyExistsException;
 
@@ -191,9 +195,95 @@ public class UserDaoImplementation implements UserDao {
 		
 	}
 	
+	@Override
+	public int txDeposit(int id,int amount) {
+		BankAccount account = null;
+		int rowsAffected = 0;
+		try(Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD)) {
+			connection.setAutoCommit(false);
+			String sql = "SELECT * FROM bank_account WHERE users_id = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				account = new BankAccount(rs.getInt(1),rs.getInt(2),rs.getInt(3));
+			}
+			int accountNumber = account.getAccountNumber();
+			String sql2 = "INSERT INTO bank_tx(tx_amt,tx_type_id,account_number) VALUES(?,?,?)";
+			PreparedStatement ps2 = connection.prepareStatement(sql2);
+			ps2.setInt(1, amount);
+			ps2.setInt(2, 1);
+			ps2.setInt(3, accountNumber);
+			rowsAffected = ps2.executeUpdate();
+			
+			connection.commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rowsAffected;
+	}
 	
+	@Override
+	public int txWithdraw(int id,int amount) {
+		BankAccount account = null;
+		int rowsAffected = 0;
+		try(Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD)) {
+			connection.setAutoCommit(false);
+			String sql = "SELECT * FROM bank_account WHERE users_id = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				account = new BankAccount(rs.getInt(1),rs.getInt(2),rs.getInt(3));
+			}
+			int accountNumber = account.getAccountNumber();
+			String sql2 = "INSERT INTO bank_tx(tx_amt,tx_type_id,account_number) VALUES(?,?,?)";
+			PreparedStatement ps2 = connection.prepareStatement(sql2);
+			ps2.setInt(1, amount);
+			ps2.setInt(2, 2);
+			ps2.setInt(3, accountNumber);
+			rowsAffected = ps2.executeUpdate();
+			
+			connection.commit();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rowsAffected;
+	}
 	
+	@Override
+	public List<Transaction> viewTransaction(int id) {
+		List<Transaction> userTxs = new ArrayList<>();
+		BankAccount account = null;
+		int rowsAffected = 0;
+		try(Connection connection = DriverManager.getConnection(URL,USERNAME,PASSWORD)) {
+			connection.setAutoCommit(false);
+			String sql = "SELECT * FROM bank_account WHERE users_id = ?";
+			PreparedStatement ps = connection.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			if (rs.next()) {
+				account = new BankAccount(rs.getInt(1),rs.getInt(2),rs.getInt(3));
+			}
+			int accountNumber = account.getAccountNumber();
+			String sql2 = "SELECT * FROM bank_tx WHERE account_Number= ?";
+			PreparedStatement ps2 = connection.prepareStatement(sql2);
+			ps2.setInt(1, accountNumber);
+			ResultSet resultSet = ps2.executeQuery();
+			while (resultSet.next()) {
+				Transaction tx = new Transaction(resultSet.getString(2), resultSet.getInt(3), resultSet.getInt(5),resultSet.getInt(4));
+				userTxs.add(tx);
+			}
+			}
+		catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return userTxs;
 	
 	
 
+}
 }

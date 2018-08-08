@@ -230,7 +230,7 @@ public class PresentationLogic {
 	
 	public static void failWithdrawMessage() {
 		System.out.println("\t\t\t\t\t\tOops... We encountered a problem when trying to withdraw funds from your account");
-		System.out.println("\t\t\t\t\t\t\t\t\t\tInsufficient funds, cannot have a negative balance :(");
+		System.err.println("\t\t\t\t\t\t\t\tInsufficient funds, cannot have a negative balance :(");
 	}
 	
 }

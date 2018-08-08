@@ -1,9 +1,11 @@
 package com.revature.driver;
 
+import java.util.List;
 import java.util.Scanner;
 
 import com.revature.abstractClasses.UserDao;
 import com.revature.concreteClasses.BankAccount;
+import com.revature.concreteClasses.Transaction;
 import com.revature.concreteClasses.User;
 import com.revature.dao.UserDaoImplementation;
 import com.revature.presentation.PresentationLogic;
@@ -41,6 +43,7 @@ public class Driver {
 											else {
 											PresentationLogic.failDepositMessage();
 											}
+										x.txDeposit(me.getUserID(), depositAmount);
 									break;
 									case 3:
 										int withdrawalAmount = PresentationLogic.withdrawScreen();
@@ -51,12 +54,19 @@ public class Driver {
 										else {
 										PresentationLogic.failWithdrawMessage();
 										}
+										x.txWithdraw(me.getUserID(), withdrawalAmount);
 									break;	
 									case 4:
 										
-										System.out.println("view recent?");
-										
-										
+										List<Transaction> recent =x.viewTransaction(me.getUserID());
+										for (Transaction view : recent) {
+											if(view.getTx_type_id()==2) {
+											 System.out.println("\n\t\t\t\t\t\tTransaction (Withdrawal): " + view.getTx_timestamp() + " -$" + view.getTx_amount());
+											}
+											else {
+												System.out.println("\n\t\t\t\t\t\tTransaction (Deposit): " + view.getTx_timestamp() + " $" + view.getTx_amount());
+											}
+											}
 										
 									break;	
 									case 5:
