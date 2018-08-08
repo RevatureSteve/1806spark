@@ -70,8 +70,8 @@ public class AccountDaoImpl implements Dao{
 			rowsAffected = cs.executeUpdate();
 			
 		} catch (SQLException e) {
-			System.err.println("Username is already taken!");
-			
+			//e.printStackTrace();
+			System.err.println("Create new user failed!");
 		}
 		return rowsAffected;
 	}

@@ -58,9 +58,9 @@ public class TransactionDaoImpl implements Dao {
 	@Override
 	public List<BankTrans> getTransactions(int user_id) {
 		List<BankTrans> usersBankTransactions = new ArrayList<>();
-		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+		try (Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
 			String sql = "SELECT * FROM bank_tx WHERE account_number = ?";
-			PreparedStatement ps = conn.prepareStatement(sql);
+			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, user_id);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {

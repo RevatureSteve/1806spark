@@ -74,3 +74,4 @@ INSERT INTO task(u_id, t_name, ts_id) VALUES( 60, 'write a short story', 2);
 INSERT INTO task(u_id, t_name, ts_id) VALUES( 60, 'Read Herry Potter', 1);
 
 
+COMMIT;

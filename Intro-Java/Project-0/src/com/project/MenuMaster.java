@@ -77,24 +77,16 @@ public class MenuMaster implements HomeScreen{
 		String lname = scan.nextLine();
 		if(Logic.userInDb(username, password)) {
 			System.err.println("Username is taken...");
-			try {
-				TimeUnit.SECONDS.sleep(2);
+			
 				newAccount();
-			} catch (InterruptedException e) {
-				Login();
-			}
+		
 			
 		}else {
-			try {
 				AccountDaoImpl.newAcc(username, password, fname, lname);
 				System.out.println("Account created!");
 				Login();
-			} catch (Exception e) {
-				System.err.println("Username taken!");
-				Start();
-			}
+		
 			
-			Start();
 		}
 
 	}
@@ -119,10 +111,10 @@ public class MenuMaster implements HomeScreen{
 	public HomeScreen Valid(String user) {
 		bal = AccountDaoImpl.getBal(uId);
 		System.out.println("Welcome back " + user);
-		System.out.println("Tpye 'bal' to see your balance.");
-		System.out.println("Tpye 'depo' to deposit.");
-		System.out.println("Tpye 'with' to withdraw.");
-		System.out.println("Tpye 'history' to view your transaction history.");
+		System.out.println("Type 'bal' to see your balance.");
+		System.out.println("Type 'depo' to deposit.");
+		System.out.println("Type 'with' to withdraw.");
+		System.out.println("Type 'history' to view your transaction history.");
 		System.out.println("Type 'exit' to logout...");
 		String input = scan.nextLine();
 		switch (input) {
