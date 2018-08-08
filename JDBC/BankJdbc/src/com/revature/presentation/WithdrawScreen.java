@@ -11,7 +11,7 @@ public class WithdrawScreen implements Screen {
 	public Screen Start() {
 		
 		Scanner scan = new Scanner(System.in);
-		System.out.println("how much do want to enter");
+		System.out.println("HOW MUCH WOULD YOU LIKE TO WITHDRAW?");
 		Double txAmount = scan.nextDouble();
 		
 		if (!BusinessLogic.validWithdraw(txAmount)) {

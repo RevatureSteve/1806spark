@@ -79,9 +79,10 @@ public class BankAccountDaoImpl implements MainDao{
 				CallableStatement cs = conn.prepareCall(sql);
 				cs.setDouble(1, txAmount);
 				cs.setInt(2, userId);
-				int rowsAffected = cs.executeUpdate();
-				System.out.println("rows affected" + rowsAffected);
+				//int rowsAffected = cs.executeUpdate();
+				//System.out.println("rows affected" + rowsAffected);
 				BankAccount.deposit(txAmount);
+				//conn.commit();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}
@@ -94,9 +95,10 @@ public class BankAccountDaoImpl implements MainDao{
 				CallableStatement cs = conn.prepareCall(sql);
 				cs.setDouble(1, txAmount);
 				cs.setInt(2, userId);
-				int rowsAffected = cs.executeUpdate();
-				System.out.println("rows affected" + rowsAffected);
+				//int rowsAffected = cs.executeUpdate();
+				//System.out.println("rows affected" + rowsAffected);
 				BankAccount.withdraw(txAmount);
+				//conn.commit();
 			} catch (SQLException e) {
 				e.printStackTrace();
 			}

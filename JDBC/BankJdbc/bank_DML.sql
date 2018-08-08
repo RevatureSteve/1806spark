@@ -95,14 +95,18 @@ BEGIN
 END;
 /
 
+
+insert into users (users_id,username,password,fname,lname) values(5,'dan','van','Daniel','Sidhu');
+insert into bank_account (account_number,balance,users_id) values (5,0,5);
+select * from bank_account;
+select * from users;
+
+commit;
 BEGIN
     deposit(17, 24);
 END;
 /
-select * from users;
-select * from bank_tx_type;
-select * from bank_account;
-select * from bank_tx;
+
 --This is my withdrawl procedure
 --{deposit (?,?)} for java
 CREATE OR REPLACE PROCEDURE withdrawl(withdrawl IN INT, account_id IN INT)
@@ -119,4 +123,17 @@ BEGIN
 END;
 /
 
+
+select * from users;
+select * from bank_tx_type;
+select * from bank_account;
+select * from bank_tx order by tx_timestamp desc;
 COMMIT;
+
+
+
+
+
+
+
+

@@ -33,12 +33,14 @@ public class UsersMenuScreen implements Screen {
 	
 	Scanner scan = new Scanner(System.in);
 	
-	System.out.println("Welcome user");
-	System.out.println("enter 1 to view balance");
-	System.out.println("enter 2 to make a deposit");
-	System.out.println("enter 3 to make a withdrawl");
-	System.out.println("enter 4 to view transaction history");
-	System.out.println("enter 5 to return to the Main Menu");
+	System.out.println("ROBOCO INDUSTRIES UNIFIED OPERATING BANKING SYSTEM");
+	System.out.println("COPYRIGHT 2075 - 2077 ROBOCO INDUSTRIES");
+	System.out.println("-SERVER 6-\n");
+	System.out.println("ENTER 1 TO VIEW BALANCE");
+	System.out.println("ENTER 2 TO MAKE A DEPOSIT");
+	System.out.println("ENTER 3 TO MAKE A WITHDRAW ");
+	//stem.out.println("enter 4 to view transaction history");
+	System.out.println("ENTER 5 TO EXIT AND LOGOUT\n\n\n\n\n\n\n\n\n\n");
 	
 	int input = scan.nextInt();
 	BankAccountDaoImpl account = new BankAccountDaoImpl();//create BankAccountDaoImpl object to use the method
@@ -49,7 +51,7 @@ public class UsersMenuScreen implements Screen {
 		currentUser = account.getUserByUserName(username);
 		BankAccountDaoImpl balance = new BankAccountDaoImpl(); 
 		BankAccount x = BankAccount.getCurrentAccount();//we use the "method.get" to pull the users bankaccount
-		System.out.println("balance is: " + x.getBalance());//display balance
+		System.out.println("CURRENT BALANCE IS: " + x.getBalance() + " CAPS");//display balance
 		
 		return this;
 	case 2:
@@ -64,7 +66,7 @@ public class UsersMenuScreen implements Screen {
 		System.out.println("look at your mistakes");
 		break;
 	case 5:
-		System.out.println("log out");
+		System.out.println("YOU HAVE LOGGED OUT");
 		System.exit(1);
 	default:
 		break;

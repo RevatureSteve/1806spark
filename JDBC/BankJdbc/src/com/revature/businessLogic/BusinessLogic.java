@@ -48,7 +48,7 @@ public class BusinessLogic {
 			return false;
 		} else {
 			Dao.depositIntoBank(txAmount, user.getUserId() );
-			System.out.println("deposit successful");
+			System.out.println("DEPOSIT SUCCESSFUL");
 			return true;
 		}
 	}	
@@ -58,7 +58,7 @@ public class BusinessLogic {
 		Users user = Users.getCurrentUser();
 		
 		if (txAmount <= BankAccount.getCurrentAccount().getBalance()) {
-			System.out.println("withdraw successful");
+			System.out.println("WITHDRAW SUCCESSFUL");
 			Dao.withdrawFromBank(txAmount, user.getUserId());
 			return false;
 		} else {

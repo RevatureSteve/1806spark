@@ -15,17 +15,16 @@ public class LoginScreen implements Screen {
 	@Override
 	public Screen Start() {
 		Scanner scan = new Scanner(System.in);
-		System.out.println("the login page");
-		System.out.println("enter username");
+		System.out.println("ENTER USERNAME");
 		String userName = scan.nextLine();
-		System.out.println("enter password");
+		System.out.println("ENTER PASSWORD");
 		String password = scan.nextLine();
 		
 		if(BusinessLogic.userExsists(userName, password)) {
 			if(BusinessLogic.getUserAccount(Users.getCurrentUser().getUserId()))
 			return new UsersMenuScreen(userName).Start();
 		}
-		System.out.println("The Login has Failed");
+		System.out.println("LOGIN HAS FAILED");
 		return this;
 	}
 
