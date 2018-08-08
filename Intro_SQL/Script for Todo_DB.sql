@@ -70,9 +70,7 @@ INSERT INTO task(u_id, t_name, ts_id) VALUES(60, 'read harry potter', 1);
 
 SELECT * FROM task;
 
-
-
-
+COMMIT;
 
 
 

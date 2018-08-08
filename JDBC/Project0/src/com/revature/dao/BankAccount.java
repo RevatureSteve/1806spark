@@ -7,8 +7,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.DecimalFormat;
-import java.util.InputMismatchException;
-
 import com.revature.pogo.Account;
 import com.revature.pogo.Users;
 
@@ -19,11 +17,11 @@ public class BankAccount implements BankDao {
 	private static final String URL = "jdbc:oracle:thin:@octowolf.crtsillkaxup.us-east-2.rds.amazonaws.com:1521:ORCL";
 
 	// CEATE
-	
+
 	// READ
 	@Override
 	public Users confirmUser(String userName, String passWord) {
-		
+
 		Users user = null;
 		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
 			String sql = "SELECT * FROM users WHERE username = ? AND password = ?";
@@ -32,23 +30,21 @@ public class BankAccount implements BankDao {
 			ps.setString(2, passWord);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				user = new Users(rs.getInt(1), rs.getString(2), rs.getString(3), 
-						rs.getString(4), rs.getString(5));
+				user = new Users(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
 			}
 			System.out.println("Welcome back, " + user.getFirstname() + " " + user.getLastname() + "\n");
 		} catch (SQLException e) {
 			System.out.println("Sorry but that account is not found in our records.\n");
 			e.printStackTrace();
 		} catch (NullPointerException e) {
-			System.out.println("Username or Password is incorrect.\n");	
+			System.out.println("Username or Password is incorrect.\n");
 		}
 		return user;
 	}
-	
-	@Override
-	public void getBalance(int usersId) {
 
-		DecimalFormat df = new DecimalFormat("#,###.00");
+	@Override
+	public Account getBalance(int usersId) {
+
 		Account account = null;
 		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
 			String sql = "SELECT * FROM bank_account WHERE users_id = " + usersId;
@@ -57,11 +53,10 @@ public class BankAccount implements BankDao {
 			if (rs.next()) {
 				account = new Account(rs.getInt(1), rs.getDouble(2), rs.getInt(3));
 			}
-			System.out.println("Available balance is $" + df.format(account.getBalance()) + "\n");
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-
+		return account;
 	}
 
 	// UPDATE
@@ -83,8 +78,7 @@ public class BankAccount implements BankDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} 
-
+		}
 	}
 
 	@Override
@@ -105,8 +99,7 @@ public class BankAccount implements BankDao {
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} 
-
+		}
 	}
 
 	// DELETE

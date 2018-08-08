@@ -50,6 +50,22 @@ INSERT INTO bank_account VALUES(1, 300.50, 1);
 INSERT INTO bank_account VALUES(2, 26540000.66, 2);
 INSERT INTO bank_account VALUES(3, 35650000.33, 3);
 
+--Sequences
+CREATE SEQUENCE inc_one
+START WITH 4
+INCREMENT BY 1;
+
+--Trigger for new user
+CREATE OR REPLACE TRIGGER new_user
+BEFORE INSERT ON users
+FOR EACH ROW
+BEGIN
+    IF :new.users_id IS NULL THEN
+        SELECT inc_one.nextval INTO :new.users_id FROM DUAL;
+    END IF;
+END;
+/
+
 --Testing
 SELECT * FROM users
 WHERE username = 'Hotshirt' AND password = 'butter';

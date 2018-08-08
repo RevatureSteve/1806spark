@@ -2,14 +2,14 @@ package com.revature.pogo;
 
 import java.io.Serializable;
 
-public class Account implements Serializable{
-	
+public class Account implements Serializable {
+
 	private int accountNumber;
 	private double balance;
 	private int usersId;
-	
-	public Account(){
-		
+
+	public Account() {
+
 	}
 
 	public Account(int accountNumber, double balance, int usersId) {

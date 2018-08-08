@@ -1,5 +1,9 @@
 package com.revature;
 
+import com.revature.domain.User;
+import com.revature.service.AppService;
+import com.revaturedao.UserDaoImpl;
+
 public class Driver {
 	
 	/*
@@ -30,7 +34,22 @@ public class Driver {
 	 */
 	public static void main(String[] args) {
 		System.out.println("testing a maven project");
+		
+		//start implementing some of the use cases
+		//maybe start with login - whats needed? (hardcoded)
+		//Service class for:
+		//	compare usernameInput w/ usernameDB
+		//	compare pwInput w/ usernameDB
+		//UserDao:
+		//	get Username/pw
+		//POJO:
+		//	User: uId, username, pw
+		//  Task: tId, uId, tName, tsLevelId, tsLevel
+		String usernameInput = "steve";
+		String pwInput = "123";
 
+		User validUser = new AppService().login(new User(0, usernameInput, pwInput));
+		System.out.println("Is the user valid: " + validUser);
 	}
 
 }

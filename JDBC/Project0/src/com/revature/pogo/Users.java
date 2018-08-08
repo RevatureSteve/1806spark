@@ -2,16 +2,16 @@ package com.revature.pogo;
 
 import java.io.Serializable;
 
-public class Users implements Serializable{
-	
+public class Users implements Serializable {
+
 	private int usersId;
 	private String username;
 	private String password;
 	private String firstname;
 	private String lastname;
-	
+
 	public Users() {
-	
+
 	}
 
 	public Users(int usersId, String username, String password, String firstname, String lastname) {
@@ -67,6 +67,6 @@ public class Users implements Serializable{
 	public String toString() {
 		return "Users [usersId=" + usersId + ", username=" + username + ", password=" + password + ", firstname="
 				+ firstname + ", lastname=" + lastname + "]";
-	}	
+	}
 
 }
