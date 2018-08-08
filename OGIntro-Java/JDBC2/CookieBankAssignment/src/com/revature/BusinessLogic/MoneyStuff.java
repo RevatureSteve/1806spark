@@ -8,7 +8,7 @@ import com.revature.Exceptions.DontDoThatException;
 import com.revature.pojos.CookieAccount;
 import com.revature.pojos.Cookieuser;
 
-public class MoneyStuff {
+public class MoneyStuff {//Business Logic class, changed name to force learning of code
 
 	public static boolean userPresence(String usename, String pw) {
 		UserDataAccess userdata = new UserDataAccess(); //makes a new DAO
@@ -36,20 +36,20 @@ public class MoneyStuff {
 	}
 	
 
-
+// withdraw from account
 	public static void recieveCookies(int amt) throws DontDoThatException { //the withdrawal function
 		CookieAccount act = CookieAccount.getCurrentAcct();//grabs the users account from the db
 		int bal = act.getBal();// gets the current users balance
 		if(bal - amt >0) { // the users balance must be greater than 0
 			act.setBal((int) (bal - amt));// set the users balance to whatever I take out
 			new CookieAccountDao().update(act);// update the account balance to the finished product
-		}else if (amt > bal) {
-			System.out.println("no, you cant do that");
+		}else { 
+			throw new DontDoThatException();//Overdraft protection
 		}
 			
 		
 	}
-	
+	// make deposits
 	public static void depositCookies(int amt) {
 		CookieAccount act = CookieAccount.getCurrentAcct();//grabs current account
 		int bal = act.getBal();// gets current balance

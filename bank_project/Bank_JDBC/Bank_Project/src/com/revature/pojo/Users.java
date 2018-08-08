@@ -13,6 +13,13 @@ public class Users {
 	
 	public Users() {}
 	
+	public Users(String userName, String password, String firstName, String lastName) {
+		super();
+		this.userName = userName;
+		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
+	}
 	
 	public Users(int userId, String userName, String password, String firstName, String lastName) {
 		super();

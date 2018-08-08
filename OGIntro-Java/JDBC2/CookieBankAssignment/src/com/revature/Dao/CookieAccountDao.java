@@ -27,12 +27,12 @@ public class CookieAccountDao implements DataAccess {
 	@Override
 	public List<Object> read() {//reads all bank accounts
 		List<Object> cookieAccounts = new ArrayList<>(); // makes an empty list
-		try(Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);){
+		try(Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);){//
 			String sql = "SELECT * FROM bank_account";
 			PreparedStatement statement = con.prepareStatement(sql);
-			ResultSet results = statement.executeQuery();
+			ResultSet results = statement.executeQuery();//represents database result set
 			while (results.next()) {
-				CookieAccount account = new CookieAccount(results.getInt(1),results.getInt(2), results.getInt(3));
+				CookieAccount account = new CookieAccount(results.getInt(1),results.getInt(2), results.getInt(3));//create account object with data from database
 				cookieAccounts.add(account);//adds accounts to list 
 			}
 		}catch(SQLException e) {

@@ -1,11 +1,12 @@
 package com.revature.pojo;
 
 import java.sql.Date;
+import java.text.SimpleDateFormat;
 
 public class BankTransaction {
 
 	private int transactionId;
-	private Date transactionTimeStamp;
+	private String transactionTimeStamp;
 	private Double transactionAmt;
 	private String transactionType;
 	private int accountNumber;
@@ -13,12 +14,20 @@ public class BankTransaction {
 	
 	public BankTransaction() {}
 
+	public BankTransaction(Double transactionAmt, String transactionType, int accountNumber) {
+		this.transactionAmt = transactionAmt;
+		this.transactionType = transactionType;
+		this.accountNumber = accountNumber;
+	}
 
 	public BankTransaction(int transactionId, Date transactionTimeStamp, Double transactionAmt, String transactionType,
 			int accountNumber) {
 		super();
+		
+		SimpleDateFormat ft = new SimpleDateFormat ("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+		
 		this.transactionId = transactionId;
-		this.transactionTimeStamp = transactionTimeStamp;
+		this.transactionTimeStamp = ft.format(transactionTimeStamp);
 		this.transactionAmt = transactionAmt;
 		this.transactionType = transactionType;
 		this.accountNumber = accountNumber;
@@ -35,13 +44,14 @@ public class BankTransaction {
 	}
 
 
-	public Date getTransactionTimeStamp() {
+	public String getTransactionTimeStamp() {
 		return transactionTimeStamp;
 	}
 
 
 	public void setTransactionTimeStamp(Date transactionTimeStamp) {
-		this.transactionTimeStamp = transactionTimeStamp;
+		SimpleDateFormat ft = new SimpleDateFormat ("E yyyy.MM.dd 'at' hh:mm:ss a zzz");
+		this.transactionTimeStamp = ft.format(transactionTimeStamp);
 	}
 
 
@@ -77,9 +87,9 @@ public class BankTransaction {
 
 	@Override
 	public String toString() {
-		return "BankTransaction [transactionId=" + transactionId + ", transactionTimeStamp=" + transactionTimeStamp
-				+ ", transactionAmt=" + transactionAmt + ", transactionType=" + transactionType + ", accountNumber="
-				+ accountNumber + "]";
+		return "Transaction Id=" + transactionId + ", TimeStamp=" + transactionTimeStamp
+				+ ", Amount=" + transactionAmt + ", Type=" + transactionType + ", Account Number="
+				+ accountNumber ;
 	}
 	
 	

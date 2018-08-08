@@ -1,5 +1,6 @@
 package com.revature.present;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.revature.buisnesslogic.BuisnessLogic;
@@ -14,7 +15,7 @@ public class MainMenuScreen implements Screen{
 		
 		Users currentUser = Users.getCurrentUser();
 		
-		System.out.println("Welcome Back " + currentUser.getFirstName());
+		System.out.println("\r\n" + "Welcome Back " + currentUser.getFirstName());
 		BuisnessLogic.findAndSetUserAccount(currentUser.getUserId());
 		System.out.println(BankAccount.getCurrentAccount());
 		
@@ -23,9 +24,12 @@ public class MainMenuScreen implements Screen{
 		System.out.println("Please choose one of the following options:");
 		System.out.println("Enter 1 to make a withdrawl");
 		System.out.println("Enter 2 to make a deposit");
-		System.out.println("Enter 3 to logout");
+		System.out.println("Enter 3 to view transactions");
+		System.out.println("Enter 4 to logout");
 		
-		int userInput = scan.nextInt();
+		
+		try {
+			int userInput = scan.nextInt();
 		
 		switch (userInput) {
 			case 1:
@@ -33,8 +37,13 @@ public class MainMenuScreen implements Screen{
 			case 2:
 				return new DepositScreen().start();
 			case 3:
+				return new TransactionScreen().start();
+			case 4:
 				System.out.println("User is logging out...");
-				System.exit(1);
+				return new EnterScreen().start();
+		}
+		} catch (InputMismatchException e) {
+			System.out.println("You have to enter a number!");
 		}
 		
 		

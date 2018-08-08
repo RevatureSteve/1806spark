@@ -11,9 +11,9 @@ import com.revature.domain.User;
 public class UserDaoImpl implements UserDao {
 
 	//what do I need for a JDBC Connection?
-	private final static String USERNAME = "todo_db";
-	private final static String PASSWORD = "p4ssw0rd";
-	private static final String URL = "jdbc:oracle:thin:octocat.ckichuqa168o.us-east-2.rds.amazonaws.com:1521:ORCL";
+	//private final static String USERNAME = "";
+	//private final static String PASSWORD = "";
+	//private static final String URL = "";
 	// and the last thing? Driver
 	
 	@Override

@@ -23,7 +23,8 @@ public class MainMenu implements Screen{
 		System.out.println("Make a selection");
 		System.out.println("Enter 1 to retrieve cookies");
 		System.out.println("Enter 2 to store cookies");
-		System.out.println("Enter 3 to log out");
+		System.out.println("Enter 3 to view user info");
+		System.out.println("Enter 4 to log out");
 		
 		int input = scan.nextInt();
 		
@@ -33,6 +34,8 @@ public class MainMenu implements Screen{
 		case 2:
 			return new CookieDepositScreen().start();
 		case 3:
+			return new ViewUserInfoScreen().start();
+		case 4:
 			System.out.println("Enjoy your cookies!");
 			System.exit(1);
 	

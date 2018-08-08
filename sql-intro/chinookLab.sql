@@ -128,12 +128,10 @@ END;
 
 --3.4 User Defined Table Valued Functions
 --Task – Create a function that returns all employees who are born after 1968.
-SELECT * FROM employee
-WHERE birthdate > TO_DATE ('1968','YYYY');
 
 CREATE OR REPLACE FUNCTION get_employee_after_1968
 RETURN SYS_REFCURSOR
-IS
+AS
     employee_after_1968 SYS_REFCURSOR;
 BEGIN
     OPEN employee_after_1968 FOR
@@ -142,13 +140,6 @@ BEGIN
     RETURN employee_after_1968;
 END;
 /
-
-
-
-
-
-
-
 
 --4.0 Stored Procedures
 --In this section you will be creating and executing stored procedures. You will be creating various types
@@ -383,10 +374,6 @@ WHERE a.reportsto = b.employeeid;
 --not ask trainer.
 
 --Task – Create a .bak file for the Chinook database.
-
-
-
-
 
 
 

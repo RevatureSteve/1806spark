@@ -1,6 +1,7 @@
 package com.revature;
 
-import com.revature.dao.UserDaoImpl;
+import com.revature.domain.User;
+import com.revature.service.AppService;
 
 public class Driver {
 	
@@ -47,9 +48,10 @@ public class Driver {
 		String usernameInput = "steve";
 		String pwInput = "";
 
-	
+		User validUser = new AppService().login(new User(0,usernameInput,pwInput));
+		System.out.println("Is the user valid: " + validUser);
 		
-		System.out.println(new UserDaoImpl().getUserByUsername(usernameInput));
+		
 		//cannot do!.. method chaining is returning a user Object not a userDao object
 		//UserDao userdao= new UserDaoImpl().getByUsername(usernameInput);
 	}
