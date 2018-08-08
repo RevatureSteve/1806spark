@@ -1,0 +1,47 @@
+--Users
+INSERT INTO users
+VALUES
+(1, 'jbay', 'jaybay123', 'James', 'Bay' );
+INSERT INTO users
+VALUES
+(2, 'hlaw', 'hlaw456','Hope', 'Law');
+INSERT INTO users
+VALUES
+(3, 'rspice', 'rspice789', 'Rick', 'Spice');
+commit;
+--Bank Account 
+INSERT INTO bank_account
+VALUES
+(123, 500.00, 1);
+INSERT INTO bank_account
+VALUES
+(456, 450.25, 2);
+
+INSERT INTO bank_account
+VALUES
+(789, 5.20, 3);
+commit;
+
+--Bank Transaction Type
+INSERT INTO bank_ts_type
+VALUES
+(1, 'Withdrawl');
+INSERT INTO bank_ts_type
+VALUES
+(2, 'Deposit');
+
+commit;
+
+select bank_account.balance, bank_account.users_id
+from bank_account
+inner join users
+on bank_account.users_id = users.users_id
+Where bank_account. users_id = 2;
+commit;
+
+--Bank Transactions
+
+SELECT * FROM users;
+SELECT * FROM bank_account;
+SELECT * FROM bank_ts_type;
+SELECT * FROM bank_ts;

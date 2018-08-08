@@ -2,6 +2,7 @@ package com.bank.dao;
 
 import com.bank.pojos.BankAccount;
 import com.bank.pojos.User;
+import com.bank.service.InvalidAmountException;
 
 public interface BankDao {
 	
@@ -14,7 +15,7 @@ public interface BankDao {
 	
 	//UPDATE
 	public void makeDeposit(int deposit);
-	public void makeWitdrawl(int witdrawl);
+	public void makeWitdrawl(int witdrawl) throws InvalidAmountException;
 
 	//DELETE
 }

@@ -13,6 +13,7 @@ import com.bank.pojos.BankAccount;
 import com.bank.pojos.User;
 import com.bank.presentation.Menus;
 import com.bank.service.InputException;
+import com.bank.service.InvalidAmountException;
 
 public class BankDaoImpl implements BankDao {
 	// DB Information.
@@ -47,11 +48,11 @@ public class BankDaoImpl implements BankDao {
 		throw new InputException("Invalid input");
 		
 		} catch (InputException e){
-			System.out.println("Please enter a valid username and passwod");
-			getUserLogin();
+		System.out.println("Please enter a valid username and passwod");
+		getUserLogin();
 			
 		} catch (SQLException e) {
-			System.out.println("Oops, looks like you entered some incorrect information. .");
+			System.out.println("Oops, looks like you entered some incorrect information...");
 		}
 		finally {
 			scan.close();
@@ -98,7 +99,7 @@ public class BankDaoImpl implements BankDao {
 
 	@Override
 	// A user can make a witdrawl.
-	public void makeWitdrawl(int witdrawl) {
+	public void makeWitdrawl(int witdrawl){
 		try(Connection conn = DriverManager.getConnection(URL, D_USERNAME, D_PASSWORD)) {
 			String sql = "{ call make_witdrawl(?) }";
 			CallableStatement cstatement = conn.prepareCall(sql);
@@ -106,8 +107,14 @@ public class BankDaoImpl implements BankDao {
 			int ra = cstatement.executeUpdate();
 			System.out.println(ra);
 			System.out.println("Your withdrawl has been accepted.");
+			if (ra == 0) {
+				throw new InvalidAmountException("Caught");
+			}
+	}catch (InvalidAmountException e) {
+			System.out.println("This transaction is unvailabe at this time");
+			m.mainMenu();
 		} catch (SQLException e) {
-			e.printStackTrace();
+			System.out.println("Oops looks like you don't have enough bingos in your account for this witdrawl.");
 		}
 		
 	}
@@ -126,7 +133,7 @@ public class BankDaoImpl implements BankDao {
 	
 	//A user can log out.
 		public void logout() {
-			System.out.println("Your login session has successfuly ended. Thank you");
+			System.out.println("Your login session has successfuly ended. Thank you for your trust in Bingo Bank!SS");
 			System.exit(0);
 		}
 	
