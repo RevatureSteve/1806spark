@@ -1,0 +1,25 @@
+
+#header{
+    font-size: xx-large;
+    margin-bottom:20 px;
+}
+
+
+#outter{
+    font-family: monspace;
+    background-color: red;
+    font-size: xx-large;
+    font-style: normal;
+    margin: 10px;
+    
+}
+
+#inner{
+    background-color: #43ff3e;
+    margin: 10px;
+}
+
+#innerMost{
+    background-color: #5172ff;
+    margin: 10px;
+}
