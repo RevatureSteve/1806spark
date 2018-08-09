@@ -15,14 +15,24 @@ public class Task {
 	private String taskName;
 	private int taskStatusId;
 	private String taskStatusLevel;
-	public int getTaskId() {
-		return taskId;
-	}
 	
 	//NO-ARGS
 	public Task() {}
 	
+	public Task(int taskId, int userId, String taskName, int taskStatusId, String taskStatusLevel) {
+		super();
+		this.taskId = taskId;
+		this.userId = userId;
+		this.taskName = taskName;
+		this.taskStatusId = taskStatusId;
+		this.taskStatusLevel = taskStatusLevel;
+	}
+
 	//getters n' setters
+	public int getTaskId() {
+		return taskId;
+	}
+	
 	public void setTaskId(int taskId) {
 		this.taskId = taskId;
 	}

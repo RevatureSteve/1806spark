@@ -17,7 +17,7 @@ public class SetConnectionPropertiesUtil {
 	 */
 	
 	
-	public Connection getConnection() throws FileNotFoundException, IOException, SQLException {
+	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException {
 		
 		String username = "";
 		String password = "";
