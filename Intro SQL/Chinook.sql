@@ -340,3 +340,26 @@ ORDER BY name ASC;
 --Task – Perform a self-join on the employee table, joining on the reportsto column.
 SELECT * FROM employee a, employee b
 WHERE a.reportsto = b.reportsto;
+
+--Write a SQL Join statement, joining all the tables in the chinook database
+SELECT * FROM track t
+FULL OUTER JOIN genre g
+ON t.genreid = g.genreid
+FULL OUTER JOIN mediatype m
+ON t.mediatypeid = m.mediatypeid
+FULL OUTER JOIN playlisttrack pt
+ON t.trackid = pt.trackid
+FULL OUTER JOIN playlist p
+ON pt.playlistid = p.playlistid
+FULL OUTER JOIN album a
+ON t.albumid = a.albumid
+FULL OUTER JOIN artist art
+ON a.artistid = art.artistid
+FULL OUTER JOIN invoiceline il
+ON t.trackid = il.trackid
+FULL OUTER JOIN invoice i
+ON il.invoiceid = i.invoiceid
+FULL OUTER JOIN customer c
+ON i.customerid = c.customerid
+FULL OUTER JOIN employee e
+ON c.supportrepid = e.employeeid;
