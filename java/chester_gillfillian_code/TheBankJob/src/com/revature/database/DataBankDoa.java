@@ -125,7 +125,7 @@ public class DataBankDoa implements  Doa{
 					accountSing.setUsersId(rs.getInt(3));		// user id
 				}
 
-				//System.out.println("Available balance is $" + df.format(account.getBalance()) + "\n");
+				
 
 			} catch (SQLException e) {
 
@@ -225,7 +225,6 @@ public class DataBankDoa implements  Doa{
 
 
 
-		// DELETE
 
 
 

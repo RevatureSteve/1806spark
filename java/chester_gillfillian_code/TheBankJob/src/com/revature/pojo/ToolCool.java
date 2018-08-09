@@ -29,7 +29,7 @@ public class ToolCool {
 	public static Users login() {
 
 		Doa bank = new DataBankDoa();
-//  BankDao bank = new BankAccount(); edd old name
+//  
 
 		Users user = null;
 
@@ -103,7 +103,7 @@ try {
 		
 		Users forBank = Users.getInstance();
 		bank.setDepositAmount(account.getAccountNumber(), depositAmount);
-//		bank.getAccountInfo(forBank.getUsersId())
+//		bank.getAccountInfo(forBank.getUsersId()) 
 	} catch (InputMismatchException e){
 		System.out.println("please try again");
 		}

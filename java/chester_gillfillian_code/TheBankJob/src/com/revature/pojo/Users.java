@@ -27,7 +27,7 @@ public class Users implements Serializable {
 		//no-args constructor
 	}
 	
-	public static Users getInstance() { // Users is the return type and getInstance is teh variable
+	public static Users getInstance() { // Users is the return type and getInstance is the variable
 		if(userSingleton == null) {
 			userSingleton = new Users();
 			
