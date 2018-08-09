@@ -1,0 +1,17 @@
+#outer {
+    background-color: red;
+    font-family: monospace;
+    font-size: xx-large;
+    font-style: normal;
+    margin: 10px;    
+}
+
+#inner{
+    background-color: green;
+    margin: 10px; 
+}
+
+#innerMost{
+    background-color: blue;
+    margin: 10px; 
+}
