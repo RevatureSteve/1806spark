@@ -327,3 +327,27 @@ WHERE a.reportsto = b.reportsto;
 --will also restore the database. Research or try random things then communicate with batchmates, do
 --not ask trainer.
 --Task – Create a .bak file for the Chinook database.
+
+--Task - Write a SQL Join statement joining all the tables
+SELECT * FROM track tr
+INNER JOIN album al
+ON tr.albumid = al.albumid
+INNER JOIN artist ar
+ON al.artistid = ar.artistid
+INNER JOIN playlisttrack pl
+ON tr.trackid = pl.trackid
+INNER JOIN playlist plli
+ON pl.playlistid = plli.playlistid
+INNER JOIN genre ge
+ON tr.genreid = ge.genreid
+INNER JOIN mediatype me
+ON tr.mediatypeid = me.mediatypeid
+INNER JOIN invoiceline inv
+ON tr.trackid = inv.trackid
+INNER JOIN invoice invo
+ON inv.invoiceid = invo.invoiceid
+INNER JOIN customer cu
+ON invo.customerid = cu.customerid
+INNER JOIN employee emp
+ON cu.supportrepid = emp.employeeid;
+

@@ -30,17 +30,17 @@ public class Driver {
 				try {
 					Console.deposit(user.getUsersId());
 				} catch (WrongType e) {
-					System.out.println("Invalid Format.\nPlease use a positive number with correct format *#.## or #*\n");
+					System.err.println("Invalid Format.\nPlease use a positive number with correct format *#.## or #*\n");
 				}
 				break;
 			case 2:
 				try {
 					Console.withdraw(user.getUsersId());
 				} catch (WrongType e) {
-					System.out.println("Invalid Format.\nPlease use a positive number with correct format *#.## or #*\n");
+					System.err.println("Invalid Format.\nPlease use a positive number with correct format *#.## or #*\n");
 				} catch (NoOverdraft e) {
 					Account balance = bank.getBalance(user.getUsersId());
-					System.out.println("Withdraw amount is to high.  Available balance is $" + balance.getBalance() + "\n");
+					System.err.println("Withdraw amount is to high.  Available balance is $" + balance.getBalance() + "\n");
 				}
 				break;
 			case 3:
@@ -52,7 +52,7 @@ public class Driver {
 				System.exit(1);
 				break;
 			default:
-				System.out.println("Sorry that is not a valid number from the options given.");
+				System.out.println("Sorry that is not a valid number from the options given.\n");
 				break;
 			}
 		}

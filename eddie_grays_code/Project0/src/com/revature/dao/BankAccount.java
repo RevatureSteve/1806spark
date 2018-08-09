@@ -34,10 +34,10 @@ public class BankAccount implements BankDao {
 			}
 			System.out.println("Welcome back, " + user.getFirstname() + " " + user.getLastname() + "\n");
 		} catch (SQLException e) {
-			System.out.println("Sorry but that account is not found in our records.\n");
+			System.err.println("Sorry but that account is not found in our records.\n");
 			e.printStackTrace();
 		} catch (NullPointerException e) {
-			System.out.println("Username or Password is incorrect.\n");
+			System.err.println("Username or Password is incorrect.\n");
 		}
 		return user;
 	}
@@ -74,7 +74,7 @@ public class BankAccount implements BankDao {
 			if (rowAffected == 1) {
 				System.out.println("$" + df.format(depositAmount) + " has been deposited to your account.\n");
 			} else {
-				System.out.println("The transaction could not be completed at this time\n");
+				System.err.println("The transaction could not be completed at this time\n");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -95,7 +95,7 @@ public class BankAccount implements BankDao {
 			if (rowAffected == 1) {
 				System.out.println("$" + df.format(withdrawAmount) + " has been withdrawn from your account.\n");
 			} else {
-				System.out.println("The transaction could not be completed at this time\n");
+				System.err.println("The transaction could not be completed at this time\n");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
