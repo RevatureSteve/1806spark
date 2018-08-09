@@ -4,6 +4,7 @@
 DROP TABLE users;
 DROP TABLE task;
 DROP TABLE task_status;
+TRUNCATE TABLE task;
 
 CREATE TABLE users(
     u_id INT,
@@ -87,7 +88,7 @@ INSERT INTO task(u_id, t_name, ts_id) VALUES(60, 'go on a walk', 2);
 INSERT INTO task(u_id, t_name, ts_id) VALUES(60, 'read harry potter', 1);
 
 select * from task;
-
+commit;
 
 
 

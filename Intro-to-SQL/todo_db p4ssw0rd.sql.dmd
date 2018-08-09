@@ -1,0 +1,13 @@
+<?xml version = '1.0' encoding = 'UTF-8'?>
+<OSDM_Design class="oracle.dbtools.crest.model.design.Design" name="todo_db p4ssw0rd.sql" id="580A6B1A-359C-ED7E-C98F-B87C40D405F5" version="3.5">
+<createdBy>lolitsrhys</createdBy>
+<createdTime>2018-08-07 14:55:46 UTC</createdTime>
+<ownerDesignName>todo_db p4ssw0rd.sql</ownerDesignName>
+<capitalNames>false</capitalNames>
+<designId>580A6B1A-359C-ED7E-C98F-B87C40D405F5</designId>
+<usedDesignStorageDescriptors>
+<designDescr class="oracle.dbtools.crest.model.design.Design$DesignStorageDesc" id="4E590181-36BB-0903-7C55-703B0BFF6C4C">
+<designStoragePath>D:\</designStoragePath>
+</designDescr>
+</usedDesignStorageDescriptors>
+</OSDM_Design>

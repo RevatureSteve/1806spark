@@ -355,3 +355,26 @@ ORDER BY a.name ASC;
 SELECT a.*, b.firstname AS reporting_to_name
 FROM employee a, employee b
 WHERE a.reportsto = b.employeeid;
+
+
+-- Join all tables in chinook
+
+SELECT * 
+FROM customer c
+INNER JOIN invoice i ON c.customerid = i.customerid
+INNER JOIN invoiceline l ON l.invoiceid = i.invoiceid
+INNER JOIN employee e ON e.employeeid = c.supportrepid
+INNER JOIN track t ON t.trackid = l.trackid
+INNER JOIN album a ON a.albumid = t.albumid
+INNER JOIN mediatype m ON m.mediatypeid = t.mediatypeid
+INNER JOIN artist at ON at.artistid = a.artistid
+INNER JOIN genre g ON g.genreid = t.genreid
+INNER JOIN playlisttrack pt ON pt.trackid = t.trackid
+INNER JOIN playlist p ON pt.playlistid = p.playlistid;
+
+
+
+SELECT *
+FROM playlisttrack pt
+
+
