@@ -1,0 +1,23 @@
+
+#header {
+font-size: xx-large;
+
+}
+
+#Outter {
+    background-color: red;
+    font-family: monospace;
+    font-size: xx-large;
+    font-style: normal;
+    margin: 10px;
+}
+
+#Inner{
+    background-color: #43ff3e;
+    margin: 10px;
+}
+
+#Innermost {
+    background-color: #5172ff;
+    margin: 10px;
+}

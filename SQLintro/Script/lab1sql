@@ -1,0 +1,54 @@
+SELECT * FROM EMPLOYEE;
+--2.1
+--SELECT lastname
+--FROM EMPLOYEE,
+--WHERE lastname = 'King';
+
+--SELECT FROM EMPLOYEE
+--WHERE first_name = 'Michael'
+--and REPORTSTO is NULL;
+
+SELECT * FROM ALBUM
+ORDER BY TITLE DESC;
+
+SELECT firstname FROM CUSTOMER
+ORDER BY CITY ASC;
+
+INSERT INTO Genre
+VALUES(26, 'Soul');
+
+INSERT INTO Genre
+VALUES(27, 'Funk');
+
+INSERT INTO Employee
+VALUES(9, 'Myers', 'David', 'IT Staff', 3, TO_DATE('19951130','YYYYMMDD'), TO_DATE('20180801','YYYYMMDD'),'23 Chicken St', 'Houston', 'TX', 'USA', '55555', '+1 234-434-5201', '+1 434-532-6985', 'davidm@att.net');
+
+INSERT INTO Employee
+VALUES(10, 'Hightower', 'Zay', 'IT Staff', 3, TO_DATE('19970716','YYYYMMDD'), TO_DATE('20180801','YYYYMMDD'),'24 Chicken St', 'Houston', 'TX', 'USA', '55555', '+1 234-455-8241', '+1 434-532-6985', 'zayh@att.net');
+
+INSERT INTO Customer
+VALUES(60, 'Tom', 'Greene', 'SB snacks','25 Chicken St', 'Houston', 'TX', 'USA', '55555', '+1 234-465-8221', '+1 434-532-6985', 'tomg@att.net', 3);
+
+INSERT INTO Customer
+VALUES(61, 'Sam', 'Greene', 'Lays snacks', '26 Chicken St', 'Houston', 'TX', 'USA', '55555', '+1 832-765-9431', '+1 435-552-6382', 'samg@att.net', 3);
+
+UPDATE Customer
+SET firstname = 'Robert', lastname = 'Walter'
+WHERE customerid = 34;
+
+UPDATE Artist
+SET name = 'CCR'
+WHERE artistid = 76;
+
+SELECT billingaddress 
+FROM invoice
+WHERE billingaddress = 'T%';
+
+SELECT total
+FROM invoice
+WHERE total BETWEEN 15 AND 50;
+--2.7
+--DELETE FROM customer
+--Where customerid = 34;
+
+
