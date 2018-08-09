@@ -1,15 +1,6 @@
 /*
     Loops in Javascript
 */
-<<<<<<< HEAD
-console.log('loop.js is ready for work!');
-var names = ['mary', 'tom', 'anne', 'bobbert'];
-
-function printNumberPlus1(num){
-    console.log(num++);
-    console.log(num);
-    console.log(++num);
-=======
 console.log('loop.js ready for work!');
 
 
@@ -18,19 +9,9 @@ function printNumberPlus1(num){
     console.log(num); //++ means add 1
 
     console.log(++num); //++num pre
->>>>>>> 150ae089dc796e1fd85d51541da637eb19e228a4
 }
                         // 5
 function printNumberMinus1(num){
-<<<<<<< HEAD
-    console.log(num--);
-    console.log(num);
-    console.log(--num);
-}
-
-function printArrayLength(arr){
-    console.log("Array length is: " + arr.length);
-=======
     console.log(num--); // 5 printed
     console.log(num); // 4 printed
     console.log(num--); // 4 
@@ -40,16 +21,10 @@ function printArrayLength(arr){
 
 function printArrayLength(arr){
     console.log("The length of your array is: " + arr.length);
->>>>>>> 150ae089dc796e1fd85d51541da637eb19e228a4
 }
 var names = ['mary', 'tom', 'anne', 'bobbert']; // length? 4
 function printPrettyArrays(arr){
     /*
-<<<<<<< HEAD
-        print each element of an array
-        include the index and value
-    */
-=======
         Print each element of an array
         Include the index and value
     */
@@ -64,7 +39,6 @@ function printPrettyArrays(arr){
 
    // how can I return the last element
    return arr[arr.length-1];
->>>>>>> 150ae089dc796e1fd85d51541da637eb19e228a4
 
    for (var i = 0; i < arr.length; i++){
     console.log("The index is: " + i + " array element " + arr[i]);
@@ -79,16 +53,6 @@ function printPrettyArrays(arr){
 
                                         // "tom"
 function removeElementFromArray(arr, element){
-<<<<<<< HEAD
-    for(var i = 0; i < arr.length; i++){
-        if(element == arr[i]){
-            arr.splice(i,1);
-            return true; // code to stop looking
-        }
-    }
-
-    return false; // element is not part of arr
-=======
     // console.log('hi');
     // printPrettyArrays(arr);
 
@@ -105,7 +69,6 @@ function removeElementFromArray(arr, element){
     return false;
 
 
->>>>>>> 150ae089dc796e1fd85d51541da637eb19e228a4
 }
 
 
