@@ -1,8 +1,8 @@
 package com.revature.exceptions;
 
-public class OverdraftException extends Exception{
+public class Overdraft extends Exception{
 	
-	public OverdraftException () {
+	public Overdraft () {
 		
 	}
 

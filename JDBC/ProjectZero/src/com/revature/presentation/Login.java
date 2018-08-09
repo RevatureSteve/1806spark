@@ -12,19 +12,19 @@ public class Login implements Screen {
 		Scanner scan = new Scanner(System.in);
 		
 		System.out.println("=========================================================");
-		System.out.println("Welcome to Project Zero!");
+		System.out.println("Welcome to Bank of Korea!");
 		System.out.println("=========================================================");
-		System.out.println("Username: ");
+		System.out.println("Username:");
 		String userName = scan.nextLine();
-		System.out.println("Password: ");
+		System.out.println("Password:");
 		String password = scan.nextLine();
 		
-		if (Service.userExists(userName, password)) {
+		if (Service.validateUser(userName, password)) {
 			return new MainMenu().start();
-		}
-		
-		System.out.println("User info incorrect! Please try again.");
+		} else {
+		System.err.println("User info incorrect! Please try again.");
 		return this.start();
+		}
 	}
 
 }

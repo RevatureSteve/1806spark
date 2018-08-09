@@ -4,10 +4,10 @@ public class User {
 	
 	//	state
 	private int userId;
-	private String firstName;
-	private String lastName;
 	private String userName;
 	private String password;
+	private String firstName;
+	private String lastName;
 	
 	private static User currentUser = null;
 	
@@ -16,13 +16,13 @@ public class User {
 		super();
 	}
 
-	public User(int userId, String firstName, String lastName, String userName, String password) {
+	public User(int userId, String userName, String password, String firstName, String lastName) {
 		super();
 		this.userId = userId;
-		this.firstName = firstName;
-		this.lastName = lastName;
 		this.userName = userName;
 		this.password = password;
+		this.firstName = firstName;
+		this.lastName = lastName;
 	}
 
 	//	getters and setters

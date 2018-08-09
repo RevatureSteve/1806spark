@@ -11,14 +11,14 @@ public interface TransactionDao {
 	
 	//	CREATE: a method that will use an insert sql statement
 	public int createTx(Transaction tx);
-	public void createTxProc(Transaction tx);
+//	public void createTxProc(Transaction tx);
 	
 	//	READ: a method that will use a select sql statement
 	public List<Transaction> readTx();
-	public Transaction getTxById(int id);
+//	public Transaction getTxById(int id);
 	
 	//	UPDATE: a method that will use a update sql statement
-	public int updateTx(Transaction tx);
+//	public int updateTx(Transaction tx);
 	
 	//	DELETE: a method that will use a delete sql statement
 	

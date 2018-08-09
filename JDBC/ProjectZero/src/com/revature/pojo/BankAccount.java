@@ -6,7 +6,7 @@ public class BankAccount implements Serializable {
 	
 	//	state
 	private int acNum;
-	private Double balance;
+	private int balance;
 	private int userId;
 	
 	private static BankAccount currentAccount = null;
@@ -16,7 +16,7 @@ public class BankAccount implements Serializable {
 		super();
 	}
 
-	public BankAccount(int acNum, Double balance, int userId) {
+	public BankAccount(int acNum, int balance, int userId) {
 		super();
 		this.acNum = acNum;
 		this.balance = balance;
@@ -32,11 +32,11 @@ public class BankAccount implements Serializable {
 		this.acNum = acNum;
 	}
 
-	public Double getBalance() {
+	public int getBalance() {
 		return balance;
 	}
 
-	public void setBalance(Double balance) {
+	public void setBalance(int balance) {
 		this.balance = balance;
 	}
 
@@ -51,7 +51,7 @@ public class BankAccount implements Serializable {
 	//	toString
 	@Override
 	public String toString() {
-		return "BankAccount [Account Number = " + acNum + ", Available Balance = $" + balance + ", User ID = " + userId + "]";
+		return "Account Number = " + acNum + ", User ID = " + userId + "\r\n" + "=====================================" + "\r\n" + "Your available balance is \u20A9" + balance + "\r\n" + "=====================================";
 	}
 	
 	public static BankAccount getCurrentAccount() {

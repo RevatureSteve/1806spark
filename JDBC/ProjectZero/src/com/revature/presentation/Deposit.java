@@ -4,6 +4,7 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.revature.businesslogic.Service;
+import com.revature.exceptions.Negative;
 import com.revature.interfaces.Screen;
 
 public class Deposit implements Screen {
@@ -14,10 +15,13 @@ public class Deposit implements Screen {
 		System.out.println("How much would you like to deposit?");
 		System.out.println("Amount: ");
 		try {
-			Double amount = scan.nextDouble();
+			int amount = scan.nextInt();
 			Service.deposit(amount);
 		} catch (InputMismatchException e) {
-			System.out.println("Please enter numeric amount");
+			System.err.println("Please enter a whole number");
+			return this.start();
+		} catch (Negative e) {
+			System.err.println("Please enter a positive number");
 			return this.start();
 		}
 		

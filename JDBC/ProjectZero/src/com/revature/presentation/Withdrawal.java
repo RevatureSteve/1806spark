@@ -4,7 +4,8 @@ import java.util.InputMismatchException;
 import java.util.Scanner;
 
 import com.revature.businesslogic.Service;
-import com.revature.exceptions.OverdraftException;
+import com.revature.exceptions.Negative;
+import com.revature.exceptions.Overdraft;
 import com.revature.interfaces.Screen;
 
 public class Withdrawal implements Screen {
@@ -15,13 +16,16 @@ public class Withdrawal implements Screen {
 		System.out.println("How much would you like to withdraw?");
 		System.out.println("Amount: ");
 		try {
-			Double amount = scan.nextDouble();
-			Service.withdrawl(amount);
-		} catch (OverdraftException e) {
-			System.out.println("Not enough balance!");
+			int amount = scan.nextInt();
+			Service.withdrawal(amount);
+		} catch (Overdraft e) {
+			System.err.println("Not enough balance!");
 			return this.start();
 		} catch (InputMismatchException e) {
-			System.out.println("Please enter numeric amount");
+			System.err.println("Please enter a whole number");
+			return this.start();
+		} catch (Negative e) {
+			System.err.println("Please enter a positive number");
 			return this.start();
 		}
 
