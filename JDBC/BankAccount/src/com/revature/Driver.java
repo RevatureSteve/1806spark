@@ -46,6 +46,7 @@ public class Driver {
 						MainMenus.viewBalance(b);
 						continue;
 					case 4:
+						MainMenus.signOutScreen();
 						exit = false;
 					}
 					break;
@@ -53,8 +54,26 @@ public class Driver {
 				break;
 
 			case 3:
-				System.out.println("----------Thank you for choosing ---------! ");
-				System.out.println("--------------Have a nice day! ---------! ");
+				System.out.println("*******************************************************************************************");
+				System.out.println("*******************************************************************************************");
+				System.out.println("******************                                                        *****************");
+				System.out.println("******************                     LEAVING VAULT 101                  *****************");
+				System.out.println("******************                                                        *****************");
+				System.out.println("******************                        Thank you!                      *****************");
+				System.out.println("******************                                                        *****************");
+				System.out.println("******************     And be careful, stay away from the deathcrawlers   *****************");
+				System.out.println("******************                                                        *****************");
+				System.out.println("*******************************************************************************************");
+				System.out.println("*******************************************************************************************");
+				System.out.println("*******************************************************************************************");
+				System.out.println("*******************************************************************************************");
+				System.out.println("*******************************************************************************************");
+				System.out.println("Property of Vault-Tec**********************************************************************");
+				System.out.println("Vault-Tec Corporate Headquaters************************************************************");
+				System.out.println("Washington D.C*****************************************************************************");
+				System.out.println("Vault 101 Commonwealth Bank access machine*************************************************");
+				System.out.println("Contact Vault Overseer for needed assistance***********************************************");
+				System.out.println("*******************************************************************************************");
 				System.exit(1);
 			}
 		}

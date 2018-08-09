@@ -37,13 +37,33 @@ public class BankDaoImpl implements BankDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println(rowsAffected + " rows affected");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                    Congratulations!                                     *");
+		System.out.println("*                 You have successfully created an account with Vault 101!                *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+
 		return rowsAffected;
 
 	}
 
 	// READ
-
 	
 	@Override
 	public Users getUserByUsername(String username) throws userNotFound {
@@ -108,7 +128,14 @@ public class BankDaoImpl implements BankDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println(rowsAffected + " deposit transaction has been completed!");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("  --- " + amount + " Caps have been added to your vault..                                   ");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+
 		return rowsAffected;
 	}
 	
@@ -127,7 +154,22 @@ public class BankDaoImpl implements BankDao {
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		System.out.println(rowsAffected + " withdraw transaction has been complete ");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("  --- " + amount + " Caps have been taken from your vault...                                ");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		if(rowsAffected == 0 ) {
+			return rowsAffected;
+		}else {}
+		System.out.println("*                                                                                         *");
+		if (amount >= 1) {
+		System.out.println("* ---Remember, carrying too much caps is dangerous to be out in the Wasteland             *");
+		}
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
+		System.out.println("*                                                                                         *");
 		return rowsAffected;
 	}
 
