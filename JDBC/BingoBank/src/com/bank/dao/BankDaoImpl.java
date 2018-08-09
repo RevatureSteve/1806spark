@@ -31,7 +31,10 @@ public class BankDaoImpl implements BankDao {
 		String username = scan.nextLine();
 		System.out.println("Please enter a password:");
 		String password = scan.nextLine();
-		
+		if (username.isEmpty() || password.isEmpty() ) {
+			System.out.println("Plase insert a value for each field.");
+			getUserLogin();
+		}
 		try(Connection conn = DriverManager.getConnection(URL, D_USERNAME, D_PASSWORD)) {
 		String sql = "SELECT users_id, f_name, l_name FROM users WHERE username = ? AND password = ?";
 		PreparedStatement pstmt = conn.prepareStatement(sql);
@@ -86,17 +89,23 @@ public class BankDaoImpl implements BankDao {
 	public void makeDeposit(int deposit) {
 		try(Connection conn = DriverManager.getConnection(URL, D_USERNAME, D_PASSWORD)) {
 			String sql = "{ call make_deposit(?) }";
+			if (deposit < 0) {
+				System.out.println("You cannot enter a negative number. Try again");
+			}
+			else {
 			CallableStatement cstatement = conn.prepareCall(sql);
 			cstatement.setInt(1, deposit);
 			int ra = cstatement.executeUpdate();
 			System.out.println(ra);
 			System.out.println("Your deposit has been accepted.");
+			}
 		} catch (SQLException e) {
 			System.out.println("We could not accept your deposit at this time");
 		}
+		}
+	
 		
-	}
-
+	
 	@Override
 	// A user can make a witdrawl.
 	public void makeWitdrawl(int witdrawl){

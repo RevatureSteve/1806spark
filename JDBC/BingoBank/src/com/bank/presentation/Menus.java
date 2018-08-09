@@ -12,7 +12,7 @@ public class Menus {
 	//Welcome menu with login
 	public void welcome () {
 		System.out.println("****************************************");
-		System.out.println("            Welcome to Bingo Bank \n            Please sing in");
+		System.out.println("            Welcome to Bingo Bank \n              E-Yi-E-Yi-O Inc.\n              Please login");
 		System.out.println("****************************************");
 		}
 
@@ -47,8 +47,8 @@ public class Menus {
 		case 4:
 			bd.logout();
 		default:
-			
-			mainMenu();
+			System.out.println("Please try agina");
+		mainMenu();
 		}
 		scan.close();
 	}
