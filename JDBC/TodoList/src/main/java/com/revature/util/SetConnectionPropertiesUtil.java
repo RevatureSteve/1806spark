@@ -19,9 +19,9 @@ public class SetConnectionPropertiesUtil {
 	
 	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException {
 		
-		String username = "";
-		String password = "";
-		String url = "";
+		String username;
+		String password;
+		String url;
 	
 		Properties props = new Properties();
 		props.load(new FileReader("src\\main\\resources\\db.properties"));

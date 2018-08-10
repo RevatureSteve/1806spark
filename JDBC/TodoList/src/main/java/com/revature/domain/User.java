@@ -1,5 +1,6 @@
 package com.revature.domain;
 
+import java.io.Serializable;
 import java.util.List;
 
 /**
@@ -9,7 +10,7 @@ import java.util.List;
  * @author sidhu
  *
  */
-public class User {
+public class User implements Serializable {
 
 	//states
 	private int userId;
@@ -20,7 +21,7 @@ public class User {
 	// data)
 	// I know User will have multiple task...probably use a Collection or Array to
 	// hold them
-	private List<Task> userTask;
+	private List<Task> userTasks;
 	
 	//NO-ARGS
 	public User() {}
@@ -43,10 +44,6 @@ public class User {
 		this.userTasks = userTasks;
 	}
 
-	//additional property I probably will need here (not a field/attribute in the data)
-	//I know User will have multiple tasks. . .probably use a collection or array to hold them
-	private List<Task> userTasks;
-	
 	
 	//getters n' setters
 	public int getUserId() {

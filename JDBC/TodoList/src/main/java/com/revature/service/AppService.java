@@ -36,7 +36,7 @@ public class AppService {
 			//now let's compare the userInput's pw to the dbUser
 			if(dbUser.getPassword().equals(userInput.getPassword())) {
 				System.out.println("[LOG]----compare pw---Service login() pw: success");
-				return dbUser;
+				return dbUser;//not userInput since it doesn't have the userId
 			}
 		} 
 		System.out.println("[LOG]----ending---Service login() pw: fail");
