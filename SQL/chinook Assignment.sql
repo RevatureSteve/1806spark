@@ -299,4 +299,26 @@ FROM invoiceline;
 COMMIT;
 
 
+SELECT *
+FROM employee
+INNER JOIN customer
+ON employee.employeeid = customer.supportrepid
+INNER JOIN invoice
+ON customer.customerid = invoice.customerid
+INNER JOIN invoiceline
+ON invoice.invoiceid = invoiceline.invoiceid
+INNER JOIN track
+ON invoiceline.trackid = track.trackid
+INNER JOIN playlisttrack
+ON track.trackid = playlisttrack.trackid
+INNER JOIN playlist
+ON playlisttrack.playlistid = playlist.playlistid
+INNER JOIN album
+ON track.albumid = album.albumid
+INNER JOIN artist
+ON album.artistid = artist.artistid
+INNER JOIN genre
+ON track.genreid = genre.genreid
+INNER JOIN mediatype
+ON track.mediatypeid = mediatype.mediatypeid;
 

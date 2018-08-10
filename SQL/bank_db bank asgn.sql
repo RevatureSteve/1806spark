@@ -65,7 +65,7 @@ CREATE OR REPLACE PROCEDURE newlogin(uname VARCHAR2,pword VARCHAR2, fname VARCHA
     BEGIN
     INSERT INTO users ( username, password, fname, lname) VALUES (uname, pword, fname, lname);
     INSERT INTO bank_account(balance, users_id) VALUES (0,(SELECT users_id FROM users WHERE uname = users.username));
-    INSERT INTO bank_tx(tx_id, account_number) VALUES (NEWACCNUM.nextval, (SELECT users_id FROM users WHERE uname = users.username));
+    --INSERT INTO bank_tx(tx_id, account_number) VALUES (new_tx_id, (SELECT users_id FROM users WHERE uname = users.username));
     END;
     /
     

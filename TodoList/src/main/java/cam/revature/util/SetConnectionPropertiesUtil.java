@@ -16,20 +16,17 @@ public class SetConnectionPropertiesUtil {
 	 * usually for config
 	 */
 	
-	private final static String USERNAME;
-	private final static String PASSWORD;
-	private final static String URL;
-	
-	public Connection getConnection() throws FileNotFoundException, IOException, SQLException {
+	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException {
+		String username;
+		String password;
+		String url;     
 		Properties props = new Properties();
-	    props.load(new FileReader("src/main/resources/db.properties"));
-		String url = null;
-		String username = null;
-		String password = null;
+		props.load(new FileReader("src\\main\\resources\\db.properties"));
 		
 		url = props.getProperty("url");
 		username = props.getProperty("username");
 		password = props.getProperty("pw");
+		
 		return DriverManager.getConnection(url, username, password);
 		
 	}

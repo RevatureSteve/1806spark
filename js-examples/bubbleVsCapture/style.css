@@ -1,0 +1,21 @@
+
+#header{
+    font-size: xx-large;
+}
+
+#outter{
+    background-color: red;
+    font-family: monospace;
+    font-size: xx-large;
+    
+}
+
+#inner{
+    background-color: #43ff3e;
+    margin: 10px;
+}
+
+#innermost{
+    background-color: #5172ff;
+    margin: 10px;
+}

@@ -3,7 +3,7 @@
   <groupId>com.revature</groupId>
   <artifactId>TodoList</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <!--  no java version #? what is the default for maven?
   			Maven defaults to 1.5 so update it!
    -->
@@ -11,4 +11,17 @@
    <maven.compiler.target>1.8</maven.compiler.target>
    <maven.compiler.source>1.8</maven.compiler.source>
    </properties>
+   
+   <dependencies>
+   <!-- I can list multiple dependencies(JARS) in here -->
+   <!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>servlet-api</artifactId>
+    <version>2.5</version>
+    <scope>provided</scope>
+</dependency>
+   
+   
+   </dependencies>
 </project>
