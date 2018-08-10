@@ -3,10 +3,22 @@
   <groupId>com.revature</groupId>
   <artifactId>TodoList</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <packaging>war</packaging>
   <!-- No java version number listed, defaults to 1.5 -->
   <properties>
   	<maven.compiler.target>1.8</maven.compiler.target>
   	<mave.compiler.source>1.8</mave.compiler.source>
   </properties>
+  
+  <dependencies>
+  	<!--  you can have multiple dependencies(JARS) in here -->
+  	<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+	<dependency>
+	    <groupId>javax.servlet</groupId>
+	    <artifactId>servlet-api</artifactId>
+	    <version>2.5</version>
+	    <scope>provided</scope>
+	</dependency>
+  	
+  </dependencies>
 </project>
