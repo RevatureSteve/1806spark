@@ -87,8 +87,8 @@ public class BankTransaction {
 
 	@Override
 	public String toString() {
-		return "Transaction Id=" + transactionId + ", TimeStamp=" + transactionTimeStamp
-				+ ", Amount=" + transactionAmt + ", Type=" + transactionType + ", Account Number="
+		return "Transaction Id = " + transactionId + ", TimeStamp = " + transactionTimeStamp
+				+ ", Amount = $" + transactionAmt + ", Type = " + transactionType + ", Account Number = "
 				+ accountNumber ;
 	}
 	

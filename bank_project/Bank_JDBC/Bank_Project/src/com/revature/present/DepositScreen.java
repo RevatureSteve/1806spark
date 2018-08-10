@@ -13,7 +13,7 @@ public class DepositScreen implements Screen{
 	public Screen start() {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("******Make a Deposit******");
-		System.out.println("Enter the amoount you want to deposit: ");
+		System.out.println("Enter the amount you want to deposit: ");
 		
 		try {
 			Double amount = scan.nextDouble();
@@ -22,7 +22,7 @@ public class DepositScreen implements Screen{
 			System.out.println("You have to enter a number!");
 			return this.start();
 		} catch (NoNegativeNumber e) {
-			System.out.println("You cannont enter a neagtive number");
+			System.out.println("You cannont enter a negative number");
 			return this.start();
 		}
 		return new MainMenuScreen().start();

@@ -1,6 +1,7 @@
 package com.revature.present;
 
 import java.util.InputMismatchException;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 
 import com.revature.interfaces.Screen;
@@ -8,7 +9,7 @@ import com.revature.interfaces.Screen;
 public class EnterScreen implements Screen {
 
 	@Override
-	public Screen start() {
+	public Screen start(){
 
 		Scanner scan = new Scanner(System.in);
 
@@ -27,7 +28,7 @@ public class EnterScreen implements Screen {
 			}
 		} catch (InputMismatchException e) {
 			System.out.println("You have to enter a number!");
-		}
+		} 
 
 		return this.start();
 	}
