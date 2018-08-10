@@ -1,0 +1,45 @@
+#board{
+    border: 2px solid black;
+    border-radius: 10px;
+    display: table;
+    table-layout: fixed;
+    width: 100%;
+    /* height: 90%; */
+    vertical-align: middle;
+    box-shadow: 5px 4px 0px 0px;
+
+
+}
+/* joey  */
+.row{
+
+display: table-row;
+/* width: 100%; */
+/* height: 28%; */
+margin: auto;
+}
+
+.box{                                              /* Alexander */
+    border: 1px solid black; 
+    border-radius: 2px;
+    display: table-cell;
+    /* width: 32%;
+    height: 100%; */
+    font-size: 100px;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 150px;
+    /* padding-top: 20px;
+    padding-bottom:-20px; */
+    background-color: green;
+    }
+    /* Tyler was here */
+
+#player {
+font-size: 70px;
+text-align: center;
+}
+
+#newGame{
+    background-color: pink;
+}
