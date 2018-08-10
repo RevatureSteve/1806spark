@@ -1,0 +1,18 @@
+
+INSERT INTO position VALUES(1,'Manager');
+INSERT INTO position VALUES(2,'Employee');
+
+INSERT INTO request_status VALUES(1,'Pending');
+INSERT INTO request_status VALUES(2,'Accepted');
+INSERT INTO request_status VALUES(3,'Denied');
+
+INSERT INTO request_type VALUES(1,'Food');
+INSERT INTO request_type VALUES(2,'Lodging');
+INSERT INTO request_type VALUES(3,'Transportation');
+INSERT INTO request_type VALUES(4,'Other');
+
+INSERT INTO USERS(email,password,fname,lname,position_id) VALUES('humphreyminott@gmail.com','junior1996','Humphrey','Minott',1);
+INSERT INTO USERS(email,password,fname,lname,position_id) VALUES('humphreyminott@yahoo.com','junior1996','Junior','Minott',2);
+SELECT * FROM users;
+SELECT * FROM position WHERE pos_id= 1;
+COMMIT;
