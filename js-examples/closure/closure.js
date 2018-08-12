@@ -8,7 +8,7 @@
 
 
 
-    solve this issue of sharing a global cariable with closure!
+    solve this issue of sharing a global variable with closure!
         nested functions hold the variables of the outer function 
 
 
