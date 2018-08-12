@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>TodoList</display-name>
+
+<!-- this is the web xml aka deployment descriptor
+XML files are mostly used for configuration!!
+
+This configuration file is for the web container/the servlet container (Tomcat)
+
+A library code MUSt be leveraged, a a framework's code will call your code when needed
+
+The main purpose of the web xml is to connect url's to servlets
+
+You need two children of servlet tag - servlet name- alias for protection, so hackers cannot see
+servlet class, uses entire name VVV
+ -->
+ 
+ <!-- HelloWorld Servlet -->
+ <servlet>
+ 	<servlet-name>hello</servlet-name>
+ 	<servlet-class>com.revature.servlets.HelloWorldServlet</servlet-class>
+ </servlet>
+ 	<servlet-mapping>
+ 	<!-- now use the alias of a servlet -->
+ 	<servlet-name>hello</servlet-name>
+ 	<url-pattern>/hello</url-pattern>
+ 	
+ 	</servlet-mapping>
+ 	
+ 	<!-- TOdo servlet -->
+ 	 <servlet>
+ 	<servlet-name>task</servlet-name>
+ 	<servlet-class>com.revature.servlets.TodoServlet</servlet-class>
+ </servlet>
+ 	<servlet-mapping>
+ 	<!-- now use the alias of a servlet -->
+ 	<servlet-name>task</servlet-name>
+ 	<url-pattern>/task</url-pattern>
+ 	</servlet-mapping>
+
+</web-app>

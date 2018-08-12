@@ -60,8 +60,8 @@ PRIMARY KEY (account_number),
 FOREIGN KEY (users_id) REFERENCES users(users_id)
 );
 
-SELECT * FROM Bank_Account;
 
+SELECT * FROM users;
 --function to view balance
 
 --CREATE OR REPLACE PROCEDURE view_balance
@@ -163,7 +163,7 @@ END;
 
 EXECUTE  UPDATE_ACCOUNT_WITHDRAW (1025 ,1.00);
 SELECT * FROM BANK_ACCOUNT;
-
+SELECT*FROM users;
 COMMIT;
 --Bank Transaction
 CREATE TABLE Bank_Tx (
