@@ -28,7 +28,7 @@ public class SetConnectionPropertiesUtil {
 		
 		url = props.getProperty("url");
 		username = props.getProperty("username");
-		password = props.getProperty("pw");
+		password = props.getProperty("password");
 		
 		return DriverManager.getConnection(url, username, password);
 		

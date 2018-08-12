@@ -30,7 +30,7 @@ public class UserDaoImpl implements UserDao {
 			System.err.println("[LOG]---resultset completed---getUserByUser()");
 			if (rs.next()) {
 				System.err.println("[LOG]---resultsert if---getUserByUser() is true");
-				user = new User(rs.getInt("u_id"), rs.getString("username"), rs.getString("password"));
+				user = new User(rs.getInt("u_id"), rs.getString("username"), rs.getString("pw"));
 				
 			}
 			
