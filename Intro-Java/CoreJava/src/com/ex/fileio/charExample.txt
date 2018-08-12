@@ -1,0 +1,4 @@
+<<<<<<< HEAD
+=======
+Hello World Foo!
+>>>>>>> 38121be61b8803b137ff28d6b6958cc4fb8e904b

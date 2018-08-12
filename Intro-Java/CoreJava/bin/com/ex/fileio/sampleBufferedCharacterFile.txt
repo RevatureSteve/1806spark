@@ -1,3 +1,7 @@
 Hello world
+<<<<<<< HEAD
 again
+=======
+Foo
+>>>>>>> 38121be61b8803b137ff28d6b6958cc4fb8e904b
 Buffered Streams are faster and easier to use
