@@ -9,8 +9,8 @@ CREATE TABLE users(
     username VARCHAR2(40) UNIQUE NOT NULL,
     pw VARCHAR2 (100) NOT NULL,
     PRIMARY KEY (u_id)
-    );
-    
+);
+INSERT INTO users() 
     
 CREATE TABLE task (
 t_id INT,
