@@ -49,7 +49,7 @@ public class Driver {
 		String usernameInput = "steve";
 		String pwInput = "123";
 		
-		User validUser = new AppService().login(new User(0, usernameInput, pwInput));
+		User validUser = new AppService().login(new User(1, usernameInput, pwInput));
 		System.out.println("is the user valid: " + validUser);
 		//UserDao userDao = new UserDaoImpl().getUserByUsername(usernameInput); cannot do method chaining
 		
