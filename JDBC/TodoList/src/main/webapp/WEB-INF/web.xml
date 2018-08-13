@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>TodoList</display-name>
+
+
+	<!-- This is the web.xml aka deployment descriptor -->
+	<!-- XML files (these days) are mostly used for CONFIGURATION!!! Who is 
+		this configuration file for??? The Web Container aka Servlet Container (Tomcat) 
+		MAIN PURPOSE OF THE web.xml IS TO CONNECT URLS to SERVLETS -->
+		
+		<!-- HELLOWORLDSERVLET -->
+	<servlet>
+		<!-- The alias of a servlet for protection (different name so hackers cannot 
+			see our class) -->
+		<servlet-name>hello</servlet-name>
+		<servlet-class>com.revature.servlets.HelloWorldServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<!-- now use the alias of a servlet -->
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/hello</url-pattern>
+	</servlet-mapping>
+	
+	
+	<!-- TODO SERVLET -->
+	<servlet>
+		<servlet-name>task</servlet-name>
+		<servlet-class>com.revature.servlets.TodoServlet</servlet-class>
+	</servlet>
+	
+	<servlet-mapping>
+		<servlet-name>task</servlet-name>
+		<url-pattern>/task</url-pattern>
+	</servlet-mapping>
+</web-app>

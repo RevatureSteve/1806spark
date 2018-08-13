@@ -1,0 +1,34 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.revature</groupId>
+  <artifactId>TodoList</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <!--  no java version #?  What is the default for maven? 
+  			Maven defaults to.... 1.5 so update it!
+  -->
+  
+  <properties>
+  	<maven.compiler.target>1.8</maven.compiler.target>
+  	<maven.compiler.source>1.8</maven.compiler.source>
+  </properties>
+  
+  <dependencies>
+  	<!--  
+  		I can list multiple dependencies(JARS) in here 
+  		Once I place a dependency, MAVEN will download 
+  			that JAR from Maven Central (the website)
+  			into a local folder called .m2, regardless of
+  			the type of OS
+  		-->
+  	<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>servlet-api</artifactId>
+    <version>2.5</version>
+    <scope>provided</scope>
+</dependency>
+  	
+  </dependencies>
+</project>
