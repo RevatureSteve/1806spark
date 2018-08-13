@@ -4,9 +4,11 @@ import java.awt.Image;
 import java.sql.Blob;
 import java.sql.Date;
 
+import com.revature.exceptions.NoNegativeException;
+
 public class Reimbursement {
 
-	private int pId;
+	private int rId;
 	private int empUId;
 	private int mgrUId;
 	private Double amt;
@@ -14,6 +16,7 @@ public class Reimbursement {
 	private Blob img;
 	private Date timeSubmission;
 	private String rbType;
+	private int rbTypeId;
 	private String rbStatus;
 	
 	
@@ -22,13 +25,13 @@ public class Reimbursement {
 	}
 
 
-	public Reimbursement(int pId, int empUId, int mgrUId, Double amt, String description, Blob img,
+	public Reimbursement(int rId, int empUId, int mgrUId, Double amt, String description, Blob img,
 			Date timeSubmission, String rbType, String rbStatus) {
 		super();
-		this.pId = pId;
+		this.rId = rId;
 		this.empUId = empUId;
 		this.mgrUId = mgrUId;
-		this.amt = amt;
+		setAmt(amt);
 		this.description = description;
 		this.img = img;
 		this.timeSubmission = timeSubmission;
@@ -36,14 +39,24 @@ public class Reimbursement {
 		this.rbStatus = rbStatus;
 	}
 
-
-	public int getpId() {
-		return pId;
+	
+	public Reimbursement(int empUId, Double amt, String description, Blob img, int rbTypeId) {
+		super();
+		this.empUId = empUId;
+		setAmt(amt);
+		this.description = description;
+		this.img = img;
+		this.rbTypeId = rbTypeId;
 	}
 
 
-	public void setpId(int pId) {
-		this.pId = pId;
+	public int getrId() {
+		return rId;
+	}
+
+
+	public void setrId(int rId) {
+		this.rId = rId;
 	}
 
 
@@ -73,7 +86,11 @@ public class Reimbursement {
 
 
 	public void setAmt(Double amt) {
-		this.amt = amt;
+		if (amt >= 0) {
+			this.amt = amt;
+		}else {
+			throw new NoNegativeException("Cannot have a negative amount");
+		}
 	}
 
 
@@ -125,11 +142,22 @@ public class Reimbursement {
 	public void setRbStatus(String rbStatus) {
 		this.rbStatus = rbStatus;
 	}
+	
+	
+
+	public int getRbTypeId() {
+		return rbTypeId;
+	}
+
+
+	public void setRbTypeId(int rbTypeId) {
+		this.rbTypeId = rbTypeId;
+	}
 
 
 	@Override
 	public String toString() {
-		return "reimbursement [pId=" + pId + ", empUId=" + empUId + ", mgrUId=" + mgrUId + ", amt=" + amt
+		return "reimbursement [pId=" + rId + ", empUId=" + empUId + ", mgrUId=" + mgrUId + ", amt=" + amt
 				+ ", description=" + description + ", img=" + img + ", timeSubmission=" + timeSubmission + ", rbType="
 				+ rbType + ", rbStatus=" + rbStatus + "]";
 	}

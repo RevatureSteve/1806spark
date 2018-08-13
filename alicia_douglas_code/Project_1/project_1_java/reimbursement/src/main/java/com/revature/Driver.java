@@ -2,6 +2,7 @@ package com.revature;
 
 import com.revature.dao.ReimbursementDao;
 import com.revature.dao.UsersDao;
+import com.revature.domain.Reimbursement;
 import com.revature.domain.Users;
 import com.revature.service.BuisnessLogic;
 
@@ -9,19 +10,30 @@ public class Driver {
 
 	public static void main(String[] args) {
 		
-		String email = "ad@gmail.com";
-		String password = "111";
+//		String email = "ad@gmail.com";
+//		String password = "111";
+//		
+//		Users user = new BuisnessLogic().login(email, password);
+//		
+//		if (user == null) {
+//			System.out.println("Login failed");
+//		} else {
+//			System.out.println(user);
+//		}
+//		
+//		System.out.println(new UsersDao().readUsers());
+//		System.out.println(new ReimbursementDao().getReimbursementByEmployeeId(1));
+//		System.out.println(new ReimbursementDao().getReimbursements());
 		
-		Users user = new BuisnessLogic().login(email, password);
 		
-		if (user == null) {
-			System.out.println("Login failed");
-		} else {
-			System.out.println(user);
-		}
+		Reimbursement reim = new Reimbursement(1,20.00, "FUN", null,1);
+		System.out.println(reim);
 		
-		System.out.println(new UsersDao().readUsers());
-		System.out.println(new ReimbursementDao().getReimbursementByEmployeeId(1));
+		
+		
+//		new ReimbursementDao().createReimbursement(reim);
+//		System.out.println(new ReimbursementDao().getReimbursements());
+
 	}
 
 }
