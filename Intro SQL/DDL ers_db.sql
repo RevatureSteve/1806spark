@@ -28,6 +28,7 @@ PRIMARY KEY (rq_status_id)
 --USER
 CREATE TABLE users (
 u_id INT,
+pos_id INT NOT NULL,
 email VARCHAR2 (4000) UNIQUE NOT NULL,
 password VARCHAR2 (4000) NOT NULL,
 fname VARCHAR2 (4000) NOT NULL,
@@ -39,6 +40,10 @@ FOREIGN KEY (pos_id) REFERENCES position(pos_id)
 --REIMBURSEMENT
 CREATE TABLE reimbursement (
 r_id INT,
+emp_u_id INT NOT NULL,
+mgr_u_id INT NOT NULL,
+rq_type_id INT,
+rq_status_id INT,
 amt number (18,2) NOT NULL,
 description VARCHAR2 (4000),
 img BLOB,
