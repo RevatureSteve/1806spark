@@ -5,6 +5,27 @@
  <!-- XML files are mostly used for CONFIGURATION 
  
 	Who is this file for?
-		The Web Container aka Servlet Container (Tomcat)-->
+		The Web Container aka Servlet Container (Tomcat)
+		
+		Main purpose of the web.xml is to connect urls to serlets-->
+		
+		<servlet>
+		<servlet-name>hello</servlet-name>
+		<servlet-class>cam.revature.HellowWorldSerlet</servlet-class>
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>hello</servlet-name>
+		<url-pattern>/hello</url-pattern>
+		</servlet-mapping>
+		
+		
+		<servlet>
+		<servlet-name>task</servlet-name>
+		<servlet-class>cam.revature.servlet.TodoServelet</servlet-class>
+		</servlet>
+		<servlet-mapping>
+		<servlet-name>task</servlet-name>
+		<url-pattern>/task</url-pattern>
+		</servlet-mapping>
  
 </web-app>

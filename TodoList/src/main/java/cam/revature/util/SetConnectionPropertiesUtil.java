@@ -30,4 +30,14 @@ public class SetConnectionPropertiesUtil {
 		return DriverManager.getConnection(url, username, password);
 		
 	}
+	public static void printSum(int x, int y) {
+		
+	}
+	public static void printSum(Integer x, Integer y) {
+		
+	}
+	public Boolean tester() {
+		
+		
+	}
 }
