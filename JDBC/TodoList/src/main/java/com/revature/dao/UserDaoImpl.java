@@ -14,7 +14,7 @@ public class UserDaoImpl implements UserDao {
 	
 	@Override
 	public User getUserByUsername(String username) {
-		System.err.println("[LOG]---Starting----getUserByUsername() argument: " + username);
+		System.err.println("[LOG]---Starting---getUserByUsername() argument: " + username);
 		// what is this method code going to contain? JDBC Code
 		User user = null;
 
