@@ -5,7 +5,7 @@ package com.revature.domain;
  * @author Steve Work PC
  *
  */
-public class Task {
+public class Task{
 
 	private int taskId;
 	private int userId;

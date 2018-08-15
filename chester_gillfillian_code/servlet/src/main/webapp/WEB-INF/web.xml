@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>TodoList</display-name>
+ 	
+  <!-- 2 parents tags: servlet and seervlet mapping -->
+  <!-- helloservlet -->
+  <servlet>
+   <servlet-name> helloAlias</servlet-name>
+   <servlet-class>com.revature.servlets.HelloWorldServlet</servlet-class>
+  
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>helloAlias</servlet-name>
+  <url-pattern>/hello</url-pattern>
+  <url-pattern>/hello2</url-pattern>
+ 
+  </servlet-mapping>
+  <!-- lifeCycle Servlet -->
+    <servlet>
+   <servlet-name> life</servlet-name>
+   <servlet-class>com.revature.servlets.LifeCycleServlet</servlet-class>
+   <load-on-startup>1</load-on-startup> <!-- specify a number, all servlet can have the same number -->
+  
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>life</servlet-name>
+  <url-pattern>/life</url-pattern>
+  
+  </servlet-mapping>
+  
+  <!-- forwardVsRedirect Servlet -->
+    <servlet>
+   <servlet-name> fvr</servlet-name>
+   <servlet-class>com.revature.servlets.ForwardVsRedirectServlet</servlet-class>
+   <load-on-startup>1</load-on-startup> <!-- specify a number, all servlet can have the same number -->
+  
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>Fvr</servlet-name>
+  <url-pattern>/ForwardVsRedirect</url-pattern>
+  
+  </servlet-mapping>
+  	
+
+
+
+
+</web-app>

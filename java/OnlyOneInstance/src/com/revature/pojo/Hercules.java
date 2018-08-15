@@ -5,9 +5,9 @@ package com.revature.pojo;
  * 
  * what does a singleton requires
  * 	1. control the constructor(s) by encapsulating them with private
- * 2. static self reference line 13
- * 3. public static get method  for the self reference
- * 4. create the state like any other pojo/Javabeans
+ *  2. static self reference line 13
+ *  3. public static get method  for the self reference
+ *  4. create the state like any other pojo/Javabeans
  */
 public class Hercules {
 	
@@ -15,7 +15,8 @@ public class Hercules {
 	private static Hercules hercules; //1 scope? it a class bc it is static by aka static keyword
 	
 	// privide Hercules with some state
-		private String name; // 2 scope? insatance aka object, not inside of a method and not and not static 
+		private String name; // 2 scope? insatance aka object, not inside of a method and not and not static
+		
 		public String getName() {
 			return name;
 		}
@@ -29,7 +30,7 @@ public class Hercules {
 		
 		
 	 private Hercules() { //3 set the name to Hercules in the constructor
-		 this.setName ("Hercules"); // this. is not required since we are not shodowing the name field
+		 this.setName ("Hercules"); // this. is not required since we are not shadowing the name field
 		 setAge(100);
 		 setAlive(true);
 		 

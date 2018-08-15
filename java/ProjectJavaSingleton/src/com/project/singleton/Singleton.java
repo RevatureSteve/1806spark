@@ -7,7 +7,7 @@ import com.project.Interface.WorkingWithInterface;
  *  1. name constructor with same name after the class
  *  2. generate getter and setter and place them after the constructor 
  *  3. i will need a method to create and return .instance (before i create it i will need somewhere to store it)
- *  4. before #3 i will need private static Singletion insatnce variable
+ *  4. before #3 i will need private static Singleton instance variable
  */
 
 public class Singleton  implements WorkingWithInterface { // implements was created with 

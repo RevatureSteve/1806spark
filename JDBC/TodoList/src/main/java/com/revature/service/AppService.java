@@ -1,7 +1,10 @@
 package com.revature.service;
 
+import java.util.List;
+
 import com.revature.dao.UserDao;
 import com.revature.dao.UserDaoImpl;
+import com.revature.domain.Task;
 import com.revature.domain.User;
 
 public class AppService {
@@ -14,6 +17,8 @@ public class AppService {
 	 *  	etc...
 	 */
 	
+	
+	// instance scope so each non-static method in class can use the same object 
 	private UserDao userDao = new UserDaoImpl();
 	
 	/**
@@ -42,6 +47,14 @@ public class AppService {
 		}
 		System.out.println("[LOG]----ending---Service login() pw: fail");
 		return null;
+	}
+	
+	public List<Task> getAllTasks(){
+		System.out.println("[log].....retriving ---al tasks");
+		//any validation before asking the db? maybe in the future but not at the moment
+		// so let's call the dao to get tasks from the db
+		return null;
+		
 	}
 	
 }

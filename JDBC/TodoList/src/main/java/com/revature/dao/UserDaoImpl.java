@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.awt.List;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
@@ -7,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import com.revature.domain.Task;
 import com.revature.domain.User;
 import com.revature.util.SetConnectionPropertiesUtil;
 
@@ -41,5 +43,20 @@ public class UserDaoImpl implements UserDao{
 		System.err.println("[LOG]---Ending----getUserByUser() returning: " + user);
 		return user;
 	}
+	
+//	public List<Task> getAllTasks(){
+//		// ia am in dao so ican write jdbc logic to communciate wwith a database
+//		
+//		try(Connection conn = SetConnectionPropertiesUtil.getConnection();){
+//			String sql = "select * from task";
+//			PreparedStatement ps = conn.prepareStatement(sql);
+//			ResultSet rs = ps.executeQuery();
+//			
+//			while(rs.next() ) {
+//				tasks.add(new Task(rs.getInt("t_id"),rs.getInt("u_id"), rs.getString("T_name"),rs.getInt("ts_id")));
+//			}
+//			
+//		}
+//	}
 
 }
