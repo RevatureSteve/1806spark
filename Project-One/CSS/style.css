@@ -39,19 +39,48 @@ html {
     border-color: darkgoldenrod;
     box-shadow: 0px 0px 100px #000000;
       margin: auto;
-      margin-top: 20%;
+      margin-top: 15%;
       width: 50em;
+      background-color: white;
+  }
+  .main-box{
+    border-style: outset;
+    border-width: thick;
+    border-color: darkgoldenrod;
+    box-shadow: 0px 0px 100px #000000;
+      margin: auto;
+      margin-top: 15%;
+      width: 50em;
+      height: 25em;
       background-color: white;
   }
   .login{
       margin-left: 35%;
       margin-top: 3%;
-      margin-bottom: 3%; 
+      margin-bottom: 0%;
       width: 30%;
       height: 5%;
       border: 1px outset rgb(0, 0, 0);
       font-size: 120%;
       font-family: 'Aldrich';
+  }
+  .login:hover{
+    background-color: rgb(221, 221, 0);
+    font-size: 140%;
+  }
+  .return{
+    margin-left: 35%;
+    margin-top: 0.5%;
+      margin-bottom: 3%; 
+    width: 30%;
+    height: 5%;
+    border: 1px outset rgb(0, 0, 0);
+    font-size: 120%;
+    font-family: 'Aldrich';
+  }
+  .return:hover{
+    background-color: rgb(221, 221, 0);
+    font-size: 140%;
   }
   .inputbox{
       text-align: center;
@@ -84,7 +113,7 @@ html {
       margin-left: 8%;
   }
   .backbtn{
-    width: 35%;
+    width: 33%;
     margin-right: 0%;
     position: relative;
     z-index: 1;
@@ -95,17 +124,20 @@ html {
     padding-top: 2px;
     margin-bottom: 0%;
   }
+  .backbtn img{
+      width: 0.6em;
+  }
   .backbtn a{
-      background-image: url('https://www.xmple.com/wallpaper/white-lines-stripes-streaks-grey-3200x1800-c2-ffffff-dcdcdc-l2-54-108-a-30-f-1.svg');
+      /* background-image: url('https://www.xmple.com/wallpaper/white-lines-stripes-streaks-grey-3200x1800-c2-ffffff-dcdcdc-l2-54-108-a-30-f-1.svg'); */
       -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    opacity: 0.5;
-    height: 1.7%;
-    margin-left: 4%;
-    margin-bottom: 1%;
-    width: 71%;
+    /* opacity: 0.5; */
+    height: 5%;
+    margin-left: 5%;
+    margin-bottom: 3%;
+    width: 76%;
     padding: 6px 8px 6px 16px;
     border-style: solid;
     border-width: thin;
@@ -117,7 +149,7 @@ html {
     display: block;
   }
   .sidenav {
-    height: 25%;
+    height: 65%;
     width: 30%;
     margin-right: 0%;
     position: relative;
@@ -131,12 +163,12 @@ html {
 }
 
 .sidenav a {
-    background-image: url('https://www.xmple.com/wallpaper/white-lines-stripes-streaks-grey-3200x1800-c2-ffffff-dcdcdc-l2-54-108-a-30-f-1.svg');
+    /* background-image: url('https://www.xmple.com/wallpaper/white-lines-stripes-streaks-grey-3200x1800-c2-ffffff-dcdcdc-l2-54-108-a-30-f-1.svg'); */
       -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
-    opacity: 0.5;
+    /* opacity: 0.5; */
     height: 10%;
     margin-left: 5%;
     margin-bottom: 1%;
@@ -152,9 +184,52 @@ html {
 }
 
 .sidenav a:hover {
-    color: #8b8b8b;
+    background-color: rgb(221, 221, 0);
+    position: relative;
+    font-size: 97%;
 }
 .backbtn a:hover {
-    color: #8b8b8b;
+    background-color: rgb(221, 221, 0);
+    font-size: 140%;
+}
+.content{
+    float: right;
+    margin-right: 10%;
+    width: 60%;
+    margin-left: -10%;
+}
+.content p{
+    font-family: 'Aldrich';
+    margin-left: 8%;
+    margin-top: 0%;
+}
+#profile-info{
+    margin-bottom: 0%;
+}
+.content input{
+    font-family: 'Aldrich';
+    color: #6b6b6b; 
+
+}
+.info-field{
+    margin-bottom: 5%;
+}
+#edit-btn{
+    height: 10%;
+    margin: auto;   
+    width: 71%;
+    padding: 6px 8px 6px 16px;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgb(0, 0, 0);
+    font-family: 'Aldrich';
+    text-decoration: none;
+    font-size: 120%;
+    color: #000000;
+    display: block;
+}
+#edit-btn:hover{
+    background-color: rgb(221, 221, 0);
+    font-size: 140%;
 }
   

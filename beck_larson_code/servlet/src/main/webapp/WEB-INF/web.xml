@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>ServletExamples</display-name>
+
+<servlet>
+	<servlet-name>helloALIAS</servlet-name>
+	<servlet-class>com.revature.servlet.HelloWorldServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>helloALIAS</servlet-name>
+	<url-pattern>/hello</url-pattern>
+</servlet-mapping>
+<!-- LifeCycle servlet -->
+<servlet>
+	<servlet-name>lifeALIAS</servlet-name>
+	<servlet-class>com.revature.servlet.LifeCycleServlet</servlet-class>
+	<load-on-startup>1</load-on-startup>
+</servlet>
+<servlet-mapping>
+	<servlet-name>lifeALIAS</servlet-name>
+	<url-pattern>/life</url-pattern>
+</servlet-mapping>
+
+<!-- ForwardVsRedirect Servlet -->
+<servlet>
+	<servlet-name>fvr</servlet-name>
+	<servlet-class>com.revature.servlet.ForwardVsRedirectServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+	<servlet-name>fvr</servlet-name>
+	<url-pattern>/forwardVsRedirect</url-pattern>
+</servlet-mapping>
+</web-app>

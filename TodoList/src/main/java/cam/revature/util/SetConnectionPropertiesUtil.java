@@ -21,23 +21,13 @@ public class SetConnectionPropertiesUtil {
 		String password;
 		String url;     
 		Properties props = new Properties();
-		props.load(new FileReader("src\\main\\resources\\db.properties"));
+		props.load(new FileReader("src/main/resources/db.properties"));
 		
 		url = props.getProperty("url");
 		username = props.getProperty("username");
 		password = props.getProperty("pw");
 		
 		return DriverManager.getConnection(url, username, password);
-		
-	}
-	public static void printSum(int x, int y) {
-		
-	}
-	public static void printSum(Integer x, Integer y) {
-		
-	}
-	public Boolean tester() {
-		
 		
 	}
 }
