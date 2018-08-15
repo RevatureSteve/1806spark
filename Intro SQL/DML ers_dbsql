@@ -1,0 +1,48 @@
+--Adding values to position table
+INSERT INTO position VALUES (1, 'Manager');
+INSERT INTO position VALUES (2, 'Employee');
+
+--Adding values to rq_status table
+INSERT INTO rq_status VALUES (1, 'Pending');
+INSERT INTO rq_status VALUES (2, 'Approved');
+INSERT INTO rq_status VALUES (3, 'Declined');
+
+
+INSERT INTO reimbursement VALUES (1, 123, 456, 1, 1, 100, null, null, null);
+INSERT INTO users VALUES (1, 1, 'asd@asd.com', 456, 'John', 'Smith');
+
+
+--Senquences
+--users table
+CREATE SEQUENCE u_id_seq 
+  START WITH 1 
+  INCREMENT BY 1;
+  
+--reimbursement table
+CREATE SEQUENCE r_id_seq 
+  START WITH 1 
+  INCREMENT BY 1;
+
+
+--Triggers for Sequences
+--users_id
+CREATE OR REPLACE TRIGGER u_id_trigger
+BEFORE INSERT ON users
+FOR EACH ROW 
+BEGIN
+  IF :new.u_id IS NULL THEN
+    SELECT u_id_seq.nextval INTO :new.u_id FROM dual;
+  END IF;
+END;
+/
+
+--account_number
+CREATE OR REPLACE TRIGGER r_id_trigger
+BEFORE INSERT ON reimbursement
+FOR EACH ROW 
+BEGIN
+  IF :new.r_id IS NULL THEN
+    SELECT r_id_seq.nextval INTO :new.r_id FROM DUAL;
+  END IF;
+END;
+/
