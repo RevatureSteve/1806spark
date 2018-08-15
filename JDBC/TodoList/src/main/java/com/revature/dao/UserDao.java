@@ -1,5 +1,8 @@
 package com.revature.dao;
 
+import java.util.List;
+
+import com.revature.domain.Task;
 import com.revature.domain.User;
 
 public interface UserDao {
@@ -10,6 +13,7 @@ public interface UserDao {
 	
 	//	READ
 	public User getUserByUsername(String username);
+	public List<Task> getAllTasks();
 	//	UPDATE
 	
 	//	DELETE

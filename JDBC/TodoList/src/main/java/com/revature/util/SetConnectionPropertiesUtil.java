@@ -17,10 +17,14 @@ public class SetConnectionPropertiesUtil {
 	 */
 	//	let the developer that needs a connection handle these exceptions
 	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException {
-		
-		String username;
-		String password;
-		String url;
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		String username = "todo_db";
+		String password = "p4ssw0rd";
+		String url = "jdbc:oracle:thin:@hearthstone.cxazmpz2rlnm.us-east-2.rds.amazonaws.com:1521:ORCL";
 		
 		Properties props = new Properties();
 		props.load(new FileReader("src\\main\\resources\\db.properties"));
