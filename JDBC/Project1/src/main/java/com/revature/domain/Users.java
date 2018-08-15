@@ -11,7 +11,9 @@ public class Users {
 	private int positionId;
 	
 	//NO-ARGS
-	public Users() {}
+	public Users() {
+		super();
+	}
 
 	//Constructor
 	public Users(int userId, String email, String password, String firstName, String lastName, int positionId) {
@@ -24,6 +26,7 @@ public class Users {
 		this.positionId = positionId;
 	}
 
+	
 	//Getters n' Setters
 	public int getUserId() {
 		return userId;
