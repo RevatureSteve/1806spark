@@ -1,0 +1,213 @@
+body {
+    margin: 0;
+    bottom: 0;
+    height: 100%;
+    font-family: Helvetica Neue, 'Roboto', sans-serif;
+}
+
+.loginbody {
+    background-size: cover;
+    background: url(https://rev2.force.com/sfsites/picasso/core/external/salesforceIdentity/images/background.jpg?v=11) 50% 50%/cover no-repeat fixed #f4f4f4;
+    text-align: center;
+    display: flex;
+    align-items: center;
+}
+
+.logincard {
+    text-align: left;
+    min-width: 280px;
+    max-width: 390px;
+    margin: auto;
+    margin-top: 5%;
+    margin-bottom: 5%;
+    display: inline-block;
+    position: relative;
+    font-size: 14px;
+    color: #333;
+    text-decoration: none;
+    vertical-align: middle;
+    z-index: 0;
+}
+
+.logincard:before {
+    content: '';
+    position: absolute;
+    top: -65px;
+    bottom: -70px;
+    left: -20px;
+    right: -20px;
+    padding: 20px;
+    z-index: -1;
+    background-color: rgba(255, 255, 255, 0);
+    border-radius: 4px;
+}
+
+.inputcontainer {
+    margin-bottom: 10px;
+    padding: 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 2px;
+}
+
+.inputbox {
+    margin-left: 10px;
+    margin-top: 3px;
+    border: 0 solid transparent;
+    width: 70%;
+    -webkit-appearance: none;
+    font-size: 16px;
+    color: #696969;
+    outline: none;
+}
+
+.loginbtn {
+    width: 100%;
+    margin-top: 5px;
+    margin-bottom: 15px;
+    color: #fff;
+    cursor: pointer;
+    background-color: rgb(242, 105, 37);
+    display: inline-block;
+    text-align: center;
+    vertical-align: middle;
+    background-image: none;
+    border: 1px solid transparent;
+    white-space: nowrap;
+    padding: 10px 12px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.42857143;
+    border-radius: 2px;
+    user-select: none;
+    outline: none;
+    transition: border .15s linear;
+}
+
+.loginbtn:hover {
+    background-color: #d7500d;
+}
+
+.header {
+    background-color: #f7f7f7;
+    overflow: auto;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 2px 1px 0px rgba(102, 93, 93, 0.15);
+    padding-right: 24px;
+}
+
+.anchortitle {
+    text-decoration: none;
+    color: #2c91de;
+    float: left;
+}
+
+.anchortitle:hover {
+    text-decoration: none;
+    color: #1d76ba;
+}
+
+.navtitle {
+    padding: 12px;
+    margin: 0;
+}
+
+.rightnav {
+    float: right;
+    padding: 12px;
+}
+
+.navbtn {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    background-color: transparent;
+    text-decoration: none;
+    border-color: #333;
+    color: #333;
+    opacity: 0.7;
+}
+
+.ercard {
+    position: relative;
+    padding: 0;
+    background: #fff;
+    border: 1px solid rgb(221, 219, 218);
+    border-radius: .25rem;
+    background-clip: padding-box;
+    box-shadow: none;
+    margin: 1.5rem;
+}
+
+.ercard_header {
+    color: #fff;
+    padding: .75rem 1rem .75rem;
+    margin: 0;
+    background-color: #55698d;
+}
+
+.btn_container {
+    padding: 0 25px;
+    height: 100px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    border-bottom: 1px solid rgb(221, 219, 218);
+}
+
+.create_expense_btn {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    text-align: center;
+    vertical-align: middle;
+    border: 1px solid rgb(217, 219, 221);
+    transition: border .15s linear;
+    background-color: rgb(242, 105, 37);
+    border-color: rgb(242, 105, 37);
+    color: rgb(255, 255, 255);
+    position: relative;
+    display: inline-block;
+    background-clip: border-box;
+    border-radius: .25rem;
+    line-height: 1.875rem;
+    text-decoration: none;
+    white-space: normal;
+    user-select: none;
+}
+
+.list_container {
+    display: flex;
+    min-height: 450px;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 1rem;
+}
+
+.er_table {
+    width: 100%;
+    padding-bottom: 1rem;
+    border-collapse: separate;
+    border-bottom: 1px solid rgb(221, 219, 218);
+}
+
+.table_caps {
+    font-size: .75rem;
+    line-height: 1.25;
+    color: #696969;
+    text-transform: uppercase;
+    letter-spacing: .0625rem;
+}
+
+.er_th {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: bold;
+    text-align: left;
+}
