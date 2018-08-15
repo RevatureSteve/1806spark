@@ -6,7 +6,9 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.List;
 
+import com.revature.domain.Task;
 import com.revature.domain.User;
 import com.revature.util.SetConnectionPropertiesUtil;
 
@@ -40,6 +42,12 @@ public class UserDaoImpl implements UserDao{
 		}
 		System.err.println("[LOG]---Ending----getUserByUser() returning: " + user);
 		return user;
+	}
+
+	@Override
+	public List<Task> getAllTasks() {
+		
+		return null;
 	}
 
 }

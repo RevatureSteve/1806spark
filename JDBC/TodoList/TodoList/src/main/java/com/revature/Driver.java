@@ -46,12 +46,12 @@ public class Driver {
 //				Task: tId, uId, tName, tsLevelID, tsLevel 
 		
 		
-		String usernameInput = "steve";
-		String pwInput = "123";
-		
-		User validUser = new AppService().login(new User(0,usernameInput,pwInput));
-		System.out.println("Is the user valid: " + validUser);
-		 
+//		String usernameInput = "steve";
+//		String pwInput = "123";
+//		
+//		User validUser = new AppService().login(new User(0,usernameInput,pwInput));
+//		System.out.println("Is the user valid: " + validUser);
+//		 
 		
 	}
 

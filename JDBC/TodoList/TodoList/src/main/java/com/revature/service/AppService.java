@@ -1,8 +1,19 @@
 package com.revature.service;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
 import com.revature.dao.UserDao;
 import com.revature.dao.UserDaoImpl;
+import com.revature.domain.Task;
 import com.revature.domain.User;
+import com.revature.util.SetConnectionPropertiesUtil;
 
 public class AppService {
 
@@ -44,4 +55,32 @@ public class AppService {
 		return null;
 	}
 	
+	public List<Task> getAllTasks()
+	{
+		System.out.println("LOG---retrieving----all users");
+		//Call DAO to get data from the database.
+		List<Task> list = new ArrayList();
+		try {
+			Connection conn = SetConnectionPropertiesUtil.getConnection();
+			String sql = "SELECT * FROM task";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				list.add(new Task(rs.getInt(1), rs.getInt(2), rs.getString(3), rs.getInt(4), rs.getString(5)));
+			}
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		return list;
+		
+	}
 }
