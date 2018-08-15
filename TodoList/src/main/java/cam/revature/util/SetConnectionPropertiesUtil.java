@@ -17,15 +17,24 @@ public class SetConnectionPropertiesUtil {
 	 */
 	
 	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException {
-		String username;
-		String password;
-		String url;     
-		Properties props = new Properties();
-		props.load(new FileReader("src/main/resources/db.properties"));
 		
-		url = props.getProperty("url");
-		username = props.getProperty("username");
-		password = props.getProperty("pw");
+		try {
+			Class.forName("ocacle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		String username = "todo_db";
+		String password = "p4ssw0rd";
+		String url = "jdbc:oracle:thin:@gooddata.chd4toccqgaj.us-east-2.rds.amazonaws.com:1521:ORCL"; 
+		
+//		Properties props = new Properties();
+//		props.load(new FileReader("src/main/resources/db.properties"));
+		
+//		url = props.getProperty("url");
+//		username = props.getProperty("username");
+//		password = props.getProperty("pw");
 		
 		return DriverManager.getConnection(url, username, password);
 		

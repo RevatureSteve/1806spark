@@ -14,16 +14,20 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import cam.revature.domain.Task;
+import cam.revature.service.AppService;
 
 public class TodoServelet extends HttpServlet {
+	
+	private AppService appService = new AppService();
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
 		
-		List<Task> tasks = new ArrayList<>();
-		tasks.add(new Task (1,1, "go for run", 1, "Pending"));
-		tasks.add(new Task (2,2, "go for walk", 2, "completed"));
-		tasks.add(new Task (3,3, "go for sprint", 3, "cancelled"));
+//		List<Task> tasks = new ArrayList<>();
+//		tasks.add(new Task (1,1, "go for run", 1, "Pending"));
+//		tasks.add(new Task (2,2, "go for walk", 2, "completed"));
+//		tasks.add(new Task (3,3, "go for sprint", 3, "cancelled"));
+		List<Task> tasks = appService.getAllTasks();
 		
 		ObjectMapper mapper = new ObjectMapper();
 		resp.setContentType("application/json");

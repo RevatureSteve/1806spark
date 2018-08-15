@@ -1,12 +1,18 @@
 package cam.revature.dao;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import cam.revature.domain.Task;
 import cam.revature.domain.User;
+import cam.revature.util.SetConnectionPropertiesUtil;
 
 public class UserDaoImpl implements UserDao{
 	
@@ -34,5 +40,54 @@ public class UserDaoImpl implements UserDao{
 		}
 		return user;
 	}
+
+
+	@Override
+	public List<Task> getAllTasks() {
+		List<Task> tasks = new ArrayList<>();
+		try (Connection con = SetConnectionPropertiesUtil.getConnection();){
+			String sql = "SELECT * FROM task";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				tasks.add(new Task(rs.getInt("T_ID"), rs.getInt("U_ID"), rs.getString("T_NAME"), rs.getInt("TS_ID"), null));
+			}
+		} catch (IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tasks;
+	}
+
+
+	@Override
+	public List<Task> getTasksByUserId(int id) {
+		
+		List<Task> tasks = new ArrayList<>();
+		try (Connection con = SetConnectionPropertiesUtil.getConnection();){
+			String sql = "SELECT * FROM task WHERE u_id = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+		
+			while(rs.next()) {
+				tasks.add(new Task(rs.getInt("T_ID"), rs.getInt("U_ID"), rs.getString("T_NAME"), rs.getInt("TS_ID"), null));
+			}
+		
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return null;
+	}
+	
+	
 
 }
