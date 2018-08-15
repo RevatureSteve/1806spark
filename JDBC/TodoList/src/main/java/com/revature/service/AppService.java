@@ -54,6 +54,11 @@ public class AppService {
 		return userDao.getAllTasks();
 	}
 	
+	public List<Task> getTasksBytUserId(int id) {
+		System.out.println("[LOG]---retrieving---User Tasks");
+		return userDao.getTasksByUserId(id);
+	}
+	
 	public User getUser(int id) {
 //		return userDao.getUserByUsername(username);
 		return null;

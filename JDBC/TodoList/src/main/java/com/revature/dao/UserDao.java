@@ -14,6 +14,7 @@ public interface UserDao {
 	//	READ
 	public User getUserByUsername(String username);
 	public List<Task> getAllTasks();
+	public List<Task> getTasksByUserId(int id);
 	//	UPDATE
 	
 	//	DELETE

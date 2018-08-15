@@ -67,4 +67,22 @@ public class UserDaoImpl implements UserDao{
 		return tasks;
 	}
 
+	@Override
+	public List<Task> getTasksByUserId(int id) {
+		List<Task> tasks = new ArrayList<>();
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()){
+			String sql = "SELECT * FROM task where u_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				tasks.add(new Task(rs.getInt("T_ID"), rs.getInt("U_ID"), rs.getString("T_NAME"), rs.getInt("TS_ID"), null));
+			}
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+		return tasks;
+	}
+
 }

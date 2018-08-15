@@ -18,7 +18,7 @@ public class SetConnectionPropertiesUtil {
 	//	let the developer that needs a connection handle these exceptions
 	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException {
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver");
+			Class.forName("oracle.jdbc.driver.OracleDriver"); //required for Tomcat
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
 		}
@@ -26,12 +26,12 @@ public class SetConnectionPropertiesUtil {
 		String password = "p4ssw0rd";
 		String url = "jdbc:oracle:thin:@hearthstone.cxazmpz2rlnm.us-east-2.rds.amazonaws.com:1521:ORCL";
 		
-		Properties props = new Properties();
-		props.load(new FileReader("src\\main\\resources\\db.properties"));
+//		Properties props = new Properties();
+//		props.load(new FileReader("src\\main\\resources\\db.properties"));
 		
-		url = props.getProperty("url");
-		username = props.getProperty("username");
-		password = props.getProperty("password");
+//		url = props.getProperty("url");
+//		username = props.getProperty("username");
+//		password = props.getProperty("password");
 		
 		return DriverManager.getConnection(url, username, password);
 	}

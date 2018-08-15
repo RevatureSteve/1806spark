@@ -2,34 +2,34 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>TodoList</display-name>
   
-  <!-- This is the web.xml aka deployment descriptor -->
-  <!--
-  	XML files (these days) are mostly used for configuration
-  		This configuration file is for
-  		the Web Container aka Servlet COntainer (Tomcat)
-  		
-  		MAIN PURPOSE OF THE web.xml IS TO CONNECT URLS to SERVLETS
-  -->
-  
-  <!-- HelloWorldServlet -->
   <servlet>
-  	<servlet-name>hello</servlet-name>
-  	<!-- the alias of a servlet for protection (different name so hackers cannot see our class) -->
-  	<servlet-class>com.revature.servlets.HelloWorldServlet</servlet-class>
+    <servlet-name>hello</servlet-name>
+    <servlet-class>com.revature.servlets.HelloWorldServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-	  <!-- now use the alias of a servlet -->
-	  <servlet-name>hello</servlet-name>
-	  <url-pattern>/hello</url-pattern>
+    <servlet-name>hello</servlet-name>
+    <url-pattern>/hello</url-pattern>
   </servlet-mapping>
   
-  <!-- TodoServlet -->
-	<servlet>
-		<servlet-name>task</servlet-name>
-		<servlet-class>com.revature.servlets.TodoServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>task</servlet-name>
-		<url-pattern>/task</url-pattern>
-	</servlet-mapping>
+  <servlet>
+    <servlet-name>task</servlet-name>
+    <servlet-class>com.revature.servlets.TodoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>task</servlet-name>
+    <url-pattern>/task</url-pattern>
+  </servlet-mapping>
+ 
+ <!-- TodoIdServlet -->
+  <servlet>
+    <description></description>
+    <display-name>TodoIdServlet</display-name>
+    <servlet-name>TodoIdServlet</servlet-name>
+    <servlet-class>com.revature.servlets.TodoIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TodoIdServlet</servlet-name>
+    <url-pattern>/task/id</url-pattern>
+  </servlet-mapping>
+  
 </web-app>
