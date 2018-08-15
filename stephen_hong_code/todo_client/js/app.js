@@ -2,63 +2,68 @@
     core js file
 */
 
-window.onload = function(){
+window.onload = function () {
     console.log("page has loaded");
     loadNavbar();
     searchTaskHtml();
 }
 
-function loadNavbar(){
+function loadNavbar() {
     console.log("loading navbar...");
-let navbar = document.getElementById("navbar");
+    let navbar = document.getElementById("navbar");
     fetch("/pages/navbar.html").then((resp) => {
         console.log(resp);
         nav = resp;
         return resp.text();
     })
-    .then((text) => {
-        console.log(text);
-        navbar.innerHTML = text;
-    })
+        .then((text) => {
+            console.log(text);
+            navbar.innerHTML = text;
+        })
 }
 
-function loadTask(x){
-    console.log("loading task...");
-let task = document.getElementById("view");
-    fetch("/pages/task.html").then((resp) => {
-        console.log(resp);
-        return resp.text();
-    })
-    .then((text) => {
-        console.log(text);
-        task.innerHTML = text;
-        loadTaskList(x);
-    })
-}
-
-function searchTaskHtml(){
-let task = document.getElementById("view");
+function searchTaskHtml() {
+    let task = document.getElementById("view");
     fetch("/pages/searchTask.html").then((resp) => {
         console.log(resp);
         return resp.text();
     })
-    .then((text) => {
-        console.log(text);
-        task.innerHTML = text;
-    })
+        .then((text) => {
+            console.log(text);
+            task.innerHTML = text;
+        })
 }
 
-function loadTaskList(x){
+function searchTask() {
+    var x = document.getElementById("userid").value;
+    loadTask(x);
+}
+
+function loadTask(x) {
+    console.log("loading task...");
+    let task = document.getElementById("view");
+    fetch("/pages/task.html").then((resp) => {
+        console.log(resp);
+        return resp.text();
+    })
+        .then((text) => {
+            console.log(text);
+            task.innerHTML = text;
+            loadTaskList(x);
+        })
+}
+
+function loadTaskList(x) {
     console.log("loading task list...");
     document.getElementById("listTask");
     fetch("http://localhost:8080/TodoList/task/id?userId=" + x).then((resp) => {
         console.log(resp);
         return resp.json();
     })
-    .then((json) => {
-        console.log(json);
-        loopTask(json);
-    })
+        .then((json) => {
+            console.log(json);
+            loopTask(json);
+        })
 }
 
 function loopTask(json) {
@@ -67,9 +72,4 @@ function loopTask(json) {
         c.innerHTML = json[i].taskName;
         document.getElementById("listTask").appendChild(c);
     }
-}
-
-function searchTask() {
-    var x = document.getElementById("userid").value;
-    loadTask(x);
 }
