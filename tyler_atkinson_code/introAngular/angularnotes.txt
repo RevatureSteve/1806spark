@@ -1,0 +1,12 @@
+HEavily use NPM which is an example of a popular CLI tool
+Angular ahs a CLI built on top of NPM called...Angular CLI
+
+To install angular CLI  npm install -g @angular/cli  -g is for global install
+
+Check angular version ng -v
+
+New angular project:
+
+ng new <project-name>   dont include<>
+
+
