@@ -13,7 +13,7 @@ FOREIGN KEY (post_id) REFERENCES position (pos_id)
 )
 
 --Table for reimbursment.
-CREATE TABLE reimburstment (
+CREATE TABLE reimbursement (
 r_id INT,
 amount INT NOT NULL CHECK  (amount > 0),
 r_description VARCHAR2(4000) ,
@@ -30,6 +30,7 @@ FOREIGN KEY (rq_type_id) REFERENCES rq_type (rq_type_id),
 FOREIGN KEY (rq_status_id) REFERENCES rq_status (rq_status_id)
 ) 
 
+
 --Table for reimbursment type.
 CREATE TABLE rq_type (
 rq_type_id INT,
@@ -41,7 +42,7 @@ PRIMARY KEY (rq_type_id)
 CREATE TABLE rq_status (
 rq_status_id INT,
 rq_status VARCHAR2(500),
-PRIMARY KEY (rq_status)
+PRIMARY KEY (rq_status_id)
 )
 
 --Table for user position.

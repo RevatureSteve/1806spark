@@ -1,0 +1,2 @@
+CREATE USER reimb_db IDENTIFIED BY p4ssw0rd;
+GRANT CONNECT, RESOURCE to reimb_db;
