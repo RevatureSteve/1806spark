@@ -19,12 +19,17 @@ public class SetConnectionPropertiesUtil {
 	
 	
 	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 		String username = "";
 		String password = "";
 		String url = "";
 		Properties props = new Properties();
-		props.load(new FileReader("src\\main\\resources\\db.properties"));
-		
+//		props.load(new FileReader("src\\main\\resources\\db.properties"));
+		props.load(new FileReader("C:\\Users\\chin2\\mygitrepos\\1806spark\\chinedu_ozodi_code\\flashcards\\TodoList\\src\\main\\resources\\db.properties"));
 		url = props.getProperty("url");
 		username = props.getProperty("username");
 		password = props.getProperty("password");

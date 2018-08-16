@@ -13,7 +13,7 @@ public class User implements Serializable {
 	private String username;
 	private String password;
 	
-	// Aditional properties
+	// Additional properties
 	private List<Task> userTasks;
 	
 
