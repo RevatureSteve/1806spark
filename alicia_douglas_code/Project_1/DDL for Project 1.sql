@@ -1,4 +1,4 @@
-CREATE TABLE users (
+ CREATE TABLE users (
 u_id INT,
 email VARCHAR2 (100) UNIQUE NOT NULL,
 password VARCHAR2(40) NOT NULL,
@@ -30,7 +30,7 @@ PRIMARY KEY (rb_status_id)
 
 
 CREATE TABLE reimbursement (
-p_id INT,
+r_id INT,
 emp_u_id INT NOT NULL,
 mgr_u_id INT,
 amt NUMBER (18,2) NOT NULL,
@@ -39,7 +39,7 @@ img BLOB,
 time_submission TIMESTAMP NOT NULL,
 rb_type_id INT NOT NULL,
 rb_status_id INT NOT NULL,
-PRIMARY KEY (p_id),
+PRIMARY KEY (r_id),
 FOREIGN KEY (emp_u_id) REFERENCES users(u_id),
 FOREIGN KEY (mgr_u_id) REFERENCES users (u_id),
 FOREIGN KEY (rb_type_id) REFERENCES rb_type(rb_type_id),

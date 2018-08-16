@@ -12,16 +12,28 @@ public class SetConnectionPropertiesUtil {
 	
 	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException {
 		
-		final String username;
-		final String password;
-		final String url;
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
 		
-		Properties props = new Properties();
-		props.load(new FileReader("src\\main\\resources\\db.properties"));
+		final String url = "jdbc:oracle:thin:@mydbinstance.cu3okwucelpd.us-east-2.rds.amazonaws.com:1521:ORCL";
+		final String username = "project1_db";
+		final String password = "p4ssw0rd";
 		
-		url = props.getProperty("url");
-		username = props.getProperty("username");
-		password = props.getProperty("pw");
+		
+		//		final String username;
+//		final String password;
+//		final String url;
+//		
+//		Properties props = new Properties();
+//		props.load(new FileReader("src\\main\\resources\\db.properties"));
+//		
+//		url = props.getProperty("url");
+//		username = props.getProperty("username");
+//		password = props.getProperty("pw");
 		return DriverManager.getConnection(url, username, password);
 		
 	}

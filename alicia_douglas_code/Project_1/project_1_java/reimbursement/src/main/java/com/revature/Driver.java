@@ -1,10 +1,9 @@
 package com.revature;
 
-import com.revature.dao.ReimbursementDao;
+import java.util.List;
+
 import com.revature.dao.UsersDao;
-import com.revature.domain.Reimbursement;
 import com.revature.domain.Users;
-import com.revature.service.BuisnessLogic;
 
 public class Driver {
 
@@ -26,10 +25,19 @@ public class Driver {
 //		System.out.println(new ReimbursementDao().getReimbursements());
 		
 		
-		Reimbursement reim = new Reimbursement(1,20.00, "FUN", null,1);
-		System.out.println(reim);
+//		Reimbursement reim = new Reimbursement(1,20.00, "FUN", null,1);
+//		System.out.println(reim);
+		
+//		Users user = new Users ("sdoug@gmail.com", "111", "Skye", "Douglas", 2);
+//		new UsersDao().createUser(user);
+		List<Users> users = new UsersDao().readUsers();
+		
+		for (Users user : users) {
+			System.out.println(user);
+		}
 		
 		
+//		System.out.println(new UsersDao().readUsers());
 		
 //		new ReimbursementDao().createReimbursement(reim);
 //		System.out.println(new ReimbursementDao().getReimbursements());

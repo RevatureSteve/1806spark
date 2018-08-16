@@ -15,7 +15,20 @@ import com.revature.util.SetConnectionPropertiesUtil;
 public class UsersDao {
 
 	//Create
-	
+	public void createUser(Users user) {
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
+			String sql = "INSERT INTO users (email, password, fname, lname, pos_id) VALUES (?,?,?,?,?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, user.getEmail());
+			ps.setString(2, user.getPassword());
+			ps.setString(3, user.getFname());
+			ps.setString(4, user.getLname());
+			ps.setInt(5, user.getPos_id());
+			ps.executeQuery();
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+	}
 	
 	
 	//Read
@@ -55,7 +68,7 @@ public class UsersDao {
 			String sql = "SELECT * FROM users";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
-			if (rs.next()) {
+			while (rs.next()) {
 				Users user = new Users(rs.getInt(1), rs.getString("email"), rs.getString("password"), rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"));
 				users.add(user);
 			}

@@ -61,7 +61,7 @@ END;
 --Stored Procedures
 
 
---get reimbursements and join tables
+--get reimbursements by emp_u_id and join tables
 CREATE OR REPLACE PROCEDURE get_reimbursements_by_emp_id(emp_id IN INT, reimbursements OUT SYS_REFCURSOR)
 IS
 BEGIN 
@@ -70,9 +70,53 @@ BEGIN
     INNER JOIN rb_status rs
     ON r.rb_status_id = rs.rb_status_id
     INNER JOIN rb_type rt
+    ON r.rb_type_id = rt.rb_type_id
+    WHERE emp_u_id = emp_id;
+END;
+/
+
+--get all reimbursements and join tables
+CREATE OR REPLACE PROCEDURE get_reimbursements(reimbursements OUT SYS_REFCURSOR)
+IS
+BEGIN
+    OPEN reimbursements FOR 
+    SELECT * FROM reimbursement r
+    INNER JOIN rb_status rs
+    ON r.rb_status_id = rs.rb_status_id
+    INNER JOIN rb_type rt
     ON r.rb_type_id = rt.rb_type_id;
 END;
 /
+
+--Create new reimbursement
+CREATE OR REPLACE PROCEDURE create_reimbursement(emp_id IN INT, amount IN NUMBER, description IN VARCHAR2, image IN BLOB, rb_type IN INT)
+IS
+BEGIN
+    INSERT INTO reimbursement (emp_u_id, amt, description, img, time_submission, rb_type_id, rb_status_id)
+    VALUES (emp_id, amount, description, image, CURRENT_TIMESTAMP, rb_type, 1);
+END;
+/
+        
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+
+
+
+
+
 
 
 

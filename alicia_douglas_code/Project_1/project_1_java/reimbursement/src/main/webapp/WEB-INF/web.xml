@@ -1,5 +1,44 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>reimbursement</display-name>
-
+  <servlet>
+    <description></description>
+    <display-name>UserServlet</display-name>
+    <servlet-name>UserServlet</servlet-name>
+    <servlet-class>com.revature.servlets.UserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserServlet</servlet-name>
+    <url-pattern>/users</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementServlet</display-name>
+    <servlet-name>ReimbursementServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementServlet</servlet-name>
+    <url-pattern>/reimbursement</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementIdServlet</display-name>
+    <servlet-name>ReimbursementIdServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ReimbursementIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementIdServlet</servlet-name>
+    <url-pattern>/reimbursement/id</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UserEmailServlet</display-name>
+    <servlet-name>UserEmailServlet</servlet-name>
+    <servlet-class>com.revature.servlets.UserEmailServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UserEmailServlet</servlet-name>
+    <url-pattern>/users/email</url-pattern>
+  </servlet-mapping>
 </web-app>

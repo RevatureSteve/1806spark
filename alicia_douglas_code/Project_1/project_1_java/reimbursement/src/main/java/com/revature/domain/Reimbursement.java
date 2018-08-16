@@ -18,6 +18,7 @@ public class Reimbursement {
 	private String rbType;
 	private int rbTypeId;
 	private String rbStatus;
+	private int rbStatusId;
 	
 	
 	public Reimbursement() {
@@ -26,7 +27,7 @@ public class Reimbursement {
 
 
 	public Reimbursement(int rId, int empUId, int mgrUId, Double amt, String description, Blob img,
-			Date timeSubmission, String rbType, String rbStatus) {
+			Date timeSubmission, String rbType, String rbStatus, int rbStatusId) {
 		super();
 		this.rId = rId;
 		this.empUId = empUId;
@@ -37,6 +38,7 @@ public class Reimbursement {
 		this.timeSubmission = timeSubmission;
 		this.rbType = rbType;
 		this.rbStatus = rbStatus;
+		this.rbStatusId = rbStatusId;
 	}
 
 	
@@ -152,6 +154,16 @@ public class Reimbursement {
 
 	public void setRbTypeId(int rbTypeId) {
 		this.rbTypeId = rbTypeId;
+	}
+	
+
+	public int getRbStatusId() {
+		return rbStatusId;
+	}
+
+
+	public void setRbStatusId(int rbStatusId) {
+		this.rbStatusId = rbStatusId;
 	}
 
 

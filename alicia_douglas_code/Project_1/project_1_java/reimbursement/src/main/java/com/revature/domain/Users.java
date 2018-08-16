@@ -24,6 +24,17 @@ public class Users {
 		this.pos_id = pos_id;
 	}
 	
+	
+	
+	public Users(String email, String password, String fname, String lname, int pos_id) {
+		super();
+		this.email = email;
+		this.password = password;
+		this.fname = fname;
+		this.lname = lname;
+		this.pos_id = pos_id;
+	}
+
 	public int getU_id() {
 		return u_id;
 	}

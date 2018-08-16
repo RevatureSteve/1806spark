@@ -1,0 +1,50 @@
+/* HTML Elements */
+
+
+
+/* IDs */
+
+
+
+/* Classes */
+
+.formBtn{
+    margin-top: 10px;
+    width: 200px;
+    border-radius: 10px;
+    color: rgb(201, 50, 5);
+    font-weight: bold;
+    font-size: 17px;
+    font-style: italic;
+    font-family: cursive;
+    padding: 5px;
+}
+
+.formBtn:hover{
+    background-color: rgb(201, 50, 5);
+    color: black;
+}
+
+.form{
+    border: solid;
+    border-width: .5px;
+    max-width: 500px;
+    margin: auto;
+    /* text-align: center; */
+    font-style: italic;
+    font-weight: bold;
+    font-family: cursive;
+    padding: 15px;
+    background-color: rgba(29, 29, 29, 0.9);
+    color: rgb(201, 50, 5);
+    border-radius: 25px;
+}
+
+.input{
+    width: 250px;
+    font-size: 15px;
+    padding: 4px;
+    border-radius: 10px;
+    background-color: lightgray;
+    margin-bottom: 5px;
+}

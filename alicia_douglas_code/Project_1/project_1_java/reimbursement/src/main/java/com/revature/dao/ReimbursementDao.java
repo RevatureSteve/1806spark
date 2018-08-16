@@ -52,7 +52,7 @@ public class ReimbursementDao {
 			while (rs.next()) {
 				Reimbursement reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"),
 						rs.getInt("mgr_u_id"), rs.getDouble("amt"), rs.getString("description"), rs.getBlob("img"),
-						rs.getDate("time_submission"), rs.getString("rb_type"), rs.getString("rb_status"));
+						rs.getDate("time_submission"), rs.getString("rb_type"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
 				reimbursements.add(reimbursement);
 			}
 		} catch (IOException | SQLException e) {
@@ -77,7 +77,7 @@ public class ReimbursementDao {
 			while (rs.next()) {
 				Reimbursement reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"),
 						rs.getInt("mgr_u_id"), rs.getDouble("amt"), rs.getString("description"), rs.getBlob("img"),
-						rs.getDate("time_submission"), rs.getString("rb_type"), rs.getString("rb_status"));
+						rs.getDate("time_submission"), rs.getString("rb_type"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
 				reimbursements.add(reimbursement);
 			}
 		} catch (IOException | SQLException e) {
