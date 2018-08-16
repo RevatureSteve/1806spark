@@ -1,22 +1,77 @@
 
 
 
-window.onload = function(){
+window.onload = function foo(){
     console.log("app.js is loaded in...")
-    
-    let pro = document.getElementById('profile-info-btn');
-    let sub = document.getElementById('submit-reim-btn');
-    let pend = document.getElementById('pending-reim-btn');
-    let resolved = document.getElementById('resolved-riem-btn');
 
 
-    pro.addEventListener('click', activeBtn);
+    if(document.getElementById('content')){
+
+    }
+    else if(document.getElementById('talos')){
+        document.getElementById('talos').addEventListener('click', loadPage);
+    }else{
+    loadPage();
+    }
+}
+
+function loadPage(){
+    let navbar = document.getElementById('loaded-content');
+    fetch('pages/start.html').then((resp) => {
+        console.log(resp);
+        nav = resp;
+        return resp.text();
+    }).then((text) =>{
+        console.log(text);
+        navbar.innerHTML = text;
+        document.getElementById('talos').addEventListener('click', loginPage);
    
-    sub.addEventListener('click', activeBtn);
+    });
+}
+
+function loginPage(){
+    let eventID = event.target.id;
+    console.log('ID IS: ' + eventID);
+    let navbar = document.getElementById('loaded-content');
+    fetch('pages/login.html').then((resp) => {
+        console.log(resp);
+        nav = resp;
+        return resp.text();
+    }).then((text) =>{
+        console.log(text);
+        navbar.innerHTML = text;
+        document.getElementById('login').addEventListener('click', employeeLogged);
+        document.getElementById('return').addEventListener('click', loadPage);
+        
+
+    });
+}
+function employeeLogged(){
+    let navbar = document.getElementById('loaded-content');
+    fetch('pages/employee.html').then((resp) => {
+        console.log(resp);
+        nav = resp;
+        return resp.text();
+    }).then((text) =>{
+        console.log(text);
+        navbar.innerHTML = text;
+        let pro = document.getElementById('profile-info-btn');
+        let sub = document.getElementById('submit-reim-btn');
+        let pend = document.getElementById('pending-reim-btn');
+        let resolved = document.getElementById('resolved-riem-btn');
+        document.getElementById('back-btn').addEventListener('click', loginPage)
+
+        pro.addEventListener('click', activeBtn);
    
-    pend.addEventListener('click', activeBtn);
-   
-    resolved.addEventListener('click', activeBtn);
+        sub.addEventListener('click', activeBtn);
+       
+        pend.addEventListener('click', activeBtn);
+       
+        resolved.addEventListener('click', activeBtn);
+    });
+}
+function managerLogged(){
+    let navbar = document.getElementById('loaded-content');
 }
 
 function activeBtn(){
