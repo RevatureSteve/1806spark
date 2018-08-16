@@ -1,0 +1,57 @@
+Heavily use NPM which is an example of a popular CLI tool
+The standard for NPM Projects after pulling is to run the Command:
+    npm install
+    npm start
+
+BUT when creating a new npm project using npm init
+the npm instal workd but NOT npm start, you must add this!
+For emample look at a generated angular project package.json
+ng serve is the cmd to start an angular project BUT again look at the package.json
+npm start calls ng serve because the script tag in package.json says to execute
+    ng serve
+
+SO if project 1 is only an NPM project and not an Angular Project
+    then you must add start to your scripts which would look like:
+    "script": {
+    "start": "node index.js",  
+    }
+
+Angular has a CLI built ontop of NPM call Angular CLI
+CLI: Command Line Interface
+examples of CLIs: ng, npm, node, git, java
+
+Need ro install Angualr CLI
+npm install -g @angular/cli
+
+Check Angular Version
+ng -Version
+
+New Angular Project:
+ng new <project-name>
+don't include the <>
+
+Angular:
+
+directive: <app-name></app-name> html code
+what is the first directive give? <app-root><>/app-root
+What is a directive? where there is a directive, at runtime it will inject
+    the corresponding html fragment then the style will style that html
+    and the ts file will control(like dom manipulation) the html/css
+A directive ALWAYS belongs to a component
+    like app-root belongs to app.component
+
+component: @component in a ts file!
+@component requires 3 things!
+    -selector aka the directive name like app-root which becomes <app-root></app-root>
+    -template aka html
+    -style
+
+Data Binding: 1-way & 2-way
+
+what does {{}} Angular expression
+ts file -> html file
+1 way data Bindingfrom what to what? well we're only talking about components 
+    and components only have 3 things: html, css, ts
+
+mini assignment: create a project, generate 2 components
+    and use angular {{}} to print 2 seperate values to the html files

@@ -1,7 +1,11 @@
 package com.revature.service;
 
+
+import java.util.List;
+
 import com.revature.dao.UserDao;
 import com.revature.dao.UserDaoImpl;
+import com.revature.domain.Task;
 import com.revature.domain.User;
 
 public class AppService {
@@ -13,8 +17,9 @@ public class AppService {
 	 * 		ect.
 	 */
 	
+	//
 	private UserDao userDao = new UserDaoImpl(); 
-	
+	//private AppService appService = new AppService();
 	/**
 	 * login() returns a valid user object or return null if the user/pw combo is invalid;
 	 * @param userInput
@@ -41,5 +46,18 @@ public class AppService {
 		} 
 		System.out.println("[LOG]----ending---Service login() pw: fail");
 		return null;
+	}
+	
+	public List<Task> getAllTasks() {
+		System.out.println("[LOG]----retrieving---All Tasks");
+		//any validation before asking the db? maybe in the future but no at the moment
+		//call the dao to get tasks from the db
+		return userDao.getAllTasks();
+	}
+	
+	public List<Task> getTaskByUserId(int id) {
+		System.out.println("[LOG]----retrieving---All Tasks");
+		
+		return userDao.getTasksByUserId(id);
 	}
 }

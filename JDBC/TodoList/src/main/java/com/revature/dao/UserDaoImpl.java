@@ -6,7 +6,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.revature.domain.Task;
 import com.revature.domain.User;
 import com.revature.util.SetConnectionPropertiesUtil;
 
@@ -46,7 +49,55 @@ public class UserDaoImpl implements UserDao {
 		return user;
 	}
 
-	
+	@Override
+	public List<Task> getAllTasks() {
+		List<Task> tasks = new ArrayList<>();
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()){
+			String sql = "SELECT * FROM task";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				tasks.add(new Task(rs.getInt("T_Id"), rs.getInt("U_Id"), rs.getString("T_Name"), rs.getInt("Ts_Id"), null));
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return tasks;
+		
+	}
+
+	@Override
+	public List<Task> getTasksByUserId(int id) {
+		List<Task> tasks = new ArrayList<>();
+		
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()){
+			String sql = "SELECT * FROM task WHERE u_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				tasks.add(new Task(rs.getInt("T_Id"), rs.getInt("U_Id"), rs.getString("T_Name"), rs.getInt("Ts_Id"), null));
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return tasks;
+	}
 	
 	
 }

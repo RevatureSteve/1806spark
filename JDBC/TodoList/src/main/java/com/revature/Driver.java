@@ -1,11 +1,11 @@
-package com.revature;
+/*package com.revature;
 
 import com.revature.domain.User;
 import com.revature.service.AppService;
 
 public class Driver {
 
-	/*
+	
 	 * finally using a MAven Project!
 	 * 		Maven projects give us a pom.xml
 	 * 
@@ -29,7 +29,7 @@ public class Driver {
 	 * So what actually is Maven?
 	 * 		a build tool (to build artifacts: jar or war)
 	 * 		a dependency manager (jar manager)
-	 */
+	 
 	public static void main(String[] args) {
 		System.out.println("testing...");
 		//start implementing some of the use cases 
@@ -56,4 +56,4 @@ public class Driver {
 	}
 	
 
-}
+}*/
