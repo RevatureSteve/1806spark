@@ -10,6 +10,8 @@ INSERT INTO rq_status VALUES (3, 'Declined');
 
 INSERT INTO reimbursement VALUES (1, 123, 456, 1, 1, 100, null, null, null);
 INSERT INTO users VALUES (1, 1, 'asd@asd.com', 456, 'John', 'Smith');
+DELETE FROM users;
+commit;
 
 
 --Senquences
