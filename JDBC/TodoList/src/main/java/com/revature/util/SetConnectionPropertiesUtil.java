@@ -18,15 +18,22 @@ public class SetConnectionPropertiesUtil {
 	
 	
 	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException{
-		 String username;
-		 String password; 
-		 String url;      
-		Properties props = new Properties();
-		props.load(new FileReader("/TodoList/src/main/resources/db.properties"));
+			try {
+				Class.forName("oracle.jdbc.driver.OracleDriver");  // required for Tomcat	
+			} catch (ClassNotFoundException e) {
+				e.printStackTrace();
+			}
+		 String username = "todo_db";
+		 String password = "p4ssw0rd"; 
+		 String url="jdbc:oracle:thin:@octodog.cgxuhcbbspdy.us-east-2.rds.amazonaws.com:1521:ORCL";      
+//		Properties props = new Properties();
+//		props.load(new FileReader("/TodoList/src/main/resources/db.properties"));
+//		
 		
-		url = props.getProperty("url");
-		username = props.getProperty("username");
-		password = props.getProperty("password");
+//		url = props.getProperty("url");
+//		username = props.getProperty("user");
+//		password = props.getProperty("pw");
+		
 		return DriverManager.getConnection(url, username, password);
 	}
 }

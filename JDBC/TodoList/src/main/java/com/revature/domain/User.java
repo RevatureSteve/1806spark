@@ -16,15 +16,15 @@ public class User implements Serializable{
 	private String username;
 	private String password;
 	
-	// additional property I probably will need here (not a field/attribute in the data)
-	// I know User will have multiple task... probably use a Colelction or ARray to hold them
+	// additional property I probably will need here (not a field/attribute in the database)
+	// I know User will have multiple task... probably use a Collection or ARray to hold them
 	private List<Task> userTasks;
 	
 	public User() {
 		// TODO Auto-generated constructor stub
 	}
 
-	// lazy lodaing from the Database - only get this table's information not foreign key
+	// lazy loading from the Database - only get this table's information not foreign key
 	public User(int uId, String username, String password) {
 		super();
 		this.userId = uId;

@@ -1,7 +1,7 @@
 package com.revature.domain;
 
 /**
- * 	Task class in domain
+ * 	Task class in domain also can be pojo/model/beans (other names for the folder)
  * @author lolitsrhys
  *
  */
