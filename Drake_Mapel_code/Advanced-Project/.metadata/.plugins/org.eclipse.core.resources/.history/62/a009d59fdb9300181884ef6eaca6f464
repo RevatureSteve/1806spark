@@ -1,0 +1,9 @@
+package com.advanced.drake;
+
+import java.io.BufferedInputStream;
+
+public abstract class Pizza {
+	
+	public Pizza() {}
+	
+}

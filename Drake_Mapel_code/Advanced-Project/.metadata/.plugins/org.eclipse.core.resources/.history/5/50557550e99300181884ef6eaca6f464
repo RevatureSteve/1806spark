@@ -1,0 +1,44 @@
+package com.advanced.dao;
+
+public class PizzaDao {
+	
+//	Data Access Object
+	public class StudentDao {
+		
+		private static final String filePathAndName = "src/com/advanced/person.txt";
+		
+		/*
+		 * 	moving these CRUD methods to the package DAO
+		 * 
+		 * 		DAO is a type of design pattern
+		 * 		Data Access Object
+		 * 		does not talk to user -- so duck exceptions
+		 */
+		
+		public static void serializeStudent(Student stud) throws IOException {
+			
+			// serialize student to a file
+			FileOutputStream os = new FileOutputStream(filePathAndName);
+			ObjectOutputStream oos = new ObjectOutputStream(os);
+				
+			oos.writeObject(stud);
+			
+			os.close();
+			oos.close();
+		}
+		
+		public static Student deserializeStudent() throws IOException, ClassNotFoundException {
+			
+			FileInputStream is = new FileInputStream(filePathAndName);
+			ObjectInputStream ois = new ObjectInputStream(is);
+		
+			Student john = (Student) ois.readObject();	
+			
+			is.close();
+			ois.close();
+			return john;
+		}
+
+	}
+
+}

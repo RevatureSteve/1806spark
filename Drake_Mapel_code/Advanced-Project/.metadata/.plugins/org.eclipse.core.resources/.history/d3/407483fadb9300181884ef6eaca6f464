@@ -1,0 +1,8 @@
+package com.advanced.drake;
+
+public abstract class Pizza {
+	
+	public Pizza() {}
+	
+	public abstract hello() {}
+}

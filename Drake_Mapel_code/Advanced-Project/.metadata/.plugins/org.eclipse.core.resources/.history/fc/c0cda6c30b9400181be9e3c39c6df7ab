@@ -1,0 +1,75 @@
+package com.advanced.drake;
+
+import java.io.BufferedReader;
+import java.io.BufferedWriter;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.io.Serializable;
+
+public class ThickCrust extends Pizza implements Serializable, OrderPizza {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1244090764218809531L;
+	
+	private static String filename = "src/com/ex/fileio/sampleBufferedCharacterFile.txt";
+
+	public ThickCrust() {
+		
+		buildPizza();
+		System.out.println("Thick crust chosen");
+		isPlain = true;
+		
+	}
+	
+	public static void promptForToppings() {
+		
+		writeCharacterStream(filename);
+		
+	}
+	
+	public static void getPizzaOrder() {
+		
+		readCharacterStream(filename);
+		
+	}
+
+	
+	static void writeCharacterStream(String filename) {
+		
+		try(BufferedWriter writer = new BufferedWriter(new FileWriter(filename));){
+			
+			writer.write("Hello world\n");
+			writer.write("again\n");
+			writer.write("Buffered Streams are faster and easier to use\n");
+			
+			
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+	}
+
+	static void readCharacterStream(String filename){
+		
+
+		try(BufferedReader reader = new BufferedReader(new FileReader(filename));){
+			
+			String line = "";
+			while((line = reader.readLine()) != null){
+				System.out.println(line);
+			}			
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+	}
+	
+}

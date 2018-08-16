@@ -1,0 +1,10 @@
+package com.advanced.drake;
+
+public abstract class Pizza {
+	
+	boolean isPlain;
+	int numberOfToppings;
+	
+	public Pizza() {}
+	
+}

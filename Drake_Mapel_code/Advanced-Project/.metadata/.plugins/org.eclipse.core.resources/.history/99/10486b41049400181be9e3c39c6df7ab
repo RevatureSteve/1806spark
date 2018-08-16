@@ -1,0 +1,14 @@
+package com.advanced.drake;
+
+public class ThickCrustTop extends ThickCrust {
+	
+	public ThickCrustTop(int numberOfToppings) {
+		
+		super();
+		System.out.println("thick crust w/ toppings chosen");
+		isPlain = false;
+		this.numberOfToppings = numberOfToppings;
+		
+	}
+
+}

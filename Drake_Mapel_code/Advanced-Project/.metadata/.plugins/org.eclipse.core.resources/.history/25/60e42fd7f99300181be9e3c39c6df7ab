@@ -1,0 +1,57 @@
+package com.advanced;
+
+import java.util.Scanner;
+
+import com.advanced.drake.Chicago;
+import com.advanced.drake.ThickCrust;
+import com.advanced.presentation.UserMenuDisplay;
+
+public class PizzaTime {
+	
+	public static void main(String[] args) {
+		
+		Scanner scan = new Scanner(System.in);
+		
+		UserMenuDisplay.welcome();
+		int userInput = 0;
+		int choice = 0;
+		
+		while (true) {
+			userInput = scan.nextInt();
+			
+			switch (userInput) {
+			case 1:
+				choice = UserMenuDisplay.choosePizza();
+				
+				switch (choice) {
+				case 1:
+					ThickCrust.promptForToppings();
+					break;
+				case 2:
+					Chicago.promptForToppings();
+					break;
+				}
+				
+				break;
+			case 2:
+				switch (choice) {
+				case 1:
+					
+					break;
+				case 2:
+					Chicago.getPizzaOrder();
+					break;
+				}
+				
+				break;
+			case 3:
+				System.out.println("Have a nice day!");
+				scan.close();
+				System.exit(1);
+			}
+		}
+		
+	}
+
+
+}

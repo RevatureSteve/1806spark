@@ -1,0 +1,36 @@
+.form {
+    margin: 15% 30%;
+}
+
+.field {
+    /* width: 50%; */
+    float: right;
+}
+
+/* .box {
+    box-sizing: border-box;
+    height: 35px;
+    width: 100%;
+    min-width: 400px;
+} */
+
+.vert {
+    vertical-align: middle;
+}
+
+#info {
+    text-align: center;
+}
+
+#login {
+    height: 20%;
+}
+
+#pad0 {
+    padding: 0 0 25px 0;
+    display: inline-block;
+}
+
+#pad1 {
+    display: inline-block;
+}

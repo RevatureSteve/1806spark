@@ -1,0 +1,46 @@
+package com.advanced.drake;
+
+import java.io.IOException;
+
+import com.advanced.dao.PizzaDao;
+import com.advanced.presentation.UserMenuDisplay;
+
+public class Chicago extends Pizza implements OrderPizza {
+	
+	public Chicago() {
+		
+		System.out.println("Chicago style chosen");
+		isPlain = true;
+		
+	}
+	
+	public static void promptForToppings() {
+
+		Pizza pizza = UserMenuDisplay.choosePizza()();
+		
+		// Persist pizza to order file
+		try {
+			PizzaDao.serializePizza(pizza);
+		} catch (IOException e) {
+			System.out.println("Order malfunction");
+		}
+		
+	}
+	
+	public static void getPizzaOrder() {
+		
+		// retrieve pizza via PizzaDao
+		Pizza pizza = null;
+		try {
+			pizza = PizzaDao.deserializePizza();
+		} catch (ClassNotFoundException e) {
+			System.out.println("Choice not found");
+		} catch (IOException e) {
+			System.out.println("Order malfunction");
+		}
+		
+		UserMenuDisplay.currentOrder(pizza);
+		
+	}
+
+}

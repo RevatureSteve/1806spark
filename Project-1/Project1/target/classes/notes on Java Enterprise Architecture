@@ -1,0 +1,23 @@
+/*		
+ *
+ *		Need multiple objects (records) from the database?
+ * 		Use a Collection like List<FlashCard> flashcardL = new ArrayList<>();
+ * 
+ * 
+ * 		3 Layers in Java Enterprise Architecture
+ * 			1. Presentation: display data (a POJO's current state) to the user and take input
+ * 			2. Business Logic: modify input (again, the POJO), redirect user 
+ * 					to proper presentations, call persistence methods when needed
+ * 			3. Persistence: so far, DAO for CRUD
+ * 
+ * 		more business logic examples:
+ * 			login validation,
+ * 			validate models before persisting,
+ * 			manipulate models before persisting,
+ * 			validate user before pulling sensitive data,
+ * 			etc...
+ *
+ *
+ *		reference LoginService from Bank Project for login implementation
+ * 
+ */

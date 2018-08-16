@@ -1,0 +1,19 @@
+package com.advanced.presentation;
+
+public class UserMenuDisplay {
+	
+	public static void welcome() {
+		
+		System.out.println("Welcome to Pizza Palace");
+		System.out.println("For:");
+		System.out.println("\t" + "Thick crust, enter 1");
+		System.out.println("\t" + "Chicago style, enter 2");
+		
+	}
+	
+	public static void addToppings() {
+		
+		
+	}
+
+}

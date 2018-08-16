@@ -1,0 +1,11 @@
+package com.advanced.drake;
+
+public class ThickCrustTop extends ThickCrust {
+	
+	public ThickCrustTop() {
+		
+		super();
+		System.out.println("thick crust w/ toppings chosen");
+	}
+
+}

@@ -1,0 +1,12 @@
+package com.advanced.drake;
+
+public abstract class Pizza {
+	
+	boolean isPlain;
+	
+	
+	public Pizza() {}
+	
+//	public abstract void hello();
+	
+}

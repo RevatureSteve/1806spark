@@ -1,0 +1,11 @@
+package com.advanced.drake;
+
+public class ThickCrust extends Pizza {
+	
+	public void hello() {
+		
+		System.out.println("thick crust pizza");
+		
+	}
+
+}

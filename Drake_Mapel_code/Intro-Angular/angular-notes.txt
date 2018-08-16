@@ -1,0 +1,13 @@
+Heavily use NPM which is an example of a popular CLI tool
+Angular has a CLI built on top of NPM called...Angular CLI
+
+Need to install angular CLI?
+npm install -g @angular/cli
+
+New Angular Project:
+ng new <project-name>
+don't include the < >
+
+then use
+    ng serve
+under the project-name folder

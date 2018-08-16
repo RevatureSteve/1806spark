@@ -1,0 +1,14 @@
+package com.advanced.presentation;
+
+public class UserMenuDisplay {
+	
+	public static void giveMenu() {
+		
+		System.out.println("Welcome to Pizza Palace");
+		System.out.println("For:");
+		System.out.println("\tThick crust, enter 1");
+		System.out.println("\tChicago style, enter 2");
+		
+	}
+
+}

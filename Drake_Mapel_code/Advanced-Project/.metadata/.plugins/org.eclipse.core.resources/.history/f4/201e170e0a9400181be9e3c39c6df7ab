@@ -1,0 +1,14 @@
+package com.advanced.threads;
+
+import com.advanced.drake.Chicago;
+
+public class PizzaThread implements Runnable {
+
+	@Override
+	public void run() {
+
+		Chicago.promptForToppings();
+		
+	}
+
+}

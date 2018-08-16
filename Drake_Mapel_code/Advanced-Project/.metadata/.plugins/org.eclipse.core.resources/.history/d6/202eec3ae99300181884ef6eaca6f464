@@ -1,0 +1,5 @@
+package com.advanced.dao;
+
+public class PizzaDao {
+
+}

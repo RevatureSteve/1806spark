@@ -1,0 +1,47 @@
+Part 1. OOP
+Create a new Java project
+
+Create an interface
+-At least one abstract method, one concrete method, and one variable
+
+-----POJOS------------------------
+Create an abstract class LABEL A
+-with 2 properties
+-with 3 methods, at least 1 concrete, 1 abstract
+
+Extend 2 classes LABEL B, C from that abstract class (LABEL A)
+-Implement the interface
+-Provide 2 additional Methods 
+-Provide a constructor that will Sysout
+-Add 2 throws exception declaration to 2 methods, 1 checked, 1 unchecked
+
+
+Extend 2 SubClasses LABEL D, E one from each of the previous classes (LABEL B,C)
+-Provide a Constructor that Calls Super Constructor and Sysout afterwards
+-Check the inherited methods and the exceptions
+-----------------------------------
+
+Make a main class that shows you used all the above - Required
+Test the senarios below (not graded, to learn)
+1. Instantiate a class with an AbstractClass Reference, 
+	-use control space to see what variables, and methods are available
+	-Cast that AbstractClass reference down, use control space again, same methods available?
+2. Can you remove the exceptions in the subClasses? 
+	or change it from RuntimeException to Exception or vice versa
+	Can you change it to a different Exception?
+3. Catch the Exceptions, add a finally block, call a method from the catch block
+	Does the method run before or after the finally block?
+4. What are the default values of each scope?
+	Objects = null for instances at Static aka Class scope
+	Objects = ? for Instance, Parameter, and Local scope?
+	Each primitive dafault value?
+
+Part 2: User interaction
+ Read from Console to allow input from the user of the application to interact
+	with the your POJOs
+
+Part 3: File IO
+Persist your instances to a file 1, through Serialization and 1, BufferedWriter and read from them
+
+Part 4: Thread
+Spin up(Create) a new thread when persisting your instances

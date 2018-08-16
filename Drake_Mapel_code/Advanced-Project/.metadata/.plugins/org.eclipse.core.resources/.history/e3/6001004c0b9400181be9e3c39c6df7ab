@@ -1,0 +1,28 @@
+package com.advanced.drake;
+
+import java.io.Serializable;
+
+public class ThickCrust extends Pizza implements Serializable, OrderPizza {
+	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1244090764218809531L;
+
+	public ThickCrust() {
+		
+		buildPizza();
+		System.out.println("Thick crust chosen");
+		isPlain = true;
+		
+	}
+	
+	public static void promptForToppings() {
+		
+	}
+	
+	public static void getPizzaOrder() {
+		
+	}
+	
+}

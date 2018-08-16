@@ -1,0 +1,61 @@
+/*
+    Classes
+*/
+
+#top {
+    height: 5%;
+    background-color: cornflowerblue;
+}
+
+.float {
+    float: left;
+}
+
+.sidebar {
+    width: 20%
+    /* padding: 0 20%; */
+}
+
+.background {
+    box-sizing: border-box;
+    background-color: lightsteelblue;
+    height: 100%;
+    border: 4px solid lightseagreen;
+}
+
+/*
+    IDs
+*/
+
+#left {
+    float: left;
+}
+
+.right {
+    float: right;
+    padding: 7px;
+    color: bisque;
+    font-weight: bold;
+}
+
+#center {
+    width: 60%;
+    /* padding: 0 60%; */
+}
+
+/* #w {
+    box-sizing: border-box;
+} */
+
+#idea {
+    margin: 30%;
+}
+
+#idea-t {
+    width: 100%;
+    height: 30%;
+}
+
+#fit {
+    width: 100%;
+}

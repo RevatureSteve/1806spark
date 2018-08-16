@@ -1,0 +1,3 @@
+CREATE USER project_1 IDENTIFIED BY p4ssw0rd;
+
+GRANT CONNECT, RESOURCE TO project_1;

@@ -1,0 +1,12 @@
+package com.advanced.drake;
+
+public class ThickCrust extends Pizza implements OrderPizza {
+	
+	public ThickCrust() {
+		
+		System.out.println("Thick crust chosen");
+		isPlain = true;
+		
+	}
+	
+}

@@ -1,0 +1,70 @@
+/*
+    these labels do not necessarily make sense with the cascading feature of css
+*/
+
+/*
+    HTML Classes
+*/
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+    height: 100%;
+    /* why does width of half available break this? */
+    width: 45%;
+}
+
+.dropdown-content {
+    display: none;
+    /* what does absolute do in this case? */
+    position: absolute;
+    /* need this to more naturally align with the center of the dropdown */
+    top: 50%;
+    right: 25%;
+    background-color: gray;
+    /* how to plan for if screen becomes to small and this width looks silly? */
+    min-width: 160px;
+}
+
+.dropdown-content a {
+    /* color: black; */
+    padding: 12px 16px;
+    /* text-decoration: none; */
+    display: block;
+}
+
+/*
+    HTML IDs
+*/
+
+div#instr {
+    padding: 16px;
+    text-align: center;
+}
+
+#left-tile {
+    /* I want the dropdown inside of the tile, not below it.  float seemed the way to go */
+    /* float: left; */
+    height: 100%;
+    /* width for when the tile takes up half of the page */
+    width: 100%;
+    /* padding: 16px; */
+    border: none;
+    
+}
+
+#right-tile {
+    height: 100%;
+    width: 100%;
+    /* padding: 16px; */
+    border: none;
+}
+
+/*
+    Misc.
+*/
+
+/* need to nest/label divs more appropriately for dropdown feature? */
+.dropdown:hover .dropdown-content {
+    display: block;
+}

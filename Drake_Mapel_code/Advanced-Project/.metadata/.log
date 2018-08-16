@@ -1,0 +1,453 @@
+!SESSION 2018-07-26 13:52:30.028 -----------------------------------------------
+eclipse.buildId=3.9.5.201807031753-RELEASE-e48
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springsource.sts.ide -product org.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springsource.sts.ide -data C:\Users\dralex\Documents\Advanced-Project -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.jface 2 0 2018-07-26 13:52:43.702
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-07-26 13:52:43.703
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@41a3c6f5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5b78a946,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui 2 2 2018-07-26 13:52:47.350
+!MESSAGE org.eclipse.jdt.junit.ResultView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.ui 2 2 2018-07-26 13:52:47.363
+!MESSAGE org.springframework.ide.eclipse.aop.ui.navigator.aopReferenceModelNavigator: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.ui 2 2 2018-07-26 13:52:47.389
+!MESSAGE org.eclipse.contribution.xref.ui.views.XReferenceView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.jface.text 2 0 2018-07-26 13:52:51.538
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-07-26 13:52:58.471
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\dralex'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface.text 2 0 2018-07-26 14:19:27.688
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+!SESSION 2018-07-29 21:31:22.698 -----------------------------------------------
+eclipse.buildId=3.9.5.201807031753-RELEASE-e48
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.jface 2 0 2018-07-29 21:33:20.028
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-07-29 21:33:20.028
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@61e34bec,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3305897c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-07-29 21:34:01.831
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\dralex'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2018-07-30 05:28:27.712 -----------------------------------------------
+eclipse.buildId=3.9.5.201807031753-RELEASE-e48
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.jface 2 0 2018-07-30 05:31:06.735
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-07-30 05:31:06.735
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@3d8b9dee,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@45cddfd3,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-07-30 05:32:02.519
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\dralex'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jdt.core 4 4 2018-07-30 05:32:06.810
+!MESSAGE Error occurred while deleting: /Adv Project/bin/com
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:762)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:137)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:62)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:259)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:188)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:795)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:216)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:259)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:312)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:315)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:367)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:388)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+Contains: Could not delete '/Adv Project/bin/com'.
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:364)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:358)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:810)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1768)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:749)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:137)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:62)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:259)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:188)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:795)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:216)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:259)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:312)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:315)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:367)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:388)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: C:\Users\dralex\Documents\Advanced-Project\Adv Project\bin\com\advanced.
+java.nio.file.DirectoryNotEmptyException: C:\Users\dralex\Documents\Advanced-Project\Adv Project\bin\com\advanced
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:253)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:248)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:137)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.delete(DeleteVisitor.java:63)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.visit(DeleteVisitor.java:151)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:110)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:361)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:358)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:810)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1768)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:749)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:137)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:62)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:259)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:188)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:795)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:216)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:259)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:312)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:315)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:367)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:388)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+Contains: Could not delete: C:\Users\dralex\Documents\Advanced-Project\Adv Project\bin\com.
+!SUBENTRY 1 org.eclipse.core.resources 4 273 2018-07-30 05:32:06.931
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 2 org.eclipse.core.resources 4 273 2018-07-30 05:32:06.931
+!MESSAGE Could not delete '/Adv Project/bin/com'.
+!STACK 1
+org.eclipse.core.internal.resources.ResourceException: Problems encountered while deleting resources.
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:364)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:358)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:810)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1768)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:749)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:137)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:62)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:259)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:188)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:795)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:216)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:259)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:312)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:315)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:367)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:388)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+Contains: Problems encountered while deleting files.
+Contains: Could not delete: C:\Users\dralex\Documents\Advanced-Project\Adv Project\bin\com\advanced.
+java.nio.file.DirectoryNotEmptyException: C:\Users\dralex\Documents\Advanced-Project\Adv Project\bin\com\advanced
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:253)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:248)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:137)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.delete(DeleteVisitor.java:63)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.visit(DeleteVisitor.java:151)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:110)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:361)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:358)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:810)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1768)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:749)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:137)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:62)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:259)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:188)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:795)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:216)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:259)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:312)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:315)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:367)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:388)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+Contains: Could not delete: C:\Users\dralex\Documents\Advanced-Project\Adv Project\bin\com.
+!SUBENTRY 3 org.eclipse.core.resources 4 273 2018-07-30 05:32:06.933
+!MESSAGE Problems encountered while deleting resources.
+!SUBENTRY 4 org.eclipse.core.filesystem 4 273 2018-07-30 05:32:06.933
+!MESSAGE Problems encountered while deleting files.
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2018-07-30 05:32:06.933
+!MESSAGE Could not delete: C:\Users\dralex\Documents\Advanced-Project\Adv Project\bin\com\advanced.
+!STACK 0
+java.nio.file.DirectoryNotEmptyException: C:\Users\dralex\Documents\Advanced-Project\Adv Project\bin\com\advanced
+	at sun.nio.fs.WindowsFileSystemProvider.implDelete(Unknown Source)
+	at sun.nio.fs.AbstractFileSystemProvider.deleteIfExists(Unknown Source)
+	at java.nio.file.Files.deleteIfExists(Unknown Source)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:253)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.internalDelete(LocalFile.java:248)
+	at org.eclipse.core.internal.filesystem.local.LocalFile.delete(LocalFile.java:137)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.delete(DeleteVisitor.java:63)
+	at org.eclipse.core.internal.localstore.DeleteVisitor.visit(DeleteVisitor.java:151)
+	at org.eclipse.core.internal.localstore.UnifiedTree.accept(UnifiedTree.java:110)
+	at org.eclipse.core.internal.localstore.FileSystemResourceManager.delete(FileSystemResourceManager.java:361)
+	at org.eclipse.core.internal.resources.ResourceTree.internalDeleteFolder(ResourceTree.java:358)
+	at org.eclipse.core.internal.resources.ResourceTree.standardDeleteFolder(ResourceTree.java:810)
+	at org.eclipse.core.internal.resources.Resource.unprotectedDelete(Resource.java:1768)
+	at org.eclipse.core.internal.resources.Resource.delete(Resource.java:749)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.cleanOutputFolders(BatchImageBuilder.java:137)
+	at org.eclipse.jdt.internal.core.builder.BatchImageBuilder.build(BatchImageBuilder.java:62)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.buildAll(JavaBuilder.java:259)
+	at org.eclipse.jdt.internal.core.builder.JavaBuilder.build(JavaBuilder.java:188)
+	at org.eclipse.core.internal.events.BuildManager$2.run(BuildManager.java:795)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:216)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:259)
+	at org.eclipse.core.internal.events.BuildManager$1.run(BuildManager.java:312)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.core.internal.events.BuildManager.basicBuild(BuildManager.java:315)
+	at org.eclipse.core.internal.events.BuildManager.basicBuildLoop(BuildManager.java:367)
+	at org.eclipse.core.internal.events.BuildManager.build(BuildManager.java:388)
+	at org.eclipse.core.internal.events.AutoBuildJob.doBuild(AutoBuildJob.java:142)
+	at org.eclipse.core.internal.events.AutoBuildJob.run(AutoBuildJob.java:232)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+!SUBENTRY 5 org.eclipse.core.filesystem 4 273 2018-07-30 05:32:06.934
+!MESSAGE Could not delete: C:\Users\dralex\Documents\Advanced-Project\Adv Project\bin\com.
+
+!ENTRY org.eclipse.jface.text 2 0 2018-07-30 05:34:55.214
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.jface.text 2 0 2018-07-30 05:36:42.959
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+!SESSION 2018-07-30 08:55:38.098 -----------------------------------------------
+eclipse.buildId=3.9.5.201807031753-RELEASE-e48
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.jface 2 0 2018-07-30 08:57:57.072
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-07-30 08:57:57.072
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@75d9b73c,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5f1a3c4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-07-30 08:58:38.557
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\dralex'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface.text 2 0 2018-07-30 09:01:08.546
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.jface 2 0 2018-07-30 09:10:40.046
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-07-30 09:10:40.046
+!MESSAGE A conflict occurred for CTRL+R:
+Binding(CTRL+R,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.RunToLine,Run to Line,
+		Resume and break when execution reaches the current line,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@700735e2,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.debugging,,,system)
+Binding(CTRL+R,
+	ParameterizedCommand(Command(org.springframework.ide.eclipse.boot.restart.commands.restart,Trigger Restart,
+		Restart Spring Boot Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@22bd93ab,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)
+
+!ENTRY org.eclipse.debug.core 4 125 2018-07-30 10:09:31.577
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: The pipe is being closed
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(Unknown Source)
+	at java.io.BufferedOutputStream.flushBuffer(Unknown Source)
+	at java.io.BufferedOutputStream.flush(Unknown Source)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.writeNext(InputStreamMonitor.java:149)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:125)
+	at org.eclipse.debug.internal.core.InputStreamMonitor$1.run(InputStreamMonitor.java:100)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.debug.core 4 125 2018-07-30 10:09:50.901
+!MESSAGE Error logged from Debug Core: 
+!STACK 0
+java.io.IOException: The pipe is being closed
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(Unknown Source)
+	at java.io.BufferedOutputStream.flushBuffer(Unknown Source)
+	at java.io.BufferedOutputStream.flush(Unknown Source)
+	at java.io.FilterOutputStream.close(Unknown Source)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:129)
+	at org.eclipse.debug.internal.core.InputStreamMonitor$1.run(InputStreamMonitor.java:100)
+	at java.lang.Thread.run(Unknown Source)
+
+!ENTRY org.eclipse.jface.text 2 0 2018-07-30 10:29:17.107
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+!SESSION 2018-07-30 14:32:45.980 -----------------------------------------------
+eclipse.buildId=3.9.5.201807031753-RELEASE-e48
+java.version=1.8.0_181
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.springsource.sts.ide
+
+!ENTRY org.eclipse.jface 2 0 2018-07-30 14:34:34.915
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-07-30 14:34:34.915
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@23adbd6b,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@11d0bff5,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.egit.ui 2 0 2018-07-30 14:35:04.965
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\dralex'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.jface.text 2 0 2018-07-30 14:39:38.427
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY org.eclipse.jface 2 0 2018-07-30 14:45:50.549
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-07-30 14:45:50.549
+!MESSAGE A conflict occurred for CTRL+R:
+Binding(CTRL+R,
+	ParameterizedCommand(Command(org.eclipse.debug.ui.commands.RunToLine,Run to Line,
+		Resume and break when execution reaches the current line,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@23015be4,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.debugging,,,system)
+Binding(CTRL+R,
+	ParameterizedCommand(Command(org.springframework.ide.eclipse.boot.restart.commands.restart,Trigger Restart,
+		Restart Spring Boot Application,
+		Category(org.eclipse.debug.ui.category.run,Run/Debug,Run/Debug command category,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@5fe45792,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.debug.ui.console,,,system)

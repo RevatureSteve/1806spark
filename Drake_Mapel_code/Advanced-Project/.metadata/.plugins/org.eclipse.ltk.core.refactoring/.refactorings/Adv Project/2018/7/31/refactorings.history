@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename compilation unit &apos;com.advanced.threads.PizzaThreads.java&apos; to &apos;PizzaThread.java&apos;&#x0D;&#x0A;- Original project: &apos;Adv Project&apos;&#x0D;&#x0A;- Original element: &apos;com.advanced.threads.PizzaThreads.java&apos;&#x0D;&#x0A;- Renamed element: &apos;com.advanced.threads.PizzaThread.java&apos;" description="Rename compilation unit &apos;PizzaThreads.java&apos;" flags="2" id="org.eclipse.jdt.ui.rename.compilationunit" input="/src&lt;com.advanced.threads{PizzaThreads.java" name="PizzaThread.java" references="false" stamp="1532961036946" version="1.0"/>
+</session>

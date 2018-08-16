@@ -1,0 +1,76 @@
+input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    margin-top: 6px;
+    margin-bottom: 16px;
+}
+
+/* Style the submit button */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+}
+
+/* Style the container for inputs */
+.container {
+    box-sizing: border-box;
+    width: 100%;
+    background-color: #f1f1f1;
+    padding: 5%;
+    float: left;
+
+}
+
+#reg {
+    font-weight: bold;
+}
+
+#form {
+    display: inline-block;
+    /* margin: 10% 20%; */
+    max-width: 30%;
+}
+
+#message {
+    display: inline-block;
+    background: #f1f1f1;
+    color: #000;
+    position: relative;
+    padding: 5%;
+    max-width: 40%;
+    /* float: left; */
+}
+
+#message p {
+    padding: 10px 35px;
+    font-size: 18px;
+}
+
+#underline {
+    text-decoration: underline;
+}
+
+/* Add green text color when the requirements are right */
+.valid {
+    color: green;
+}
+
+p.valid::before {
+    position: relative;
+    left: -35px;
+    content: "entered";
+}
+
+/* Add red text color when the requirements are wrong */
+.invalid {
+    color: red;
+}
+
+p.invalid::before {
+    position: relative;
+    left: -35px;
+    content: "enter:";
+}

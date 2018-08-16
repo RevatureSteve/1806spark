@@ -1,0 +1,14 @@
+package com.advanced.drake;
+
+public class ChicagoTop extends Chicago {
+	
+	public ChicagoTop(int numberOfToppings) {
+		
+		super();
+		isPlain = false;
+		this.numberOfToppings = numberOfToppings;
+		System.out.println("Chicago style w/" + this.numberOfToppings + "toppings chosen");
+		
+	}
+
+}

@@ -1,0 +1,11 @@
+package com.advanced.drake;
+
+public class Chicago extends Pizza {
+	
+	public Chicago() {
+		
+		System.out.println("Chicago style chosen");
+		
+	}
+
+}
