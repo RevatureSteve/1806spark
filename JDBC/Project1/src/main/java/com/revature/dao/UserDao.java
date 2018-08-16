@@ -9,6 +9,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.revature.domain.Reimbursement;
 import com.revature.domain.Users;
 import com.revature.util.SetConnectionPropertiesUtil;
 
@@ -78,5 +79,10 @@ public class UserDao implements Dao {
 		}
 		System.err.println("[LOG]---UserDao ResultSet if---getAllUsers() returning the list of Users");
 		return users;
+	}
+
+	@Override
+	public List<Reimbursement> getReimbursements() {
+		return null;
 	}
 }
