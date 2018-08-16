@@ -1,5 +1,26 @@
 Heavily use NPM which is an example of a popular CLI tool
+The standard for NPM Projects after pulling is to run the command:
+npm install
+npm start
+
+BUT when creating a new npm project using npm init
+the npm install works but NOT npm start--you must add this!
+For example look at a generated angular project's package.json
+ng serve is the cmd to start an angular project, but again look at the package.json
+npm start calls ng serve because the script tag in package.json says to execute
+        ng serve
+
+so if Project 1 is only an npm project (has a package.json) and not an angular
+    you must add start to your package.json scripts, which would look like:
+    "scripts": {
+        "start": "node index.js"
+    }
+
 Angular has a CLI built on top of NPM called...Angular CLI
+CLI: Command Line Interface
+Examples of CLIs: ng (Angular), NPM, node,
+namespaces, pass parameter to instruction set/script
+[namespace corresponding to environment variable and path]
 
 Need to install angular CLI?
 npm install -g @angular/cli
@@ -11,3 +32,17 @@ don't include the < >
 then use
     ng serve
 under the project-name folder
+
+---------------------------------------
+Data Binding: 1-way & 2-way
+
+what does {{}} Angular Expression
+TS file -> HTML file
+1-way data Binding
+from what to what? well, we're only talking about components
+    and components only have 3 things: html, css, ts
+    Data Binding means sharing the same data between them
+
+
+mini assignment: create a project, generate 2 components
+        and use angular {{}} to print 2 separate values to the html files
