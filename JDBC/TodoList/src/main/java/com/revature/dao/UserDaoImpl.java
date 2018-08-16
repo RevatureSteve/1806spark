@@ -6,7 +6,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.revature.domain.Task;
 import com.revature.domain.User;
 import com.revature.util.SetConnectionPropertiesUtil;
 
@@ -40,6 +43,28 @@ public class UserDaoImpl implements UserDao{
 		}
 		System.err.println("[LOG]---Ending----getUserByUser() returning: " + user);
 		return user;
+	}
+
+	@Override
+	public List<Task> getTasksByUserId(int id) {
+		List<Task> tasks = new ArrayList();
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()){
+			String sql = "SELECT * FROM tasks WHERE u_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e1) {
+			// TODO Auto-generated catch block
+			e1.printStackTrace();
+		}
+		return tasks;
 	}
 
 }

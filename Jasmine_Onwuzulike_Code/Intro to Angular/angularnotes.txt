@@ -2,3 +2,5 @@
 Create new Angular project
 ng new project name
 ng new helloWorldnew
+
+ng - v Check Agnular version
