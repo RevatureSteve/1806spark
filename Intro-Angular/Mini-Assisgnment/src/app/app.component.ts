@@ -7,6 +7,4 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Mini-Assisgnment';
-  a = 'this is the navbar';
-  b = 'this is the footer'
 }

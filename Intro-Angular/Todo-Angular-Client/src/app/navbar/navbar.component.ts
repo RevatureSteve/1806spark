@@ -7,7 +7,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
+  username = 'bobbert';
+  count = 0;
+
   constructor() { }
+
+  update
+
+  updateCount = function(){
+    this.count++;
+  }
+
+  updateUsername = function(){
+    console.log("username " + this.username);
+  }
 
   ngOnInit() {
   }
