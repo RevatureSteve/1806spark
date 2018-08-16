@@ -17,36 +17,40 @@ import com.revature.service.AppService;
  */
 public class TodoIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-     private AppService app = new AppService();
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public TodoIdServlet() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
+	private AppService app = new AppService();
 
 	/**
-	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public TodoIdServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse
+	 *      response)
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		System.out.println("TodoIdServlet -GET");
 		System.out.println("The id of the User is: " + request.getParameter("userId"));
-		
+
 		List<Task> userTasks = app.getTasksByUserId(Integer.parseInt(request.getParameter("userId")));
-		
-		
+
 		ObjectMapper mapper = new ObjectMapper();
-		
+
 		String json = mapper.writeValueAsString(userTasks);
 		response.setContentType("application/json");
 		response.getWriter().write(json);
 	}
 
 	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse
+	 *      response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		doGet(request, response);
 	}

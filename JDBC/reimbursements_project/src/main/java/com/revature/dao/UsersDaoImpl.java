@@ -1,9 +1,11 @@
 package com.revature.dao;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 
 import com.revature.domain.User;
@@ -18,17 +20,20 @@ public class UsersDaoImpl implements UsersDao {
 
 	public ArrayList<User> getUsers() {
 		ArrayList<User> users = new ArrayList<User>();
-		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
+
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
 			String sql = "SELECT * FROM users INNER JOIN position ON position.pos_id = users.pos_id";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				users.add(new User(rs.getInt("u_id"), rs.getString("email"), rs.getString("password"),
-						rs.getString("fname"), rs.getString("lname"),rs.getInt("pos_id") ,rs.getString("pos_type")));
+						rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"), rs.getString("pos_type")));
 			}
-		} catch (Exception e) {
-			// TODO: handle exception
+		} catch (IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
+
 		return users;
 	}
 
@@ -41,7 +46,7 @@ public class UsersDaoImpl implements UsersDao {
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				user = new User(rs.getInt("u_id"), rs.getString("email"), rs.getString("password"),
-						rs.getString("fname"), rs.getString("lname"),rs.getInt("pos_id") ,rs.getString("pos_type"));
+						rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"), rs.getString("pos_type"));
 			}
 		} catch (Exception e) {
 			// TODO: handle exception
