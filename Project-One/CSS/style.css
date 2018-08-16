@@ -192,13 +192,13 @@ html {
     background-color: white;
     font-size: 140%;
 }
-.content{
+#content{
     float: right;
     margin-right: 10%;
     width: 60%;
     margin-left: -10%;
 }
-.content p{
+#content p{
     font-family: 'Aldrich';
     margin-left: 8%;
     margin-top: 0%;
