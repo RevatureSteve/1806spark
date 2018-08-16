@@ -1,0 +1,25 @@
+.container{
+    padding: 10px;
+    text-align: center;
+    width:50%;
+    margin:auto;
+    margin-top:200px;
+}
+.inputBox{
+    height: 18px;
+}
+#loginBtn{
+    background-color: aqua;
+    border-width: 0;
+    width: 100px;
+    height: 40px;
+    border-radius: 6px;
+    margin: 10px;
+}
+#loginBtn:hover{
+    background-color: aquamarine;
+}
+#prompt{
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 28px;
+}

@@ -28,6 +28,10 @@ public class LoginServlet extends HttpServlet{
 		String password = (String) req.getAttribute("password");
 		
 		System.out.println(email + " " + password);
+		Enumeration n = req.getAttributeNames();
+		while(n.hasMoreElements()) {
+			System.out.println(n.nextElement().toString());
+		}
 		boolean verified = VerificationService.verifyUsernameAndPassword(email, password);
 		//user printwriter note this is not json String just misc toString code
 		PrintWriter out = resp.getWriter();
