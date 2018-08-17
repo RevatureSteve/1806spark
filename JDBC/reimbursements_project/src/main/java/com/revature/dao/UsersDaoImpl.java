@@ -1,8 +1,8 @@
 package com.revature.dao;
 
 import java.io.IOException;
+import java.sql.CallableStatement;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -13,10 +13,6 @@ import com.revature.exceptions.DatabaseRetrievalFailure;
 import com.revature.util.SetConnectionPropertiesUtil;
 
 public class UsersDaoImpl implements UsersDao {
-
-	private static final String URL = "";
-	private static final String USERNAME = "";
-	private static final String PASSWORD = "";
 
 	public ArrayList<User> getUsers() {
 		ArrayList<User> users = new ArrayList<User>();
@@ -56,5 +52,23 @@ public class UsersDaoImpl implements UsersDao {
 			throw new DatabaseRetrievalFailure();
 		}
 		return user;
+	}
+
+	@Override
+	public int updateUserInfo(int id, String email, String psw, String fname, String lname) {
+		int rowsAffected = 0;
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
+			String sql = "{updateUser(?,?,?,?,?)}";
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setInt(1, id);
+			cs.setString(2, email);
+			cs.setString(3, psw);
+			cs.setString(4, fname);
+			cs.setString(5, lname);
+		} catch (IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rowsAffected;
 	}
 }

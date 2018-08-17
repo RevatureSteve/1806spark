@@ -47,4 +47,12 @@ public class User {
 	public int getPositionId() {
 		return positionId;
 	}
+
+	@Override
+	public String toString() {
+		return "User [uId=" + uId + ", email=" + email + ", password=" + password + ", fname=" + fname + ", lname="
+				+ lname + ", positionId=" + positionId + ", position=" + position + "]";
+	}
+	
+	
 }

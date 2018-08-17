@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { LoginService } from '../login.service'
+import { LoginService } from '../login.service';
+import { User } from '../user';
+import { LoggedUserService } from '../logged-user.service';
 
 @Component({
   selector: 'app-login',
@@ -7,19 +9,19 @@ import { LoginService } from '../login.service'
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user;
+  user: User;
 
-  constructor(private loginService: LoginService) { }
+  constructor(private login: LoginService, private logged: LoggedUserService) { }
 
   ngOnInit() {
-    document.getElementById('loginBtn').onclick=this.validateUser;
   }
 
-  validateUser(): void{
-    // let email = document.getElementById('email');
-    // let password = document.getElementById('password');
+  validateUser(email, psw): void {
+    this.login.validateUser(email, psw).subscribe(user => this.user = user);
+  }
 
-    this.user = this.loginService.validateUser('a@a.com', '123').subscribe(user=>this.user = user);
+  changeLogged() {
+    this.logged.setLoggedUser(this.user);
   }
 
 }

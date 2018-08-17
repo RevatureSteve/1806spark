@@ -12,7 +12,7 @@ FOREIGN KEY (pos_id) REFERENCES position (pos_id)
 CREATE TABLE reimbursement(
 r_id INT,
 emp_u_id INT NOT NULL,
-mgr_u_id INT NOT NULL,
+mgr_u_id INT,
 amount NUMBER(38,2) NOT NULL,
 description VARCHAR2(4000),
 img BLOB,

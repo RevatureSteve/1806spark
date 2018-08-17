@@ -40,6 +40,7 @@ public class LoginServlet extends HttpServlet {
 			password = node.get("password").textValue();
 		}
 
+		System.out.println(email + password);
 		User verified = VerificationService.verifyUsernameAndPassword(email, password);
 
 		String jsonOut = mapper.writeValueAsString(verified);

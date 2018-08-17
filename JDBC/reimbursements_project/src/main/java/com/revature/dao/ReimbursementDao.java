@@ -12,4 +12,8 @@ public interface ReimbursementDao {
 	public List<Reimbursement> getReimbusementsByUser(int uid);
 	
 	public int addNewReimbursement(Reimbursement reim);
+
+	public List<Reimbursement> getPendingReimbusementsByUser(int id);
+
+	public List<Reimbursement> getResolvedReimbusementsByUser(int id);
 }
