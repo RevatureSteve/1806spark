@@ -1,12 +1,12 @@
 package com.revature.service;
 
-import com.revature.dao.Dao;
 import com.revature.dao.UserDao;
+import com.revature.dao.UserDaoImpl;
 import com.revature.domain.Users;
 
 public class BusinessLogic {
 
-	private Dao usersDao = new UserDao();
+	private UserDao usersDao = new UserDaoImpl();
 	
 	public Users login (Users usersInput) {
 		System.out.println("[LOG]---Starting---Service login() with the argument: " + usersInput);

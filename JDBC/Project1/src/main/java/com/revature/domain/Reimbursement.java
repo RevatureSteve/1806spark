@@ -12,9 +12,11 @@ public class Reimbursement {
 	private double amount;
 	private String description;
 	private Blob img;
-	private Date TimeSubmit;
+	private String TimeSubmit;
 	private int requestTypeId;
+	private String requestType;
 	private int requestStatusId;
+	private String requestStatus;
 	
 	//NO-ARGS Constructor
 	public Reimbursement() {
@@ -23,7 +25,7 @@ public class Reimbursement {
 
 	//Constructor
 	public Reimbursement(int reimbId, int empUserId, int mgrUserId, double amount, String description, Blob img,
-			Date timeSubmit, int requestTypeId, int requestStatusId) {
+			String timeSubmit, int requestTypeId, String requestType, int requestStatusId, String requestStatus) {
 		super();
 		this.reimbId = reimbId;
 		this.empUserId = empUserId;
@@ -31,9 +33,11 @@ public class Reimbursement {
 		this.amount = amount;
 		this.description = description;
 		this.img = img;
-		TimeSubmit = timeSubmit;
+		this.TimeSubmit = timeSubmit;
 		this.requestTypeId = requestTypeId;
+		this.requestType = requestType;
 		this.requestStatusId = requestStatusId;
+		this.requestStatus = requestStatus;
 	}
 
 	//Getters n' Setters
@@ -85,11 +89,11 @@ public class Reimbursement {
 		this.img = img;
 	}
 
-	public Date getTimeSubmit() {
+	public String getTimeSubmit() {
 		return TimeSubmit;
 	}
 
-	public void setTimeSubmit(Date timeSubmit) {
+	public void setTimeSubmit(String timeSubmit) {
 		TimeSubmit = timeSubmit;
 	}
 
@@ -109,12 +113,28 @@ public class Reimbursement {
 		this.requestStatusId = requestStatusId;
 	}
 
-	//toString()
+
+	public String getRequestType() {
+		return requestType;
+	}
+
+	public void setRequestType(String requestType) {
+		this.requestType = requestType;
+	}
+
+	public String getRequestStatus() {
+		return requestStatus;
+	}
+
+	public void setRequestStatus(String requestStatus) {
+		this.requestStatus = requestStatus;
+	}
+
 	@Override
 	public String toString() {
 		return "Reimbursement [reimbId=" + reimbId + ", empUserId=" + empUserId + ", mgrUserId=" + mgrUserId
 				+ ", amount=" + amount + ", description=" + description + ", img=" + img + ", TimeSubmit=" + TimeSubmit
-				+ ", requestTypeId=" + requestTypeId + ", requestStatusId=" + requestStatusId + "]";
+				+ ", requestTypeId=" + requestTypeId + ", requestType=" + requestType + ", requestStatusId="
+				+ requestStatusId + ", requestStatus=" + requestStatus + "]";
 	}
-
 }
