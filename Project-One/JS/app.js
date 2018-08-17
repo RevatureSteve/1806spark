@@ -1,5 +1,5 @@
 
-
+let userId = 2;
 window.onload = function foo() {
     console.log("app.js is loaded in...")
 
@@ -29,6 +29,7 @@ function loadPage() {
 }
 
 function loginPage() {
+    
     let eventID = event.target.id;
     console.log('ID IS: ' + eventID);
     let navbar = document.getElementById('loaded-content');
@@ -39,12 +40,20 @@ function loginPage() {
     }).then((text) => {
         console.log(text);
         navbar.innerHTML = text;
-        document.getElementById('login').addEventListener('click', employeeLogged);
+        document.getElementById('login').addEventListener('click', userLogged);
         document.getElementById('return').addEventListener('click', loadPage);
 
 
     });
 }
+function userLogged(){
+    if(userId == 2){
+            managerLogged();
+    }else{
+        employeeLogged();
+    }
+}
+
 function employeeLogged() {
     let navbar = document.getElementById('loaded-content');
     fetch('pages/employee.html').then((resp) => {
@@ -152,6 +161,32 @@ function employeeTabs(num) {
 
 function managerLogged() {
     let navbar = document.getElementById('loaded-content');
+    fetch('pages/manager.html').then((resp) => {
+        console.log(resp);
+        nav = resp;
+        return resp.text();
+    }).then((text) => {
+        console.log(text);
+        navbar.innerHTML = text;
+        let pro = document.getElementById('profile-info-btn');
+        let sub = document.getElementById('submit-reim-btn');
+        let pend = document.getElementById('pending-reim-btn');
+        let resolved = document.getElementById('resolved-riem-btn');
+        let news = document.getElementById('news-btn');
+        document.getElementById('back-btn').addEventListener('click', loginPage)
+
+        pro.addEventListener('click', clicked);
+
+        sub.addEventListener('click', clicked);
+
+        pend.addEventListener('click', clicked);
+
+        resolved.addEventListener('click', clicked);
+
+        news.addEventListener('click', clicked);
+
+        employeeTabs(5);
+    });
 }
 
 function managerTabs() {

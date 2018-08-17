@@ -1,0 +1,11 @@
+<h1>
+  Count is:<span *ngIf= "isEven">{{count}}</span> 
+</h1>
+
+<button (click) = 'incrementCount()'>CLICK ME!</button>
+
+<button (click) = 'randomOnetoTen()'>Click for a randy num between 1-10</button>
+
+<ol>
+  <li *ngFor='let name of names'>{{name}}</li>
+</ol>
