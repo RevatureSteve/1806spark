@@ -8,13 +8,18 @@ public class Users {
 	private String fname;
 	private String lname;
 	private int pos_id;
+	private String posTitle;
 	
 	
 	public Users() {
 		super();
 	}
 	
-	public Users(int u_id, String email, String password, String fname, String lname, int pos_id) {
+	
+	
+	
+	
+	public Users(int u_id, String email, String password, String fname, String lname, int pos_id, String posTitle) {
 		super();
 		this.u_id = u_id;
 		this.email = email;
@@ -22,10 +27,13 @@ public class Users {
 		this.fname = fname;
 		this.lname = lname;
 		this.pos_id = pos_id;
+		this.posTitle = posTitle;
 	}
-	
-	
-	
+
+
+
+
+
 	public Users(String email, String password, String fname, String lname, int pos_id) {
 		super();
 		this.email = email;
@@ -82,12 +90,23 @@ public class Users {
 	public void setPos_id(int pos_id) {
 		this.pos_id = pos_id;
 	}
-	
+
+	public String getPosTitle() {
+		return posTitle;
+	}
+
+	public void setPosTitle(String posTitle) {
+		this.posTitle = posTitle;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Users [u_id=" + u_id + ", email=" + email + ", password=" + password + ", fname=" + fname + ", lname="
-				+ lname + ", pos_id=" + pos_id + "]";
+				+ lname + ", pos_id=" + pos_id + ", posTitle=" + posTitle + "]";
 	}
+	
+	
 	
 	
 }

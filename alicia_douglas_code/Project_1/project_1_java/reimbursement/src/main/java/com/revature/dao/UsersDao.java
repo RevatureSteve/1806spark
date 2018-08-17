@@ -40,12 +40,12 @@ public class UsersDao {
 	public Users getUserByEmail(String email) {
 		Users user = null;
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
-			String sql = "SELECT * FROM users WHERE email = ?";
+			String sql = "SELECT * FROM users u INNER JOIN position p ON u.pos_id = p.pos_id WHERE email = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, email);
 			ResultSet rs = ps.executeQuery();
 			if(rs.next()) {
-				user = new Users(rs.getInt(1), rs.getString("email"), rs.getString("password"), rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"));
+				user = new Users(rs.getInt(1), rs.getString("email"), rs.getString("password"), rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"),rs.getString("pos_type"));
 			}
 			
 		} catch (FileNotFoundException e) {
@@ -65,11 +65,11 @@ public class UsersDao {
 	public List<Users> readUsers() {
 		List<Users> users = new ArrayList<>();
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
-			String sql = "SELECT * FROM users";
+			String sql = "SELECT * FROM users u INNER JOIN position p ON u.pos_id = p.pos_id";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				Users user = new Users(rs.getInt(1), rs.getString("email"), rs.getString("password"), rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"));
+				Users user = new Users(rs.getInt(1), rs.getString("email"), rs.getString("password"), rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"),rs.getString("pos_type"));
 				users.add(user);
 			}
 		} catch (IOException | SQLException e) {
