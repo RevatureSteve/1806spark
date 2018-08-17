@@ -9,13 +9,14 @@ public class ManagerService {
 	private UserDao userDao = new UserDaoImpl();
 	
 	
-	public User getManagerByEmail(String email) {
+	public User validateManagerLogin(String email, String password) {
 		
 		User user = userDao.getUserByEmail(email);
-		
-//		if(user != null) {
-//		}
-		
-		return user; 
+		if(userDao.getUserByEmail(email) != null) {
+			if (user.getPassword().equals(password)) {
+				return user; 
+			}
+		} 
+		return null;
 	}
 }

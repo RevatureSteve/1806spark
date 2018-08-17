@@ -1,0 +1,24 @@
+h1 {
+  text-align: center;
+}
+
+#login {
+  width: 500px;
+  margin: auto;
+  border: 1px grey ridge;
+  background: azure;
+  fill-opacity: 0.7;
+
+}
+
+/* label, input {
+  margin: auto;
+  /* position: absolute;
+  margin-left: 5%;
+} */
+
+
+#loginBtn{
+  margin:auto;
+  width: 100%;
+}
