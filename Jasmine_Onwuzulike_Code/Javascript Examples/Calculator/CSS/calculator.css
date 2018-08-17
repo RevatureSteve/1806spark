@@ -1,0 +1,34 @@
+#heading {
+    color: rgb(3, 185, 3);
+    font-size: 40px;
+    text-align: center;
+
+}
+
+button {
+    width: 70px;
+    height: 50px;
+    margin-left: 5px;
+}
+#field {
+    width: 320px;
+    height: 40px;
+    background-color: rgb(163, 157, 157);
+    margin-top: 10px;
+    border-radius: 25px;
+}
+
+.calculator {
+    border: 1px solid black;
+    margin-left: 450px;
+    margin-right: 450px;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    box-shadow: 10px 5px gray;
+    
+}
+p {
+    color: red;
+    text-align: center;
+    margin: 0%;
+}

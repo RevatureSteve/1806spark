@@ -4,3 +4,8 @@ ng new project name
 ng new helloWorldnew
 
 ng - v Check Agnular version
+
+
+Create a Angular project
+two components
+use angular expression; two values 

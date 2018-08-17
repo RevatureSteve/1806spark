@@ -1,0 +1,23 @@
+#out {
+background-color: red;
+font-family: monospace;
+font-size: xx-large;
+font-style: normal;
+margin: 10px;
+
+}
+#in {
+    background-color: greenyellow;
+    margin: 10px;
+}
+#om {
+    background-color: rgb(70, 70, 235);
+    margin: 10px;
+}
+#header {
+    font-size: xx-large;
+    margin: 20px;
+    
+}
+
+
