@@ -21,7 +21,7 @@ public class LifeCycleServlet extends HttpServlet{
 	 * 	destroy()	-not apart of the request cycle, randomly called by the web container to save memory
 	 * 					but is called at shutdown of the server
 	 * 
-	 * IQ (should be tol when initilly describing the init method)
+	 * IQ (should be told when initilly describing the init method)
 	 * How can i change the default of the init() to be when the server starts insteadof the first request?
 	 * 		Use the load-on-startup child tag of the servlet tag in the web.xml
 	 * 			I would want to "eagerly load" (not persistence so technically wrong terminally)

@@ -34,6 +34,10 @@ COMMIT;
 --For my Reimbursement TABLE
 DROP TABLE reimbursement;
 
+INSERT INTO reimbursement (R_Id, Emp_U_Id, Mgr_U_Id, Amt, Timesubmission, Rq_Type_Id, Rq_Status_Id)
+VALUES(1, 1, 1, 25.00, CURRENT_TIMESTAMP, 1, 1);
+SELECT * FROM reimbursement;
+COMMIT;
 --SEQUENCE FOR Reimbursement TABLES
 CREATE SEQUENCE reimbursement_seq
 MINVALUE 1
@@ -65,6 +69,29 @@ INSERT INTO rq_status VALUES (2, 'Approved');
 INSERT INTO rq_status VALUES (3, 'Denied');
 SELECT * FROM rq_status;
 
+--JOINS 
 
+--For my getReimbursement()
+SELECT * FROM Reimbursement
+INNER JOIN Rq_Status 
+    ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id
+INNER JOIN Rq_Type
+    ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Status_Id; 
+
+--For my getPendingReimbursement()
+SELECT * FROM Reimbursement
+INNER JOIN Rq_Status 
+    ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id
+INNER JOIN Rq_Type
+    ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Status_Id
+WHERE Reimbursement.Rq_Status_Id = 1; 
+
+--For my getApprovedReimbursement()
+SELECT * FROM Reimbursement
+INNER JOIN Rq_Status 
+    ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id
+INNER JOIN Rq_Type
+    ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Status_Id
+WHERE Reimbursement.Rq_Status_Id = 2; 
 
 

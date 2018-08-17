@@ -30,6 +30,12 @@ New Angular Project:
 ng new <project-name>
 don't include the <>
 
+Generate:
+ng generate component | service | pipe | ect <name>
+
+Can test it before actually creating/motifying a file with
+
+
 Angular:
 
 directive: <app-name></app-name> html code
@@ -40,11 +46,11 @@ What is a directive? where there is a directive, at runtime it will inject
 A directive ALWAYS belongs to a component
     like app-root belongs to app.component
 
-component: @component in a ts file!
+component: @component decorator in a ts file!
 @component requires 3 things!
     -selector aka the directive name like app-root which becomes <app-root></app-root>
     -template aka html
-    -style
+    -style aka css
 
 Data Binding: 1-way & 2-way
 
@@ -55,3 +61,14 @@ ts file -> html file
 
 mini assignment: create a project, generate 2 components
     and use angular {{}} to print 2 seperate values to the html files
+
+How to generate a component and what does it create/modify?
+    -creates html,css, ts, spec(testing)
+    -modifies: adds the component to the app.module
+    
+What are structural directives?
+    there are 3 structural directives for flow control
+    -*ngFor
+    -*ngIf
+    -*ngSwitch
+
