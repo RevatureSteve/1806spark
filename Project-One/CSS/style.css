@@ -258,3 +258,12 @@ input{
 #file{
     font-family: 'Aldrich';
 }
+.content-img{
+    margin-top: -3%;
+    margin-left: 30%;
+    margin-bottom: 3%;
+    width: 15em;
+}
+.red-text{
+    color: red;
+}
