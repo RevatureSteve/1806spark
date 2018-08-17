@@ -1,0 +1,11 @@
+{
+  "name": "tour-of-heroes",
+  "version": "1.0.0",
+  "description": "tour-of-heroes angular tutorial",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
