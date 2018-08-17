@@ -17,7 +17,7 @@ public class User implements Serializable {
 	private String password;
 
 	// additional property I probably will need here (not a field/attribute in the
-	// data)
+	// database)
 	// I know User will have multiple task...probably use a Collection or Array to
 	// hold them
 	private List<Task> userTasks;

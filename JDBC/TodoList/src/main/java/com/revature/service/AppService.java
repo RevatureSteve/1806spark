@@ -1,7 +1,10 @@
 package com.revature.service;
 
+import java.util.List;
+
 import com.revature.dao.UserDao;
 import com.revature.dao.UserDaoImpl;
+import com.revature.domain.Task;
 import com.revature.domain.User;
 
 public class AppService {
@@ -14,6 +17,7 @@ public class AppService {
 	 *  	etc...
 	 */
 	
+	// instance scope so each non-static method in this class can use the same object
 	private UserDao userDao = new UserDaoImpl();
 	
 	/**
@@ -28,7 +32,7 @@ public class AppService {
 		//		Yes - assign the user record to a User java object
 		//		No - then it is null
 		System.out.println("[LOG]----calling dao---Service login()");
-		User dbUser = userDao.getUserByUsername(userInput.getUsername());
+		User dbUser =userDao.getUserByUsername(userInput.getUsername());
 		System.out.println("[LOG]----dao returned---Service login() returned: " + dbUser);
 		
 		// since the username might not be found I could get null back...check for that!
@@ -44,4 +48,29 @@ public class AppService {
 		return null;
 	}
 	
+	public List<Task> getAllTasks(){
+		System.out.println("[LOG]----retrieving---All tasks");
+		// any validation before asking the db? maybe in future but not at moment
+		// so let's call the dao to get Tasks from the DB
+		
+		return userDao.getAllTasks();
+	}
+	
+	public List<Task> getTasksByUserId(int id){
+		System.out.println("[LOG]---retrieving----User Tasks");
+		
+		return userDao.getTasksByUserId(id);
+		
+	}
+	
+	public User getUser(int id) {
+//		userDao.getUserByUsername(username);
+		return null;
+	}
+	
+	
+	public int createUser(User user) {
+//		userDao.getUserByUsername(username)
+		return 0;
+	}
 }
