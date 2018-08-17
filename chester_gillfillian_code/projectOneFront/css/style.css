@@ -1,0 +1,90 @@
+/* id selector */
+
+#theHeader {
+    background-color: #333333;
+    height: 200px;
+
+}
+#theBody {
+    margin-top: -15px;
+    background-color: #FFFFFF;
+    height: 600px;
+}
+#body_h1{
+	font-family: Papyrus, fantasy;
+	font-size: 65px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+    line-height: 40.4px;
+    margin-top: -15px;
+    padding-left:24px;
+    padding-top: 40px;
+    color: black;
+    text-shadow: 2px 2px 4px #000000;
+}
+#theFooter {
+    margin-top: -15px;
+    background-color: #3a93b2;
+    height: 200px;
+}
+        
+#headernavDiv, navBar {
+    /* for the nav bar in header div */
+    height: 20px;
+    background-color: inherit;
+    margin-top: -10px;
+    margin-left: 65px;
+    
+}
+
+#navUl {
+    list-style-type: none;
+   
+    
+}
+
+li {
+    display: inline;
+    font-weight: bold;
+    font-size:1.5em;
+    padding:3px;
+     
+  }
+
+  #navARight {
+      /* for sign up and login button float right */
+      float: right;
+      margin-right: 4px;
+
+  }
+
+
+/* id selector */
+
+/* tag in the  header area */
+h1 {
+	font-family: Papyrus, fantasy;
+	font-size: 65px;
+	font-style: normal;
+	font-variant: normal;
+	font-weight: 500;
+    line-height: 40.4px;
+    margin-top: -15px;
+    padding-left:24px;
+    padding-top: 40px;
+    color: white;
+    text-shadow: 2px 2px 4px #000000;
+}
+
+/* class selectors   */
+.navA {
+    /* ancor links in header nav bar*/
+    color:whitesmoke;
+    text-decoration: none;
+    
+}
+
+.navA:hover {
+ background-color: lightcoral;
+}
