@@ -33,6 +33,9 @@ then use
     ng serve
 under the project-name folder
 
+Generate:
+ng generate components | service | pipe | etc <name>
+
 ---------------------------------------
 Data Binding: 1-way & 2-way
 
@@ -46,3 +49,10 @@ from what to what? well, we're only talking about components
 
 mini assignment: create a project, generate 2 components
         and use angular {{}} to print 2 separate values to the html files
+
+-----------------------------------------------------------------------
+What are structural directives?
+    There are 3! (mainly flow control)
+    -*ngFor
+    -*ngIf
+    -*ngSwitch
