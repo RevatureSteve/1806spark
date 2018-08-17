@@ -1,0 +1,27 @@
+template literal = ` ` instead of ' ' or " " - allows for multiple line
+How to create a component:
+    -Create 3 files:
+        name.component.html
+        name.component.css
+        name.component.ts
+    
+    -3 requirements for Component Decorator
+        1. selector = directive app-? e.g. app-nav, app-flashcard etc
+        2. template or templateUrl - the html for this component
+        3. style or stylesUrl - the css for this component
+
+    -export the class
+    -Add to the app.module.ts -declarations
+
+How to map a route:
+        1. component should be created
+        2. Add url to Navbar HTML e.g. /js for JavaScript
+        3. Add the path to YOUR AppRouter Module 
+            (this you made and exported to the app.module.ts)
+
+Pull Data from API
+        1. Create Model (if needed)
+        2. Create service or use an existing angular service
+        3. Add service to the ngModel's provider 
+        4. Inject into the components where needed
+        5. Use ngOnInit for initialization data from service
