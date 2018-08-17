@@ -1,0 +1,3 @@
+Hello world
+Foo
+Buffered Streams are faster and easier to use
