@@ -68,22 +68,70 @@ function employeeLogged(){
        
         resolved.addEventListener('click', clicked);
         
-        employeeTabs();
+        employeeTabs(1);
     });
 }
 
-function employeeTabs(){
+function employeeTabs(num){
     let navbar = document.getElementById('content');
-    fetch('pages/profile.html').then((resp) => {
-        console.log(resp);
-        nav = resp;
-        return resp.text();
-    }).then((text) =>{
-        console.log(text);
-        navbar.innerHTML = text;
-  
-        activeBtn('profile-info-btn');
-    });
+
+    switch (num) {
+        case 1:
+        fetch('pages/profile.html').then((resp) => {
+            console.log(resp);
+            nav = resp;
+            return resp.text();
+        }).then((text) =>{
+            console.log(text);
+            navbar.innerHTML = text;
+            document.getElementById('profile-info-btn').style.backgroundColor = "yellow";
+            document.getElementById('profile-info-btn').style.fontSize = "97%";
+            
+        });
+            break;
+        
+        case 2:
+        fetch('pages/submit.html').then((resp) => {
+            console.log(resp);
+            nav = resp;
+            return resp.text();
+        }).then((text) =>{
+            console.log(text);
+            navbar.innerHTML = text;
+            
+            
+        });
+        break;
+
+        case 3:
+        fetch('pages/pending.html').then((resp) => {
+            console.log(resp);
+            nav = resp;
+            return resp.text();
+        }).then((text) =>{
+            console.log(text);
+            navbar.innerHTML = text;
+            
+            
+        });
+        break;
+
+        case 4:
+        fetch('pages/resolved.html').then((resp) => {
+            console.log(resp);
+            nav = resp;
+            return resp.text();
+        }).then((text) =>{
+            console.log(text);
+            navbar.innerHTML = text;
+            
+            
+        });
+        break;
+    
+    }
+    
+    
 }
 
 function managerLogged(){
@@ -112,50 +160,39 @@ function activeBtn(eventId){
         case "profile-info-btn":
         innerElement.style.backgroundColor = "yellow";
         innerElement.style.fontSize = "97%";
-        sub.style.backgroundColor = "aliceblue";
-        sub.style.fontSize = "90%";
-        pend.style.backgroundColor = "aliceblue";
-        pend.style.fontSize = "90%";;
-        resolved.style.backgroundColor = "aliceblue";
-        resolved.style.fontSize = "90%";
-
+        sub.removeAttribute("style");
+       pend.removeAttribute("style");
+       resolved.removeAttribute('style');
+       
+        employeeTabs(1);
        
             break;
         case "submit-reim-btn":
         innerElement.style.backgroundColor = "yellow";
         innerElement.style.fontSize = "97%";
-        pro.style.backgroundColor = "aliceblue";
-        pro.style.fontSize = "90%";
-        pend.style.backgroundColor = "aliceblue";
-        pend.style.fontSize = "90%";
-        resolved.style.backgroundColor = "aliceblue";
-        resolved.style.fontSize = "90%";
+        pro.removeAttribute("style");
+       pend.removeAttribute("style");
+       resolved.removeAttribute('style');
+        employeeTabs(2);
 
             break;
         case "pending-reim-btn":
         innerElement.style.backgroundColor = "yellow";
         innerElement.style.fontSize = "97%";
-        sub.style.backgroundColor = "aliceblue";
-        sub.style.fontSize = "90%";
-        pro.style.backgroundColor = "aliceblue";
-        pro.style.fontSize = "90%";
-        resolved.style.backgroundColor = "aliceblue";
-        resolved.style.fontSize = "90%";
-
+        sub.removeAttribute("style");
+       pro.removeAttribute("style");
+       resolved.removeAttribute('style');
+        employeeTabs(3);
             break;
         case "resolved-riem-btn":
         innerElement.style.backgroundColor = "yellow";
         innerElement.style.fontSize = "97%";
-        sub.style.backgroundColor = "aliceblue";
-        sub.style.fontSize = "90%";
-        pend.style.backgroundColor = "aliceblue";
-        pend.style.fontSize = "90%";
-        pro.style.backgroundColor = "aliceblue";
-        pro.style.fontSize = "90%";
- 
+        sub.removeAttribute("style");
+       pend.removeAttribute("style");
+       pro.removeAttribute('style');
+        
+        employeeTabs(4);
             break;
     
-        default:
-            break;
     }
 }

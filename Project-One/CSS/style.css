@@ -14,6 +14,9 @@ html {
       width: 30em;
       position: fixed;
   }
+  .talos-img:hover{
+      width: 31em;
+  }
   .title{
       position: absolute;
       width: 30%;
@@ -186,7 +189,7 @@ html {
 .sidenav a:hover {
     background-color: white;
     position: relative;
-    font-size: 97%;
+    font-size: 94%;
 }
 .backbtn a:hover {
     background-color: white;
@@ -238,4 +241,20 @@ html {
     margin-left: 48%;
     margin-top: 25%;
 }
-  
+.desc-box{
+    font-family: 'Aldrich';
+    
+}
+input{
+    font-family: 'Aldrich';
+}
+
+#r_type{
+    font-family: 'Aldrich'
+}
+#desc{
+    font-family: 'Aldrich';
+}
+#file{
+    font-family: 'Aldrich';
+}

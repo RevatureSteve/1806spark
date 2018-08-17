@@ -44,3 +44,4 @@ FOREIGN KEY (mgr_u_id) REFERENCES users (u_id),
 FOREIGN KEY (rb_type_id) REFERENCES rb_type(rb_type_id),
 FOREIGN KEY (rq_status_id) REFERENCES rq_status (rq_status_id)
 );
+
