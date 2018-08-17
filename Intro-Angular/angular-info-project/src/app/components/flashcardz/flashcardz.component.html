@@ -1,0 +1,8 @@
+<h1>All My Flashcards!</h1>
+
+<div *ngIf="flashCardz1.length > 0">
+<ul *ngFor="let flashcard of flashCardz1">
+  <li >{{flashcard.question}} : 
+    {{flashcard.answer}}</li>
+</ul>
+</div>
