@@ -1,5 +1,19 @@
 HEavily use NPM which is an example of a popular CLI tool
-Angular ahs a CLI built on top of NPM called...Angular CLI
+THe Standard for NPM projects after pulling is to run the command npm install, npm start
+BUT when creating a new NPM project uisng npm init the npm install works but not npm start, you must add this!
+for example look at a generated Angular project, angular project's package .json 
+
+ng serve is the command to start an angular project
+
+npm start calls ng serve because the script tag in package.json says to execute ng serve
+
+if project 1 is only an npm project (has a package.json, and not an angular project) you must add start to your package.json scripts which will look like
+
+ "scripts": {
+    "start": "node index.js",
+  },
+
+Angular ahs a CLI built on top of NPM called...Angular CLI (Command Line Interface) ng (Angular), NPM, node, git
 
 To install angular CLI  npm install -g @angular/cli  -g is for global install
 
@@ -10,3 +24,13 @@ New angular project:
 ng new <project-name>   dont include<>
 
 
+to create a project, -ng new project-name
+cd into project folder
+ng serve
+
+ng g c navbar  - generate component - navbar
+
+Structural Directives -3 (flow control)
+*ngFor
+*ngIf
+*ngSwitch
