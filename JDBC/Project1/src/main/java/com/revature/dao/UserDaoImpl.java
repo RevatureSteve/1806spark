@@ -9,7 +9,6 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.revature.domain.Reimbursement;
 import com.revature.domain.Users;
 import com.revature.util.SetConnectionPropertiesUtil;
 
@@ -20,6 +19,7 @@ public class UserDaoImpl implements UserDao {
 	/*
 	 * Here I am using this to login as a specific user (employee/manager)
 	 */
+	@Override
 	public Users getUserByEmail(String email) {
 		System.err.println("[LOG]---Starting UserDao---getUserByEmail() argument: " + email);
 
@@ -52,8 +52,9 @@ public class UserDaoImpl implements UserDao {
 	/*
 	 * Here I show the entire list of Users both the Managers and Employees
 	 */
+	@Override
 	public List<Users> getAllUsers() {
-		System.err.println("[LOG]---Starting UserDao---getUserByEmail()");
+		System.err.println("[LOG]---Starting UserDao---getAllUsers()");
 		
 		List<Users> users = new ArrayList<>();
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {

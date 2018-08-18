@@ -2,8 +2,8 @@ package com.revature;
 
 import java.util.List;
 
-import com.revature.dao.ReimbursementDaoImpl;
-import com.revature.domain.Reimbursement;
+import com.revature.dao.UserDaoImpl;
+import com.revature.domain.Users;
 
 public class Driver {
 
@@ -48,8 +48,8 @@ public class Driver {
 		/*
 		 * Here is the List of all Pending Reimbursements
 		 */
-		List<Reimbursement> allApprovedReimbursements = new ReimbursementDaoImpl().getApprovedReimbursements();
-		System.out.println("Here is the List of all the Reimbursements\n " + allApprovedReimbursements);
+		/*List<Reimbursement> allApprovedReimbursements = new ReimbursementDaoImpl().getApprovedReimbursements();
+		System.out.println("Here is the List of all the Reimbursements\n " + allApprovedReimbursements);*/
 
 	}
 

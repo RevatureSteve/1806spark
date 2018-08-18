@@ -55,6 +55,9 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 		return reimbs;
 	}
 
+	/*
+	 * Here I show all Pending Reimbursements
+	 */
 	@Override
 	public List<Reimbursement> getPendingReimbursements() {
 		System.err.println("[LOG]---Starting ReimbursementDao---getPendingReimbursements()");
@@ -92,6 +95,9 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 		return pendingReimbs;
 	}
 
+	/*
+	 * Here I show all Approved Reimbursements
+	 */
 	@Override
 	public List<Reimbursement> getApprovedReimbursements() {
 		System.err.println("[LOG]---Starting ReimbursementDao---getApprovedReimbursements()");
