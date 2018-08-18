@@ -1,3 +1,5 @@
+import com.revature.dao.ReimbursementDao;
+import com.revature.dao.ReimbursementDaoImpl;
 import com.revature.domain.Reimbursement;
 import com.revature.domain.Users;
 import com.revature.service.AppService;
@@ -15,11 +17,13 @@ Users validUser = new AppService().login(new Users (0,"", "", emailInput, pwInpu
 	
 	System.out.println("confirm valid user " + validUser);
 	
-int rIdInput = 1021;
-
-Reimbursement reReq = new AppService().getReReq(new Reimbursement (rIdInput, 0, 0, 0, 0, 0, "", "", ""));
+//int rIdInput = 1021;
+//
+//Reimbursement reReq = new AppService().getReReq(new Reimbursement (rIdInput, 0, 0, 0, 0, 0, "", "", ""));
+//	
+//System.out.println("this is a reimbursement request: " + reReq);
 	
-System.out.println("this is a reimbursement request: " + reReq);
+
 	}
 
 }

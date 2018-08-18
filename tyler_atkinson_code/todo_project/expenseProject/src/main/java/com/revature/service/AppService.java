@@ -1,5 +1,7 @@
 package com.revature.service;
 
+import java.util.List;
+
 import com.revature.dao.ReimbursementDao;
 import com.revature.dao.ReimbursementDaoImpl;
 import com.revature.dao.UsersDao;
@@ -8,6 +10,8 @@ import com.revature.domain.Reimbursement;
 import com.revature.domain.Users;
 
 public class AppService {
+	
+	private ReimbursementDao reimbursementDao = new ReimbursementDaoImpl();
 	
 	//Verify Email and password
 	
@@ -28,9 +32,9 @@ public class AppService {
 return null;
 }
 
-//view single reimbursement request
+//view single reimbursement request (NOT WORKING!!)
 
-	private ReimbursementDao reimbursementDao = new ReimbursementDaoImpl();
+	
 	
 	public Reimbursement getReReq(Reimbursement userInput) {
 		
@@ -45,4 +49,28 @@ return null;
 
 	}
 		return dbReimb;
-}}
+}
+	
+
+	public List <Reimbursement> getAllReimbursements(){
+		
+		System.out.println("[LOG]- retrieving reimbursement list");
+		
+		return reimbursementDao.getAllReimbursements();
+		
+	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+}

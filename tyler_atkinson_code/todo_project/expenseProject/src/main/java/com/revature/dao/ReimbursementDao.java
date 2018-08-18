@@ -1,5 +1,7 @@
 package com.revature.dao;
 
+import java.util.List;
+
 import com.revature.domain.Reimbursement;
 
 public interface ReimbursementDao {
@@ -14,6 +16,7 @@ public interface ReimbursementDao {
 
 	
 	//UPDATE
+	public List<Reimbursement> getAllReimbursements();
 	
 	
 	//DELETE

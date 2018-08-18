@@ -1,6 +1,7 @@
 package com.revature.domain;
 
 import java.io.Serializable;
+import java.util.List;
 
 public class Reimbursement implements Serializable {
 	
@@ -13,6 +14,8 @@ public class Reimbursement implements Serializable {
 	private String description;//5
 	private String timesubmission;//7
 	private String  img;//6
+	
+	private List<Reimbursement> reimbursementRequests;
 	
 	
 	public Reimbursement() {}
@@ -29,6 +32,23 @@ public class Reimbursement implements Serializable {
 		this.description = description;
 		this.timesubmission = timesubmission;
 		this.img = img;
+	}
+	
+	
+
+	public Reimbursement(int r_id, int emp_u_id, int mgr_u_id, int rq_type_id, int rq_status_id, double amt,
+			String description, String timesubmission, String img, List<Reimbursement> reimbursementRequests) {
+		super();
+		this.r_id = r_id;
+		this.emp_u_id = emp_u_id;
+		this.mgr_u_id = mgr_u_id;
+		this.rq_type_id = rq_type_id;
+		this.rq_status_id = rq_status_id;
+		this.amt = amt;
+		this.description = description;
+		this.timesubmission = timesubmission;
+		this.img = img;
+		this.reimbursementRequests = reimbursementRequests;
 	}
 
 	public int getR_id() {
@@ -101,6 +121,16 @@ public class Reimbursement implements Serializable {
 
 	public void setImg(String img) {
 		this.img = img;
+	}
+	
+	
+
+	public List<Reimbursement> getReimbursementRequests() {
+		return reimbursementRequests;
+	}
+
+	public void setReimbursementRequests(List<Reimbursement> reimbursementRequests) {
+		this.reimbursementRequests = reimbursementRequests;
 	}
 
 	@Override

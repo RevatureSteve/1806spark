@@ -1,19 +1,21 @@
 package com.revature.dao;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.revature.domain.Reimbursement;
+import com.revature.util.SetConnectionPropertiesUtil;
 
 public class ReimbursementDaoImpl implements ReimbursementDao {
 	
-	private final static String  USERNAME = "tyler_ers";
-	private final static String  PASSWORD = "p4ssw0rd";
-	private final static String  URL = "jdbc:oracle:thin:@tylertraining.cnmoc1mujdcw.us-east-2.rds.amazonaws.com:1521:ORCL"; 
-			
+
 	
 	
 	@Override
@@ -21,7 +23,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		
 		Reimbursement reimbursement = null;
 		
-		try(Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)){
+		try(Connection conn = SetConnectionPropertiesUtil.getConnection();){
 			String sql = "SELECT * FROM reimbursement WHERE r_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, r_id);
@@ -32,12 +34,43 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 			}
 			
 			
-		} catch (SQLException e) {
+		} catch (SQLException | IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return reimbursement;
 		
+	}
+
+
+
+	@Override
+	public List<Reimbursement> getAllReimbursements() {
+		
+		List<Reimbursement> reimbursements = new ArrayList<>();
+		
+		try(Connection conn = SetConnectionPropertiesUtil.getConnection();){
+			String sql = "SELECT * FROM reimbursement";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				reimbursements.add(new Reimbursement(rs.getInt("R_ID"), rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("RQ_TYPE_ID"),
+						rs.getInt("RQ_STATUS_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getString("TIMESUBMISSION"),rs.getString("IMG")));
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return reimbursements;
 	}
 
 }
