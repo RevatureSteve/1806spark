@@ -11,10 +11,6 @@ public class CharacterStream {
 	public static void main(String[] args) {
 		
 		String filename = null;
-		
-		if(filename != null) {
-			writeCharacterStream(filename);
-		}
 	}
 	
 	

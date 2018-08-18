@@ -4,7 +4,7 @@ import com.revature.dao.UserDao;
 import com.revature.dao.UserDaoImpl;
 import com.revature.pojo.User;
 
-public class ManagerService {
+public class LoginService {
 
 	private UserDao userDao = new UserDaoImpl();
 	

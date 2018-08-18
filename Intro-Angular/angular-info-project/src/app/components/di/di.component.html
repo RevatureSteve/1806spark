@@ -1,0 +1,54 @@
+<div>
+    <div class="panel-heading">
+        <span class="label label-default label-center">{{title}}</span>
+    </div>
+    <div class="panel-body">
+        <img class="image-center" src="{{image}}" />
+        <div class="list-group">
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                A <strong>dependency</strong> is synonym of <strong>tight coupling</strong>.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <strong>Instantiating</strong> a class in another class <strong>strictly ties</strong> one with the other.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                To remove this issue, we use <strong>Dependency Injection</strong>.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                Angular can give away <strong>instances</strong> with all its <strong>dependencies</strong> fixed.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                Normally, we inject <strong>Services</strong> into <strong>Components</strong>.
+            </div>
+        </div>
+    </div>
+    <div class="panel-heading">
+        <span class="label label-default label-center">{{subTitleInjectable}}</span>
+    </div>
+    <div class="panel-body">
+        <img class="image-center" src="{{subTitleImageInjectable}}" />
+        <div class="list-group">
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                We can make a class available for <strong>DI</strong> with the <strong>@Injectable</strong> decorator.
+            </div>
+            <img class="image-center image-inline" src="{{subTitleImageInjected}}" />
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                We can use the <strong>Service</strong> as parameters in our <strong>Component</strong>.
+            </div>  
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                Angular will <strong>inject</strong> the <strong>service</strong> when the constructor gets called.
+            </div> 
+        </div>
+    </div>
+    <div class="panel-footer">
+        <a href="{{documentation}}" target="_blank">Documentation</a>
+    </div>
+</div>

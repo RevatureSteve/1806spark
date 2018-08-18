@@ -1,5 +1,9 @@
 Manifest-Version: 1.0
+<<<<<<< HEAD
 Built-By: lolitsrhys
+=======
+Built-By: Steve Work PC
+>>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 Build-Jdk: 1.8.0_181
 Created-By: Maven Integration for Eclipse
 

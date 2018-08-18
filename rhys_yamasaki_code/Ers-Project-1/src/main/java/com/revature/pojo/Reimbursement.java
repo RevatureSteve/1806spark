@@ -38,6 +38,21 @@ public class Reimbursement {
 		this.rq_status_id = rq_status_id;
 	}
 	
+	
+	// for join table
+	public Reimbursement(int rb_id, int amount, String description, String time_submission, String rb_resolved_name,
+			String rb_submission_name, String rq_type, String rq_status) {
+		super();
+		this.rb_id = rb_id;
+		this.amount = amount;
+		this.description = description;
+		this.time_submission = time_submission;
+		this.rb_resolved_name = rb_resolved_name;
+		this.rb_submission_name = rb_submission_name;
+		this.rq_type = rq_type;
+		this.rq_status = rq_status;
+	}
+
 	// Eager loading from db
 	public Reimbursement(int rb_id, int rb_resolved_id, int rb_submission_id, int amount, String description,
 			String time_submission, int rq_type_id, int rq_status_id, String rb_resolved_name,

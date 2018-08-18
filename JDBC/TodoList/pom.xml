@@ -7,9 +7,14 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
+<<<<<<< HEAD
 	<!-- no java version #? What is the default for maven? Maven defaults to.... 
 		1.5 so update it! -->
 
+=======
+	<!-- no java version #? what is the default for maven? Maven defaults to....1.5 
+		so update it! -->
+>>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
@@ -26,15 +31,21 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
 			<artifactId>jackson-core</artifactId>
 			<version>2.9.6</version>
 		</dependency>
+<<<<<<< HEAD
 
 
+=======
+>>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 			<groupId>com.fasterxml.jackson.core</groupId>
@@ -43,5 +54,11 @@
 		</dependency>
 
 
+<<<<<<< HEAD
 	</dependencies>
+=======
+
+	</dependencies>
+
+>>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 </project>

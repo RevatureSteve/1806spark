@@ -9,7 +9,6 @@ public class BankAccount {
 	public BankAccount(){}
 
 	public BankAccount(int bankAccountNumber, String customerName, double balance) {
-		super();
 		this.bankAccountNumber = bankAccountNumber;
 		this.customerName = customerName;
 		this.balance = balance;

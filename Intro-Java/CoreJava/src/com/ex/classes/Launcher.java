@@ -2,7 +2,6 @@ package com.ex.classes;
 
 public class Launcher {
 	public static void main(String[] args) {
-<<<<<<< HEAD
 		Dog sparky = new Dog("Sparky", 48, false, "zombie");
 //		System.out.println(sparky.getName());
 //		System.out.println(sparky.name);
@@ -17,10 +16,6 @@ public class Launcher {
 		for (Pet element: petArray) {
 			element.speak();
 		}
-		
-=======
-		Dog sparky = new Dog("sparky", 48, false, "zombie");
-		Fish johnson = new Fish("johnson", 50, true, 1);
 		
 		Dog bolt = new Dog("bolt", 3, true, "husky");
 		
@@ -38,6 +33,5 @@ public class Launcher {
 		for(Pet p: pets) {
 			p.speak();
 		}
->>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 	}
 }

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<bank>
+    <bankAccounts>
+        <balance>120.5</balance>
+        <bankAccountNumber>1</bankAccountNumber>
+        <customerName>John</customerName>
+    </bankAccounts>
+    <bankAccounts>
+        <balance>2000.0</balance>
+        <bankAccountNumber>2</bankAccountNumber>
+        <customerName>Amy</customerName>
+    </bankAccounts>
+    <bankAccounts>
+        <balance>460.7</balance>
+        <bankAccountNumber>3</bankAccountNumber>
+        <customerName>Austin</customerName>
+    </bankAccounts>
+    <name>My First Bank</name>
+</bank>

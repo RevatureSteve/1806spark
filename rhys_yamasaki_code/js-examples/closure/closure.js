@@ -1,48 +1,39 @@
+
 /*
     I want to count things
         birds
-        cats
-        etc.
-
+        cars
+        10+ things
+        etc
 
     Solve this issue of sharing a global variable with closure!
         Nested functions hold the variables of the outer function
+
+    Closure is JavaScript's way of encapsulation!
 */
 
 let count = 0; // global count
-function countCar() {
+function countCar(){
     return "Car count is: " + ++count;
 }
 
-function makeCounter(noun) {
+
+//dynamic function for counting different items/things/whatever
+function makeCounter(noun){
     let count = 0; // outer function count
 
-    function countNoun() {
-        return noun + "count is: " + ++count;
+    function countNoun(){
+        return  noun + " count is: " + ++count;
     }
+
     return countNoun;
+
 }
 
 
-/*
-        Interview question
-
-        let foobar = sum(2);
-        foobar(3) = 5
-
-    sum(2,3) = 5
-    sum(2)(3) = 5
-
-
-    function sum(x,y) {
-    function foo(y) {
-        return x+y;
-    }
-    if (y) {
+function sum(x,y){
+    function foo(y){
         return x + y;
-    } else {
-        return foo;
     }
+    return foo(y);
 }
-
-*/

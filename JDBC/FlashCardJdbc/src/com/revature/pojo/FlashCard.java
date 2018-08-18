@@ -3,6 +3,7 @@ package com.revature.pojo;
 import java.io.Serializable;
 
 /**
+<<<<<<< HEAD
  *  FlashCard Class will be modeled after a table in the Database
  *  	each state will be a field in the database
  *  	(each variable will have a column in the database)
@@ -13,16 +14,33 @@ import java.io.Serializable;
 
 public class FlashCard implements Serializable{
 	
+=======
+ * 	FlashCard Class will be modeled after a table in the Database
+ * 		each state will be a field in the database
+ * 		(each variable will have a column in the database)
+ * 
+ * 	This is called: "Object Relational Mapping" ORM
+ * @author Steve Work PC
+ *
+ */
+public class FlashCard implements Serializable{
+
+>>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 	// state
 	private int fcId;
 	private String fcQuestion;
 	private String fcAnswer;
 	
 	// no-args constructor
+<<<<<<< HEAD
 	public FlashCard() {
 		
 	}
 
+=======
+	public FlashCard() {}
+	
+>>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 	public FlashCard(int fcId, String fcQuestion, String fcAnswer) {
 		super();
 		this.fcId = fcId;
@@ -32,6 +50,10 @@ public class FlashCard implements Serializable{
 
 
 
+<<<<<<< HEAD
+=======
+	// getters and setter
+>>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 	public int getFcId() {
 		return fcId;
 	}
@@ -61,5 +83,8 @@ public class FlashCard implements Serializable{
 		return "FlashCard [fcId=" + fcId + ", fcQuestion=" + fcQuestion + ", fcAnswer=" + fcAnswer + "]";
 	}
 	
+<<<<<<< HEAD
 	
+=======
+>>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 }

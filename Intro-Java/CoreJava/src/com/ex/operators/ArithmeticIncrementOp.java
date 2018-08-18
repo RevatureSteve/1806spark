@@ -25,15 +25,12 @@ public class ArithmeticIncrementOp {
 		printInt(++b);
 		System.out.println(b);
 
-<<<<<<< HEAD
 		System.out.println("10++: "  + (a++) + "\t" + a); //evaluated then incremented
 		System.out.println("++10: "  + (++b) + "\t" + b); //incremented then evaluated
 		System.out.println("10--: "  + (c--) + "\t" + c); //evaluated then decremented
-=======
 		System.out.println("10++: "  + (a++) + "\t" + a + "\n"); //evaluated then incremented
 		System.out.println("++10: "  + (++b) + "\t" + b); //incremented then evaluated
 		System.out.println("10--: "  + (c--) + "\t" + c + "\n"); //evaluated then decremented
->>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
 		System.out.println("--10:  " + (--d) + "\t" + d); //decremented then evaluated
 	}
 	

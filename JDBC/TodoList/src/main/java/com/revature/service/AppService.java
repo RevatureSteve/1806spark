@@ -8,9 +8,13 @@ import com.revature.domain.Task;
 import com.revature.domain.User;
 
 public class AppService {
+<<<<<<< HEAD
 	
 	// instance scope so each non-static method in this class can use the same object
 	private UserDao userDao = new UserDaoImpl();
+=======
+
+>>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 	/*
 	 *  business logic like login validation
 	 *  	validate models before persisting
@@ -19,6 +23,7 @@ public class AppService {
 	 *  	etc...
 	 */
 	
+<<<<<<< HEAD
 	public User login(User userInput) {
 
 		/**
@@ -55,4 +60,62 @@ public class AppService {
 		return userDao.getAllTasks();
 	}
 	
+=======
+	// instance scope so each non-static method in this class can use the same object
+	private UserDao userDao = new UserDaoImpl();
+	
+	/**
+	 * login() returns a valid user object or returns null if the user/pw combo is invalid;
+	 * @param userInput
+	 * @return
+	 */
+	public User login(User userInput) {
+		System.out.println("[LOG]----Starting---Service login() argument: " + userInput);
+		// First pass the userInput's username to the dao to see if there is a 
+		//		is a record found in the database with that username
+		//		Yes - assign the user record to a User java object
+		//		No - then it is null
+		System.out.println("[LOG]----calling dao---Service login()");
+		User dbUser =userDao.getUserByUsername(userInput.getUsername());
+		System.out.println("[LOG]----dao returned---Service login() returned: " + dbUser);
+		
+		// since the username might not be found I could get null back...check for that!
+		if(dbUser != null) {
+			System.out.println("[LOG]----dbUser null check---Service login() status: successful");
+			// now let's compare the userInput's password to the dbUser's password
+			if(dbUser.getPassword().equals(userInput.getPassword())) {
+				System.out.println("[LOG]----compare pw---Service login() pw: success");
+				return dbUser; // not userInput since it doesn't have the userId
+			}
+		}
+		System.out.println("[LOG]----ending---Service login() pw: fail");
+		return null;
+	}
+	
+	public List<Task> getAllTasks(){
+		System.out.println("[LOG]----retrieving---All tasks");
+		// any validation before asking the db? maybe in future but not at moment
+		// so let's call the dao to get Tasks from the DB
+		
+		return userDao.getAllTasks();
+	}
+	
+	public List<Task> getTasksByUserId(int id){
+		System.out.println("[LOG]---retrieving----User Tasks");
+		
+		return userDao.getTasksByUserId(id);
+		
+	}
+	
+	public User getUser(int id) {
+//		userDao.getUserByUsername(username);
+		return null;
+	}
+	
+	
+	public int createUser(User user) {
+//		userDao.getUserByUsername(username)
+		return 0;
+	}
+>>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 }

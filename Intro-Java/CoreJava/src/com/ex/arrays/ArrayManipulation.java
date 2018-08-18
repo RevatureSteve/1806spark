@@ -41,13 +41,9 @@ public class ArrayManipulation {
 		 * equals   (overridden from Object class)
 		 * 
 		 */
-<<<<<<< HEAD
 		System.out.println(Arrays.toString(intArr)); // toString is a static member because Arrays is capital (static method)
-=======
 		System.out.println(Arrays.toString(intArr)); // toString is a static member because Arrays is capital
->>>>>>> ec6e1080cc8d22ffe15518fa344d4cd7dc0b1146
-		Arrays.sort(intArr);
-		System.out.println(Arrays.toString(intArr));
+
 //		
 //		System.out.println(Arrays.binarySearch(intArr, 25)); //returns index of element
 //		System.out.println(Arrays.binarySearch(intArr, 2));  //returns -1 if not found

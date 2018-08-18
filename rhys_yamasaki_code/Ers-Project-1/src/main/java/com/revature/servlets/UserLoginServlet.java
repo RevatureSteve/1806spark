@@ -10,12 +10,12 @@ import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.pojo.User;
-import com.revature.service.ManagerService;
+import com.revature.service.LoginService;
 
-public class ManagersServlet extends HttpServlet{
+public class UserLoginServlet extends HttpServlet{
 
 	
-	private ManagerService managerService = new ManagerService();
+	private LoginService managerService = new LoginService();
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
 		System.out.println("This is getting managers");
@@ -28,15 +28,15 @@ public class ManagersServlet extends HttpServlet{
 		System.out.println(password);
 		
 		user = managerService.validateManagerLogin(email, password);
-		if(user != null) {
-			// this is a cookie!
-			// HttpSession holds a J-SESSION-ID cookie (BADDDDDDDDD!!!)
-			HttpSession session = request.getSession();
-			
-			session.setAttribute("user", user);
-			
-			request.getRequestDispatcher("app.html").forward(request, response);
-		}
+//		if(user != null) {
+//			// this is a cookie!
+//			// HttpSession holds a J-SESSION-ID cookie (BADDDDDDDDD!!!)
+//			HttpSession session = request.getSession();
+//			
+//			session.setAttribute("user", user);
+//			
+//			request.getRequestDispatcher("app.html").forward(request, response);
+//		}
 		
 		
 		ObjectMapper mapper = new ObjectMapper();
