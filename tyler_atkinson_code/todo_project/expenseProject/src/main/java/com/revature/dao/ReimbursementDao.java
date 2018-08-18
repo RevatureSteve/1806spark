@@ -1,5 +1,21 @@
 package com.revature.dao;
 
-public class ReimbursementDao {
+import com.revature.domain.Reimbursement;
+
+public interface ReimbursementDao {
+	
+	//CREATE 
+	
+	
+	//READ
+	
+
+	public Reimbursement getReimbursementById(int r_id);
+
+	
+	//UPDATE
+	
+	
+	//DELETE
 
 }

@@ -1,12 +1,14 @@
 package com.revature.dao;
 
-public class UsersDao {
+import com.revature.domain.Users;
+
+public interface UsersDao {
 	
 	//CREATE 
 	
 	
 	//READ
-	
+	public Users getUserByEmail(String email);
 	
 	//UPDATE
 	

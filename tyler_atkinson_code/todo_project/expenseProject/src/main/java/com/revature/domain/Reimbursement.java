@@ -4,15 +4,15 @@ import java.io.Serializable;
 
 public class Reimbursement implements Serializable {
 	
-	private int r_id;
-	private int emp_u_id;
-	private int mgr_u_id;
-	private int rq_type_id;
-	private int rq_status_id;
-	private double amt;
-	private String description;
-	private String timesubmission;
-	private String  img;
+	private int r_id; //1
+	private int emp_u_id;//2
+	private int mgr_u_id; //3
+	private int rq_type_id;//8
+	private int rq_status_id;//9
+	private double amt;//4
+	private String description;//5
+	private String timesubmission;//7
+	private String  img;//6
 	
 	
 	public Reimbursement() {}
