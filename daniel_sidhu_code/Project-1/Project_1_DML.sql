@@ -71,14 +71,14 @@ SELECT * FROM rq_status;
 
 --JOINS 
 
---For my getReimbursement()
+--For my getReimbursements()
 SELECT * FROM Reimbursement
 INNER JOIN Rq_Status 
     ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id
 INNER JOIN Rq_Type
     ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Status_Id; 
 
---For my getPendingReimbursement()
+--For my getPendingReimbursements()
 SELECT * FROM Reimbursement
 INNER JOIN Rq_Status 
     ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id
@@ -86,7 +86,7 @@ INNER JOIN Rq_Type
     ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Status_Id
 WHERE Reimbursement.Rq_Status_Id = 1; 
 
---For my getApprovedReimbursement()
+--For my getApprovedReimbursements()
 SELECT * FROM Reimbursement
 INNER JOIN Rq_Status 
     ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id
