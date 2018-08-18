@@ -3,4 +3,3 @@ GRANT CONNECT, RESOURCE TO poke_db;
 
 CREATE USER poke_world_db IDENTIFIED BY p4ssw0rd;
 GRANT CONNECT, RESOURCE TO poke_world_db;
-

@@ -1,0 +1,20 @@
+.bullets {
+    background: whitesmoke;
+}
+.bullets div{
+    display: inline-block;
+    background: blue;
+    width: 10px;
+    height: 10px;
+    animation:  shoot 2s ease-in-out 0s 1 normal forwards;
+}
+
+@keyframes shoot {
+    0%{
+        transform: translate(0px);
+    }
+    100%{
+        transform: translate(100px);
+        background: whitesmoke;
+    }
+}
