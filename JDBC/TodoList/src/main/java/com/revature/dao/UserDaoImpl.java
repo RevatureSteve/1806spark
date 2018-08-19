@@ -52,7 +52,6 @@ public class UserDaoImpl implements UserDao{
 			System.err.println("[LOG]---resultset completed----getUserByUsername()");
 			if( resultSet.next() ) {
 				System.err.println("[LOG]---resultset if----getUserByUsername() true! ");
->>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 				user = new User(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3));
 			}
 			
@@ -63,80 +62,37 @@ public class UserDaoImpl implements UserDao{
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
-<<<<<<< HEAD
 		System.err.println("[LOG]---Ending"); 
-=======
 		System.err.println("[LOG]---Ending----getUserByUser() returning: " + user);
->>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 		return user;
 	}
 
 	@Override
 	public List<Task> getAllTasks() {
-<<<<<<< HEAD
 		
 		List<Task> tasks = new ArrayList<>();
 		
-=======
-		List<Task> tasks = new ArrayList<>();
->>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 		// I am in the DAO so I can write JDBC logic to communicate with the Database
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
 			String sql = "SELECT * FROM task";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
-<<<<<<< HEAD
 			while(rs.next()) {
 				tasks.add(new Task(rs.getInt("T_ID"),rs.getInt("U_ID"),rs.getString("T_NAME"), rs.getInt("TS_ID"), null));
 			}
 		} catch (IOException | SQLException e) {
 			// TODO Auto-generated catch block
-=======
 			
 			while(rs.next()) {
 				tasks.add(new Task(rs.getInt("T_ID"), rs.getInt("U_ID"), rs.getString("T_NAME"), rs.getInt("TS_ID"), null));
 			}
 			
 		} catch (IOException | SQLException e) {
->>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 			e.printStackTrace();
 		}
 		
 		return tasks;
 	}
 
-	@Override
-	public List<Task> getTasksByUserId(int id) {
-<<<<<<< HEAD
-		
-		List<Task> tasks = new ArrayList<>();
-		
-		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
-=======
-		List<Task> tasks = new ArrayList<>();
-		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
->>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
-			String sql = "SELECT * FROM task WHERE u_id = ?";
-			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, id);
-			ResultSet rs = ps.executeQuery();
-<<<<<<< HEAD
-			while(rs.next()) {
-				tasks.add(new Task(rs.getInt("T_ID"),rs.getInt("U_ID"),rs.getString("T_NAME"), rs.getInt("TS_ID"), null));
-			}
-			
-			} catch (IOException | SQLException e) {
-=======
-			
-			while(rs.next()) {
-				tasks.add(new Task(rs.getInt("T_ID"), rs.getInt("U_ID"), rs.getString("T_NAME"), rs.getInt("TS_ID"), null));
-			}
-		} catch (IOException | SQLException e) {
->>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
-			e.printStackTrace();
-		}
-		
-		return tasks;
-	}
 
 }
