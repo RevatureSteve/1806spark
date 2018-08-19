@@ -82,4 +82,36 @@ public class UserDaoImpl implements UserDao {
 		return users;
 	}
 
+	/*
+	 * Here I am getting only the employees
+	 */
+	@Override
+	public List<Users> getAllEmployees() {
+		System.err.println("[LOG]---Starting UserDao---getAllEmployees()");
+		
+		List<Users> emps = new ArrayList<>();
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
+			System.err.println("[LOG]---UserDao try/catch---getAllEmployees() db connection success");
+			
+			String sql = "SELECT * FROM users WHERE pos_id = 2";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			System.err.println("[LOG]---UserDao ResultSet completed---getAllEmployees()");
+			if (rs.next()) {
+				Users emp = new Users(rs.getInt("U_Id"), rs.getString("Email"), rs.getString("Password"), rs.getString("fname"), rs.getString("lname"), rs.getInt("Pos_Id"));
+				emps.add(emp);
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.err.println("[LOG]---UserDao ResultSet if---getAllEmployees() returning the list of Employees");
+		return emps;
+	}
+
 }

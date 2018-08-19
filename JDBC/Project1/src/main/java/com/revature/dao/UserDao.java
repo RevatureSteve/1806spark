@@ -13,6 +13,7 @@ public interface UserDao {
 	//Read
 	public Users getUserByEmail(String email);
 	public List<Users> getAllUsers();
+	public List<Users> getAllEmployees();
 	
 	//Update
 	

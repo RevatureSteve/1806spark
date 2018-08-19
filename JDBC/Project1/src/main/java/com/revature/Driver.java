@@ -25,10 +25,16 @@ public class Driver {
 		
 		/*
 		 * Here is the List of Users
-		 * 		Note: I may have to use Business Logic to pull only employees as a manager
 		 */
 		/*List<Users> allUsers = new UserDaoImpl().getAllUsers();
 		System.out.println("Here is the List of all our Users\n" + allUsers);*/
+		
+		
+		/*
+		 * Here is the List of Employees
+		 */
+		/*List<Users> allEmployees = new UserDaoImpl().getAllEmployees();
+		System.out.println("Here is the List of all our Users\n" + allEmployees);*/
 		
 		
 		/*

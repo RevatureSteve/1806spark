@@ -1,6 +1,7 @@
 package com.revature.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,51 +10,52 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.domain.Task;
-import com.revature.service.AppService;
+import com.revature.domain.Users;
+import com.revature.service.BusinessLogic;
 
 /**
- * Servlet implementation class TodoIdServlet
+ * Servlet implementation class EmployeeServlet
  */
-public class TodoIdServlet extends HttpServlet {
+public class EmployeeServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
+    private BusinessLogic businessLogic = new BusinessLogic();
+	
     /**
      * @see HttpServlet#HttpServlet()
-     * URL - /task/id
      */
-	private AppService appService = new AppService();
-	
-    public TodoIdServlet() {
+    public EmployeeServlet() {
         super();
     }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
+	 * This is used to get all employees ONLY
+	 * URL endpoint is /allEmployees
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("TodoIdServlet - GET");
+		System.out.println("EmployeeServlet - GET");
 		
-		//get the request parameter and convert from string to int
-		int id = Integer.parseInt(request.getParameter("userId"));
-		System.out.println("The id of the User is: " + request.getParameter("userId"));
+		List<Users> emps = businessLogic.getAllEmployees();
 		
-		//use the int id to retrieve the task of that userId from the AppService (which will probably call the dao and the dao hits the db)
-		List<Task> userTasks = appService.getTaskByUserId(id);
-		
-		// Now I have a list of userTask but I need to convert to a JASON string before responding back
+		//convert to JSON
 		ObjectMapper mapper = new ObjectMapper();
 		
-		String json = mapper.writeValueAsString(userTasks);
+		//JSON of our employees
+		String json = mapper.writeValueAsString(emps);
 		
+		//client information
 		response.setContentType("application/json");
-		response.getWriter().write(json);//send back the JSON String UserTasks
+		
+		//format into a text output stream
+		PrintWriter out = response.getWriter();
+		out.println(json);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		// TODO Auto-generated method stub
 		doGet(request, response);
 	}
 

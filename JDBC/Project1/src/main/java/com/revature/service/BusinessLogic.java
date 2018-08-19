@@ -39,11 +39,18 @@ public class BusinessLogic {
 	
 	/*
 	 * Here is the logic to get all Users
-	 * 		note: I will be implementing some more logic to obtain only the employees
 	 */
 	public List<Users> getAllUsers() {
 		System.out.println("[LOG]---retrieving all users---BusinessLogic()");
 		return usersDao.getAllUsers();
+	}
+	
+	/*
+	 * Here is the logic to get all employees ONLY
+	 */
+	public List<Users> getAllEmployees() {
+		System.out.println("[LOG]---retrieving all employees---BusinessLogic()");
+		return usersDao.getAllEmployees();
 	}
 	
 	/*
@@ -70,4 +77,5 @@ public class BusinessLogic {
 		System.out.println("[LOG]---retrieving all approved reimbursements---BusinessLogic()");
 		return reimbursementDao.getApprovedReimbursements();
 	}
+	
 }

@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>Project1</display-name>
-  
-  <!-- HelloWorld Servlet -->
   <servlet>
     <servlet-name>hello</servlet-name>
     <servlet-class>com.revature.servlets.HelloWorldServlet</servlet-class>
@@ -12,8 +10,6 @@
     <url-pattern>/hello</url-pattern>
   </servlet-mapping>
   <servlet>
-  
-  <!-- User Servlet -->
     <description></description>
     <servlet-name>UserServlet</servlet-name>
     <servlet-class>com.revature.servlets.UserServlet</servlet-class>
@@ -21,5 +17,15 @@
   <servlet-mapping>
     <servlet-name>UserServlet</servlet-name>
     <url-pattern>/allUsers</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeeServlet</display-name>
+    <servlet-name>EmployeeServlet</servlet-name>
+    <servlet-class>com.revature.servlets.EmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeServlet</servlet-name>
+    <url-pattern>/allEmployees</url-pattern>
   </servlet-mapping>
 </web-app>
