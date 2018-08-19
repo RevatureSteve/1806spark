@@ -7,6 +7,7 @@ import { EmployeeComponent } from './employee/employee.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule} from '@angular/common/http';
 import { UpdateUserComponent } from './update-user/update-user.component';
+import { ReimbursementListComponent } from './reimbursement-list/reimbursement-list.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { UpdateUserComponent } from './update-user/update-user.component';
     LoginComponent,
     EmployeeComponent,
     NavbarComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    ReimbursementListComponent
   ],
   imports: [
     BrowserModule,

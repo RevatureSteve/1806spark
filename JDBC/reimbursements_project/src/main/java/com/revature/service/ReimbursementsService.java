@@ -17,4 +17,8 @@ public class ReimbursementsService {
 		List<Reimbursement> reimbs = rDao.getResolvedReimbusementsByUser(id);
 		return reimbs;
 	}
+	public static List<Reimbursement> getReimbursementsOfUser(int id) {
+		List<Reimbursement> reimbs = rDao.getReimbusementsByUser(id);
+		return reimbs;
+	}
 }

@@ -7,7 +7,6 @@ import { User } from './user';
   providedIn: 'root'
 })
 export class LoginService {
-  user: User;
   constructor(private http: HttpClient) { }
 
   validateUser(email, password): Observable<User> {
@@ -15,6 +14,7 @@ export class LoginService {
       email: email,
       password: password
     };
+
     return this.http.post<User>('http://localhost:8080/reimbursements_project/login', user);
   }
 }

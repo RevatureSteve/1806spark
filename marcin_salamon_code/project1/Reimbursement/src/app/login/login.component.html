@@ -6,5 +6,5 @@
   <br>
   <button class="btn btn-info" id='loginBtn' (click)="validateUser(email.value, psw.value)">Login</button>
 
-  <div *ngIf="user" (change)="setLogged()">{{user.fname}}</div>
+  <div *ngIf="user" (change)="setLogged()">{{user.positionId}}</div>
 </div>

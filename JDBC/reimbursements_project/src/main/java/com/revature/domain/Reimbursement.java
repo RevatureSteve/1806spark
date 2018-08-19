@@ -1,10 +1,12 @@
 package com.revature.domain;
 
+import java.sql.Blob;
+
 public class Reimbursement {
 	private int rId;
-	private int empUId;
-	private int mgrUId;
-	private int amount;
+	private User employee;
+	private User manager;
+	private double amount;
 	private String description;
 	private Object img;
 	private String timesubmission;
@@ -12,13 +14,15 @@ public class Reimbursement {
 	private String rq_status;
 	private int rq_typeId;
 	private int rq_statusId;
+
 	
-	public Reimbursement(int rId, int empUId, int mgrUId, int amount, String description, Object img,
+
+	public Reimbursement(int rId, User employee, User manager, double amount, String description, Object img,
 			String timesubmission, String rq_type, String rq_status, int rq_typeId, int rq_statusId) {
 		super();
 		this.rId = rId;
-		this.empUId = empUId;
-		this.mgrUId = mgrUId;
+		this.employee = employee;
+		this.manager = manager;
 		this.amount = amount;
 		this.description = description;
 		this.img = img;
@@ -27,10 +31,17 @@ public class Reimbursement {
 		this.rq_status = rq_status;
 		this.rq_typeId = rq_typeId;
 		this.rq_statusId = rq_statusId;
-				
 	}
 
-	public int getAmount() {
+	public User getEmployee() {
+		return employee;
+	}
+
+	public User getManager() {
+		return manager;
+	}
+
+	public double getAmount() {
 		return amount;
 	}
 
@@ -48,14 +59,6 @@ public class Reimbursement {
 
 	public int getrId() {
 		return rId;
-	}
-
-	public int getEmpUId() {
-		return empUId;
-	}
-
-	public int getMgrUId() {
-		return mgrUId;
 	}
 
 	public Object getImg() {

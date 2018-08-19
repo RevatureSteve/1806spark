@@ -12,7 +12,6 @@ export class LoggedUserService {
 
   setLoggedUser(u) {
     LoggedUserService.user = u;
-    console.log(u);
   }
 
   getLoggedUser(): User {
