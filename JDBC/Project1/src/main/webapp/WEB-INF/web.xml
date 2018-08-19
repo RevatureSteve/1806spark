@@ -28,4 +28,34 @@
     <servlet-name>EmployeeServlet</servlet-name>
     <url-pattern>/allEmployees</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementServlet</display-name>
+    <servlet-name>ReimbursementServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementServlet</servlet-name>
+    <url-pattern>/allReimbursements</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>PendingReimbursementServlet</display-name>
+    <servlet-name>PendingReimbursementServlet</servlet-name>
+    <servlet-class>com.revature.servlets.PendingReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PendingReimbursementServlet</servlet-name>
+    <url-pattern>/PendingReimbursements</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ApprovedReimbursementServlet</display-name>
+    <servlet-name>ApprovedReimbursementServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ApprovedReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApprovedReimbursementServlet</servlet-name>
+    <url-pattern>/ApprovedReimbursements</url-pattern>
+  </servlet-mapping>
 </web-app>
