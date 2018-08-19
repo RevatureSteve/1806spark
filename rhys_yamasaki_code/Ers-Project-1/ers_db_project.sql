@@ -64,7 +64,7 @@ select * from position;
 
 INSERT INTO rq_status VALUES (1, 'pending');
 INSERT INTO rq_status VALUES (2, 'approved');
-INSERT INTO rq_status VALUES (3, 'denied');
+
 
 SELECT * FROM rq_status;
 
@@ -112,5 +112,34 @@ END;
 /
 
 
+CREATE OR REPLACE PROCEDURE new_reimbursement(submit_id INT, resolved_id INT, amount Int, des VARCHAR2, img BLOB, type_id INT, status_id INT)
+AS 
+BEGIN
+INSERT INTO reimbursement(r_submission_id, r_resolved_id, amount, description, img, time_submission, rq_type_id, rq_status_id)
+VALUES (submit_id, resolved_id, amount, des, img,(SELECT systimestamp FROM DUAL), type_id, status_id);
+COMMIT;
+END;
+/
+BEGIN
+    new_reimbursement(2,1,500, 'business trip expense', null, 1, 1);
+END;
+/
+--INSERT INTO reimbursement VALUES (2, 2, 1, 100, 'For a traveling meeting', null, (SELECT systimestamp FROM DUAL), 1, 2); 
+commit;
+/
 
+SELECT u.fname AS sub_name, uu.fname AS res_name, r.amount, r.description, r.time_submission, rq.rq_type, s.rq_status from reimbursement r
+INNER JOIN rq_type rq ON rq.rq_type_id = r.rq_type_id
+INNER JOIN users u ON u.u_id = r.r_submission_id
+INNER JOIN users uu ON uu.u_id = r.r_resolved_id
+INNER JOIN rq_status s ON r.rq_status_id = s.rq_status_id;
+
+
+select * from reimbursement;
+/
+
+SELECT u.u_id, u.email, u.password, u.fname, u.lname, u.pos_id, p.pos_type
+FROM users u
+INNER JOIN position p ON u.pos_id = p.pos_id
+WHERE email = 'rhys@gmail.com';
 

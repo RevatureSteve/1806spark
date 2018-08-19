@@ -40,10 +40,9 @@ public class Reimbursement {
 	
 	
 	// for join table
-	public Reimbursement(int rb_id, int amount, String description, String time_submission, String rb_resolved_name,
+	public Reimbursement(int amount, String description, String time_submission, String rb_resolved_name,
 			String rb_submission_name, String rq_type, String rq_status) {
 		super();
-		this.rb_id = rb_id;
 		this.amount = amount;
 		this.description = description;
 		this.time_submission = time_submission;

@@ -2,17 +2,3 @@ h1 {
   text-align: center;
 }
 
-#login {
-  width: 500px;
-  margin: auto;
-  border: 1px grey ridge;
-  background: azure;
-  opacity: 0.8;
-
-}
-
-
-#loginBtn{
-  margin-left: 25%;
-  width: 50%;
-}

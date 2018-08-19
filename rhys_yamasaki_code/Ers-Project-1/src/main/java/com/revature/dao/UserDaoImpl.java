@@ -17,13 +17,18 @@ public class UserDaoImpl implements UserDao{
 		User user = null;
 		
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
-			String sql = "SELECT * FROM users WHERE email = ?";
+			String sql = "\r\n" + 
+					"SELECT u.u_id, u.email, u.password, u.fname, u.lname, u.pos_id, p.pos_type\r\n" + 
+					"FROM users u\r\n" + 
+					"INNER JOIN position p ON u.pos_id = p.pos_id\r\n" + 
+					"WHERE email = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, email);
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				user = new User(rs.getInt("u_id"),rs.getString("email"), rs.getString("password"), rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"));
+				user = new User(rs.getInt("u_id"),rs.getString("email"), rs.getString("password"), rs.getString("fname"), 
+						rs.getString("lname"), rs.getInt("pos_id"), rs.getString("pos_type"));
 			}
 			
 		} catch (IOException | SQLException e) {

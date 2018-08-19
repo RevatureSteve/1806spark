@@ -29,8 +29,6 @@ public class UserLoginServlet extends HttpServlet{
 		
 		user = managerService.validateManagerLogin(email, password);
 //		if(user != null) {
-//			// this is a cookie!
-//			// HttpSession holds a J-SESSION-ID cookie (BADDDDDDDDD!!!)
 //			HttpSession session = request.getSession();
 //			
 //			session.setAttribute("user", user);
