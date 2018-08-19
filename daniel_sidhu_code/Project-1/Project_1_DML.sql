@@ -4,6 +4,8 @@
 DROP TABLE users;
 
 INSERT INTO users VALUES(1,'dan@yahoo.com', 'dan123', 'Daniel', 'Sidhu', 1);
+INSERT INTO users VALUES(2,'leon@rcpd.com', 'leon123', 'Leon', 'Kennedy', 2);
+
 SELECT * FROM users;
 
 --SEQUENCE FOR users TABLES
