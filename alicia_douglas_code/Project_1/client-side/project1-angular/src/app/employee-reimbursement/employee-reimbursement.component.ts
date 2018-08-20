@@ -21,11 +21,10 @@ export class EmployeeReimbursementComponent implements OnInit {
 
   getReimbursements() {
     this.reimbursementsService.getReimbursementsArray()
-      .subscribe(reimbursements => this.reimbs = this.sortReimbursements(reimbursements));
+      .subscribe(reimbursements => this.reimbs = this.viewReimbursements(reimbursements));
   }
 
-  sortReimbursements(reimb): Reimbursements[] {
-    // reimb.sort(this.dynamicSort('-timesubmission'));
+  viewReimbursements(reimb): Reimbursements[] {
     console.log(reimb);
     return reimb;
   }
