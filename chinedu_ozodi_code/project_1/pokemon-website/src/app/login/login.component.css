@@ -1,0 +1,19 @@
+form {
+    align-content: center;
+    padding: 15px;
+    margin: auto;
+    margin-top: 250px;
+    position: relative;
+    width: 33%;
+    background: whitesmoke;
+}
+
+input {
+    margin-bottom: 5px;
+}
+
+#Layer_1{
+    width: 30%;
+    /* height: 100; */
+    position: relative;
+}
