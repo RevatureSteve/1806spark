@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://java.sun.com/xml/ns/javaee"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+	version="2.5">
+	<display-name>ProjectOne</display-name>
+	
+	<!-- Reimbursement Servlet -->
+	<servlet>
+		<servlet-name>reimbursement</servlet-name>
+		<servlet-class>com.revature.servlet.ReimbursementServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>reimbursement</servlet-name>
+		<url-pattern>/reimbursement</url-pattern>
+	</servlet-mapping>
+	
+	<!-- GetUserByEmail Servlet -->
+	<servlet>
+	<servlet-name>getUserByEmail</servlet-name>
+	<servlet-class>com.revature.servlet.UserInformationByEmail</servlet-class>
+	</servlet>
+	<servlet-mapping>
+	<servlet-name>getUserByEmail</servlet-name>
+	<url-pattern>/user/email</url-pattern>
+	</servlet-mapping>
+
+
+
+
+</web-app>
