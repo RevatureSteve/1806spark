@@ -1,11 +1,9 @@
-<li *ngFor='let r of reimbursements'>
-    <div>{{r.rId}}</div>
-    <div>{{r.employee}}</div>
-    <div>{{r.manager.fname}}{{r.manager.lname}}</div>
-    <div>{{r.amount}}</div>
-    <div>{{r.description}}</div>
-    <div>{{r.img}}</div>
-    <div>{{r.timesubmission}}</div>
-    <div>{{r.rq_type}}</div>
-    <div>{{r.rq_status}}</div>
+<li *ngFor='let r of reimbursements' class="list-group">
+    <div class="list-group-item list-group-item-action list-group-item-success">
+        <div>{{r.description}}</div>
+        <div>{{r.timesubmission.substring(0,19)}}</div>
+        <div>{{r.rq_type}}</div>
+        <div>{{r.rq_status}}</div>
+    </div>
+
 </li>

@@ -1,0 +1,13 @@
+.form-group{
+    margin: 10px;
+    max-width: 400px;
+    padding: 4px;
+    text-align: center;
+}
+.form-control{
+   margin-bottom: 4px;
+}
+.btn{
+    margin: auto;
+
+}

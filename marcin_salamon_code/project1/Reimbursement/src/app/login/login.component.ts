@@ -17,11 +17,17 @@ export class LoginComponent implements OnInit {
   }
 
   validateUser(email, psw): void {
-    this.login.validateUser(email, psw).subscribe(user => this.user = user);
+    this.login.validateUser(email, psw).subscribe(user => this.changePage(user));
   }
 
-  changeLogged() {
-    this.logged.setLoggedUser(this.user);
+  changePage(user) {
+    this.changeLogged(user);
+    // changes the page depending on user position
+  }
+
+  changeLogged(user) {
+    this.user = user;
+    this.logged.setLoggedUser(user);
   }
 
 }

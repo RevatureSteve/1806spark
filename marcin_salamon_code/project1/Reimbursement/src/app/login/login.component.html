@@ -5,7 +5,7 @@
   <input type="password" #psw placeholder="Password" required>
   <br>
   <button class="btn btn-info" id='loginBtn' (click)="validateUser(email.value, psw.value)">Login</button>
-
-  <div *ngIf="user" (change)="setLogged()">Login SuccessFull</div>
-  <button *ngIf="user"routerLink='/dashboard'>Continue</button>
+  
+  <div *ngIf="user" (change)="setLogged()">Login Successfull</div>
+  <button *ngIf="user" routerLink='/dashboard/employee'>Continue</button>
 </div>

@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.sql.Blob;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -177,4 +178,24 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		return reimbursements;
 	}
 
+	@Override
+	public int submitReimbursement(int id, double amount, String description, byte[] imgStr, int rqTypeId) {
+		int rowsAffected = 0;
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
+			String sql = "{call insertReimbursement(?,?,?,?,?)}";
+			CallableStatement cs = conn.prepareCall(sql);
+			Blob b = conn.createBlob();
+			b.setBytes(1, imgStr);
+			cs.setInt(1, id);
+			cs.setDouble(2, amount);
+			cs.setString(3, description);
+			cs.setBlob(4, b);
+			cs.setInt(5, rqTypeId);
+			
+			rowsAffected = cs.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rowsAffected;
+	}
 }

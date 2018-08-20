@@ -1,5 +1,6 @@
 package com.revature.service;
 
+import java.sql.Blob;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,4 +22,9 @@ public class ReimbursementsService {
 		List<Reimbursement> reimbs = rDao.getReimbusementsByUser(id);
 		return reimbs;
 	}
+	public static int createNewReimbursement(int id, double amount, String description, byte[] imgStr, int rqTypeId) {
+		return rDao.submitReimbursement(id, amount, description, imgStr, rqTypeId);
+		
+	}
+	
 }

@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.sql.Blob;
 import java.util.List;
 
 import com.revature.domain.Reimbursement;
@@ -16,4 +17,6 @@ public interface ReimbursementDao {
 	public List<Reimbursement> getPendingReimbusementsByUser(int id);
 
 	public List<Reimbursement> getResolvedReimbusementsByUser(int id);
+	
+	public int submitReimbursement(int id, double amount, String description, byte[] imgStr, int rqTypeId);
 }

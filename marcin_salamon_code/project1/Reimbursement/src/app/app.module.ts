@@ -9,6 +9,7 @@ import { HttpClientModule} from '@angular/common/http';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ReimbursementListComponent } from './reimbursement-list/reimbursement-list.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { SubmitComponent } from './submit/submit.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { AppRoutingModule } from './/app-routing.module';
     EmployeeComponent,
     NavbarComponent,
     UpdateUserComponent,
-    ReimbursementListComponent
+    ReimbursementListComponent,
+    SubmitComponent
   ],
   imports: [
     BrowserModule,
