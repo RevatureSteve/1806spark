@@ -1,0 +1,56 @@
+
+table.orangeTable {
+    font-family: "Palatino Linotype", "Book Antiqua", Palatino, serif;
+    border: 4px solid #C93205;
+    background-color: #EE9C78;
+    width: 100%;
+    text-align: center;
+  }
+  table.orangeTable td, table.orangeTable th {
+    border: 1px solid #C93205;
+    padding: 6px 2px;
+  }
+  table.orangeTable tbody td {
+    font-size: 13px;
+  }
+  table.orangeTable thead {
+    background: #C93205;
+    background: -moz-linear-gradient(top, #d66543 0%, #ce461e 66%, #C93205 100%);
+    background: -webkit-linear-gradient(top, #d66543 0%, #ce461e 66%, #C93205 100%);
+    background: linear-gradient(to bottom, #d66543 0%, #ce461e 66%, #C93205 100%);
+    border-bottom: 0px solid #444444;
+  }
+  table.orangeTable thead th {
+    font-size: 19px;
+    font-weight: bold;
+    color: #F0F0F0;
+    text-align: center;
+    border-left: 2px solid #C93205;
+  }
+  table.orangeTable thead th:first-child {
+    border-left: none;
+  }
+  
+  table.orangeTable tfoot {
+    font-size: 13px;
+    font-weight: bold;
+    color: #F0F0F0;
+    background: #C93205;
+    background: -moz-linear-gradient(top, #d66543 0%, #ce461e 66%, #C93205 100%);
+    background: -webkit-linear-gradient(top, #d66543 0%, #ce461e 66%, #C93205 100%);
+    background: linear-gradient(to bottom, #d66543 0%, #ce461e 66%, #C93205 100%);
+    border-top: 1px solid #C93205;
+  }
+  table.orangeTable tfoot td {
+    font-size: 13px;
+  }
+  table.orangeTable tfoot .links {
+    text-align: right;
+  }
+  table.orangeTable tfoot .links a{
+    display: inline-block;
+    background: #FFFFFF;
+    color: #C93205;
+    padding: 2px 8px;
+    border-radius: 5px;
+  }
