@@ -1,0 +1,8 @@
+eclipse.preferences.version=1
+org.eclipse.cdt.make.ui.editor.comment=115,135,155
+org.eclipse.cdt.make.ui.editor.default=226,226,226
+org.eclipse.cdt.make.ui.editor.function=223,190,149
+org.eclipse.cdt.make.ui.editor.keyword=141,203,226
+org.eclipse.cdt.make.ui.editor.macro_def=223,190,149
+org.eclipse.cdt.make.ui.editor.macro_ref=223,190,149
+overriddenByCSS=,org.eclipse.cdt.make.ui.editor.keyword,org.eclipse.cdt.make.ui.editor.comment,org.eclipse.cdt.make.ui.editor.macro_ref,org.eclipse.cdt.make.ui.editor.macro_def,org.eclipse.cdt.make.ui.editor.default,org.eclipse.cdt.make.ui.editor.function,

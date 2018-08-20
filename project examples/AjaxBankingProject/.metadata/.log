@@ -1,0 +1,96 @@
+!SESSION 2018-08-20 13:07:49.097 -----------------------------------------------
+eclipse.buildId=3.9.5.201807031753-RELEASE-e48
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=en_US
+Framework arguments:  -product org.springsource.sts.ide
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.springsource.sts.ide
+
+
+!ENTRY org.eclipse.ui 2 0 2018-08-20 13:08:33.261
+!MESSAGE Warnings while parsing the images from the 'org.eclipse.ui.commandImages' extension point.
+!SUBENTRY 1 org.eclipse.ui 2 0 2018-08-20 13:08:33.261
+!MESSAGE Cannot bind to an undefined command: plug-in='com.genuitec.eclipse.theming.ui', id='com.genuitec.myeclipse.help.darktheme.commandid'
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2018-08-20 13:08:42.168
+!MESSAGE A DevStyle Theme is being activated on this workspace; preparing colors and configuration
+
+!ENTRY com.genuitec.eclipse.theming.ui 1 0 2018-08-20 13:08:42.226
+!MESSAGE DevStyle has archived current color configurations to alternate preferences - will be restored when switching out of the DevStyle Theme
+
+!ENTRY com.genuitec.eclipse.theming.ui 4 0 2018-08-20 13:08:42.261
+!MESSAGE The file resources/css/dark.css Could not be found in bundle org.eclipse.lsp4e
+
+!ENTRY org.eclipse.jface 2 0 2018-08-20 13:08:42.940
+!MESSAGE Keybinding conflicts occurred.  They may interfere with normal accelerator operation.
+!SUBENTRY 1 org.eclipse.jface 2 0 2018-08-20 13:08:42.940
+!MESSAGE A conflict occurred for CTRL+SHIFT+T:
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.jdt.ui.navigate.open.type,Open Type,
+		Open a type in a Java editor,
+		Category(org.eclipse.ui.category.navigate,Navigate,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@14962bd,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+Binding(CTRL+SHIFT+T,
+	ParameterizedCommand(Command(org.eclipse.lsp4e.symbolinworkspace,Go to Symbol in Workspace,
+		,
+		Category(org.eclipse.lsp4e.category,Language Servers,null,true),
+		org.eclipse.ui.internal.WorkbenchHandlerServiceHandler@fa3dd8,
+		,,true),null),
+	org.eclipse.ui.defaultAcceleratorConfiguration,
+	org.eclipse.ui.contexts.window,,,system)
+
+!ENTRY org.eclipse.ui 2 2 2018-08-20 13:08:45.717
+!MESSAGE org.eclipse.jdt.junit.ResultView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.ui 2 2 2018-08-20 13:08:45.720
+!MESSAGE org.springframework.ide.eclipse.aop.ui.navigator.aopReferenceModelNavigator: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.ui 2 2 2018-08-20 13:08:45.722
+!MESSAGE org.eclipse.contribution.xref.ui.views.XReferenceView: Deprecated relationship "fast" should be converted to "stack".
+
+!ENTRY org.eclipse.jface.text 2 0 2018-08-20 13:08:52.792
+!MESSAGE Duplicate template id: 'org.eclipse.wst.xslt.templates.xpath.boolean'
+
+!ENTRY com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2018-08-20 13:09:27.391
+!MESSAGE Error creating server instance with command:
+ "C:\Program Files (x86)\Spring Tools\sts-bundle\pivotal-tc-server\developer-4.0.1.RELEASE\tcserver.bat create base-instance -t base --force -v 9.0.7.B.RELEASE". Check access permission for the directory C:/Program Files (x86)/Spring Tools/sts-bundle/pivotal-tc-server/developer-4.0.1.RELEASE and its files and subdirectories.
+!SUBENTRY 1 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2018-08-20 13:09:27.391
+!MESSAGE The instance creation command failed and returned code 1
+!SUBENTRY 1 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2018-08-20 13:09:27.391
+!MESSAGE Output of the instance creation command:
+'create' command failed. Unable to instances directory 'C:\Program Files (x86)\Spring Tools\sts-bundle\pivotal-tc-server\instances'.
+
+
+!ENTRY org.springsource.ide.eclipse.commons.configurator 4 0 2018-08-20 13:09:27.468
+!MESSAGE The server could not be created.
+!STACK 1
+org.eclipse.core.runtime.CoreException: Error creating server instance with command:
+ "C:\Program Files (x86)\Spring Tools\sts-bundle\pivotal-tc-server\developer-4.0.1.RELEASE\tcserver.bat create base-instance -t base --force -v 9.0.7.B.RELEASE". Check access permission for the directory C:/Program Files (x86)/Spring Tools/sts-bundle/pivotal-tc-server/developer-4.0.1.RELEASE and its files and subdirectories.
+	at com.vmware.vfabric.ide.eclipse.tcserver.internal.core.TcServerUtil.handleResult(TcServerUtil.java:158)
+	at com.vmware.vfabric.ide.eclipse.tcserver.internal.core.TcServerUtil.executeInstanceCreation(TcServerUtil.java:111)
+	at com.vmware.vfabric.ide.eclipse.tcserver.internal.core.TcServer21ServerHandlerCallback.configureServer(TcServer21ServerHandlerCallback.java:48)
+	at org.springsource.ide.eclipse.commons.internal.configurator.server.ServerDescriptor$ServerHandlerCallbackDelegate.configureServer(ServerDescriptor.java:40)
+	at org.springsource.ide.eclipse.commons.configurator.ServerHandler.createServer(ServerHandler.java:318)
+	at org.springsource.ide.eclipse.commons.configurator.ServerHandler.createServer(ServerHandler.java:157)
+	at org.springsource.ide.eclipse.commons.internal.configurator.server.ConfigurableServerExtension.configure(ConfigurableServerExtension.java:70)
+	at org.springsource.ide.eclipse.commons.internal.configurator.ConfiguratorImporter$4.run(ConfiguratorImporter.java:439)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:60)
+Contains: The instance creation command failed and returned code 1
+Contains: Output of the instance creation command:
+'create' command failed. Unable to instances directory 'C:\Program Files (x86)\Spring Tools\sts-bundle\pivotal-tc-server\instances'.
+
+!SUBENTRY 1 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2018-08-20 13:09:27.468
+!MESSAGE Error creating server instance with command:
+ "C:\Program Files (x86)\Spring Tools\sts-bundle\pivotal-tc-server\developer-4.0.1.RELEASE\tcserver.bat create base-instance -t base --force -v 9.0.7.B.RELEASE". Check access permission for the directory C:/Program Files (x86)/Spring Tools/sts-bundle/pivotal-tc-server/developer-4.0.1.RELEASE and its files and subdirectories.
+!SUBENTRY 2 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2018-08-20 13:09:27.468
+!MESSAGE The instance creation command failed and returned code 1
+!SUBENTRY 2 com.vwmare.vfabric.ide.eclipse.tcserver.core 4 0 2018-08-20 13:09:27.468
+!MESSAGE Output of the instance creation command:
+'create' command failed. Unable to instances directory 'C:\Program Files (x86)\Spring Tools\sts-bundle\pivotal-tc-server\instances'.
+
+
+!ENTRY com.genuitec.eclipse.theming.ui 4 0 2018-08-20 13:09:46.887
+!MESSAGE The file resources/css/dark.css Could not be found in bundle org.eclipse.lsp4e
