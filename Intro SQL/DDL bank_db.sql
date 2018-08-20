@@ -8,7 +8,7 @@ users_id INT,
 username VARCHAR2 (20) UNIQUE NOT NULL,
 password VARCHAR2 (20) NOT NULL,
 fname VARCHAR2 (4000),
-lanme VARCHAR2 (4000),
+lname VARCHAR2 (4000),
 PRIMARY KEY (users_id)
 );
 

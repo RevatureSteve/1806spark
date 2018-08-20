@@ -12,8 +12,6 @@ export class NavbarComponent implements OnInit {
 
   constructor() { }
 
-  update
-
   updateCount = function(){
     this.count++;
   }

@@ -1,0 +1,58 @@
+.panel-body  {
+    word-break: break-all;
+}
+
+.panel-heading {
+    background-color: #d9d9d9;
+}
+
+.panel-footer {
+    background-color: #d9d9d9;
+}
+
+.image-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 55%;
+    border-radius: 25px; 
+}
+
+.image-inline {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.label-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: auto;
+    font-size: 25px;
+}
+
+.list-group {
+    margin-top: 10px;
+}
+
+a {
+    color: #454444;
+}
+
+a:hover {
+    color: gray;
+}
+
+.list-group-item-demo {
+    background-color: #d9d9d9;
+}
+
+.strong-green {
+    color: green;
+}
+
+.btn-center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

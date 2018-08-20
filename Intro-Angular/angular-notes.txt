@@ -20,6 +20,7 @@ Angular has a CLI built ontop of NPM called...Angular CLI
 CLI: Command Line Interface
 ex) ng (Angular), NPM, node, git
 
+
 Need to install angular CLI
 npm install -g @angular/cli
 The -g is global install, making angular available anywhere on the computer
@@ -30,6 +31,16 @@ ng -v
 New Angular Project:
 ng new <project-name>
 don't include the <>
+
+Generate:
+ng generate component | service | pipe | etc <name>
+
+Can test it before actually create/modifying a file with
+ng generate component testname --dry-run
+
+Concise version:
+ng g c testname --dry-run
+
 
 Angular:
 
@@ -59,3 +70,13 @@ from what to what? well we're only talking about components
 
 Create an Angular project, generate 2 components
         and use angular {{}} to print 2 separtae values to the html files
+
+
+There are 3 structural directives (main flow control)
+    *ngFor
+    *ngIf
+    *ngSwitch
+
+How to generate a component and what does it create/modify?
+    - create html, css, ts, spec(testing)
+    - modifies: adds the component to the app.module
