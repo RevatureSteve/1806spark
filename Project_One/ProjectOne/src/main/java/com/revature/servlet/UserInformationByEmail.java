@@ -17,6 +17,7 @@ import com.revature.service.AppService;
  *
  */
 public class UserInformationByEmail extends HttpServlet {
+	
 	/*
 	 * URL: /user/email
 	 */

@@ -31,6 +31,7 @@ public class ReimbursementServlet extends HttpServlet {
 		super();
 	}
 	
+	// Using AppService getAllReimbursement
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("ReimbursementServlet --GET");

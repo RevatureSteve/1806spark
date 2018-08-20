@@ -4,7 +4,7 @@
 	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 	version="2.5">
 	<display-name>ProjectOne</display-name>
-	
+
 	<!-- Reimbursement Servlet -->
 	<servlet>
 		<servlet-name>reimbursement</servlet-name>
@@ -14,16 +14,44 @@
 		<servlet-name>reimbursement</servlet-name>
 		<url-pattern>/reimbursement</url-pattern>
 	</servlet-mapping>
-	
-	<!-- GetUserByEmail Servlet -->
+
+	<!-- Pending Reimbursement Servlet -->
 	<servlet>
-	<servlet-name>getUserByEmail</servlet-name>
-	<servlet-class>com.revature.servlet.UserInformationByEmail</servlet-class>
+		<servlet-name>pendingReimbursement</servlet-name>
+		<servlet-class></servlet-class>
 	</servlet>
 	<servlet-mapping>
-	<servlet-name>getUserByEmail</servlet-name>
-	<url-pattern>/user/email</url-pattern>
+		<servlet-name>pendingReimbursement</servlet-name>
+		<url-pattern>/reimbursement/pending</url-pattern>
 	</servlet-mapping>
+	<!-- Approved Reimbursment Servlet -->
+	<servlet>
+		<servlet-name>approvedReimbursement</servlet-name>
+		<servlet-class></servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>approvedReimbursement</servlet-name>
+		<url-pattern>/reimbursement/approved</url-pattern>
+	</servlet-mapping>
+	<!-- Denied Reimbursement Servlet -->
+	<servlet>
+		<servlet-name>deniedReimbursement</servlet-name>
+		<servlet-class></servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>deniedReimbursement</servlet-name>
+		<url-pattern>/reimbursement/denied</url-pattern>
+	</servlet-mapping>
+	<!-- GetUserByEmail Servlet -->
+	<servlet>
+		<servlet-name>getUserByEmail</servlet-name>
+		<servlet-class>com.revature.servlet.UserInformationByEmail</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getUserByEmail</servlet-name>
+		<url-pattern>/user/email</url-pattern>
+	</servlet-mapping>
+
 
 
 
