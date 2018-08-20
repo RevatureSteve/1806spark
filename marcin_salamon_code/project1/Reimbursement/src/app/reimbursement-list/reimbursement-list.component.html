@@ -1,7 +1,7 @@
 <li *ngFor='let r of reimbursements'>
     <div>{{r.rId}}</div>
     <div>{{r.employee}}</div>
-    <div>{{r.manager}}</div>
+    <div>{{r.manager.fname}}{{r.manager.lname}}</div>
     <div>{{r.amount}}</div>
     <div>{{r.description}}</div>
     <div>{{r.img}}</div>

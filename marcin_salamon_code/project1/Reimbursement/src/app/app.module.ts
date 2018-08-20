@@ -8,6 +8,7 @@ import { NavbarComponent } from './navbar/navbar.component';
 import { HttpClientModule} from '@angular/common/http';
 import { UpdateUserComponent } from './update-user/update-user.component';
 import { ReimbursementListComponent } from './reimbursement-list/reimbursement-list.component';
+import { AppRoutingModule } from './/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ReimbursementListComponent } from './reimbursement-list/reimbursement-l
   ],
   imports: [
     BrowserModule,
-    HttpClientModule
+    HttpClientModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
