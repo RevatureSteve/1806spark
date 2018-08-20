@@ -3,7 +3,9 @@ package com.revature;
 import java.util.List;
 
 import com.revature.dao.UsersDao;
+import com.revature.domain.Reimbursement;
 import com.revature.domain.Users;
+import com.revature.service.ReimbursementBuisnessLogic;
 
 public class Driver {
 
@@ -30,9 +32,9 @@ public class Driver {
 		
 //		Users user = new Users ("sdoug@gmail.com", "111", "Skye", "Douglas", 2);
 //		new UsersDao().createUser(user);
-		List<Users> users = new UsersDao().readUsers();
+		List<Reimbursement> users = new ReimbursementBuisnessLogic().getResolvedReimbursements();
 		
-		for (Users user : users) {
+		for (Reimbursement user : users) {
 			System.out.println(user);
 		}
 		

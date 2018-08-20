@@ -15,7 +15,8 @@ public class ReimbursementBuisnessLogic {
 	 * @param reimbursements
 	 * @return
 	 */
-	public List<Reimbursement> getPendingReimbursements(List<Reimbursement> reimbursements){
+	public List<Reimbursement> getPendingReimbursements(){
+		List<Reimbursement> reimbursements = getAllReimbursemets();
 		List<Reimbursement> pendingReimbursement = new ArrayList<>();
 		for (Reimbursement r : reimbursements) {
 			if (r.getRbStatusId() == 1) {
@@ -31,7 +32,8 @@ public class ReimbursementBuisnessLogic {
 	 * @param reimbursements
 	 * @return
 	 */
-	public List<Reimbursement> getResolvedReimbursements(List<Reimbursement> reimbursements){
+	public List<Reimbursement> getResolvedReimbursements(){
+		List<Reimbursement> reimbursements = getAllReimbursemets();
 		List<Reimbursement> resolvedReimbursements = new ArrayList<>();
 		for (Reimbursement r : reimbursements) {
 			if (r.getRbStatusId() != 1) {
