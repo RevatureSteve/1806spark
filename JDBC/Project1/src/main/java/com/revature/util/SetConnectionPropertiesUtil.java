@@ -25,17 +25,22 @@ public class SetConnectionPropertiesUtil {
 		}
 		
 		//Here is my url, username and password which is bad to leave out in the open but this is only temporary
-		url = "jdbc:oracle:thin:@octocat.cxwq5mzpnovv.us-east-2.rds.amazonaws.com:1521:ORCL";
+		/*url = "jdbc:oracle:thin:@octocat.cxwq5mzpnovv.us-east-2.rds.amazonaws.com:1521:ORCL";
 		username = "ERS_db";
-		password = "p4ssw0rd";
+		password = "p4ssw0rd";*/
 		
-		/*Properties props = new Properties();
-		props.load(new FileReader("src\\main\\resources\\db.properties"));*/
+		/*
+		 * we require an absolute path over the relative path
+		 * 		note: more research needed to know this
+		 */
+		
+		Properties props = new Properties();
+		props.load(new FileReader("C:\\Users\\sidhu\\my_git_repos\\1806spark\\JDBC\\Project1\\src\\main\\resources\\db.properties"));
 		
 		//here I grab those values in the db.properties file
-		/*url = props.getProperty("url");
+		url = props.getProperty("url");
 		username = props.getProperty("username");
-		password = props.getProperty("password");*/
+		password = props.getProperty("password");
 		
 		
 		//send the DriverManager back to whatever the Dao implements

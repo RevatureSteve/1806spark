@@ -1,0 +1,11 @@
+{
+  "name": "project-1-angular",
+  "version": "1.0.0",
+  "description": "This is my client side of Project 1",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Sidhu",
+  "license": "ISC"
+}

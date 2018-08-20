@@ -38,6 +38,7 @@ DROP TABLE reimbursement;
 
 INSERT INTO reimbursement (R_Id, Emp_U_Id, Mgr_U_Id, Amt, Timesubmission, Rq_Type_Id, Rq_Status_Id)
 VALUES(1, 1, 1, 25.00, CURRENT_TIMESTAMP, 1, 1);
+
 SELECT * FROM reimbursement;
 COMMIT;
 --SEQUENCE FOR Reimbursement TABLES
