@@ -1,6 +1,6 @@
 package com.revature.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.revature.pojos.Reimbursement;
 import com.revature.pojos.Users;
@@ -10,7 +10,7 @@ public interface EmpDao {
 	
 	//READ
 	Users getEmpInfo(String email, String password);
-	ArrayList<Reimbursement> getAllReimb(int emp_id);
+	List<Reimbursement> getAllReimb(int empId);
 	
 	//UPDATE
 	

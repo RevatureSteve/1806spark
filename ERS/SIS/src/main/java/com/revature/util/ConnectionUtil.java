@@ -10,13 +10,20 @@ import java.util.Properties;
 public class ConnectionUtil {
 	
 	public static Connection getConnection() throws IOException, SQLException, FileNotFoundException {
-		String url;
-		String username;
-		String password;
-		Properties pr = new Properties();
-		url =pr.getProperty("url");
-		username = pr.getProperty("username");
-		password = pr.getProperty("password");
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		}
+		catch(ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		
+		
+		String url = "jdbc:oracle:thin:@revaturedatabase.c4iijzopvhom.us-east-2.rds.amazonaws.com:1521:ORCL";
+		String username = "reimb_db";
+		String password = "p4ssw0rd";
+		
 		
 		return DriverManager.getConnection(url, username, password);
 	}
