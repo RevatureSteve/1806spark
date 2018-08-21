@@ -1,3 +1,4 @@
+import { CurrentUserService } from './../current-user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private currentUser: CurrentUserService) { }
 
   ngOnInit() {
+  }
+
+  logout() {
+    this.currentUser.setCurrentUser(null);
   }
 
 }

@@ -1,24 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
-  
   <filter>
-        <filter-name>CorsFilter</filter-name>
-        <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
-        <init-param>
-            <param-name>cors.allowed.origins</param-name>
-            <param-value>*</param-value>
-        </init-param>
-        <init-param>
-            <param-name>cors.allowed.methods</param-name>
-            <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
-        </init-param>
-    </filter>
-    <filter-mapping>
-        <filter-name>CorsFilter</filter-name>
-        <url-pattern>/*</url-pattern>
-    </filter-mapping>
-  
-  
+    <filter-name>CorsFilter</filter-name>
+    <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+    <init-param>
+      <param-name>cors.allowed.origins</param-name>
+      <param-value>*</param-value>
+    </init-param>
+    <init-param>
+      <param-name>cors.allowed.methods</param-name>
+      <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CorsFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
   <display-name>reimbursement</display-name>
   <servlet>
     <description></description>
@@ -71,12 +68,42 @@
     <url-pattern>/resolved</url-pattern>
   </servlet-mapping>
   <servlet>
-  	<display-name>ReimbursementPendingServlet</display-name>
-  	<servlet-name>ReimbursementPendingServlet</servlet-name>
-  	<servlet-class>com.revature.servlets.ReimbursementPendingServlet</servlet-class>
+    <display-name>ReimbursementPendingServlet</display-name>
+    <servlet-name>ReimbursementPendingServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ReimbursementPendingServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-  	<servlet-name>ReimbursementPendingServlet</servlet-name>
-  	<url-pattern>/pending</url-pattern>
+    <servlet-name>ReimbursementPendingServlet</servlet-name>
+    <url-pattern>/pending</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.revature.servlets.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementPendingIdServlet</display-name>
+    <servlet-name>ReimbursementPendingIdServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ReimbursementPendingIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementPendingIdServlet</servlet-name>
+    <url-pattern>/pending/id</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementResolvedIdServlet</display-name>
+    <servlet-name>ReimbursementResolvedIdServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ReimbursementResolvedIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementResolvedIdServlet</servlet-name>
+    <url-pattern>/resolved/id</url-pattern>
   </servlet-mapping>
 </web-app>

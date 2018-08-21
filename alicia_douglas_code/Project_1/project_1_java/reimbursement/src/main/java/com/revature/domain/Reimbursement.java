@@ -10,7 +10,9 @@ public class Reimbursement {
 
 	private int rId;
 	private int empUId;
+	private String employeeName;
 	private int mgrUId;
+	private String managerName;
 	private Double amt;
 	private String description;
 	private Blob img;
@@ -24,6 +26,30 @@ public class Reimbursement {
 	public Reimbursement() {
 		super();
 	}
+
+
+
+	public Reimbursement(int rId, int empUId, String employeeName, int mgrUId, String managerName, Double amt,
+			String description, Blob img, Date timeSubmission, String rbType, int rbTypeId, String rbStatus,
+			int rbStatusId) {
+		super();
+		this.rId = rId;
+		this.empUId = empUId;
+		this.employeeName = employeeName;
+		this.mgrUId = mgrUId;
+		this.managerName = managerName;
+		this.amt = amt;
+		this.description = description;
+		this.img = img;
+		this.timeSubmission = timeSubmission;
+		this.rbType = rbType;
+		this.rbTypeId = rbTypeId;
+		this.rbStatus = rbStatus;
+		this.rbStatusId = rbStatusId;
+	}
+
+
+
 
 
 	public Reimbursement(int rId, int empUId, int mgrUId, Double amt, String description, Blob img,
@@ -165,13 +191,41 @@ public class Reimbursement {
 	public void setRbStatusId(int rbStatusId) {
 		this.rbStatusId = rbStatusId;
 	}
+	
+	
+	
+
+
+	public String getEmployeeName() {
+		return employeeName;
+	}
+
+
+
+	public void setEmployeeName(String employeeName) {
+		this.employeeName = employeeName;
+	}
+
+
+
+	public String getManagerName() {
+		return managerName;
+	}
+
+
+
+	public void setManagerName(String managerName) {
+		this.managerName = managerName;
+	}
+
 
 
 	@Override
 	public String toString() {
-		return "reimbursement [pId=" + rId + ", empUId=" + empUId + ", mgrUId=" + mgrUId + ", amt=" + amt
-				+ ", description=" + description + ", img=" + img + ", timeSubmission=" + timeSubmission + ", rbType="
-				+ rbType + ", rbStatus=" + rbStatus + "]";
+		return "Reimbursement [rId=" + rId + ", empUId=" + empUId + ", employeeName=" + employeeName + ", mgrUId="
+				+ mgrUId + ", managerName=" + managerName + ", amt=" + amt + ", description=" + description + ", img="
+				+ img + ", timeSubmission=" + timeSubmission + ", rbType=" + rbType + ", rbTypeId=" + rbTypeId
+				+ ", rbStatus=" + rbStatus + ", rbStatusId=" + rbStatusId + "]";
 	}
 	
 	

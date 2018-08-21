@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   user: Users;
+  // curUser: Users;
 
   constructor(private userService: UsersService, private currentUser: CurrentUserService, private router: Router) { }
 
@@ -29,10 +30,20 @@ export class LoginComponent implements OnInit {
 
   changeCurrentUser(user) {
     this.user = user;
+    // this.user = {
+    //   u_id: user.u_id,
+    //   email: user.email,
+    //   password: user.password,
+    //   fname: user.fname,
+    //   lname: user.lname,
+    //   pos_id: user.pos_id,
+    //   posTitle: user.posTitle
+    // };
+    console.log(user);
     console.log(user);
     if (user) {
       this.currentUser.setCurrentUser(user);
-      this.router.navigate(['profile']);
+      this.router.navigate(['home']);
     } else {
       // later add something telling user login failed
       this.router.navigate(['login']);

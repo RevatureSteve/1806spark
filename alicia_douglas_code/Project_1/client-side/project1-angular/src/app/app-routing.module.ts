@@ -1,3 +1,4 @@
+import { MainComponent } from './main/main.component';
 import { EmployeeReimbursementComponent } from './employee-reimbursement/employee-reimbursement.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
@@ -6,6 +7,7 @@ import { RouterModule, Routes } from '@angular/router';
 
 
 const routes: Routes = [
+  {path: 'home', component: MainComponent},
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'reimbursement', component: EmployeeReimbursementComponent}

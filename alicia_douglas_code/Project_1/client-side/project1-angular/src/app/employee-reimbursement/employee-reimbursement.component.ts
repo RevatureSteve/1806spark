@@ -1,6 +1,7 @@
+import { LoginComponent } from './../../../../project1-angular-test/src/app/login/login.component';
+import { CurrentUserService } from './../current-user.service';
 import { ReimbursementsService } from './../reimbursements.service';
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { Reimbursements } from '../models/reimbursements.model';
 
 @Component({
@@ -10,24 +11,32 @@ import { Reimbursements } from '../models/reimbursements.model';
 })
 export class EmployeeReimbursementComponent implements OnInit {
 
+  user;
+
   reimbs: Reimbursements[];
 
-  constructor(private reimbursementsService: ReimbursementsService) { }
+  constructor(private reimbursementsService: ReimbursementsService, private currentUser: CurrentUserService) { }
 
   ngOnInit() {
-    this.reimbursementsService.getAllReimbursements();
-    this.getReimbursements();
+    // this.reimbursementsService.getAllReimbursements();
+    this.user = this.currentUser.getCurrentUser();
+    console.log(this.user + 'All');
+    this.getEmployeeReimbursements();
   }
 
-  getReimbursements() {
-    this.reimbursementsService.getReimbursementsArray()
-      .subscribe(reimbursements => this.reimbs = this.viewReimbursements(reimbursements));
+  getEmployeeReimbursements() {
+    // const id = 1; // hard coed for now , change back later
+    const id = this.user.u_id;
+    this.reimbursementsService.getReimbursementById(id)
+      .subscribe(reimbursements => this.reimbs = reimbursements);
+    // this.reimbursementsService.getReimbursementsArray()
+    //   .subscribe(reimbursements => this.reimbs = this.viewReimbursements(reimbursements));
   }
 
-  viewReimbursements(reimb): Reimbursements[] {
-    console.log(reimb);
-    return reimb;
-  }
+  // viewReimbursements(reimb): Reimbursements[] {
+  //   console.log(reimb);
+  //   return reimb;
+  // }
 
 
 }

@@ -9,6 +9,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { EmployeeReimbursementComponent } from './employee-reimbursement/employee-reimbursement.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { ReimbursementsService } from './reimbursements.service';
+import { MainComponent } from './main/main.component';
+import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
+import { EmpPendingReimbursementsComponent } from './emp-pending-reimbursements/emp-pending-reimbursements.component';
+import { EmpResolvedReimbursementsComponent } from './emp-resolved-reimbursements/emp-resolved-reimbursements.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +20,11 @@ import { ReimbursementsService } from './reimbursements.service';
     LoginComponent,
     ProfileComponent,
     EmployeeReimbursementComponent,
-    NavbarComponent
+    NavbarComponent,
+    MainComponent,
+    HomeNavbarComponent,
+    EmpPendingReimbursementsComponent,
+    EmpResolvedReimbursementsComponent
   ],
   imports: [
     BrowserModule,

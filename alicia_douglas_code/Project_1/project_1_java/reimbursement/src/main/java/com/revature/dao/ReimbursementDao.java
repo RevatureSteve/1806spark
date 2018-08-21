@@ -50,9 +50,9 @@ public class ReimbursementDao {
 			cs.executeQuery();
 			ResultSet rs = (ResultSet) cs.getObject(2);
 			while (rs.next()) {
-				Reimbursement reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"),
-						rs.getInt("mgr_u_id"), rs.getDouble("amt"), rs.getString("description"), rs.getBlob("img"),
-						rs.getDate("time_submission"), rs.getString("rb_type"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
+				Reimbursement reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"), rs.getString("fname") + " " + rs.getString("lname"),
+						rs.getInt("mgr_u_id"),rs.getString(23) + " " + rs.getString(24), rs.getDouble("amt"), rs.getString("description"), rs.getBlob("img"),
+						rs.getDate("time_submission"), rs.getString("rb_type"),rs.getInt("rb_type_id"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
 				reimbursements.add(reimbursement);
 			}
 		} catch (IOException | SQLException e) {
@@ -75,9 +75,9 @@ public class ReimbursementDao {
 			cs.executeQuery();
 			ResultSet rs = (ResultSet) cs.getObject(1);
 			while (rs.next()) {
-				Reimbursement reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"),
-						rs.getInt("mgr_u_id"), rs.getDouble("amt"), rs.getString("description"), rs.getBlob("img"),
-						rs.getDate("time_submission"), rs.getString("rb_type"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
+				Reimbursement reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"), rs.getString("fname") + " " + rs.getString("lname"),
+						rs.getInt("mgr_u_id"),rs.getString(23) + " " + rs.getString(24), rs.getDouble("amt"), rs.getString("description"), rs.getBlob("img"),
+						rs.getDate("time_submission"), rs.getString("rb_type"),rs.getInt("rb_type_id"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
 				reimbursements.add(reimbursement);
 			}
 		} catch (IOException | SQLException e) {

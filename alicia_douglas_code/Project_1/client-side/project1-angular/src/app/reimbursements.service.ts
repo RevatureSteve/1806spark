@@ -22,4 +22,16 @@ export class ReimbursementsService {
   getReimbursementsArray(): Observable<Reimbursements[]> {
     return this.reimbursements;
   }
+
+  getReimbursementById(id) {
+    return this.httpClient.get<Reimbursements[]>(this.url + '?userId=' + id);
+  }
+
+  getPendingReimbursemetsById(id) {
+    return this.httpClient.get<Reimbursements[]>(`http://localhost:8080/reimbursement/pending/id?userId=${id}`);
+  }
+
+  getResolvedReimbursemetsById(id) {
+    return this.httpClient.get<Reimbursements[]>(`http://localhost:8080/reimbursement/resolved/id?userId=${id}`);
+  }
 }

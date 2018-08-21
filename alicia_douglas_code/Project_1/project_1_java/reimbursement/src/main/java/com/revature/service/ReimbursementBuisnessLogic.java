@@ -28,12 +28,46 @@ public class ReimbursementBuisnessLogic {
 	
 	
 	/**
+	 * takes a list of reimbursements and returns only the pending reimbursements by id
+	 * @param reimbursements
+	 * @return
+	 */
+	public List<Reimbursement> getPendingReimbursementsById(int id){
+		List<Reimbursement> reimbursements = getReimbursementById(id);
+		List<Reimbursement> pendingReimbursement = new ArrayList<>();
+		for (Reimbursement r : reimbursements) {
+			if (r.getRbStatusId() == 1) {
+				pendingReimbursement.add(r);
+			}
+		}
+		return pendingReimbursement;
+	}
+	
+	
+	/**
 	 * takes a list of reimbursements and returns all resolved reimbursements 
 	 * @param reimbursements
 	 * @return
 	 */
 	public List<Reimbursement> getResolvedReimbursements(){
 		List<Reimbursement> reimbursements = getAllReimbursemets();
+		List<Reimbursement> resolvedReimbursements = new ArrayList<>();
+		for (Reimbursement r : reimbursements) {
+			if (r.getRbStatusId() != 1) {
+				resolvedReimbursements.add(r);
+			}
+		}
+		return resolvedReimbursements;
+	}
+	
+	
+	/**
+	 * takes a list of reimbursements and returns all resolved reimbursements by id
+	 * @param reimbursements
+	 * @return
+	 */
+	public List<Reimbursement> getResolvedReimbursementsById(int id){
+		List<Reimbursement> reimbursements = getReimbursementById(id);
 		List<Reimbursement> resolvedReimbursements = new ArrayList<>();
 		for (Reimbursement r : reimbursements) {
 			if (r.getRbStatusId() != 1) {

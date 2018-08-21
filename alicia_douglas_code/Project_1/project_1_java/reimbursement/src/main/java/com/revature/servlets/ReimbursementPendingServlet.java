@@ -16,6 +16,10 @@ import com.revature.service.ReimbursementBuisnessLogic;
 public class ReimbursementPendingServlet extends HttpServlet{
 	
 	private ReimbursementBuisnessLogic reimBL = new ReimbursementBuisnessLogic();
+	
+	/*
+	 * url - /pending
+	 */
 
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException{
