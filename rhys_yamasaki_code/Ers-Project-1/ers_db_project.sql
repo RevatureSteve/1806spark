@@ -75,6 +75,10 @@ SELECT * FROM rq_status;
 
 INSERT INTO rq_type VALUES (1, 'travel expense');
 INSERT INTO rq_type VALUES (2, 'equipment');
+INSERT INTO rq_type VALUES (3, 'training');
+INSERT INTO rq_type VALUES (4, 'food/drinks');
+INSERT INTO rq_type VALUES (5, 'meeting related expense');
+commit;
 select * from rq_type;
 
 

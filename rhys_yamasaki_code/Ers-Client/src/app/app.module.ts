@@ -7,13 +7,17 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ManagerComponent } from './manager/manager.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeNavbarComponent } from './employee-navbar/employee-navbar.component';
+import { ManagerNavbarComponent } from './manager-navbar/manager-navbar.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     ManagerComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    EmployeeNavbarComponent,
+    ManagerNavbarComponent
   ],
   imports: [
     BrowserModule,

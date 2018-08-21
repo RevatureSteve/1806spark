@@ -33,14 +33,7 @@ public class TodoServlet extends HttpServlet{
 		
 		
 		// How can I retrieve the ALL tasks from the database?
-=======
-	 * url - /task
-	 */
-	private AppService appService = new AppService(); // available for other methods in the future
 	
-	// based on Restful standards this method should return ALL tasks
-	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
-		// 3 ways of sending back a response
 			// printwriter, forward, redirect  
 //		List<Task> tasks = new ArrayList<>();
 		// original hardcoded test but making dynamic from the DB!
@@ -49,7 +42,6 @@ public class TodoServlet extends HttpServlet{
 //		tasks.add(new Task(3, 3, "go for sprint", 3, "cancelled"));
 		
 		// How can I retrieve the ALL the tasks from the database?
->>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 		// This servlet calls the Service, Service calls the dao, dao calls the db
 		List<Task> tasks = appService.getAllTasks();
 		
@@ -66,14 +58,12 @@ public class TodoServlet extends HttpServlet{
 		
 		String json = mapper.writeValueAsString(tasks);
 		resp.setContentType("application/json");
-<<<<<<< HEAD
 		
 		// use a printwriter... note this is not a JSON String just misc toString code
 		PrintWriter out = resp.getWriter(); // notice we retrieve the PrintWriter from: the HttpServletResponse
 		out.print(json);
 	}
 
-=======
 //		resp.set
 		// use a printwriter...note this is not a JSON String just misc toString code
 		PrintWriter out = resp.getWriter(); // notice we retrieve the PrintWriter from: the HttpServletResponse
@@ -82,5 +72,4 @@ public class TodoServlet extends HttpServlet{
 	
 	
 	
->>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 }

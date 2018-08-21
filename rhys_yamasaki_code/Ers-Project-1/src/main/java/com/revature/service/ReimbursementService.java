@@ -1,11 +1,11 @@
 package com.revature.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.dao.ReimbursementDao;
 import com.revature.dao.ReimbursementDaoImpl;
 import com.revature.pojo.Reimbursement;
+import com.revature.pojo.User;
 
 public class ReimbursementService {
 	
@@ -18,6 +18,7 @@ public class ReimbursementService {
 	
 	public void createReimbursement(int uId, double amt, String desc, byte[] img, int typeId) {
 		System.out.println("Create user service reached");
+		// if (new UserService().validateEmployee())
 		rb.createNewReimbursement(uId, amt, desc, img, typeId);
 	}
 }

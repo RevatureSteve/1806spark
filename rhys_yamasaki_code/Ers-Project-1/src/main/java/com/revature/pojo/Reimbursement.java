@@ -14,8 +14,8 @@ public class Reimbursement {
 	private int rq_type_id;
 	private int rq_status_id;
 	private String rb_resolved_fname;
-	private String rb_submission_fname;
 	private String rb_resolved_lname;
+	private String rb_submission_fname;
 	private String rb_submission_lname;
 	private String rq_type;
 	private String rq_status;

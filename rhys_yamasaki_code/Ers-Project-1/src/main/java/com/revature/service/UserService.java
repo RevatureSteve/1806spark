@@ -26,4 +26,12 @@ public class UserService {
 			userDao.updateEmployee(uId, pw, fname, lname);
 		}
 	}
+	
+	public boolean validateEmployee(String email) {
+		if (userDao.getUserByEmail(email).getPos_id() == 1) {
+			return true;
+		} else {
+			return false;
+		}
+	}
 }

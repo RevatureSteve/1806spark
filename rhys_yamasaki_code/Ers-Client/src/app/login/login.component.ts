@@ -3,7 +3,7 @@ import { LoginService } from './../login.service';
 import { User } from './../user';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
-import { RouterModule, ActivatedRoute } from '@angular/router';
+import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   user: User;
 
-  constructor(private login: LoginService, private logged: LoggedInService, private route: ActivatedRoute) { }
+  constructor(private login: LoginService, private logged: LoggedInService, private route: ActivatedRoute, private router: Router) { }
 
 
   getUser(email, password): void {
@@ -24,6 +24,7 @@ export class LoginComponent implements OnInit {
   changePage(user) {
     this.changeLoggedInUser(user);
     this.logged.getLoggedInUser();
+    this.router.navigate(['/', this.user.pos_id, 'home']);
   }
 
   changeLoggedInUser(user) {

@@ -8,7 +8,8 @@ export const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
   {path: '2/home', component: ManagerComponent},
-  {path: '1/home', component: EmployeeComponent}
+  {path: '1/home', component: EmployeeComponent},
+  {path: '**', redirectTo: 'login'}
 ];
 
 
