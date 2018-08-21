@@ -3,6 +3,7 @@ package com.revature;
 import java.util.List;
 
 import com.revature.pojos.Reimbursement;
+import com.revature.pojos.Users;
 import com.revature.service.Service;
 
 public class Driver {
@@ -11,13 +12,23 @@ public class Driver {
 		Service s = new Service();
 		
 		//Login
-		System.out.println(s.login("dc@bss.com", "07"));
+		//System.out.println(s.login("dc@bss.com", "07"));
 		
 		
-		//Reimbursemnts
-		List<Reimbursement> rb = s.getAllReimbursements(7);
-		System.out.println(rb);
+		//Reimbursements
+		//List<Reimbursement> rb = s.getAllReimbursements(7);
+		//System.out.println(rb);
 
+		
+		//All employees.
+		//List<Users> ur = s.getAllEmployees();
+		//System.out.println(ur);
+		
+		
+		//Get all reimbursements.
+		List<Reimbursement> rbs = s.getAllEmpReimb();
+		System.out.println(rbs);
+		
 	}
 
 }

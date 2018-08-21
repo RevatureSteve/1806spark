@@ -8,6 +8,7 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.List;
 
 import com.revature.pojos.Reimbursement;
 import com.revature.pojos.Users;
@@ -27,10 +28,11 @@ public class ManagerImpl implements MangDao{
 			ps.setString(2, password);
 			ResultSet rs = ps.executeQuery();
 			if (rs.next()) {
-				System.out.println("You are not M!");
+				 usr = new Users(rs.getString(1), rs.getString(2));
+				
 			}
 			else {
-				 usr = new Users(rs.getString(1), rs.getString(2));
+				System.out.println("You are not M!");
 			}
 		} catch (FileNotFoundException e) {
 			System.out.println("Something went wrong here");
@@ -45,48 +47,58 @@ public class ManagerImpl implements MangDao{
 	
 	//Gets all the employees.
 	@Override
-	public ArrayList<Users> getEmpInfo(Users usr) {
-		ArrayList<Users> emp = new ArrayList<Users>();
+	public List<Users> getEmployees() {
+		Users usr = new Users();
+		List<Users> emp = new ArrayList<Users>();
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			String sql = "SELECT emp_u_id, f_name, l_name FROM users";
+			String sql = "SELECT * FROM users";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				usr = new Users(rs.getInt(1), rs.getString(2), rs.getString(3));
+				usr =  new Users(rs.getInt(1), rs.getString(2), rs.getString(3));
 				emp.add(usr);
 			}
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return emp;
 	}
 
 	
 	//Gets all the reimbursements.
 	@Override
-	public ArrayList<Reimbursement> getAllEmpReimb() {
-		try(Connection conn = ConnectionUtil.getConnection()) {} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
+	public List<Reimbursement> getAllEmpReimb() {
+		List<Reimbursement> rbs = new ArrayList<Reimbursement>();
+		Reimbursement rb = null;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			//String sql = "SELECT r.r_id, r.r_description, r.amount, r.time_submitted ,rq.rq_status, u.f_name, u.l_name FROM reimbursement LEFT JOIN rq_status ON r.rq_status_id = rq.rq_status_id LEFT JOIN users on r.emp_u_id = u.u_id";
+			//String sql = "SELECT r.r_id, r.r_description, r.amount, r.time_submitted, rs.rq_status FROM reimbursement LEFT JOIN rq_status ON r.rq_status_id = rs.rq_status_id";
+			//String sql = "SELECT * FROM reimbursement";
+			
+			String sql = "SELECT reimbursement.r_id, reimbursement.amount, reimbursement.r_description, reimbursement.time_submitted, rq_status.rq_status, users.f_name, users.l_name FROM reimbursement LEFT JOIN rq_status ON reimbursement.rq_status_id = rq_status.rq_status_id LEFT JOIN users ON reimbursement.emp_u_id = users.u_id";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				rb = new Reimbursement(rs.getInt(1), rs.getDouble(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7));
+				rbs.add(rb);
+			}
+			
+		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		return null;
+		return rbs;
 	}
 
 	
-	//Allows a manger to add a new eimployee.
+	//Allows a manger to add a new employee.
 	@Override
 	public void newEmployee(Users usr) {
 		try(Connection conn = ConnectionUtil.getConnection()) {
@@ -102,13 +114,10 @@ public class ManagerImpl implements MangDao{
 			System.out.println(num + " agents have been added.");
 			
 		} catch (SQLException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (FileNotFoundException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		} catch (IOException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		

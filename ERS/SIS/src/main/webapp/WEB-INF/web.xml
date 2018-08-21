@@ -11,4 +11,14 @@
     <servlet-name>AllReimbServlet</servlet-name>
     <url-pattern>/reimbursement</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmpployeeServlet</display-name>
+    <servlet-name>EmpployeeServlet</servlet-name>
+    <servlet-class>com.revature.servlets.EmpployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmpployeeServlet</servlet-name>
+    <url-pattern>/emp</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -9,11 +9,30 @@ public class Reimbursement {
 	private int mangId;
 	private int rTypeId;
 	private int rStatusId;
+	private String rStatus;
+	private String f_name;
+	private String l_name;
 	
 	
 	public Reimbursement() {
 	
 	}
+	
+	
+
+	public Reimbursement(int rId, double amount, String rDescription, String timeSubmitted, String rStatus,
+			String f_name, String l_name) {
+		super();
+		this.rId = rId;
+		this.amount = amount;
+		this.rDescription = rDescription;
+		this.timeSubmitted = timeSubmitted;
+		this.rStatus = rStatus;
+		this.f_name = f_name;
+		this.l_name = l_name;
+	}
+
+
 
 	public Reimbursement(int rId, double amount, String rDescription, String timeSubmitted) {
 		super();

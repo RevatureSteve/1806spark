@@ -68,7 +68,19 @@ public class EmployeeImpl implements EmpDao{
 		
 		return users;
 	}
-
+		//Get status of an reimbursement
+		public String getReimbursementStatus(int r_id) {
+			
+			
+			
+			
+			return null;
+			
+			
+			
+		}
+	
+	
 
 	}
 

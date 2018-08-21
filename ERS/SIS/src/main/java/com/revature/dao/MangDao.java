@@ -1,6 +1,6 @@
 package com.revature.dao;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.revature.pojos.Reimbursement;
 import com.revature.pojos.Users;
@@ -11,8 +11,8 @@ public interface MangDao {
 	
 	//READ
 	Users getMangInfo(String email, String password);
-	ArrayList<Users> getEmpInfo(Users usr);
-	ArrayList<Reimbursement> getAllEmpReimb();
+	List<Users> getEmployees();
+	List<Reimbursement> getAllEmpReimb();
 	
 	//UPDATE
 	void newEmployee(Users usr);
