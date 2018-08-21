@@ -1,0 +1,10 @@
+<h1>Count is: <span *ngIf="isEven">{{count}}</span> </h1>
+
+<button class="btn btn-dark" (click) = "incrementCount()">Click to increment by 1</button>
+<button class="btn btn-danger" (click)="randomIncrementOneAnd10()">Click to increment by random</button>
+
+<ol>
+  <!-- item is the variable to print to the screen {{}} -->
+  <!-- iterating through the array of names set individuals to item 1 at a time -->
+  <li *ngFor="let item of names">{{item}}</li>
+</ol>

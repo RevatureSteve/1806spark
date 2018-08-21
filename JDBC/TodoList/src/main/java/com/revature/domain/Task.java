@@ -3,6 +3,8 @@ package com.revature.domain;
 /**
  * 	Task class in domain
  * @author Steve Work PC
+ * 
+ * typically pojos in domain are ORM
  *
  */
 public class Task {

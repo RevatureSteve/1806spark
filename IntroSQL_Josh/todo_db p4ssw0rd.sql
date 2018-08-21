@@ -78,6 +78,7 @@ INSERT INTO task(u_id, t_name, ts_id) VALUES (60, 'novel', 3);
 INSERT INTO task(u_id, t_name, ts_id) VALUES (60, 'go on walk', 2);
 INSERT INTO task(u_id, t_name, ts_id) VALUES (60, 'read harry potter', 1);
 
+commit;
 select * from task;
 
 

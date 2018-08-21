@@ -17,6 +17,14 @@ public class SetConnectionPropertiesUtil {
 	 */
 	// let the developer that needs a connection handle these exceptions
 	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException {
+		
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");  //required for tomcat
+		} catch (ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 		String username;
 		String password;
 		String url;     

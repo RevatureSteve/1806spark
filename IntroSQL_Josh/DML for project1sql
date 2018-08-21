@@ -1,0 +1,105 @@
+INSERT INTO rq_status (rq_status_id, rq_status)  VALUES (1, 'Pending');
+INSERT INTO rq_status (rq_status_id, rq_status) VALUES (2, 'Approved');
+INSERT INTO rq_status (rq_status_id, rq_status) VALUES (3, 'Denied');
+
+INSERT INTO position (pos_id, pos_type) VALUES (1, 'Employee');
+INSERT INTO position (pos_id, pos_type) VALUES (2, 'Manager');
+
+INSERT INTO users (u_id, email, password, fname, lname, pos_id) 
+    VALUES (1, 'email@email.com', 'password1', 'Joshua', 'Mac', 1);
+INSERT INTO users (u_id, email, password, fname, lname, pos_id) 
+    VALUES (3, 'myemail@email.com', 'password3', 'Tim', 'Smith', 1);
+INSERT INTO users (u_id, email, password, fname, lname, pos_id) 
+    VALUES (2, 'boss@email.com', 'password2', 'Boss', 'Man', 2);
+    
+INSERT INTO reimbursement (r_id, emp_u_id, mgr_u_id, amt, timesubmission, rq_type_id, rq_status_id)
+    VALUES (1, 1, 2, 25.25, CURRENT_TIMESTAMP, 1, 1);
+INSERT INTO reimbursement (r_id, emp_u_id, mgr_u_id, amt, timesubmission, rq_type_id, rq_status_id)
+    VALUES (3, 1, 2, 35.25, CURRENT_TIMESTAMP, 1, 1);
+INSERT INTO reimbursement (r_id, emp_u_id, mgr_u_id, amt, timesubmission, rq_type_id, rq_status_id)
+    VALUES (2, 1, 2, 28.25, CURRENT_TIMESTAMP, 1, 3);
+INSERT INTO reimbursement (r_id, emp_u_id, mgr_u_id, amt, timesubmission, rq_type_id, rq_status_id)
+    VALUES (4, 1, 2, 28.25, CURRENT_TIMESTAMP, 1, 2);
+    
+INSERT INTO rq_type (rq_type_id, rq_type) VALUES (1, 'theme');
+
+
+commit;
+
+select * from users;
+
+select * from users u, position p where u.pos_id = p.pos_id AND p.pos_id = 1;
+
+
+CREATE OR REPLACE PROCEDURE view_all_pending(reimbursement OUT SYS_REFCURSOR)
+IS
+BEGIN
+    OPEN reimbursement FOR
+    SELECT * FROM reimbursement r, rq_type t, rq_status s, users u
+    Where r.rq_type_id = t.rq_type_id AND
+        r.rq_status_id = s.rq_status_id AND 
+        r.emp_u_id = u.u_id AND
+        s.rq_status = 'Pending';
+END;
+/
+
+
+CREATE SEQUENCE reim_seq
+START WITH 5
+INCREMENT BY 1;
+/
+
+
+CREATE OR REPLACE TRIGGER reim_seq_trigger
+BEFORE INSERT ON reimbursement
+FOR EACH ROW
+BEGIN
+    IF :new.r_id IS NULL THEN
+        SELECT reim_seq.NEXTVAL INTO :new.r_id FROM DUAL;
+    END IF;
+END;
+/
+
+CREATE OR REPLACE PROCEDURE new_reim(eid IN INT, amt IN NUMBER, descript IN VARCHAR2, img IN BLOB, rqtypeid IN INT)
+IS
+BEGIN
+    INSERT INTO reimbursement (emp_u_id, mgr_u_id, amt, description, img, timesubmission, rq_type_id, rq_status_id)
+    VALUES (eid, 1, amt, descript, img, CURRENT_TIMESTAMP, rqtypeid, 1);
+END;
+/
+
+select * from reimbursement;
+
+commit;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/

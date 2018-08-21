@@ -1,0 +1,99 @@
+heavily used npm which is an example of a popular cli tool
+angular has a cli built ontop of npm called... angular cli
+
+need to install angular cli
+//npm install
+npm install -g @angular/cli
+
+-g is for global install 
+
+New Angular Project:
+ng new <project-name>
+don't include the <>
+
+cd into folder
+
+ng serve -o  // o will open it 
+
+
+
+Generate:
+ng generate component | service | pipe | etc <name>
+
+can test it before atually creating/ modifying a file with 
+ng generate component <name> --dry-run
+
+concise version above
+ng g c <name> is more concise
+
+
+
+
+CLI: command line interface
+Ex: ng (Angular), NPM, node, git
+
+The standard for NPM after pulling is run the command: npm install, then npm start
+    BUT when creating a new NPM project using npm init, the npm init works but not start,
+        you must add this!
+    For example, look at a generator angular projec's package.json.
+    ng server is command to run and start an angular project BUT    
+        again look at the package.json
+    npm start calls ng serve because the script tag in package.json says to execute
+        ng serve
+
+    if project 1 only a npm start (has a package.json) and not an angular project,  
+        you must add start to your package.json scripts which would look like:
+            "scripts": {
+            "start": "node index.js",
+            },
+
+
+Angular
+
+angular directive: <app-name ></app-name>  //needs app-
+What is the first directive given? <app-root></app-root>
+What is a directive? where there is a directive, at runtime it will inject
+        the correspondinhg html frament then the style will style that html
+        and the ts file will control the html/css (business logic)
+A directive always belongs to a componenet
+    like app-root belongs to app.component 
+
+
+component: @componenet in a ts file!
+@component requires 3 things
+    -selector aka directive name like app-root which becomes <app-root></app-root>
+    -template aka html 
+    -style
+
+    ng generate component navbar  -
+
+    --dry - run  : no changes made.. will show what it is going to change 
+
+    bootstrap - first thing loaded, starting point 
+
+
+    Data binding: 1-way & 2-way
+     
+    data binding - sharing the same data between two things
+
+     <!-- what does {{}} Angular expression -->
+    TS file => html
+     1 way data binding
+     from what to what? well we're only talking about componenets and componenets only have 3 things: 
+        html, css, ts
+
+-- create an angular project, generate 2 components and use angular {{}} to 
+        print 2 separate to the html files
+
+-----------------------------------------------------------------------------------------
+What are structural directives? (mainly flow control)
+    -*ngFor
+    -*ngIf
+    -*ngSwitch
+
+
+How to generate a componenet and what does it create/modify?
+    - creates: html, css, ts, spec(for testing)
+    - modifies: adds the component to declarations array in the app.module 
+ 
+

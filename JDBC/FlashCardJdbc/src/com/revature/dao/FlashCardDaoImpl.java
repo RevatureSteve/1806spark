@@ -16,7 +16,8 @@ public class FlashCardDaoImpl implements FlashCardDao {
 
 	private final static String USERNAME = "flashcard_db";
 	private final static String PASSWORD = "p4ssw0rd";
-	private final static String URL = "jdbc:oracle:thin:@octocat.ccwgu9dykdjd.us-west-2.rds.amazonaws.com:1521:ORCL";
+	private final static String URL = "jdbc:oracle:thin:@orcl.csyg1eonp1ik.us-east-2.rds.amazonaws.com:1521:ORCL";
+	
 	
 	
 	/*

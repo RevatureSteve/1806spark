@@ -13,7 +13,7 @@ public class UserDaoImpl implements UserDao {
 	//what do i need for a JDBC Connection?
 	private final static String USERNAME = "todo_db";
 	private final static String PASSWORD = "p4ssw0rd";
-	private static final String URL = "jbdc:oracle:thin:@orcl.csyg1eonp1ik.us-east-2.rds.amazonaws.com:1521:ORCL";
+	private static final String URL = "jdbc:oracle:thin:@orcl.csyg1eonp1ik.us-east-2.rds.amazonaws.com:1521:ORCL";
 	//and the last thing? Driver which is the JAR for that specific database
 	
 	@Override
@@ -29,7 +29,7 @@ public class UserDaoImpl implements UserDao {
 			PreparedStatement ps = conn.prepareStatement(sql);  //precompiling the sql statement without the parameter values
 		
 			ps.setString(1,  username);
-			ps.executeQuery();
+			//ps.executeQuery();
 			ResultSet resultSet = ps.executeQuery();
 			
 			//don't need a loop.. username is unique in the db and should only return 1 record or none

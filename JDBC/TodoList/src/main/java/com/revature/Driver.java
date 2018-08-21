@@ -22,6 +22,8 @@
 //	 *  
 //	 *  Remember that XML, JSON, HTML are not programming languages
 //	 *  	They are common formats that are machine and human readable 
+			//tend to be configuration files 
+				
 //	 *  
 //	 *  	*NOTE: if you change the pom.xml in Eclipse/STS
 //	 *  		you need right-click on project -> maven -> update project *
