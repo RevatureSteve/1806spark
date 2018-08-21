@@ -36,7 +36,7 @@ DROP TABLE reimbursement;
 CREATE TABLE reimbursement (
 r_id INT,
 r_submission_id INT NOT NULL,
-r_resolved_id INT NOT NULL,
+r_resolved_id INT,
 amount INT NOT NULL,
 description VARCHAR2(4000),
 img BLOB,
@@ -50,6 +50,7 @@ FOREIGN KEY (rq_type_id) REFERENCES rq_type (rq_type_id),
 FOREIGN KEY (rq_status_id) REFERENCES rq_status (rq_status_id)
 );
 
+drop table reimbursement;
 
 
 
@@ -64,6 +65,9 @@ select * from position;
 
 INSERT INTO rq_status VALUES (1, 'pending');
 INSERT INTO rq_status VALUES (2, 'approved');
+INSERT INTO rq_status VALUES (3, 'declined');
+delete from rq_status where rq_status_id = 3;
+commit;
 
 
 SELECT * FROM rq_status;
@@ -107,31 +111,48 @@ FOR EACH ROW
 BEGIN
     IF :new.u_id IS NULL THEN
         SELECT u_id_seq.nextval INTO :new.u_id FROM DUAL;
-    END IF;
+    END IF; 
 END;
 /
 
-
-CREATE OR REPLACE PROCEDURE new_reimbursement(submit_id INT, resolved_id INT, amount Int, des VARCHAR2, img BLOB, type_id INT, status_id INT)
+-- Stored Procedures
+CREATE OR REPLACE PROCEDURE new_reimbursement(submit_id INT, amt INT, des VARCHAR2, img BLOB, type_id INT)
 AS 
 BEGIN
 INSERT INTO reimbursement(r_submission_id, r_resolved_id, amount, description, img, time_submission, rq_type_id, rq_status_id)
-VALUES (submit_id, resolved_id, amount, des, img,(SELECT systimestamp FROM DUAL), type_id, status_id);
+VALUES (submit_id, null, amt, des, img,(SELECT systimestamp FROM DUAL), type_id, 1);
 COMMIT;
 END;
 /
 BEGIN
-    new_reimbursement(2,1,500, 'business trip expense', null, 1, 1);
+    new_reimbursement(2,1000, 'equipment replacement', null, 2);
 END;
 /
---INSERT INTO reimbursement VALUES (2, 2, 1, 100, 'For a traveling meeting', null, (SELECT systimestamp FROM DUAL), 1, 2); 
-commit;
+
+-- STORED PROCEDURE UPDATE EMPLOYEE
+CREATE OR REPLACE PROCEDURE update_employee_info(uId INT, pw VARCHAR2, f_name VARCHAR2, l_name VARCHAR2)
+AS
+BEGIN
+UPDATE users u SET u.password = pw, u.fname = f_name, u.lname = l_name
+WHERE u.u_id = uId AND pos_id = 1;
+COMMIT;
+END;
 /
 
-SELECT u.fname AS sub_name, uu.fname AS res_name, r.amount, r.description, r.time_submission, rq.rq_type, s.rq_status from reimbursement r
+BEGIN
+update_employee_info(2, 'r@g.com', 'password', 'Ron', 'Yama');
+END;
+/
+SELECT * from users;
+/
+
+SELECT r.r_id, r.r_resolved_id, r.r_submission_id, r.amount, r.description, r.img, r.time_submission, r.rq_type_id,
+r.rq_status_id, uu.fname AS rb_resolved_fname, uu.lname AS rb_resolved_lname, u.fname AS rb_submission_id, u.lname AS
+rb_submission_lname, rq.rq_type ,s.rq_status 
+from reimbursement r
 INNER JOIN rq_type rq ON rq.rq_type_id = r.rq_type_id
 INNER JOIN users u ON u.u_id = r.r_submission_id
-INNER JOIN users uu ON uu.u_id = r.r_resolved_id
+LEFT OUTER JOIN users uu ON uu.u_id = r.r_resolved_id
 INNER JOIN rq_status s ON r.rq_status_id = s.rq_status_id;
 
 
@@ -142,4 +163,8 @@ SELECT u.u_id, u.email, u.password, u.fname, u.lname, u.pos_id, p.pos_type
 FROM users u
 INNER JOIN position p ON u.pos_id = p.pos_id
 WHERE email = 'rhys@gmail.com';
+
+
+INSERT INTO users VALUES (0, 'unassigned', 'unassigned', 'unassigned', 'unassigned', 2);
+
 

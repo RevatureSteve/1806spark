@@ -12,7 +12,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.pojo.Reimbursement;
 import com.revature.service.ReimbursementService;
 
-public class EmployeeReimbursementsServlet extends HttpServlet{
+public class AllEmployeeReimbursementsServlet extends HttpServlet{
 
 	private ReimbursementService rs = new ReimbursementService();
 	
@@ -20,6 +20,7 @@ public class EmployeeReimbursementsServlet extends HttpServlet{
 		
 		List<Reimbursement> ReimbursementList = rs.getAllReimbursements();
 		
+		System.out.println(ReimbursementList);
 		
 		ObjectMapper mapper = new ObjectMapper();
 		String json = mapper.writeValueAsString(ReimbursementList);

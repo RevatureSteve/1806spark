@@ -13,6 +13,8 @@ public interface UserDao {
 	
 	// UPDATE
 	
+	public void updateEmployee(int uId, String pw, String fname, String lname);
+	
 	
 	// DELETE
 }

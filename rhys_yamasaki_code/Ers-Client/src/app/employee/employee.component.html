@@ -1,0 +1,11 @@
+
+
+<p>
+  {{user.pos_name}}
+</p>
+
+<ul>
+  <li *ngIf="user" (change)="getLoggedInUser()">
+    {{user.fname}}
+  </li>
+</ul>

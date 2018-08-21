@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import java.io.IOException;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -35,6 +36,24 @@ public class UserDaoImpl implements UserDao{
 			e.printStackTrace();
 		}
 		return user;
+	}
+
+	@Override
+	public void updateEmployee(int uId, String pw, String fname, String lname) {
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
+			String sql = "{ call update_employee_info(?,?,?,?)}";
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setInt(1, uId);
+			cs.setString(2, pw);
+			cs.setString(3, fname);
+			cs.setString(4, lname);
+			cs.executeUpdate();
+			
+		} catch (IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
 	}
 
 	

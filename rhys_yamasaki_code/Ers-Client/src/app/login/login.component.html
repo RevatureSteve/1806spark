@@ -1,11 +1,14 @@
 <div id="login">
   <div class="form-group">
     <label class="form-check-label" for="email">Email:</label>
-    <input id="emailInput" class="form-control" type="text" name="email">
+    <input id="emailInput" #email class="form-control" type="email" name="email" required>
   </div>
   <div class="form-group">
     <label class="form-check-label" for="password">Password:</label>
-    <input id="passwordInput" class="form-control" type="password" name="password">
+    <input id="passwordInput" #password class="form-control" type="password" name="password" required>
   </div>
-  <div id="loginBtn" class="btn btn-outline-primary" (click)="something()">Login</div>
+  <button id="loginBtn" class="btn btn-outline-primary" (click)="getUser(email.value, password.value)" routerLink="/{{user.pos_id}}/home">Login</button>
 </div>
+
+<!-- <a *ngIf="user" (change)="getLoggedInUser()"  routerLink="/{{user.pos_id}}/home">Click here to direct you to home page</a> -->
+
