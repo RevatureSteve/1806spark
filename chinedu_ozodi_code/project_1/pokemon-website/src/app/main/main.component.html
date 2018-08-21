@@ -1,0 +1,12 @@
+<div class="main">
+  <h1>World Map</h1>
+
+  <div class="container">
+    <div class="row" *ngFor="let row of map; let r = index">
+      <div class="col-sm" *ngFor="let col of row; let c = index">
+        <app-world-tile [x] = "c" [y] = "r"></app-world-tile>
+      </div>
+    </div>
+  </div>
+
+</div>

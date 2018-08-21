@@ -1,12 +1,12 @@
 <div>
-    <form class="rounded" action="http://localhost:8080/PokemonWebsiteAPI/User" method="post">
+    <div class="form rounded" action="http://localhost:8080/PokemonWebsiteAPI/User">
       <h3>Enter the World of Pokemon</h3>
       <!-- Username: <br> -->
-      <input type="text" name="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
+      <input type="text" class="form-control" [(ngModel)]="user.email" placeholder="Email" aria-label="Email" aria-describedby="basic-addon2">
       <!-- Password: <br> -->
-      <input type="text" name="email" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon2">
-      <button type="submit" class="btn btn-outline-primary">Login</button>
-    </form>
+      <input type="password" class="form-control" [(ngModel)]="user.password" placeholder="{{passwordPlaceholder}}" aria-label="Password" aria-describedby="basic-addon2">
+      <button type="submit" class="btn btn-outline-primary" (click)="login()" >Login</button>
+    </div>
   <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
     viewBox="0 0 612 792" style="enable-background:new 0 0 612 792;" xml:space="preserve">
     <style type="text/css">

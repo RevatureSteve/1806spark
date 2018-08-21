@@ -7,6 +7,7 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.cpo.doa.UserDaoDatabase;
 import com.cpo.model.User;
@@ -42,7 +43,7 @@ public class UserServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("UserServlet -POST user creation");
+		System.out.println("UserServlet -POST user login");
 		BufferedReader bf = request.getReader();
 		
 		ObjectMapper mapper = new ObjectMapper();
@@ -50,17 +51,37 @@ public class UserServlet extends HttpServlet {
 		
 		System.out.println("User email: " + user.getEmail());
 		
-		String email = request.getParameter("email");
-		System.out.println("email: " + email);
-		String password = request.getParameter("password");
-		String fname = request.getParameter("fname");
-		String lname =request.getParameter("lname");
-		int position = Integer.parseInt(request.getParameter("position"));
+		//check database for user
+		
+		User dbUser = UserDaoDatabase.getInstance().getUserByEmail(user.getEmail());
+		
+		if (dbUser.getPassword().equals(user.getPassword())) {
+			//Send a positive response, start a session
+			HttpSession session = request.getSession();
+			session.setAttribute("user", dbUser);
+			
+			response.setContentType("application/json");
+			response.setStatus(203);
+			response.getWriter().append("{ \"status\":\"good\" }");
+		}
+		else {
+			response.setContentType("application/json");
+			response.setStatus(203);
+			response.getWriter().append("{ \"status\": \"bad\" }");
+		}
+		
+		
+//		String email = request.getParameter("email");
+//		System.out.println("email: " + email);
+//		String password = request.getParameter("password");
+//		String fname = request.getParameter("fname");
+//		String lname =request.getParameter("lname");
+//		int position = Integer.parseInt(request.getParameter("position"));
 		
 //		User user = new User(email,password,fname,lname,position);
 		
 
-		UserDaoDatabase.getInstance().createUser(user);
+//		UserDaoDatabase.getInstance().createUser(user);
 	}
 
 }

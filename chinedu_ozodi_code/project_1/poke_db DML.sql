@@ -15,3 +15,7 @@ COMMIT;
 INSERT INTO users(email,password,fname,lname,pos_id) VALUES ('chin2413@gmail.com','p4ssw0rd','Chinedu','Chinedu',2);
 INSERT INTO users(email,password,fname,lname,pos_id) VALUES ('chin2413@gmail.com','p4ssw0rd','Chinedu','Ozodi',2);
 DELETE FROM users WHERE email = 'chin2413@gmail.com';
+Commit;
+SELECT * FROM users u
+RIGHT OUTER JOIN position p on (u.pos_id = p.pos_id)
+WHERE email = 'chin2413@gmail.com';

@@ -57,7 +57,7 @@ public class UserDaoDatabase implements UserDao {
 		User user = null;
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
 
-			String sql = "SELECT * FROM users WHERE email = ?";
+			String sql = "SELECT * FROM users u RIGHT OUTER JOIN position p ON u.pos_id = p.pos_id WHERE email = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, email);
 			ResultSet rs = ps.executeQuery();
