@@ -1,0 +1,12 @@
+#login-info {
+    border: 2px black solid;
+    margin-bottom: 50px;
+    margin-left: 400px;
+    margin-right: 400px;
+    padding: 15px;
+    background-color: gray;
+    box-shadow: black;
+}
+input {
+    margin: 5px;
+}
