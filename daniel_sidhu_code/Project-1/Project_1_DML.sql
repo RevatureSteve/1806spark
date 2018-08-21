@@ -97,4 +97,11 @@ INNER JOIN Rq_Type
     ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Status_Id
 WHERE Reimbursement.Rq_Status_Id = 2; 
 
-
+--Creating a new reimbursement(This is an attempt, not compiled yet)
+CREATE PROCEDURE Create_Reimbursement (R_Id IN NUMBER, Amt IN NUMBER, Img IN BLOB, Description IN VARCHAR2, Rq_Type_Id IN NUMBER)
+IS 
+BEGIN
+    INSERT INTO reimbursement(Emp_U_Id, Amt, Description, Img, Timesubmission, Rq_Type_Id, Rq_Status_Id)
+    VALUES (Emp_U_Id, Amt, Img, Description, Rq_Type_Id, CURRENT_TIMESTAMP)
+END;
+/
