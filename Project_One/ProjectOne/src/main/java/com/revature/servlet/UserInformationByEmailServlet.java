@@ -16,7 +16,7 @@ import com.revature.service.AppService;
  * @author Alex Moraga
  *
  */
-public class UserInformationByEmail extends HttpServlet {
+public class UserInformationByEmailServlet extends HttpServlet {
 	
 	/*
 	 * URL: /user/email
@@ -25,7 +25,7 @@ public class UserInformationByEmail extends HttpServlet {
 	// Creating new object to grab AppService's methods
 	private AppService aS = new AppService();
 
-	public UserInformationByEmail() {
+	public UserInformationByEmailServlet() {
 		super();
 	}
 	

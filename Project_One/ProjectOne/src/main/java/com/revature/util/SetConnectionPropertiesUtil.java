@@ -18,10 +18,7 @@ public class SetConnectionPropertiesUtil {
 
 	// JDBC connection done through a text file (db.properties)
 	
-//	private static String url = "jdbc:oracle:thin:@pvtmad.cz07tejakuok.us-east-2.rds.amazonaws.com:1521";
-//	private static String username = "reimbursement_db";
-//	private static String password = "p4ssw0rd";
-	
+
 
 	
 	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException {

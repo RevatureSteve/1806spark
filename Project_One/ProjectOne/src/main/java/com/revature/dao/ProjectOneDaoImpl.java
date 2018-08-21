@@ -84,6 +84,25 @@ public class ProjectOneDaoImpl implements ProjectOneDao {
 	public List<Reimbursement> getAllApprovedReimb() {
 		List<Reimbursement> reimb = new ArrayList<>();
 		System.err.println("[LOG---Starting---getAllApprovedReimb() argument: ]");
+		
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
+			String sql = "SELECT * FROM reimbursement WHERE rq_status_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			// setting rq_status_id as 2
+			ps.setString(1, "2");
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				reimb.add(new Reimbursement(rs.getInt("R_ID"), rs.getInt("AMT"), rs.getInt("EMP_U_ID"),
+						rs.getInt("MGR_U_ID"), rs.getInt("RQ_TYPE_ID"), rs.getInt("RQ_STATUS_ID"),
+						rs.getString("DESCRIPTION"), rs.getString("TIMESUBMISSION")));
+			}
+
+		} catch (IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(reimb);
 		return reimb;
 	}
 
@@ -92,6 +111,24 @@ public class ProjectOneDaoImpl implements ProjectOneDao {
 		List<Reimbursement> reimb = new ArrayList<>();
 		System.err.println("[LOG---Starting---getAllDeniedReimb() argument: ]");
 
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
+			String sql = "SELECT * FROM reimbursement WHERE rq_status_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			// setting rq_status_id as 3
+			ps.setString(1, "3");
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				reimb.add(new Reimbursement(rs.getInt("R_ID"), rs.getInt("AMT"), rs.getInt("EMP_U_ID"),
+						rs.getInt("MGR_U_ID"), rs.getInt("RQ_TYPE_ID"), rs.getInt("RQ_STATUS_ID"),
+						rs.getString("DESCRIPTION"), rs.getString("TIMESUBMISSION")));
+			}
+
+		} catch (IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(reimb);
 		return reimb;
 	}
 

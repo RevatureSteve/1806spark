@@ -18,7 +18,7 @@
 	<!-- Pending Reimbursement Servlet -->
 	<servlet>
 		<servlet-name>pendingReimbursement</servlet-name>
-		<servlet-class></servlet-class>
+		<servlet-class>com.revature.servlet.PendingReimbursementServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>pendingReimbursement</servlet-name>
@@ -27,7 +27,7 @@
 	<!-- Approved Reimbursment Servlet -->
 	<servlet>
 		<servlet-name>approvedReimbursement</servlet-name>
-		<servlet-class></servlet-class>
+		<servlet-class>com.revature.servlet.ApprovedReimbursementServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>approvedReimbursement</servlet-name>
@@ -36,7 +36,7 @@
 	<!-- Denied Reimbursement Servlet -->
 	<servlet>
 		<servlet-name>deniedReimbursement</servlet-name>
-		<servlet-class></servlet-class>
+		<servlet-class>com.revature.servlet.DeniedReimbursementServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>deniedReimbursement</servlet-name>

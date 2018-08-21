@@ -64,14 +64,26 @@ public class AppService {
 		return projectOneDao.getAllReimbursements();
 	}
 	
+	// Retrieving all the pending reimbursements
+	public List<Reimbursement> getAllPendingReimb(){
+		System.out.println("[LOG]---retrieving---All Pending Reimbursement");
+		
+		return projectOneDao.getAllPendingReimb();
+	}
 	
+	// Retrieving all the approved reimbursements
+	public List<Reimbursement> getAllApprovedReimb(){
+		System.out.println("[LOG]---retrieving---All Approved Reimbursement");
+		
+		return projectOneDao.getAllApprovedReimb();
+	}
 	
+	// Retrieving all the denied reimbursements
+	public List<Reimbursement> getAllDeniedReimb(){
+		System.out.println("[LOG]---retrieving---All Denied Reimbursement");
+		
+		return projectOneDao.getAllDeniedReimb();
+	}
 	
-
-
-
-
-
-
 }
 
