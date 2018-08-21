@@ -13,8 +13,44 @@ import com.revature.domain.Reimbursement;
 import com.revature.domain.Users;
 import com.revature.util.SetConnectionPropertiesUtil;
 
+import oracle.sql.TIMESTAMP;
+
 public class ReimbursementDaoImpl implements ReimbursementDao{
 
+	/*
+	 * Here I am creating a new reimbursement
+	 */
+	public Reimbursement newReimbursement(int reimbId, int empUserId, double amount, String description, String TimeSubmit, int requestTypeId, int requestStatusId) {
+		System.err.println("[LOG]---Starting ReimbursementDao---NewReimbursements()");
+		
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
+			System.err.println("[LOG]---ReimbursementDao try/catch---newReimbursements() connection successful");
+			
+			String sql = "INSERT INTO reimbursement (R_Id, Emp_U_Id, Amt, Descripton, Timesubmission, Rq_Type_Id, Rq_Status_Id)\r\n" + 
+					"VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, x);
+			ps.setInt(2, x);
+			ps.setDouble(3, x);
+			ps.setString(4, x);
+			ps.setTimestamp(5, x, cal);
+			ps.setInt(6, x);
+			ps.setInt(7, x);
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+		
+	}
+	
+	
+	
 	/*
 	 * Here I will show all Reimbursements
 	 */
@@ -35,7 +71,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 			ResultSet rs = ps.executeQuery();
 			
 			System.err.println("[LOG]---ReimbursementDao ResultSet---getReimbursements()");
-			if (rs.next()) {
+			while (rs.next()) {
 				System.err.println("[LOG]---ReimbursementDao if---getReimbursements()");
 				Reimbursement reimb = new Reimbursement(rs.getInt("R_Id"), rs.getInt("Emp_U_Id"), rs.getInt("Mgr_U_Id"), 
 						rs.getDouble("Amt"), rs.getString("Description"), null, null, rs.getInt("Rq_Type_Id"), 
@@ -77,7 +113,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 			ResultSet rs = ps.executeQuery();
 			
 			System.err.println("[LOG]---ReimbursementDao ResultSet---getPendingReimbursements()");
-			if (rs.next()) {
+			while (rs.next()) {
 				System.err.println("[LOG]---ReimbursementDao if---getPendingReimbursements()");
 				Reimbursement pendingReimb = new Reimbursement(rs.getInt("R_Id"), rs.getInt("Emp_U_Id"), rs.getInt("Mgr_U_Id"), 
 						rs.getDouble("Amt"), rs.getString("Description"), null, null, rs.getInt("Rq_Type_Id"), 
@@ -116,7 +152,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 			ResultSet rs = ps.executeQuery();
 			System.err.println("[LOG]---ReimbursementDao ResultSet---getApprovedReimbursements()");
 			
-			if (rs.next()) {
+			while (rs.next()) {
 				System.err.println("[LOG]---ReimbursementDao if---getApprovedReimbursements()");
 				Reimbursement approvedReimb = new Reimbursement(rs.getInt("R_Id"), rs.getInt("Emp_U_Id"), rs.getInt("Mgr_U_Id"), 
 						rs.getDouble("Amt"), rs.getString("Description"), null, null, rs.getInt("Rq_Type_Id"), 

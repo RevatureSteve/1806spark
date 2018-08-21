@@ -18,10 +18,6 @@ public class Reimbursement {
 	private int requestStatusId;
 	private String requestStatus;
 	
-	//NO-ARGS Constructor
-	public Reimbursement() {
-		super();
-	}
 
 	//Constructor
 	public Reimbursement(int reimbId, int empUserId, int mgrUserId, double amount, String description, Blob img,
@@ -38,6 +34,26 @@ public class Reimbursement {
 		this.requestType = requestType;
 		this.requestStatusId = requestStatusId;
 		this.requestStatus = requestStatus;
+	}
+
+	//for my newReiembursment Dao
+	public Reimbursement(int reimbId, int empUserId, int mgrUserId, double amount, String description, Blob img, String timeSubmit, int requestStatusId, int requestTypeId) {
+		super();
+		this.reimbId = reimbId;
+		this.empUserId = empUserId;
+		this.mgrUserId = mgrUserId;
+		this.amount = amount;
+		this.description = description;
+		this.img = img;
+		this.TimeSubmit = timeSubmit;
+		this.requestTypeId = requestTypeId;
+		this.requestStatusId = requestStatusId;
+	}
+	
+	
+	//NO-ARGS Constructor
+	public Reimbursement() {
+		super();
 	}
 
 	//Getters n' Setters

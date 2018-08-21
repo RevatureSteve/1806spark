@@ -33,7 +33,6 @@ public class SetConnectionPropertiesUtil {
 		 * we require an absolute path over the relative path
 		 * 		note: more research needed to know this
 		 */
-		
 		Properties props = new Properties();
 		props.load(new FileReader("C:\\Users\\sidhu\\my_git_repos\\1806spark\\JDBC\\Project1\\src\\main\\resources\\db.properties"));
 		

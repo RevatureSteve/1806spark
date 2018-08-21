@@ -1,9 +1,7 @@
 package com.revature;
 
-import java.util.List;
-
-import com.revature.dao.UserDaoImpl;
 import com.revature.domain.Users;
+import com.revature.service.BusinessLogic;
 
 public class Driver {
 
@@ -15,13 +13,13 @@ public class Driver {
 		 * 		and I am certain this is the same one I will use to login for managers as well
 		 * 		since they must provide their own email and pw.
 		 */
-		/*String emailInput = "dan@yahoo.com";
-		String pwInput = "dan123";
-		String fnameInput = "";
-		String lnameInput = "";
+		String email = "dan@yahoo.com";
+		String password = "dan123";
+		//String fnameInput = "";
+		//String lnameInput = "";
 		
-		Users validUser = new BusinessLogic().login(new Users(0, emailInput, pwInput, fnameInput, lnameInput, 0));
-		System.out.println("The user based upon the email and password provided is: \n\t\t" + validUser);*/
+		Users validUser = new BusinessLogic().login(email, password);
+		System.out.println("The user based upon the email and password provided is: \n\t\t" + validUser);
 		
 		/*
 		 * Here is the List of Users

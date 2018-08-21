@@ -18,17 +18,17 @@ public class BusinessLogic {
 	 *Here is the logic for Users
 	 *		it is used to verify login by comparing the input pw against the DB pw 
 	 */
-	public Users login (Users usersInput) {
-		System.out.println("[LOG]---Starting---Service login() with the argument: " + usersInput);
+	public Users login (String email, String password) {
+		System.out.println("[LOG]---Starting---Service login() with the arguments: " + email);
 
-		Users dbUsers = usersDao.getUserByEmail(usersInput.getEmail());
+		Users dbUsers = usersDao.getUserByEmail(email);
 		System.out.println("[LOG]---Calling the Dao---Service login()");
 		
 		//checking to see if the DB info is empty
 		if (dbUsers != null) {
 			System.out.println("[LOG]---dbUsers null check---Service login() status: successful");
 			//here we compare the java pw to the sql pw in the database
-			if (dbUsers.getPassword().equals(usersInput.getPassword())) {
+			if (dbUsers.getPassword().equals(password)) {
 				System.out.println("[LOG]---Comparing pw---Service login() pw: successful");
 				return dbUsers;//return the DB info
 			}

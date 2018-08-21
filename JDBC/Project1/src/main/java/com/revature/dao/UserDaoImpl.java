@@ -65,7 +65,7 @@ public class UserDaoImpl implements UserDao {
 			ResultSet rs = ps.executeQuery();
 			
 			System.err.println("[LOG]---UserDao ResultSet completed---getAllUsers()");
-			if (rs.next()) {
+			while (rs.next()) {
 				Users user = new Users(rs.getInt("U_Id"), rs.getString("Email"), rs.getString("Password"), rs.getString("fname"), rs.getString("lname"), rs.getInt("Pos_Id"));
 				users.add(user);
 				
@@ -98,7 +98,7 @@ public class UserDaoImpl implements UserDao {
 			ResultSet rs = ps.executeQuery();
 			
 			System.err.println("[LOG]---UserDao ResultSet completed---getAllEmployees()");
-			if (rs.next()) {
+			while (rs.next()) {
 				Users emp = new Users(rs.getInt("U_Id"), rs.getString("Email"), rs.getString("Password"), rs.getString("fname"), rs.getString("lname"), rs.getInt("Pos_Id"));
 				emps.add(emp);
 			}
