@@ -2,11 +2,11 @@
   <form class="form" id='login'>
       Email:
       <br>
-      <input class='input loginInput' id='email' type="text">
+      <input class='input loginInput' id='email' #email type="text">
       <br> Password:
       <br>
-      <input class='input loginInput' id='password' type='password'>
+      <input class='input loginInput' id='password' #password type='password'>
       <br>
-      <input (click)="login()" class="formBtn" id='loginBtn' type="button" value="Login">
+      <input (click)="login(email.value, password.value)" class="formBtn" id='loginBtn' type="button" value="Login">
   </form>
 </div>
