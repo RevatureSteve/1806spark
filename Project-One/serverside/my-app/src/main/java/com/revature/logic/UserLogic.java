@@ -1,5 +1,7 @@
 package com.revature.logic;
 
+import java.util.List;
+
 import com.revature.dao.transtarUserDao;
 import com.revature.pojo.TranstarUsers;
 
@@ -8,7 +10,7 @@ public class UserLogic {
 	private transtarUserDao tuDao = new transtarUserDao();
 	
 	/**
-	 * Compairs paramaters to the database. 
+	 * Compares parameters to the database. 
 	 * @param email
 	 * @param password
 	 * @return user / null
@@ -22,6 +24,22 @@ public class UserLogic {
 			}
 		}
 		return null;
+	}
+	
+
+
+	/**
+	 * Retrieves all users in the database.
+	 * @return List<TranstarUsers> users / null
+	 */
+	public List<TranstarUsers> getUsers() {
+		List<TranstarUsers> users = tuDao.readUsers();
+		if(users != null) {
+			return users;
+		}
+		
+		return null;
+		
 	}
 	
 }

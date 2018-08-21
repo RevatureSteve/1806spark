@@ -10,7 +10,7 @@ public class ConnectionsPropertiesUtil {
 
 public static Connection newConnection() throws SQLException {
 		
-		final String URL = "jdbc:oracle:thin:gooddata.chd4toccqgaj.us-east-2.rds.amazonaws.com:1521:ORCL";
+		final String URL = "jdbc:oracle:thin:@gooddata.chd4toccqgaj.us-east-2.rds.amazonaws.com:1521:ORCL";
 		final String USERNAME = "transtar";
 		final String PASSWORD = "p4ssw0rd";
 		

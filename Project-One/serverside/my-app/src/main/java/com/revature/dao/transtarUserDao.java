@@ -27,7 +27,7 @@ public class transtarUserDao {
 	 */
 	public List<TranstarUsers> readUsers() {
 		List<TranstarUsers> users = new ArrayList<>();
-		try (Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);){
+		try (Connection con = ConnectionsPropertiesUtil.newConnection()){
 			String sql = "SELECT * FROM users a INNER JOIN position b ON a.pos_id = b.pos_id";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
@@ -48,12 +48,9 @@ public class transtarUserDao {
 		 */
 		public TranstarUsers getUser(String email) {
 			TranstarUsers user = null;
-			try (Connection con = DriverManager.getConnection(URL, USERNAME, PASSWORD);){
-				System.out.println("1");
-				String sql = "SELECT * FROM users u INNER JOIN position p ON u.pos_id = p.pos_id WHERE email = ?";
-				System.out.println("2");
+			try (Connection con = ConnectionsPropertiesUtil.newConnection()){
+				String sql = "SELECT * FROM users a INNER JOIN position b ON a.pos_id = b.pos_id WHERE email = ?";
 				PreparedStatement ps = con.prepareStatement(sql);
-				System.out.println("3");
 				ps.setString(1, email);
 				ResultSet rs = ps.executeQuery();
 				if(rs.next()) {
@@ -65,6 +62,29 @@ public class transtarUserDao {
 				e.printStackTrace();
 			}
 			return user;
+		}
+		
+		/**
+		 * Pull all requests from a specific user.  
+		 * @param userId
+		 * @return req
+		 */
+		public TranstarUsers getUserRequests(int userId) {
+			TranstarUsers req = null;
+			try (Connection con = ConnectionsPropertiesUtil.newConnection()){
+				String sql = "SELECT * FROM reimbursement WHERE emp_u_id = ?";
+				PreparedStatement ps = con.prepareStatement(sql);
+				ps.setInt(1, userId);
+				ResultSet rs = ps.executeQuery();
+				if(rs.next()) {
+					req = new TranstarUsers(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getString("description"), rs.getBlob("img"),rs.getString("time_submission"), rs.getInt("rb_type_id"), rs.getInt("rb_type_id"));
+				}
+				
+			} catch (SQLException e) {
+				System.out.println("SQL fail");
+				e.printStackTrace();
+			}
+			return req;
 		}
 
 }

@@ -13,7 +13,7 @@ INSERT INTO rb_type VALUES (4, 'Material');
 INSERT INTO users VALUES (1, 'admin@transtar.com', 'ark', 'Beck', 'Larson', 1);
 INSERT INTO users VALUES (2, 'yu@transtar.com', 'mgr', 'Morgan', 'Yu', 2);
 INSERT INTO users (email, password, fname, lname, pos_id) VALUES ( 'sho@transtar.com', 'ark', 'Danielle', 'Sho', 1);
-
+INSERT INTO reimbursement VALUES (1,1, NULL, 300, 'Testing Charges', null, CURRENT_TIMESTAMP, 1, 1);
 ALTER TABLE users
 RENAME COLUMN lane TO lname;
 
@@ -61,3 +61,8 @@ BEGIN
     END IF;
 END;
 /
+
+commit;
+SELECT * FROM reimbursement WHERE emp_u_id = 1;
+
+SELECT * FROM users a INNER JOIN position b ON a.rb_type_id = b.rb_type_id WHERE rb_type_id = 1;
