@@ -1,9 +1,10 @@
 <li *ngFor='let r of reimbursements' class="list-group">
-    <div class="list-group-item list-group-item-action list-group-item-success">
+
+    <a routerLink='employee/detail/{{r.id}}' class="list-group-item list-group-item-action list-group-item-success">
         <div>{{r.description}}</div>
         <div>{{r.timesubmission.substring(0,19)}}</div>
         <div>{{r.rq_type}}</div>
         <div>{{r.rq_status}}</div>
-    </div>
+    </a>
 
 </li>

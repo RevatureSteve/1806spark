@@ -48,7 +48,7 @@ public class SubmitReimbursementServlet extends HttpServlet {
 		byte[] imgStr = node.get("img").binaryValue();
 		int rqTypeId = node.get("rqTypeId").intValue();
 		System.out.println(id + ""+amount+description+imgStr+rqTypeId);
-//		int success = ReimbursementsService.createNewReimbursement(id, amount, description, imgStr, rqTypeId);
+		int success = ReimbursementsService.createNewReimbursement(id, amount, description, imgStr, rqTypeId);
 		// user printwriter note this is not json String just misc toString code
 		PrintWriter out = response.getWriter();
 		out.print(1);

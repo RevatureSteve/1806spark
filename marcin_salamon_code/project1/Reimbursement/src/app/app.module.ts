@@ -10,6 +10,7 @@ import { UpdateUserComponent } from './update-user/update-user.component';
 import { ReimbursementListComponent } from './reimbursement-list/reimbursement-list.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { SubmitComponent } from './submit/submit.component';
+import { ReimbursementDetailsComponent } from './reimbursement-details/reimbursement-details.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { SubmitComponent } from './submit/submit.component';
     NavbarComponent,
     UpdateUserComponent,
     ReimbursementListComponent,
-    SubmitComponent
+    SubmitComponent,
+    ReimbursementDetailsComponent
   ],
   imports: [
     BrowserModule,
