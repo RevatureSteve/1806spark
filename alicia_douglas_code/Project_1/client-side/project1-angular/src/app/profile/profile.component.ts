@@ -1,5 +1,7 @@
-import { CurrentUserService } from './../../../../project1-angular-test/src/app/current-user.service';
+
 import { Component, OnInit } from '@angular/core';
+import { Users } from '../models/users.model';
+import { CurrentUserService } from '../current-user.service';
 
 @Component({
   selector: 'app-profile',
@@ -8,14 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProfileComponent implements OnInit {
 
-  user;
+  user: Users;
 
   constructor(private currentUser: CurrentUserService) { }
 
   ngOnInit() {
     this.user = this.currentUser.getCurrentUser();
+    console.log(this.user);
+    // this.setPage(this.user);
   }
 
-
+  // setPage(user) {
+  //   document.getElementById('fname').innerText = user.fname;
+  // }
 
 }
