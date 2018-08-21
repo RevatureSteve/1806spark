@@ -41,6 +41,12 @@ VALUES(1, 1, 1, 25.00, CURRENT_TIMESTAMP, 1, 1);
 
 SELECT * FROM reimbursement;
 COMMIT;
+
+--Altering reimbursements table
+ALTER TABLE reimbursement MODIFY Mgr_U_Id null; 
+ALTER TABLE reimbursement MODIFY Timesubmission DEFAULT CURRENT_TIMESTAMP;
+ALTER TABLE reimbursement MODIFY Rq_Status_Id DEFAULT (1);
+
 --SEQUENCE FOR Reimbursement TABLES
 CREATE SEQUENCE reimbursement_seq
 MINVALUE 1
@@ -102,6 +108,6 @@ CREATE PROCEDURE Create_Reimbursement (R_Id IN NUMBER, Amt IN NUMBER, Img IN BLO
 IS 
 BEGIN
     INSERT INTO reimbursement(Emp_U_Id, Amt, Description, Img, Timesubmission, Rq_Type_Id, Rq_Status_Id)
-    VALUES (Emp_U_Id, Amt, Img, Description, Rq_Type_Id, CURRENT_TIMESTAMP)
+    VALUES (Emp_U_Id, Amt, Img, Description, Rq_Type_Id, CURRENT_TIMESTAMP);
 END;
 /
