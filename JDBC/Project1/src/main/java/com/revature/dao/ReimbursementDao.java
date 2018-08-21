@@ -8,7 +8,7 @@ public interface ReimbursementDao {
 
 	//CRUD Methods
 	//Create
-	public Reimbursement newReimbursement(int reimbId, int empUserId, double amount, String description, String TimeSubmit, int requestTypeId, int requestStatusId);
+	public Reimbursement newReimbursement(int reimbId, int empUserId, double amount, String description, int requestTypeId);
 	
 	//Read
 	public List<Reimbursement> getReimbursements();

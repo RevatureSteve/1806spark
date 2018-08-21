@@ -20,23 +20,21 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 	/*
 	 * Here I am creating a new reimbursement
 	 */
-	public Reimbursement newReimbursement(int reimbId, int empUserId, double amount, String description, String TimeSubmit, int requestTypeId, int requestStatusId) {
+	public Reimbursement newReimbursement(int reimbId, int empUserId, double amount, String description, int requestTypeId) {
 		System.err.println("[LOG]---Starting ReimbursementDao---NewReimbursements()");
 		
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
 			System.err.println("[LOG]---ReimbursementDao try/catch---newReimbursements() connection successful");
 			
-			String sql = "INSERT INTO reimbursement (R_Id, Emp_U_Id, Amt, Descripton, Timesubmission, Rq_Type_Id, Rq_Status_Id)\r\n" + 
-					"VALUES(?, ?, ?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO reimbursement (R_Id, Emp_U_Id, Amt, Descripton, Rq_Type_Id)\r\n" + 
+					"VALUES(?, ?, ?, ?, ?, ?)";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, x);
-			ps.setInt(2, x);
-			ps.setDouble(3, x);
-			ps.setString(4, x);
-			ps.setTimestamp(5, x, cal);
-			ps.setInt(6, x);
-			ps.setInt(7, x);
+			ps.setInt(1, reimbId);
+			ps.setInt(2, empUserId);
+			ps.setDouble(3, amount);
+			ps.setString(4, description);
+			ps.setInt(5, requestTypeId);
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
