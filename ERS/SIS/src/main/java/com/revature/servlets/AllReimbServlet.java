@@ -32,6 +32,8 @@ public class AllReimbServlet extends HttpServlet {
 		System.out.println("The id is " + empId);
 		List<Reimbursement> rb = ss.getAllReimbursements(empId);
 		
+		
+		System.out.println("Getting Reimbursements");
 		ObjectMapper map = new ObjectMapper();
 		String rbs = map.writeValueAsString(rb);
 		
