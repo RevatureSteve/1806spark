@@ -1,5 +1,5 @@
 
-let userId = 1;
+let userId = 2;
 window.onload = function foo() {
 
     
@@ -185,14 +185,14 @@ function managerLogged() {
 
 
         news.addEventListener('click', clickedMgr);
-        
+        console.log("starting mgrTabs");
         mgrTabs(5);
     });
 }
 
 function mgrTabs(num) {
     let navbar = document.getElementById('content');
-
+    console.log("Switching case" + num);
     switch (num) {
         case 1:
             fetch('pages/profile.html').then((resp) => {
@@ -353,7 +353,7 @@ function mgrActiveBtn(eventId) {
             break;
         case "pending-reim-btn":
             innerElement.style.backgroundColor = "yellow";
-            innerElement.style.fontSize = "97%";
+            innerElement.style.fontSize = "95%";
             sub.removeAttribute("style");
             pro.removeAttribute("style");
             news.removeAttribute('style');
