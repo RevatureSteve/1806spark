@@ -27,7 +27,7 @@ public class ReimbursementIdServlet extends HttpServlet {
    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("userId"));
-		
+		System.out.println(id);
 		List<Reimbursement> reimbursements = reimBL.getReimbursementById(id);
 		
 		ObjectMapper mapper = new ObjectMapper();

@@ -33,7 +33,7 @@ public class Driver {
 		
 //		Users user = new Users ("sdoug@gmail.com", "111", "Skye", "Douglas", 2);
 //		new UsersDao().createUser(user);
-		List<Reimbursement> users = new ReimbursementDao().getReimbursements();
+		List<Reimbursement> users = new ReimbursementBuisnessLogic().getReimbursementById(3);
 		
 		for (Reimbursement user : users) {
 			System.out.println(user);

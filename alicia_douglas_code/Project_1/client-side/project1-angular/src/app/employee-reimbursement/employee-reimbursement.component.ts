@@ -20,7 +20,7 @@ export class EmployeeReimbursementComponent implements OnInit {
   ngOnInit() {
     // this.reimbursementsService.getAllReimbursements();
     this.user = this.currentUser.getCurrentUser();
-    console.log(this.user + 'All');
+    // console.log(this.user + 'All');
     this.getEmployeeReimbursements();
   }
 

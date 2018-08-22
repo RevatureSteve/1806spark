@@ -85,8 +85,21 @@ public class ReimbursementBuisnessLogic {
 		return reimbDao.getReimbursements();
 	}
 	
+	/**
+	 * returns a list of reimbursements based on user id
+	 * @param id
+	 * @return
+	 */
 	public List<Reimbursement> getReimbursementById(int id){
 		return reimbDao.getReimbursementByEmployeeId(id);
+	}
+	
+	/**
+	 * creates a new reimbursement
+	 * @param reimb
+	 */
+	public void createReimbursement(Reimbursement reimb) {
+		reimbDao.createReimbursement(reimb);
 	}
 	
 	

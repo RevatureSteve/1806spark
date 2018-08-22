@@ -1,0 +1,28 @@
+<form style="max-width: 700px;" class="form">
+  <h2>New Reimbursement Request</h2>
+  <div class="form-group">
+    <label for="formGroupExampleInput">Enter Reimbursement Amount</label>
+    <input type="number" #amt class="form-control" id="formGroupExampleInput" placeholder="0.00">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1">Enter Reimbursement Description</label>
+    <textarea #desc class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div>
+    <select #type class="custom-select">
+      <option selected>Select Reimbursement Type</option>
+      <option value="1">Potion Ingredients</option>
+      <option value="2">Spell Book</option>
+      <option value="3">Spell Supplies</option>
+      <option value="4">Traveling Costs</option>
+    </select>
+  </div>
+  <div class="custom-file">
+    <label style="margin-top: 10px;">Upload an Image</label> <br>
+    <input type="file" #img class="custom-file-input" id="customFile">
+    <label class="custom-file-label" for="customFile" style="margin-top: 40px;">Choose file</label>
+  </div>
+  <div id = 'btn'>
+      <input (click)="newReimbursement(amt.value, desc.value, type.value, img)" class="formBtn" id = "editProfileBtn" type="button" value="Submit new reimbursement" style="width: 300px;">
+  </div>
+</form>

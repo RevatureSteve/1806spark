@@ -8,9 +8,15 @@ INSERT INTO rb_status VALUES (3, 'Denied');
 INSERT INTO rb_type VALUES (1, 'something');
 
 INSERT INTO users VALUES (1, 'ad@gmail.com', '111', 'Alicia', 'Douglas', 1);
+INSERT INTO users VALUES (3, 'jb@gmail.com', '111', 'Julie', 'Blessing', 1);
 
-INSERT INTO reimbursement (r_id, emp_u_id, mgr_u_id, amt, time_submission, rb_type_id, rb_status_id) 
-        VALUES (1, 1, 1, 20, CURRENT_TIMESTAMP, 1,1); 
+INSERT INTO reimbursement (emp_u_id, mgr_u_id, amt, time_submission, rb_type_id, rb_status_id) 
+        VALUES (3, 6, 30, CURRENT_TIMESTAMP, 3,2); 
+        
+SELECT * FROM reimbursement where emp_u_id = 3;    
+SELECT * FROM users;
+
+commit;
 
 commit;
 
@@ -67,10 +73,14 @@ IS
 BEGIN 
     OPEN reimbursements FOR
     SELECT * FROM reimbursement r
-    INNER JOIN rb_status rs
+    LEFT JOIN rb_status rs
     ON r.rb_status_id = rs.rb_status_id
-    INNER JOIN rb_type rt
+    LEFT JOIN rb_type rt
     ON r.rb_type_id = rt.rb_type_id
+    LEFT JOIN users u 
+    ON r.emp_u_id = u.u_id
+    LEFT JOIN users u
+    ON r.mgr_u_id = u.u_id
     WHERE emp_u_id = emp_id;
 END;
 /
@@ -81,10 +91,14 @@ IS
 BEGIN
     OPEN reimbursements FOR 
     SELECT * FROM reimbursement r
-    INNER JOIN rb_status rs
+    LEFT JOIN rb_status rs
     ON r.rb_status_id = rs.rb_status_id
-    INNER JOIN rb_type rt
-    ON r.rb_type_id = rt.rb_type_id;
+    LEFT JOIN rb_type rt
+    ON r.rb_type_id = rt.rb_type_id
+    LEFT JOIN users u 
+    ON r.emp_u_id = u.u_id
+    LEFT JOIN users u
+    ON r.mgr_u_id = u.u_id;
 END;
 /
 
@@ -94,16 +108,25 @@ IS
 BEGIN
     INSERT INTO reimbursement (emp_u_id, amt, description, img, time_submission, rb_type_id, rb_status_id)
     VALUES (emp_id, amount, description, image, CURRENT_TIMESTAMP, rb_type, 1);
+    commit;
 END;
 /
         
 
 
+SELECT * FROM reimbursement r
+    LEFT JOIN rb_status rs
+    ON r.rb_status_id = rs.rb_status_id
+    LEFt JOIN rb_type rt
+    ON r.rb_type_id = rt.rb_type_id
+    LEFT JOIN users u 
+    ON r.emp_u_id = u.u_id
+    LEFT JOIN users u
+    ON r.mgr_u_id = u.u_id;
 
 
 
-
-
+SELECT * FROM reimbursement;
 
 
 
