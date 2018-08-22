@@ -1,6 +1,5 @@
 package com.revature.dao;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -13,11 +12,8 @@ import java.util.List;
 import com.revature.pojo.TranstarUsers;
 import com.revature.util.ConnectionsPropertiesUtil;
 
-public class transtarUserDao {
-	
-	private final static String USERNAME = "transtar";
-	private final static String PASSWORD = "p4ssw0rd";
-	private final static String URL = "jdbc:oracle:thin:@gooddata.chd4toccqgaj.us-east-2.rds.amazonaws.com:1521:ORCL";
+public class TranstarUserDaoImpl implements TranstarUserDao{
+
 
 	
 	//Read

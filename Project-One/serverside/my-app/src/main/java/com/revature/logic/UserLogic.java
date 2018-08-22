@@ -2,12 +2,12 @@ package com.revature.logic;
 
 import java.util.List;
 
-import com.revature.dao.transtarUserDao;
+import com.revature.dao.TranstarUserDaoImpl;
 import com.revature.pojo.TranstarUsers;
 
 public class UserLogic {
 
-	private transtarUserDao tuDao = new transtarUserDao();
+	private TranstarUserDaoImpl tuDao = new TranstarUserDaoImpl();
 	
 	/**
 	 * Compares parameters to the database. 

@@ -4,12 +4,14 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.revature.pojo.TranstarReims;
 import com.revature.pojo.TranstarUsers;
 import com.revature.util.ConnectionsPropertiesUtil;
 
-public class transtarReimDao {
+public class TranstarDaoImpl implements TranstarReimDao{
 
 	//READ
 	/**
@@ -41,30 +43,32 @@ public class transtarReimDao {
 		return req;
 	}
 	/**
-	 * Retreves all pending requests from the database.
+	 * Retrieves all pending requests from the database.
 	 * @return req
 	 */
-	public TranstarReims getAllPendingRequests() {
+	public List<TranstarReims> getAllPendingRequests() {
 		
-		TranstarReims req = null;
+		List<TranstarReims> reqs = new ArrayList<>();
 		try (Connection con = ConnectionsPropertiesUtil.newConnection()){
-			String sql = "SELECT * FROM reimbursement INNER JOIN rb_type ON reimbursement.rb_type_id"
-					+ " = rb_type.rb_type_id INNER JOIN rq_status ON reimbursement.rq_status_id"
-					+ " = rq_status.rq_status_id WHERE rq_status.rq_status_id = 1";
+			String sql = "SELECT * FROM reimbursement INNER JOIN rb_type " + 
+					"ON reimbursement.rb_type_id = rb_type.rb_type_id " + 
+					"INNER JOIN rq_status " + 
+					"ON reimbursement.rq_status_id = rq_status.rq_status_id";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
-			if(rs.next()) {
-				req = new TranstarReims(rs.getInt(1), rs.getInt(2), rs.getInt(3)
+			while (rs.next()) {
+				TranstarReims req = new TranstarReims(rs.getInt(1), rs.getInt(2), rs.getInt(3)
 						, rs.getInt(4), rs.getString("description"), rs.getBlob("img")
 						,rs.getString("time_submission"), rs.getString("rb_type")
 						, rs.getString("rq_status"));
+				reqs.add(req);
 			}
 			
 		} catch (SQLException e) {
 			System.out.println("SQL fail");
 			e.printStackTrace();
 		}
-		return req;
+		return reqs;
 		
 	}
 }

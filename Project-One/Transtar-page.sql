@@ -64,8 +64,9 @@ END;
 
 commit;
 SELECT * FROM reimbursement INNER JOIN rb_type
-ON reimbursement.rb_type_id = rb_type.rb_type_id 
-WHERE emp_u_id = 1;
+ON reimbursement.rb_type_id = rb_type.rb_type_id
+INNER JOIN rq_status 
+ON reimbursement.rq_status_id = rq_status.rq_status_id;
 
 
 

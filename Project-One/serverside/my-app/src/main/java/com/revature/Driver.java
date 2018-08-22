@@ -16,13 +16,13 @@ public class Driver {
 		System.out.println("Testing transtar systems....");
 //		TranstarUsers user = new UserLogic().login(email, password);
 //		System.out.println("The user is: " + user);
-//		List<TranstarUsers> users = new UserLogic().getUsers();
-//		System.out.println(users);
+		List<TranstarUsers> users = new UserLogic().getUsers();
+		System.out.println(users);
 //		
 		TranstarReims reqs = new ReqLogic().reqs(1);
 		System.out.println(reqs);
-//		TranstarReims allReqs = new ReqLogic().allReqs();
-//		System.out.println(allReqs);
+		List<TranstarReims> allReqs = new ReqLogic().allReqs();
+		System.out.println(allReqs);
 	}
 
 }

@@ -1,11 +1,13 @@
 package com.revature.logic;
 
-import com.revature.dao.transtarReimDao;
+import java.util.List;
+
+import com.revature.dao.TranstarDaoImpl;
 import com.revature.pojo.TranstarReims;
 
 public class ReqLogic {
 	
-	private transtarReimDao rDao = new transtarReimDao();
+	private TranstarDaoImpl rDao = new TranstarDaoImpl();
 	
 	/**
 	 * Retrieves all requests from a user. 
@@ -25,8 +27,8 @@ public class ReqLogic {
 	 * @return reqs
 	 */
 	
-	public TranstarReims allReqs() {
-		TranstarReims reqs = rDao.getAllPendingRequests();
+	public List<TranstarReims> allReqs() {
+		List<TranstarReims> reqs = rDao.getAllPendingRequests();
 		return reqs;
 	}
 }
