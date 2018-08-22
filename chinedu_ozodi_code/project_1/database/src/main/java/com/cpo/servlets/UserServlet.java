@@ -55,7 +55,8 @@ public class UserServlet extends HttpServlet {
 		
 		User dbUser = UserDaoDatabase.getInstance().getUserByEmail(user.getEmail());
 		
-		if (dbUser.getPassword().equals(user.getPassword())) {
+		
+		if (dbUser != null && dbUser.getPassword().equals(user.getPassword())) {
 			//Send a positive response, start a session
 			HttpSession session = request.getSession();
 			session.setAttribute("user", dbUser);

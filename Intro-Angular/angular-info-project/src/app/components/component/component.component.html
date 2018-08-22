@@ -1,0 +1,132 @@
+<div>
+    <div class="panel-heading">
+        <span class="label label-default label-center">{{title}}</span>
+    </div>
+    <div class="panel-body">
+        <img class="image-center" src="{{image}}" />
+        <div class="list-group">
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <strong>Components</strong> control <strong>views</strong>.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                They are small pieces that <strong>render</strong> in our app.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                They grant <strong>reusability</strong> and <strong>modularity</strong>.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <strong>Multiple</strong> components make our entire app.
+            </div>
+        </div>        
+    </div>
+    <div class="panel-heading">
+        <span class="label label-default label-center">{{subTitleDeclaration}}</span>
+    </div>
+    <div class="panel-body">
+        <img class="image-center" src="{{subTitleImageDeclaration}}" />
+        <div class="list-group">
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <strong>Components</strong> are declared as an exported <strong>class</strong>.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                They utilize the <strong>@Component</strong> decorator to define the metadata of the view.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                The <strong>selector</strong> defines the HTML tag that we can use in our views.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                The <strong>templateUrl</strong> defines the location of our <strong>Template</strong>.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                The <strong>styleUrls</strong> define the locations of our multiple <strong>Styles</strong>.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                They have their own <strong>lifecycle</strong>.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                We can alter the <strong>lifecycle</strong> behavior by modifying its <strong>hooks</strong>.
+            </div>    
+        </div>
+    </div>
+    <div class="panel-heading">
+        <span class="label label-default label-center">{{subTitleLifecycle}}</span>
+    </div>
+    <div class="panel-body">
+        <img class="image-center" src="{{subTitleImageLifecycle}}" />
+        <div class="list-group">
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                Create.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                Render.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                Create and Render <strong>children</strong>.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                Databound <strong>properties</strong> change.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                Destroy.
+            </div>
+        </div>
+    </div>
+    <div class="panel-heading">
+        <span class="label label-default label-center">{{subTitleHooks}}</span>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <strong>ngOnChanges</strong>: called when an input binding value changes.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <strong>ngOnInit</strong>: after the first ngOnChanges.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <strong>ngDoCheck</strong>: after every run of change detection.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <strong>ngAfterContentInit</strong>: after component content is initialized.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <strong>ngAfterContentChecked</strong>: after every check of component content.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <strong>ngAfterViewInit</strong>: after component view(s) are initialized.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <strong>ngAfterViewChecked</strong>: after every check of a component's view(s).
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                <strong>ngOnDestroy</strong>: just before the component is destroyed.
+            </div>
+        </div>
+    </div>
+    <div class="panel-footer">
+        <a href="{{documentation}}">Documentation</a>
+    </div>
+</div>
