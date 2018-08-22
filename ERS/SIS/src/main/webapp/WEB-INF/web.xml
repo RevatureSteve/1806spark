@@ -15,10 +15,20 @@
     <description></description>
     <display-name>EmpployeeServlet</display-name>
     <servlet-name>EmpployeeServlet</servlet-name>
-    <servlet-class>com.revature.servlets.EmpployeeServlet</servlet-class>
+    <servlet-class>com.revature.servlets.GetAllEmpployeeServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>EmpployeeServlet</servlet-name>
-    <url-pattern>/emp</url-pattern>
+    <url-pattern>/allemployees</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AllReimbursementServlet</display-name>
+    <servlet-name>AllReimbursementServlet</servlet-name>
+    <servlet-class>com.revature.servlets.AllReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AllReimbursementServlet</servlet-name>
+    <url-pattern>/allreimbursements</url-pattern>
   </servlet-mapping>
 </web-app>

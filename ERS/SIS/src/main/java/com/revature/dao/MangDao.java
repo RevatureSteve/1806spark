@@ -8,14 +8,14 @@ import com.revature.pojos.Users;
 public interface MangDao {
 
 	//CREATE
-	
+	void newEmployee(Users usr);
 	//READ
 	Users getMangInfo(String email, String password);
 	List<Users> getEmployees();
 	List<Reimbursement> getAllEmpReimb();
 	
 	//UPDATE
-	void newEmployee(Users usr);
+	
 	
 	//DELETE
 }

@@ -9,7 +9,7 @@ public interface EmpDao {
 	//CREATE
 	
 	//READ
-	Users getEmpInfo(String email, String password);
+	Users login(String email, String password);
 	List<Reimbursement> getAllReimb(int empId);
 	
 	//UPDATE

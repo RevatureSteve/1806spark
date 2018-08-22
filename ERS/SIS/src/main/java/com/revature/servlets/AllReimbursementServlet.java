@@ -1,6 +1,7 @@
 package com.revature.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,36 +10,32 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.pojos.Users;
+import com.revature.pojos.Reimbursement;
 import com.revature.service.Service;
 
 
-public class GetAllEmpployeeServlet extends HttpServlet {
+public class AllReimbursementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       private Service ss = new Service();
-    
-    public GetAllEmpployeeServlet() {
-        super();
+	private Service ss = new Service();
        
+   
+    public AllReimbursementServlet() {
+        super();
     }
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		
-		System.out.println("Get all employees -GET");
-		List<Users> u = ss.getAllEmployees();
+		System.out.println("Get all Reimbursements -GET");
+		List<Reimbursement> rb = ss.getAllEmpReimb();
+		System.out.println("Got all reimbursements!");
 		
 		ObjectMapper map = new ObjectMapper();
-		System.out.println("Converting...");
-		String s = map.writeValueAsString(u);
-		
+		String st = map.writeValueAsString(rb);
 		response.setContentType("application/json");
-		System.out.println("Writing...");
-		response.getWriter().write(s);
-		
+		response.getWriter().write(st);
 	}
 
-
+	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		doGet(request, response);

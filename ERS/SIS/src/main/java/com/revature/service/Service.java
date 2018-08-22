@@ -17,7 +17,7 @@ public class Service {
 		
 		System.out.println("Starting login service" + email + " " + password);
 		System.out.println("Calling EmployeeImpl");
-		Users usr = emImpl.getEmpInfo(email, password);
+		Users usr = emImpl.login(email, password);
 		usr.setEmail(email);
 		usr.setPassword(password);
 		System.out.println("It is " + usr);

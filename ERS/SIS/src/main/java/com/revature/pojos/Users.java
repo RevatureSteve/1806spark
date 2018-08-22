@@ -27,6 +27,17 @@ public class Users {
 		this.firstname = firstname;
 		this.lastname = lastname;
 	}
+	
+
+
+	public Users(int empId, String firstname, String lastname, String email, int positionId) {
+		super();
+		this.empId = empId;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.email = email;
+		this.positionId = positionId;
+	}
 
 
 	public int getEmpId() {

@@ -18,7 +18,7 @@ public class EmployeeImpl implements EmpDao{
 	
 	// Get the information for an Employee.
 	@Override
-	public Users getEmpInfo(String email, String password) {
+	public Users login(String email, String password) {
 		Users usr = null;
 		try(Connection conn = ConnectionUtil.getConnection()) {
 			String sql = "SELECT u_id, f_name, l_name FROM users WHERE email = ? AND password = ?";

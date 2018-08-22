@@ -26,7 +26,7 @@ public class Driver {
 		
 		
 		//Get all reimbursements.
-		List<Reimbursement> rbs = s.getAllEmpReimb();
+		Reimbursement rbs = s.getAllEmpReimb();
 		System.out.println(rbs);
 		
 	}
