@@ -3,7 +3,9 @@
         {{ flashcard.question }}
     </div>
     <div>
-        <p *ngIf="display"><strong class="strong-green">{{ flashcard.answer }}</strong></p>
+        <p *ngIf="display">
+            <strong class="strong-green">{{ flashcard.answer }}</strong>
+        </p>
         <a (click)="toggleAnswer()">{{(display) ? 'Hide' : 'Show'}} Answer</a>
     </div>
 </div>
