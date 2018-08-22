@@ -1,0 +1,48 @@
+<div>
+    <div class="panel-heading">
+        <span class="label label-default label-center">{{title}}</span>
+    </div>
+    <div class="panel-body">
+        <div class="list-group">
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                We can make <strong>asynchronous</strong> HTTP calls in Angular.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                We have to create our own <strong>Service</strong> and <strong>inject</strong> the Http object into it.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                We have to inject our <strong>Service</strong> into our <strong>Component</strong>.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                We are consuming a Pokemon API <strong>endpoint</strong>.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                We are using the <strong>Publisher/Subscriber</strong> design pattern.
+            </div>
+            <div class="list-group-item">
+                <span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span>
+                We are <strong>publishing</strong> an <strong>Observable</strong> which then our component <strong>subscribes</strong> to it.
+            </div>
+            <div class="list-group-item list-group-item-demo">
+                <span class="glyphicon glyphicon-random" aria-hidden="true"></span>
+                <div class="list-group-item">
+                    <strong>Name: </strong> {{ pokemon.name | uppercase }}
+                </div>
+                <div class="form-group">
+                    <input [(ngModel)]="pokemon.id" placeholder="Pokemon ID" class="form-control"/>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-success btn-center" (click)="getPokemonInformation()">GET</button>
+                </div> 
+            </div>      
+        </div>
+    </div>
+    <div class="panel-footer">
+        <a href="{{documentation}}">Documentation</a>
+    </div>
+</div>
