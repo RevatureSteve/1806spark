@@ -10,13 +10,12 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ReimbursementDetailsComponent implements OnInit {
   reimbursement: Reimbursement;
-  constructor(private location: Location, private reimbSer: ReimbursementListService, private route: ActivatedRoute) { }
+  constructor(private reimbSer: ReimbursementListService, private route: ActivatedRoute) { }
 
   ngOnInit() {
   }
 
   goBack(): void {
-    this.location.back();
   }
 
   getHero(): void {

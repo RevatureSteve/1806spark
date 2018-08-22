@@ -1,12 +1,12 @@
-<div>
+<div class="form-group">
   <label for="email">Email</label>
-  <input type="text" #email placeholder={{logged.email}}>
+  <div class="form-control">kjhfa@lkafj.com</div>
   <label for="password">Password</label>
-  <input type="password" #password>
+  <input type="password" #password class="form-control">
   <label for="fname">First name</label>
-  <input type="text" #fname placeholder="{{logged.fname}}">
+  <input type="text" class="form-control" #fname placeholder="{{logged.fname}}">
   <label for="lname">Last name</label>
-  <input type="text" #lname placeholder="{{logged.lname}}">
-  
-  <button (click)="updateUser(email.value, password.value, fname.value, lname.value)">Update User</button>
+  <input type="text" class="form-control" #lname placeholder="{{logged.lname}}">
+  <button>update</button>
+  <!-- <button (click)="updateUser(kjhfa@lkafj.com, password.value, fname.value, lname.value)">Update User</button> -->
 </div>

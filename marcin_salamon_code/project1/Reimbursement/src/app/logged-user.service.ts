@@ -17,4 +17,8 @@ export class LoggedUserService {
   getLoggedUser(): User {
     return LoggedUserService.user;
   }
+
+  logout(): void {
+    this.setLoggedUser(null);
+  }
 }

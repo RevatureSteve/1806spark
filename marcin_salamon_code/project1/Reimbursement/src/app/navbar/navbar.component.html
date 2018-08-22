@@ -1,11 +1,14 @@
 <ul class="nav">
   <li class="nav-item">
-    <a class="nav-link" routerLink='/dashboard/employee'>Home</a>
+    <a class="nav-link" routerLink='/employee'>Home</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" routerLink='/dashboard/employee/submit'>Submit</a>
+    <a class="nav-link" routerLink='/employee/submit'>Submit</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id=logout routerLink='/'>Log out</a>
+      <a class="nav-link" id=logout routerLink='/employee/account'>Account</a>
+    </li>
+  <li class="nav-item">
+    <a class="nav-link" id=logout (click)='logout()' routerLink='/'>Log out</a>
   </li>
 </ul>

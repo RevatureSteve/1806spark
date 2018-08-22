@@ -19,6 +19,6 @@ export class ReimbursementListService {
   }
 
   getReimbursement(rId): Observable<Reimbursement> {
-    return this.http.get<Reimbursement>(`http://localhost:8080/reimbursements_project/)
+    return this.http.get<Reimbursement>(`http://localhost:8080/reimbursements_project/${rId}`);
   }
 }

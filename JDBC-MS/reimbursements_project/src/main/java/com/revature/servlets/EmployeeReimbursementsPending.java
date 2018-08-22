@@ -48,7 +48,5 @@ public class EmployeeReimbursementsPending extends HttpServlet {
 		PrintWriter out = response.getWriter();
 		response.setContentType("application/json");
 		out.print(jsonOut);
-
 	}
-
 }

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { LoginService } from '../login.service';
 import { User } from '../user';
 import { LoggedUserService } from '../logged-user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -10,8 +11,8 @@ import { LoggedUserService } from '../logged-user.service';
 })
 export class LoginComponent implements OnInit {
   user: User;
-
-  constructor(private login: LoginService, private logged: LoggedUserService) { }
+  failed: boolean;
+  constructor(private login: LoginService, private logged: LoggedUserService, private routes: Router) { }
 
   ngOnInit() {
   }
@@ -22,6 +23,13 @@ export class LoginComponent implements OnInit {
 
   changePage(user) {
     this.changeLogged(user);
+    if (!this.user) {
+      this.failed = true;
+    } else if (this.user.positionId = 1) {
+      this.routes.navigate(['employee']);
+    } else if (this.user.positionId = 2) {
+      this.routes.navigate(['manager']);
+    }
     // changes the page depending on user position
   }
 

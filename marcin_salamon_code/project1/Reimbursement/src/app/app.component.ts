@@ -1,4 +1,7 @@
 import { Component } from '@angular/core';
+import { User } from './user';
+import { LoggedUserService } from './logged-user.service';
+import { logging } from 'protractor';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +10,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Reimbursement';
+
+  constructor(private logged: LoggedUserService) { }
 }
