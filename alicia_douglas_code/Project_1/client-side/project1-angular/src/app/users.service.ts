@@ -21,4 +21,8 @@ export class UsersService {
 
     // return this.httpClient.post<Users>('http://localhost:8080/reimbursement/login', user);
   }
+
+  getAllUsers() {
+    return this.httpClient.get<Users[]>('http://localhost:8080/reimbursement/users');
+  }
 }

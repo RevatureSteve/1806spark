@@ -16,6 +16,10 @@ import { EmpResolvedReimbursementsComponent } from './emp-resolved-reimbursement
 import { NewReimbursementComponent } from './new-reimbursement/new-reimbursement.component';
 import { MainManagerComponent } from './main-manager/main-manager.component';
 import { HomeNavManagerComponent } from './home-nav-manager/home-nav-manager.component';
+import { ManagerReimbursementsComponent } from './manager-reimbursements/manager-reimbursements.component';
+import { ManagerPendingReimbursementsComponent } from './manager-pending-reimbursements/manager-pending-reimbursements.component';
+import { ManagerResolvedReimbursmentsComponent } from './manager-resolved-reimbursments/manager-resolved-reimbursments.component';
+import { EmployeeListComponent } from './employee-list/employee-list.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { HomeNavManagerComponent } from './home-nav-manager/home-nav-manager.com
     EmpResolvedReimbursementsComponent,
     NewReimbursementComponent,
     MainManagerComponent,
-    HomeNavManagerComponent
+    HomeNavManagerComponent,
+    ManagerReimbursementsComponent,
+    ManagerPendingReimbursementsComponent,
+    ManagerResolvedReimbursmentsComponent,
+    EmployeeListComponent
   ],
   imports: [
     BrowserModule,

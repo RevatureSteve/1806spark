@@ -46,7 +46,7 @@ export class LoginComponent implements OnInit {
       if (user.pos_id === 1) {
         this.router.navigate(['home']);
       } else {
-        this.router.navigate(['home/manager']);
+        this.router.navigate(['home/sorcerer']);
       }
 
     } else {

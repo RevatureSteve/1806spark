@@ -10,17 +10,17 @@ import { Reimbursements } from './models/reimbursements.model';
 })
 export class ReimbursementsService {
 
-  reimbursements: Observable<Reimbursements[]>;
+  // reimbursements: Observable<Reimbursements[]>;
 
   constructor(private httpClient: HttpClient, private currentUser: CurrentUserService) { }
 
-  getAllReimbursements(): void {
-    this.reimbursements = this.httpClient.get<Reimbursements[]>('http://localhost:8080/reimbursement/reimbursement');
+  getAllReimbursements() {
+    return this.httpClient.get<Reimbursements[]>('http://localhost:8080/reimbursement/reimbursement');
   }
 
-  getReimbursementsArray(): Observable<Reimbursements[]> {
-    return this.reimbursements;
-  }
+  // getReimbursementsArray(): Observable<Reimbursements[]> {
+  //   return this.reimbursements;
+  // }
 
   getReimbursementById(id) {
     return this.httpClient.get<Reimbursements[]>('http://localhost:8080/reimbursement/reimbursement/id' + '?userId=' + id);
@@ -45,7 +45,7 @@ export class ReimbursementsService {
 
     console.log(reimb);
 
-    this.httpClient.post<Reimbursements>('http://localhost:8080/reimbursement/reimbursement', reimb);
+    this.httpClient.post<void>('http://localhost:8080/reimbursement/reimbursement', reimb);
 
     // console.log('after post statement');
   }

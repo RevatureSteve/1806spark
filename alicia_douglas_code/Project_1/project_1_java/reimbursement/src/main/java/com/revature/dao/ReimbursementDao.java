@@ -12,10 +12,17 @@ import java.util.List;
 import com.revature.domain.Reimbursement;
 import com.revature.util.SetConnectionPropertiesUtil;
 
-import oracle.jdbc.OracleTypes;
-import oracle.jdbc.oracore.OracleType;
+//import oracle.jdbc.OracleTypes;
 
 public class ReimbursementDao {
+
+	static {
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+	}
 
 	// Create
 	public void createReimbursement(Reimbursement reimb) {
@@ -43,16 +50,20 @@ public class ReimbursementDao {
 	public List<Reimbursement> getReimbursementByEmployeeId(int id) {
 		List<Reimbursement> reimbursements = new ArrayList<>();
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
-			String sql = "{call get_reimbursements_by_emp_id(?,?)}";
-			CallableStatement cs = conn.prepareCall(sql);
-			cs.setInt(1, id);
-			cs.registerOutParameter(2, OracleTypes.CURSOR);
-			cs.executeQuery();
-			ResultSet rs = (ResultSet) cs.getObject(2);
+			
+			String sql = "SELECT * FROM reimbursement r LEFT JOIN rb_status rs ON r.rb_status_id = rs.rb_status_id LEFT JOIN rb_type rt "
+					+ "ON r.rb_type_id = rt.rb_type_id LEFT JOIN users u ON r.emp_u_id = u.u_id LEFT JOIN users u ON r.mgr_u_id = u.u_id WHERE emp_u_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			
 			while (rs.next()) {
-				Reimbursement reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"), rs.getString("fname") + " " + rs.getString("lname"),
-						rs.getInt("mgr_u_id"),rs.getString(23) + " " + rs.getString(24), rs.getDouble("amt"), rs.getString("description"), rs.getBlob("img"),
-						rs.getDate("time_submission"), rs.getString("rb_type"),rs.getInt("rb_type_id"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
+				Reimbursement reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"),
+						rs.getString("fname") + " " + rs.getString("lname"), rs.getInt("mgr_u_id"),
+						rs.getString(23) + " " + rs.getString(24), rs.getDouble("amt"), rs.getString("description"),
+						rs.getBlob("img"), rs.getDate("time_submission"), rs.getString("rb_type"),
+						rs.getInt("rb_type_id"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
 				reimbursements.add(reimbursement);
 			}
 		} catch (IOException | SQLException e) {
@@ -69,15 +80,20 @@ public class ReimbursementDao {
 	public List<Reimbursement> getReimbursements() {
 		List<Reimbursement> reimbursements = new ArrayList<>();
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
-			String sql = "{call get_reimbursements(?)}";
-			CallableStatement cs = conn.prepareCall(sql);
-			cs.registerOutParameter(1, OracleTypes.CURSOR);
-			cs.executeQuery();
-			ResultSet rs = (ResultSet) cs.getObject(1);
+			
+			String sql = "SELECT * FROM reimbursement r LEFT JOIN rb_status rs ON r.rb_status_id = rs.rb_status_id LEFT JOIN rb_type rt "
+					+ "ON r.rb_type_id = rt.rb_type_id LEFT JOIN users u ON r.emp_u_id = u.u_id LEFT JOIN users u ON r.mgr_u_id = u.u_id";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ResultSet rs = ps.executeQuery();
+			
 			while (rs.next()) {
-				Reimbursement reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"), rs.getString("fname") + " " + rs.getString("lname"),
-						rs.getInt("mgr_u_id"),rs.getString(23) + " " + rs.getString(24), rs.getDouble("amt"), rs.getString("description"), rs.getBlob("img"),
-						rs.getDate("time_submission"), rs.getString("rb_type"),rs.getInt("rb_type_id"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
+				Reimbursement reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"),
+						rs.getString("fname") + " " + rs.getString("lname"), rs.getInt("mgr_u_id"),
+						rs.getString(23) + " " + rs.getString(24), rs.getDouble("amt"), rs.getString("description"),
+						rs.getBlob("img"), rs.getDate("time_submission"), rs.getString("rb_type"),
+						rs.getInt("rb_type_id"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
 				reimbursements.add(reimbursement);
 			}
 		} catch (IOException | SQLException e) {
