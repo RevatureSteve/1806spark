@@ -124,15 +124,15 @@ CREATE OR REPLACE PROCEDURE new_reimbursement(submit_id INT, amt INT, des VARCHA
 AS 
 BEGIN
 INSERT INTO reimbursement(r_submission_id, r_resolved_id, amount, description, img, time_submission, rq_type_id, rq_status_id)
-VALUES (submit_id, null, amt, des, img,(SELECT systimestamp FROM DUAL), type_id, 1);
+VALUES (submit_id, null, amt, des, img,(CURRENT_TIMESTAMP), type_id, 1);
 COMMIT;
 END;
 /
 BEGIN
-    new_reimbursement(2,1000, 'equipment replacement', null, 2);
+    new_reimbursement(2,2000, 'equipment replacement', null, 2);
 END;
 /
-
+--SELECT systimestamp FROM DUAL
 -- STORED PROCEDURE UPDATE EMPLOYEE
 CREATE OR REPLACE PROCEDURE update_employee_info(uId INT, pw VARCHAR2, f_name VARCHAR2, l_name VARCHAR2)
 AS
@@ -167,8 +167,5 @@ SELECT u.u_id, u.email, u.password, u.fname, u.lname, u.pos_id, p.pos_type
 FROM users u
 INNER JOIN position p ON u.pos_id = p.pos_id
 WHERE email = 'rhys@gmail.com';
-
-
-INSERT INTO users VALUES (0, 'unassigned', 'unassigned', 'unassigned', 'unassigned', 2);
 
 

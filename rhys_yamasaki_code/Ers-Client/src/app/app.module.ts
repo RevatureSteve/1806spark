@@ -9,6 +9,7 @@ import { ManagerComponent } from './manager/manager.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { EmployeeNavbarComponent } from './employee-navbar/employee-navbar.component';
 import { ManagerNavbarComponent } from './manager-navbar/manager-navbar.component';
+import { ViewReimbursementsComponent } from './view-reimbursements/view-reimbursements.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { ManagerNavbarComponent } from './manager-navbar/manager-navbar.componen
     ManagerComponent,
     EmployeeComponent,
     EmployeeNavbarComponent,
-    ManagerNavbarComponent
+    ManagerNavbarComponent,
+    ViewReimbursementsComponent,
   ],
   imports: [
     BrowserModule,

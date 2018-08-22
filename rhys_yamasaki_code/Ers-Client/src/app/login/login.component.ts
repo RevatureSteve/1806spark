@@ -1,6 +1,6 @@
-import { LoggedInService } from './../logged-in.service';
-import { LoginService } from './../login.service';
-import { User } from './../user';
+import { LoggedInService } from '../logged-in.service';
+import { LoginService } from '../login.service';
+import { User } from '../user';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';

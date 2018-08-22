@@ -1,4 +1,6 @@
+import { LoggedInService } from '../logged-in.service';
 import { Component, OnInit } from '@angular/core';
+import { User } from '../user';
 
 @Component({
   selector: 'app-employee-navbar',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeNavbarComponent implements OnInit {
 
-  constructor() { }
+  user: User;
+
+  constructor(private logged: LoggedInService) { }
 
   ngOnInit() {
+    this.user = this.logged.getLoggedInUser();
   }
 
 }

@@ -1,5 +1,6 @@
 <app-employee-navbar></app-employee-navbar>
 
+
 <p>
   {{user.pos_name}}
 </p>
@@ -13,8 +14,5 @@
   </li>
   <li *ngIf="user" (change)="getLoggedInUser()">
     {{user.email}}
-  </li>
-  <li *ngIf="user" (change)="getLoggedInUser()">
-    {{user.pos_name}}
   </li>
 </ul>

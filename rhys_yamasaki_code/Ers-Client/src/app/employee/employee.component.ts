@@ -1,5 +1,5 @@
 import { ActivatedRoute } from '@angular/router';
-import { LoggedInService } from './../logged-in.service';
+import { LoggedInService } from '../logged-in.service';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';
