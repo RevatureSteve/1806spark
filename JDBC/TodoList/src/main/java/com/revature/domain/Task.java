@@ -1,5 +1,11 @@
 package com.revature.domain;
 
+/**
+ * Task class in domain
+ * @author Eddie
+ *
+ */
+
 public class Task {
 
 	private int taskId;

@@ -3,11 +3,13 @@ package com.revaturedao;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
+import com.revature.domain.Task;
 import com.revature.domain.User;
 import com.revature.util.SetConnectionPropertiesUtil;
 
@@ -41,6 +43,45 @@ public class UserDaoImpl implements UserDao{
 			e1.printStackTrace();
 		}
 		return user;
+	}
+
+	@Override
+	public List<Task> getAllTasks() {
+		List<Task> tasks = new ArrayList<>();
+		//I am in the DAO so I can write JDBC logic to communicate with the Database
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
+			String sql = "SELECT * FROM task";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				tasks.add(new Task(rs.getInt("t_id"), rs.getInt("u_id"), rs.getString("t_name"), rs.getInt("ts_id"), null));
+			}
+			
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+		return tasks;
+	}
+
+	@Override
+	public List<Task> getTasksByUserId(int id) {
+		List<Task> tasks = new ArrayList<>();
+		
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
+			String sql = "SELECT * FROM task WHERE u_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				tasks.add(new Task(rs.getInt("t_id"), rs.getInt("u_id"), rs.getString("t_name"), rs.getInt("ts_id"), null));
+			}
+			
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+		return tasks;
 	}
 
 }

@@ -1,0 +1,55 @@
+#title {
+    font-size: 50px;
+    font-weight: bold;
+    width: 230px;
+    color: green;
+    position: relative;
+    animation: slide 5s ease-in-out infinite;
+    animation-direction: alternate;
+}
+
+@keyframes slide {
+    from {left: 415px;}
+    to {left: 915px;}
+}
+
+#main_body{
+    margin: auto;
+    max-width: 500px;
+    min-height: 335px;
+    border: 1px solid black;
+    border-radius: 17.5px 17.5px 0px 0px;
+    box-shadow: 5px 5px 5px grey;
+}
+
+#result{
+    margin: 15px 15px 1px 15px;
+    min-width: 470px;
+    min-height: 35px;
+    background-color: silver;
+    border: 1px solid black;
+    border-radius: 17.5px;
+    
+}
+
+.button_body{
+    margin: 0px 15px 0px 15px;
+}
+
+.buttons{
+    margin: 1px 0px 1px 0px;
+    width: 114.5px;
+    height: 65px;
+    font-size: 20px;
+}
+
+#instructions{
+    margin-top: 15px;
+    text-align: center;
+    color: coral;
+}
+
+.bottom_text{
+    text-align: center;
+    color: coral;
+}
