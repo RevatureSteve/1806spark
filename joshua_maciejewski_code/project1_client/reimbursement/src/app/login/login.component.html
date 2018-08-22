@@ -1,3 +1,14 @@
-<p>
-  login works!
-</p>
+<div class="container">
+  <h1>Welcome to the ERS Express! Please login!</h1>
+  <div id="login">
+    <div class="form-group">
+      <label class="form-check-label" for="email">Email:</label>
+      <input id="emailInput" #email class="form-control" type="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label class="form-check-label" for="password">Password:</label>
+      <input id="passwordInput" #password class="form-control" type="password" name="password" required>
+    </div>
+    <button id="loginBtn" class="btn btn-outline-primary" (click)="getUser(email.value, password.value)">Login</button>
+  </div>
+</div>

@@ -1,0 +1,183 @@
+//login componenet.html
+
+<div class="container">
+  <h1>Welcome to the ERS Express! Please login!</h1>
+  <div id="login">
+    <div class="form-group">
+      <label class="form-check-label" for="email">Email:</label>
+      <input id="emailInput" #email class="form-control" type="email" name="email" required>
+    </div>
+    <div class="form-group">
+      <label class="form-check-label" for="password">Password:</label>
+      <input id="passwordInput" #password class="form-control" type="password" name="password" required>
+    </div>
+    <button id="loginBtn" class="btn btn-outline-primary" (click)="getUser(email.value, password.value)">Login</button>
+  </div>
+</div>
+
+
+
+//login component.ts
+
+import { LoggedInService } from './../logged-in.service';
+import { LoginService } from './../login.service';
+import { User } from './../user';
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { RouterModule, ActivatedRoute, Router } from '@angular/router';
+
+@Component({
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css']
+})
+export class LoginComponent implements OnInit {
+
+  user: User;
+
+  constructor(private login: LoginService, private logged: LoggedInService, private route: ActivatedRoute, private router: Router) { }
+
+
+  getUser(email, password): void {
+    this.login.getUser(email, password).subscribe(user => this.changePage(user));
+  }
+
+  changePage(user) {
+    this.changeLoggedInUser(user);
+    this.logged.getLoggedInUser();
+    this.router.navigate(['/', this.user.pos_id, 'home']);
+  }
+
+  changeLoggedInUser(user) {
+    this.user = user;
+    this.logged.setLoggedInUser(this.user);
+  }
+
+  ngOnInit() {
+  }
+
+}
+
+//approuting module
+
+import { EmployeeComponent } from './employee/employee.component';
+import { ManagerComponent } from './manager/manager.component';
+import { RouterModule, Routes } from '@angular/router';
+import { NgModule } from '@angular/core';
+import { LoginComponent } from './login/login.component';
+
+export const routes: Routes = [
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
+  {path: 'login', component: LoginComponent},
+  {path: '2/home', component: ManagerComponent},
+  {path: '1/home', component: EmployeeComponent},
+  {path: '**', redirectTo: 'login'}
+];
+
+
+@NgModule({
+  imports: [RouterModule.forRoot(routes)],
+  exports: [RouterModule]
+})
+
+
+export class AppRoutingModule { }
+
+
+
+//app module ts
+
+import { BrowserModule } from '@angular/platform-browser';
+import { NgModule } from '@angular/core';
+import { AppRoutingModule } from './app-routing-module';
+
+import { AppComponent } from './app.component';
+import { LoginComponent } from './login/login.component';
+import { HttpClientModule } from '@angular/common/http';
+import { ManagerComponent } from './manager/manager.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { EmployeeNavbarComponent } from './employee-navbar/employee-navbar.component';
+import { ManagerNavbarComponent } from './manager-navbar/manager-navbar.component';
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    LoginComponent,
+    ManagerComponent,
+    EmployeeComponent,
+    EmployeeNavbarComponent,
+    ManagerNavbarComponent
+  ],
+  imports: [
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule
+  ],
+  providers: [],
+  bootstrap: [AppComponent]
+})
+export class AppModule { }
+
+
+loggedin service
+
+import { HttpClient } from '@angular/common/http';
+import { User } from './user';
+import { Injectable } from '@angular/core';
+
+@Injectable({
+  providedIn: 'root'
+})
+export class LoggedInService {
+
+  private static user: User;
+
+  constructor(private httpClient: HttpClient) { }
+
+  setLoggedInUser(us) {
+    LoggedInService.user = us;
+  }
+
+  getLoggedInUser(): User {
+    return LoggedInService.user;
+  }
+}
+
+//login service
+
+import { User } from './user';
+import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+
+
+@Injectable({
+  providedIn: 'root',
+})
+export class LoginService {
+
+  constructor(private httpClient: HttpClient) { }
+
+  getUser(email, password): Observable<User> {
+
+    const user = {
+      email: email,
+      password: password
+    };
+
+    return this.httpClient.post<User>('http://localhost:8080/Ers-Project-1/login', user);
+  }
+}
+
+
+user ts
+
+export class User {
+  user_id: number;
+  email: string;
+  password: string;
+  fname: string;
+  lname: string;
+  pos_id: number;
+  pos_name: string;
+}

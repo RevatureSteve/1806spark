@@ -17,15 +17,15 @@ public class SetConnectionsPropertyUtil {
 			e.printStackTrace();
 		}
 		
-		String url;
-		String username;
-		String password;
-		Properties props = new Properties();
-		props.load(new FileReader("src\\main\\resources\\db.properties"));
+//		String url;
+//		String username;
+//		String password;
+//		Properties props = new Properties();
+//		props.load(new FileReader("src\\main\\resources\\db.properties"));
 		
-		url = "jdbc:oracle:thin:@orcl.csyg1eonp1ik.us-east-2.rds.amazonaws.com:1521:ORCL";
-		username = "project1_db";
-		password = "p4ssw0rd";
+		String url = "jdbc:oracle:thin:@orcl.csyg1eonp1ik.us-east-2.rds.amazonaws.com:1521:ORCL";
+		String username = "project1_db";
+		String password = "p4ssw0rd";
 
 
 

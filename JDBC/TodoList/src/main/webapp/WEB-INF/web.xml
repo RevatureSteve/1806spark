@@ -17,6 +17,11 @@
     <servlet-name>task</servlet-name>
     <url-pattern>/task</url-pattern>
   </servlet-mapping>
+<<<<<<< HEAD
+=======
+ 
+<!--  TodoIdServlet -->
+>>>>>>> cf2b544b60c7138473f850a6d5d9eaee78ad8cef
   <servlet>
     <description></description>
     <display-name>TodoIdServlet</display-name>

@@ -15,7 +15,12 @@ public interface UserDao {
 	public User getUserByUsername(String username);
 	public List<Task> getAllTasks();
 	public List<Task> getTasksByUserId(int id);
+<<<<<<< HEAD
 	// UPDATE
+=======
+	
+ 	// UPDATE
+>>>>>>> cf2b544b60c7138473f850a6d5d9eaee78ad8cef
 	
 	// DELETE 
 	

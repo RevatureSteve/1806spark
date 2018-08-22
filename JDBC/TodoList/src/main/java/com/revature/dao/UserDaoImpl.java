@@ -48,8 +48,13 @@ public class UserDaoImpl implements UserDao{
 	@Override
 	public List<Task> getAllTasks() {
 		List<Task> tasks = new ArrayList<>();
+<<<<<<< HEAD
 		//i am in the dao so i can write JDBC logic to communicate with the database
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
+=======
+		// I am in the DAO so I can write JDBC logic to communicate with the Database
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
+>>>>>>> cf2b544b60c7138473f850a6d5d9eaee78ad8cef
 			String sql = "SELECT * FROM task";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
@@ -58,6 +63,7 @@ public class UserDaoImpl implements UserDao{
 				tasks.add(new Task(rs.getInt("T_ID"), rs.getInt("U_ID"), rs.getString("T_NAME"), rs.getInt("TS_ID"), null));
 			}
 			
+<<<<<<< HEAD
 		} catch (FileNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -68,20 +74,31 @@ public class UserDaoImpl implements UserDao{
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+=======
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+>>>>>>> cf2b544b60c7138473f850a6d5d9eaee78ad8cef
 		return tasks;
 	}
 
 	@Override
 	public List<Task> getTasksByUserId(int id) {
+<<<<<<< HEAD
 		
 		List<Task> tasks = new ArrayList<>();
 		
+=======
+		List<Task> tasks = new ArrayList<>();
+>>>>>>> cf2b544b60c7138473f850a6d5d9eaee78ad8cef
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
 			String sql = "SELECT * FROM task WHERE u_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
 			
+<<<<<<< HEAD
 			
 			while(rs.next()) {
 				tasks.add(new Task(rs.getInt("T_ID"), rs.getInt("U_ID"), rs.getString("T_NAME"), rs.getInt("TS_ID"), null));
@@ -101,4 +118,16 @@ public class UserDaoImpl implements UserDao{
 
 }
 	
+=======
+			while(rs.next()) {
+				tasks.add(new Task(rs.getInt("T_ID"), rs.getInt("U_ID"), rs.getString("T_NAME"), rs.getInt("TS_ID"), null));
+			}
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+		
+		return tasks;
+	}
+
+>>>>>>> cf2b544b60c7138473f850a6d5d9eaee78ad8cef
 }
