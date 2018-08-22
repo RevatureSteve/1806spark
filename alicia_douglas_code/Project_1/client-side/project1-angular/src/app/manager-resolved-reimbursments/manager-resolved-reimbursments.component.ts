@@ -14,11 +14,11 @@ export class ManagerResolvedReimbursmentsComponent implements OnInit {
   constructor(private reimbService: ReimbursementsService) { }
 
   ngOnInit() {
-    // this.getAllReimbursements();
+    this.getResolvedReimbursements();
   }
 
-  getAllReimbursements() {
-    this.reimbService.getAllReimbursements()
+  getResolvedReimbursements() {
+    this.reimbService.getResolvedReimbursements()
       .subscribe(reimbursements => this.reimbs = reimbursements);
   }
 

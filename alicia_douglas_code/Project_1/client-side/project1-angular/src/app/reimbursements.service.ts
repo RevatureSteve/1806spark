@@ -26,8 +26,16 @@ export class ReimbursementsService {
     return this.httpClient.get<Reimbursements[]>('http://localhost:8080/reimbursement/reimbursement/id' + '?userId=' + id);
   }
 
+  getPendingReimbursements() {
+    return this.httpClient.get<Reimbursements[]>('http://localhost:8080/reimbursement/pending');
+  }
+
   getPendingReimbursemetsById(id) {
     return this.httpClient.get<Reimbursements[]>(`http://localhost:8080/reimbursement/pending/id?userId=${id}`);
+  }
+
+  getResolvedReimbursements() {
+    return this.httpClient.get<Reimbursements[]>('http://localhost:8080/reimbursement/resolved');
   }
 
   getResolvedReimbursemetsById(id) {
