@@ -1,10 +1,11 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './login/login.component';
-import { EmployeeComponent } from './employee/employee.component';
-import { SubmitComponent } from './submit/submit.component';
-import { ReimbursementDetailsComponent } from './reimbursement-details/reimbursement-details.component';
-import { UpdateUserComponent } from './update-user/update-user.component';
+import { LoginComponent } from './navbar/login/login.component';
+import { EmployeeComponent } from './navbar/employee/employee.component';
+import { ReimbursementDetailsComponent } from './navbar/reimbursement-details/reimbursement-details.component';
+import { SubmitComponent } from './navbar/submit/submit.component';
+import { UpdateUserComponent } from './navbar/update-user/update-user.component';
+
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full'},

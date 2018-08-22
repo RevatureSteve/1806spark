@@ -2,15 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './login/login.component';
-import { EmployeeComponent } from './employee/employee.component';
+import { LoginComponent } from './navbar/login/login.component';
+import { EmployeeComponent } from './navbar/employee/employee.component';
 import { NavbarComponent } from './navbar/navbar.component';
-import { HttpClientModule} from '@angular/common/http';
-import { UpdateUserComponent } from './update-user/update-user.component';
-import { ReimbursementListComponent } from './reimbursement-list/reimbursement-list.component';
-import { AppRoutingModule } from './/app-routing.module';
-import { SubmitComponent } from './submit/submit.component';
-import { ReimbursementDetailsComponent } from './reimbursement-details/reimbursement-details.component';
+import { UpdateUserComponent } from './navbar/update-user/update-user.component';
+import { ReimbursementListComponent } from './navbar/reimbursement-list/reimbursement-list.component';
+import { SubmitComponent } from './navbar/submit/submit.component';
+import { ReimbursementDetailsComponent } from './navbar/reimbursement-details/reimbursement-details.component';
+import { HttpClientModule } from '@angular/common/http';
+import { AppRoutingModule } from './app-routing.module';
+
 
 @NgModule({
   declarations: [
