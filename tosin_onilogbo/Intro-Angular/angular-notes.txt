@@ -1,0 +1,43 @@
+Heavily use NPM which is an example of a popular CLI tool
+The standard for NPM Projects after pulling is run the command:
+npm install
+npm start
+
+But when creating a new npm project using npm init,
+the npm install works but NOT npm start, you must add this!!
+Angular has a CLI built on top of NPM called Angular CLI
+Need to install Angular CLI:
+npm install -g @angular/cli
+The -g is global install, making angular available anywhere on the computer
+
+
+Check Angular version:
+ng -v
+
+New Angular Project:
+ng new <project-name>
+don't include the < >
+
+Angular:
+
+directive: <app-name></app-name>
+What is the first directive given? <app-root></app-root>
+What is a directive? where there is a directive, a runtime it will inject
+    the corresponding html fragment then the style will style that html
+    and the ts file will control(like dom manipulation)the html/css
+A directive always belong to a component 
+    like app-root belongs to app.component
+
+component : @Component in a ts file!
+@Component requires 3 things
+    -selector aka directive name like app-root which becomes <app-root></app-root>
+    -template html
+    -styles
+
+Data Binding: 1-way & 2-way
+
+what does {{}} Angular Expression
+1 way Binding
+from what to what? well we're only talking about components
+    and components only have 3 things:
+    Data Binding means sharing the same data between them

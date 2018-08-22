@@ -1,0 +1,2 @@
+CREATE USER reimburse_db IDENTIFIED BY p4ssw0rd;
+GRANT CONNECT, RESOURCE TO reimburse_db;
