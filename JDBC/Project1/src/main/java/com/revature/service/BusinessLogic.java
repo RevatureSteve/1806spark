@@ -78,4 +78,9 @@ public class BusinessLogic {
 		return reimbursementDao.getApprovedReimbursements();
 	}
 	
+	public int newReimbursement(Reimbursement reimb) {
+		System.out.println("[LOG]---creating a new reimbursement---BusinessLogic()");
+		return reimbursementDao.newReimbursement(reimb);
+	}
+	
 }
