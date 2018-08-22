@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 #outter{
     background-color: red;
     font-family: monospace;
@@ -20,3 +21,28 @@
 
 
 
+=======
+#header{
+    font-size: xx-large;
+    margin-bottom: 20px;
+}
+
+#outter {
+    background-color: red;
+    font-family: monospace;
+    font-size: xx-large;
+    font-style: normal;
+    margin: 10px;
+}
+
+#inner {
+    background-color: #43ff3e;
+    /* width: 90%; */
+    margin: 10px;
+}
+
+#innerMost {
+    background-color: #5172ff;;
+    margin: 10px;
+}
+>>>>>>> f963ce3a5c8899ea111b471162fbbacadb3bb589

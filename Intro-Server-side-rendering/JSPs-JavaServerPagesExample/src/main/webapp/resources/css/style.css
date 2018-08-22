@@ -1,0 +1,24 @@
+@CHARSET "ISO-8859-1";
+
+
+/* 	3 way to select an HTML element 
+		by id #
+		by class .
+		by element name e.g. h1, body, p etc.
+ */
+
+h1{
+	color: red;
+}
+
+#strongId{
+	color: blue;
+}
+
+.byyee{
+	color: purple;
+}
+
+.navbar-default{
+	border-color: #b5b3b3;
+}

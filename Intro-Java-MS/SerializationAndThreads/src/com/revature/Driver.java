@@ -1,52 +1,99 @@
 package com.revature;
 
+import java.io.IOException;
 import java.util.Scanner;
 
 import com.revature.beans.Student;
 import com.revature.dao.StudentDao;
-import com.revature.presentations.PresentationUtil;
+import com.revature.presentation.PresentationUtil;
 
 public class Driver {
 
-	
 
+
+		
 	/*
-	 * serialization: Java Objects to byte code deserialization: byte code to Java
-	 * Objects
+	 * 	Serialization: Java Objects to byte code
+	 * 	Deserialization: byte code to Java Objects
 	 * 
-	 * First note: all Java Objects are blacklisted, meaning you cannot serialize
-	 * You must whitelist all individual class so the object created from them are
-	 * allowed to be serialized
-	 *
-	 * Serializable is a "Marker Interface" Marker Interfaces tells the JVM
-	 * something special Marker Interfaces have no methods The something special
-	 * about Serializable is the whitelisting Class must implement Serializable
-	 * (whitelist) Add a serialVersionUID
+	 * 	First note: All Java Objects are blacklisted, meaning you cannot do serialization
+	 * 					You must whitelist each individual class so the object created from
+	 * 					them are allowed to be serialized
 	 * 
-	 * What is the point of the serial version UID to match the version when
-	 * deserializing If the serialVersionUID doesm't match when deserializing what
-	 * happens? Throws an exception... InvalidClassException
+	 * 			*Serializable is a "Marker Interface"*
+	 * 			Marker Interfaces tells the JVM something special
+	 * 			Marker Interfaces have no methods!
+	 * 			The something special about Serializable is the whitelisting
+	 * 		1. The class must implements Serializable (whitelist)
+	 * 		2. Add a serialVersionUID to the class (OPTIONAL but best practice)
+	 * 		3. Use the ObjectOutStream or ObjectInputStream
+	 * 
+	 * 
+	 * 		What is the point of the serialVersionUID?
+	 * 			to match the version when deserializing
+	 * 		If the serialVersionUID doesn't match when deserializing what happens?
+	 * 			Throws an exception...but which one? InvalidClassException
+	 * 
+	 * 		What is the transient keyword?
+	 * 			During serialization, ignore the variables marked transient instead give them
+	 * 				the default value of that datatype	
+	 * 			
 	 */
 	public static void main(String[] args) {
+
 		Scanner scan = new Scanner(System.in);
-
-		PresentationUtil.welcomeMenu();
-
-		int input = scan.nextInt();
-		System.out.println("User input: " + input);
-
-		if (input == 1) {
-			Student stud = PresentationUtil.creatingNewStudent();
-
-			StudentDao.serializeStudent(stud);
-		} else if (input == 2) {
-			Student stud = StudentDao.deserializeStudent();
-			PresentationUtil.presentStudent(stud);
-		} else if (input == 3) {
-			scan.close();
-			return;
+		
+		while(true) {
+			PresentationUtil.welcomeMenu(); //we know welcomeMenu() is static because PresentationUtil is capital
+			int userInput = scan.nextInt();
+			System.out.println("User entered: " + userInput);
+			switch (userInput) {
+			case 1:
+				promptUserForNewStudentAndPersist();
+				break;
+			case 2:
+				getStudentAndDisplay();
+				break;
+			case 3:
+				System.out.println("exiting..");
+				System.exit(1);
+			}
+			
 		}
-
-		scan.close();
+//		serializeStudent(john, ); // Create of CRUD
+//		Student stud1 = StudentDao.deserializeStudent();	 // Read of CRUD
+		
+		
 	}
+	
+
+	public static void promptUserForNewStudentAndPersist() {
+		// First prompt user and retrieve input
+		Student stud = PresentationUtil.creatingNewStudent();
+		
+		// Persist Student to file
+		try {
+			StudentDao.serializeStudent(stud);
+		} catch (IOException e) {
+			PresentationUtil.errorView("File is corrupt");
+		}
+		
+	}
+	
+	
+	public static void getStudentAndDisplay() {
+		// retrieve student from StudentDAO (Data access object)
+		Student stud = StudentDao.deserializeStudent();
+			//Probably should of ducked the exceptions in the StudentDao and handled them here with try/catch
+		
+		PresentationUtil.presentStudent(stud);
+	}
+	
 }
+
+
+
+
+
+
+

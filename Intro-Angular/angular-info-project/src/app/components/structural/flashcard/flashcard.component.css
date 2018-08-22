@@ -1,0 +1,8 @@
+a {
+    color: red;
+    cursor: pointer;
+}
+
+a:hover {
+    color: purple;
+}
