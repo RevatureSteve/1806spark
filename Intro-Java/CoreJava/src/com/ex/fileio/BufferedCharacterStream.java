@@ -11,7 +11,7 @@ public class BufferedCharacterStream {
 	public static void main(String[] args) {
 		
 		String filename = "src/com/ex/fileio/sampleBufferedCharacterFile.txt";
-		writeCharacterStream(filename);
+//		writeCharacterStream(filename);
 		readCharacterStream(filename);
 	}
 	
@@ -20,7 +20,7 @@ public class BufferedCharacterStream {
 		try(BufferedWriter writer = new BufferedWriter(new FileWriter(filename));){
 			
 			writer.write("Hello world\n");
-			writer.write("again\n");
+			writer.write("Foo\n");
 			writer.write("Buffered Streams are faster and easier to use\n");
 			
 			
