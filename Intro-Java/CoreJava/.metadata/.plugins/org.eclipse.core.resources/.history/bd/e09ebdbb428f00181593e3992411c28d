@@ -1,0 +1,21 @@
+package Practical;
+
+public class Launcher extends Animals {
+		public static void main (String [] args) {
+			
+			Mammals elephant = new Mammals ("elephant", 36, true, "african");
+			System.out.println(elephant.getName());
+			
+			Reptile lizard = new Reptile ("lizard", 100, true, "iguana");
+			System.out.println(lizard.getName());
+			
+			Animals [] pets = new Animals[2];
+			pets[0] = elephant;
+			pets[1] = lizard;
+			
+			for (Animals p: pets) {
+				System.out.println();
+				}
+			
+		}
+}

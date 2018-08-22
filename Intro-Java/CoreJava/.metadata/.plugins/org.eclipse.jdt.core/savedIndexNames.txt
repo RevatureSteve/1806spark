@@ -1,0 +1,6 @@
+INDEX VERSION 1.131+C:\Users\Savii Luciano\my_git_repos\1806spark\Intro-Java\CoreJava\.metadata\.plugins\org.eclipse.jdt.core
+2380175872.index
+4002987369.index
+232852466.index
+2446798781.index
+1770836303.index

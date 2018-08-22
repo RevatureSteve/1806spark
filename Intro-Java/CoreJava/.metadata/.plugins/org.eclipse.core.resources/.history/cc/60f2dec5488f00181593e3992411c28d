@@ -1,0 +1,28 @@
+package Pet;
+
+public class Launcher {
+	public static void main (String [] args) {
+		
+		Dog sparky = new Dog ("sparky", 48, false, "zombie");
+		System.out.println(sparky.getName());
+		
+		Cat johnson = new Cat ("johnson", 50, true, "feline");
+		System.out.println(johnson.getName());
+		
+		Bird ralph = new Bird ("ralph", 20, true, "parrot");
+		System.out.println(ralph.getName());
+		
+		Dog leviathan = new Dog ("leviathan", 1000, true, "king");
+		System.out.println(leviathan.getName());
+		
+		Pet[] pets = new Pet[4];
+		pets[0] = sparky;
+		pets[1]= johnson;
+		pets[2] = ralph;
+		pets[3]= leviathan;
+		
+		for (Pet p: pets) {
+		System.out.println();
+		}
+	}
+}

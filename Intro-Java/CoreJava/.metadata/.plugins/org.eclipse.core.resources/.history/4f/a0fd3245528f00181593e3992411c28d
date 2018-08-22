@@ -1,0 +1,38 @@
+package com.ex.store;
+
+import java.util.Scanner;
+
+public class ViewPetsScreen implements Screen {
+
+	@Override
+	public Screen start() {
+		// this list of pets would be pulled from the database , not hard coded
+		System.out.println("Here are the availible pets, sparky the dog, pebbles the fish");
+		System.out.println("Please choose from the following options");
+		System.out.println("Please choose from the following options:");
+		System.out.println("1 to interact with your pets");
+		System.out.println("2 to view availible pets");
+		System.out.println("3 to view pet toys");
+		String input = scan.nextLine();
+		
+		switch (input) {
+		
+		case "1":
+			return new InteractwithPetScreen();
+		
+		case "2":
+			System.out.println("feature not yet implemented");
+			break;
+		
+		case "3":
+			System.out.println("feature not yet implemented");
+				break;
+				
+		
+		} 
+		
+		return this;
+	}
+	
+
+}

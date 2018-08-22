@@ -1,0 +1,13 @@
+package co.ex.classes;
+
+public class Launcher {
+	public static void main (String [] args) {
+		Dog sparky = new Dog ("spark", 48, false, "zombie");
+		System.out.println(sparky.getName());
+		Cat johnson = new Cat ("johnson", 50, true, "feline");
+		System.out.println(johnson.getName());
+		Bird ralph = new Bird ("ralph", 20, true, "parrot");
+		Dog leviathan = new Dog ("leviathan", 1000, true, "king");
+		
+	}
+}

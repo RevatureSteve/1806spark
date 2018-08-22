@@ -1,0 +1,36 @@
+package com.ex.store;
+
+import java.util.Scanner;
+
+public class MainMenuScreen implements Screen{
+	// Scanner is used to take in user input
+	private Scanner scan = new Scanner(System.in);
+
+	@Override
+	public Screen start() {
+		System.out.println("Please choose from the following options:");
+		System.out.println("1 to interact with your pets");
+		System.out.println("2 to view availible pets");
+		System.out.println("3 to view pet toys");
+		String input = scan.nextLine();
+		
+		switch (input) {
+		
+		case "1":
+			return new InteractwithPetScreen();
+		
+		case "2":
+			return new ViewPetsScreen();
+		
+		case "3":
+			System.out.println("feature not yet implemented");
+				break;
+				
+		
+		} 
+		
+		return this;
+	}
+	
+
+}

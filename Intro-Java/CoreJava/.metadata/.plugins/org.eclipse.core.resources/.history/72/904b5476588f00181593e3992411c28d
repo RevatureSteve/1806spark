@@ -1,0 +1,14 @@
+package com.Banking;
+
+import java.util.Scanner;
+
+public class MainMenuScreen implements Screen{
+
+	@Override
+	public Screen start() {
+		private Scanner scan = new Scanner(System.in);
+		
+		return null;
+	}
+
+}

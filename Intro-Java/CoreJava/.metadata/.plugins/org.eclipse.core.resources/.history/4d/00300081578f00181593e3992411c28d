@@ -1,0 +1,6 @@
+package com.Banking;
+
+public interface Screen {
+	Screen start();
+
+}

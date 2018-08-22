@@ -1,0 +1,14 @@
+package com.Banking;
+
+import java.util.Scanner;
+
+public class AppLauncher {
+		public static void main(String[] args) {
+			Screen currentScreen = new MainMenuScreen();
+			while(true) {
+				currentScreen = currentScreen.start();
+			}
+		}
+
+	}
+

@@ -1,0 +1,40 @@
+package com.Banking;
+
+import java.util.Scanner;
+
+public class MainMenuScreen implements Screen{
+
+		private Scanner scan = new Scanner(System.in);
+		
+		@Override
+		public Screen start() {
+			System.out.println("Please choose from the following options:");
+			System.out.println("1 Login");
+			System.out.println("2 Open Account");
+			System.out.println("3 Close Account");
+			System.out.println("4 Contact Us");
+			String input = scan.nextLine();
+			
+			switch (input) {
+			
+			case "1":
+				System.out.println("Feature not yet availible");
+				break;
+				
+			case "2":
+				System.out.println("Feature not yet availible");
+				break;
+				
+			case "3":
+				System.out.println("Feature not yet availible");
+				break;
+				
+			case "4":
+				System.out.println("Feature not yet availible");
+				break;		
+			}
+			
+				return this;
+	}
+
+}
