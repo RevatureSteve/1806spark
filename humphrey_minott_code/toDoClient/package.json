@@ -1,0 +1,14 @@
+{
+  "name": "todoclient",
+  "version": "1.0.0",
+  "description": "Client side application for Todo project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Humphrey Minott",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.16.3"
+  }
+}

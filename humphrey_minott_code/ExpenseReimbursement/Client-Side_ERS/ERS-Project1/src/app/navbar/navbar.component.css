@@ -1,0 +1,22 @@
+.row{
+    margin-top: 100px;
+    display: inline;
+    position:absolute;
+    width:800px;
+}
+
+.nav-link{
+    color:rgb(255, 255, 255);
+    font-size: 19px;
+
+}
+
+.nav-link active{
+   background-color:rgba(206, 26, 26, 0.603);
+}
+
+.nav-link.active,
+.show > .nav-link {
+ 
+  background-color: rgba(253, 10, 10, 0.856);
+}

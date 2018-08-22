@@ -1,0 +1,76 @@
+
+INSERT INTO position VALUES(1,'Manager');
+INSERT INTO position VALUES(2,'Employee');
+
+INSERT INTO request_status VALUES(1,'Pending');
+INSERT INTO request_status VALUES(2,'Accepted');
+INSERT INTO request_status VALUES(3,'Denied');
+
+INSERT INTO request_type VALUES(1,'Food');
+INSERT INTO request_type VALUES(2,'Lodging');
+INSERT INTO request_type VALUES(3,'Transportation');
+INSERT INTO request_type VALUES(4,'Other');
+
+INSERT INTO reimbursement(rq_type_id,r_submission_uid,amount) VALUES(1,138,200);
+
+
+INSERT INTO USERS(email,password,fname,lname,position_id) VALUES('humphreyminott@gmail.com','junior1996','Humphrey','Minott',1);
+INSERT INTO USERS(email,password,fname,lname,position_id) VALUES('humphreyminott@yahoo.com','junior1996','Junior','Minott',2);
+SELECT * FROM users;
+SELECT * FROM reimbursement;
+
+SELECT * FROM
+(SELECT REIMBURSEMENT.r_id,REIMBURSEMENT.RQ_TYPE_ID,REIMBURSEMENT.R_SUBMISSION_UID,REIMBURSEMENT.R_RESOLVED__UID,
+REIMBURSEMENT.RQ_STATUS_ID,REIMBURSEMENT.AMOUNT,REIMBURSEMENT.DESCRIPTION,REIMBURSEMENT.IMG,REIMBURSEMENT.TIME_SUBMISSION,
+REQUEST_STATUS.RQ_STATUS_ID,REQUEST_STATUS.RQ_STATUS
+FROM reimbursement INNER JOIN request_status ON reimbursement.rq_status_id = request_status.rq_status_id)
+WHERE rq_status= 'Pending';
+
+
+
+SELECT * FROM position WHERE pos_id= 1;
+
+
+COMMIT;
+
+
+SELECT r_id,rq_type,fname,R_RESOLVED__UID,rq_status,amount,description,img,time_submission FROM
+(SELECT REIMBURSEMENT.*,REQUEST_STATUS.*,Request_type.*,users.*
+FROM reimbursement INNER JOIN request_status ON reimbursement.rq_status_id = request_status.rq_status_id
+INNER JOIN request_type ON reimbursement.rq_type_id=request_type.rq_type_id
+INNER JOIN USERS ON reimbursement.R_SUBMISSION_UID = users.u_id)
+WHERE rq_status= 'Pending';
+
+SELECT r_id,rq_type,fname,lname,R_RESOLVED__UID,rq_status,amount,description,img,time_submission FROM
+(SELECT REIMBURSEMENT.*,REQUEST_STATUS.*,Request_type.*,users.*
+FROM reimbursement INNER JOIN request_status ON reimbursement.rq_status_id = request_status.rq_status_id
+INNER JOIN request_type ON reimbursement.rq_type_id=request_type.rq_type_id
+INNER JOIN USERS ON reimbursement.R_SUBMISSION_UID = users.u_id)
+WHERE u_id= 138;
+
+UPDATE users
+SET email = 'humphreyminott@gmail'
+where u_id = 138;
+
+commit;
+
+SELECT * FROM users;
+
+UPDATE reimbursement
+SET R_RESOLVED__UID = 138
+where R_ID = 354;
+
+
+SELECT r_id,rq_type,fname,lname,R_RESOLVED__UID,rq_status,amount,description,img,time_submission FROM 
+(SELECT REIMBURSEMENT.*,REQUEST_STATUS.*,Request_type.*,users.* FROM reimbursement INNER JOIN 
+request_status ON reimbursement.rq_status_id = request_status.rq_status_id INNER JOIN 
+request_type ON reimbursement.rq_type_id=request_type.rq_type_id INNER JOIN USERS ON 
+    reimbursement.R_SUBMISSION_UID = users.u_id);
+    
+    
+    
+SELECT r_id,rq_type,fname,lname,R_RESOLVED__UID,rq_status,amount,description,img,time_submission FROM 
+(SELECT REIMBURSEMENT.*,REQUEST_STATUS.*,Request_type.*,users.* FROM reimbursement INNER JOIN
+request_status ON reimbursement.rq_status_id = request_status.rq_status_id INNER JOIN 
+request_type ON reimbursement.rq_type_id=request_type.rq_type_id INNER JOIN USERS ON 
+reimbursement.R_SUBMISSION_UID = users.u_id) WHERE rq_status= 'Pending';

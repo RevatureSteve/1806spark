@@ -1,0 +1,8 @@
+<h1>Count is: <span *ngIf="isEven">{{count}}</span></h1>
+<button (click)="incrementCount()">Click to increment</button>
+
+<button class="btn btn-danger" (click)="randomIncrementOneAnd10()">Click to increment by random number</button>
+
+<ol>
+  <li *ngFor="let name of names">{{name}}</li>
+</ol>

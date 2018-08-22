@@ -1,0 +1,50 @@
+To start an angular project
+    - ng new (project-name)
+    -cd into the project, the ng serve
+
+To generate a new component | service | pipe | etc
+    - ng g c 
+    - ng g s
+    - ng g p
+    - ng g etc..
+
+    You can also generate it with test run by adding --dry-run
+
+    Angular:
+------------------------------------------------------------------------------------------------------------------------------
+    directives: <app-name></app-name> html code
+    What is the first directive given when you create a new component? <app-root></app-root>
+
+    What is a directive? Where there is a directive, at runtime it will inject the corresponding html fragment,
+        then the css will style that html, and the ts file will control it (logic/dom/manipulation) the html/css
+
+    A directive ALWAYS belongs to a component
+        like app-root belongs to app.component
+------------------------------------------------------------------------------------------------------------------------------ 
+
+component: @component in a ts file!
+@component requires 3 things!
+    - selector aka directive name like app-root which become <app-root></app-root>
+    - Template like HTML
+ ------------------------------------------------------------------------------------------------------------------------------
+
+ Data-binding {{}} Angular expression
+
+TS file -> HTML files 
+
+ 1 way data binding
+ from what to what? well we're only talking about components and components only have 3 things: html,css, ts
+    -Data binding means sharing the same data between them
+
+mini angular assignment: create an agular project, generate 2 components and use angular {{}} 
+                to print 2 seperate values to the html files
+------------------------------------------------------------------------------------------------------------------------------
+
+What are structural directives
+    There are 3 structural directives mainly flow control
+    - *ngFor
+    - *ngIf
+    - *ngSwitch
+------------------------------------------------------------------------------------------------------------------------------
+
+

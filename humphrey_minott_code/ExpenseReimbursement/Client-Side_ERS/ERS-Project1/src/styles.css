@@ -1,0 +1,7 @@
+body{
+    background-image:url("/assets/images/mario-background.jpg");
+    background-size: 86%;
+    padding: 0px;
+    margin: 0px;
+    /* background-repeat: no-repeat; */
+ }

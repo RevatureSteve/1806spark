@@ -1,0 +1,46 @@
+
+ #dancingMario{
+     margin-top: 406px;
+     margin-left: 500px;
+     height: 150px;
+     filter: brightness(132%);
+     position: absolute;
+     display: inline;
+ }
+ 
+ .btn{
+    display: inline;
+    position: absolute;
+ }
+ 
+ #bodydiv{
+     border: 0px dotted black;
+     width: 320px;
+     height: 562px;
+     float: right;
+     background-color: rgb(240, 35, 35);
+     margin-top:-6px;
+     text-align: center;
+     border-left: 2px dotted yellow;
+     display: inline;
+ }
+ 
+ #plant{
+     display: inline;
+     position: absolute;
+     margin-top: 325px;
+     margin-left: 840px;
+ }
+ 
+ #border{
+     display: inline;
+     position: absolute;
+     margin-left: 780px;
+     margin-top: -15px;
+ }
+
+ #space{
+     margin-top: 550px;
+     display: inline;
+     position: absolute;
+ }

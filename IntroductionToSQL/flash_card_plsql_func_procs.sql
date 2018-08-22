@@ -13,11 +13,12 @@ PRIMARY KEY(fc_id)
 );
 
 --DML insert
-INSERT INTO flash_cards VALUES (1, 'some question', 'some answer');
+INSERT INTO flash_cards VALUES (4, 'this is 4?', 'I should be shown in java');
 INSERT INTO flash_cards (fc_id, fc_question) VALUES(2, 'what is java?');
 
 
-INSERT INTO flash_cards (fc_question,fc_answer) VALUES('what is life?', '42');
+INSERT INTO flash_cards (fc_question,fc_answer) VALUES('what is life??', '42');
+COMMIT;
 
 --DML select
 SELECT fc_question q, fc_answer an FROM flash_cards;
@@ -64,7 +65,7 @@ END;
 /
 
 --CREATE [OR REPLACE] PROCEDURE proc_name [list of parameters]
---IS
+--IS/AS
 --       *Declaration section*
 --BEGIN
 --       *Execution section*
@@ -76,7 +77,7 @@ END;
 CREATE OR REPLACE PROCEDURE hello_world_procedure
 IS
 BEGIN
-  
+  -- Same as a procedure
   DBMS_OUTPUT.PUT_LINE('hello word!');
   
 END;
