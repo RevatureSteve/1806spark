@@ -30,7 +30,6 @@ public class LoginServlet extends HttpServlet {
 	/**
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
 
@@ -55,6 +54,7 @@ public class LoginServlet extends HttpServlet {
 			response.setHeader("Content-Type", "application/json");
 			response.getWriter().write(mapper.writeValueAsString(validUser));
 		}else {
+			response.setStatus(401);
 			response.getWriter().write("");
 		}
 	}
