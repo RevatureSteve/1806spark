@@ -64,27 +64,6 @@ public class transtarUserDao {
 			return user;
 		}
 		
-		/**
-		 * Pull all requests from a specific user.  
-		 * @param userId
-		 * @return req
-		 */
-		public TranstarUsers getUserRequests(int userId) {
-			TranstarUsers req = null;
-			try (Connection con = ConnectionsPropertiesUtil.newConnection()){
-				String sql = "SELECT * FROM reimbursement WHERE emp_u_id = ?";
-				PreparedStatement ps = con.prepareStatement(sql);
-				ps.setInt(1, userId);
-				ResultSet rs = ps.executeQuery();
-				if(rs.next()) {
-					req = new TranstarUsers(rs.getInt(1), rs.getInt(2), rs.getInt(3), rs.getInt(4), rs.getString("description"), rs.getBlob("img"),rs.getString("time_submission"), rs.getInt("rb_type_id"), rs.getInt("rb_type_id"));
-				}
-				
-			} catch (SQLException e) {
-				System.out.println("SQL fail");
-				e.printStackTrace();
-			}
-			return req;
-		}
+		
 
 }
