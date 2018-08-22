@@ -20,21 +20,24 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 	/*
 	 * Here I am creating a new reimbursement
 	 */
-	public Reimbursement newReimbursement(int reimbId, int empUserId, double amount, String description, int requestTypeId) {
+	public int newReimbursement(Reimbursement reimb) {
 		System.err.println("[LOG]---Starting ReimbursementDao---NewReimbursements()");
 		
+		int rowAffected = 0;
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
 			System.err.println("[LOG]---ReimbursementDao try/catch---newReimbursements() connection successful");
 			
-			String sql = "INSERT INTO reimbursement (R_Id, Emp_U_Id, Amt, Descripton, Rq_Type_Id)\r\n" + 
-					"VALUES(?, ?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO reimbursement ( Emp_U_Id, Amt, Description, Rq_Type_Id)\r\n" + 
+					"VALUES(?,?,?,?)";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, reimbId);
-			ps.setInt(2, empUserId);
-			ps.setDouble(3, amount);
-			ps.setString(4, description);
-			ps.setInt(5, requestTypeId);
+			ps.setInt(1, reimb.getEmpUserId());
+			ps.setDouble(2, reimb.getAmount());
+			ps.setString(3, reimb.getDescription());
+			ps.setInt(4, reimb.getRequestTypeId());
+			
+			rowAffected = ps.executeUpdate();
+			
 			
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
@@ -43,7 +46,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
-		return null;
+		return rowAffected;
 		
 	}
 	

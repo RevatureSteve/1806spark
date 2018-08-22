@@ -37,17 +37,12 @@ public class Reimbursement {
 	}
 
 	//for my newReiembursment Dao
-	public Reimbursement(int reimbId, int empUserId, int mgrUserId, double amount, String description, Blob img, String timeSubmit, int requestStatusId, int requestTypeId) {
+	public Reimbursement(int empUserId, double amount, String description, int requestTypeId) {
 		super();
-		this.reimbId = reimbId;
 		this.empUserId = empUserId;
-		this.mgrUserId = mgrUserId;
 		this.amount = amount;
 		this.description = description;
-		this.img = img;
-		this.TimeSubmit = timeSubmit;
 		this.requestTypeId = requestTypeId;
-		this.requestStatusId = requestStatusId;
 	}
 	
 	

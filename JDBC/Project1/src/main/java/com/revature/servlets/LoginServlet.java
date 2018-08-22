@@ -37,6 +37,8 @@ public class LoginServlet extends HttpServlet {
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
+	 * This servlet is used to login
+	 * URL endpoint is /Login
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("LoginServlet - POST");

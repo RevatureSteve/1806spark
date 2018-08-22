@@ -1,5 +1,9 @@
 package com.revature;
 
+import com.revature.dao.ReimbursementDao;
+import com.revature.dao.ReimbursementDaoImpl;
+import com.revature.dao.UserDao;
+import com.revature.domain.Reimbursement;
 import com.revature.domain.Users;
 import com.revature.service.BusinessLogic;
 
@@ -13,13 +17,13 @@ public class Driver {
 		 * 		and I am certain this is the same one I will use to login for managers as well
 		 * 		since they must provide their own email and pw.
 		 */
-		String email = "dan@yahoo.com";
+		/*String email = "dan@yahoo.com";
 		String password = "dan123";
 		//String fnameInput = "";
 		//String lnameInput = "";
 		
 		Users validUser = new BusinessLogic().login(email, password);
-		System.out.println("The user based upon the email and password provided is: \n\t\t" + validUser);
+		System.out.println("The user based upon the email and password provided is: \n\t\t" + validUser);*/
 		
 		/*
 		 * Here is the List of Users
@@ -54,7 +58,14 @@ public class Driver {
 		 */
 		/*List<Reimbursement> allApprovedReimbursements = new ReimbursementDaoImpl().getApprovedReimbursements();
 		System.out.println("Here is the List of all the Reimbursements\n " + allApprovedReimbursements);*/
-
+		
+		/*
+		 * Here is where I create a new reimburement
+		 */
+		Reimbursement reimb = new Reimbursement(1, 30.00, "more ammo", 1);
+		ReimbursementDao ri = new ReimbursementDaoImpl();
+		ri.newReimbursement(reimb);
+		System.out.println(ri);
 	}
 
 }
