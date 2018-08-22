@@ -18,7 +18,7 @@ export class EmpPendingReimbursementsComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.currentUser.getCurrentUser();
-    console.log(this.user);
+    // console.log(this.user);
     this.getEmployeePending();
   }
 

@@ -18,7 +18,7 @@ export class NewReimbursementComponent implements OnInit {
     console.log(amt);
     console.log (desc);
     console.log(type);
-    console.log(this.reimbursementService.createNewReimbursement(amt, desc, type, null));
+    this.reimbursementService.createNewReimbursement(amt, desc, type, null);
   }
 
 }

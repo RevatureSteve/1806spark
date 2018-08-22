@@ -18,13 +18,13 @@ export class EmpResolvedReimbursementsComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.currentUser.getCurrentUser();
-    console.log(this.user);
+    // console.log(this.user);
     this.getEmployeeResolved();
   }
 
   getCurrentUser() {
     this.user = this.currentUser.getCurrentUser();
-    console.log(this.user);
+    // console.log(this.user);
   }
 
   getEmployeeResolved() {

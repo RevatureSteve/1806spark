@@ -39,11 +39,16 @@ export class LoginComponent implements OnInit {
     //   pos_id: user.pos_id,
     //   posTitle: user.posTitle
     // };
-    console.log(user);
-    console.log(user);
+    // console.log(user);
+    // console.log(user);
     if (user) {
       this.currentUser.setCurrentUser(user);
-      this.router.navigate(['home']);
+      if (user.pos_id === 1) {
+        this.router.navigate(['home']);
+      } else {
+        this.router.navigate(['home/manager']);
+      }
+
     } else {
       // later add something telling user login failed
       this.router.navigate(['login']);

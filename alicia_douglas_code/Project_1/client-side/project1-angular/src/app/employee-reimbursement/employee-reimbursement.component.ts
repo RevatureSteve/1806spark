@@ -1,4 +1,3 @@
-import { LoginComponent } from './../../../../project1-angular-test/src/app/login/login.component';
 import { CurrentUserService } from './../current-user.service';
 import { ReimbursementsService } from './../reimbursements.service';
 import { Component, OnInit } from '@angular/core';

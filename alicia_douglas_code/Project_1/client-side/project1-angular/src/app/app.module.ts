@@ -14,6 +14,8 @@ import { HomeNavbarComponent } from './home-navbar/home-navbar.component';
 import { EmpPendingReimbursementsComponent } from './emp-pending-reimbursements/emp-pending-reimbursements.component';
 import { EmpResolvedReimbursementsComponent } from './emp-resolved-reimbursements/emp-resolved-reimbursements.component';
 import { NewReimbursementComponent } from './new-reimbursement/new-reimbursement.component';
+import { MainManagerComponent } from './main-manager/main-manager.component';
+import { HomeNavManagerComponent } from './home-nav-manager/home-nav-manager.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +28,9 @@ import { NewReimbursementComponent } from './new-reimbursement/new-reimbursement
     HomeNavbarComponent,
     EmpPendingReimbursementsComponent,
     EmpResolvedReimbursementsComponent,
-    NewReimbursementComponent
+    NewReimbursementComponent,
+    MainManagerComponent,
+    HomeNavManagerComponent
   ],
   imports: [
     BrowserModule,

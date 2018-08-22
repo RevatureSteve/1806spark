@@ -1,3 +1,4 @@
+import { CurrentUserService } from './../current-user.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -7,9 +8,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  constructor() { }
+  navbar;
+
+  constructor(private currentUser: CurrentUserService) { }
 
   ngOnInit() {
+    // this.validatePostition(this.currentUser.getCurrentUser().pos_id);
+    // this.validatePostition(1);
   }
+
+  // validatePostition(posId) {
+  //   console.log('validate position fn');
+  //   this.navbar = document.getElementById('home-nav-bar');
+  //   if (posId === 1) {
+  //     this.navbar.appendChild('home-nav-bar');
+  //     // document.getElementById('home-nav-bar').innerHTML = '<app-home-navbar></app-home-navbar>';
+  //     // this.navbar = '<app-home-navbar></app-home-navbar>';
+  //   }
+  // }
 
 }
