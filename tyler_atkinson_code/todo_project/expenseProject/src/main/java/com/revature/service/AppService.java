@@ -33,25 +33,21 @@ return null;
 }
 
 //view single reimbursement request (NOT WORKING!!)
-
 	
 	
-	public Reimbursement getReReq(Reimbursement userInput) {
-		
-		Reimbursement dbReimb = reimbursementDao.getReimbursementById(userInput.getR_id());
-		
-		if (dbReimb != null) {
-			
-			if (dbReimb.getR_id()==(userInput.getR_id())) {
-				return dbReimb;
-			}
-			
 
+	public List<Reimbursement> getReimbursementById(int r_id){
+		
+		System.out.println("[LOG]-- retrieving a reimbursement ");
+		
+		return reimbursementDao.getReimbursementById(r_id);
 	}
-		return dbReimb;
-}
 	
 
+
+	
+
+// view all reimbursements
 	public List <Reimbursement> getAllReimbursements(){
 		
 		System.out.println("[LOG]- retrieving reimbursement list");
@@ -62,7 +58,13 @@ return null;
 	
 
 
-
+// post reimbursement
+	
+	public List <Reimbursement> addReimbursement(){
+		
+		System.out.println("[LOG] - submitting reimbursement request");
+		return null;
+	}
 
 
 

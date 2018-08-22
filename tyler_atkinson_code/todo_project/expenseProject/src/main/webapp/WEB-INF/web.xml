@@ -19,4 +19,34 @@
     <servlet-name>AllReimbursementsServlet</servlet-name>
     <url-pattern>/AllReimbursementsServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>OneReimbursementServlet</display-name>
+    <servlet-name>OneReimbursementServlet</servlet-name>
+    <servlet-class>com.revature.servlets.OneReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>OneReimbursementServlet</servlet-name>
+    <url-pattern>/OneReimbursement</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AjaxTxServlet</display-name>
+    <servlet-name>AjaxTxServlet</servlet-name>
+    <servlet-class>com.revature.servlets.AjaxTxServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AjaxTxServlet</servlet-name>
+    <url-pattern>/AjaxTxServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AddReimbursementServlet</display-name>
+    <servlet-name>AddReimbursementServlet</servlet-name>
+    <servlet-class>com.revature.servlets.AddReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddReimbursementServlet</servlet-name>
+    <url-pattern>/AddReimbursementServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
