@@ -20,6 +20,7 @@ Angular has a CLI built ontop of NPM called...Angular CLI
 CLI: Command Line Interface
 Examples of CLIs: ng (Angular), NPM, node, git
 
+----------NG COMMANDS---------------------
 Need to install angular CLI:
 npm install -g @angular/cli
 The -g is global install, making angular available anywhere on the computer
@@ -31,8 +32,16 @@ New Angular Project:
 ng new <project-name>
 don't include the  < >
 
+Generate:
+ng generate component | service | pipe | etc <name> 
 
-Angular:
+Can test it before actually creating/modifying a file with
+ng generate component testname --dry-run
+
+concise version of above:
+ng g c testname --dry-run
+
+-----------------Angular Notes--------------
 
 -------------------------------------------
 directive: <app-name></app-name> html code
@@ -44,11 +53,11 @@ A directive ALWAYS belongs to a component
     like app-root belongs to app.component
 
 -------------------------------------------
-component: @Component in a ts file!
+component: @Component decorator in a ts file!
 @Component requires 3 things!
     -selector aka directive name like app-root which becomes <app-root></app-root>
     -template aka html 
-    -styles
+    -styles aka css
 
 -------------------------------------------
 Data Binding: 1-way & 2 way
@@ -63,3 +72,16 @@ from what to what? well we're only talking about components
 
 mini assignment: create an project, generate 2 components
         and use angular {{}} to print 2 separate values to the html files
+
+-------------------------------------------
+How to generate a component and what does it create/modify?
+    -creates: html, css, ts, spec(testing)
+    -modifies: adds the component to the app.module
+
+
+-------------------------------------------
+What are structural directives?
+    There are 3 structural directive (mainly flow control)!
+    -*ngFor
+    -*ngIf
+    -*ngSwitch

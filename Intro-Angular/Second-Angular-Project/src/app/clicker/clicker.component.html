@@ -1,0 +1,14 @@
+<h1>Count is: 
+    <span *ngIf="isEven" > {{ count }}
+        <span>another span</span> 
+    </span>
+</h1>
+<!-- display the names in a list -->
+<ol>
+    <!-- name/item is the variable to print to the screen with {{ }}-->
+    <!-- iterating through the array of names setting individals to name/item 1 at a one-->
+    <li *ngFor="let item of names">{{item}}</li>
+</ol>
+
+<button class="btn btn-danger" (mouseover)="incrementCount()" >mouse over to increment by 1</button>
+<button class="btn btn-dark" (click)="randomIncrementOneAnd10()" >Click to increment between 1 and 10</button>

@@ -1,10 +1,9 @@
 package com.revature.servlets;
 
 import java.io.IOException;
-<<<<<<< HEAD
-=======
+
+
 import java.io.PrintWriter;
->>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -35,10 +34,7 @@ public class HelloWorldServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
 		System.out.println("Hello World -GET");
-<<<<<<< HEAD
-	}
-	
-=======
+
 		// Point of PrintWriter to respond directly from a Servlet!
 		PrintWriter out = resp.getWriter();
 		out.write("<h1>Hello World!" + req.getParameter("username") + "</h1>");
@@ -49,6 +45,6 @@ public class HelloWorldServlet extends HttpServlet{
 		System.out.println("hello world -init called");
 		super.init();
 	}
->>>>>>> 8ff4b17dd674ea7826c6e1af98f02d7fae8acae8
+
 	
 }
