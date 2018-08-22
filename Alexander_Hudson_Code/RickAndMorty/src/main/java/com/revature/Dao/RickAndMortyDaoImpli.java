@@ -5,6 +5,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,16 +22,23 @@ public class RickAndMortyDaoImpli {
 	
 	
 	
-	
-	public Reimbursement createReimbursement() {
+	//----------------------------------------------------------------------------------------------------------
+	//CREATE
+	public Reimbursement createReimbursement(int amt, String description, Timestamp time_Submission, int rq_Type) {
 		Reimbursement re = null;
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			System.out.println("Connected");
 		
-		String sql = "INSERT INTO Reimbursement VALUES (?,?,?,?,?)";
+		String sql = "INSERT INTO Reimbursement VALUES (?,?,?,?)";
 		
 		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		ps.setInt(1, amt);
+		ps.setString(2, description);
+		ps.setTimestamp(3, time_Submission);
+		ps.setInt(4, rq_Type);
+		
 		ResultSet rs = ps.executeQuery();
 		System.out.println(re);
 		
@@ -65,6 +73,7 @@ public class RickAndMortyDaoImpli {
 			
 			ps.setString(1, email);
 			ps.setString(1, passWord);
+			
 			System.out.println("Retrieving Information");
 			
 			ResultSet rs = ps.executeQuery();
@@ -186,6 +195,95 @@ public class RickAndMortyDaoImpli {
 
 		return re;
 		
+	}
+	
+	
+	//--------------------------------------------------------------------------------------------------------------------
+	//UPDATE
+	
+	public Users updateUserPassWord(String passWord) {
+		Users us = null;
+		
+		try (Connection conn = SetConnectionUtil.getConnection()) {
+			System.out.println("Connected");
+			
+			String sql = "UPDATE users SET passWord=? WHERE password=?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, passWord);
+			System.out.println("Retrieving Information");
+			
+			ResultSet rs = ps.executeQuery();
+			System.out.println(us);
+			
+			while (rs.next()) {
+				us = new Users (rs.getInt("U_ID"), rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("FNAME"), rs.getString("LNAME"), rs.getInt("POS_ID"));
+				
+			}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			return us;
+	}
+	
+	
+	public Users updateUserFName(String fName) {
+		Users us = null;
+		
+		try (Connection conn = SetConnectionUtil.getConnection()) {
+			System.out.println("Connected");
+			
+			String sql = "UPDATE users SET fname=? WHERE fname=?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, fName);
+			System.out.println("Retrieving Information");
+			
+			ResultSet rs = ps.executeQuery();
+			System.out.println(us);
+			
+			while (rs.next()) {
+				us = new Users (rs.getInt("U_ID"), rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("FNAME"), rs.getString("LNAME"), rs.getInt("POS_ID"));
+				
+			}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			return us;
+	}
+	
+	public Users updateUserLName(String lName) {
+		Users us = null;
+		
+		try (Connection conn = SetConnectionUtil.getConnection()) {
+			System.out.println("Connected");
+			
+			String sql = "UPDATE users SET lname=? WHERE lname=?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, lName);
+			System.out.println("Retrieving Information");
+			
+			ResultSet rs = ps.executeQuery();
+			System.out.println(us);
+			
+			while (rs.next()) {
+				us = new Users (rs.getInt("U_ID"), rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("FNAME"), rs.getString("LNAME"), rs.getInt("POS_ID"));
+				
+			}
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+			return us;
 	}
 }
 
