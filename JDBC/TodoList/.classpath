@@ -35,6 +35,10 @@
 			<attribute name="org.eclipse.jst.component.dependency" value="/WEB-INF/lib"/>
 		</attributes>
 	</classpathentry>
+<<<<<<< HEAD
 	<classpathentry kind="lib" path="jar/ojdbc7.jar"/>
+=======
+	<classpathentry kind="lib" path="C:/Users/Stephen Hong/my_git_repos/1806spark/JDBC/TodoList/src/main/webapp/WEB-INF/lib/ojdbc7.jar"/>
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 	<classpathentry kind="output" path="target/classes"/>
 </classpath>

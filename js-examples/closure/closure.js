@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 /*
 <<<<<<< HEAD
@@ -67,3 +68,26 @@ function sum(x,y){
     return foo(y);
 }
 >>>>>>> 96a3cef7a318d158b57fa6b631d5de2e88dffb70
+=======
+/*
+    I want to count thinkgs
+        birds, cars, etc
+
+    Solve this issue of sharing a global variable with closure
+        Nested functions hold the variables of the outer function
+
+    Closure is JS way of encapsulation
+*/
+let count = 0; //global count
+
+//dynamic function for counting different items
+function makeCounter(noun) {
+    let count = 0; //outer function count
+
+    function countNoun() {
+        return noun + " count is: " + ++count;
+    };
+
+    return countNoun;
+}
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf

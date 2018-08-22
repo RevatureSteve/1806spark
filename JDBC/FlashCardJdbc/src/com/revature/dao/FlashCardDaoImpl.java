@@ -1,20 +1,27 @@
 package com.revature.dao;
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 import java.sql.Connection;
 import java.sql.DriverManager;
 =======
+=======
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+<<<<<<< HEAD
 >>>>>>> fa66388667395c761e59539daaea36af9d01238b
+=======
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
+<<<<<<< HEAD
 <<<<<<< HEAD
 import com.revature.FlashCard;
 
@@ -87,12 +94,15 @@ public static FlashCard getFlashCardById(int id) {
 	
 }
 =======
+=======
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 import com.revature.pojo.FlashCard;
 
 public class FlashCardDaoImpl implements FlashCardDao {
 
 	private final static String USERNAME = "flashcard_db";
 	private final static String PASSWORD = "p4ssw0rd";
+<<<<<<< HEAD
 	private final static String URL = "jdbc:oracle:thin:@octocat.ccwgu9dykdjd.us-west-2.rds.amazonaws.com:1521:ORCL";
 	
 	
@@ -123,6 +133,37 @@ public class FlashCardDaoImpl implements FlashCardDao {
 			ps.setString(2, fc.getFcAnswer()); // again 2 is the ? number, the 2nd argument is the value 
 			rowsAffected = ps.executeUpdate();
 			conn.commit(); // if you setAutoCommit(false); you must use the commit() on the connection
+=======
+	private final static String URL = "jdbc:oracle:thin:@hearthstone.cxazmpz2rlnm.us-east-2.rds.amazonaws.com:1521:ORCL";
+	
+	/*
+	 *	Why use a preparedStatement over a statement?
+	 *		-poor readability of a statement
+	 *	"INSERT INTO flash_cards (fc_question, fc_answer) VALUES('" + fc.fetFcQuestion() + ',' + fc.getFcAnswer() + "')";
+	 *		-statement can have SQL Injections while preparedStatement prevents them better
+	 *		Why is that? preparedStatement precompiles the SQL String without the user input, looks for SQL Keywords
+	 *				will only ever execute those keyword regardless of the what the user enters
+	 */
+	//	CREATE
+	@Override
+	public int createFlashCard(FlashCard fc) {
+		int rowsAffected = 0;
+		try(Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			/*
+			 * 	need to stop autocommit to run multiple sql statements as a single tx?
+			 */
+			conn.setAutoCommit(false);
+			
+			String sql = "INSERT INTO flash_cards (fc_question, fc_answer) VALUES(?,?)";
+//			Statement statement = conn.createStatement(); notice that statement doesn't take a SQL argument while preparedStatement does
+			PreparedStatement ps = conn.prepareStatement(sql); //	take in the SQL statement without variable first, use ? instead
+			//	After setting your SQL statement, we now need to register the parameters of the SQL Statement
+			//	You need ps.set method for each ?
+			ps.setString(1, fc.getFcQuestion()); //	datatype is String for the question, and it is the 1st ?
+			ps.setString(2, fc.getFcAnswer()); //	datatype is String for the question, and it is the 2nd ?
+			rowsAffected = ps.executeUpdate();
+			conn.commit(); //	if you setAutoCommit(false), you must use the commit() on the connection
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
@@ -132,13 +173,18 @@ public class FlashCardDaoImpl implements FlashCardDao {
 	@Override
 	public void createFlashCardProc(FlashCard fc) {
 		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+<<<<<<< HEAD
 			String sql = "{call insert_fc_procedure(?, ?, ?)}"; // surround { }, it works without but nothing gets returned..
+=======
+			String sql = "{call insert_fc_procedure(?, ?, ?)}"; // surround in {}, it works without but nothing gets returned
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 			String msg = "";
 			CallableStatement cs = conn.prepareCall(sql);
 			cs.setString(1, fc.getFcQuestion());
 			cs.setString(2, fc.getFcAnswer());
 			cs.setString(3, msg);
 			int rowsAffected = cs.executeUpdate();
+<<<<<<< HEAD
 			System.out.println("rows afftected: " + rowsAffected);
 		} catch (SQLException e) {
 			e.printStackTrace();
@@ -196,5 +242,67 @@ public class FlashCardDaoImpl implements FlashCardDao {
 	}
 
 >>>>>>> fa66388667395c761e59539daaea36af9d01238b
+=======
+			System.out.println("rowsAffected: " + rowsAffected);
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		
+	}
+	
+	//	READ
+	@Override
+	public List<FlashCard> getAllFlashCards() {
+		//Get a Connection to the OracleDB
+		//Use the DriverManager
+		List<FlashCard> myFlashCards = new ArrayList<>();
+			try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+				String sql = "SELECT * FROM flash_cards";
+				Statement statement = conn.createStatement();
+				ResultSet rs = statement.executeQuery(sql);
+				
+				System.out.println(rs);
+				//	loop through the ResultSet of flashcard records
+				while(rs.next()) {
+					/*
+					 * 	getInt(column Index)
+					 * 	or
+					 * 	getInt(column Label)
+					 */
+//					rs.getInt(1) is the fc_id value
+//					rs.getString("fc_question") is the question value
+//					rs.getString("fc_answer") is the answer value
+					FlashCard fc = new FlashCard(rs.getInt("fc_id"), rs.getString(2), rs.getString("fc_answer"));
+					myFlashCards.add(fc);
+				}
+				
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return myFlashCards;
+	}
+	
+	/**
+	 * 	need a single flashcard back from the database?
+	 * 		create a get Method and search by a unique field(column)
+	 */
+	public FlashCard getFlashCardById(int id) {
+		FlashCard fc = null;
+			try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+				String sql = "SELECT * FROM flash_cards WHERE fc_id = " + id;
+				Statement statement = conn.createStatement();
+				ResultSet rs = statement.executeQuery(sql);
+				
+				if(rs.next()) {
+					fc = new FlashCard(rs.getInt("fc_id"), rs.getString(2), rs.getString("fc_answer"));
+				}
+			} catch (SQLException e) {
+				e.printStackTrace();
+			}
+			return fc;
+
+	}
+
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 
 }

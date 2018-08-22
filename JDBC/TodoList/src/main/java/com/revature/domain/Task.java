@@ -1,19 +1,33 @@
 package com.revature.domain;
 
 /**
+<<<<<<< HEAD
  * 	Task class in domain
  * @author Steve Work PC
  *
  */
 public class Task {
 
+=======
+ * Task Class in Domain
+ * @author Stephen Hong
+ *
+ */
+
+public class Task {
+	
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 	private int taskId;
 	private int userId;
 	private String taskName;
 	private int taskStatusId;
 	private String taskStatusLevel;
 	
+<<<<<<< HEAD
 	public Task() {	}
+=======
+	public Task() {}
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 
 	public Task(int taskId, int userId, String taskName, int taskStatusId, String taskStatusLevel) {
 		super();
@@ -24,7 +38,10 @@ public class Task {
 		this.taskStatusLevel = taskStatusLevel;
 	}
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 	public int getTaskId() {
 		return taskId;
 	}
@@ -70,7 +87,11 @@ public class Task {
 		return "Task [taskId=" + taskId + ", userId=" + userId + ", taskName=" + taskName + ", taskStatusId="
 				+ taskStatusId + ", taskStatusLevel=" + taskStatusLevel + "]";
 	}
+<<<<<<< HEAD
 	
 	
 	
+=======
+
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 }

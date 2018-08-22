@@ -7,14 +7,19 @@
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>war</packaging>
 
+<<<<<<< HEAD
 	<!-- no java version #? what is the default for maven? Maven defaults to....1.5 
 		so update it! -->
+=======
+	<!-- no Java version # Maven defaults to 1.5 -->
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 	<properties>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 	</properties>
 
 	<dependencies>
+<<<<<<< HEAD
 		<!-- 
 			I can list multiple dependencies(JARS) in here 
 			Once I place a dependency, MAVEN will download
@@ -22,6 +27,11 @@
 				into a local folder called .m2, regardless of
 				the type of OS
 			-->
+=======
+		<!-- I can list multiple dependencies (JARS) in here Once I place a dependency, 
+			MAVEN will download that JAR from Maven Central (the website) into a local 
+			folder called .m2, regardless of the type of OS -->
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 		<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
 		<dependency>
 			<groupId>javax.servlet</groupId>
@@ -29,6 +39,26 @@
 			<version>2.5</version>
 			<scope>provided</scope>
 		</dependency>
+<<<<<<< HEAD
+=======
+		
+		<!-- if you get an error, delete from the actual file path and re-update -->
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-core</artifactId>
+			<version>2.9.6</version>
+		</dependency>
+
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
+		<dependency>
+			<groupId>com.fasterxml.jackson.core</groupId>
+			<artifactId>jackson-databind</artifactId>
+			<version>2.9.6</version>
+		</dependency>
+
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 
 	</dependencies>
 

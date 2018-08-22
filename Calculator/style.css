@@ -1,0 +1,52 @@
+body {
+    width: 500px;
+    margin: auto;
+  }
+  
+.calculator {
+    padding: 17px;
+    box-shadow: 5px 5px 4px 0px rgba(0, 0, 0, 0.2);
+    border-radius: 20px 20px 0px 0px;
+    border: 1px solid #000;
+}
+  
+.result {
+    border: 1px solid #000;
+    border-radius: 50px;
+    height: 60px;
+    margin-bottom: 6px;
+    font-size: 2.5rem;
+    border-radius: 50px;
+    background-color: #aaa;
+}
+
+.nomargin {
+    margin-bottom: 0;
+}
+  
+.numbers {
+    display: inline-block;
+    font-size: 2em;
+    border: 1px solid #eee;
+    width: 113px;
+    text-align: center;
+    padding: 10px 20px;
+    cursor: pointer;
+    background: linear-gradient(to bottom, #ffffff 0%, #dddddd 100%);
+}
+
+.text {
+      text-align: center;
+      color: #ff9266;
+}
+
+.slide {
+    animation: mymove 3s infinite;
+    position: relative;
+    color: #0ede0e;
+}
+
+@keyframes mymove {
+    from {left: 10px;}
+    to {left: 400px;}
+}

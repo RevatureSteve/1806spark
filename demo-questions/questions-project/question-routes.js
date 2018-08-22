@@ -2,14 +2,13 @@
 
 var express = require("express");
 var router = express.Router();
-// Question models is for mongoose 
+// Question models is for mongoose
 var Question = require("./models").Question;
 
 // GET /questions
 // Route for questions collection
 router.get("/", function(req, res, next){
 	console.log('/questions');
-	// Mongo stuff below
 	Question.find({})
 				// .sort({createdAt: -1})
 				.exec(function(err, questions){
@@ -25,7 +24,6 @@ router.post("/", function(req, res, next){
 	console.log(req.body);
 	var question = new Question(req.body);
 	console.log(question);
-	// Mongo stuff below
 	question.save(function(err, question){
 		if(err) return next(err);
 		res.status(201);
@@ -38,6 +36,9 @@ router.post("/", function(req, res, next){
 router.get("/:qID", function(req, res, next){
 	res.json(req.question);
 });
+
+
+
 
 // DELETE /questions/:qID/answers/:aID
 // Delete a specific answer

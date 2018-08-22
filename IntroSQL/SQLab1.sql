@@ -20,7 +20,7 @@ INSERT INTO genre VALUES (26, 'Deathcore');
 INSERT INTO genre VALUES (27, 'Trap');
 --Task – Insert two new records into Employee table
 INSERT INTO employee VALUES (9, 'Holmes', 'Chris', 'Software Engineer',2, '29-Jan-91', '1-Jan-07', '221 OK St', 'Tampa', 'FL','USA', 't3k''1t8',17808369987, 17208339987,'chris@chinookcorp.com' );
-INSERT INTO employee VALUES (210, 'Paularinne', 'Devin', 'Footware Associate',1,'22-Apr-91', '1-Jan-07', '335 yeayea Ln', 'Tampa', 'FL','USA','t3k''1t8',8135678478, 12808365987,'devin@chinookcorp.com' );
+INSERT INTO employee VALUES (300, 'LOLOLOL', 'RARARA', 'Footware Associate',1,'22-Apr-91', '1-Jan-07', '335 yeayea Ln', 'Tampa', 'FL','USA','t3k''1t8',8135678478, 12808365987,'devin@chinookcorp.com' );
 --Task – Insert two new records into Customer table
 INSERT INTO customer VALUES (60, 'Mike','Jones', 'Revature', '1234 st', 'Tampa', 'FL', 'USA',44132, 19894567789,2349991111,'mike@mikejones.com', 5) ; 
 INSERT INTO customer VALUES (61, 'Bill','Waterman', 'Revature', '6789 st', 'Brandon', 'FL', 'USA',33510, 1787899822,17574667373,'bill@billwaterman.com', 5) ; 
@@ -227,5 +227,52 @@ END;
 /
 
 -- Task – Create a stored procedure that returns the managers of an employee.
+SELECT REPORTSTO;
 
 
+-- 6.0 Triggers
+-- In this section you will create various kinds of triggers that work when certain DML statements are executed on a table.
+
+-- 6.1 AFTER/FOR
+-- Task - Create an after insert trigger on the employee table fired after a new record is inserted into the table.
+CREATE OR REPLACE TRIGGER new_record AFTER 
+INSERT ON employee FOR EACH ROW 
+BEGIN
+INSERT INTO ALBUM VALUES(500, '500', 200);
+END;
+
+
+
+COMMIT;
+INSERT INTO employee VALUES (277, 'P', 'D', 'Footware Associate',1,'22-Apr-91', '1-Jan-07', '335 yeayea Ln', 'Tampa', 'FL','USA','t3k''1t8',8135678478, 12808365987,'devin@chinookcorp.com' );
+-- Task – Create an after update trigger on the album table that fires after a row is inserted in the table
+CREATE OR REPLACE TRIGGER new_row AFTER 
+UPDATE ON album FOR EACH ROW 
+BEGIN
+INSERT INTO ALBUM VALUES(501, '501', 200);
+END;
+-- Task – Create an after delete trigger on the customer table that fires after a row is deleted from the table.
+CREATE OR REPLACE TRIGGER deleted_row AFTER 
+DELETE ON customer FOR EACH ROW 
+BEGIN
+INSERT INTO ALBUM VALUES(502, '502', 200);
+END;
+
+DELETE FROM customer WHERE customerid = 22;
+--7.0 JOINS
+--In this section you will be working with combing various tables through the use of joins. You will work with outer, inner, right, left, cross, and self joins.
+
+--7.1 INNER
+--Task – Create an inner join that joins customers and orders and specifies the name of the customer and the invoiceId.
+
+--7.2 OUTER
+--Task – Create an outer join that joins the customer and invoice table, specifying the CustomerId, firstname, lastname, invoiceId, and total.
+
+--7.3 RIGHT
+--Task – Create a right join that joins album and artist specifying artist name and title.
+
+--7.4 CROSS
+--Task – Create a cross join that joins album and artist and sorts by artist name in ascending order.
+
+--7.5 SELF
+--Task – Perform a self-join on the employee table, joining on the reportsto column.

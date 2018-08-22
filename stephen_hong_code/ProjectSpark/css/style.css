@@ -1,0 +1,357 @@
+body {
+    margin: 0;
+    bottom: 0;
+    height: 100%;
+    font-family: Helvetica Neue, 'Roboto', sans-serif;
+}
+
+.navtitle {
+    padding: 12px;
+    margin: 0;
+}
+
+.anchortitle {
+    text-decoration: none;
+    color: #2c91de;
+    float: left;
+}
+
+.anchortitle:hover {
+    text-decoration: none;
+    color: #1d76ba;
+}
+
+.header {
+    background-color: #f7f7f7;
+    overflow: auto;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 2px 1px 0px rgba(102, 93, 93, 0.15);
+    padding-right: 24px;
+}
+
+.rightnav {
+    float: right;
+    padding: 12px;
+}
+
+.navbtn {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    background-color: transparent;
+    text-decoration: none;
+    border-color: #333333;
+    color: #333333;
+    opacity: 0.7;
+}
+
+.navbtn1 {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px 8px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    background-color: transparent;
+    text-decoration: none;
+    border-color: #333333;
+    color: #333333;
+    opacity: 0.7;
+}
+
+.navbtn2 {
+    cursor: pointer;
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    background-color: transparent;
+    text-decoration: none;
+    border-color: #333333;
+    color: #333333;
+    opacity: 0.7;
+}
+
+.createbtn {
+    display: inline-block;
+    padding: 10px;
+    border-radius: 50%;
+    border-style: solid;
+    border-width: 1px;
+    background-color: transparent;
+    text-decoration: none;
+    border-color: #fff;
+    color: #fff;
+    opacity: 0.7;
+    width: 64px;
+    height: 64px;
+    font-size: 200%;
+    margin-top: 15px;
+    cursor: pointer;
+}
+
+.wrapper {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+}
+
+.sidebar {
+    box-sizing: border-box;
+    float: left;
+    width: 288px;
+    color: #fff;
+    background-color: #2c91de;
+}
+
+.padding1 {
+    padding: 15px;
+}
+
+.sidebarname {
+    text-align: center;
+}
+
+.sidebar:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 288px;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    background: #2c91de;
+    border: none;
+}
+
+hr {
+    background-color: transparent;
+    border-color: #a1c0dc;
+    border-style: solid;
+    border-width: 1px 0 0 0;
+    height: 1px;
+}
+
+.sidenav {
+    display: block;
+    box-sizing: border-box;
+    padding: 12px;
+    border-radius: 3px;
+    text-decoration: none;
+    color: inherit;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 500;
+}
+
+.topzero {
+    padding-top: 0;
+}
+
+.marginbottom {
+    margin-bottom: 16px;
+}
+
+.rightwrapper {
+    position: relative;
+    min-height: 100vh;
+    overflow: hidden;
+    box-sizing: border-box;
+    background-color: #ededed;
+}
+
+.padding2 {
+    padding: 48px;
+}
+
+.newproject {
+    background-color: #82807e;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-right: 24px;
+    border-radius: 3px;
+    border: 1px solid #dbd8d8;
+    border-width: 1px 1px 2px 1px;
+    box-shadow: 0 1px 0 #e7e7e7;
+    width: 30%;
+    float: left;
+    text-align: center;
+    height: 180px;
+    cursor: pointer;
+}
+
+.newproject:hover {
+    background-color: #757371;
+}
+
+.project {
+    background-color: white;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    margin-right: 24px;
+    border-radius: 3px;
+    border: 1px solid #dbd8d8;
+    border-width: 1px 1px 2px 1px;
+    box-shadow: 0 1px 0 #e7e7e7;
+    width: 30%;
+    float: left;
+    text-align: center;
+    height: 180px;
+    cursor: pointer;
+}
+
+.project:hover {
+    background-color: #f0f9ff;
+}
+
+.padding3 {
+    padding: 18px 24px;
+}
+
+.info {
+    font-size: 13px;
+    opacity: 0.5;
+}
+
+.footer {
+    background-color: #f7f7f7;
+    overflow: auto;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0px 2px 1px 0px rgba(102, 93, 93, 0.15);
+    padding-right: 24px;
+    border-top: 1px solid #dedede;
+}
+
+.copyright {
+    padding: 12px;
+    margin: 0;
+    font-size: 13px;
+}
+
+.create {
+    color: #e6e6e6;
+}
+
+.titlebg {
+    background-color: #ededed;
+    border-bottom: 1px solid #dedede;
+}
+
+.sectiontitle {
+    height: 150px;
+    align-items: center;
+    display: flex;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.dimensions {
+    margin-top: 12px;
+    min-height: 70vh;
+}
+
+.label1 {
+    font: inherit;
+    display: block;
+    font-weight: 500;
+    margin: 7.2px 0;
+}
+
+.input1 {
+    box-sizing: border-box;
+    display: inline-block;
+    width: 100%;
+    padding: 0.6em 12px;
+    font: inherit;
+    margin: 7px 0;
+    border-radius: 3px;
+    border: 1px solid #e6e6e6;
+}
+
+.workspace {
+    float: left;
+    width: 33%;
+    margin-right: 24px;
+}
+
+.description {
+    float: left;
+    width: 50%;
+    margin-right: 24px;
+}
+
+.row {
+    margin-bottom: 24px;
+    width: 100%;
+}
+
+.loginbox {
+    background-color: white;
+    border-radius: 3px;
+    border: 1px solid #dbd8d8;
+    border-width: 1px 1px 2px 1px;
+    box-shadow: 0 1px 0 #e7e7e7;
+    width: 512px;
+    margin: 72px auto;
+}
+
+.boxtitle {
+    font-size: 24px;
+    line-height: 1;
+    min-height: 36px;
+    font-weight: 500;
+    text-align: center;
+}
+
+.signinbtn {
+    cursor: pointer;
+    display: inline-block;
+    font-weight: 600;
+    padding: 12px 20px;
+    margin: 7px 0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    border-style: solid;
+    border-width: 1px;
+    text-decoration: none;
+    border-color: #333333;
+    background-color: #333333;
+    color: white;
+    width: 100%;
+}
+
+.textdecor {
+    text-decoration: none;
+    color: #000;
+}
+
+textarea {
+    width: 32%;
+    float: top;
+    min-height: 250px;
+    overflow: scroll;
+    margin: auto;
+    display: inline-block;
+    background: #f4f4f9;
+    outline: none;
+    font-family: Courier, sans-serif;
+    font-size: 14px;
+}
+
+.valid {
+    color: green;
+}
+
+.invalid {
+    color: red;
+  }

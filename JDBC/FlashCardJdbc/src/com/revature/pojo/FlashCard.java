@@ -8,19 +8,34 @@ import java.io.Serializable;
  * 		(each variable will have a column in the database)
  * 
  * 	This is called: "Object Relational Mapping" ORM
+<<<<<<< HEAD
  * @author Steve Work PC
  *
  */
 public class FlashCard implements Serializable{
 
 	// state
+=======
+ * @author Stephen Hong
+ *
+ */
+public class FlashCard implements Serializable{
+	
+	//	state
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 	private int fcId;
 	private String fcQuestion;
 	private String fcAnswer;
 	
+<<<<<<< HEAD
 	// no-args constructor
 	public FlashCard() {}
 	
+=======
+	//	no-args constructor
+	public FlashCard() {}
+
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 	public FlashCard(int fcId, String fcQuestion, String fcAnswer) {
 		super();
 		this.fcId = fcId;
@@ -28,9 +43,13 @@ public class FlashCard implements Serializable{
 		this.fcAnswer = fcAnswer;
 	}
 
+<<<<<<< HEAD
 
 
 	// getters and setter
+=======
+	// getters and setters
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 	public int getFcId() {
 		return fcId;
 	}
@@ -60,4 +79,8 @@ public class FlashCard implements Serializable{
 		return "FlashCard [fcId=" + fcId + ", fcQuestion=" + fcQuestion + ", fcAnswer=" + fcAnswer + "]";
 	}
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 }

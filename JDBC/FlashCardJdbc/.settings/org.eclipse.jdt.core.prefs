@@ -9,7 +9,10 @@ org.eclipse.jdt.core.compiler.debug.sourceFile=generate
 org.eclipse.jdt.core.compiler.problem.assertIdentifier=error
 org.eclipse.jdt.core.compiler.problem.enumIdentifier=error
 <<<<<<< HEAD
+<<<<<<< HEAD
 org.eclipse.jdt.core.compiler.release=enabled
 =======
 >>>>>>> fa66388667395c761e59539daaea36af9d01238b
+=======
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 org.eclipse.jdt.core.compiler.source=1.8

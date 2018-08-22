@@ -1,4 +1,5 @@
 <<<<<<< HEAD
+<<<<<<< HEAD
 
 
 #outter{
@@ -23,6 +24,9 @@
     margin-bottom: 20px;
 =======
 #header{
+=======
+#header {
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
     font-size: xx-large;
     margin-bottom: 20px;
 }
@@ -37,12 +41,20 @@
 
 #inner {
     background-color: #43ff3e;
+<<<<<<< HEAD
     /* width: 90%; */
+=======
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
     margin: 10px;
 }
 
 #innerMost {
+<<<<<<< HEAD
     background-color: #5172ff;;
     margin: 10px;
 >>>>>>> 96a3cef7a318d158b57fa6b631d5de2e88dffb70
+=======
+    background-color: #5172ff;
+    margin: 10px;
+>>>>>>> 4eb29dca203a33cdc98ed607180e8dc41eace9bf
 }
