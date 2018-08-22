@@ -1,0 +1,43 @@
+package com.Gumball.service;
+
+import java.util.List;
+
+import com.Gumball.dao.GumballDao;
+import com.Gumball.dao.GumballDaoImpli;
+import com.Gumball.pojo.Reimbursements;
+import com.Gumball.pojo.Users;
+
+public class AppService {
+	
+	private GumballDao gDao = new GumballDaoImpli();
+	
+	
+	public Users login(Users userInput) {
+		
+		Users dbUser = gDao.getUserByEmail(userInput.getEmail());
+		
+		if (dbUser !=null ) {
+		if(dbUser.getPassWord().equals(userInput.getPassWord())) {
+			return dbUser;
+		}
+	}
+	
+	return null;
+	}
+	
+	public List<Reimbursements> getReimbursements(){
+		System.out.println("[LOG]-------rettrieving--------All Tasks");
+		return gDao.getReimbursements();
+	}
+	
+	public List<Users> getAllUsersById(int u_Id){
+		System.out.println("[LOG]-------retrieving--------Users");
+		return null;
+		
+	}
+	
+	public Users getUserByEmail(String email) {
+		return null;
+	}
+
+}

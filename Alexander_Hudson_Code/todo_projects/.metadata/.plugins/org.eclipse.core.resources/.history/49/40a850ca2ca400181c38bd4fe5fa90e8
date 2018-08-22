@@ -1,0 +1,8 @@
+package test;
+
+public class B extends A{    
+	   
+		public void main(String[] args) {      
+		  System.out.println("hello");    
+		} 
+	}

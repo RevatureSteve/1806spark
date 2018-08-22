@@ -1,0 +1,42 @@
+package com.Gumball.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.Gumball.pojo.Users;
+import com.Gumball.service.AppService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class GetUsersByEmail extends HttpServlet{
+	
+	static String email;
+	
+	private AppService appService = new AppService();
+	
+	
+	protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
+		System.out.println("User Email -GET");
+		
+		
+		Users us = appService.getUserByEmail(email);
+		
+		ObjectMapper mapper = new ObjectMapper();
+		
+		String json = mapper.writeValueAsString(us);
+		resp.setContentType("application/json");
+		
+		PrintWriter out = resp.getWriter();
+		out.print(json);
+
+	}
+	
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		System.out.println("User Emails -POST");  
+	}
+}

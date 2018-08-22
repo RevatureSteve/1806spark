@@ -1,0 +1,35 @@
+package com.Gumball.dao;
+
+import java.util.List;
+
+import com.Gumball.pojo.Reimbursement;
+import com.Gumball.pojo.Users;
+
+
+
+public class Driver {
+	
+	static Reimbursement re;
+	static String email;
+	
+	public static void main(String[] args) {
+		
+	
+//		GumballDao Gumball = new GumballDaoImpli();
+//		List <Users> re = Gumball.getAllUsers();
+//		System.out.println(re);
+//
+//	}
+	
+//	GumballDao Gumball = new GumballDaoImpli();
+//	Users us = Gumball.getUserByEmail("manager@manager.com");
+//	System.out.println(us);
+//
+//}
+	
+	
+	GumballDao Gumball = new GumballDaoImpli();
+	List <Reimbursement> re = Gumball.getReimbursementsByStatus();
+	System.out.println(re);
+}
+}

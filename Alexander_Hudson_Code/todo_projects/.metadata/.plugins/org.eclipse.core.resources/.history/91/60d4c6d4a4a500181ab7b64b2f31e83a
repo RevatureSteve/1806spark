@@ -1,0 +1,26 @@
+package com.Gumball.util;
+
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
+
+public class SetConnectionUtil {
+
+	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException {
+		
+		private final static String USERNAME = "ers_db";
+		private final static String PASSWORD = "p4ssw0rd";
+		private final static String URL = "jdbc:oracle:thin:@masterroshi.cjkgryllidyb.us-east-2.rds.amazonaws.com:1521:ORCL";
+
+		try {
+			Class.forName("oracle.jdbc.driver.OracleDriver");
+		}catch (ClassNotFoundException e) {
+			e.printStackTrace();
+		}
+		
+		return DriverManager.getConnection(URL, USERNAME, PASSWORD);
+	}
+	
+}

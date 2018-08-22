@@ -1,0 +1,19 @@
+package com.Gumball.dao;
+
+import com.Gumball.pojo.Reimbursements;
+import com.Gumball.pojo.Users;
+
+
+
+public class Driver {
+	
+	static int emp_u_Id;
+	
+	public static void main(String[] args) {
+		
+		GumballDao Gumball = new GumballDaoImpli();
+		Users us = Gumball.getAllUsersById(emp_u_Id);
+		System.out.println(us);
+	}
+
+}

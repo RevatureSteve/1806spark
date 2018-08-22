@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+C:\Users\Savii Luciano\my_git_repos\1806spark\Alexander_Hudson_Code\todo_projects\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+1985358303.index
+2252136669.index
+2316131657.index
+2167373317.index
+2498250528.index
+2957086696.index
+3905790360.index

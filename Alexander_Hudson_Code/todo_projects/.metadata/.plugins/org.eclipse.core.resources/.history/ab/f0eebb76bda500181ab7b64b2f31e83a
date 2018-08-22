@@ -1,0 +1,11 @@
+package com.Gumball.servlets;
+
+import javax.servlet.http.HttpServlet;
+
+import com.Gumball.service.AppService;
+
+public class GetReimByStatusServlet extends HttpServlet{
+	
+	AppService appService = new AppService();
+
+}

@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>com.Revature</groupId>
+  <artifactId>ToDoList</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>war</packaging>
+  
+  <!-- no java version #? what is the default for maven?
+  			Maven defaults....1.5 so update it!
+  			 -->
+  			 <properties>
+  			 <maven.compiler.target>1.8</maven.compiler.target>
+  			 <maven.compiler.source>1.8</maven.compiler.source>
+  	</properties>
+
+
+ <dependencies>
+<!-- I can list multiple dependecies (JARS) in here 
+	Once I place a dependency, Maven will download that JAr from MAVEN Central (the website) into a local folder called .m2, regardless of the type of os
+-->
+
+
+<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+<!-- https://mvnrepository.com/artifact/javax.servlet/servlet-api -->
+<dependency>
+    <groupId>javax.servlet</groupId>
+    <artifactId>servlet-api</artifactId>
+    <version>2.5</version>
+    <scope>provided</scope>
+</dependency>
+
+
+<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-core -->
+<dependency>
+    <groupId>com.fasterxml.jackson.core</groupId>
+    <artifactId>jackson-core</artifactId>
+    <version>2.9.6</version>
+</dependency>
+
+
+
+</dependencies>
+
+</project>

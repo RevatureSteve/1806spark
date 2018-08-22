@@ -1,0 +1,37 @@
+package com.Gumball.dao;
+
+import java.util.List;
+
+import com.Gumball.pojo.Reimbursement;
+
+import com.Gumball.pojo.Users;
+
+public interface GumballDao {
+	
+	// DAO: Data Access Object (only CRUD methods)
+	
+	// CREATE: take methods that will use a INSERT SQL Statement
+
+	public int createUser(Users us);
+	public int createReimbursements(Reimbursement re);
+	
+	
+	// READ: a method that will use a select sql statement
+	public Users getUserByEmail(String email);
+	public List <Users> getAllUsers();
+	public List <Reimbursement> getReimbursements();
+	public List <Reimbursement> getReimbursementsByStatus(int rq_status_id);
+	public List <Reimbursement> getReimbursementsByStatusAndEmpId();
+	
+	
+	// UPDATE: a method that will use a method sql statement
+	
+	public Users updateAccountPassword (Users us);
+	public Users updateAccountFName (Users us);
+	public Users updateAccountLName (Users us);
+	public int updateReimbursementsStatus (Reimbursement re);
+	
+	
+	
+	// DELETE
+}

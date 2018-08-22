@@ -1,0 +1,9 @@
+package test;
+
+class TestClass{    
+	
+	public static void main( String args[ ] ){      
+		if (args.length == 2 ){          
+			System.out.println("no arguments") ;       
+			}       else{          
+				System.out.println( args.length + " arguments") ;       }    } }

@@ -1,0 +1,65 @@
+package com.revature.dao;
+
+import java.io.IOException;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.revature.domain.Task;
+import com.revature.domain.User;
+import com.revature.util.SetConnectionPropertiesUtil;
+
+public class UserDaoImpli implements UserDao{
+	
+	// what do i need for a JDBC connection?
+	private final static String USERNAME = "todo_db";
+	private final static String PASSWORD = "p4ssw0rd";
+	private final static String URL = "jdbc:oracle:thin:masterroshi.cjkgryllidyb.us-east-2.rds.amazonaws.com:1521:ORCL";
+	
+	// and the last thing? 
+	//			- Driver, which is the JAR for that specific database
+	@Override
+	public User getUserByUsername(String username) {
+		User user = null; // declare at top so it can be seen at a broader scope
+		// what is this method code going to contain?
+		//  		- JDBC Code
+		 //try with resources automatically closes the connection when the try-catch block is completed
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);){
+			String sql = "SELECT * FROM WHERE username = ?";
+			PreparedStatement ps = conn.prepareStatement(sql); // this line executes. Pre-compiling the SQL statement without the parameters values
+			ps.setString(1,  username);
+			ResultSet resultset = ps.executeQuery();
+			// don;t need to loop...Username is unique and should only return 1 record or none
+			if(resultset.next()) {
+			 user = new User(resultset.getInt(1), resultset.getString(2), resultset.getString(3)); // database record into java object
+			}
+			return user;
+		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
+	public List<Task> getAllTasks(){
+		List<Task> tasks = new ArrayList<>();
+	
+	try(Connection conn = SetConnectionPropertiesUtil.getConnection();){
+		String sql = "SELECT * FROM task";
+		PreparedStatement ps = conn.prepareStatement(sql);
+		ps.executeQuery();
+		ResultSet rs = ps.executeQuery();
+		
+		while(rs.next()) {
+			tasks.add (new Task(rs.getInt("T_ID"), rs.getInt("U_ID"), rs.getString("T_NAME"), rs.getInt("TS_ID"), null));
+		}
+		
+	}catch (IOException | SQLException e) {
+		e.printStackTrace();
+	}
+	return tasks;
+}
+}

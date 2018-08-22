@@ -1,0 +1,29 @@
+package com.revature.dao;
+
+import java.util.List;
+
+import com.revature.domain.Task;
+import com.revature.domain.User;
+import com.revature.service.task;
+
+public interface UserDao {
+	
+	//Remember that DAO - Data Access Object  (only CRUD methods)
+	
+	
+	//CREATE
+	
+	
+	//READ
+	public User getUserByUsername(String username);
+	public List<Task> getAllTasks();
+	public List<Task> getTaskByUserId(int id);
+	
+	//UPDATE
+	
+	
+	//DELETE
+	
+	
+
+}

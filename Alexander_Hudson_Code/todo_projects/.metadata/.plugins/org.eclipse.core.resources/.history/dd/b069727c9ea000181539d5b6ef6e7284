@@ -1,0 +1,45 @@
+package com.revature.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.revature.domain.Task;
+
+public class TodoServlet extends HttpServlet{
+	
+	/*
+	 * url - /task
+	 */
+	
+	// based on Restful standards this method should return ALL tasks
+	protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
+		// several ways of sending a response
+			//printwriter, forward, redirect
+		List <Task> tasks = new ArrayList<>();
+		tasks.add(new Task(1,1,"go for run", 2,"pending"));
+		tasks.add(new Task(1,1,"go for run",2, "pending"));
+		tasks.add(new Task(1,1,"go for run", 1, "pending"));
+		
+		/*
+		 * fasterxml Jackson, the standard for converting Java Object to/from a JSON String 
+		 */
+		ObjectMapper mapper = new ObjectMapper();
+		
+		String json = mapper.writeValueAsString(tasks);
+		resp.setContentType(json);
+		
+		//use a printwriter...note this is not a JSON String, just misc toString code
+		PrintWriter out = resp.getWriter(); // notice we retrieve the printWriter from: HttpServletResponse
+		out.print(json);             
+		
+	}
+
+}

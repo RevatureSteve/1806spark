@@ -1,0 +1,27 @@
+package com.Gumball.dao;
+
+import com.Gumball.pojo.Reimbursements;
+import com.Gumball.pojo.Users;
+
+public interface GumballDao {
+	
+	// DAO: Data Access Object (only CRUD methods)
+	
+	// CREATE: take methods that will use a INSERT SQL Statement
+
+	public int createUser(Users us);
+	public int createReimbursements(Reimbursements re);
+	
+	
+	// READ: a method that will use a select sql statement
+	public Users getUserByEmail(String email);
+	public Users getAllUsers(int u_Id);
+	
+	
+	// UPDATE: a method that will use a method sql statement
+	
+	
+	
+	
+	// DELETE
+}

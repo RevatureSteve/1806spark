@@ -1,0 +1,35 @@
+package com.Gumball.servlets;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.Gumball.pojo.Reimbursement;
+import com.Gumball.service.AppService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class GetReimByStatusServlet2 extends HttpServlet{
+	private AppService appService = new AppService();
+	
+	protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		System.out.println("Reimbursement Status -GET");
+		
+		int id = Integer.parseInt(req.getParameter("rq_status_id"));
+		
+		System.out.println("The id of the User is:" + id);
+		
+		List <Reimbursement> re = appService.getReimbursementsByStatus(1); 
+		
+		
+		ObjectMapper mapper = new ObjectMapper();
+		String json = mapper.writeValueAsString(re);
+		
+		resp.setContentType("application/json");
+		resp.getWriter().write(json);
+		
+	}
+}

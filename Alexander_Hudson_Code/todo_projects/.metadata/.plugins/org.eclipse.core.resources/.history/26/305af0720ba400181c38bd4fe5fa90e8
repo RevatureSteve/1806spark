@@ -1,0 +1,32 @@
+package com.Gumball.servlets;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.Gumball.pojo.Reimbursements;
+import com.Gumball.service.AppService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class HomeIdServlet {
+	
+	private AppService appService = new AppService();
+	
+	protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException{
+		
+		List<Reimbursements> re = appService.getReimbursements();
+		
+		ObjectMapper mapper = new ObjectMapper();
+		
+		String json = mapper.writeValueAsString(re);
+		resp.setContentType("application/json");
+		
+		PrintWriter out = resp.getWriter();
+		out.print(json);
+	}
+
+}

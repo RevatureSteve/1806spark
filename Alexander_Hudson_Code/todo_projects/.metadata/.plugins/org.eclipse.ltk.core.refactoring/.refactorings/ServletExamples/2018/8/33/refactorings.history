@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;com.revature.servlets.ForwardVsRedirect&apos; to &apos;ForwardVsRedirectServlet&apos;&#x0D;&#x0A;- Original project: &apos;ServletExamples&apos;&#x0D;&#x0A;- Original element: &apos;com.revature.servlets.ForwardVsRedirect&apos;&#x0D;&#x0A;- Renamed element: &apos;com.revature.servlets.ForwardVsRedirectServlet&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;ForwardVsRedirect&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src\/main\/java&lt;com.revature.servlets{ForwardVsRedirect.java[ForwardVsRedirect" matchStrategy="1" name="ForwardVsRedirectServlet" qualified="false" references="true" similarDeclarations="false" stamp="1534273752597" textual="false" version="1.0"/>
+</session>

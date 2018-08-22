@@ -1,0 +1,317 @@
+package com.Gumball.dao;
+
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.Gumball.pojo.Reimbursement;
+import com.Gumball.pojo.Users;
+
+
+public class GumballDaoImpli implements GumballDao{
+	
+	private final static String USERNAME = "ers_db";
+	private final static String PASSWORD = "p4ssw0rd";
+	private final static String URL = "jdbc:oracle:thin:@masterroshi.cjkgryllidyb.us-east-2.rds.amazonaws.com:1521:ORCL";
+
+	
+	//CREATE
+	
+	//Creating User
+	public int createUser(Users us) {
+		
+		int rowsAffected = 0; 
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)){
+			
+			conn.setAutoCommit(false); // will allow you to group multiple subsequent Statements under the same transaction.
+			
+			String sql ="INSERT INTO users(email, password, fname, lname) VALUES (?,?,?,?,?)";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, us.getEmail());
+			ps.setString(2, us.getPassWord());
+			ps.setString(3, us.getfName());
+			ps.setString(4, us.getlName());
+			ps.setInt(5, us.getPos_Id());
+			rowsAffected = ps.executeUpdate();
+			conn.commit();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rowsAffected;
+	}
+	
+
+	//Creating Reimbursements
+	public int createReimbursements(Reimbursement re) {
+		
+		int rowsAffected = 0; 
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)){
+			
+			conn.setAutoCommit(false); // will allow you to group multiple subsequent Statements under the same transaction.
+			
+			String sql ="INSERT INTO reimbursement (description, amt, rq_type, time_submission) VALUES (?,?,?,?)";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, re.getDescription());
+			ps.setInt(2, re.getAmt());
+			ps.setInt(3, re.getRq_Type());
+			ps.setTimestamp(4, re.getTime_Submission());
+			
+			rowsAffected = ps.executeUpdate();
+			conn.commit();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rowsAffected;
+	}
+	
+
+	//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//READ
+	//Get all USERS 
+	public List <Users> getAllUsers() {
+		List <Users> re = new ArrayList<>();
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)){
+			
+			conn.setAutoCommit(false); // will allow you to group multiple subsequent Statements under the same transaction.
+			
+			String sql ="SELECT * FROM users";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				
+				re.add(new Users (rs.getInt("U_ID"), rs.getString("EMAIL"),rs.getString("PASSWORD"), rs.getString("FNAME"), rs.getString("LNAME"),rs.getInt("POS_ID") ));
+			}
+			
+			conn.commit();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return re;
+	}
+	
+	//Get ALL REIMBURSEMENTS
+	public List <Reimbursement> getReimbursements() {
+		List<Reimbursement> re = new ArrayList<>();
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)){
+			
+			conn.setAutoCommit(false); // will allow you to group multiple subsequent Statements under the same transaction.
+			
+			String sql ="SELECT * FROM Reimbursement";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				
+				re.add(new Reimbursement (rs.getInt("R_ID"),rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getTimestamp("TIME_SUBMISSION"), rs.getInt("RQ_TYPE"), rs.getInt("RQ_STATUS_ID")));
+			}
+			
+			conn.commit();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return re;
+	}
+	
+	public List <Reimbursement> getReimbursementsByStatus() {
+		List<Reimbursement> re = new ArrayList<>();
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)){
+			
+			conn.setAutoCommit(false); // will allow you to group multiple subsequent Statements under the same transaction.
+			
+			String sql ="SELECT * FROM reimbursement WHERE rq_status_id=?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				
+				re.add(new Reimbursement(rs.getInt("R_ID"),rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getTimestamp("TIME_SUBMISSION"), rs.getInt("RQ_TYPE"), rs.getInt("RQ_STATUS_ID") ));
+			}
+			
+			conn.commit();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return re;
+	}
+	
+	public List <Reimbursement> getReimbursementsByStatusAndEmpId() {
+		List<Reimbursement> re = new ArrayList<>();
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)){
+			
+			conn.setAutoCommit(false); // will allow you to group multiple subsequent Statements under the same transaction.
+			
+			String sql ="SELECT * FROM reimbursement WHERE rq_status_id = ? AND emp_u_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				
+				re.add(new Reimbursement(rs.getInt("R_ID"),rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getTimestamp("TIME_SUBMISSION"), rs.getInt("RQ_TYPE"), rs.getInt("RQ_STATUS_ID") ));
+			}
+			
+			conn.commit();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return re;
+	}
+		
+	
+	//Get user by email
+	@Override
+	public Users getUserByEmail(String email) {
+		
+		Users us = null;
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			conn.setAutoCommit(false);
+			String sql = "SELECT * FROM users WHERE email = ?";
+			PreparedStatement ps = conn.prepareStatement(sql); 
+			ps.setString(1, email);
+			ResultSet rs = ps.executeQuery();
+			
+			if (rs.next()) {
+				
+				us = new Users (rs.getInt("U_ID"), rs.getString("EMAIL"),rs.getString("PASSWORD"), rs.getString("FNAME"), rs.getString("LNAME"),rs.getInt("POS_ID") );
+			}
+			conn.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		return us;
+
+		}
+	
+	
+	//Manager can view all employees
+	public List<Users> getAllUsersById(int u_Id) {
+		List <Users> us = new ArrayList<>();
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);){
+			conn.setAutoCommit(false);
+			String sql = "SELECT * FROM users WHERE u_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, u_Id);
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				
+				us.add(new Users (rs.getInt("U_ID"), rs.getString("EMAIL"),rs.getString("PASSWORD"), rs.getString("FNAME"), rs.getString("LNAME"),rs.getInt("POS_ID")) );
+			}
+			conn.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+
+		}
+		return us;
+
+		}
+	
+	//----------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+	//UPDATE
+	//Update user employee account
+	public Users updateAccountPassword (Users us) {
+		int rowsAffected = 0;
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)){
+			
+			conn.setAutoCommit(false); // will allow you to group multiple subsequent Statements under the same transaction.
+			
+			String sql ="UPDATE users SET password=? WHERE emp_u_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, us.getPassWord());
+			rowsAffected = ps.executeUpdate();
+			conn.commit();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return us;
+	}
+		
+	public Users updateAccountFName (Users us) {
+		int rowsAffected = 0;
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)){
+			
+			conn.setAutoCommit(false); // will allow you to group multiple subsequent Statements under the same transaction.
+			
+			String sql ="UPDATE users SET fname=? WHERE emp_u_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, us.getfName());
+			rowsAffected = ps.executeUpdate();
+			conn.commit();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return us;
+	}
+	
+	
+	public Users updateAccountLName (Users us) {
+		int rowsAffected = 0;
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)){
+			
+			conn.setAutoCommit(false); // will allow you to group multiple subsequent Statements under the same transaction.
+			
+			String sql ="UPDATE users SET lname=? WHERE emp_u_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setString(1, us.getlName());
+			rowsAffected = ps.executeUpdate();
+			conn.commit();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return us;
+	}
+	
+	public int updateReimbursementsStatus (Reimbursement re) {
+		int rowsAffected = 0;
+		
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)){
+			
+			conn.setAutoCommit(false); // will allow you to group multiple subsequent Statements under the same transaction.
+			
+			String sql ="UPDATE reimbursement SET rq_status_id WHERE rq_status_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			
+			ps.setInt(1, re.getRq_Status_Id());
+			rowsAffected = ps.executeUpdate();
+			conn.commit();
+		}catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rowsAffected;
+	}
+}

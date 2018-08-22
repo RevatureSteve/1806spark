@@ -1,0 +1,82 @@
+package com.Gumball.servlets;
+
+import java.io.IOException;
+import java.util.List;
+
+import javax.servlet.ServletException;
+import javax.servlet.ServletRequest;
+import javax.servlet.ServletResponse;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+import com.Gumball.pojo.Users;
+import com.Gumball.service.AppService;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+public class HomeServlet extends HttpServlet{
+	private static final long serialVersionUID= 256L;
+	
+	/*
+	 * URL -/login
+	 */
+
+	private AppService appService = new AppService();
+	
+	public HomeServlet() {
+		super();
+	}
+	
+	
+	protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		System.out.println("login -GET");
+		
+		//Get the request parameter and convert from string to int
+		// parseIn is static because it is initialized and Integer is labeled before
+		int id = Integer.parseInt(req.getParameter("u_Id"));
+		System.out.println("The id of the User is:" + id);
+//		
+//		//use the int Id to retrieve the tasks of that userId from the AppService (which will probably call the dao and the dao hits the DB)
+		List<Users> us = appService.getAllUsersById(id);
+//		
+//		//Now I have a list of userTask but I need to convert to a JSON string before responding back
+		ObjectMapper mapper = new ObjectMapper();
+//		String json = mapper.writeValueAsString(us);
+//		
+//		//send back the JSON String of UserTasks
+//		resp.setContentType("application/json");
+//		resp.getWriter().write(json);
+		
+	}
+	
+		protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+			doGet(req, resp);
+		}
+	
+	
+	
+	
+	
+	//Service() called
+//	@Override
+//	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+//		System.out.println("login -service() called");
+//		super.service(req, res);
+//	}
+//
+//	//Destroy() called
+//	@Override
+//	public void destroy() {
+//		System.out.println("login -destroy() called");
+//		super.destroy();
+//	}
+//
+//	//Init() called
+//	@Override
+//	public void init() throws ServletException {
+//		System.out.println("login -init() called"); //called once
+//		super.init();
+//	}
+//	
+//	
+}
