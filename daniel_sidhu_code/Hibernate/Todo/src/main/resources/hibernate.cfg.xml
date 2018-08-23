@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate Configuration DTD 3.0//EN"
+	"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+<hibernate-configuration>
+<session-factory>
+<!-- make sure the username, password and url matches YOUR database -->
+<property name="hibernate.connection.username">todo_db</property>
+<property name="hibernate.connection.password">p4ssw0rd</property>
+<property name="hibernate.connection.url">jdbc:oracle:thin:@octocat.cxwq5mzpnovv.us-east-2.rds.amazonaws.com:1521:ORCL</property>
+<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+
+<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+
+
+
+<mapping class="com.revature.pojo.Task"/>
+<mapping class="com.revature.pojo.Users"/>
+
+</session-factory>
+
+</hibernate-configuration>
