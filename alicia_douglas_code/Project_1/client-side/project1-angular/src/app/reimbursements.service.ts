@@ -57,4 +57,18 @@ export class ReimbursementsService {
 
     // console.log('after post statement');
   }
+
+  updateReimbursement(rId, mgrId, status) {
+    const update = {
+      rId: rId,
+      mgrId: mgrId,
+      status: status
+    };
+
+    console.log(update);
+
+    return this.httpClient.post<Reimbursements>('http://localhost:8080/reimbursement/reimbursement/rid', update);
+
+  }
+
 }

@@ -22,8 +22,8 @@
       <td>{{r.rbStatus}}</td>
       <td>{{r.timeSubmission}}</td>
       <td>
-        <button type="button" class="btn btn-success">Approve</button>
-        <button type="button" class="btn btn-danger">Deny</button>
+        <button (click)="approve(r.rId)" type="button" class="btn btn-success">Approve</button>
+        <button (click)="deny(r.rId)" type="button" class="btn btn-danger">Deny</button>
       </td>
     </tr>
 
