@@ -1,0 +1,87 @@
+-- Data Manipulation Language
+-- CREATE, READ, UPDATE, DELETE
+
+-- Create
+-- POSITION TABLE
+INSERT INTO position VALUES(1, 'Overseer');
+INSERT INTO position VALUES(2, 'Vault Dweller');
+
+-- RQ_TYPE TABLE
+INSERT INTO rq_type VALUES (1, 'Medical Supplies');
+INSERT INTO rq_type VALUES (2, 'Ammunition');
+INSERT INTO rq_type VALUES (3, 'Armor/Clothing');
+INSERT INTO rq_type VALUES (4, 'Weapons');
+INSERT INTO rq_type VALUES (5, 'Consumables');
+
+-- RQ_STATUS TABLE
+INSERT INTO rq_status VALUES (1, 'Pending');
+INSERT INTO rq_status VALUES (2, 'Completed');
+INSERT INTO rq_status VALUES (3, 'Denied');
+
+-- REIMBURSEMENT TABLE
+INSERT INTO reimbursement VALUES (1, 40, 1, 1, 1, 2, 'Stimpacks that were needed for the Deathclaw raid last night', null, default);
+INSERT INTO reimbursement VALUES (2, 500, 2, 2, 3, 3, 'Power armor got destroyed from jumping off a cliff', null, default);
+INSERT INTO reimbursement VALUES (3, 430, 1, 1, 5, 2, 'Drank too much Nuka Cola', null, default);
+INSERT INTO reimbursement VALUES (4, 430, 1, 1, 5, 1, 'Drank too much Nuka Cola', null, default);
+
+INSERT INTO reimbursement (amt, emp_u_id, mgr_u_id, rq_type_id, description)
+        VALUES (450, 2, 2, 4, 'Broke my mini-gun');     
+
+-- INSERT 
+-- USERS TABLE
+INSERT INTO users VALUES(1, 'alex.moraga94@yahoo.com', 'cookie', 'Alex', 'Moraga', 1); -- 1 for overseer, 2 for vault dweller
+INSERT INTO users VALUES(2, 'alex.moraga95@yahoo.com', 'cookies', 'Axel', 'Moraga', 2);
+INSERT INTO users VALUES (3, 'revature@gmail.com', 'rev', 'Revy', 'Rev', 2);
+
+-- Creating a sequence that will be used in trigger for Users table
+CREATE SEQUENCE userId_sequence
+    START WITH 1
+    INCREMENT BY 1;
+    
+COMMIT; 
+
+-- Creating a Trigger that will use the sequence to create a row before an insert is done on the user table
+CREATE OR REPLACE TRIGGER userId_trigger
+BEFORE INSERT ON users
+FOR EACH ROW
+BEGIN
+    IF :new.u_id IS NULL THEN
+        SELECT userId_sequence.nextval INTO :new.u_id FROM DUAL;
+    END IF;
+END;
+/
+
+-- Reimbursement trigger 
+CREATE SEQUENCE reimbursement_sequence
+    START WITH 1
+    INCREMENT BY 1;
+    
+COMMIT;
+
+-- Creating a Trigger that will create a row after an insert is done on the reimbursement table
+CREATE OR REPLACE TRIGGER reimbursement_trigger
+BEFORE INSERT ON reimbursement
+FOR EACH ROW
+BEGIN
+    IF :new.R_Id IS NULL THEN
+        SELECT reimbursement_sequence.nextval INTO :new.R_Id FROM DUAL;
+    END IF;
+END;
+/
+
+COMMIT; -- COMMIT!!!!!!!!!!!!!!!!!
+-- Read
+SELECT * FROM reimbursement;
+SELECT * FROM users WHERE email = 'alex.moraga94@yahoo.com';
+SELECT * FROM reimbursement WHERE rq_status_id = 1;
+
+COMMIT; -- COMMIT!!!!!!!!!!!!!!!!!
+-- Update
+
+
+COMMIT; -- COMMIT!!!!!!!!!!!!!!!!!
+-- Delete
+DELETE FROM users WHERE u_id = 3;
+
+
+COMMIT; -- COMMIT!!!!!!!!!!!!!!!!!

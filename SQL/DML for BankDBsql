@@ -1,0 +1,105 @@
+-- DML: Data Manipulation Language
+-- insert, select, update, delete
+
+
+-- DML insert/create
+INSERT INTO users VALUES (1, 'PvtMad', 'Joy', 'Alex', 'Moraga');
+INSERT INTO users VALUES (2, 'Revature', 'Rev', 'Steve', 'Jobs');
+
+COMMIT; -- COMMIT!!!!
+
+-- Creating a sequence that will be used in trigger for Users table
+CREATE SEQUENCE userId_sequence
+    START WITH 1
+    INCREMENT BY 1;
+    
+COMMIT;
+    
+-- Creating Trigger that will use the sequence to create a row before an insert is done on the user table
+CREATE OR REPLACE TRIGGER userId_trigger 
+BEFORE INSERT ON users
+FOR EACH ROW
+BEGIN
+    IF :new.users_id IS NULL THEN
+        SELECT userId_sequence.nextval INTO :new.users_id FROM DUAL;
+    END IF;
+END;
+/
+-- DML select 
+-- In USERS
+SELECT * FROM users;
+SELECT * FROM users WHERE users_id = 1;
+SELECT * FROM users WHERE username = 'PvtMad';
+
+SELECT balance FROM bank_account WHERE users_id = 21;
+
+-- In BANK_TX
+CREATE SEQUENCE bank_account_sequence
+    START WITH 116
+    INCREMENT BY 38;
+    
+COMMIT;
+    
+-- Creating Trigger that will use the sequence to create a random account number before a row is created in bank account
+CREATE OR REPLACE TRIGGER bank_account_trigger 
+BEFORE INSERT ON bank_account
+FOR EACH ROW
+BEGIN
+    IF :new.account_number IS NULL THEN
+        SELECT bank_account_sequence.nextval INTO :new.account_number FROM DUAL;
+    END IF;
+END;
+/
+
+-- Creating Trigger that will create a bank account profile row on bank account after an insert is done on the users table
+CREATE OR REPLACE TRIGGER bank_account_row_trigger 
+AFTER INSERT ON users
+FOR EACH ROW
+BEGIN
+    INSERT INTO bank_account (balance, users_id) VALUES (0, :new.users_id); --:new allows to use the same reference variable from it's parent's... since it a foreign key
+END;
+/
+
+commit;
+
+-- DML update
+UPDATE users SET password = 'Car' where users_id = 3;
+
+-- Store procedure for deposit
+create or replace PROCEDURE accountDeposit(user_id IN NUMBER, amount IN NUMBER)
+IS
+BEGIN
+UPDATE bank_account SET balance = balance + amount
+WHERE users_id = user_id;
+COMMIT;
+END;
+/
+
+-- Testing accountDeposit
+DECLARE
+BEGIN
+accountDeposit(21, 5);
+END;
+/
+
+-- Store procedure for withdraw
+CREATE OR REPLACE PROCEDURE accountWithdraw(user_id IN NUMBER, amount IN NUMBER)
+IS 
+BEGIN
+UPDATE bank_account SET balance = balance - amount
+WHERE users_id = user_id;
+COMMIT;
+END;
+/
+
+DECLARE
+BEGIN
+accountWithdraw(21, 100);
+END;
+/
+
+COMMIT;
+
+
+-- DML delete
+DELETE FROM users WHERE users_id = 3;
