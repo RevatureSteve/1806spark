@@ -21,15 +21,16 @@ public class Driver {
 //		System.out.println(users);
 //		TranstarReims reqs = new ReqLogic().reqs(1);
 //		System.out.println(reqs);
-//		List<TranstarReims> allReqs = new ReqLogic().allReqs();
-//		System.out.println(allReqs);
+		List<TranstarReims> allReqs = new ReqLogic().allResolvedReqs(1);
+		System.out.println(allReqs);
 		
-		int emp_id = 1;
-		int amount = 53;
-		String desc = "Explosion";
-		int rq_type = 1;
-		String newReq = new ReqLogic().createRequest(emp_id, amount, desc, rq_type);
-		System.out.println(newReq);
+//		
+//		int emp_id = 1;
+//		int amount = 53;
+//		String desc = "Explosion";
+//		int rq_type = 1;
+//		String newReq = new ReqLogic().createRequest(emp_id, amount, desc, rq_type);
+//		System.out.println(newReq);
 	}
 
 }

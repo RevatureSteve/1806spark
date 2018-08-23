@@ -32,6 +32,10 @@ public class ReqLogic {
 		List<TranstarReims> reqs = rDao.getAllPendingRequests();
 		return reqs;
 	}
+	public List<TranstarReims> allResolvedReqs(int userId) {
+		List<TranstarReims> reqs = rDao.getAllResolvedRequests(userId);
+		return reqs;
+	}
 	
 	public String createRequest(int emp_id, int amount, String desc, int rq_type) {
 		String succ = "Failure";

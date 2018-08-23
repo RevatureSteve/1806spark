@@ -42,7 +42,7 @@ END;
 /
 
 BEGIN
-    new_reimbursement(2,500, 'Ran out', 3);
+    new_reimbursement(1,300, 'Lost it all', 2);
 END;
 /
 
@@ -66,7 +66,8 @@ commit;
 SELECT * FROM reimbursement INNER JOIN rb_type
 ON reimbursement.rb_type_id = rb_type.rb_type_id
 INNER JOIN rq_status 
-ON reimbursement.rq_status_id = rq_status.rq_status_id;
+ON reimbursement.rq_status_id = rq_status.rq_status_id 
+WHERE rq_status.rq_status_id = 1;
 
 
 
@@ -75,4 +76,4 @@ INNER JOIN rb_type
 ON reimbursement.rb_type_id = rb_type.rb_type_id 
 INNER JOIN rq_status 
 ON reimbursement.rq_status_id = rq_status.rq_status_id 
-WHERE rq_status.rq_status_id = 2;
+WHERE rq_status.rq_status_id = 2 AND reimbursement.emp_u_id = 1;

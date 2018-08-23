@@ -75,9 +75,42 @@ public class TranstarReimDaoImpl implements TranstarReimDao{
 			String sql = "SELECT * FROM reimbursement INNER JOIN rb_type " + 
 					"ON reimbursement.rb_type_id = rb_type.rb_type_id " + 
 					"INNER JOIN rq_status " + 
-					"ON reimbursement.rq_status_id = rq_status.rq_status_id";
+					"ON reimbursement.rq_status_id = rq_status.rq_status_id WHERE rq_status.rq_status_id = 1";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				TranstarReims req = new TranstarReims(rs.getInt(1), rs.getInt(2), rs.getInt(3)
+						, rs.getInt(4), rs.getString("description"), rs.getBlob("img")
+						,rs.getString("time_submission"), rs.getString("rb_type")
+						, rs.getString("rq_status"));
+				reqs.add(req);
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("SQL fail");
+			e.printStackTrace();
+		}
+		return reqs;
+		
+	}
+	/**
+	 * Retrieves all pending requests from the database specific to a userId .
+	 * @return req
+	 */
+	public List<TranstarReims> getAllResolvedRequests(int userId) {
+		
+		List<TranstarReims> reqs = new ArrayList<>();
+		try (Connection con = ConnectionsPropertiesUtil.newConnection()){
+			String sql = "SELECT * FROM reimbursement " + 
+					"INNER JOIN rb_type " + 
+					"ON reimbursement.rb_type_id = rb_type.rb_type_id " + 
+					"INNER JOIN rq_status " + 
+					"ON reimbursement.rq_status_id = rq_status.rq_status_id " + 
+					"WHERE rq_status.rq_status_id = 2 AND reimbursement.emp_u_id = ?";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ps.setInt(1, userId);
+			ResultSet rs = ps.executeQuery();
+		
 			while (rs.next()) {
 				TranstarReims req = new TranstarReims(rs.getInt(1), rs.getInt(2), rs.getInt(3)
 						, rs.getInt(4), rs.getString("description"), rs.getBlob("img")
