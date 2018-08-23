@@ -42,8 +42,10 @@ public class UserDataAccess implements UserDao {
 			return 0;
 		}
 
+		
+
 		@Override
-		public User getUserbyEmail(String email) {
+		public User getUserbyEmail(String email, String password) {
 			// TODO Auto-generated method stub
 			return null;
 		}

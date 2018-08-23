@@ -1,0 +1,15 @@
+How to create angular routing? (you can generate a routing module yes..)
+    *1. create an app-routing.module.ts
+    2. export the class
+    3. create a route array, an imported angular class
+    *4. provide the route array path {}s that require 2 properties
+        path and component
+    5. provide the module decorator:
+    6. provide the @NgModule decorator: imports / exports
+        e.g. @NgModule({
+            imports: [RouterModule.forRoot(routes)],
+            exports: [RouterModule]
+        })
+    *7. add the <router-outlet></router-outlet> directive to the place 
+     you want the pages to show up
+    *8. add to app.module.ts to the imports array:

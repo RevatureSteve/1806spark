@@ -53,27 +53,23 @@ public class UserDaoImpl implements UserDao{
 
 	
 	
-	public Reimbursements createNewReimbursement(int empuId, int amount, String description, Blob image, Timestamp timesubmission, int rqTypeId, int rqStatusId ) { //method to get users by email
+	public Reimbursements createNewReimbursement(int empuId, int amount, String description, Blob image, int rqTypeId, int rqStatusId ) { //method to get users by email
 		System.err.println("making reimbursement");
 		Reimbursements reimbursement = null; //creating a null reimbursement object
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection()){
 			System.err.println("2nd connection to db successful");
-			String sql = "new_reimbursement(?,?,?,?,?)";
+			String sql = "{call new_reimbursement(?,?,?,NULL,?,?)}";
 			CallableStatement cs = conn.prepareCall(sql); // Precompiles the sql statement without the parameter values
 			cs.setInt(1,empuId);
 			cs.setInt(2,amount);
 			cs.setString(3, description);
-			cs.setBlob(4, image);
+			//cs.setObject(4, null);
+			cs.setInt(4, rqTypeId);
 			cs.setInt(5, rqStatusId);
 			ResultSet resultSet = cs.executeQuery();
 		// we do not need a loop because emails are unique
 			System.err.println("[LOG]---resultset completed----getUserByEmail()");
-			if(resultSet.next()) {
-				//if(password.equals(resultSet.getString(3))) {
-					reimbursement = new Reimbursements(resultSet.getInt(1), resultSet.getString(2), resultSet.getString(3), resultSet.getString(4), resultSet.getString(5), resultSet.getInt(6));
-					System.out.println(reimbursement);
-					
-				}
+			
 			
 			
 		} catch (SQLException e) {
