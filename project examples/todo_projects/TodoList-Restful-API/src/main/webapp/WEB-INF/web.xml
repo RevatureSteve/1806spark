@@ -61,6 +61,10 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>DocumentationServlet</servlet-name>
+<<<<<<< HEAD
     <url-pattern>/documentation</url-pattern>
+=======
+    <url-pattern>/TodoList-Restful-API</url-pattern>
+>>>>>>> 32d44e3ef05b21c7ba723ba186649a891c72cee6
   </servlet-mapping>
 </web-app>

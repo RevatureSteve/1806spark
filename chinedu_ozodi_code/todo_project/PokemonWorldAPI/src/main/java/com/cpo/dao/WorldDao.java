@@ -5,5 +5,7 @@ import com.cpo.models.PokeWorld;
 public interface WorldDao {
 	
 	int createWorld(PokeWorld world);
+	
+	PokeWorld getWorldByName(String name);
 
 }

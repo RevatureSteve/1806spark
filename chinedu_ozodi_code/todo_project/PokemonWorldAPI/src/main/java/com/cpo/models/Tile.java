@@ -6,6 +6,8 @@ public abstract class Tile {
 	protected String tileName;
 	protected int x;
 	protected int y;
+	protected int tileTypeId;
+	protected String tileType;
 
 	public Tile() {
 	}

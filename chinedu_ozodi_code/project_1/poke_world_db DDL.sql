@@ -1,6 +1,11 @@
 -- TABLES
+DROP TABLE worlds;
+ALTER TABLE worlds
+    ADD (width INT, length INT);
 CREATE TABLE worlds (
     world_id INT,
+    length INT,
+    width INT,
     world_name VARCHAR2(100),
     PRIMARY KEY (world_id)
 );
@@ -40,6 +45,7 @@ CREATE TABLE lt_types (
     PRIMARY KEY (lt_type_id)
 );
 
+TRUNCATE TABLE pokemon_data;
 CREATE TABLE pokemon_data (
     poke_id INT,
     poke_name VARCHAR2(100),
