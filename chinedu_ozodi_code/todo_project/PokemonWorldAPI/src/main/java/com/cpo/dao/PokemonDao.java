@@ -7,6 +7,12 @@ import com.cpo.models.Pokemon;
 
 public interface PokemonDao {
 
-	List<Pokemon> GetPokemonById(List<Integer> ids);
+	//Create
+	int createPokemonData(Pokemon pokemon);
+	
+	//Read
+	Pokemon getPokemonDataById(int id);
+	
+	List<Pokemon> GetPokemonData();
 
 }

@@ -13,12 +13,12 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 
 public class PokeAPIDao implements PokemonDao {
 	
-	private static final String URL = "http://pokeapi.co/api/v2/";
+	private static final String URL = "https://pokeapi.co/api/v2/";
 
 	public PokeAPIDao() {
 	}
 
-	@Override
+	
 	public List<Pokemon> GetPokemonById(List<Integer> ids) {
 		List<Pokemon> pokemon = new ArrayList<Pokemon>();
 		for (int i = 0; i < ids.size(); i++) {
@@ -62,6 +62,27 @@ public class PokeAPIDao implements PokemonDao {
 			return null;
 		}
 
+	}
+
+
+	@Override
+	public int createPokemonData(Pokemon pokemon) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public Pokemon getPokemonDataById(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<Pokemon> GetPokemonData() {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -18,14 +18,14 @@ export class WelcomeComponent implements OnInit {
   ngOnInit() {
   }
 
-  boxClicked(): void{
+  boxClicked(): void {
     this.clicked = !this.clicked;
     console.log('Box clicked ' + this.clicked);
   }
 
   enterClicked(): void {
     // Logic for when enter button clicked
-    console.log("Welcome Component: -enter clicked");
+    console.log('Welcome Component: -enter clicked');
     this.router.navigateByUrl('/login');
   }
 }

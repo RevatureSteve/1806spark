@@ -1,3 +1,4 @@
+import { AdminComponent } from './admin/admin.component';
 import { PokeBagComponent } from './poke-bag/poke-bag.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule, Component } from '@angular/core';
@@ -11,6 +12,7 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'main', component: MainComponent},
   {path: 'pokebag', component: PokeBagComponent},
+  {path: 'admin', component: AdminComponent},
   {path: '**', redirectTo: 'welcome'}
 ];
 

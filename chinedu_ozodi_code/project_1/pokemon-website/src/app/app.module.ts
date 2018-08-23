@@ -11,6 +11,7 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { WorldTileComponent } from './main/world-tile/world-tile.component';
 import { PokeBagComponent } from './poke-bag/poke-bag.component';
+import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { PokeBagComponent } from './poke-bag/poke-bag.component';
     LoginComponent,
     MainComponent,
     WorldTileComponent,
-    PokeBagComponent
+    PokeBagComponent,
+    AdminComponent
   ],
   imports: [
     BrowserModule,

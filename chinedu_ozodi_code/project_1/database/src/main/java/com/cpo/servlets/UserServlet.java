@@ -62,12 +62,12 @@ public class UserServlet extends HttpServlet {
 			session.setAttribute("user", dbUser);
 			
 			response.setContentType("application/json");
-			response.setStatus(203);
+			response.setStatus(200);
 			response.getWriter().append("{ \"status\":\"good\" }");
 		}
 		else {
 			response.setContentType("application/json");
-			response.setStatus(203);
+			response.setStatus(401);
 			response.getWriter().append("{ \"status\": \"bad\" }");
 		}
 		

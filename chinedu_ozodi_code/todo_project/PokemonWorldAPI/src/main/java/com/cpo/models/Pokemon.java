@@ -4,6 +4,11 @@ import java.io.Serializable;
 
 public class Pokemon implements Serializable {
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
+	
 	private int id;
 	private int pokeId;
 	private String name;
@@ -33,11 +38,13 @@ public class Pokemon implements Serializable {
 		this.ltId = ltId;
 	}
 	
-	public Pokemon(int pokeId, String name, int experience) {
+	public Pokemon(int pokeId, String name, int experience, int height, String imageUrl) {
 		super();
 		this.pokeId = pokeId;
 		this.name = name;
 		this.experience = experience;
+		this.height = height;
+		this.imageUrl = imageUrl;
 	}
 
 	public int getId() {

@@ -1,7 +1,8 @@
 package com.cpo.servlets;
 
+import java.io.BufferedReader;
 import java.io.IOException;
-import java.util.ArrayList;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -9,7 +10,9 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cpo.models.Pokemon;
 import com.cpo.services.PokemonService;
+import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
  * -/PokemonData
@@ -29,7 +32,14 @@ public class PokemonDataServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		ObjectMapper mapper = new ObjectMapper();
+		List<Pokemon> pokemon = PokemonService.getInstance().getPokemonData();
+		System.out.println("PokeDataServlet -GET sending pokemon data, count: " + pokemon.size());
+		String json = mapper.writeValueAsString(pokemon);
+		PrintWriter pw = response.getWriter();
+		response.setContentLength(json.length());
+		response.setContentType("application/json");
+		pw.write(json);
 	}
 
 	/**
@@ -37,11 +47,18 @@ public class PokemonDataServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		//Pull pokemon data from the pokeAPI
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		List<Integer> pokemon = new ArrayList<Integer>();
-		pokemon.add(1);
-		pokemon.add(2);
-		PokemonService.getInstance().ScrapePokemon(pokemon);
+		System.out.println("PokemonDataServlet -POST new pokemon to be created");
+		BufferedReader bf = request.getReader();
+		
+		ObjectMapper mapper = new ObjectMapper();
+		Pokemon pokemon = mapper.readValue(bf, Pokemon.class);
+		
+		System.out.println("Pokemon name: " + pokemon.getName()  + " " + pokemon.getPokeId());
+		
+		//Add to db
+		PokemonService.getInstance().createPokemonData(pokemon);
+		
+		
 	}
 
 }

@@ -3,10 +3,14 @@ package com.cpo.services;
 import java.util.List;
 
 import com.cpo.dao.PokeAPIDao;
+import com.cpo.dao.PokemonDatabaseDao;
+import com.cpo.models.Pokemon;
 
 public class PokemonService {
 	
 	private static PokemonService instance;
+	
+	PokemonDatabaseDao pdd = new PokemonDatabaseDao();
 
 	private PokemonService() {
 	}
@@ -24,6 +28,14 @@ public class PokemonService {
 	 */
 	public void ScrapePokemon(List<Integer> pokeIds) {
 		new PokeAPIDao().GetPokemonById(pokeIds);
+	}
+	
+	public void createPokemonData(Pokemon pokemon) {
+		pdd.createPokemonData(pokemon);
+	}
+	
+	public List<Pokemon> getPokemonData() {
+		return pdd.GetPokemonData();
 	}
 
 }
