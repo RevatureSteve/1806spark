@@ -1,0 +1,6 @@
+com\revature\Driver.class
+com\revature\dao\TodoDao.class
+com\revature\domain\Task.class
+com\revature\dao\TodoDaoImpl.class
+com\revature\domain\User.class
+com\revature\util\HibernateUtil.class
