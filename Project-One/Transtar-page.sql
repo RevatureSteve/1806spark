@@ -13,7 +13,7 @@ INSERT INTO rb_type VALUES (4, 'Material');
 INSERT INTO users VALUES (1, 'admin@transtar.com', 'ark', 'Beck', 'Larson', 1);
 INSERT INTO users VALUES (2, 'yu@transtar.com', 'mgr', 'Morgan', 'Yu', 2);
 INSERT INTO users (email, password, fname, lname, pos_id) VALUES ( 'sho@transtar.com', 'ark', 'Danielle', 'Sho', 1);
-INSERT INTO reimbursement VALUES (3,1, 1, 100, 'Needed more', null, CURRENT_TIMESTAMP, 4, 3);
+INSERT INTO reimbursement VALUES (4,1, 1, 100, 'Research', null, CURRENT_TIMESTAMP, 4, 2);
 ALTER TABLE users
 RENAME COLUMN lane TO lname;
 
