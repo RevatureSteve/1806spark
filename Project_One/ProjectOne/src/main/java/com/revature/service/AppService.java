@@ -85,5 +85,11 @@ public class AppService {
 		return projectOneDao.getAllDeniedReimb();
 	}
 	
+	// Creating Reimbursement
+	public int createReimbursement(int amt, int emp_U_Id, int mgr_U_Id, int rq_Type_Id, String description) {
+		System.out.println("[LOG]---sending---Created Reimbursement Request");
+		
+		return projectOneDao.createReimbursement(amt, emp_U_Id, mgr_U_Id, rq_Type_Id, description);
+	}
 }
 

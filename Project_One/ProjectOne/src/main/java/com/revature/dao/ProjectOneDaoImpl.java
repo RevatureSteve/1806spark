@@ -3,25 +3,43 @@ package com.revature.dao;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
-import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-import com.revature.Driver;
 import com.revature.pogo.Reimbursement;
 import com.revature.pogo.Users;
 import com.revature.util.SetConnectionPropertiesUtil;
 
 public class ProjectOneDaoImpl implements ProjectOneDao {
 
-//	private final static String url = "jdbc:oracle:thin:@pvtmad.cz07tejakuok.us-east-2.rds.amazonaws.com:1521";
-//	private final static String username = "reimbursement_db";
-//	private final static String password = "p4ssw0rd";
-
 	// CREATE
+	@Override
+	public int createReimbursement(int amt, int emp_U_Id, int mgr_U_Id, int rq_Type_Id, String description) {
+		System.out.println("[LOG]---Starting---createReimbursement(users-parameters)");
+		int rowsAffected = 0;
+		
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
+			conn.setAutoCommit(false);
+			String sql = "INSERT INTO reimbursement (amt, emp_u_id, mgr_u_id, rq_type_id, description) VALUES (?, ?, ?, ?, ?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, amt);
+			ps.setInt(2, emp_U_Id);
+			ps.setInt(3, mgr_U_Id);
+			ps.setInt(4, rq_Type_Id);
+			ps.setString(5, description);
+			rowsAffected = ps.executeUpdate(sql);
+			conn.commit();
+			
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println(rowsAffected + " reimbursement request has been sent!");
+		
+		return rowsAffected;
+	}
 
 	// READ
 	public Users getUserByEmail(String email) {
@@ -84,7 +102,7 @@ public class ProjectOneDaoImpl implements ProjectOneDao {
 	public List<Reimbursement> getAllApprovedReimb() {
 		List<Reimbursement> reimb = new ArrayList<>();
 		System.err.println("[LOG---Starting---getAllApprovedReimb() argument: ]");
-		
+
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
 			String sql = "SELECT * FROM reimbursement WHERE rq_status_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);

@@ -51,9 +51,14 @@
 		<servlet-name>getUserByEmail</servlet-name>
 		<url-pattern>/user/email</url-pattern>
 	</servlet-mapping>
-
-
-
-
-
+	<!-- CreateReimbursement Servlet -->
+	<servlet>
+		<servlet-name>createReimb</servlet-name>
+		<servlet-class>com.revature.servlet.CreateReimbursementServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>createReimb</servlet-name>
+		<url-pattern>/reimbursement/create</url-pattern>
+	</servlet-mapping>
+	
 </web-app>

@@ -44,6 +44,15 @@ public class Reimbursement {
 		this.timeSubmission = timeSubmission;
 	}
 
+	public Reimbursement(int amt, int emp_U_Id, int mgr_U_Id, int rq_Type_Id, String description) {
+		super();
+		this.amt = amt;
+		this.emp_U_Id = emp_U_Id;
+		this.mgr_U_Id = mgr_U_Id;
+		this.rq_Type_Id = rq_Type_Id;
+		this.description = description;
+	}
+
 	// setters & getters
 	
 	public int getR_Id() {
