@@ -1,0 +1,56 @@
+<html>
+
+<head>
+    <title>Tampa Hidden Gems</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/login.css" />
+</head>
+
+<body>
+
+    <!-- Navbar begin -->
+    <ul>
+        <li>
+            <a href="/home">Home</a>
+        </li>
+        <li>
+            <a href="restaurant.html">Restaurant</a>
+        </li>
+        <li>
+            <a href="bars.html">Bars</a>
+        </li>
+
+        <li class="dropdown">
+            <a href="javascript:void(0)" class="dropbtn">Dropdown</a>
+            <div class="dropdown-content">
+                <a href="#">Link 1</a>
+                <a href="#">Test</a>
+                <a href="#">Link 3</a>
+            </div>
+        </li>
+        <li class="float-right">
+            <a href="login.html">Login</a>
+        </li>
+    </ul>
+    <!-- Navbar End-->
+    <header>
+        <h1>Login</h1>
+    </header>
+    <div id="loginBody">
+        <!--
+            GET vs POST
+            GET  - form data in the URL
+            POST - form data hidden in the request body
+        -->
+        <form id="loginForm" method="POST" action="http://www.maw.com/login">
+            Enter username:
+            <input type="text" required> <br><br>
+            Enter password:
+            <input type="password" required><br><br>
+            <input class="success-btn" type="submit" value="Login">
+        </form>
+
+    </div>
+</body>
+
+</html>

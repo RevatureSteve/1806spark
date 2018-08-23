@@ -13,7 +13,7 @@ import com.revature.domain.Reimbursement;
 import com.revature.domain.Users;
 import com.revature.util.SetConnectionPropertiesUtil;
 
-import oracle.sql.TIMESTAMP;
+//import oracle.sql.TIMESTAMP;
 
 public class ReimbursementDaoImpl implements ReimbursementDao{
 
