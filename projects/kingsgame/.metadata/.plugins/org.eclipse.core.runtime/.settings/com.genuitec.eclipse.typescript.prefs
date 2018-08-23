@@ -1,0 +1,10 @@
+content_assist_proposals_background=52,57,61
+content_assist_proposals_foreground=238,238,238
+eclipse.preferences.version=1
+hover_background=52,57,61
+hover_foreground=238,238,238
+migrated=true
+syntaxColoring.bracket.color=216,216,216
+syntaxColoring.specialKeyword.color=217,127,55
+syntaxColoring.todo.color=217,229,119
+ts_default=216,216,216

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>KingsGame</display-name>
+	 <!-- alias of a servlet for protection
+	 (different name so hackers can't see our class) -->
+<filter>
+   <filter-name>CorsFilter</filter-name>
+   <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+   <init-param>
+     <param-name>cors.allowed.origins</param-name>
+     <param-value>*</param-value>
+   </init-param>
+   <init-param>
+     <param-name>cors.allowed.methods</param-name>
+     <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
+   </init-param>
+ </filter>
+ <filter-mapping>
+   <filter-name>CorsFilter</filter-name>
+   <url-pattern>/*</url-pattern>
+ </filter-mapping>
+
+  <servlet>
+	 		<servlet-name>hello</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.HelloWorldServlet</servlet-class>
+	 		</servlet>
+	 		<servlet-mapping> <!-- use alias of servlet -->
+	 		<servlet-name>hello</servlet-name>
+	 		<url-pattern>/hello</url-pattern>
+	 		</servlet-mapping>
+	 		
+	 		<servlet>
+	 		<servlet-name>login</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.LoginServlet</servlet-class>
+	 		</servlet>
+	 		<servlet-mapping> <!-- use alias of servlet -->
+	 		<servlet-name>login</servlet-name>
+	 		<url-pattern>/login</url-pattern>
+	 		</servlet-mapping>
+	 		
+	 		<servlet>
+	 		<servlet-name>newre</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.NewReServlet</servlet-class>
+	 		</servlet>
+	 		<servlet-mapping> <!-- use alias of servlet -->
+	 		<servlet-name>newre</servlet-name>
+	 		<url-pattern>/reim/new</url-pattern>
+	 		</servlet-mapping>
+	 		
+	 		<servlet>
+	 		<servlet-name>mgr-re</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.MReServlet</servlet-class>
+	 		</servlet>
+	 		<servlet-mapping>
+	 		<servlet-name>mgr-re</servlet-name>
+	 		<url-pattern>/reim/mgr/</url-pattern>
+	 		</servlet-mapping>
+</web-app>
