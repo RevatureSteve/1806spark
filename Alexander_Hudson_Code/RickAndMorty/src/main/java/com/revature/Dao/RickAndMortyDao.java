@@ -19,10 +19,12 @@ public interface RickAndMortyDao {
 	//READ-------------------------------------------------------------------------------------------------------
 	
 	public Users getUserByEmail(String email);
-	public Users getAllUsers();
-	List <Reimbursement> getAllReimbursements();
-	List <Reimbursement> getAllReimbursementsByStatus();
-	List <Reimbursement> getAllReimbursementsByStatusAndId(int rq_status_id, int emp_u_id);
+	public List<Users> getAllUsers();
+	public List <Reimbursement> getAllReimbursements();
+	public List <Reimbursement> getAllReimbursementsByApproved(int rq_status_id);
+	public List <Reimbursement> getAllReimbursementsByPending(int rq_status_id);
+	public List <Reimbursement> getAllReimbursementsByDenied(int rq_status_id);
+	public List <Reimbursement> getAllReimbursementsByStatusAndId(int rq_status_id, int emp_u_id);
 	
 	//UPDATE------------------------------------------------------------------------------------------------------
 	

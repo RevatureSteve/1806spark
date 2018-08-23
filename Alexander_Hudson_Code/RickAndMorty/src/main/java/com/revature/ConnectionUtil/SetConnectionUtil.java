@@ -10,19 +10,20 @@ import java.util.Properties;
 
 public class SetConnectionUtil {
 	
+	final static String username = "ers_db";
+	final static String password = "p4ssw0rd";
+	final static String url = "jdbc:oracle:thin:@masterroshi.cjkgryllidyb.us-east-2.rds.amazonaws.com:1521:ORCL";
 	
-	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException {
+	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException, ClassNotFoundException {
 		
-		final String username;
-		final String password;
-		final String url;
+		Class.forName("oracle.jdbc.driver.OracleDriver");
+		
+		
 		
 		Properties prop = new Properties();
-		prop.load(new FileReader ("/RickAndMorty/src/main/resources/db.properties2"));
+		prop.load(new FileReader ("C:\\Users\\Savii Luciano\\my_git_repos\\1806spark\\Alexander_Hudson_Code\\RickAndMorty\\src\\main\\resources\\db.properties"));
 		
-		url=prop.getProperty("url");
-		password = prop.getProperty("password");
-		username = prop.getProperty("username");
+		
 		
 		return DriverManager.getConnection(url, username, password);
 		

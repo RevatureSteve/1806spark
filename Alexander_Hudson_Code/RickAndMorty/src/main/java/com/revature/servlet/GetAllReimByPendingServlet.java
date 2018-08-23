@@ -10,28 +10,27 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.Pojo.Users;
+import com.revature.Pojo.Reimbursement;
 import com.revature.service.AppService;
 
-public class GetAllUsersServlet extends HttpServlet{
+public class GetAllReimByPendingServlet extends HttpServlet{
+
 	
 	private AppService appService = new AppService();
 	
 	protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		System.out.println("All Employees -GET");
+		System.out.println("All Reimbursements by Denied -GET");
 		
-		List <Users> us = appService.getAllUsers();
+		List <Reimbursement> re = appService.getAllReimbursementsByPending(2);
 		
-	//converting to json
-		ObjectMapper mapper = new ObjectMapper();
-		
-		//employee json information
-		String json = mapper.writeValueAsString(us);
-		
-		//format into text output
-		PrintWriter out = resp.getWriter();
-		out.println(json);
+		//converting to json
+			ObjectMapper mapper = new ObjectMapper();
+			
+			//employee json information
+			String json = mapper.writeValueAsString(re);
+			
+			//format into text output
+			PrintWriter out = resp.getWriter();
+			out.println(json);
 	}
-	
 }
-

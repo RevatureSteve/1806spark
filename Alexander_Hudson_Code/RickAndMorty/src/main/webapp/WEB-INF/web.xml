@@ -2,4 +2,79 @@
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>RickAndMorty</display-name>
   
+  
+  <!--USER BY EMAIL-->
+  <servlet>
+  <servlet-name>userEmail</servlet-name>
+  <servlet-class>com.revature.servlet.GetUserByEmailServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>userEmail</servlet-name>
+  <url-pattern>/login</url-pattern>
+ 
+  </servlet-mapping>
+  
+  <!-- ALL EMPLOYEES -->
+   <servlet>
+  <servlet-name>allEmp</servlet-name>
+  <servlet-class>com.revature.servlet.GetAllUsersServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>allEmp</servlet-name>
+  <url-pattern>/employees</url-pattern>
+ 
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>allReim</servlet-name>
+  <servlet-class>com.revature.servlet.GetAllReimbursementsServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>allReim</servlet-name>
+  <url-pattern>/reim</url-pattern>
+ 
+  </servlet-mapping>
+  
+  
+  
+   <servlet>
+  <servlet-name>allReimApproved</servlet-name>
+  <servlet-class>com.revature.servlet.GetAllReimByApprovedServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>allReimApproved</servlet-name>
+  <url-pattern>/reim/approved</url-pattern>
+ 
+  </servlet-mapping>
+  
+  
+  <servlet>
+  <servlet-name>allReimDenied</servlet-name>
+  <servlet-class>com.revature.servlet.GetAllReimByDeniedServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>allReimDenied</servlet-name>
+  <url-pattern>/reim/denied</url-pattern>
+ 
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
+  <servlet-name>allReimPending</servlet-name>
+  <servlet-class>com.revature.servlet.GetAllReimByPendingServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>allReimPending</servlet-name>
+  <url-pattern>/reim/pending</url-pattern>
+ 
+  </servlet-mapping>
+  
 </web-app>

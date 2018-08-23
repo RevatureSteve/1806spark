@@ -13,17 +13,19 @@ import com.revature.ConnectionUtil.SetConnectionUtil;
 import com.revature.Pojo.Reimbursement;
 import com.revature.Pojo.Users;
 
-public class RickAndMortyDaoImpli {
+public class RickAndMortyDaoImpli implements RickAndMortyDao {
 	
 	
-	private final static String USERNAME = "";
-	private final static String PASSWORD = "";
-	private final static String URL = "";
+//	private final static String USERNAME = "";
+//	private final static String PASSWORD = "";
+//	private final static String URL = "";
 	
 	
 	
 	//----------------------------------------------------------------------------------------------------------
 	//CREATE
+	
+	@Override
 	public Reimbursement createReimbursement(int amt, String description, Timestamp time_Submission, int rq_Type) {
 		Reimbursement re = null;
 		
@@ -46,7 +48,7 @@ public class RickAndMortyDaoImpli {
 			re = new Reimbursement (rs.getInt("R_ID"), rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getTimestamp("TIME_SUBMISSION"), rs.getInt("RQ_TYPE"), rs.getInt("RQ_STATUS_ID"));
 		}
 		
-		} catch (IOException | SQLException e) {
+		} catch (IOException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -60,114 +62,170 @@ public class RickAndMortyDaoImpli {
 	
 	//-----------------------------------------------------------------------------------------
 	//READ
-	
-	public Users getUserByEmail(String email, String passWord) {
+	@Override
+	public Users getUserByEmail(String email) {
 		Users us = null;
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			System.out.println("Connected");
 			
-			String sql = "SELECT FROM users WHERE email = ? AND password =?";
+			String sql = "SELECT * FROM users WHERE email = ?";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
 			ps.setString(1, email);
-			ps.setString(1, passWord);
 			
 			System.out.println("Retrieving Information");
 			
 			ResultSet rs = ps.executeQuery();
-			System.out.println(us);
+			
 			
 			while (rs.next()) {
 				us = new Users (rs.getInt("U_ID"), rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("FNAME"), rs.getString("LNAME"), rs.getInt("POS_ID"));
 				
 			}
-			} catch (Exception e) {
+			} catch (IOException | SQLException | ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
+		System.out.println(us);
 			return us;
 	}
 	
-	
-	public Users getAllUsers() {
-		Users us = null;
+	@Override
+	public List<Users> getAllUsers() {
+		List <Users> us = new ArrayList<>();
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			System.out.println("Connected");
 			
-			String sql = "SELECT * FROM users";
+			String sql = "SELECT * FROM users WHERE pos_id = 2";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
+			System.out.println("Retrieving Information");
+			
 			ResultSet rs = ps.executeQuery();
-			System.out.println(us);
 			
 			while (rs.next()) {
-				us = new Users (rs.getInt("U_ID"), rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("FNAME"), rs.getString("LNAME"), rs.getInt("POS_ID"));
+				us.add (new Users (rs.getInt("U_ID"), rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("FNAME"), rs.getString("LNAME"), rs.getInt("POS_ID")));
 				
 			}
-			} catch (Exception e) {
+			} catch (IOException | SQLException | ClassNotFoundException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-
+			System.out.println(us);
 			return us;
 	}
 	
-	
-	List <Reimbursement> getAllReimbursements(){
+	@Override
+	public List <Reimbursement> getAllReimbursements(){
 		List <Reimbursement> re = new ArrayList<>();
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			System.out.println("Connected");
 		
-		String sql = "SELECT * FROM Reimbursement";
+		String sql = "SELECT * FROM reimbursement";
 		
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ResultSet rs = ps.executeQuery();
-		System.out.println(re);
 		
 		while (rs.next()) {
 			re.add(new Reimbursement(rs.getInt("R_ID"), rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getTimestamp("TIME_SUBMISSION"), rs.getInt("RQ_TYPE"), rs.getInt("RQ_STATUS_ID")));
 		}
 		
-		} catch (IOException | SQLException e) {
+		} catch (IOException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		System.out.println(re);
 		return re;
 		
 	}
 	
-	List <Reimbursement> getAllReimbursementsByStatus(int rq_status_id){
+	public List <Reimbursement> getAllReimbursementsByApproved(int rq_status_id){
+		List <Reimbursement> re = new ArrayList<>();
+		System.out.println("Connected");
+		
+		try (Connection conn = SetConnectionUtil.getConnection()) {
+			
+		
+		String sql = "SELECT * FROM reimbursement WHERE rq_status_id = 1";
+		
+		
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		System.out.println("Retrieving Information");
+		ResultSet rs = ps.executeQuery();
+		
+		while (rs.next()) {
+			re.add(new Reimbursement(rs.getInt("R_ID"), rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getTimestamp("TIME_SUBMISSION"), rs.getInt("RQ_TYPE"), rs.getInt("RQ_STATUS_ID")));
+		}
+		
+		} catch (IOException | SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(re);
+		return re;
+		
+	}
+	
+	
+	public List <Reimbursement> getAllReimbursementsByPending(int rq_status_id){
 		List <Reimbursement> re = new ArrayList<>();
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 		
-		String sql = "SELECT * FROM Reimbursement WHERE rq_status_id =?";
+		String sql = "SELECT * FROM reimbursement WHERE rq_status_id =2";
 		
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setInt(1, rq_status_id);
 		ResultSet rs = ps.executeQuery();
 		
 		while (rs.next()) {
 			re.add(new Reimbursement(rs.getInt("R_ID"), rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getTimestamp("TIME_SUBMISSION"), rs.getInt("RQ_TYPE"), rs.getInt("RQ_STATUS_ID")));
 		}
 		
-		} catch (IOException | SQLException e) {
+		} catch (IOException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		System.out.println(re);
 		return re;
 		
 	}
 	
 	
-	List <Reimbursement> getAllReimbursementsByStatusAndId(int rq_status_id, int emp_u_id){
+	public List <Reimbursement> getAllReimbursementsByDenied(int rq_status_id){
+		List <Reimbursement> re = new ArrayList<>();
+		System.out.println("Connected");
+		
+		try (Connection conn = SetConnectionUtil.getConnection()) {
+		
+		String sql = "SELECT * FROM reimbursement WHERE rq_status_id =3";
+		
+		PreparedStatement ps = conn.prepareStatement(sql);
+		System.out.println("Retrieving Information");
+		
+		ResultSet rs = ps.executeQuery();
+		
+		while (rs.next()) {
+			re.add(new Reimbursement(rs.getInt("R_ID"), rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getTimestamp("TIME_SUBMISSION"), rs.getInt("RQ_TYPE"), rs.getInt("RQ_STATUS_ID")));
+		}
+		
+		} catch (IOException | SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(re);
+		return re;
+		
+	}
+	
+	
+	
+	
+	public List <Reimbursement> getAllReimbursementsByStatusAndId(int rq_status_id, int emp_u_id){
 		List <Reimbursement> re = new ArrayList<>();
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
@@ -188,7 +246,7 @@ public class RickAndMortyDaoImpli {
 			re.add(new Reimbursement(rs.getInt("R_ID"), rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getTimestamp("TIME_SUBMISSION"), rs.getInt("RQ_TYPE"), rs.getInt("RQ_STATUS_ID")));
 		}
 		
-		} catch (IOException | SQLException e) {
+		} catch (IOException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
@@ -285,6 +343,8 @@ public class RickAndMortyDaoImpli {
 
 			return us;
 	}
+
+
 }
 
 
