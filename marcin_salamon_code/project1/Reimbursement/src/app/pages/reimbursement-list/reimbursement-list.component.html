@@ -1,3 +1,5 @@
+<input type="checkbox" name="status" id="pending">
+<input type="checkbox" name="status" id="resolved">
 <li *ngFor='let r of reimbursements' class="list-group">
     <a routerLink='/employee/detail/{{r.rId}}' class="list-group-item list-group-item-action list-group-item-success">
         <div>{{r.description}}</div>

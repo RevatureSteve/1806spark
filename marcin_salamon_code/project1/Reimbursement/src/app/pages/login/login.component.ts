@@ -24,11 +24,11 @@ export class LoginComponent implements OnInit {
 
   changePage(user) {
     this.changeLogged(user);
-    if (!this.user) {
+    if (!user) {
       this.failed = true;
-    } else if (this.user.positionId = 1) {
+    } else if (user.positionId === 1) {
       this.routes.navigate(['employee']);
-    } else if (this.user.positionId = 2) {
+    } else if (user.positionId === 2) {
       this.routes.navigate(['manager']);
     }
     // changes the page depending on user position

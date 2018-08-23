@@ -2,15 +2,16 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
-import { LoginComponent } from './navbar/login/login.component';
-import { EmployeeComponent } from './navbar/employee/employee.component';
-import { NavbarComponent } from './navbar/navbar.component';
-import { UpdateUserComponent } from './navbar/update-user/update-user.component';
-import { ReimbursementListComponent } from './navbar/reimbursement-list/reimbursement-list.component';
-import { SubmitComponent } from './navbar/submit/submit.component';
-import { ReimbursementDetailsComponent } from './navbar/reimbursement-details/reimbursement-details.component';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
+import { LoginComponent } from './pages/login/login.component';
+import { EmployeeComponent } from './pages/employee/employee.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { UpdateUserComponent } from './pages/update-user/update-user.component';
+import { ReimbursementListComponent } from './pages/reimbursement-list/reimbursement-list.component';
+import { SubmitComponent } from './pages/submit/submit.component';
+import { ReimbursementDetailsComponent } from './pages/reimbursement-details/reimbursement-details.component';
+import { ManagerListComponent } from './pages/manager-list/manager-list.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { AppRoutingModule } from './app-routing.module';
     UpdateUserComponent,
     ReimbursementListComponent,
     SubmitComponent,
-    ReimbursementDetailsComponent
+    ReimbursementDetailsComponent,
+    ManagerListComponent
   ],
   imports: [
     BrowserModule,

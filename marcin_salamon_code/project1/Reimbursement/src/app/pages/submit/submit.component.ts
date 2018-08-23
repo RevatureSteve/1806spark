@@ -7,7 +7,6 @@ import { SubmitService } from '../../services/submit.service';
   styleUrls: ['./submit.component.css']
 })
 export class SubmitComponent implements OnInit {
-
   constructor(private submit: SubmitService) { }
 
   ngOnInit() {

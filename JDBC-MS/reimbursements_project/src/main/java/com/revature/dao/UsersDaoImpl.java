@@ -57,14 +57,16 @@ public class UsersDaoImpl implements UsersDao {
 	@Override
 	public int updateUserInfo(int id, String email, String psw, String fname, String lname) {
 		int rowsAffected = 0;
+		System.out.println(id +" " + email + " " + psw + " " + fname + " " + lname);
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
-			String sql = "{updateUser(?,?,?,?,?)}";
+			String sql = "{call updateUser(?,?,?,?,?)}";
 			CallableStatement cs = conn.prepareCall(sql);
 			cs.setInt(1, id);
 			cs.setString(2, email);
 			cs.setString(3, psw);
 			cs.setString(4, fname);
 			cs.setString(5, lname);
+			rowsAffected = cs.executeUpdate();
 		} catch (IOException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

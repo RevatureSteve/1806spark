@@ -46,11 +46,11 @@ public class UserInformationUpdateServlet extends HttpServlet {
 		int id = node.get("uId").intValue();
 		int posId = node.get("positionId").intValue();
 		String posName = node.get("position").textValue();
-		
+
 		User user = new User(id, email, password, fname, lname, posId, posName);
 		System.out.println(user);
-		User returnedUser = null;
-//				UserService.updateUserInfo(user);
+
+		User returnedUser = UserService.updateUserInfo(user);
 		String jsonOut = mapper.writeValueAsString(returnedUser);
 
 		// user printwriter note this is not json String just misc toString code
