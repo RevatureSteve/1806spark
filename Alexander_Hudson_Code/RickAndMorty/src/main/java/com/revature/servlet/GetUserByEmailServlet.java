@@ -23,7 +23,10 @@ public class GetUserByEmailServlet extends HttpServlet{
 		String email = req.getParameter("email");
 		System.out.println("User email " + email);
 		
-		Users us =appService.getUserByEmail(email);
+		String password = req.getParameter("password");
+		
+		Users us =appService.getUserByEmail(email, password);
+		
 		
 		
 		ObjectMapper mapper = new ObjectMapper();

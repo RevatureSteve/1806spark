@@ -63,17 +63,18 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 	//-----------------------------------------------------------------------------------------
 	//READ
 	@Override
-	public Users getUserByEmail(String email) {
+	public Users getUserByEmail(String email, String password) {
 		Users us = null;
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			System.out.println("Connected");
 			
-			String sql = "SELECT * FROM users WHERE email = ?";
+			String sql = "SELECT * FROM users WHERE email = ? AND password = ?";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
 			ps.setString(1, email);
+			ps.setString(2, password);
 			
 			System.out.println("Retrieving Information");
 			

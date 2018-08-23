@@ -13,30 +13,40 @@ public class AppService {
 	private RickAndMortyDao rmDao = new RickAndMortyDaoImpli();
 	
 	
-	public Users login (Users email) {
+	public Users login (Users email, Users password) {
 		System.out.println("[LOG]------retrieving--------Users Email");
 		
-		Users uEmail = rmDao.getUserByEmail(email.getEmail());
+		Users uEmail = rmDao.getUserByEmail(email.getEmail(), password.getEmail());
+		Users uPassword = rmDao.getUserByEmail(email.getEmail(), password.getEmail());
 		System.out.println("Connected to Dao");
 		
 		
 		if (uEmail != null) {
-			
+			System.out.println("y..y..Youu don't match anyone here Rick");
 			if (uEmail.getPassWord().equals(email.getPassWord())) {
 				
 				return uEmail;
 			}
+			
+		if (uPassword != null) {
+			System.out.println("y..y..Youu don't match anyone here Rick");
+			if (uPassword.getEmail().equals(password.getEmail())) {
+				
+				return uPassword;
+			}
 		}
+		
+	}
 		
 		System.err.println("[LOG]-------Login Failed---------");
 		return null;
 	}
 	
 	
-	public Users getUserByEmail(String email) {
+	public Users getUserByEmail(String email, String password) {
 		System.out.println("[LOG]---------retrieving-------Users by Email");
 		
-		return rmDao.getUserByEmail(email);
+		return rmDao.getUserByEmail(email, password);
 	}
 	
 	

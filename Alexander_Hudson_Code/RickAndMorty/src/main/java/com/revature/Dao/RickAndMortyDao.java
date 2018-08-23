@@ -18,7 +18,7 @@ public interface RickAndMortyDao {
 	
 	//READ-------------------------------------------------------------------------------------------------------
 	
-	public Users getUserByEmail(String email);
+	public Users getUserByEmail(String email, String password);
 	public List<Users> getAllUsers();
 	public List <Reimbursement> getAllReimbursements();
 	public List <Reimbursement> getAllReimbursementsByApproved(int rq_status_id);
