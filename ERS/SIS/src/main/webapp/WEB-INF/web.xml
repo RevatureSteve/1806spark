@@ -49,6 +49,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>DocumentationServlet</servlet-name>
-    <url-pattern>/DocumentationServlet</url-pattern>
+    <url-pattern>/ERS-Restful-API</url-pattern>
   </servlet-mapping>
 </web-app>
