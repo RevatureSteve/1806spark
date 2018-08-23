@@ -220,7 +220,7 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 		System.out.println(re);
 		return re;
 		
-	}
+	 }
 	
 	
 	
@@ -231,7 +231,7 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			System.out.println("Connected");
 		
-		String sql = "SELECT * FROM Reimbursement WHERE rq_status_id =? AND emp_u_id = ?";
+		String sql = "SELECT * FROM reimbursement WHERE rq_status_id =? AND emp_u_id = ?";
 		
 		PreparedStatement ps = conn.prepareStatement(sql);
 		
