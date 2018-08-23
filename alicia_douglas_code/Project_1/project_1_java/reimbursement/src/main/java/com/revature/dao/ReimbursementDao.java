@@ -71,6 +71,33 @@ public class ReimbursementDao {
 		}
 		return reimbursements;
 	}
+	
+	
+	public Reimbursement getReimbursementByRId(int rId) {
+		Reimbursement reimbursement = null;
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
+			
+			String sql = "SELECT * FROM reimbursement r LEFT JOIN rb_status rs ON r.rb_status_id = rs.rb_status_id LEFT JOIN rb_type rt "
+					+ "ON r.rb_type_id = rt.rb_type_id LEFT JOIN users u ON r.emp_u_id = u.u_id LEFT JOIN users u ON r.mgr_u_id = u.u_id WHERE r_id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, rId);
+			ResultSet rs = ps.executeQuery();
+			
+			if (rs.next()) {
+				reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"),
+						rs.getString("fname") + " " + rs.getString("lname"), rs.getInt("mgr_u_id"),
+						rs.getString(23) + " " + rs.getString(24), rs.getDouble("amt"), rs.getString("description"),
+						rs.getBlob("img"), rs.getDate("time_submission"), rs.getString("rb_type"),
+						rs.getInt("rb_type_id"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
+//				reimbursements.add(reimbursement);
+			}
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+		return reimbursement;
+	}
+	
 
 	/**
 	 * get a list of all the reimbursements

@@ -102,5 +102,17 @@ public class ReimbursementBuisnessLogic {
 		reimbDao.createReimbursement(reimb);
 	}
 	
+	/**
+	 * updates reimbursement after approved or denied
+	 * @param rId
+	 * @param mgrId
+	 * @param status
+	 */
+	public Reimbursement updateReimbursement(int rId, int mgrId, int status) {
+		Reimbursement reimb = reimbDao.getReimbursementByRId(rId);
+		reimbDao.updateReimbursementStatus(reimb, mgrId, status);
+		return reimbDao.getReimbursementByRId(rId);
+	}
+	
 	
 }

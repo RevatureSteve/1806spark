@@ -53,7 +53,7 @@ export class ReimbursementsService {
 
     console.log(reimb);
 
-    this.httpClient.post<void>('http://localhost:8080/reimbursement/reimbursement', reimb);
+    this.httpClient.post('http://localhost:8080/reimbursement/reimbursement', reimb);
 
     // console.log('after post statement');
   }

@@ -106,4 +106,14 @@
     <servlet-name>ReimbursementResolvedIdServlet</servlet-name>
     <url-pattern>/resolved/id</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementRIdServlet</display-name>
+    <servlet-name>ReimbursementRIdServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ReimbursementRIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementRIdServlet</servlet-name>
+    <url-pattern>/reimbursement/rid</url-pattern>
+  </servlet-mapping>
 </web-app>
