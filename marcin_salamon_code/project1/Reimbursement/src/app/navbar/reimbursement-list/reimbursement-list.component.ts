@@ -16,8 +16,7 @@ export class ReimbursementListComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.logged.getLoggedUser();
-    // this.reimbService.getPendingReimbursementsById(this.user.uId);
-    this.reimbService.getPendingReimbursementsById(1);
+    this.reimbService.getReimbursementsByUserId(this.user.uId);
     this.getReimbursements();
   }
 

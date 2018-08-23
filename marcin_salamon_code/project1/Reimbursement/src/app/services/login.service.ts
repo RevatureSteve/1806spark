@@ -15,6 +15,6 @@ export class LoginService {
       password: password
     };
 
-    return this.http.post<User>('http://localhost:8080/reimbursements_project/login', user);
+    return this.http.post<User>('http://localhost:8080/Reimbursement/login', user);
   }
 }

@@ -18,6 +18,6 @@ export class SubmitService {
       img: null,
       rqTypeId: id
     };
-    return this.http.post('http://localhost:8080/reimbursements_project/employee/reimbursements/submit', reimb);
+    return this.http.post('http://localhost:8080/Reimbursement/employee/reimbursements/submit', reimb);
   }
 }

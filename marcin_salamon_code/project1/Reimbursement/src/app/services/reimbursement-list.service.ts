@@ -11,11 +11,10 @@ export class ReimbursementListService {
   constructor(private http: HttpClient) { }
 
   getPendingReimbursementsById(id): void {
-    this.reimbursements =  this.http.get<Reimbursement[]>(`http://localhost:8080/reimbursements_project/employee/reimbursements/pending?id=${id}`);
   }
 
   getReimbursementsByUserId(id): void {
-    this.reimbursements = this.http.get<Reimbursement[]>(`http://localhost:8080/reimbursements_project/employee/reimbursements?id=${id}`);
+    this.reimbursements = this.http.get<Reimbursement[]>(`http://localhost:8080/Reimbursement/employee/reimbursements?id=${id}`);
   }
 
   getReimbursementsArray(): Observable<Reimbursement[]> {
@@ -23,10 +22,10 @@ export class ReimbursementListService {
   }
 
   getReimbursement(rId): Observable<Reimbursement> {
-    return this.http.get<Reimbursement>(`http://localhost:8080/reimbursements_project/${rId}`);
+    return this.http.get<Reimbursement>(`http://localhost:8080/Reimbursement/${rId}`);
   }
 
-  getAllReimbursements(): Observable<Reimbursement[]> {
-    return this.http.get<Reimbursement[]>('http://localhost:8080/reimbursements_project/${rId}');
+  getAllReimbursements(): void {
+    this.reimbursements = this.http.get<Reimbursement[]>('http://localhost:8080/Reimbursement/${rId}');
   }
 }

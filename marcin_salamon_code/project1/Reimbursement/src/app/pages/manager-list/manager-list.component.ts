@@ -12,7 +12,6 @@ export class ManagerListComponent implements OnInit {
   constructor(private reimbService: ReimbursementListService) { }
 
   ngOnInit() {
-    this.reimbService.getAllReimbursements().subscribe(reimbs => this.reimbursement = reimbs);
   }
 
 }
