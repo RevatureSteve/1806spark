@@ -4,22 +4,25 @@ public class Reimbursement {
 	private int rId;
 	private double amount;
 	private String rDescription;
+	private String rType;
 	private String timeSubmitted;
 	private String rStatus;
 	private String f_name;
 	private String l_name;
 	
 	
-	public Reimbursement(int rId, double amount, String rDescription, String timeSubmitted, String rStatus,
+	public Reimbursement(int rId, double amount, String rDescription, String rType, String timeSubmitted, String rStatus,
 			String f_name, String l_name) {
 		super();
 		this.rId = rId;
 		this.amount = amount;
 		this.rDescription = rDescription;
+		this.rType= rType;
 		this.timeSubmitted = timeSubmitted;
 		this.rStatus = rStatus;
 		this.f_name = f_name;
 		this.l_name = l_name;
+		
 	}
 
 
@@ -93,14 +96,25 @@ public class Reimbursement {
 	}
 
 
+	public String getrType() {
+		return rType;
+	}
+
+
+	public void setrType(String rType) {
+		this.rType = rType;
+	}
+
+
 	@Override
 	public String toString() {
-		return "Reimbursement [rId=" + rId + ", amount=" + amount + ", rDescription=" + rDescription
-				+ ", timeSubmitted=" + timeSubmitted + ", rStatus=" + rStatus + ", f_name=" + f_name + ", l_name="
-				+ l_name + "]";
+		return "Reimbursement [rId=" + rId + ", amount=" + amount + ", rDescription=" + rDescription + ", rType="
+				+ rType + ", timeSubmitted=" + timeSubmitted + ", rStatus=" + rStatus + ", f_name=" + f_name
+				+ ", l_name=" + l_name + "]";
 	}
-	
-	
+
+
+
 
 	
 	

@@ -3,13 +3,13 @@
   <display-name>ERS</display-name>
   <servlet>
     <description></description>
-    <display-name>AllReimbServlet</display-name>
-    <servlet-name>AllReimbServlet</servlet-name>
-    <servlet-class>com.revature.servlets.AllReimbServlet</servlet-class>
+    <display-name>EmpReimbServlet</display-name>
+    <servlet-name>EmpReimbServlet</servlet-name>
+    <servlet-class>com.revature.servlets.EmpReimbursementServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>AllReimbServlet</servlet-name>
-    <url-pattern>/reimbursement</url-pattern>
+    <url-pattern>/empReimbursement</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -19,7 +19,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>EmpployeeServlet</servlet-name>
-    <url-pattern>/allemployees</url-pattern>
+    <url-pattern>/employees</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -29,6 +29,26 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>AllReimbursementServlet</servlet-name>
-    <url-pattern>/allreimbursements</url-pattern>
+    <url-pattern>/reimbursements</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.revature.servlets.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DocumentationServlet</display-name>
+    <servlet-name>DocumentationServlet</servlet-name>
+    <servlet-class>com.revature.servlets.DocumentationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DocumentationServlet</servlet-name>
+    <url-pattern>/DocumentationServlet</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -26,7 +26,7 @@ public class AllReimbursementServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Get all Reimbursements -GET");
-		List<Reimbursement> rb = ss.getAllEmpReimb();
+		List<Reimbursement> rb = ss.getAllReimb();
 		System.out.println("Got all reimbursements!");
 		
 		ObjectMapper map = new ObjectMapper();

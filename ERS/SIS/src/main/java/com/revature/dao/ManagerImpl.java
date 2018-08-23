@@ -71,17 +71,17 @@ public class ManagerImpl implements MangDao{
 	
 	//Gets all the reimbursements.
 	@Override
-	public List<Reimbursement> getAllEmpReimb() {
+	public List<Reimbursement> getAllReimb() {
 		List<Reimbursement> rbs = new ArrayList<Reimbursement>();
 		Reimbursement rb = null;
 		try(Connection conn = ConnectionUtil.getConnection()) {
-			String sql = "SELECT reimbursement.r_id, reimbursement.amount, reimbursement.r_description, reimbursement.time_submitted, rq_status.rq_status, users.f_name, users.l_name FROM reimbursement LEFT JOIN rq_status ON reimbursement.rq_status_id = rq_status.rq_status_id LEFT JOIN users ON reimbursement.emp_u_id = users.u_id";
+			String sql = "SELECT * FROM reimbursement LEFT JOIN rq_status ON reimbursement.rq_status_id = rq_status.rq_status_id LEFT JOIN users ON reimbursement.emp_u_id = users.u_id LEFT JOIN rq_type ON reimbursement.rq_type_id = rq_type.rq_type_id";
 			
 			//String sql = "SELECT * FROM reimbursement LEFT JOIN rq_status ON reimbursement.rq_status_id = rq_status.rq_status_id LEFT JOIN users ON reimbursement.emp_u_id = users.u_id";
 PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
-				rb = new Reimbursement(rs.getInt(1), rs.getDouble(2), rs.getString(3), rs.getString(4), rs.getString(5),rs.getString(6), rs.getString(7));
+				rb = new Reimbursement(rs.getInt(1), rs.getDouble(2), rs.getString(3), rs.getString(18), rs.getString(4),rs.getString(10), rs.getString(12), rs.getString(13));
 				rbs.add(rb);
 			}
 			

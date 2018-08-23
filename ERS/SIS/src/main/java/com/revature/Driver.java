@@ -16,7 +16,7 @@ public class Driver {
 		
 		
 		//Reimbursements
-		//List<Reimbursement> rb = s.getAllReimbursements(7);
+		//List<Reimbursement> rb = s.getEmpReimbursements(7);
 		//System.out.println(rb);
 
 		
@@ -26,9 +26,12 @@ public class Driver {
 		
 		
 		//Get all reimbursements.
-		Reimbursement rbs = s.getAllEmpReimb();
-		System.out.println(rbs);
+//		List<Reimbursement> rbs = s.getAllReimb();
+//		System.out.println(rbs);
 		
+		// Create new reimbursement.
+		s.createNewReimbursement(200, "test", 3, "General");
+//		
 	}
 
 }

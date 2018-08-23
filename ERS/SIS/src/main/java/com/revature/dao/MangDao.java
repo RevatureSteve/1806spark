@@ -12,7 +12,7 @@ public interface MangDao {
 	//READ
 	Users getMangInfo(String email, String password);
 	List<Users> getEmployees();
-	List<Reimbursement> getAllEmpReimb();
+	List<Reimbursement> getAllReimb();
 	
 	//UPDATE
 	

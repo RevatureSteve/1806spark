@@ -20,7 +20,6 @@ public class Service {
 		Users usr = emImpl.login(email, password);
 		usr.setEmail(email);
 		usr.setPassword(password);
-		System.out.println("It is " + usr);
 		
 		if (usr != null) {
 			if (email == usr.getEmail() && password == usr.getPassword()) {
@@ -34,9 +33,9 @@ public class Service {
 	
 	
 	//Reimbursements for an employee.
-	public List<Reimbursement> getAllReimbursements(int empId) {
+	public List<Reimbursement> getEmpReimbursements(int empId) {
 		System.out.println("Starting getAllReimbursements...");
-		return emImpl.getAllReimb(empId);
+		return emImpl.getEmpReimb(empId);
 		
 	}
 	
@@ -56,9 +55,9 @@ public class Service {
 	
 	//Get all employee reimbursements.
 	
-	public List<Reimbursement> getAllEmpReimb() {
+	public List<Reimbursement> getAllReimb() {
 		System.out.println("Starting getAllEmpReimb");
-		List<Reimbursement> rb = mImpl.getAllEmpReimb();
+		List<Reimbursement> rb = mImpl.getAllReimb();
 		if (rb != null) {
 		System.out.println("Success!");
 		return rb;
@@ -69,5 +68,16 @@ public class Service {
 		return null;
 	}
 	
-
+	//Allows employee to submit request.
+	public void createNewReimbursement(double amount, String rDescription, int uId, String rType) {
+		System.out.println("Starting createNewReimbursement....");
+		int ra =emImpl.createNewReimbursement(amount, rDescription, uId, rType);
+		
+		if (ra !=0) {
+			System.out.println("Success! " + ra + "reimbursement submitted!");
+		}
+		else {
+			System.out.println("Failed.");
+		}
+	}
 }
