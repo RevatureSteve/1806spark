@@ -1,13 +1,14 @@
 package com.revature.logic;
 
+import java.sql.Blob;
 import java.util.List;
 
-import com.revature.dao.TranstarDaoImpl;
+import com.revature.dao.TranstarReimDaoImpl;
 import com.revature.pojo.TranstarReims;
 
 public class ReqLogic {
 	
-	private TranstarDaoImpl rDao = new TranstarDaoImpl();
+	private TranstarReimDaoImpl rDao = new TranstarReimDaoImpl();
 	
 	/**
 	 * Retrieves all requests from a user. 
@@ -30,5 +31,16 @@ public class ReqLogic {
 	public List<TranstarReims> allReqs() {
 		List<TranstarReims> reqs = rDao.getAllPendingRequests();
 		return reqs;
+	}
+	
+	public String createRequest(int emp_id, int amount, String desc, int rq_type) {
+		String succ = "Failure";
+		int rowsAffected = rDao.submitReimbursment(emp_id, amount, desc, rq_type);
+		if(rowsAffected == 1) {
+			succ = "Success!";
+		}
+		
+		return succ;
+		
 	}
 }

@@ -33,16 +33,16 @@ BEGIN
 END;
 /
     
-CREATE OR REPLACE PROCEDURE new_reimbursement(emp_id IN INT, amount IN NUMBER, description IN VARCHAR2, image IN BLOB, rq_type IN INT)
+CREATE OR REPLACE PROCEDURE new_reimbursement(emp_id IN INT, amount IN INT, description IN VARCHAR2, rq_type IN INT)
 IS
 BEGIN
     INSERT INTO reimbursement (emp_u_id, amt, description, img, time_submission, rb_type_id, rq_status_id)
-    VALUES (emp_id, amount, description, image, CURRENT_TIMESTAMP, rq_type, 1);
+    VALUES (emp_id, amount, description, null, CURRENT_TIMESTAMP, rq_type, 1);
 END;
 /
 
 BEGIN
-    new_reimbursement(1,200, "Lab Breakout", null, 1);
+    new_reimbursement(2,500, 'Ran out', 3);
 END;
 /
 

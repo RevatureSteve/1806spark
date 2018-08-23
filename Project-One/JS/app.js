@@ -1,4 +1,4 @@
-
+// READ TODO RAW JS to learn more on this method!
 let userId = 1;
 window.onload = function foo() {
 

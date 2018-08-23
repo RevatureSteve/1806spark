@@ -1,5 +1,7 @@
 package com.revature.dao;
 
+
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -11,7 +13,27 @@ import com.revature.pojo.TranstarReims;
 import com.revature.pojo.TranstarUsers;
 import com.revature.util.ConnectionsPropertiesUtil;
 
-public class TranstarDaoImpl implements TranstarReimDao{
+public class TranstarReimDaoImpl implements TranstarReimDao{
+	
+	//CREATE
+	@Override
+	public int submitReimbursment(int emp_id, int amount, String desc, int rq_type) {
+		int rowsAffected = 0;
+		try (Connection con = ConnectionsPropertiesUtil.newConnection()){
+			String sql = "{call new_reimbursement(?,?, ?, ?)}";
+			CallableStatement cs = con.prepareCall(sql);
+			cs.setInt(1, emp_id);
+			cs.setInt(2, amount);
+			cs.setString(3, desc);
+			cs.setInt(4, rq_type);
+			rowsAffected = cs.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("SQL fail 1");
+			e.printStackTrace();
+		}
+		return rowsAffected;
+	}
 
 	//READ
 	/**
@@ -71,4 +93,5 @@ public class TranstarDaoImpl implements TranstarReimDao{
 		return reqs;
 		
 	}
+	
 }
