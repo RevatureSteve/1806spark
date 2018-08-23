@@ -14,12 +14,10 @@ export class UpdateUserComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.logged.getLoggedUser();
-    console.log(this.user);
   }
 
-  updateUser(password, fname, lname) {
-    console.log(this.user.email + password + fname + lname);
-    console.log(this.user);
-    this.update.updateUser(this.user, password, fname, lname).subscribe(user => this.user = user, user => console.log(user));
+  updateUser(email, password, fname, lname) {
+    console.log(email + password + fname + lname);
+    this.update.updateUser(email, password, fname, lname).subscribe(user => this.user = user);
   }
 }

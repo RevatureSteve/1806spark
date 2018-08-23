@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { LoginComponent } from './pages/login/login.component';
-import { EmployeeComponent } from './pages/employee/employee.component';
-import { SubmitComponent } from './pages/submit/submit.component';
-import { ReimbursementDetailsComponent } from './pages/reimbursement-details/reimbursement-details.component';
-import { UpdateUserComponent } from './pages/update-user/update-user.component';
-import { ManagerListComponent } from './pages/manager-list/manager-list.component';
+import { LoginComponent } from './navbar/login/login.component';
+import { EmployeeComponent } from './navbar/employee/employee.component';
+import { ReimbursementDetailsComponent } from './navbar/reimbursement-details/reimbursement-details.component';
+import { SubmitComponent } from './navbar/submit/submit.component';
+import { UpdateUserComponent } from './navbar/update-user/update-user.component';
 
 
 const routes: Routes = [
@@ -14,9 +13,7 @@ const routes: Routes = [
   { path: 'employee', component: EmployeeComponent},
   { path: 'employee/submit', component: SubmitComponent},
   { path: 'employee/detail/:id', component: ReimbursementDetailsComponent },
-  { path: 'employee/account', component: UpdateUserComponent},
-  { path: 'manager', component: ManagerListComponent },
-  { path: 'manager/account', component: UpdateUserComponent }
+  { path: 'employee/account', component: UpdateUserComponent}
 ];
 
 @NgModule({
