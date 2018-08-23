@@ -40,5 +40,25 @@ public class UserBuisnessLogic {
 	public List<Users> getAllUsers(){
 		return usersDao.readUsers();
 	}
+	
+	/**
+	 * update user and return updated user
+	 * @param user
+	 * @return
+	 */
+	public Users updateUser(Users user) {
+		
+		System.out.println("update user logic");
+		
+		usersDao.updateUsers(user);
+		
+		System.out.println("After update dao");
+		
+		Users updatedUser = usersDao.getUserByEmail(user.getEmail());
+		
+		System.out.println("After retrieve updated info");
+		
+		return updatedUser;
+	}
 
 }

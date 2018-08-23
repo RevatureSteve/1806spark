@@ -1,9 +1,9 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { ReimbursementsService } from '../reimbursements.service';
 import { Reimbursements } from '../models/reimbursements.model';
 import { CurrentUserService } from '../current-user.service';
 import { Users } from '../models/users.model';
-import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-manager-pending-reimbursements',
@@ -34,6 +34,7 @@ export class ManagerPendingReimbursementsComponent implements OnInit {
       .subscribe(reimb => this.reimb = reimb);
     // console.log(this.reimb);
     this.router.navigate(['home/sorcerer']);
+    // this.ngOnInit();
   }
 
   deny(rId) {

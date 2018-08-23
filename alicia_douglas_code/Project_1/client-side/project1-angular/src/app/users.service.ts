@@ -25,4 +25,15 @@ export class UsersService {
   getAllUsers() {
     return this.httpClient.get<Users[]>('http://localhost:8080/reimbursement/users');
   }
+
+  updateUser(u_id, email, fname, lname) {
+    const user = {
+      u_id: u_id,
+      email: email,
+      fname: fname,
+      lname: lname
+    };
+
+    return this.httpClient.post<Users>('http://localhost:8080/reimbursement/users', user);
+  }
 }

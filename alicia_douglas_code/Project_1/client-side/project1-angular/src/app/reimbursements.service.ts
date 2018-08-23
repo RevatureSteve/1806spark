@@ -48,12 +48,12 @@ export class ReimbursementsService {
       amt: amt,
       desc: desc,
       type: type,
-      img: img
+      // img: img
     };
 
     console.log(reimb);
 
-    this.httpClient.post('http://localhost:8080/reimbursement/reimbursement', reimb);
+    return this.httpClient.post('http://localhost:8080/reimbursement/reimbursement', reimb);
 
     // console.log('after post statement');
   }

@@ -85,14 +85,21 @@ public class UsersDao {
 	 * @param user
 	 */
 	public void updateUsers(Users user) {
+		
+		System.out.println("update user dao");
+		
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
-			String sql = "UPDATE users SET email = ? , fname = ?, lname = ?, WHERE u_id = ?";
+			System.out.println("in try catch");
+			String sql = "UPDATE users SET email = ? , fname = ?, lname = ? WHERE u_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
+			System.out.println("created prepared statement");
 			ps.setString(1, user.getEmail());
 			ps.setString(2, user.getFname());
 			ps.setString(3, user.getLname());
 			ps.setInt(4, user.getU_id());
+			System.out.println("set values");
 			ps.executeQuery();
+			System.out.println("exectuted query");
 		} catch (IOException | SQLException e) {
 			e.printStackTrace();
 		}

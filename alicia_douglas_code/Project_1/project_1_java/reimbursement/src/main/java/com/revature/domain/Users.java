@@ -19,6 +19,18 @@ public class Users {
 	
 	
 	
+	public Users(int u_id, String email, String fname, String lname) {
+		super();
+		this.u_id = u_id;
+		this.email = email;
+		this.fname = fname;
+		this.lname = lname;
+	}
+
+
+
+
+
 	public Users(int u_id, String email, String password, String fname, String lname, int pos_id, String posTitle) {
 		super();
 		this.u_id = u_id;
