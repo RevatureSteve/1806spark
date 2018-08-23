@@ -1,6 +1,5 @@
 package com.revature.dao;
 
-import java.sql.Blob;
 import java.util.List;
 
 import com.revature.domain.Reimbursement;

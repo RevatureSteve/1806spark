@@ -4,5 +4,11 @@
       <div>{{r.timesubmission.substring(0,19)}}</div>
       <div>{{r.rq_type}}</div>
       <div>{{r.rq_status}}</div>
+      <div *ngIf='logged.getLoggedUser().positionId === 2 && r.rq_statusId === 1'>
+          <label for="approve">Approve</label>
+          <input type="radio" name="approve" id="approve">
+          <label for="deny">Deny</label>
+          <input type="radio" name="approve" id="deny">
+      </div>
   </a>
 </li>

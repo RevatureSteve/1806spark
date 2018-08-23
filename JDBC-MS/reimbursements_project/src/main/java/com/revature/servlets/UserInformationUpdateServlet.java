@@ -13,7 +13,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.revature.domain.User;
 import com.revature.service.UserService;
-import com.revature.service.VerificationService;
 
 /**
  * Servlet implementation class UserInformationUpdateServlet

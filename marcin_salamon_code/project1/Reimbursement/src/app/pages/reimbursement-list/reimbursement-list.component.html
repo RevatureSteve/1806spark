@@ -1,3 +1,8 @@
+<ul>
+    <li>All</li>
+    <li>Pending</li>
+    <li>Resolved</li>
+</ul>
 <input type="checkbox" name="status" id="pending">
 <input type="checkbox" name="status" id="resolved">
 <li *ngFor='let r of reimbursements' class="list-group">
@@ -6,5 +11,7 @@
         <div>{{r.timesubmission.substring(0,19)}}</div>
         <div>{{r.rq_type}}</div>
         <div>{{r.rq_status}}</div>
+        
+
     </a>
 </li>

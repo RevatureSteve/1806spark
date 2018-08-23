@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Reimbursement } from '../../models/reimbursement';
+import { ReimbursementListService } from '../../services/reimbursement-list.service';
 
 @Component({
   selector: 'app-manager-list',
@@ -8,9 +9,10 @@ import { Reimbursement } from '../../models/reimbursement';
 })
 export class ManagerListComponent implements OnInit {
   reimbursement: Reimbursement[];
-  constructor() { }
+  constructor(private reimbService: ReimbursementListService) { }
 
   ngOnInit() {
+    this.reimbService.getAllReimbursements().subscribe(reimbs => this.reimbursement = reimbs);
   }
 
 }

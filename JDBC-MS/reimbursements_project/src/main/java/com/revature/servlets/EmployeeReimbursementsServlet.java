@@ -14,32 +14,34 @@ import com.revature.domain.Reimbursement;
 import com.revature.service.ReimbursementsService;
 
 /**
- * Servlet implementation class EmployeeReimbursementsResolved
+ * Servlet implementation class EmployeeReimbursements
  */
-public class EmployeeReimbursementsResolved extends HttpServlet {
+public class EmployeeReimbursementsServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    /**
-     * @see HttpServlet#HttpServlet()
-     */
-    public EmployeeReimbursementsResolved() {
-        super();
-        // TODO Auto-generated constructor stub
-    }
 
 	/**
-	 * /employee/reimbursements/resolved
+	 * @see HttpServlet#HttpServlet()
 	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	public EmployeeReimbursementsServlet() {
+		super();
+		// TODO Auto-generated constructor stub
+	}
+
+	/**
+	 * /employee/reimbursements
+	 */
+	protected void doGet(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
 		System.out.println("Employee pending reimbursements up");
 
 		ObjectMapper mapper = new ObjectMapper();
 
 		String id = request.getParameter("id");
 		int numId = Integer.parseInt(id);
-//		User verified = VerificationService.verifyUsernameAndPassword(email, password);
-		List<Reimbursement> reimbs = ReimbursementsService.getResolvedOfUser(numId);
-		
+		// User verified = VerificationService.verifyUsernameAndPassword(email,
+		// password);
+		List<Reimbursement> reimbs = ReimbursementsService.getReimbursementsOfUser(numId);
+
 		String jsonOut = mapper.writeValueAsString(reimbs);
 
 		// user printwriter note this is not json String just misc toString code
