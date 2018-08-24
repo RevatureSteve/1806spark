@@ -1,5 +1,5 @@
 import { ManagerHomeComponent } from './manager-home/manager-home.component';
-import { EmployeeHomeComponent } from './employee-home/employee-home.component';
+import { EmployeeHomeComponent } from './Employee/employee-home/employee-home.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';

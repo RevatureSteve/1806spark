@@ -24,23 +24,26 @@ public class LoginServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		Users test = ss.login(email, password);
 		
+		System.out.println("Success!");
+		System.out.println(test);
 	
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	System.out.println("Login ---Post");
 	
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		Users test = ss.login(email, password);
-		
-		
-		System.out.println(test);
-		
-		
-		
-		
+	
+//		BufferedReader br = request.getReader();
+//		ObjectMapper map = new ObjectMapper();
+//		Users usr = map.readValue(br, Users.class);
+//		System.out.println("Users: " + usr);
+//		System.out.println(br);
+//		
 	}
 
 }

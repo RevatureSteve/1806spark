@@ -26,9 +26,11 @@ inputUser: Users;
     }
   }
 
-// login() {
-// this.validateUser(this.inputUser);
-// }
+login() {
+//this.validateUser(this.inputUser);
+console.log(this.inputUser.email);
+console.log(this.inputUser.password);
+}
 // validateUser(user:Users) {
 //   this.httpClient.post("http://localhost:8080/ERS/login",user).subscribe(
 

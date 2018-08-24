@@ -7,7 +7,12 @@ import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { EmployeeHomeComponent } from './employee-home/employee-home.component';
 import { ManagerHomeComponent } from './manager-home/manager-home.component';
-
+import { FormsModule } from '@angular/forms';
+import { AgentProfileComponent } from './agent-profile/agent-profile.component';
+import { AgentMissionsComponent } from './agent-missions/agent-missions.component';
+import { AgentReimbursementsComponent } from './agent-reimbursements/agent-reimbursements.component';
+import { AllAgentsComponent } from './all-agents/all-agents.component';
+import { AllReimbursementsComponent } from './all-reimbursements/all-reimbursements.component';
 
 
 @NgModule({
@@ -16,12 +21,19 @@ import { ManagerHomeComponent } from './manager-home/manager-home.component';
     LoginComponent,
     HomeComponent,
     EmployeeHomeComponent,
-    ManagerHomeComponent
+    ManagerHomeComponent,
+    AgentProfileComponent,
+    AgentMissionsComponent,
+    AgentReimbursementsComponent,
+    AllAgentsComponent,
+    AllReimbursementsComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule
+  
   ],
   providers: [],
   bootstrap: [AppComponent]

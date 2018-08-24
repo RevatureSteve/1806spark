@@ -1,12 +1,12 @@
 <div id="login-info">
 <label>Agent Username:
-  <input type="text" required>
+  <input name="email" type="text" [(ngModel)] = "inputUser.email" required>
 </label>
 <br>
 <label>
   Agent Code Name:
-  <input type="password" required>
+  <input name = "password" type="password" [(ngModel)]= "inputUser.password"  required>
 </label>
 <br>
-<button id="confirm-info"> Confirm</button>
+<button type="submit" id="confirm-info" (click) = "login()" > Confirm</button>
 </div>
