@@ -12,12 +12,14 @@ import { UsersService } from '../users.service';
 export class ProfileComponent implements OnInit {
 
   user: Users;
+  posId;
 
   constructor(private currentUser: CurrentUserService, private userService: UsersService) { }
 
   ngOnInit() {
     this.user = this.currentUser.getCurrentUser();
     console.log(this.user);
+    this.posId = this.user.pos_id;
     // this.setPage(this.user);
   }
 

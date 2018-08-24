@@ -1,4 +1,10 @@
-<app-navbar></app-navbar>
+<span *ngIf="posId==1">
+  <app-navbar></app-navbar>  
+</span>
+<span *ngIf="posId==2">
+  <app-manager-navbar></app-manager-navbar>  
+</span>
+
 
 <!-- <h1 id = 'profilePg'>Profile</h1> -->
 <form class="form" id = 'profile'>

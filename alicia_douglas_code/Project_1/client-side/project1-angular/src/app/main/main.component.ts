@@ -9,12 +9,14 @@ import { Component, OnInit } from '@angular/core';
 export class MainComponent implements OnInit {
 
   navbar;
+  posId;
 
   constructor(private currentUser: CurrentUserService) { }
 
   ngOnInit() {
     // this.validatePostition(this.currentUser.getCurrentUser().pos_id);
     // this.validatePostition(1);
+    this.posId = this.currentUser.getCurrentUser().pos_id;
   }
 
   // validatePostition(posId) {
