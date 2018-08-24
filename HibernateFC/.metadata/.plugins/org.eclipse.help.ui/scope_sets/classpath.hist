@@ -1,0 +1,4 @@
+#Thu Aug 23 21:49:06 EDT 2018
+__DEFAULT__=false
+org.eclipse.help.ui.localSearch.master=true
+expression=classpath
