@@ -3,12 +3,14 @@ package com.revature.servlets;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.revature.domain.Users;
 import com.revature.service.UserBuisnessLogic;
 
@@ -31,11 +33,16 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("Login Servlet - POST");
-		Users currentUser = new Users();
+		Users currentUser = null;
 
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
+		String email;
+		String password;
+		ObjectMapper mapper = new ObjectMapper();
+		ServletInputStream data = request.getInputStream();
+		ObjectNode node = mapper.readValue(data, ObjectNode.class);
 		
+		email = node.get("email").textValue();
+		password = node.get("password").textValue();
 
 //		currentUser.setEmail(email);
 //		currentUser.setPassword(password);
@@ -54,7 +61,7 @@ public class LoginServlet extends HttpServlet {
 ////			response.sendRedirect("http://localhost:4200/login");
 //		}
 		
-		ObjectMapper mapper = new ObjectMapper();
+		
 		
 		String json = mapper.writeValueAsString(currentUser);
 		
