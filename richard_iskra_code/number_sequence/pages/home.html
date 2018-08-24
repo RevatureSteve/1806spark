@@ -1,0 +1,95 @@
+<html>
+
+<head>
+    <title>Home Screen</title>
+    <link rel="stylesheet" href="../css/style.css">
+
+    <script src="../js/home.js"></script>
+</head>
+
+<body id="bg">
+    <!-- id for background picture -->
+    <!--nav bar start-->
+    <ul>
+        <li>
+            <a href="/home">Home</a>
+        </li>
+        <li class="dropdown">
+            <a class="dropbtn">Play</a>
+            <div class="dropdown-content">
+                <a href="pages/mode1.html">Mode 1</a>
+                <a href="pages/mode2.html">Mode 2</a>
+            </div>
+        </li>
+        <li class="float-right">
+            <button class="logbutton" onclick="document.getElementById('lodmod').style.display='block'; btnpress()">Login</button>
+            <!-- button to bring up login modal -->
+        </li>
+    </ul>
+    <!--nav bar end-->
+
+    <!-- login modal start -->
+    <div id="lodmod" class="modal">
+
+        <form id="myform" class="modal-content animate" onsubmit="if(!login()){event.preventDefault()}">
+            <div class="imgcontainer">
+                <span onclick="document.getElementById('lodmod').style.display='none'; cancle()" class="close" title="Close Modal">&times;</span>
+            </div>
+            <div class="container">
+                <label for="uname">
+                    <b>Username (between 8 and 20 characters)</b>
+                </label>
+                <input type="text" placeholder="Enter Username" id="usrbox" name="uname" required oninput="uvalid()" minlength="8" maxlength="20">
+
+                <label for="psw">
+                    <b>Password (between 8 and 20 characters)</b>
+                    <br>
+                    <b class="passreq" id="lower">Lowercase letter</b>
+                    <br>
+                    <b class="passreq" id="upper">Uppercase letter</b>
+                    <br>
+                    <b class="passreq" id="number">Number</b>
+                    <br>
+                    <b class="passreq" id="length">At least 8 long and no more than 20</b>
+                </label>
+                <input type="password" placeholder="Enter Password" id="passbox" name="psw" required oninput="pvalid()" maxlength="20">
+                <!--pattern sets the requirnment of at least one number, lowercase letter, and uppercase letter and the minimum length of 8-->
+                <button type="submit" class="logbutton">Login</button>
+            </div>
+        </form>
+    </div>
+    <!-- login modal end -->
+    <!-- text boxes start -->
+    <center>
+        <table>
+            <tr>
+                <th>Mode 1</th>
+                <th>Mode 2 (trial)</th>
+            </tr>
+            <tr>
+                <td>
+                    <div class="gamebox">
+                        <h1>How To Play:</h1>
+                        <h3>Your goal is to find the hidden sequence of 4 numbers. Each number is randomly picked between 1 and
+                            6. You have 9 guesses to find the sequence before its game over. With each guess, the game will
+                            tell you how many correct numbers you chose (if any) are in correct place and how many are in
+                            the wrong place.
+
+                        </h3>
+                    </div>
+                </td>
+                <td>
+                    <div class="gamebox">
+                        <h1>How to Play:</h1>
+                        <h3>Your goal, similar to before, is to find the sequence. This time you are provided with pre-made guesses
+                            and hints. You have unlimited attempts but you do not get any information about your guesses. There are only 3 numbers and each must be within 1 and 4.
+                        </h3>
+                    </div>
+                </td>
+            </tr>
+        </table>
+    </center>
+    <!-- text boxes end -->
+</body>
+
+</html>
