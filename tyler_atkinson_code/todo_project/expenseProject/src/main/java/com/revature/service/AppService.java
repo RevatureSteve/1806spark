@@ -36,11 +36,11 @@ return null;
 	
 	
 
-	public List<Reimbursement> getReimbursementById(int r_id){
+	public List<Reimbursement> getReimbursementsById(int r_id){
 		
 		System.out.println("[LOG]-- retrieving a reimbursement ");
 		
-		return reimbursementDao.getReimbursementById(r_id);
+		return reimbursementDao.getReimbursemenstById(r_id);
 	}
 	
 

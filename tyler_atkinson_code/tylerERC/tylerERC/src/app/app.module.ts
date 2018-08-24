@@ -1,27 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 import { FormsModule } from '@angular/forms'; 
 
 import { AppRoutingModule } from './app-routing.module';
-// import { HomeComponent } from './home/home.component';
 import { MainComponent } from './main/main.component';
 import { ManagerComponent } from './manager/manager.component';
 import { EmployeeComponent } from './employee/employee.component';
+import { LoginComponent } from './login/login.component';
+import { ViewrequestsComponent } from './viewrequests/viewrequests.component';
+import { NewrequestComponent } from './newrequest/newrequest.component';
+import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
     NavbarComponent,
-    // HomeComponent,
     MainComponent,
     ManagerComponent,
-    EmployeeComponent
+    EmployeeComponent,
+    LoginComponent,
+    ViewrequestsComponent,
+    NewrequestComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

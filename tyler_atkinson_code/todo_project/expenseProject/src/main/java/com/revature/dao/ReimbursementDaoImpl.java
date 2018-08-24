@@ -24,9 +24,9 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 
 	
 //READ ONE REIMBURSEMENT BY ID	
+
 	@Override
-	public List<Reimbursement> getReimbursementById(int r_id) {
-		
+	public List<Reimbursement> getReimbursemenstById(int r_id) {
 		List<Reimbursement> reimbursements = new ArrayList<>();
 		
 		try(Connection conn = SetConnectionPropertiesUtil.getConnection();){
@@ -42,13 +42,22 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 			
 			
 			
-		} catch (SQLException | IOException e) {
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return reimbursements;
 		
 	}
+	
+		
+
 
 
 //GET ALL REIMBURSEMENTS
@@ -122,6 +131,9 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 
 		return true;
 	}
+
+
+
 
 
 }

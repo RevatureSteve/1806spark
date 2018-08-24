@@ -38,7 +38,7 @@ public class OneReimbursementServlet extends HttpServlet {
 		
 		int r_id = Integer.parseInt(request.getParameter("reimbursementId"));
 		System.out.println("The reimbursement id is: " + r_id);
-		List<Reimbursement> reimbursements = appService.getReimbursementById(r_id);
+		List<Reimbursement> reimbursements = appService.getReimbursementsById(r_id);
 		
 		ObjectMapper mapper = new ObjectMapper();
 		String json = mapper.writeValueAsString(reimbursements);

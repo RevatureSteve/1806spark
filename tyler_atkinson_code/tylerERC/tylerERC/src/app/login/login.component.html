@@ -1,0 +1,7 @@
+<form (ngSubmit)="login()">
+  <input type="text" name="username" [(ngModel)]="inputUser.username" placeholder="username">
+  <input type="password"name="password" [(ngModel)]="inputUser.password" placeholder="password">
+  <button class="btn btn-primary" type="submit">Login</button>
+  </form>
+  <button (click)="setUser()">click</button>
+  <h1 *ngIf="validUser">User: {{validUser.username}}</h1>

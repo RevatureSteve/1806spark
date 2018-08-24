@@ -12,7 +12,8 @@ public interface ReimbursementDao {
 	//READ
 	
 
-	public List<Reimbursement> getReimbursementById(int r_id);
+	public List<Reimbursement> getReimbursemenstById(int r_id);
+	
 	public List<Reimbursement> getAllReimbursements();
 	
 	//UPDATE
