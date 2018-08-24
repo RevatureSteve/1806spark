@@ -1,5 +1,5 @@
 // READ TODO RAW JS to learn more on this method!
-let userId = 1;
+let newUser;
 window.onload = function foo() {
 
     
@@ -42,14 +42,48 @@ function loginPage() {
     }).then((text) => {
         console.log(text);
         navbar.innerHTML = text;
-        document.getElementById('login').addEventListener('click', userLogged);
+        //document.getElementById('login').addEventListener('click', userLogged);
+        
+        console.log("connection.js is loaded in...");
         document.getElementById('return').addEventListener('click', loadPage);
-
+        document.getElementById('login').addEventListener('click', login);
 
     });
+
+    
 }
+
+function login(){
+    console.log("Login clicked")
+    let email;
+    let password;
+    email = document.getElementById('loginBox').value;
+    password = document.getElementById('passwordBox').value;
+    console.log(email + " " + password);
+    
+    let data = {"email": email, 
+    "password": password};
+  console.log(JSON.stringify(data));
+ fetch('http://localhost:8080/my-app/login', {
+     method: 'POST',
+     body: JSON.stringify(data),
+     headers: {'Content-Type': 'application/json'}
+ }).then(response => { 
+     console.log("Response is " + response.json);
+    
+   return response.json(); 
+ }).then(data => { 
+   console.log(JSON.stringify(data));
+   newUser = data;
+   console.log(newUser.u_id);
+   userLogged();
+ }).catch(err => {
+     alert(err);
+ });
+}
+
 function userLogged(){
-    if(userId == 2){
+    if(newUser.u_id == 2){
             managerLogged();
     }else{
         employeeLogged();
