@@ -1,16 +1,16 @@
 <!-- <h1 id = 'profilePg'>Profile</h1> -->
 <form class="form" id = 'profile'>
   Employee Id:
-  <input class="input profileInput" id = 'empId' type="text" value = {{user.u_id}} readonly><br>
+  <input class="input profileInput" id = 'empId' #empId type="text" value = {{user.u_id}} readonly ><br>
   First name:
-  <input class="input profileInput" id = 'fname' type="text" value = {{user.fname}} readonly><br>
+  <input class="input profileInput" id = 'fname' #fname type="text" value = {{user.fname}} ><br>
   Last name:
-  <input class="input profileInput" id = 'lname' type="text" value = {{user.lname}} readonly><br>
+  <input class="input profileInput" id = 'lname' #lname type="text" value = {{user.lname}} ><br>
   Email:
-  <input class="input profileInput" id = 'email' type="text" value = {{user.email}} readonly><br>
+  <input class="input profileInput" id = 'email' #email type="text" value = {{user.email}} ><br>
   Position: 
-  <input class="input profileInput" id = 'position' type="text" value = {{user.posTitle}} readonly><br>
+  <input class="input profileInput" id = 'position' type="text" value = {{user.posTitle}} readonly ><br>
   <div id = 'btn'>
-      <input class="formBtn" id = "editProfileBtn" type="button" value="Edit Profile">
+      <input (click)="updateUser(email.value, fname.value, lname.value)" class="formBtn" id = "editProfileBtn" type="button" value="Edit Profile">
   </div>
 </form>

@@ -50,7 +50,7 @@ public class ReimbursementServlet extends HttpServlet {
 		ServletInputStream data = req.getInputStream();
 		ObjectNode node = mapper.readValue(data, ObjectNode.class);
 		
-		reimb = new Reimbursement(node.get("u_id").intValue(), node.get("amt").doubleValue(), node.get("desc").textValue(), null, node.get("type").intValue());
+		reimb = new Reimbursement(node.get("u_id").intValue(), Double.parseDouble(node.get("amt").textValue()), node.get("desc").textValue(), null, Integer.parseInt(node.get("type").textValue()));
 		
 		System.out.println(reimb);
 		

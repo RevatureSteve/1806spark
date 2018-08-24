@@ -47,13 +47,12 @@ export class ReimbursementsService {
       u_id: this.currentUser.getCurrentUser().u_id,
       amt: amt,
       desc: desc,
-      type: type,
-      // img: img
+      type: type
     };
 
     console.log(reimb);
 
-    return this.httpClient.post('http://localhost:8080/reimbursement/reimbursement', reimb);
+    return this.httpClient.post<Reimbursements>('http://localhost:8080/reimbursement/reimbursement', reimb);
 
     // console.log('after post statement');
   }
