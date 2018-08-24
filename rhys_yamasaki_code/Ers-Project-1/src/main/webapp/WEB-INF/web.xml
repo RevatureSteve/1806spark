@@ -53,4 +53,14 @@
     <servlet-name>UpdateEmployeeInfo</servlet-name>
     <url-pattern>/employee/update</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementsById</display-name>
+    <servlet-name>ReimbursementsById</servlet-name>
+    <servlet-class>com.revature.servlets.ReimbursementsById</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementsById</servlet-name>
+    <url-pattern>/ReimbursementsById</url-pattern>
+  </servlet-mapping>
 </web-app>

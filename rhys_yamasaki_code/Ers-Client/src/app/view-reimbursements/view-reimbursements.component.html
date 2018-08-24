@@ -1,3 +1,28 @@
 <p>
   view-reimbursements works!
 </p>
+
+<div class="container">
+<table class="table table-bordered table-dark table-hover">
+    <thead>
+      <th>Resolved by</th>
+      <th>Submitted by</th>
+      <th>Amount</th>
+      <th>Description</th>
+      <th>Request type</th>
+      <th>Request status</th>
+    </thead>
+    <tbody>
+    <tr *ngFor="let reimb of reimbursement">
+      <th scope="row"></th>
+      <td>{{reimb.rb_resolved_id}}</td>
+      <td>{{reimb.rb_submission_id}}</td>
+      <td>{{reimb.amount}}</td>
+      <td>{{reimb.description}}</td>
+      <td>{{reimb.rq_type}}</td>
+      <td>{{reimb.rq_status}}</td>
+    </tr>
+  </tbody>
+
+  </table>
+</div>

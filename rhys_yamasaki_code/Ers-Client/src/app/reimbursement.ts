@@ -1,18 +1,18 @@
 
 export class Reimbursement {
-  rbId: number;
-  userResolvedId: number;
-  userSubmitId: number;
+  rb_id: number;
+  rb_resolved_id: number;
+  rb_submission_id: number;
   amount: number;
   description: string;
-  image: BinaryType;
-  timeSubmission: string;
-  rqTypeId: number;
-  rqStatusId: number;
-  userResolvedFName: string;
-  userResolvedLName: string;
-  userSubmitFName: string;
-  userSubmitLName: string;
-  rqType: string;
-  rqStatus: string;
+  image: Blob;
+  time_submission: string;
+  rq_type_id: number;
+  rq_status_id: number;
+  rb_resolved_fname: string;
+  rb_resolved_lname: string;
+  rb_submission_fname: string;
+  rb_submission_lname: string;
+  rq_type: string;
+  rq_status: string;
 }

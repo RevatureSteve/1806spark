@@ -1,0 +1,28 @@
+<form (ngSubmit)="login()">
+
+  <div class="border border-success m-5 p-5 rounded">
+    <div class="row">
+      <div class="form-group col">
+        <label for="exampleInputEmail1">Email address</label>
+        <!--
+            input for username
+            (ngModel) html/template to ts file 1 way data binding
+        -->
+        <input name="username" type="email" class="form-control" [(ngModel)]="inputUser.username" id="username" aria-describedby="emailHelp" placeholder="Enter email">
+        <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+      </div>
+      <div class="form-group col">
+        <label for="exampleInputPassword1">Password</label>
+        <input name="password" type="password" [(ngModel)]="inputUser.password" class="form-control" id="password" placeholder="Password">
+      </div>
+    </div>
+    <div class="row">
+      <div class="form-group form-check col ml-2">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1">
+        <label class="form-check-label" for="exampleCheck1">Check me out</label>
+      </div>
+      <button id="loginBtn" type="submit" class="btn btn-primary col">Submit</button>
+    </div>
+  </div>
+
+</form>

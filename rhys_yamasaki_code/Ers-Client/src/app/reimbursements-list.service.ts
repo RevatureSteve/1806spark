@@ -11,13 +11,19 @@ import { User } from './user';
 export class ReimbursementsListService {
 
   user: User;
-  reimbursement: Observable<Reimbursement[]>;
+  reimbursement: Reimbursement[];
 
 
   constructor(private http: HttpClient, logged: LoggedInService) { }
 
 
-  getAllReimbursements(pending): void {
-
+  getAllReimbursements() {
+    console.log('Meow meow');
+    return this.http.get<Reimbursement[]>('http://localhost:8080/Ers-Project-1/manager/reimbursements');
   }
+
+  // getReimbursementsArray(): Observable<Reimbursement[]> {
+  //   return this.reimbursement;
+  // }
+
 }
