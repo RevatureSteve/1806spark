@@ -14,33 +14,28 @@ import com.revature.domain.Reimbursement;
 import com.revature.service.ReimbursementsService;
 
 /**
- * Servlet implementation class EmployeeReimbursements
+ * Servlet implementation class ManagerServlet
  */
-public class EmployeeReimbursements extends HttpServlet {
+public class ManagerServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public ManagerServlet() {
+        super();
+        // TODO Auto-generated constructor stub
+    }
 
 	/**
-	 * @see HttpServlet#HttpServlet()
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	public EmployeeReimbursements() {
-		super();
-		// TODO Auto-generated constructor stub
-	}
-
-	/**
-	 * /employee/reimbursements
-	 */
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("Employee reimbursements up");
 
 		ObjectMapper mapper = new ObjectMapper();
 
-		String id = request.getParameter("id");
-		int numId = Integer.parseInt(id);
-		// User verified = VerificationService.verifyUsernameAndPassword(email,
-		// password);
-		List<Reimbursement> reimbs = ReimbursementsService.getReimbursementsOfUser(numId);
+		List<Reimbursement> reimbs = ReimbursementsService.getAllReimbursements();
 
 		String jsonOut = mapper.writeValueAsString(reimbs);
 

@@ -26,6 +26,9 @@ export class ReimbursementListService {
   }
 
   getAllReimbursements(): void {
-    this.reimbursements = this.http.get<Reimbursement[]>('http://localhost:8080/Reimbursement/${rId}');
+    this.reimbursements = this.http.get<Reimbursement[]>('http://localhost:8080/Reimbursement/manager');
+  }
+
+  managerDecision(decisions): void {
   }
 }

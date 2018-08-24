@@ -1,8 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Reimbursement } from '../../models/reimbursement';
-import { User } from '../../models/user';
-import { ReimbursementListService } from '../../services/reimbursement-list.service';
-import { LoggedUserService } from '../../services/logged-user.service';
+import { Reimbursement } from '../../../models/reimbursement';
+import { ReimbursementListService } from '../../../services/reimbursement-list.service';
+import { LoggedUserService } from '../../../services/logged-user.service';
+import { User } from '../../../models/user';
 
 @Component({
   selector: 'app-reimbursement-list',
@@ -15,12 +15,12 @@ export class ReimbursementListComponent implements OnInit {
   constructor(private reimbService: ReimbursementListService, private logged: LoggedUserService) { }
 
   ngOnInit() {
-    this.user = this.logged.getLoggedUser();
-    this.reimbService.getReimbursementsByUserId(this.user.uId);
     this.getReimbursements();
   }
 
   getReimbursements(): void {
+    this.user = this.logged.getLoggedUser();
+    this.reimbService.getReimbursementsByUserId(this.user.uId);
     this.reimbService.getReimbursementsArray().subscribe(reimbursements => this.reimbursements = this.sortReimbursements(reimbursements));
   }
 

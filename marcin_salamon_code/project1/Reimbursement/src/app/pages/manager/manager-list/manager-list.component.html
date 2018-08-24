@@ -1,0 +1,15 @@
+<button type="submit" class="btn btn-info" (click)=managerDecision()>Submit Decision</button>
+<li *ngFor='let r of reimbursements' class="list-group mw-50" style="width: 60%; margin: auto;">
+    <div *ngIf='r.rq_statusId===1'>
+        <a routerLink='/manager/detail/{{r.rId}}' class="list-group-item list-group-item-action list-group-item-success">
+            <div>{{r.description}}</div>
+            <div>{{r.timesubmission.substring(0,19)}}</div>
+            <div>{{r.rq_type}}</div>
+            <div>{{r.rq_status}}</div>
+        </a>
+        <div *ngIf='r.rq_statusId === 1'>
+            <input type="radio" value=2 name="approve{{r.rId}}" [ngModel]="r.rq_statusId"> Approve
+            <input type="radio" value=3 name="approve{{r.rId}}" [ngModel]="r.rq_statusId"> Deny
+        </div>
+    </div>
+</li>

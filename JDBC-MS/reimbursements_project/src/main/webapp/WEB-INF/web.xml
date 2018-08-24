@@ -76,4 +76,14 @@
     <servlet-name>SubmitReimbursementServlet</servlet-name>
     <url-pattern>/employee/reimbursements/submit</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManagerServlet</display-name>
+    <servlet-name>ManagerServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ManagerServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerServlet</servlet-name>
+    <url-pattern>/manager</url-pattern>
+  </servlet-mapping>
 </web-app>
