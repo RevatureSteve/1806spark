@@ -1,0 +1,11 @@
+{
+  "name": "project1_front_end",
+  "version": "1.0.0",
+  "description": "project1 front end",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "josh maciejewski",
+  "license": "ISC"
+}

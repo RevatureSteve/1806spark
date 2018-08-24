@@ -3,7 +3,7 @@ package com.revature.domain;
 
 public class Users  {
 	
-private int UId;
+private int u_id;
 private String email;
 private String password;
 private String fname;
@@ -19,18 +19,18 @@ public Users() {
 
 
 
-public Users(int uId, String email, String password, String fname, String lname) {
+public Users(int u_id, String email, String password, String fname, String lname) {
 	super();
-	UId = uId;
+	this.u_id = u_id;
 	this.email = email;
 	this.password = password;
 	this.fname = fname;
 	this.lname = lname;
 }
 
-public Users(int uId, String email, String password, String fname, String lname, int posId, String posType) {
+public Users(int u_id, String email, String password, String fname, String lname, int posId, String posType) {
 	super();
-	UId = uId;
+	this.u_id = u_id;
 	this.email = email;
 	this.password = password;
 	this.fname = fname;
@@ -42,15 +42,15 @@ public Users(int uId, String email, String password, String fname, String lname,
 
 
 
-public int getUId() {
-	return UId;
+public int getu_id() {
+	return u_id;
 }
 
 
 
 
-public void setUId(int uId) {
-	UId = uId;
+public void setu_id(int u_id) {
+	this.u_id = u_id;
 }
 
 
@@ -142,7 +142,7 @@ public void setPosType(String posType) {
 
 @Override
 public String toString() {
-	return "Users [UId=" + UId + ", email=" + email + ", password=" + password + ", fname=" + fname + ", lname=" + lname
+	return "Users [u_id=" + u_id + ", email=" + email + ", password=" + password + ", fname=" + fname + ", lname=" + lname
 			+ ", posId=" + posId + ", posType=" + posType + "]";
 }
 

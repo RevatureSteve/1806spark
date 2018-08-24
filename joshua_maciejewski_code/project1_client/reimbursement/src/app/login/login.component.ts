@@ -1,4 +1,4 @@
-import { LoggedInService } from './../current-user.service';
+import { CurrentUserService } from './../current-user.service';
 import { LoginService } from './../login.service';
 import { User } from './../user';
 import { Component, OnInit } from '@angular/core';
@@ -14,7 +14,7 @@ export class LoginComponent implements OnInit {
 
   user: User;
 
-  constructor(private login: LoginService, private logged: LoggedInService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private login: LoginService, private logged: CurrentUserService, private route: ActivatedRoute, private router: Router) { }
 
 
   getUser(email, password): void {
@@ -22,14 +22,14 @@ export class LoginComponent implements OnInit {
   }
 
   changePage(user) {
-    this.changeLoggedInUser(user);
-    this.logged.getLoggedInUser();
+    this.makeCurrentUser(user);
+    this.logged.getCurrentUser();
     this.router.navigate(['/', this.user.pos_id, 'home']);
   }
 
-  changeLoggedInUser(user) {
+  makeCurrentUser(user) {
     this.user = user;
-    this.logged.setLoggedInUser(this.user);
+    this.logged.setCurrentUser(this.user);
   }
 
   ngOnInit() {

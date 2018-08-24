@@ -18,6 +18,6 @@ export class LoginService {
       password: password
     };
 
-    return this.httpClient.post<User>('http://localhost:8080/Ers-Project-1/login', user);
+    return this.httpClient.post<User>('http://localhost:8080/project1/login', user);
   }
 }

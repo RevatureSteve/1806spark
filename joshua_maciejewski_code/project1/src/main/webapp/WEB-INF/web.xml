@@ -11,25 +11,90 @@
     <servlet-name>login</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
-  
-  
-  
-  
-  
   <filter>
-   <filter-name>CorsFilter</filter-name>
-   <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
-   <init-param>
-     <param-name>cors.allowed.origins</param-name>
-     <param-value>*</param-value>
-   </init-param>
-   <init-param>
-     <param-name>cors.allowed.methods</param-name>
-     <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
-   </init-param>
- </filter>
- <filter-mapping>
-   <filter-name>CorsFilter</filter-name>
-   <url-pattern>/*</url-pattern>
- </filter-mapping>
+    <filter-name>CorsFilter</filter-name>
+    <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+    <init-param>
+      <param-name>cors.allowed.origins</param-name>
+      <param-value>*</param-value>
+    </init-param>
+    <init-param>
+      <param-name>cors.allowed.methods</param-name>
+      <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CorsFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>GetAllEmployeesServlet</display-name>
+    <servlet-name>GetAllEmployeesServlet</servlet-name>
+    <servlet-class>com.revature.servlets.GetAllEmployeesServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GetAllEmployeesServlet</servlet-name>
+    <url-pattern>/GetAllEmployeesServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>CreateReimbursementServlet</display-name>
+    <servlet-name>CreateReimbursementServlet</servlet-name>
+    <servlet-class>com.revature.servlets.CreateReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>CreateReimbursementServlet</servlet-name>
+    <url-pattern>/createReimbursementServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ManagerViewPendingServlet</display-name>
+    <servlet-name>ManagerViewPendingServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ManagerViewPendingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ManagerViewPendingServlet</servlet-name>
+    <url-pattern>/managerViewPendingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimByIdServlet</display-name>
+    <servlet-name>ReimByIdServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ReimByIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimByIdServlet</servlet-name>
+    <url-pattern>/ReimByIdServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResolvedRequestsServlet</display-name>
+    <servlet-name>ResolvedRequestsServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ResolvedRequestsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResolvedRequestsServlet</servlet-name>
+    <url-pattern>/ResolvedRequestsServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeeViewPendingServlet</display-name>
+    <servlet-name>EmployeeViewPendingServlet</servlet-name>
+    <servlet-class>com.revature.service.EmployeeViewPendingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeViewPendingServlet</servlet-name>
+    <url-pattern>/EmployeeViewPendingServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ChangeReimStatusServlet</display-name>
+    <servlet-name>ChangeReimStatusServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ChangeReimStatusServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangeReimStatusServlet</servlet-name>
+    <url-pattern>/ChangeReimStatusServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

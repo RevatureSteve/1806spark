@@ -11,6 +11,23 @@ public class ReimbursementBL {
 	private ReimbursementDao dao = new ReimbursementDaoImpl();
 	
 	
+	//create
+	public void createReimbursement(Reimbursement reim) {
+		dao.newReimbursement(reim);
+	}
+	
+	//read
+	
+	public List<Reimbursement> viewResolvedById(int id) {
+		return dao.getEmployeeViewResolved(id);
+	}
+	
+	public List<Reimbursement> resolvedRequests(){
+		return dao.getResolvedRequests();
+	}
+	
+	
+	
 	public List<Reimbursement> viewPending(){
 		return dao.viewAllPending();
 	}
@@ -19,27 +36,16 @@ public class ReimbursementBL {
 		return dao.getReimbursementForSingle(id);
 	}
 	
-	public void changeReimStatus(int rID, int mID, int status) {
-	
-	}
-	
-	
-	public List<Reimbursement> resolvedRequests(){
-		return dao.getResolvedRequests();
-	}
-	
+
 	List<Reimbursement> employeeViewPending(int id) {
 		return dao.getEmployeeViewPending(id);
 	}
 	
-	List<Reimbursement> employeeViewResolved(int id) {
-		return dao.getEmployeeViewResolved(id);
-	}
-	
-	public void createReimbursement(Reimbursement reim) {
+
+
+	//update
+	public void changeReimStatus(int rID, int mID, int status) {
 		
 	}
-	
-	
 
 }

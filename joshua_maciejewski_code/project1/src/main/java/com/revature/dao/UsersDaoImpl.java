@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -23,20 +24,20 @@ public Users getUserByEmail(String email) {
 	Users user = null;
 	
 	try(Connection conn = SetConnectionsPropertyUtil.getConnection()) {
-		String sql = "SELECT * FROM users WHERE email = ?";
+		String sql = "SELECT * FROM users u, position p WHERE email = ? AND u.pos_id = p.pos_id";
 		
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setString(1, email);
 		ResultSet rs = ps.executeQuery();
 		
 		if(rs.next()) {
-			user = new Users(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+			user = new Users(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5), rs.getInt(6), rs.getString(8));
 		}
 
 	} catch(SQLException | IOException e) {
 			e.printStackTrace();
 	}
-	System.out.println(user);
+	System.out.println(user + "dao");
 	return user;
 	
 }
@@ -45,7 +46,7 @@ public Users getUserByEmail(String email) {
 public List<Users> getAllEmployees() {
 	List<Users> users = new ArrayList<>();
 	
-	try(Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+	try(Connection conn = SetConnectionsPropertyUtil.getConnection()) {
 		String sql = "select * from users u, position p where u.pos_id = p.pos_id AND p.pos_id = 1";
 		
 		PreparedStatement ps = conn.prepareStatement(sql);
@@ -58,6 +59,12 @@ public List<Users> getAllEmployees() {
 
 	} catch(SQLException e) {
 			e.printStackTrace();
+	} catch (FileNotFoundException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	} catch (IOException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
 	}
 	System.out.println(users);
 	
@@ -86,20 +93,27 @@ public Users getViewEmployeeInfo(int id) {
 	return user;
 }
 
-public void updateEmployeeInfo (int uID, String email, String password, String fname, String lname) {
+public void updateEmployeeInfo (int uId, String email, String password, String fname, String lname) {
 	
-	try(Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
-		String sql ="UPDATE users SET email = ? AND password = ? AND fname = ? AND lname= ? WHERE u_id = ?";
+	try(Connection conn = SetConnectionsPropertyUtil.getConnection()) {
+		String sql ="UPDATE users SET email = ?, password = ?, fname = ?, lname= ? WHERE u_id = ?";
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setInt(1,  uID);
-		ps.setString(2, email);
-		ps.setString(3, password);
-		ps.setString(4, fname);
-		ps.setString(5, lname);
+		
+		ps.setString(1, email);
+		ps.setString(2, password);
+		ps.setString(3, fname);
+		ps.setString(4, lname);
+		ps.setInt(5,  uId);
 		ps.executeQuery();
 		
 	} catch(SQLException e) {
 			e.printStackTrace();
+	} catch (FileNotFoundException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
+	} catch (IOException e1) {
+		// TODO Auto-generated catch block
+		e1.printStackTrace();
 	}
 	
 	

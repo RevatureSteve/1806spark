@@ -12,18 +12,18 @@ public class Driver {
 	
 	public static void main(String[] args) {
 		
-		
-		String email = "boss@email.com";
-		String password = "password2";
-		
-		/////retrieve user
-		UsersDao dao = new UsersDaoImpl();
-		//System.out.println(dao.getUserByEmail("email@email.com"));
-		
-		
-		 //login validation 
-		Users user = new UsersBusinessLogic().login(email, password);
-		System.out.println(user);
+//		
+//		String email = "boss@email.com";
+//		String password = "password2";
+//		
+//		/////retrieve user
+//		UsersDao dao = new UsersDaoImpl();
+//		//System.out.println(dao.getUserByEmail("email@email.com"));
+//		
+//		
+//		 //login validation 
+//		Users user = new UsersBusinessLogic().login(email, password);
+//		System.out.println(user);
 //	UsersBusinessLogic user = new UsersBusinessLogic();
 //	System.out.println(user.login(email, password));
 		

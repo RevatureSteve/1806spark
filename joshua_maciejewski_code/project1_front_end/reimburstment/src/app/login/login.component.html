@@ -1,0 +1,8 @@
+
+<form (ngSubmit)="login()">
+  <input type="text" name="email" [(ngModel)]="input.email" placeholder="email">
+  <input type="password"name="password" [(ngModel)]="input.password" placeholder="password">
+  <button class="btn btn-primary" type="submit">Login</button>
+  </form>
+  <button (click)="setUser()">click</button>
+  <h1 *ngIf="verifiedUser">User: {{verifiedUser.email}}</h1>

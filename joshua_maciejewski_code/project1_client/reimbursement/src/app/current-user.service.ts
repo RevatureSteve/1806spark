@@ -5,17 +5,17 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class LoggedInService {
+export class CurrentUserService {
 
   private static user: User;
 
   constructor(private httpClient: HttpClient) { }
 
-  setLoggedInUser(us) {
-    LoggedInService.user = us;
+  setCurrentUser(us) {
+    CurrentUserService.user = us;
   }
 
-  getLoggedInUser(): User {
-    return LoggedInService.user;
+  getCurrentUser(): User {
+    return CurrentUserService.user;
   }
 }

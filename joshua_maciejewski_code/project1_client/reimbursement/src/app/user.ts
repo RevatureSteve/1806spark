@@ -5,4 +5,5 @@ export class User {
     fname: string;
     lname: string;
     pos_id: number;
+    pos_type: string;
 }

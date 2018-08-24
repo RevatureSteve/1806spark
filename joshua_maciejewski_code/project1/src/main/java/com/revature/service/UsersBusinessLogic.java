@@ -19,6 +19,7 @@ public class UsersBusinessLogic {
 		if(user != null) {
 			if(user.getPassword().equals(password)) {
 				
+				System.out.println(user);
 				return user;
 			}
 		}
@@ -31,9 +32,12 @@ public List<Users> viewAllEmployees(){
 	return dao.getAllEmployees();
 }
 
+public Users viewEmployeeInfo(int id) {
+	return dao.getViewEmployeeInfo(id);
+}
 
-public void changeEmployeeInfo (int uID, String email, String password, String fname, String lname) {
-	
+public void changeEmployeeInfo (int uId, String email, String password, String fname, String lname) {
+	dao.updateEmployeeInfo(uId, email, password, fname, lname);
 }
 	
 }
