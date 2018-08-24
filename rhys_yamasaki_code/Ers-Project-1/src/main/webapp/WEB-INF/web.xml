@@ -61,6 +61,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ReimbursementsById</servlet-name>
-    <url-pattern>/ReimbursementsById</url-pattern>
+    <url-pattern>/reimbursements/id</url-pattern>
   </servlet-mapping>
 </web-app>

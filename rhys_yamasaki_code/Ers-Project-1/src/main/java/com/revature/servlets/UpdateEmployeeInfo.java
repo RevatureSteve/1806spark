@@ -36,6 +36,12 @@ public class UpdateEmployeeInfo extends HttpServlet {
 		String fname = null;
 		String lname = null;
 		
+		userId = Integer.parseInt(n.get("userId").textValue());
+		email = n.get("email").textValue();
+		password = n.get("password").textValue();
+		fname = n.get("fname").textValue();
+		lname = n.get("lname").textValue();
+		
 		us.updateEmployeeInfo(userId, email, password, fname, lname);		
 		
 		

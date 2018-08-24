@@ -1,6 +1,6 @@
-import { LoggedInService } from './../logged-in.service';
+import { LoggedInService } from '../logged-in.service';
 import { ActivatedRoute } from '@angular/router';
-import { ReimbursementsListService } from './../reimbursements-list.service';
+import { ReimbursementsListService } from '../reimbursements-list.service';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../user';

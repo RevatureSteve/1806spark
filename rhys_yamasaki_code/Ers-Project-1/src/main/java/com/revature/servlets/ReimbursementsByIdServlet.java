@@ -9,13 +9,13 @@ import javax.servlet.http.HttpServletResponse;
 /**
  * Servlet implementation class ReimbursementsById
  */
-public class ReimbursementsById extends HttpServlet {
+public class ReimbursementsByIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public ReimbursementsById() {
+    public ReimbursementsByIdServlet() {
         super();
         // TODO Auto-generated constructor stub
     }

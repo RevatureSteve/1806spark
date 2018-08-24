@@ -7,9 +7,8 @@ import { LoginComponent } from './login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ManagerComponent } from './manager/manager.component';
 import { EmployeeComponent } from './employee/employee.component';
-import { EmployeeNavbarComponent } from './employee-navbar/employee-navbar.component';
-import { ManagerNavbarComponent } from './manager-navbar/manager-navbar.component';
 import { ViewReimbursementsComponent } from './view-reimbursements/view-reimbursements.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
@@ -17,9 +16,8 @@ import { ViewReimbursementsComponent } from './view-reimbursements/view-reimburs
     LoginComponent,
     ManagerComponent,
     EmployeeComponent,
-    EmployeeNavbarComponent,
-    ManagerNavbarComponent,
     ViewReimbursementsComponent,
+    NavbarComponent,
   ],
   imports: [
     BrowserModule,
