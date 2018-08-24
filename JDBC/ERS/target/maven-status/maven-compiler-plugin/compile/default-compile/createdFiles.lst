@@ -1,0 +1,15 @@
+com\revature\POJO\Reimbursement.class
+com\revature\POJO\User.class
+com\revature\servlets\getReByIdServlet.class
+com\revature\servlets\getUsersServlet.class
+com\revature\servlets\makeReServlet.class
+com\revature\servlets\getManagersServlet.class
+com\revature\servlets\resolveRequestsServlet.class
+com\revature\dao\UserDao.class
+com\revature\service\AppService.class
+com\revature\servlets\editProfileServlet.class
+com\revature\servlets\getPendingServlet.class
+com\revature\servlets\getResponseServlet.class
+com\revature\servlets\loginServlet.class
+com\revature\util\setConnectionProperties.class
+com\revature\dao\UserDaoImpl.class
