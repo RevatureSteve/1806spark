@@ -10,6 +10,7 @@ CREATE TABLE worlds (
     PRIMARY KEY (world_id)
 );
 
+ALTER TABLE world_tiles ADD (width INT, length INT);
 CREATE TABLE world_tiles (
     wt_id INT,
     wt_name VARCHAR2(100),
@@ -83,3 +84,56 @@ CREATE TABLE pokemon_trainers (
     candy_count INT,
     PRIMARY KEY (trainer_id)
 );
+
+-- SEQUENCES
+CREATE SEQUENCE pt_seq 
+  START WITH 1 
+  INCREMENT BY 1;
+CREATE SEQUENCE wt_seq 
+  START WITH 1 
+  INCREMENT BY 1;
+CREATE SEQUENCE lt_seq 
+  START WITH 1 
+  INCREMENT BY 1;
+  CREATE SEQUENCE p_seq 
+  START WITH 1 
+  INCREMENT BY 1;
+-- TRIGGERS
+CREATE OR REPLACE TRIGGER p_seq_trigger
+BEFORE INSERT ON pokemon
+FOR EACH ROW
+BEGIN
+  IF :new.p_id IS NULL THEN
+    SELECT p_seq.nextval INTO :new.p_id FROM DUAL;
+  END IF;
+END;
+/
+CREATE OR REPLACE TRIGGER pt_seq_trigger
+BEFORE INSERT ON pokemon_trainers
+FOR EACH ROW
+BEGIN
+  IF :new.trainer_id IS NULL THEN
+    SELECT pt_seq.nextval INTO :new.trainer_id FROM DUAL;
+  END IF;
+END;
+/
+
+CREATE OR REPLACE TRIGGER wt_seq_trigger
+BEFORE INSERT ON world_tiles
+FOR EACH ROW
+BEGIN
+  IF :new.wt_id IS NULL THEN
+    SELECT wt_seq.nextval INTO :new.wt_id FROM DUAL;
+  END IF;
+END;
+/
+
+CREATE OR REPLACE TRIGGER lt_seq_trigger
+BEFORE INSERT ON local_tiles
+FOR EACH ROW
+BEGIN
+  IF :new.lt_id IS NULL THEN
+    SELECT lt_seq.nextval INTO :new.lt_id FROM DUAL;
+  END IF;
+END;
+/

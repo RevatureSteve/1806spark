@@ -42,6 +42,33 @@ public class PokemonDatabaseDao implements PokemonDao {
 
 		return ra;
 	}
+	
+	@Override
+	public int createPokemon(Pokemon pokemon) {
+		int ra = 0;
+		// Going to contain code for JDBC
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
+
+			String sql = "INSERT INTO pokemon(pd_id, poke_name,experience,p_status_id, lt_id, trainer_id) VALUES (?,?,?,?,?,?)";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, pokemon.getPokeId());
+			ps.setString(2, pokemon.getName());
+			ps.setInt(3, pokemon.getExperience());
+			ps.setInt(4,pokemon.getStatusId());
+			ps.setInt(5,pokemon.getLtId());
+			ps.setInt(6, pokemon.getTrainerId());
+			ra = ps.executeUpdate();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return ra;
+	}
+
 
 	@Override
 	public List<Pokemon> GetPokemonData() {
@@ -73,4 +100,5 @@ public class PokemonDatabaseDao implements PokemonDao {
 		return null;
 	}
 
+	
 }

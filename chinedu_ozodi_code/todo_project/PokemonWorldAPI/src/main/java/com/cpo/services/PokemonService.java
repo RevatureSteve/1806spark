@@ -34,6 +34,10 @@ public class PokemonService {
 		pdd.createPokemonData(pokemon);
 	}
 	
+	public void createPokemon(Pokemon pokemon) {
+		pdd.createPokemon(pokemon);
+	}
+	
 	public List<Pokemon> getPokemonData() {
 		return pdd.GetPokemonData();
 	}

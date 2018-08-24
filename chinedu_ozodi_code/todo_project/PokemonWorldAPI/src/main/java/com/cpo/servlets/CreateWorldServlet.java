@@ -6,6 +6,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.cpo.services.WorldService;
+
 /**
  * -/CreateWorld Endpoint
  * Servlet implementation class CreateWorldServlet
@@ -26,6 +28,9 @@ public class CreateWorldServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		//Create World
+		response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		WorldService.getInstance().createWorld();
 		
 		
 	}

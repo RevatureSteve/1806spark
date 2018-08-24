@@ -10,6 +10,8 @@ public interface PokemonDao {
 	//Create
 	int createPokemonData(Pokemon pokemon);
 	
+	int createPokemon(Pokemon pokemon);
+	
 	//Read
 	Pokemon getPokemonDataById(int id);
 	

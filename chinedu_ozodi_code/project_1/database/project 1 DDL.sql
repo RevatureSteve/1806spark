@@ -16,6 +16,7 @@ CREATE TABLE position (
     PRIMARY KEY (pos_id)
 );
 
+DROP TABLE reimbursement;
 CREATE TABLE reimbursement (
     r_id INT,
     emp_u_id NOT NULL,
@@ -23,9 +24,9 @@ CREATE TABLE reimbursement (
     amt INT NOT NULL,
     description VARCHAR2(4000),
     img BLOB,
-    timesubmission TIMESTAMP,
+    timesubmission TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     rq_type_id INT,
-    rq_status_id INT,
+    rq_status_id INT DEFAULT (1),
     PRIMARY KEY (r_id),
     FOREIGN KEY (emp_u_id) REFERENCES users(u_id),
     FOREIGN KEY (mgr_u_id) REFERENCES users(u_id),

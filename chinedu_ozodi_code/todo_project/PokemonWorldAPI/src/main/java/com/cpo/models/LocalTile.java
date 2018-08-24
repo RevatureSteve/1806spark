@@ -9,14 +9,28 @@ public class LocalTile extends Tile {
 	public LocalTile() {
 	}
 	
-	public LocalTile(int tileId, String tileName, int x, int y)  {
-		super(tileId, tileName, x, y);
+	public LocalTile(int tileParentId, String tileName, int x, int y, int tileTypeId)  {
+		super(tileParentId, tileName, x, y, tileTypeId);
 	}
 	
-	public LocalTile(int tileId, String tileName, int x, int y, List<Pokemon> pokemon)  {
-		super(tileId, tileName, x, y);
+	public LocalTile(List<Pokemon> pokemon)  {
+		super();
 		this.pokemon = pokemon;
+	}
+
+	public List<Pokemon> getPokemon() {
+		return pokemon;
+	}
+
+	public void setPokemon(List<Pokemon> pokemon) {
+		this.pokemon = pokemon;
+	}
+
+	@Override
+	public String toString() {
+		return "LocalTile [pokemon=" + pokemon + "]";
 	}
 	
 
+	
 }
