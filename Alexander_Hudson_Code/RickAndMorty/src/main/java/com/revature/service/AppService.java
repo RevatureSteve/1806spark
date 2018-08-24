@@ -42,13 +42,20 @@ public class AppService {
 		System.err.println("[LOG]-------Login Failed---------");
 		return null;
 	}
+
 	
+//-------------------------------------------------------------------------------------------------------------------------------
+	
+	//GET USER BY EMAIL
 	
 	public Users getUserByEmail(String email, String password) {
 		System.out.println("[LOG]---------retrieving-------Users by Email");
 		
 		return rmDao.getUserByEmail(email, password);
 	}
+//-------------------------------------------------------------------------------------------------------------------------------
+	
+	//CREATE REIMBURSEMENT
 	
 	public int createReimbursement(int emp_U_Id, int amt, String description, int rq_Type) {
 		System.out.println("[LOG]---------retrieving--------Create Reimbursement");
@@ -56,17 +63,33 @@ public class AppService {
 		return rmDao.createReimbursement(emp_U_Id, amt, description, rq_Type);
 	}
 	
+
+//-------------------------------------------------------------------------------------------------------------------------------
+	
+	//GET ALL EMPLOYEES
+	
 	public List<Users> getAllUsers() {
 		 System.out.println("[LOG]--------retrieving--------All Users");
 		 
 		 return rmDao.getAllUsers();
 	}
 	
+	
+	
+	
+//-------------------------------------------------------------------------------------------------------------------------------
+	//REIMBURSEMENTS
+	
+	//GET ALL REIMBURSEMENTS
+	
 	public List<Reimbursement> getAllReimbursements(){
 		System.out.println("[LOG]---------retrieving--------All Reimbursements");
 		
 		return rmDao.getAllReimbursements();
 	}
+	
+	
+	//GET ALL APPROVED
 	
 	public List <Reimbursement> getAllReimbursementsByApproved(int rq_status_id) {
 		System.out.println("[LOG]---------retrieving---------All Reimbursements by Status");
@@ -75,6 +98,8 @@ public class AppService {
 		
 	}
 	
+	//GET ALL PENDING
+	
 	public List <Reimbursement> getAllReimbursementsByPending(int rq_status_id) {
 		System.out.println("[LOG]---------retrieving---------All Reimbursements by Status");
 		
@@ -82,16 +107,32 @@ public class AppService {
 		
 	}
 	
+	//GET ALL DENIED
+	
 	public List <Reimbursement> getAllReimbursementsByDenied(int rq_status_id) {
 		System.out.println("[LOG]---------retrieving---------All Reimbursements by Status");
 		
 		return rmDao.getAllReimbursementsByDenied(rq_status_id);
 		
 	}
+	
+	
 
 	public List<Reimbursement> getAllReimbursementsByStatusAndId(int rq_status_id, int emp_u_id) {
 		System.out.println("[LOG]---------retrieving----------All Reimbursements by Status and Id");
 		
 		return rmDao.getAllReimbursementsByStatusAndId(rq_status_id, emp_u_id);
+	}
+	
+	
+
+//-------------------------------------------------------------------------------------------------------------------------------
+	
+	//UPDATE USER PASSWORD
+	
+	public int updateUserPassWord(String passWord) {
+		System.out.println("[LOG]----------Update Password---------------");
+		
+		return rmDao.updateUserPassWord(passWord);
 	}
 }

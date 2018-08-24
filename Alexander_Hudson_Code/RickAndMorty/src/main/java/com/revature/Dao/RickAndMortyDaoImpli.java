@@ -258,89 +258,83 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 	//--------------------------------------------------------------------------------------------------------------------
 	//UPDATE
 	
-	public Users updateUserPassWord(String passWord) {
-		Users us = null;
+	public int updateUserPassWord(String passWord) {
+		int rowsAffected = 0;
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			System.out.println("Connected");
-			
-			String sql = "UPDATE users SET passWord=? WHERE password=?";
-			
-			PreparedStatement ps = conn.prepareStatement(sql);
-			
-			ps.setString(1, passWord);
-			System.out.println("Retrieving Information");
-			
-			ResultSet rs = ps.executeQuery();
-			System.out.println(us);
-			
-			while (rs.next()) {
-				us = new Users (rs.getInt("U_ID"), rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("FNAME"), rs.getString("LNAME"), rs.getInt("POS_ID"));
-				
-			}
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-			return us;
+		
+			conn.setAutoCommit(false);
+		String sql = "UPDATE users SET password=? WHERE password=?";
+		
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		ps.setString(1, passWord);
+		
+		rowsAffected = ps.executeUpdate();
+		System.out.println("executing update");
+		
+		
+		} catch (IOException | SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("We still know who you are Rick...");
+		return rowsAffected;
+		
 	}
 	
 	
-	public Users updateUserFName(String fName) {
-		Users us = null;
+	public int updateUserFName(String fName) {
+int rowsAffected = 0;
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			System.out.println("Connected");
-			
-			String sql = "UPDATE users SET fname=? WHERE fname=?";
-			
-			PreparedStatement ps = conn.prepareStatement(sql);
-			
-			ps.setString(1, fName);
-			System.out.println("Retrieving Information");
-			
-			ResultSet rs = ps.executeQuery();
-			System.out.println(us);
-			
-			while (rs.next()) {
-				us = new Users (rs.getInt("U_ID"), rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("FNAME"), rs.getString("LNAME"), rs.getInt("POS_ID"));
-				
-			}
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-			return us;
+		
+			conn.setAutoCommit(false);
+		String sql = "UPDATE users SET fname=? WHERE fname=?";
+		
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		ps.setString(1, fName);
+		
+		rowsAffected = ps.executeUpdate();
+		System.out.println("executing update");
+		
+		
+		} catch (IOException | SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("We still know who you are Rick...");
+		return rowsAffected;
+		
 	}
 	
-	public Users updateUserLName(String lName) {
-		Users us = null;
+	public int updateUserLName(String lName) {
+int rowsAffected = 0;
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			System.out.println("Connected");
-			
-			String sql = "UPDATE users SET lname=? WHERE lname=?";
-			
-			PreparedStatement ps = conn.prepareStatement(sql);
-			
-			ps.setString(1, lName);
-			System.out.println("Retrieving Information");
-			
-			ResultSet rs = ps.executeQuery();
-			System.out.println(us);
-			
-			while (rs.next()) {
-				us = new Users (rs.getInt("U_ID"), rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("FNAME"), rs.getString("LNAME"), rs.getInt("POS_ID"));
-				
-			}
-			} catch (Exception e) {
-				// TODO Auto-generated catch block
-				e.printStackTrace();
-			}
-
-			return us;
+		
+			conn.setAutoCommit(false);
+		String sql = "UPDATE users SET lname=? WHERE lname=?";
+		
+		PreparedStatement ps = conn.prepareStatement(sql);
+		
+		ps.setString(1, lName);
+		
+		rowsAffected = ps.executeUpdate();
+		System.out.println("executing update");
+		
+		
+		} catch (IOException | SQLException | ClassNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println("We still know who you are Rick...");
+		return rowsAffected;
+		
 	}
 
 

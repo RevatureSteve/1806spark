@@ -89,4 +89,16 @@
  
   </servlet-mapping>
   
+  
+     <servlet>
+  <servlet-name>updatePassword</servlet-name>
+  <servlet-class>com.revature.servlet.UpdatePasswordServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>updatePassword</servlet-name>
+  <url-pattern>/update</url-pattern>
+ 
+  </servlet-mapping>
+  
 </web-app>

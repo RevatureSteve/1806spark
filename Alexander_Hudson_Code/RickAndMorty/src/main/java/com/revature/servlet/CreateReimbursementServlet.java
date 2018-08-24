@@ -29,10 +29,10 @@ public class CreateReimbursementServlet extends HttpServlet {
 		System.out.println("Creating Reimbursement -POST");
 
 		ObjectMapper mapper = new ObjectMapper();
-		System.out.println("jkkk");
+		System.out.println("Mapping");
 
 		BufferedReader bf = req.getReader();
-		System.out.println("jkkk");
+		System.out.println("Buffer Reader");
 
 		Reimbursement re = mapper.readValue(bf, Reimbursement.class);
 

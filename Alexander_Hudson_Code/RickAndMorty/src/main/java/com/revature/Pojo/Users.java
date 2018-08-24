@@ -22,6 +22,16 @@ public class Users {
 	}
 	
 	
+	
+	public Users(String passWord) {
+		super();
+		this.passWord = passWord;
+	}
+
+
+
+	public Users () {}
+	
 	public int getU_Id() {
 		return u_Id;
 	}

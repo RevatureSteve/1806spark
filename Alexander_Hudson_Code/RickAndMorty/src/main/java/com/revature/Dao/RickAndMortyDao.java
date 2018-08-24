@@ -28,9 +28,9 @@ public interface RickAndMortyDao {
 	
 	//UPDATE------------------------------------------------------------------------------------------------------
 	
-	public Users updateUserPassWord(String passWord);
-	public Users updateUserFName(String fName);
-	public Users updateUserLName(String lName);
+	public int updateUserPassWord(String passWord);
+	public int updateUserFName(String fName);
+	public int updateUserLName(String lName);
 	
 	
 	//DELETE------------------------------------------------------------------------------------------------------
