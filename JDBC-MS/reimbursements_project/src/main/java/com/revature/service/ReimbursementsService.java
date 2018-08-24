@@ -33,4 +33,9 @@ public class ReimbursementsService {
 		return rDao.getAllReimbursements();
 	}
 
+	public static int updateReimbursements(int rId, int rqStatus, int mgrId) {
+		return rDao.updateReimbursements(rId, rqStatus, mgrId);
+	}
+	
+
 }

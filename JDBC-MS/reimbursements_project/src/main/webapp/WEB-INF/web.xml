@@ -86,4 +86,14 @@
     <servlet-name>ManagerServlet</servlet-name>
     <url-pattern>/manager</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateReimbursementsServlet</display-name>
+    <servlet-name>UpdateReimbursementsServlet</servlet-name>
+    <servlet-class>com.revature.servlets.UpdateReimbursementsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateReimbursementsServlet</servlet-name>
+    <url-pattern>/reimbursements/update</url-pattern>
+  </servlet-mapping>
 </web-app>

@@ -5,7 +5,7 @@ import { EmployeeComponent } from './pages/employee/employee.component';
 import { SubmitComponent } from './pages/submit/submit.component';
 import { ReimbursementDetailsComponent } from './pages/reimbursement-details/reimbursement-details.component';
 import { UpdateUserComponent } from './pages/update-user/update-user.component';
-import { ManagerListComponent } from './pages/manager/manager-list/manager-list.component';
+import { ManagerComponent } from './pages/manager/manager.component';
 
 
 const routes: Routes = [
@@ -15,7 +15,7 @@ const routes: Routes = [
   { path: 'employee/submit', component: SubmitComponent},
   { path: 'employee/detail/:id', component: ReimbursementDetailsComponent },
   { path: 'employee/account', component: UpdateUserComponent},
-  { path: 'manager', component: ManagerListComponent}
+  { path: 'manager', component: ManagerComponent}
 ];
 
 @NgModule({

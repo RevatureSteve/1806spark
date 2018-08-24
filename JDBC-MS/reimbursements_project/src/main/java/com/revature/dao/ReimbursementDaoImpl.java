@@ -1,10 +1,12 @@
 package com.revature.dao;
 
+import java.io.IOException;
 import java.sql.Blob;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -194,6 +196,26 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 			
 			rowsAffected = cs.executeUpdate();
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return rowsAffected;
+	}
+
+	@Override
+	public int updateReimbursements(int rId, int rqStatus, int mgrId) {
+		int rowsAffected = 0;
+		System.out.println(rId + " " + rqStatus + " " + mgrId);
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
+			String sql = "{call up(?,?,?,?,?)}";
+			CallableStatement cs = conn.prepareCall(sql);
+			cs.setInt(1, id);
+			cs.setString(2, email);
+			cs.setString(3, psw);
+			cs.setString(4, fname);
+			cs.setString(5, lname);
+			rowsAffected = cs.executeUpdate();
+		} catch (IOException | SQLException e) {
+			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 		return rowsAffected;

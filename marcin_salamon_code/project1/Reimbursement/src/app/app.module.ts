@@ -13,6 +13,7 @@ import { ReimbursementDetailsComponent } from './pages/reimbursement-details/rei
 import { ManagerComponent } from './pages/manager/manager.component';
 import { ReimbursementListComponent } from './pages/employee/reimbursement-list/reimbursement-list.component';
 import { ManagerListComponent } from './pages/manager/manager-list/manager-list.component';
+import { DecisionsComponent } from './pages/manager/decisions/decisions.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ManagerListComponent } from './pages/manager/manager-list/manager-list.
     SubmitComponent,
     ReimbursementDetailsComponent,
     ManagerListComponent,
-    ManagerComponent
+    ManagerComponent,
+    DecisionsComponent
   ],
   imports: [
     BrowserModule,
