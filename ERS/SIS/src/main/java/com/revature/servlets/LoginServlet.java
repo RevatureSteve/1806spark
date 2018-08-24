@@ -1,5 +1,6 @@
 package com.revature.servlets;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 
 import javax.servlet.ServletException;
@@ -24,18 +25,18 @@ public class LoginServlet extends HttpServlet {
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
+	
+	}
+
+
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	
 		String email = request.getParameter("email");
 		String password = request.getParameter("password");
 		Users test = ss.login(email, password);
 		
 		
 		System.out.println(test);
-	}
-
-
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-	
-		doGet(request, response);
 		
 		
 		

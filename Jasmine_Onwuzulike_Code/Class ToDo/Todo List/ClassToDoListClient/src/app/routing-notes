@@ -1,0 +1,11 @@
+1. create app-routing.module.ts
+2. export the class
+2. create a route array  an imported angular class.
+4. provate the route array with path and component.
+5. prove the modle decoratr: @NgModule
+6. provate
+        imports: [ RouterModule.forRoot(routes)]
+        exports : [RouterModule]
+7. add <router-outlet> direive to app component.html
+8. add to app.modules imports array
+9. update navbar with routerLink not href.
