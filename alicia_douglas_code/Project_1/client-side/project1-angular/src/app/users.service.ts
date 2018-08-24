@@ -16,9 +16,6 @@ export class UsersService {
     };
     console.log(user);
 
-
-    // return this.httpClient.post<Users>(`http://localhost:8080/reimbursement/login?email=${email}&password=${password}`, user);
-
     return this.httpClient.post<Users>('http://localhost:8080/reimbursement/login', user);
   }
 

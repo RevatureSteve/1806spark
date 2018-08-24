@@ -1,6 +1,7 @@
 import { CurrentUserService } from './../current-user.service';
 import { Component, OnInit } from '@angular/core';
 import { Users } from '../models/users.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -9,28 +10,27 @@ import { Users } from '../models/users.model';
 })
 export class NavbarComponent implements OnInit {
 
-  routerLink;
+  posId;
   user: Users;
 
-  constructor(private currentUser: CurrentUserService) { }
+  constructor(private currentUser: CurrentUserService, private router: Router) { }
 
   ngOnInit() {
     this.user = this.currentUser.getCurrentUser();
-    this.setUpNavbar(this.user);
+    this.posId = this.user.pos_id;
+    // this.setUpNavbar(this.user);
   }
 
-  setUpNavbar(user) {
-    const home = document.getElementsByClassName('home');
-    if (user.pos_id === 1) {
-      for (let i = 0; i < home.length; i++) {
-        // home[i]. = '/home';
-        this.routerLink = '/home';
-      }
-    }
-  }
+  // setUpNavbar(user) {
+  //   const home = document.getElementsByClassName('home');
+  //   if (user.pos_id === 1) {
+  //     this.posId =
+  //   }
+  // }
 
   logout() {
     this.currentUser.setCurrentUser(null);
+    this.router.navigate(['login']);
   }
 
 }

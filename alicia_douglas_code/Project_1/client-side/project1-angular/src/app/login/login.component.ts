@@ -20,8 +20,6 @@ export class LoginComponent implements OnInit {
   }
 
   login(email, password) {
-    // const email = document.getElementById('email').value;
-    // const password = document.getElementById('password').value;
     console.log('email: ' + email + ' password: ' + password);
     this.userService.getUser(email, password).subscribe(
       user => this.changeCurrentUser(user)
@@ -30,17 +28,6 @@ export class LoginComponent implements OnInit {
 
   changeCurrentUser(user) {
     this.user = user;
-    // this.user = {
-    //   u_id: user.u_id,
-    //   email: user.email,
-    //   password: user.password,
-    //   fname: user.fname,
-    //   lname: user.lname,
-    //   pos_id: user.pos_id,
-    //   posTitle: user.posTitle
-    // };
-    // console.log(user);
-    // console.log(user);
     if (user) {
       this.currentUser.setCurrentUser(user);
       if (user.pos_id === 1) {
