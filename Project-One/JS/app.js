@@ -3,7 +3,6 @@ let newUser;
 window.onload = function foo() {
 
     
-    console.log("app.js is loaded in...")
 
 
     if (document.getElementById('content')) {
@@ -19,11 +18,9 @@ window.onload = function foo() {
 function loadPage() {
     let navbar = document.getElementById('loaded-content');
     fetch('pages/start.html').then((resp) => {
-        console.log(resp);
         nav = resp;
         return resp.text();
     }).then((text) => {
-        console.log(text);
         navbar.innerHTML = text;
         document.getElementById('talos').addEventListener('click', loginPage);
 
@@ -33,18 +30,14 @@ function loadPage() {
 function loginPage() {
     
     let eventID = event.target.id;
-    console.log('ID IS: ' + eventID);
     let navbar = document.getElementById('loaded-content');
     fetch('pages/login.html').then((resp) => {
-        console.log(resp);
         nav = resp;
         return resp.text();
     }).then((text) => {
-        console.log(text);
         navbar.innerHTML = text;
         //document.getElementById('login').addEventListener('click', userLogged);
         
-        console.log("connection.js is loaded in...");
         document.getElementById('return').addEventListener('click', loadPage);
         document.getElementById('login').addEventListener('click', login);
 
@@ -54,28 +47,22 @@ function loginPage() {
 }
 
 function login(){
-    console.log("Login clicked")
     let email;
     let password;
     email = document.getElementById('loginBox').value;
     password = document.getElementById('passwordBox').value;
-    console.log(email + " " + password);
     
     let data = {"email": email, 
     "password": password};
-  console.log(JSON.stringify(data));
  fetch('http://localhost:8080/my-app/login', {
      method: 'POST',
      body: JSON.stringify(data),
      headers: {'Content-Type': 'application/json'}
  }).then(response => { 
-     console.log("Response is " + response.json);
     
    return response.json(); 
  }).then(data => { 
-   console.log(JSON.stringify(data));
    newUser = data;
-   console.log(newUser.u_id);
    userLogged();
  }).catch(err => {
      alert(err);
@@ -93,11 +80,9 @@ function userLogged(){
 function employeeLogged() {
     let navbar = document.getElementById('loaded-content');
     fetch('pages/employee.html').then((resp) => {
-        console.log(resp);
         nav = resp;
         return resp.text();
     }).then((text) => {
-        console.log(text);
         navbar.innerHTML = text;
         let pro = document.getElementById('profile-info-btn');
         let sub = document.getElementById('submit-reim-btn');
@@ -115,7 +100,7 @@ function employeeLogged() {
         resolved.addEventListener('click', clicked);
 
         news.addEventListener('click', clicked);
-
+        document.getElementById('username').innerText = newUser.fname + " " + newUser.lname;
         employeeTabs(5);
     });
 }
@@ -126,23 +111,21 @@ function employeeTabs(num) {
     switch (num) {
         case 1:
             fetch('pages/profile.html').then((resp) => {
-                console.log(resp);
                 nav = resp;
                 return resp.text();
             }).then((text) => {
-                console.log(text);
                 navbar.innerHTML = text;
-
+                document.getElementById('fname').value = newUser.fname;
+                document.getElementById('lname').value = newUser.lname;
+                document.getElementById('email').value = newUser.email;
             });
             break;
 
         case 2:
             fetch('pages/submit.html').then((resp) => {
-                console.log(resp);
                 nav = resp;
                 return resp.text();
             }).then((text) => {
-                console.log(text);
                 navbar.innerHTML = text;
 
 
@@ -151,11 +134,9 @@ function employeeTabs(num) {
 
         case 3:
             fetch('pages/pending.html').then((resp) => {
-                console.log(resp);
                 nav = resp;
                 return resp.text();
             }).then((text) => {
-                console.log(text);
                 navbar.innerHTML = text;
 
 
@@ -164,11 +145,9 @@ function employeeTabs(num) {
 
         case 4:
             fetch('pages/resolved.html').then((resp) => {
-                console.log(resp);
                 nav = resp;
                 return resp.text();
             }).then((text) => {
-                console.log(text);
                 navbar.innerHTML = text;
 
 
@@ -178,11 +157,9 @@ function employeeTabs(num) {
         case 5:
 
             fetch('pages/home.html').then((resp) => {
-                console.log(resp);
                 nav = resp;
                 return resp.text();
             }).then((text) => {
-                console.log(text);
                 navbar.innerHTML = text;
                 document.getElementById('news-btn').style.backgroundColor = "yellow";
                 document.getElementById('news-btn').style.fontSize = "97%";
@@ -199,11 +176,9 @@ function managerLogged() {
     
     let navbar = document.getElementById('loaded-content');
     fetch('pages/manager.html').then((resp) => {
-        console.log(resp);
         nav = resp;
         return resp.text();
     }).then((text) => {
-        console.log(text);
         navbar.innerHTML = text;
         let pro = document.getElementById('profile-info-btn-mgr');
         let sub = document.getElementById('submit-reim-btn-mgr');
@@ -219,22 +194,18 @@ function managerLogged() {
 
 
         news.addEventListener('click', clickedMgr);
-        console.log("starting mgrTabs");
         mgrTabs(5);
     });
 }
 
 function mgrTabs(num) {
     let navbar = document.getElementById('content');
-    console.log("Switching case" + num);
     switch (num) {
         case 1:
             fetch('pages/profile.html').then((resp) => {
-                console.log(resp);
                 nav = resp;
                 return resp.text();
             }).then((text) => {
-                console.log(text);
                 navbar.innerHTML = text;
 
             });
@@ -242,11 +213,9 @@ function mgrTabs(num) {
 
         case 2:
             fetch('pages/submit.html').then((resp) => {
-                console.log(resp);
                 nav = resp;
                 return resp.text();
             }).then((text) => {
-                console.log(text);
                 navbar.innerHTML = text;
 
 
@@ -255,11 +224,9 @@ function mgrTabs(num) {
 
         case 3:
             fetch('pages/pending.html').then((resp) => {
-                console.log(resp);
                 nav = resp;
                 return resp.text();
             }).then((text) => {
-                console.log(text);
                 navbar.innerHTML = text;
 
 
@@ -269,11 +236,9 @@ function mgrTabs(num) {
         case 5:
 
             fetch('pages/home-mgr.html').then((resp) => {
-                console.log(resp);
                 nav = resp;
                 return resp.text();
             }).then((text) => {
-                console.log(text);
                 navbar.innerHTML = text;
                 document.getElementById('news-btn-mgr').style.backgroundColor = "yellow";
                 document.getElementById('news-btn-mgr').style.fontSize = "97%";
