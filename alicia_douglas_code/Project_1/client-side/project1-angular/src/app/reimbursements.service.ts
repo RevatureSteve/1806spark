@@ -66,7 +66,7 @@ export class ReimbursementsService {
 
     console.log(update);
 
-    return this.httpClient.post<Reimbursements>('http://localhost:8080/reimbursement/reimbursement/rid', update);
+    return this.httpClient.put<Reimbursements>('http://localhost:8080/reimbursement/reimbursement', update);
 
   }
 

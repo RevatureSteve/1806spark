@@ -55,9 +55,33 @@ public class ReimbursementServlet extends HttpServlet {
 		System.out.println(reimb);
 		
 		reimBL.createReimbursement(reimb);
+	
+	}
+	
+	@Override
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+System.out.println("Hit put /reimbursement");
 		
+		int rId;
+		int mgrId;
+		int status;
 		
+		ObjectMapper mapper = new ObjectMapper();
+		ServletInputStream data = req.getInputStream();
+		ObjectNode node = mapper.readValue(data, ObjectNode.class);
 		
+		rId = node.get("rId").intValue();
+		status = node.get("status").intValue();
+		mgrId = node .get("mgrId").intValue();
+		
+		Reimbursement reimb = reimBL.updateReimbursement(rId, mgrId, status);
+		
+		System.out.println(reimb);
+		
+		String json = mapper.writeValueAsString(reimb);
+		resp.setContentType("application/json");
+		PrintWriter out = resp.getWriter();
+		out.print(json);
 	}
 
 	

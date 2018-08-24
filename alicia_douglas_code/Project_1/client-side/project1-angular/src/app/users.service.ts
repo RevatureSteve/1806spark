@@ -9,7 +9,7 @@ export class UsersService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getUser (email, password) {
+  login (email, password) {
     const user = {
       email: email,
       password: password
@@ -31,6 +31,6 @@ export class UsersService {
       lname: lname
     };
 
-    return this.httpClient.post<Users>('http://localhost:8080/reimbursement/users', user);
+    return this.httpClient.put<Users>('http://localhost:8080/reimbursement/users', user);
   }
 }

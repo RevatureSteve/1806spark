@@ -41,7 +41,7 @@ public class UserServlet extends HttpServlet {
 	
 	
 	@Override
-	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("hit post /users");
 		
 		int u_id;
@@ -72,6 +72,12 @@ public class UserServlet extends HttpServlet {
 		
 		System.out.println("After print to json --servlet");
 	}
+	
+//	@Override
+//	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+//		// TODO Auto-generated method stub
+//		super.doPut(req, resp);
+//	}
 
 
 

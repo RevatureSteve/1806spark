@@ -62,10 +62,10 @@ public class UsersDao {
 	 * get all the users from the Users table
 	 * @return 
 	 */
-	public List<Users> readUsers() {
+	public List<Users> getAllUsers() {
 		List<Users> users = new ArrayList<>();
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
-			String sql = "SELECT * FROM users u INNER JOIN position p ON u.pos_id = p.pos_id";
+			String sql = "SELECT * FROM users u INNER JOIN position p ON u.pos_id = p.pos_id ORDER BY u_id";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {

@@ -52,7 +52,7 @@ public class ReimbursementDao {
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
 			
 			String sql = "SELECT * FROM reimbursement r LEFT JOIN rb_status rs ON r.rb_status_id = rs.rb_status_id LEFT JOIN rb_type rt "
-					+ "ON r.rb_type_id = rt.rb_type_id LEFT JOIN users u ON r.emp_u_id = u.u_id LEFT JOIN users u ON r.mgr_u_id = u.u_id WHERE emp_u_id = ?";
+					+ "ON r.rb_type_id = rt.rb_type_id LEFT JOIN users u ON r.emp_u_id = u.u_id LEFT JOIN users u ON r.mgr_u_id = u.u_id WHERE emp_u_id = ? ORDER BY r_id";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
@@ -109,7 +109,7 @@ public class ReimbursementDao {
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
 			
 			String sql = "SELECT * FROM reimbursement r LEFT JOIN rb_status rs ON r.rb_status_id = rs.rb_status_id LEFT JOIN rb_type rt "
-					+ "ON r.rb_type_id = rt.rb_type_id LEFT JOIN users u ON r.emp_u_id = u.u_id LEFT JOIN users u ON r.mgr_u_id = u.u_id";
+					+ "ON r.rb_type_id = rt.rb_type_id LEFT JOIN users u ON r.emp_u_id = u.u_id LEFT JOIN users u ON r.mgr_u_id = u.u_id ORDER BY r_id";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			

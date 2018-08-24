@@ -49,16 +49,6 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>UserEmailServlet</display-name>
-    <servlet-name>UserEmailServlet</servlet-name>
-    <servlet-class>com.revature.servlets.UserEmailServlet</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>UserEmailServlet</servlet-name>
-    <url-pattern>/users/email</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <description></description>
     <display-name>ReimbursementResolvedServlet</display-name>
     <servlet-name>ReimbursementResolvedServlet</servlet-name>
     <servlet-class>com.revature.servlets.ReimbursementResolvedServlet</servlet-class>
@@ -108,12 +98,12 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ReimbursementRIdServlet</display-name>
-    <servlet-name>ReimbursementRIdServlet</servlet-name>
-    <servlet-class>com.revature.servlets.ReimbursementRIdServlet</servlet-class>
+    <display-name>DocumentationServlet</display-name>
+    <servlet-name>DocumentationServlet</servlet-name>
+    <servlet-class>com.revature.servlets.DocumentationServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ReimbursementRIdServlet</servlet-name>
-    <url-pattern>/reimbursement/rid</url-pattern>
+    <servlet-name>DocumentationServlet</servlet-name>
+    <url-pattern>/documentation</url-pattern>
   </servlet-mapping>
 </web-app>

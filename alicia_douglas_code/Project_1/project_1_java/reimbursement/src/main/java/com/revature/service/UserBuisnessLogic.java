@@ -38,7 +38,7 @@ public class UserBuisnessLogic {
 	 * @return
 	 */
 	public List<Users> getAllUsers(){
-		return usersDao.readUsers();
+		return usersDao.getAllUsers();
 	}
 	
 	/**
