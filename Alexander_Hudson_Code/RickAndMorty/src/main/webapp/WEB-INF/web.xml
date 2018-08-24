@@ -77,4 +77,16 @@
  
   </servlet-mapping>
   
+  
+   <servlet>
+  <servlet-name>createReim</servlet-name>
+  <servlet-class>com.revature.servlet.CreateReimbursementServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>createReim</servlet-name>
+  <url-pattern>/reim/create</url-pattern>
+ 
+  </servlet-mapping>
+  
 </web-app>

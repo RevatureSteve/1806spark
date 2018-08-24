@@ -1,5 +1,6 @@
 package com.revature.service;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import com.revature.Dao.RickAndMortyDao;
@@ -49,6 +50,11 @@ public class AppService {
 		return rmDao.getUserByEmail(email, password);
 	}
 	
+	public int createReimbursement(int emp_U_Id, int amt, String description, int rq_Type) {
+		System.out.println("[LOG]---------retrieving--------Create Reimbursement");
+		
+		return rmDao.createReimbursement(emp_U_Id, amt, description, rq_Type);
+	}
 	
 	public List<Users> getAllUsers() {
 		 System.out.println("[LOG]--------retrieving--------All Users");

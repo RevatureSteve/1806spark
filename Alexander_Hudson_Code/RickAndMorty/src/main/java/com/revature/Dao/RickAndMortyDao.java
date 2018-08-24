@@ -13,7 +13,7 @@ public interface RickAndMortyDao {
 	
 	//Create-----------------------------------------------------------------------------------------------------
 	
-	public Reimbursement createReimbursement(int amt, String description, Timestamp time_Submission, int rq_Type);
+	public int createReimbursement(int emp_U_Id, int amt, String description, int rq_Type);
 	
 	
 	//READ-------------------------------------------------------------------------------------------------------

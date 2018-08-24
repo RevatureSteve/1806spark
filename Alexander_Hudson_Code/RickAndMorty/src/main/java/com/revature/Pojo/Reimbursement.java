@@ -28,6 +28,20 @@ public class Reimbursement {
 		this.rq_Status_Id = rq_Status_Id;
 	}
 
+	public Reimbursement () {}
+	
+
+
+	public Reimbursement(int emp_U_Id, int amt, String description, int rq_Type) {
+		super();
+		this.emp_U_Id = emp_U_Id;
+		this.amt = amt;
+		this.description = description;
+		this.rq_Type = rq_Type;
+	}
+
+
+
 
 
 	public int getR_Id() {

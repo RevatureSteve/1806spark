@@ -26,34 +26,32 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 	//CREATE
 	
 	@Override
-	public Reimbursement createReimbursement(int amt, String description, Timestamp time_Submission, int rq_Type) {
-		Reimbursement re = null;
+	public int createReimbursement(int emp_U_Id, int amt, String description, int rq_Type) {
+		int rowsAffected = 0;
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			System.out.println("Connected");
 		
-		String sql = "INSERT INTO Reimbursement VALUES (?,?,?,?)";
+			conn.setAutoCommit(false);
+		String sql = "INSERT INTO reimbursement (emp_U_Id, amt, description, rq_Type) VALUES (?,?,?,?)";
 		
 		PreparedStatement ps = conn.prepareStatement(sql);
 		
-		ps.setInt(1, amt);
-		ps.setString(2, description);
-		ps.setTimestamp(3, time_Submission);
+		ps.setInt(1, emp_U_Id);
+		ps.setInt(2, amt);
+		ps.setString(3, description);
 		ps.setInt(4, rq_Type);
 		
-		ResultSet rs = ps.executeQuery();
-		System.out.println(re);
+		rowsAffected = ps.executeUpdate();
+		System.out.println("executing update");
 		
-		while (rs.next()) {
-			re = new Reimbursement (rs.getInt("R_ID"), rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getTimestamp("TIME_SUBMISSION"), rs.getInt("RQ_TYPE"), rs.getInt("RQ_STATUS_ID"));
-		}
 		
 		} catch (IOException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
-		return re;
+		System.out.println("Thanks for begging again Rick..");
+		return rowsAffected;
 		
 	}
 		
