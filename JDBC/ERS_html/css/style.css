@@ -1,0 +1,134 @@
+#bg{
+    background: url(../images/town.png);
+    height: 80%; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+#page{
+    display: inline-block;
+    background-color: rgb(32, 32, 32);
+    border-style: solid;
+    border-width: 10px 12px 8px 14px;
+    box-shadow: 3px 3px rgb(0, 0, 212);
+    border-radius: 8px;
+    border-color: rgb(112, 160, 248);
+    position: absolute;
+    bottom: 225px;
+    right: 90px;
+    overflow: auto;
+}
+#face_img{
+    position: absolute;
+    bottom: 200px;
+    left: 100px;
+}
+img{
+    border-style: solid;
+    border-width: 10px 12px 8px 14px;
+    box-shadow: 3px 3px rgb(0, 0, 212);
+    border-radius: 8px;
+    border-color: rgb(112, 160, 248);
+}
+#word_box{
+    position: absolute;
+    height: 100px;
+    width: 900px;
+    background-color: rgb(32, 32, 32);
+    border-style: solid;
+    border-width: 10px 12px 8px 14px;
+    box-shadow: 3px 3px rgb(0, 0, 212);
+    border-radius: 8px;
+    border-color: rgb(112, 160, 248);
+    bottom: 60px;
+    left: 100px;
+}
+#text{
+    color: white;
+    margin: 8px;
+    font-size: 20px;
+    font-family: 'Press Start 2P', cursive;
+}
+#mainButton{
+    position: absolute;
+    bottom: 390px;
+    left: 100px;
+    background: linear-gradient(rgb(41, 243, 233), rgb(29, 163, 252));
+    margin:8px;
+    font-family: 'Press Start 2P', cursive;
+    height: 50px;
+    width: 150px;
+    border-color: black;
+}
+#mainButton:hover{
+    background: linear-gradient(rgb(41, 243, 233), rgb(29, 252, 196));
+    border-color: black;
+}
+
+#mainButton:active{
+    background: linear-gradient(rgb(39, 221, 212), rgb(23, 223, 173));
+    border-color: black;
+}
+.btn{
+    background: linear-gradient(rgb(110, 110, 110), rgb(82, 82, 82));
+    margin:8px;
+    font-family: 'Press Start 2P', cursive;
+    border-color: black;
+}
+
+.btn:hover{
+    background: linear-gradient(rgb(59, 59, 59), rgb(39, 39, 39));
+    border-color: black;
+}
+
+.btn:active{
+    background: linear-gradient(rgb(44, 44, 44), rgb(15, 15, 15));
+    border-color: black;
+}
+.center{
+    margin: auto;
+    text-align: center;
+    margin: 120px;
+}
+.logBox{
+    width: 65%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid darkblue;
+    box-sizing: border-box;
+}
+
+
+
+
+
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    position: center;
+    overflow: hidden;
+}
+
+.mainMenu li {
+    width: 250px;
+    height: 124px;
+    margin: 50px;
+    float: left;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 13px;
+}
+
+li h4 {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px;
+    text-decoration: none;
+}
+
+li h4:hover {
+    cursor: pointer;
+    background-color: darkblue;
+}

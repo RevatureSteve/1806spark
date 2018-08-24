@@ -1,0 +1,20 @@
+.reqFeild{
+    height: 30px;
+    width: 250px;
+    font-size: 20px;
+    background-color: rgb(175, 175, 175);
+}
+h2{
+    color: white;
+}
+#page li{
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 15px;
+}
+
+#page h1{
+    font-family: 'Press Start 2P', cursive;
+    color: white;
+    font-size: 15px;
+}

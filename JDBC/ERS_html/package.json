@@ -1,0 +1,21 @@
+{
+  "name": "ers",
+  "version": "1.0.0",
+  "description": "ers client side",
+  "main": "ers.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Richard Iskra",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3",
+    "java": "^0.10.0",
+    "node-fetch": "^2.2.0",
+    "node-rest-client": "^3.1.0",
+    "request": "^2.81.0",
+    "xmlhttprequest": "^1.8.0"
+  }
+}
