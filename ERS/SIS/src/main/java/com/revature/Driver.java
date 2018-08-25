@@ -1,5 +1,6 @@
 package com.revature;
 
+import java.text.SimpleDateFormat;
 import java.util.List;
 
 import com.revature.pojos.Reimbursement;
@@ -30,7 +31,8 @@ public class Driver {
 //		System.out.println(rbs);
 		
 		// Create new reimbursement.
-		s.createNewReimbursement(200, "test", 3, "General");
+		
+		s.createNewReimbursement(500, "Test", 1, 1, 1);
 //		
 	}
 

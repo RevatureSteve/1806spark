@@ -1,0 +1,26 @@
+#emp {
+    background-image: url("../EmpImages/maxresdefault.jpg");
+    background-repeat: no-repeat;
+      background-size: contain; 
+    height: 70em;
+    width: 70em;
+    
+ }
+ #link {
+     padding: 32px;
+     text-decoration: none;
+     display: block;
+     transition: 0.3s;
+     color: #9bc5c6;
+     font-family: 'Permanent Marker', cursive;
+     font-size: larger;
+ }
+ #link :hover {
+     color: black;
+ }
+ h1 {
+     color: white;
+     font-family: 'Permanent Marker', cursive;
+     text-align: center;
+     font-size: 40px;;
+ }

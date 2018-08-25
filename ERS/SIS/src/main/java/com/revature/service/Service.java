@@ -1,5 +1,6 @@
 package com.revature.service;
 
+import java.sql.Timestamp;
 import java.util.List;
 
 import com.revature.dao.EmployeeImpl;
@@ -15,17 +16,19 @@ public class Service {
 	//Login Validation.
 	public Users login(String email, String password) {
 		
-		System.out.println("Starting login service" + email + " " + password);
+		System.out.println("Starting login service");
 		System.out.println("Calling EmployeeImpl");
-		Users usr = emImpl.login(email, password);
+		Users usr = new Users();
 		usr.setEmail(email);
 		usr.setPassword(password);
+		usr = emImpl.login(usr.getEmail(), usr.getPassword());
+		System.out.println(usr);
 		
 		if (usr != null) {
-			if (email == usr.getEmail() && password == usr.getPassword()) {
+			
 				System.out.println("Success");
 				return usr;
-			}
+			
 		}
 		System.out.println("Fail");
 		return null;
@@ -69,9 +72,9 @@ public class Service {
 	}
 	
 	//Allows employee to submit request.
-	public void createNewReimbursement(double amount, String rDescription, int uId, String rType) {
+	public void createNewReimbursement(double amount, String rDescription, int uId, int type, int status) {
 		System.out.println("Starting createNewReimbursement....");
-		int ra =emImpl.createNewReimbursement(amount, rDescription, uId, rType);
+		int ra =emImpl.createNewReimbursement(amount, rDescription, uId, type, status);
 		
 		if (ra !=0) {
 			System.out.println("Success! " + ra + "reimbursement submitted!");

@@ -1,0 +1,19 @@
+<div id="v">
+  
+    <div id="emp">
+        <h1> Welcome home {{ agent.first }}</h1>
+      <div id="sidenav">
+      <a routerLink="/employee" id="link">Home</a>
+      <a routerLink="/agent/profile" id="link">Agent Profile</a>
+      <a routerLink = "/agent/missions" id="link">Missions</a>
+      <a routerLink = "/agnet/reimbursements" id="link">Mission Reimbursements</a>
+      </div>
+      
+      <div> 
+      <img *ngIf= "agent.first == 'James'" src="">
+      </div>
+      
+      <h2>Current Status:</h2>
+      
+      </div>
+    </div>

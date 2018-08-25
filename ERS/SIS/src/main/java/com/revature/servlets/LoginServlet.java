@@ -24,19 +24,34 @@ public class LoginServlet extends HttpServlet {
 
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		Users test = ss.login(email, password);
-		
-		System.out.println("Success!");
-		System.out.println(test);
+//		String email = request.getParameter("email");
+//		String password = request.getParameter("password");
+//		Users test = ss.login(email, password);
+//		
+//		System.out.println("Success!");
+//		System.out.println(test);
 	
 	}
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		System.out.println("Login---POSY");
+		Users usr = new Users();
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
 		
+		usr.setEmail(email);
+		usr.setPassword(password);
+		System.out.println("Starting login service");
+		usr = ss.login(usr.getEmail(), usr.getPassword());
+		if (usr != null) {
+			System.out.println("Success!");
+			System.out.println("User: " + usr);
+		}
+		else {
+			System.out.println("Failed");
+		}
 	}
 
 }

@@ -19,7 +19,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>DocumentationServlet</servlet-name>
-    <url-pattern>/DocumentationServlet</url-pattern>
+    <url-pattern>/ERS-Restful-API</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -50,5 +50,15 @@
   <servlet-mapping>
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>NewReimbursementServlet</display-name>
+    <servlet-name>NewReimbursementServlet</servlet-name>
+    <servlet-class>com.revature.servlets.NewReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewReimbursementServlet</servlet-name>
+    <url-pattern>/NewReimbursementServlet</url-pattern>
   </servlet-mapping>
 </web-app>

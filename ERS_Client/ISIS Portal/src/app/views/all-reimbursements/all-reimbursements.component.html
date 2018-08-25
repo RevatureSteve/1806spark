@@ -1,0 +1,29 @@
+
+<table>
+<thead>
+  <tr>
+    <td>ID</td>
+    <td>Amount</td>
+    <td>Description</td>
+    <td>Type</td>
+    <td>Time Submitted</td>
+    <td>First Name</td>
+    <td>Last Name</td>
+    
+  </tr>
+</thead>
+<tr *ngFor = "let r of rb">
+ <td> {{ r.rId }}</td>
+ <td> {{ r.amount }}</td>
+ <td> {{ r.rDescription }}</td>
+ <td> {{ r.rType }}</td>
+ <td> {{ r.timeSubmitted }}</td>
+ <td> {{ r.f_name }}</td>
+ <td> {{ r.l_name }}</td>
+</tr>
+<tr>
+  
+</tr>
+
+</table>
+<button type="submit" (click) = "getRb()">Click</button>

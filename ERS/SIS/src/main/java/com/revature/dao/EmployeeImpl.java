@@ -6,6 +6,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -70,17 +71,19 @@ public class EmployeeImpl implements EmpDao{
 	}
 
 	@Override
-	public int createNewReimbursement(double amount, String rDescription, int uId, String type) {
+	public int createNewReimbursement(double amount, String rDescription, int uId, int type, int status) {
 		
 		int row = 0;
 		try(Connection conn = ConnectionUtil.getConnection()) {
-		String sql = "INSERT INTO reimbursement (amount, r_description, emp_id) VALUES(?, ?, ?)";
+		String sql = "INSERT INTO reimbursement (amount, r_description, emp_u_id, rq_type_id, rq_status_id) VALUES(?,?,?,?,?)";
 		PreparedStatement ps = conn.prepareStatement(sql);
 		ps.setDouble(1, amount);
 		ps.setString(2, rDescription);
 		ps.setInt(3, uId);
+		ps.setInt(4, type);
+		ps.setInt(5, status);
 		row = ps.executeUpdate();
-		System.out.println(row + " employees added");
+		System.out.println(row + " reimbursements added");
 		} catch (FileNotFoundException e) {
 			e.printStackTrace();
 		} catch (SQLException e) {
