@@ -1,0 +1,126 @@
+#background4 {
+    position: fixed;
+    z-index: -1;
+    margin-left: 1320px; 
+    opacity: .5;
+    width: 100%;
+    margin-top: -40px;
+
+  }
+
+  #background5 {
+    position: fixed;
+    z-index: -1; 
+    opacity: .5;
+    margin-left: -440px;
+    margin-top: -73px;
+    width: 100%;
+       /* -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1); */
+        
+  }
+  
+  #background6 {
+      z-index: -2;
+      position:fixed;
+  
+    }
+
+#title {
+    position: fixed;
+    margin-left: 29%;
+    margin-top: 25px;
+    color: black;
+    font-size: 100px;
+    text-decoration-style: wavy;
+    text-shadow: 10px 10px 12px #4CAF50, 0 0 10px black;
+    opacity: .8;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+/* Style inputs with type="text", select elements and textareas */
+input[type=text], select, textarea {
+    width: 100%; /* Full width */
+    padding: 12px; /* Some padding */  
+    border: 3px solid green; /* Gray border */
+    border-radius: 4px; /* Rounded borders */
+    box-sizing: border-box; /* Make sure that padding and width stays in place */
+    margin-top: 2px; /* Add a top margin */
+    resize: vertical; /* Allow the user to vertically resize the textarea (not horizontally) */
+    opacity: .8;
+    background-color: solid white;
+    font-size: 20px; 
+    text-decoration-style: wavy;
+    text-shadow: 10px 10px 12px #4CAF50, 0 0 10px black;  
+}
+
+textarea:hover {
+    background-image: url('https://static1.squarespace.com/static/528252b7e4b00150d03a4848/59a2354eebbd1a0623e0cefe/59a235aaebbd1a0623e0d1e6/1503802795749/RickAndMorty_PickleRick1500.gif');
+    background-repeat: no-repeat;
+    background-position-y: -120px;
+}
+
+/* Style the submit button with a specific background color etc */
+input[type=submit] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    
+}
+
+/* When moving the mouse over the submit button, add a darker green color */
+input[type=submit]:hover {
+    background-color: #45a049;
+}
+
+/* Add a background color and some padding around the form */
+.container2 {
+    border-radius: 5px;
+    background-color: black;
+    margin-top: 40%;
+    position: fixed;
+    margin-left: 22%;
+    margin-top: 200px;
+    padding: 20px;
+    opacity: .8;
+    width: 50%;
+    font-size: 20px;
+    color: white;
+    border: 5px solid green;
+}
+  
+
+#portal3 {
+    z-index: -1;
+    position: fixed;
+    margin-left: 40%;
+    margin-top: 3%;
+    opacity: .6;
+   
+}
+
+#meebox {
+    margin-left: 3%;
+    margin-top: 2.5%;
+    position: fixed;
+    width: 5%;
+}
+
+#meesee {
+    margin-left: 2%;
+    margin-top: 1%;
+    position: fixed;
+    width: 6%;
+    opacity: 0;
+}
+
+#meesee:hover {
+    opacity: 1;
+}
