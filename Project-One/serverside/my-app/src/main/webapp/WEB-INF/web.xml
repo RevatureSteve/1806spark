@@ -47,4 +47,14 @@
     <servlet-name>ResolvedServlet</servlet-name>
     <url-pattern>/resolved</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>NewReqServlet</display-name>
+    <servlet-name>NewReqServlet</servlet-name>
+    <servlet-class>com.revature.servlet.NewReqServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>NewReqServlet</servlet-name>
+    <url-pattern>/newreq</url-pattern>
+  </servlet-mapping>
 </web-app>

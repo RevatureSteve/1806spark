@@ -256,6 +256,25 @@ tr:nth-child(even) {background-color: rgba(221, 221, 0, 0.616);}
     background-color:white;
     font-size: 140%;
 }
+#edit-btn-sub{
+    height: 10%;
+    margin: auto;   
+    width: 71%;
+    padding: 6px 8px 6px 16px;
+    border-style: solid;
+    border-width: thin;
+    border-color: rgb(0, 0, 0);
+    font-family: 'Aldrich';
+    text-decoration: none;
+    font-size: 120%;
+    color: #000000;
+    display: block;
+    background-color: aliceblue;
+}
+#edit-btn-sub:hover{
+    background-color:white;
+    font-size: 140%;
+}
 .loading-gif{
     width: 4%;
     margin-left: 48%;

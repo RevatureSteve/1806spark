@@ -50,7 +50,7 @@ function employeeTabs(num) {
                 return resp.text();
             }).then((text) => {
                 navbar.innerHTML = text;
-
+                document.getElementById('edit-btn-sub').addEventListener('click', createReq);
 
             });
             break;

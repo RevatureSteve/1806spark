@@ -41,14 +41,11 @@ public class ReqLogic {
 		return reqs;
 	}
 	
-	public String createRequest(int emp_id, int amount, String desc, int rq_type) {
-		String succ = "Failure";
+	public int createRequest(int emp_id, int amount, String desc, int rq_type) {
 		int rowsAffected = rDao.submitReimbursment(emp_id, amount, desc, rq_type);
-		if(rowsAffected == 1) {
-			succ = "Success!";
-		}
 		
-		return succ;
 		
+		return rowsAffected;
 	}
-}
+	}
+
