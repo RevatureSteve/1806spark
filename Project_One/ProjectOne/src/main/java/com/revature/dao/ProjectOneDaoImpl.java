@@ -24,7 +24,6 @@ public class ProjectOneDaoImpl implements ProjectOneDao {
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
 			conn.setAutoCommit(false);
 			String sql = "INSERT INTO reimbursement (amt, emp_U_Id, mgr_U_Id, rq_Type_Id, description) VALUES (?, ?, ?, ?, ?)";
-			System.out.println(amt + "" +  emp_U_Id + "" + mgr_U_Id + "" + rq_Type_Id + "" + description);
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, amt);
 			ps.setInt(2, emp_U_Id);

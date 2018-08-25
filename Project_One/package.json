@@ -9,6 +9,7 @@
   "author": "Alex Moraga",
   "license": "ISC",
   "dependencies": {
+    "angular": "^1.7.3",
     "express": "^4.16.3"
   },
   "devDependencies": {}
