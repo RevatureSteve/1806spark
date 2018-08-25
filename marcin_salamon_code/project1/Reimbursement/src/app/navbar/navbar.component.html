@@ -1,13 +1,16 @@
 <ul class="nav">
   <li class="nav-item">
-    <a class="nav-link" routerLink='/employee'>Home</a>
+    <a class="nav-link" routerLink='/{{logged.getLoggedUser().position}}'>Home</a>
+  </li>
+  <li class="nav-item" *ngIf='logged.getLoggedUser().positionId === 2'>
+    <a class="nav-link" routerLink='/{{logged.getLoggedUser().position}}/employees'>Employees</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" routerLink='/employee/submit'>Submit</a>
+    <a class="nav-link" routerLink='/{{logged.getLoggedUser().position}}/submit'>Submit</a>
   </li>
   <li class="nav-item">
-      <a class="nav-link" id=logout routerLink='/employee/account'>Account</a>
-    </li>
+    <a class="nav-link" id=logout routerLink='/{{logged.getLoggedUser().position}}/account'>Account</a>
+  </li>
   <li class="nav-item">
     <a class="nav-link" id=logout (click)='logout()' routerLink='/'>Log out</a>
   </li>

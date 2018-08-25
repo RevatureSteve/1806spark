@@ -12,10 +12,12 @@ import { User } from '../../../models/user';
 export class ReimbursementListComponent implements OnInit {
   reimbursements: Reimbursement[];
   user: User;
+  filter: number;
   constructor(private reimbService: ReimbursementListService, private logged: LoggedUserService) { }
 
   ngOnInit() {
     this.getReimbursements();
+    this.filter = 1;
   }
 
   getReimbursements(): void {
@@ -29,7 +31,17 @@ export class ReimbursementListComponent implements OnInit {
     console.log(reimb);
     return reimb;
   }
+  setPending() {
+    this.filter = 1;
+  }
 
+  setResolved() {
+    this.filter = 2;
+  }
+
+  setDenied() {
+    this.filter = 3;
+  }
   dynamicSort(property) {
     let sortOrder = 1;
     if (property[0] === '-') {

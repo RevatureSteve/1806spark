@@ -1,1 +1,10 @@
 <button (click)="goBack()">go back</button>
+<div *ngIf='reimbursement'>
+    <div>Posted by {{reimbursement.employee.fname}} {{reimbursement.employee.lname}}</div>
+    <div>{{reimbursement.manager.fname}} {{reimbursement.manager.lname}}</div>
+    <div>Amount {{reimbursement.amount}}</div>
+    <div>Description: {{reimbursement.description}}</div>
+    <div>Time submitted: {{reimbursement.timesubmission}}</div>
+    <div>Type: {{reimbursement.rq_type}}</div>
+    <div>Status: {{reimbursement.rq_status}}</div>
+</div>

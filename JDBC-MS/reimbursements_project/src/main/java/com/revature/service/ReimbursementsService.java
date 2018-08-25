@@ -4,6 +4,7 @@ import java.util.List;
 
 import com.revature.dao.ReimbursementDao;
 import com.revature.dao.ReimbursementDaoImpl;
+import com.revature.domain.Decision;
 import com.revature.domain.Reimbursement;
 
 public class ReimbursementsService {
@@ -33,9 +34,12 @@ public class ReimbursementsService {
 		return rDao.getAllReimbursements();
 	}
 
-	public static int updateReimbursements(int rId, int rqStatus, int mgrId) {
-		return rDao.updateReimbursements(rId, rqStatus, mgrId);
+	public static int updateReimbursements(Decision[] decisions) {
+		int affected = 0;
+		for (Decision decision : decisions) {
+			affected = rDao.updateReimbursements(decision.getrId(), decision.getRq_statusId(), decision.getMgrId());
+		}
+		return affected;
 	}
-	
 
 }

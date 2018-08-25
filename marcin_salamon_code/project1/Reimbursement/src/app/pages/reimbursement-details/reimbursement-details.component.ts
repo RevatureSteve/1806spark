@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ReimbursementListService } from '../../services/reimbursement-list.service';
 import { Reimbursement } from '../../models/reimbursement';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-reimbursement-details',
@@ -10,17 +11,26 @@ import { Reimbursement } from '../../models/reimbursement';
 })
 export class ReimbursementDetailsComponent implements OnInit {
   reimbursement: Reimbursement;
-  constructor(private reimbSer: ReimbursementListService, private route: ActivatedRoute) { }
+  constructor(private location: Location, private reimbSer: ReimbursementListService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.getReimbursement();
   }
 
   goBack(): void {
+    this.location.back();
   }
 
-  getHero(): void {
+  getReimbursement(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.reimbSer.getReimbursement(id)
-      .subscribe(reimbursement => this.reimbursement = reimbursement);
+    this.reimbSer.getReimbursementsArray().subscribe(reimbursements => {
+      const reimbs = reimbursements;
+      reimbs.forEach(reimb => {
+        console.log(reimb);
+        if (reimb.rId === id) {
+          this.reimbursement = reimb;
+        }
+      });
+    });
   }
 }

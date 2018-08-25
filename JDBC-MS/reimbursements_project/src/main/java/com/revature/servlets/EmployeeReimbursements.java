@@ -38,8 +38,6 @@ public class EmployeeReimbursements extends HttpServlet {
 
 		String id = request.getParameter("id");
 		int numId = Integer.parseInt(id);
-		// User verified = VerificationService.verifyUsernameAndPassword(email,
-		// password);
 		List<Reimbursement> reimbs = ReimbursementsService.getReimbursementsOfUser(numId);
 
 		String jsonOut = mapper.writeValueAsString(reimbs);

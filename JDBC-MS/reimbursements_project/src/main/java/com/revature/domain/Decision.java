@@ -28,6 +28,7 @@ public class Decision {
 		this.rId = rId;
 		this.mgrId = mgrId;
 	}
+	public Decision() {}
 	@Override
 	public String toString() {
 		return "Decision [rq_statusId=" + rq_statusId + ", rId=" + rId + ", mgrId=" + mgrId + "]";

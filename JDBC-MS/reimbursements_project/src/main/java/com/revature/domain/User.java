@@ -53,6 +53,10 @@ public class User {
 		return "User [uId=" + uId + ", email=" + email + ", password=" + password + ", fname=" + fname + ", lname="
 				+ lname + ", positionId=" + positionId + ", position=" + position + "]";
 	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
 	
 	
 }

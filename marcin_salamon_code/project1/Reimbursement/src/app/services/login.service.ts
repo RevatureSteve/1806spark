@@ -15,6 +15,6 @@ export class LoginService {
       password: password
     };
 
-    return this.http.post<User>('http://localhost:8080/Reimbursement/login', user);
+    return this.http.post<User>('http://18.223.123.204:8080/Reimbursement-0.0.1-SNAPSHOT/login', user);
   }
 }

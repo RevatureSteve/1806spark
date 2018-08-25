@@ -1,0 +1,8 @@
+<li *ngFor='let u of users' class="list-group mw-50" style="width: 60%; margin: auto;">
+    <div>
+        <a routerLink='/manager/users/{{u.uId}}' class="list-group-item list-group-item-action list-group-item-success">
+           <div>{{u.fname}} {{u.lname}}</div>
+        </a>
+    </div>
+</li>
+

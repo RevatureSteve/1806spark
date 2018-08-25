@@ -1,5 +1,8 @@
+<div (click)='setPending()'>Pending</div>
+<div (click)='setResolved()'>Resolved</div>
+<div (click)='setDenied()'>Denied</div>
 <li *ngFor='let r of reimbursements' class="list-group mw-50" style="width: 60%; margin: auto;">
-    <div *ngIf='r.rq_statusId===1'>
+    <div *ngIf='r.rq_statusId===filter'>
         <a routerLink='/manager/detail/{{r.rId}}' class="list-group-item list-group-item-action list-group-item-success">
             <div>{{r.description}}</div>
             <div>{{r.timesubmission.substring(0,19)}}</div>

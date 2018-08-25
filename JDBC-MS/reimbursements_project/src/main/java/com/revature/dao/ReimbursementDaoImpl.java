@@ -206,14 +206,12 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		int rowsAffected = 0;
 		System.out.println(rId + " " + rqStatus + " " + mgrId);
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
-			String sql = "{call up(?,?,?,?,?)}";
-			CallableStatement cs = conn.prepareCall(sql);
-			cs.setInt(1, id);
-			cs.setString(2, email);
-			cs.setString(3, psw);
-			cs.setString(4, fname);
-			cs.setString(5, lname);
-			rowsAffected = cs.executeUpdate();
+			String sql = "UPDATE reimbursement SET rq_status_id = ?, mgr_u_id = ? WHERE r_id = ?";
+			PreparedStatement ps = conn.prepareCall(sql);
+			ps.setInt(1, rqStatus);
+			ps.setInt(2, mgrId);
+			ps.setInt(3, rId);
+			rowsAffected = ps.executeUpdate();
 		} catch (IOException | SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

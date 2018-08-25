@@ -34,6 +34,6 @@ export class UpdateService {
       position: this.logged.position
     };
     console.log(user);
-    return this.http.post<User>('http://localhost:8080/Reimbursement/employee/update', user);
+    return this.http.post<User>('http://18.223.123.204:8080/Reimbursement-0.0.1-SNAPSHOT/employee/update', user);
   }
 }

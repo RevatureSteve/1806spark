@@ -14,21 +14,19 @@ export class ReimbursementListService {
   }
 
   getReimbursementsByUserId(id): void {
-    this.reimbursements = this.http.get<Reimbursement[]>(`http://localhost:8080/Reimbursement/employee/reimbursements?id=${id}`);
+    this.reimbursements =
+      this.http.get<Reimbursement[]>(`http://18.223.123.204:8080/Reimbursement-0.0.1-SNAPSHOT/employee/reimbursements?id=${id}`);
   }
 
   getReimbursementsArray(): Observable<Reimbursement[]> {
     return this.reimbursements;
   }
 
-  getReimbursement(rId): Observable<Reimbursement> {
-    return this.http.get<Reimbursement>(`http://localhost:8080/Reimbursement/${rId}`);
-  }
+
 
   getAllReimbursements(): void {
-    this.reimbursements = this.http.get<Reimbursement[]>('http://localhost:8080/Reimbursement/manager');
+    this.reimbursements = this.http.get<Reimbursement[]>('http://18.223.123.204:8080/Reimbursement-0.0.1-SNAPSHOT/manager');
   }
 
-  managerDecision(decisions): void {
-  }
+
 }

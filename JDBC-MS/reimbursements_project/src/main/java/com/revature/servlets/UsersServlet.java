@@ -12,44 +12,41 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.revature.domain.Decision;
 import com.revature.domain.Reimbursement;
 import com.revature.domain.User;
 import com.revature.service.ReimbursementsService;
+import com.revature.service.UserService;
 import com.revature.service.VerificationService;
 
 /**
- * Servlet implementation class UpdateReimbursementsServlet
+ * Servlet implementation class UsersServlet
  */
-public class UpdateReimbursementsServlet extends HttpServlet {
+public class UsersServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
      * @see HttpServlet#HttpServlet()
      */
-    public UpdateReimbursementsServlet() {
+    public UsersServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
 	/**
-	 * @see HttpServlet#doPut(HttpServletRequest, HttpServletResponse)
+	 *users/employee
+	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("Update up");
+	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		System.out.println("Users servlet up");
 
 		ObjectMapper mapper = new ObjectMapper();
-		ServletInputStream json = request.getInputStream();
-		Decision[] decisions = mapper.readValue(json, Decision[].class);
-		for(Decision d: decisions) {
-			System.out.println(d);
-		}
+		List<User> employees = UserService.getEmployees();
 		
-		int success = ReimbursementsService.updateReimbursements(decisions);
-		System.out.println(decisions);
+		String jsonOut = mapper.writeValueAsString(employees);
+
 		PrintWriter out = response.getWriter();
 		response.setContentType("application/json");
-		out.print(success);
+		out.print(jsonOut);
 	}
 
 }

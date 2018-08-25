@@ -22,6 +22,8 @@ export class DecisionsService {
   }
 
   managerDecision(): void {
-    this.http.put('http://localhost:8080/Reimbursement/reimbursement/update', DecisionsService.decisions);
+    console.log(DecisionsService.decisions);
+    this.http.post('http://18.223.123.204:8080/Reimbursement-0.0.1-SNAPSHOT/reimbursements/update',
+      DecisionsService.decisions).subscribe(result => console.log(result));
   }
 }

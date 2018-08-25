@@ -13,16 +13,30 @@ import { LoggedUserService } from '../../../services/logged-user.service';
 export class ManagerListComponent implements OnInit {
   reimbursements: Reimbursement[];
   decisions: Decision[];
+  filter: number;
   constructor(private reimbService: ReimbursementListService, private decisionService: DecisionsService,
     private logged: LoggedUserService) { }
 
   ngOnInit() {
     this.getReimbursements();
+    this.filter = 1;
   }
 
   getReimbursements(): void {
     this.reimbService.getAllReimbursements();
     this.reimbService.getReimbursementsArray().subscribe(reimbursements => this.reimbursements = this.sortReimbursements(reimbursements));
+  }
+
+  setPending() {
+    this.filter = 1;
+  }
+
+  setResolved() {
+    this.filter = 2;
+  }
+
+  setDenied() {
+    this.filter = 3;
   }
 
 // return 1 when adding new decision
