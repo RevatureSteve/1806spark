@@ -37,4 +37,14 @@
     <servlet-name>PendingServlet</servlet-name>
     <url-pattern>/pending</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResolvedServlet</display-name>
+    <servlet-name>ResolvedServlet</servlet-name>
+    <servlet-class>com.revature.servlet.ResolvedServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResolvedServlet</servlet-name>
+    <url-pattern>/resolved</url-pattern>
+  </servlet-mapping>
 </web-app>

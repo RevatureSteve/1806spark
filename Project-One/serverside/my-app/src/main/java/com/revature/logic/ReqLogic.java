@@ -32,6 +32,10 @@ public class ReqLogic {
 		List<TranstarReims> reqs = rDao.getAllPendingRequests();
 		return reqs;
 	}
+	public List<TranstarReims> resolvedReqs(int userId) {
+		List<TranstarReims> reqs = rDao.getResolvedRequests(userId);
+		return reqs;
+	}
 	public List<TranstarReims> getReq(int reqId, int userId) {
 		List<TranstarReims> reqs = rDao.getRequests(reqId, userId);
 		return reqs;

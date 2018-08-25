@@ -194,12 +194,32 @@ html {
 .backbtn a:hover {
     background-color: white;
     font-size: 140%;
-}
+}   
+
+
 #content{
     float: right;
     margin-right: 10%;
     width: 60%;
     margin-left: -10%;
+}
+#sectionz{
+    overflow: scroll;
+    float: right;
+    width: 110%;
+    margin-right: -12%;
+    max-height: 66%;
+    
+    font-family: 'Aldrich';
+}
+th {
+    background-color:rgb(221, 221, 0);
+    color: rgb(0, 0, 0);
+}
+tr:nth-child(even) {background-color: rgba(221, 221, 0, 0.616);}
+#sectionz table{
+   
+    font-size: 82%;
 }
 #content p{
     font-family: 'Aldrich';

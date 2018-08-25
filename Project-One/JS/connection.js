@@ -25,8 +25,7 @@
     }
 
     function pendingReqs(){
-      
-      fetch('http://localhost:8080/my-app/pending?req_type='+ newUser.u_id +'&u_id=1', {
+      fetch('http://localhost:8080/my-app/pending?req_type=1&u_id='+ newUser.u_id, {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     }).then(response => { 
@@ -34,6 +33,23 @@
     }).then(data => { 
       newPendingReqs = data;
       console.log(newPendingReqs[0]);
+      createTable();
+    }).catch(err => {
+           console.log("[LOG]---------" + err );
+    });
+   }
+
+   function resolvedReqs(){
+    console.log("Reaching out");
+    fetch('http://localhost:8080/my-app/resolved?u_id='+ newUser.u_id, {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'}
+    }).then(response => { 
+      return response.json(); 
+    }).then(data => { 
+      newResolvedReqs = data;
+      console.log(newResolvedReqs[0]);
+      createResolvedTable();
     }).catch(err => {
            console.log("[LOG]---------" + err );
     });

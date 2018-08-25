@@ -21,8 +21,8 @@ public class Driver {
 //		System.out.println(users);
 //		TranstarReims reqs = new ReqLogic().reqs(1);
 //		System.out.println(reqs);
-		List<TranstarReims> allReqs = new ReqLogic().allResolvedReqs(1);
-		System.out.println(allReqs);
+//		List<TranstarReims> allReqs = new ReqLogic().allResolvedReqs(1);
+//		System.out.println(allReqs);
 		
 //		
 //		int emp_id = 1;
