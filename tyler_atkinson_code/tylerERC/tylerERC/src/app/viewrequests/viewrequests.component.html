@@ -1,17 +1,16 @@
-
 <div class="jumbotron">
-  <h1 class="display-4">Your Submitted Reimbursements:</h1>
-  
-    <ul class="list-group">
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-    </ul> 
-  
+  <h1 class="display-4">All Submitted Reimbursements:</h1>
+
+  <div *ngIf='reimbursements'>
+    
+    <div class="box box-default">
+      <code>
+        <pre>{{reimbursements | json}}</pre>
+      </code>
+    </div>
+
+  </div>
+
   <hr class="my-4">
   <p>For any questions or concerns please contact your supervisor</p>
   <div class="row">
@@ -22,7 +21,7 @@
       <a class="btn btn-primary btn-lg" routerLink="/NewR" role="button">Submit New Request</a>
     </div>
   </div>
-  
-  
-  
+
+
+
 </div>

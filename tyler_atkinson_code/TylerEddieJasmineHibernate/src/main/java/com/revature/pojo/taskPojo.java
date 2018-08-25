@@ -68,6 +68,13 @@ public class taskPojo {
 	public String toString() {
 		return "taskPojo [tId=" + tId + ", uId=" + uId + ", tName=" + tName + ", tsId=" + tsId + "]";
 	}
+
+	public taskPojo(int uId, String tName, int tsId) {
+		super();
+		this.uId = uId;
+		this.tName = tName;
+		this.tsId = tsId;
+	}
 	
 
 }
