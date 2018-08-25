@@ -1,9 +1,9 @@
 import { LoggedInService } from './logged-in.service';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Reimbursement } from './reimbursement';
+import { Reimbursement } from './models/reimbursement';
 import { Injectable } from '@angular/core';
-import { User } from './user';
+import { User } from './models/user';
 
 @Injectable({
   providedIn: 'root'

@@ -1,5 +1,5 @@
-import { LoggedInService } from './../logged-in.service';
-import { User } from './../user';
+import { LoggedInService } from '../../logged-in.service';
+import { User } from '../../models/user';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -13,7 +13,10 @@ export class NavbarComponent implements OnInit {
   constructor(private logged: LoggedInService) { }
 
   ngOnInit() {
-    this.user = this.logged.getLoggedInUser();
+    // this.logged.getLoggedInUser();
+    // console.log(this.user);
   }
+
+
 
 }

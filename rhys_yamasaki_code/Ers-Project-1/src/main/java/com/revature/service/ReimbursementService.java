@@ -21,4 +21,9 @@ public class ReimbursementService {
 		// if (new UserService().validateEmployee())
 		rb.createNewReimbursement(uId, amt, desc, img, typeId);
 	}
+	
+	public List<Reimbursement> getReimbursementById(int id) {
+
+		return rb.getReimbursementById(id);
+	}
 }

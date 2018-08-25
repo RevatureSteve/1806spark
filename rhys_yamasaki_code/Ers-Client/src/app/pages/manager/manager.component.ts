@@ -1,7 +1,7 @@
-import { LoggedInService } from '../logged-in.service';
+import { LoggedInService } from '../../logged-in.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import {User} from '../user';
+import {User} from '../../models/user';
 
 @Component({
   selector: 'app-manager',

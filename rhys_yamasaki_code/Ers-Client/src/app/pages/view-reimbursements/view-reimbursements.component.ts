@@ -1,10 +1,10 @@
-import { LoggedInService } from '../logged-in.service';
+import { User } from './../../models/user';
+import { LoggedInService } from './../../logged-in.service';
 import { ActivatedRoute } from '@angular/router';
-import { ReimbursementsListService } from '../reimbursements-list.service';
+import { ReimbursementsListService } from '../../reimbursements-list.service';
 import { Observable } from 'rxjs';
 import { Component, OnInit } from '@angular/core';
-import { User } from '../user';
-import { Reimbursement } from '../reimbursement';
+import { Reimbursement } from '../../models/reimbursement';
 
 @Component({
   selector: 'app-view-reimbursements',

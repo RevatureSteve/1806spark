@@ -1,6 +1,6 @@
-import { LoggedInService } from '../logged-in.service';
-import { LoginService } from '../login.service';
-import { User } from '../user';
+import { LoggedInService } from '../../logged-in.service';
+import { LoginService } from '../../login.service';
+import { User } from '../../models/user';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { RouterModule, ActivatedRoute, Router } from '@angular/router';
@@ -24,7 +24,7 @@ export class LoginComponent implements OnInit {
   changePage(user) {
     this.changeLoggedInUser(user);
     this.logged.getLoggedInUser();
-    this.router.navigate(['/', this.user.pos_id, 'home']);
+    this.router.navigate(['/', this.user.pos_name, 'home']);
   }
 
   changeLoggedInUser(user) {

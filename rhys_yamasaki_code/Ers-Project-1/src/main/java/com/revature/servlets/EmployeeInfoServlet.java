@@ -1,6 +1,8 @@
 package com.revature.servlets;
 
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
@@ -10,16 +12,28 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.revature.pojo.User;
 import com.revature.service.UserService;
 
 /**
  * /employee/update
  */
-public class UpdateEmployeeInfo extends HttpServlet {
+public class EmployeeInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	
 	private UserService us= new UserService();
+	
+	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		List<User> userList = us.getAllEmployees();
+		
+		ObjectMapper mapper = new ObjectMapper();
+		String json = mapper.writeValueAsString(userList);
+		
+		resp.setContentType("application/json");
+		
+		resp.getWriter().write(json);
+	}
 	
 	protected void doPut(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		

@@ -1,5 +1,6 @@
+import { RouterModule, Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
-import { User } from './user';
+import { User } from './models/user';
 import { Injectable } from '@angular/core';
 
 @Injectable({
@@ -9,7 +10,7 @@ export class LoggedInService {
 
   private static user: User;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private router: Router) { }
 
   setLoggedInUser(us) {
     LoggedInService.user = us;
@@ -17,5 +18,10 @@ export class LoggedInService {
 
   getLoggedInUser(): User {
     return LoggedInService.user;
+  }
+
+  logout(): void {
+    this.setLoggedInUser(null);
+    this.router.navigate(['/login']);
   }
 }

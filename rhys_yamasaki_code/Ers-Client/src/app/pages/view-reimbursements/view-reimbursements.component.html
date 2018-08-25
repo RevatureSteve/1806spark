@@ -1,6 +1,3 @@
-<p>
-  view-reimbursements works!
-</p>
 
 <div class="container">
 <table class="table table-bordered table-dark table-hover">
@@ -17,9 +14,9 @@
     <tbody>
     <tr *ngFor="let reimb of reimbursement">
       <th scope="row">{{reimb.rb_id}}</th>
-      <td>{{reimb.rb_resolved_id}}</td>
-      <td>{{reimb.rb_submission_id}}</td>
-      <td>{{reimb.amount}}</td>
+      <td>{{reimb.rb_resolved_fname}} {{reimb.rb_resolved_lname}}</td>
+      <td>{{reimb.rb_submission_fname}} {{reimb.rb_submission_lname}}</td>
+      <td>${{reimb.amount}}</td>
       <td>{{reimb.description}}</td>
       <td>{{reimb.time_submission | date:'medium'}}</td>
       <td>{{reimb.rq_type}}</td>

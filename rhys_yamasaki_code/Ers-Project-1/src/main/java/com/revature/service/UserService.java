@@ -1,5 +1,7 @@
 package com.revature.service;
 
+import java.util.List;
+
 import com.revature.dao.UserDao;
 import com.revature.dao.UserDaoImpl;
 import com.revature.pojo.User;
@@ -33,5 +35,9 @@ public class UserService {
 		} else {
 			return false;
 		}
+	}
+	
+	public List<User> getAllEmployees() {
+		return userDao.getAllEmployees();
 	}
 }

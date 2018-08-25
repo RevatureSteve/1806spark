@@ -1,14 +1,14 @@
-import { EmployeeComponent } from './employee/employee.component';
-import { ManagerComponent } from './manager/manager.component';
+import { EmployeeComponent } from './pages/employee/employee.component';
+import { ManagerComponent } from './pages/manager/manager.component';
 import { RouterModule, Routes } from '@angular/router';
 import { NgModule } from '@angular/core';
-import { LoginComponent } from './login/login.component';
+import { LoginComponent } from './pages/login/login.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'login', component: LoginComponent},
-  {path: '2/home', component: ManagerComponent},
-  {path: '1/home', component: EmployeeComponent},
+  {path: 'manager/home', component: ManagerComponent},
+  {path: 'employee/home', component: EmployeeComponent},
   {path: '**', redirectTo: 'login'}
 ];
 

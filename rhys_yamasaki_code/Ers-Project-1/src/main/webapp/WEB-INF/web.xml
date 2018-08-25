@@ -45,22 +45,22 @@
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>UpdateEmployeeInfo</display-name>
-    <servlet-name>UpdateEmployeeInfo</servlet-name>
-    <servlet-class>com.revature.servlets.UpdateEmployeeInfo</servlet-class>
+    <display-name>EmployeeInfoServlet</display-name>
+    <servlet-name>EmployeeInfoServlet</servlet-name>
+    <servlet-class>com.revature.servlets.EmployeeInfoServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>UpdateEmployeeInfo</servlet-name>
-    <url-pattern>/employee/update</url-pattern>
+    <servlet-name>EmployeeInfoServlet</servlet-name>
+    <url-pattern>/employee</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
-    <display-name>ReimbursementsById</display-name>
-    <servlet-name>ReimbursementsById</servlet-name>
-    <servlet-class>com.revature.servlets.ReimbursementsById</servlet-class>
+    <display-name>ReimbursementsByIdServlet</display-name>
+    <servlet-name>ReimbursementsByIdServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ReimbursementsByIdServlet</servlet-class>
   </servlet>
   <servlet-mapping>
-    <servlet-name>ReimbursementsById</servlet-name>
+    <servlet-name>ReimbursementsByIdServlet</servlet-name>
     <url-pattern>/reimbursements/id</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -26,7 +26,6 @@ public class AllEmployeeReimbursementsServlet extends HttpServlet{
 		String json = mapper.writeValueAsString(ReimbursementList);
 		
 		response.setContentType("application/json");
-		
 		response.getWriter().write(json);
 		
 	}
