@@ -17,8 +17,31 @@ public Reimbursement() {
 }
 
 public Reimbursement
+ (int r_id,
+ int emp_u_id,
+ int mgr_u_id,
+ double amt,
+ String description,
+ Object img,
+ String timesubmission,
+ int rq_type_id,
+ int rq_status_id
+		) {
+this.r_id = r_id;
+this.emp_u_id = emp_u_id;
+this.mgr_u_id = mgr_u_id;
+this.amt = amt;
+this.description = description;
+this.img = img;
+this.timesubmission = timesubmission;
+this.rq_type_id = rq_type_id;
+this.rq_status_id = rq_status_id;
+	
+}
+
+public Reimbursement
 (int r_id, int emp_u_id, int mgr_u_id, 
-double amt, String description, Object img,
+double amt, String description,
 String timesubmission, int rq_type_id, int rq_status_id) {
 	super();
 	this.r_id = r_id;
@@ -32,17 +55,7 @@ String timesubmission, int rq_type_id, int rq_status_id) {
 	this.rq_status_id = rq_status_id;
 }
 
-public Reimbursement
-(int r_id,Object img,double amt,String description,
-String timesubmission,int rq_status_id, int rq_type_id) {
-	this.r_id = r_id;
-	this.img = img;
-	this.amt = amt;
-	this.description = description;
-	this.timesubmission = timesubmission;
-	this.rq_status_id = rq_status_id;
-	this.rq_type_id = rq_type_id;
-}
+
 public int getR_id() {
 	return r_id;
 }

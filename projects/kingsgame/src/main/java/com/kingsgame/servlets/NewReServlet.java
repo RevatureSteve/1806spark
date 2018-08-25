@@ -40,7 +40,7 @@ public class NewReServlet extends HttpServlet{
 		if(n.has("description")) {
 			description = n.get("description").asText();
 		};
-	//	if(n.has("img")) {
+	//	if(n.has("	")) {
 	//		if((n.get("img").equals(""))){
 	//			imgpath = null;
 	//		}else {

@@ -88,13 +88,13 @@ public class Dao implements DaoInterface{
 }
 
 	@Override
-	public int updateReimbursement(int mgrid, int empid, int rqstatusid) {
+	public int updateReimbursement(int rid, int mgrid,  int rqstatusid) {
 		int rowsAffected = 0;
 		try(Connection conn = Conn.getConn();){
 			String sql = "{call update_reimbursement(?,?,?)}";
 		CallableStatement cs = conn.prepareCall(sql);
-		cs.setInt(1, mgrid);
-		cs.setInt(2, empid);
+		cs.setInt(1, rid);
+		cs.setInt(2, mgrid);
 		cs.setInt(3, rqstatusid);
 		rowsAffected = cs.executeUpdate();
 		} catch (SQLException | IOException e) {
@@ -115,9 +115,9 @@ public class Dao implements DaoInterface{
 		cs.setInt(3, rq_status_id);
 		ResultSet rs = cs.executeQuery();
 		while(rs.next()) {
-			Reimbursement reim = new Reimbursement(rs.getInt(1),rs.getString(6),
-								rs.getDouble(4),rs.getString(5),rs.getString(7),
-								rs.getInt(9),rs.getInt(8));
+			Reimbursement reim = new Reimbursement(rs.getInt(1),rs.getInt(2),rs.getInt(3),
+					rs.getDouble(4),rs.getString(5),rs.getObject(6),
+					rs.getString(7),rs.getInt(8),rs.getInt(9));
 			reimList.add(reim);
 		}
 		} catch (SQLException | IOException e) {
@@ -136,9 +136,9 @@ public class Dao implements DaoInterface{
 			cs.setInt(2, emp_u_id);
 			ResultSet rs = cs.executeQuery();
 			while(rs.next()) {
-				Reimbursement reim = new Reimbursement(rs.getInt(1),rs.getString(6),
-									rs.getDouble(4),rs.getString(5),rs.getString(7),
-									rs.getInt(9),rs.getInt(8));
+				Reimbursement reim = new Reimbursement(rs.getInt(1),rs.getInt(2),rs.getInt(3),
+						rs.getDouble(4),rs.getString(5),rs.getObject(6),
+						rs.getString(7),rs.getInt(8),rs.getInt(9));
 				reimList.add(reim);
 			}
 			} catch (SQLException | IOException e) {
@@ -146,7 +146,33 @@ public class Dao implements DaoInterface{
 			}
 			return reimList;
 	}
+	
+	@Override
+	public List<Reimbursement> getAllReimbursement() {
+		List<Reimbursement>reimList = new ArrayList<>();
+		try(Connection conn = Conn.getConn();){
+			String sql = "select * from reimbursement";
+		CallableStatement cs = conn.prepareCall(sql);
+
+		ResultSet rs = cs.executeQuery();
+		while(rs.next()) {
+			reimList.add(new Reimbursement(
+			rs.getInt(1),rs.getInt(2),rs.getInt(3),
+			rs.getDouble(4),rs.getString(5),rs.getObject(6),
+			rs.getString(7),rs.getInt(8),rs.getInt(9)));
+			
+
+		}
+		} catch (SQLException | IOException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println(reimList);
+		return reimList;
+	
+	
+	
 	}
 
-
+}
 

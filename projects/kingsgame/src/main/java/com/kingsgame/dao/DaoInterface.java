@@ -18,10 +18,12 @@ public interface DaoInterface {
 			//Object img, 
 			int rq_type_id);
 	
-	public int updateReimbursement(int mgrid, int empid, int rqstatusid);
+	public int updateReimbursement(int rid, int mgrid, int rqstatusid);
 	//emp/mgr reimbursement finder
 	public List<Reimbursement> getEReimbursements(int r_id, int emp_u_id, int mgr_u_id, double amt, int rq_type_id, int rq_status_id);
 	
 	public List<Reimbursement> getMReimbursement(int emp_u_id, int mgr_u_id);
+	
+	public List<Reimbursement> getAllReimbursement();
 
 }

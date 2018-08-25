@@ -21,12 +21,12 @@
  </filter-mapping>
 
   <servlet>
-	 		<servlet-name>hello</servlet-name>
-	 		<servlet-class>com.kingsgame.servlets.HelloWorldServlet</servlet-class>
+	 		<servlet-name>create</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.CreateServlet</servlet-class>
 	 		</servlet>
 	 		<servlet-mapping> <!-- use alias of servlet -->
-	 		<servlet-name>hello</servlet-name>
-	 		<url-pattern>/hello</url-pattern>
+	 		<servlet-name>create</servlet-name>
+	 		<url-pattern>/reim/user</url-pattern>
 	 		</servlet-mapping>
 	 		
 	 		<servlet>
@@ -49,10 +49,19 @@
 	 		
 	 		<servlet>
 	 		<servlet-name>mgr-re</servlet-name>
-	 		<servlet-class>com.kingsgame.servlets.MReServlet</servlet-class>
+	 		<servlet-class>com.kingsgame.servlets.AllServlet</servlet-class>
 	 		</servlet>
 	 		<servlet-mapping>
 	 		<servlet-name>mgr-re</servlet-name>
-	 		<url-pattern>/reim/mgr/</url-pattern>
+	 		<url-pattern>/reim/all</url-pattern>
+	 		</servlet-mapping>
+	 		
+	 		<servlet>
+	 		<servlet-name>mgr-update</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.UpdateServlet</servlet-class>
+	 		</servlet>
+	 		<servlet-mapping>
+	 		<servlet-name>mgr-update</servlet-name>
+	 		<url-pattern>/reim/update/</url-pattern>
 	 		</servlet-mapping>
 </web-app>
