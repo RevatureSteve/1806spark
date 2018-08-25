@@ -27,7 +27,7 @@ export class LoginComponent implements OnInit {
     };
   }
 
-  // verifying logic for user that's logging i
+  // verifying logic for user that's logging in
   loggingInUser(user: Users): void {
     console.log('service: loggingInUser');
     this.httpClient.post('http://localhost:8080/ProjectOne/reimbursement/v', user).subscribe(

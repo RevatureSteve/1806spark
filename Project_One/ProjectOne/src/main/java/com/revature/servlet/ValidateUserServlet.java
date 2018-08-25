@@ -57,13 +57,14 @@ public class ValidateUserServlet extends HttpServlet{
 		// Passing email/password for verification through the login app service
 		// & setting it as verified if user is valid
 		Users verified = aS.login(email, password);
-		
+		System.out.println("User is valid " + verified);
 		// Printing out the verified user through mapper and 
 		// & setting it as jsonOut
 		String jsonOut = mapper.writeValueAsString(verified);
 		
 		// Note: printwriter is not a JSON String, just a misc toString code
 		PrintWriter out = response.getWriter();
+		System.out.println("Json object is now send back to the front end:  " + jsonOut);
 		// Setting the response content type as application/json
 		response.setContentType("application/json");
 		out.print(jsonOut);
