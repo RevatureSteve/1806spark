@@ -2,6 +2,7 @@ import { UserService } from '../services/user.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -13,7 +14,7 @@ export class LoginComponent implements OnInit {
   inputUser: User;
   validUser = null;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private routes: Router) { }
 
   ngOnInit() {
     this.validUser = null;
@@ -23,9 +24,9 @@ export class LoginComponent implements OnInit {
       lname: '',
       email: null,
       password: '',
-      posid:0
+      posid: 0
     };
-  } 
+  }
 
   login() {
     this.loginUser(this.inputUser);
@@ -34,23 +35,29 @@ export class LoginComponent implements OnInit {
   loginUser(user: User): void {
     console.log('service: loginUser');
     this.httpClient.post<User>('http://localhost:8080/expenseProject/LoginServlet',
-          user).subscribe(
-          currentUser => {
-            console.log('login successful');
-            console.dir(currentUser);
-            console.log(currentUser.email);
-            console.log(currentUser.posid);
-            localStorage.setItem('users', JSON.stringify(currentUser));
-            this.setUser();
-          },
-          err => alert('failed login')
-        );
-        console.log('sent post');
+      user).subscribe(
+        currentUser => {
+          console.log('login successful');
+          console.dir(currentUser);
+          console.log(currentUser.email);
+          console.log(currentUser.posid);
+
+          if (currentUser.posid === 1) {
+            this.routes.navigate(['Employee']);
+          } else if (currentUser.posid === 2) {
+            this.routes.navigate(['Manager']);
+          }
+
+        },
+        err => alert('failed login')
+      );
+    console.log('sent post');
   }
 
-  setUser() {
-    this.validUser = JSON.parse(localStorage.getItem('user'));
-  }
+
 
 
 }
+
+
+

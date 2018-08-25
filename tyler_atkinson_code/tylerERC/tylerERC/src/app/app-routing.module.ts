@@ -6,16 +6,18 @@ import { EmployeeComponent } from './employee/employee.component';
 import { ViewrequestsComponent } from './viewrequests/viewrequests.component';
 import { NewrequestComponent } from './newrequest/newrequest.component';
 import { ProfileComponent } from './profile/profile.component';
+import { LoginComponent } from './login/login.component';
 
 
 export const routes: Routes = [
-  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '', redirectTo: 'Login', pathMatch: 'full'},
   {path: 'home', component: MainComponent},
   {path: 'Manager', component: ManagerComponent},
   {path: 'Employee', component: EmployeeComponent},
   {path: 'ViewR', component: ViewrequestsComponent},
   {path: 'NewR', component: NewrequestComponent},
   {path: 'Profile', component: ProfileComponent},
+  {path: 'Login', component: LoginComponent}
 
 
 ]
