@@ -100,9 +100,10 @@ public class TranstarReimDaoImpl implements TranstarReimDao{
 			String sql = "SELECT * FROM reimbursement INNER JOIN rb_type " + 
 					"ON reimbursement.rb_type_id = rb_type.rb_type_id " + 
 					"INNER JOIN rq_status " + 
-					"ON reimbursement.rq_status_id = rq_status.rq_status_id WHERE reimbursement.emp_u_id = ? AND rq_status.rq_status_id = 2 OR rq_status.rq_status_id = 3";
+					"ON reimbursement.rq_status_id = rq_status.rq_status_id WHERE reimbursement.emp_u_id = ? AND rq_status.rq_status_id = 2 OR reimbursement.emp_u_id = ? AND rq_status.rq_status_id = 3";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, userId);
+			ps.setInt(2, userId);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				TranstarReims req = new TranstarReims(rs.getInt(1), rs.getInt(2), rs.getInt(3)

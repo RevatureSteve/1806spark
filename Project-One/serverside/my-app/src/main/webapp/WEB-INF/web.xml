@@ -57,4 +57,14 @@
     <servlet-name>NewReqServlet</servlet-name>
     <url-pattern>/newreq</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>AllPendingServlet</display-name>
+    <servlet-name>AllPendingServlet</servlet-name>
+    <servlet-class>com.revature.servlet.AllPendingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AllPendingServlet</servlet-name>
+    <url-pattern>/all</url-pattern>
+  </servlet-mapping>
 </web-app>

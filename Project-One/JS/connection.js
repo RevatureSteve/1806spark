@@ -73,9 +73,28 @@
     }).then(data => { 
       resultSet = data;
       console.log('Submitted!? ' + resultSet);
+      reqSent();
+    }).catch(err => {
+           console.log("[LOG]---------" + err );
+           reqSent();
+    });
+   }
+
+   function allReqs(){
+   
+    fetch('http://localhost:8080/my-app/all', {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'}
+    }).then(response => { 
+      return response.json(); 
+    }).then(data => { 
+      newAllReqs = data;
+      console.log(newAllReqs[0]);
+      createAllPendingTable();
     }).catch(err => {
            console.log("[LOG]---------" + err );
     });
+
    }
     
     

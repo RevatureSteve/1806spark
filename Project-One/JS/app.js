@@ -2,10 +2,11 @@
 let newUser;
 let newPendingReqs;
 let newResolvedReqs;
+let newAllReqs;
 let amount;
 let reqType;
 let desc;
-
+let resultSet;
 window.onload = function foo() {
 
     if (document.getElementById('content')) {
