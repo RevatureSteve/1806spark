@@ -33,12 +33,14 @@ export class LoginComponent implements OnInit {
 
   loginUser(user: User): void {
     console.log('service: loginUser');
-    this.httpClient.post('http://localhost:8080/expenseProject/LoginServlet',
+    this.httpClient.post<User>('http://localhost:8080/expenseProject/LoginServlet',
           user).subscribe(
-          succ => {
+          currentUser => {
             console.log('login successful');
-            console.dir(succ);
-            localStorage.setItem('users', JSON.stringify(succ));
+            console.dir(currentUser);
+            console.log(currentUser.email);
+            console.log(currentUser.posid);
+            localStorage.setItem('users', JSON.stringify(currentUser));
             this.setUser();
           },
           err => alert('failed login')

@@ -14,7 +14,7 @@ public class Users implements Serializable {
 	
 	
 	
-	public Users(int uid, String fname, String lname, String email, String password, int pos_id) {
+	public Users(int uid, String fname, String lname, String email, String password, int posid) {
 		super();
 		this.uid = uid;
 		this.fname = fname;
@@ -122,7 +122,7 @@ public class Users implements Serializable {
 	@Override
 	public String toString() {
 		return "Users [uid=" + uid + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", password="
-				+ password + ", pos_id=" + posid + "]";
+				+ password + ", posid=" + posid + "]";
 	}
 
 
