@@ -13,7 +13,7 @@ function login (){
         return resp.text();
     }).then((text) => {
         navbar.innerHTML = text;
-        document.getElementById('submit').addEventListener('click', empPage);
+        document.getElementById('submit').addEventListener('click', getLogin);
     });
 }
 
@@ -39,6 +39,7 @@ function topBar (){
         document.getElementById('profile').addEventListener('click', profile);
         document.getElementById('viewReim').addEventListener('click', viewReim);
         document.getElementById('createReim').addEventListener('click', empPage);
+        document.getElementById('logout').addEventListener('click', logout);
     });
 }
 
@@ -62,5 +63,31 @@ function viewReim (){
     }).then((text) => {
         navbar.innerHTML = text;
     });
+    
+}
+
+function logout (){
+    console.log('logging out');
+    let navbar = document.getElementById('content');
+    fetch('Pages/login.html').then((resp) => {
+        nav = resp;
+        return resp.text();
+    }).then((text) => {
+        navbar.innerHTML = text; 
+        logout2();
+    });
+    
+}
+
+function logout2 (){
+    console.log('logging out');
+    let navbar = document.getElementById('topBar');
+    fetch('Pages/logout.html').then((resp) => {
+        nav = resp;
+        return resp.text();
+    }).then((text) => {
+        navbar.innerHTML = text; 
+    });
+    
 }
 

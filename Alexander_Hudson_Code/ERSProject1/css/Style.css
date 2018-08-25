@@ -1,7 +1,7 @@
 #background {
   position: fixed;
   z-index: -2;
-  margin-right: 50px;
+  margin-left: -150px;
   margin-top: -150px;
 
 }
@@ -9,7 +9,7 @@
 #background2 {
     z-index: -1;
     position:fixed;
-    margin-left: 950px;
+    margin-left: 850px;
     margin-top: -150px;
 
   }
