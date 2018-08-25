@@ -222,10 +222,9 @@ public class Reimbursement {
 
 	@Override
 	public String toString() {
-		return "Reimbursement [rId=" + rId + ", empUId=" + empUId + ", employeeName=" + employeeName + ", mgrUId="
-				+ mgrUId + ", managerName=" + managerName + ", amt=" + amt + ", description=" + description + ", img="
-				+ img + ", timeSubmission=" + timeSubmission + ", rbType=" + rbType + ", rbTypeId=" + rbTypeId
-				+ ", rbStatus=" + rbStatus + ", rbStatusId=" + rbStatusId + "]";
+		return "Id: " + rId + " Employee Name: " + employeeName + " Manager Name: " + managerName + " Amount: " + amt + " Description: " + description + 
+				" Time Submission: " + timeSubmission + " Reimbursement Type: " + rbType 
+				+ " Reimbursement Status=" + rbStatus;
 	}
 	
 	

@@ -15,6 +15,8 @@ export class ManagerPendingReimbursementsComponent implements OnInit {
   user: Users;
   reimb: Reimbursements;
   reimbs: Reimbursements[];
+  allReimbs: Reimbursements[];
+  sortedReimbs: Reimbursements[];
 
   constructor(private reimbService: ReimbursementsService, private currentUser: CurrentUserService, private router: Router) { }
 
@@ -24,6 +26,7 @@ export class ManagerPendingReimbursementsComponent implements OnInit {
   }
 
   getPendingReimbursements() {
+    console.log('Get pending reimbursements');
     this.reimbService.getPendingReimbursements()
       .subscribe(reimbursements => this.reimbs = reimbursements);
   }
@@ -32,17 +35,24 @@ export class ManagerPendingReimbursementsComponent implements OnInit {
     console.log(`approve clicked rId: ${rId}`);
     this.reimbService.updateReimbursement(rId, this.user.u_id, 2)
       .subscribe(reimb => this.reimb = reimb);
-    // console.log(this.reimb);
-    this.router.navigate(['home/sorcerer']);
-    // this.ngOnInit();
+    this.getPendingReimbursements();
   }
 
   deny(rId) {
     console.log(`deny clicked rId: ${rId}`);
     this.reimbService.updateReimbursement(rId, this.user.u_id, 3)
       .subscribe(reimb => this.reimb = reimb);
-    // console.log(this.reimb);
-    this.router.navigate(['home/sorcerer']);
+    this.getPendingReimbursements();
+  }
+
+  getAllReimbursements() {
+    this.reimbService.getAllReimbursements()
+      .subscribe(reimbursements => this.allReimbs = reimbursements);
+  }
+
+  sortPending() {
+    for (let i = 0; i < this.allReimbs.length; i++) {
+    }
   }
 
 }

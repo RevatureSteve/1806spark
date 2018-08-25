@@ -51,22 +51,23 @@ public class LoginServlet extends HttpServlet {
 
 		System.out.println("email: " + email + " password: " + password);
 
-//		if (currentUser != null) {
-//			// this is a cookie
-//			HttpSession session = request.getSession();
-//			session.setAttribute("user", currentUser);
-//			System.out.println(currentUser);
-////			request.getRequestDispatcher("http://localhost:4200/profile").forward(request, response);
-//		} else {
-////			response.sendRedirect("http://localhost:4200/login");
-//		}
+		if (currentUser != null) {
+			HttpSession session = request.getSession();
+			session.setAttribute("user", currentUser);
+			
+			response.setHeader("Content-Type", "application/json");
+			response.getWriter().write(mapper.writeValueAsString(currentUser));
+		} else {
+			response.setStatus(401);
+			response.getWriter().write("");
+		}
 		
 		
 		
-		String json = mapper.writeValueAsString(currentUser);
-		
-		response.setContentType("application/json");
-		response.getWriter().write(json);
+//		String json = mapper.writeValueAsString(currentUser);
+//		
+//		response.setContentType("application/json");
+//		response.getWriter().write(json);
 		
 	}
 

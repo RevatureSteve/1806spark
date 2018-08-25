@@ -13,6 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.revature.domain.Reimbursement;
+import com.revature.mail.Email;
 import com.revature.service.ReimbursementBuisnessLogic;
 
 /**
@@ -77,6 +78,8 @@ System.out.println("Hit put /reimbursement");
 		Reimbursement reimb = reimBL.updateReimbursement(rId, mgrId, status);
 		
 		System.out.println(reimb);
+		
+		Email.ReimbursementResolvedEmail(reimb);
 		
 		String json = mapper.writeValueAsString(reimb);
 		resp.setContentType("application/json");

@@ -6,6 +6,7 @@ import com.revature.dao.ReimbursementDao;
 import com.revature.dao.UsersDao;
 import com.revature.domain.Reimbursement;
 import com.revature.domain.Users;
+import com.revature.mail.Email;
 import com.revature.service.ReimbursementBuisnessLogic;
 
 public class Driver {
@@ -39,7 +40,9 @@ public class Driver {
 //			System.out.println(user);
 //		}
 		
-		new UsersDao().updateUsers(new Users(2, "acd@gmail.com", "Andrew", "Douglas"));
+//		new UsersDao().updateUsers(new Users(2, "acd@gmail.com", "Andrew", "Douglas"));
+		
+//		Email.ReimbursementResolvedEmail(reim);
 		
 //		System.out.println(new UsersDao().readUsers());
 		
