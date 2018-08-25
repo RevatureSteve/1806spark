@@ -31,27 +31,29 @@ export class ManagerPendingReimbursementsComponent implements OnInit {
       .subscribe(reimbursements => this.reimbs = reimbursements);
   }
 
-  approve(rId) {
+  approve(rId, r) {
+    console.log(r);
     console.log(`approve clicked rId: ${rId}`);
     this.reimbService.updateReimbursement(rId, this.user.u_id, 2)
       .subscribe(reimb => this.reimb = reimb);
-    this.getPendingReimbursements();
+    this.removeResolved(rId);
   }
 
-  deny(rId) {
+  deny(rId, r) {
     console.log(`deny clicked rId: ${rId}`);
     this.reimbService.updateReimbursement(rId, this.user.u_id, 3)
       .subscribe(reimb => this.reimb = reimb);
     this.getPendingReimbursements();
+    this.removeResolved(rId);
   }
 
-  getAllReimbursements() {
-    this.reimbService.getAllReimbursements()
-      .subscribe(reimbursements => this.allReimbs = reimbursements);
-  }
-
-  sortPending() {
-    for (let i = 0; i < this.allReimbs.length; i++) {
+  removeResolved(Id) {
+    for (let i = 0; i < this.reimbs.length; i++) {
+      if (this.reimbs[i].rId === Id) {
+        console.log('Should remove value');
+        this.reimbs.splice(i, 1);
+        console.log(this.reimbs);
+      }
     }
   }
 
