@@ -70,6 +70,7 @@ public class EmployeeImpl implements EmpDao{
 		return users;
 	}
 
+	//Create a new Reimbursement.
 	@Override
 	public int createNewReimbursement(double amount, String rDescription, int uId, int type, int status) {
 		

@@ -1,5 +1,4 @@
 import { HttpClient } from '@angular/common/http';
-import { UsersService } from './../../users-service';
 import { Component, OnInit } from '@angular/core';
 import { Users } from '../../Users';
 

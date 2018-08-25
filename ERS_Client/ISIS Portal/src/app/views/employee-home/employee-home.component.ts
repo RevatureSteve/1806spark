@@ -1,3 +1,5 @@
+import { UsersService } from './../../users-service';
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
 import { Users } from 'src/app/Users';
 
@@ -14,19 +16,20 @@ export class EmployeeHomeComponent implements OnInit {
     'Missions',
     'Agent Status'
   ];
+  agents : Users[];
   // Harcoded agent for testing
-  agent: Users = {
-    id:  1,
-    first: 'James',
-    last: 'Bond',
-     email: 'jb@bss.com',
-    password: '007',
-    position:  2,
-   };
+  
 
 
-   constructor() { }
+   constructor(private httpClient: HttpClient, private service :UsersService) { }
   ngOnInit() {
+    this.httpClient.get<Users[]>('http://localhost:8080/ERS/GetAllEmployeesServlet')
+    .subscribe(data => {
+      this.agents = data;
+      console.log(this.agents);
+    }
+
+    )
   }
 
 }

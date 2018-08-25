@@ -1,3 +1,30 @@
-<p>
-  agent-reimbursements works!
-</p>
+
+<h1>Employee Reimbursements</h1>
+
+<div>
+<input type="number" [(ngModel)] = "id" required>
+<button type="button" class="btn btn-dark" (click) = "getEmpReimbursements()">Verify</button>
+</div>
+
+
+
+
+<table class="table table-dark">
+  <thead>
+    <tr>
+      <td>ID</td>
+      <td>Amount</td>
+      <td>Description</td>
+      <td>Type</td>
+      <td>Time Submitted</td>
+    </tr>
+  </thead>
+  <tr *ngFor = "let r of rb">
+    <td> {{ r.rId }}</td>
+    <td> {{ r.amount }}</td>
+    <td> {{ r.rDescription }}</td>
+    <td> {{ r.rType }}</td>
+    <td> {{ r.timeSubmitted }}</td>
+   </tr>
+   <tr>
+</table>

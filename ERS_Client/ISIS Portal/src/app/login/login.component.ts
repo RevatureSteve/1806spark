@@ -2,7 +2,7 @@ import { UsersService } from './../users-service';
 import { HttpClient } from '@angular/common/http';
 import { Users } from './../models/users';
 import { Component, OnInit } from '@angular/core';
-
+import { Observable } from 'rxjs';
 
 
 
@@ -13,43 +13,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 inputUser: Users;
-
+email: string;
+password: string;
   
   constructor(private httpClient: HttpClient,
   private service : UsersService) { }
 
   ngOnInit() {
 
-    this.inputUser = {
-      uId: 0,
-      firstname: "",
-      lastname: "",
-      email: "", 
-      password: "",
-      positionId: 0,
-    }
-
-      let obj = this.httpClient.get('http://localhost:8080/ERS/LoginServlet');
-      obj.subscribe(() => {
-        console.log("Success");
-      } )
-
-
-
 
   }
 
 login() {
-console.log(this.inputUser.email);
-console.log(this.inputUser.password);
-this.validateUser(this.inputUser.email, this.inputUser.password);
+console.log(this.email);
+console.log(this.password);
+this.validateUser(this.email, this.password);
 }
 
 
-validateUser(email, password) {
- console.log( this.service.loginUser(email, password));
+validateUser(email, password): void  {
+  console.log(this.email + this.password)
+  this.httpClient.post<Users>('http://localhost:8080/ERS/LoginServlet?email=' + this.email + '&password=' + this.password, this.inputUser)
+  .subscribe(data => {
+    console.log(data);
+    this.inputUser = data;
+  } )
 
-};
 
 
+
+}
 }

@@ -1,15 +1,16 @@
-#emp {
-    background-image: url("../EmpImages/maxresdefault.jpg");
+#background {
+    background-image: url("../Archer/background.jpg");
     background-repeat: no-repeat;
-      background-size: contain; 
-    height: 70em;
-    width: 70em;
+    background-size: 100% 85%;
+    width: 100em;
+    height: 50em;
+
     
  }
  #link {
      padding: 32px;
      text-decoration: none;
-     display: block;
+     display: inline;
      transition: 0.3s;
      color: #9bc5c6;
      font-family: 'Permanent Marker', cursive;

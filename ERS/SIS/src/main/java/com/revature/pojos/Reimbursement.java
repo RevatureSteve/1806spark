@@ -4,13 +4,28 @@ public class Reimbursement {
 	private int rId;
 	private double amount;
 	private String rDescription;
+	private int rTypeId;
 	private String rType;
 	private String timeSubmitted;
+	private int rStatusId;
 	private String rStatus;
-	private String f_name;
-	private String l_name;
+	private int empId;
+	private String fName;
+	private String lName;
+	
+
 	
 	
+	public Reimbursement(double amount, String rDescription, int rTypeId, int rStatusId, int empId) {
+		super();
+		this.amount = amount;
+		this.rDescription = rDescription;
+		this.rTypeId = rTypeId;
+		this.rStatusId = rStatusId;
+		this.empId = empId;
+	}
+
+
 	public Reimbursement(int rId, double amount, String rDescription, String rType, String timeSubmitted, String rStatus,
 			String f_name, String l_name) {
 		super();
@@ -20,8 +35,8 @@ public class Reimbursement {
 		this.rType= rType;
 		this.timeSubmitted = timeSubmitted;
 		this.rStatus = rStatus;
-		this.f_name = f_name;
-		this.l_name = l_name;
+		this.fName = f_name;
+		this.lName = l_name;
 		
 	}
 
@@ -56,43 +71,13 @@ public class Reimbursement {
 	}
 
 
-	public String getTimeSubmitted() {
-		return timeSubmitted;
+	public int getrTypeId() {
+		return rTypeId;
 	}
 
 
-	public void setTimeSubmitted(String timeSubmitted) {
-		this.timeSubmitted = timeSubmitted;
-	}
-
-
-	public String getrStatus() {
-		return rStatus;
-	}
-
-
-	public void setrStatus(String rStatus) {
-		this.rStatus = rStatus;
-	}
-
-
-	public String getF_name() {
-		return f_name;
-	}
-
-
-	public void setF_name(String f_name) {
-		this.f_name = f_name;
-	}
-
-
-	public String getL_name() {
-		return l_name;
-	}
-
-
-	public void setL_name(String l_name) {
-		this.l_name = l_name;
+	public void setrTypeId(int rTypeId) {
+		this.rTypeId = rTypeId;
 	}
 
 
@@ -106,12 +91,74 @@ public class Reimbursement {
 	}
 
 
+	public String getTimeSubmitted() {
+		return timeSubmitted;
+	}
+
+
+	public void setTimeSubmitted(String timeSubmitted) {
+		this.timeSubmitted = timeSubmitted;
+	}
+
+
+	public int getrStatusId() {
+		return rStatusId;
+	}
+
+
+	public void setrStatusId(int rStatusId) {
+		this.rStatusId = rStatusId;
+	}
+
+
+	public String getrStatus() {
+		return rStatus;
+	}
+
+
+	public void setrStatus(String rStatus) {
+		this.rStatus = rStatus;
+	}
+
+
+	public int getEmpId() {
+		return empId;
+	}
+
+
+	public void setEmpId(int empId) {
+		this.empId = empId;
+	}
+
+
+	public String getfName() {
+		return fName;
+	}
+
+
+	public void setfName(String fName) {
+		this.fName = fName;
+	}
+
+
+	public String getlName() {
+		return lName;
+	}
+
+
+	public void setlName(String lName) {
+		this.lName = lName;
+	}
+
+
 	@Override
 	public String toString() {
 		return "Reimbursement [rId=" + rId + ", amount=" + amount + ", rDescription=" + rDescription + ", rType="
-				+ rType + ", timeSubmitted=" + timeSubmitted + ", rStatus=" + rStatus + ", f_name=" + f_name
-				+ ", l_name=" + l_name + "]";
+				+ rType + ", timeSubmitted=" + timeSubmitted + ", rStatus=" + rStatus + "]";
 	}
+
+
+	
 
 
 
