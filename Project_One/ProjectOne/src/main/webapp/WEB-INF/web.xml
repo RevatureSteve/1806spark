@@ -60,5 +60,14 @@
 		<servlet-name>createReimb</servlet-name>
 		<url-pattern>/reimbursement/create</url-pattern>
 	</servlet-mapping>
+	<!-- ValidateUser Servlet -->
+	<servlet>
+		<servlet-name>validateUser</servlet-name>
+		<servlet-class>com.revature.servlet.ValidateUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>validateUser</servlet-name>
+		<url-pattern>/reimbursement/v</url-pattern>
+	</servlet-mapping>
 	
 </web-app>

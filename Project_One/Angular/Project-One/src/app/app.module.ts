@@ -1,5 +1,8 @@
+import { AppRoutingModule } from './app.routing.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { LoginComponent } from './pages/login/login.component';
@@ -13,6 +16,8 @@ import { PendingReimbInfoComponent } from './pages/pending-reimb-info/pending-re
 import { DeniedReimbInfoComponent } from './pages/denied-reimb-info/denied-reimb-info.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { LoginBoxComponent } from './components/login-box/login-box.component';
+
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -30,7 +35,10 @@ import { LoginBoxComponent } from './components/login-box/login-box.component';
     LoginBoxComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

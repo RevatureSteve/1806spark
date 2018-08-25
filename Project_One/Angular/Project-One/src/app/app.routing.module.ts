@@ -10,27 +10,37 @@ import { LoginBoxComponent } from './components/login-box/login-box.component';
 
 const routes: Routes = [
     {
-        path: '',
-        component: LoginBoxComponent
+        path: '', redirectTo: 'login', pathMatch: 'full'
     },
     {
-        path: '',
+        path: 'info',
         component: UsersInformationComponent
     },
     {
-        path: '',
+        path: 'login',
+        component: LoginBoxComponent
+    },
+    {
+        path: 'reimb/approved',
         component: ApprovedReimbInfoComponent
     },
     {
-        path: '',
+        path: 'reimb/pending',
         component: PendingReimbInfoComponent
     },
     {
-        path: '',
+        path: 'reimb/denied',
         component: DeniedReimbInfoComponent
     },
     {
-        path: '',
+        path: 'reimb/info',
         component: ReimbursementInformationComponent
     }
 ];
+
+@NgModule({
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
+})
+export class AppRoutingModule { }
+
