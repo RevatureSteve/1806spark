@@ -27,6 +27,7 @@
 		<property name="hibernate.connection.url">jdbc:oracle:thin:@kukuy.cmgq1zpczcbi.us-east-2.rds.amazonaws.com:1521:ORCL</property>
 		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
 		
+		<!-- Additional Hibernate awesomeness -->
 		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
 		<property name="hibernate.show_sql">true</property>
 		<property name="hibernate.format_sql">true</property>
