@@ -7,6 +7,7 @@ import com.revature.dao.ReimbursementDaoImpl;
 import com.revature.dao.UsersDao;
 import com.revature.dao.UsersDaoImpl;
 import com.revature.domain.Reimbursement;
+
 import com.revature.domain.Users;
 
 public class AppService {
@@ -18,18 +19,20 @@ public class AppService {
 	private UsersDao usersDao = new UsersDaoImpl();
 	
 	public Users login(Users userInput) {
-	
-	Users dbUser = usersDao.getUserByEmail(userInput.getEmail());
-	
-	if (dbUser != null) {
 		
-		if (dbUser.getPassword().equals(userInput.getPassword())) {
-			return dbUser;
+		System.out.println("[LOG]------Starting Login AppService");
+		
+		Users validUser = usersDao.getUserByEmail(userInput.getEmail());
+	
+	if (validUser != null) {
+		
+		if (validUser.getPassword().equals(userInput.getPassword())) {
+			return validUser;
 		}
 	}
 
-	
-return null;
+	System.out.println("[LOG]----");
+	return null;
 }
 
 //view single reimbursement request (NOT WORKING!!)

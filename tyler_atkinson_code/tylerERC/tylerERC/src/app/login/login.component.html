@@ -1,7 +1,11 @@
+
+
+<div class="jumbotron">
 <form (ngSubmit)="login()">
-  <input type="text" name="username" [(ngModel)]="inputUser.username" placeholder="username">
+  <input type="text" name="email" [(ngModel)]="inputUser.email" placeholder="email">
   <input type="password"name="password" [(ngModel)]="inputUser.password" placeholder="password">
   <button class="btn btn-primary" type="submit">Login</button>
   </form>
   <button (click)="setUser()">click</button>
-  <h1 *ngIf="validUser">User: {{validUser.username}}</h1>
+  <h1 *ngIf="validUser">User: {{validUser.email}}</h1>
+</div>

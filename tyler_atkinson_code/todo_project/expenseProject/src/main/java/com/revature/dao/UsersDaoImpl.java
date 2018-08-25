@@ -1,5 +1,7 @@
 package com.revature.dao;
 
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -7,6 +9,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.revature.domain.Users;
+import com.revature.util.SetConnectionPropertiesUtil;
 
 
 public class UsersDaoImpl implements UsersDao {
@@ -22,7 +25,7 @@ public class UsersDaoImpl implements UsersDao {
 		
 		Users user = null;
 		
-		try(Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD)){
+		try(Connection conn = SetConnectionPropertiesUtil.getConnection();){
 			String sql = "SELECT * FROM users WHERE email = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, email);
@@ -33,7 +36,13 @@ public class UsersDaoImpl implements UsersDao {
 			}
 			
 			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}

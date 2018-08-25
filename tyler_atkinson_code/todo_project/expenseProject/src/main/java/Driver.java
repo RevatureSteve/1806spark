@@ -1,44 +1,48 @@
-//import java.io.FileNotFoundException;
-//import java.io.IOException;
-//import java.sql.CallableStatement;
-//import java.sql.Connection;
-//import java.sql.PreparedStatement;
-//import java.sql.ResultSet;
-//import java.sql.SQLException;
-//import java.util.ArrayList;
-//import java.util.InputMismatchException;
-//import java.util.List;
-//import java.util.Scanner;
-//
-//
-//import com.revature.dao.ReimbursementDao;
-//import com.revature.dao.ReimbursementDaoImpl;
-//import com.revature.domain.Reimbursement;
-//import com.revature.domain.Users;
-//import com.revature.service.AppService;
-//import com.revature.util.SetConnectionPropertiesUtil;
-//
-//public class Driver {
-//	
-//	
-//	
-//	
-//
-//	public static void main(String[] args) {
-//		// TODO Auto-generated method stub
-//
-//		System.out.println("testy mctest test");
-//
-//		//if wrong credentials, will return null otherwise returns user string[]
-//
-//		String emailInput = "boss@man";
-//
-//		String pwInput = "abc";
-//
-//
-//		Users validUser = new AppService().login(new Users (0,"", "", emailInput, pwInput, 0));
-//	
-//		System.out.println("confirm valid user " + validUser);
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.InputMismatchException;
+import java.util.List;
+import java.util.Scanner;
+
+
+import com.revature.dao.ReimbursementDao;
+import com.revature.dao.ReimbursementDaoImpl;
+import com.revature.domain.Reimbursement;
+import com.revature.domain.Users;
+import com.revature.service.AppService;
+import com.revature.util.SetConnectionPropertiesUtil;
+
+public class Driver {
+	
+	
+	
+	
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		System.out.println("testy mctest test");
+
+		//if wrong credentials, will return null otherwise returns user string[]
+
+		String emailInput = "boss@man";
+
+		String pwInput = "abc";
+		
+	
+
+
+		Users validUser = new AppService().login(new Users (0,"", "", emailInput, pwInput, 0));
+	
+		System.out.println("confirm valid user " + validUser);
+		
+	}}
 	
 //		addAReimb();}
 //	

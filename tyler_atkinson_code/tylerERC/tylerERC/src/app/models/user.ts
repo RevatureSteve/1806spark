@@ -4,5 +4,5 @@ export class User {
     lname:string;
     email:string;
     password:string;
-    posid:string;
+    posid:number;
 }

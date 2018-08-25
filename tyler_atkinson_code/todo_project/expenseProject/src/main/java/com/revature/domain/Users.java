@@ -4,24 +4,24 @@ import java.io.Serializable;
 
 public class Users implements Serializable {
 	
-	private int u_id;
+	private int uid;
 	private String fname;
 	private String lname;
 	private String email;
 	private String password;
-	private int pos_id;
+	private int posid;
 	
 	
 	
 	
-	public Users(int u_id, String fname, String lname, String email, String password, int pos_id) {
+	public Users(int uid, String fname, String lname, String email, String password, int pos_id) {
 		super();
-		this.u_id = u_id;
+		this.uid = uid;
 		this.fname = fname;
 		this.lname = lname;
 		this.email = email;
 		this.password = password;
-		this.pos_id = pos_id;
+		this.posid = posid;
 	}
 
 
@@ -32,15 +32,18 @@ public class Users implements Serializable {
 
 
 
-	public int getU_id() {
-		return u_id;
+	
+
+
+	public int getUid() {
+		return uid;
 	}
 
 
 
 
-	public void setU_id(int u_id) {
-		this.u_id = u_id;
+	public void setUid(int uid) {
+		this.uid = uid;
 	}
 
 
@@ -102,15 +105,15 @@ public class Users implements Serializable {
 
 
 
-	public int getPos_id() {
-		return pos_id;
+	public int getPosid() {
+		return posid;
 	}
 
 
 
 
-	public void setPos_id(int pos_id) {
-		this.pos_id = pos_id;
+	public void setPosid(int posid) {
+		this.posid = posid;
 	}
 
 
@@ -118,8 +121,8 @@ public class Users implements Serializable {
 
 	@Override
 	public String toString() {
-		return "Users [u_id=" + u_id + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", password="
-				+ password + ", pos_id=" + pos_id + "]";
+		return "Users [uid=" + uid + ", fname=" + fname + ", lname=" + lname + ", email=" + email + ", password="
+				+ password + ", pos_id=" + posid + "]";
 	}
 
 
