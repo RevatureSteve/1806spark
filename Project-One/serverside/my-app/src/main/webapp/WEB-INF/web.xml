@@ -35,6 +35,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>PendingServlet</servlet-name>
-    <url-pattern>/PendingServlet</url-pattern>
+    <url-pattern>/pending</url-pattern>
   </servlet-mapping>
 </web-app>

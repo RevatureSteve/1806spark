@@ -95,9 +95,11 @@ public class TranstarReimDaoImpl implements TranstarReimDao{
 	}
 	/**
 	 * Retrieves all pending requests from the database specific to a userId .
+	 * @param reqId
+	 * @param userId
 	 * @return req
 	 */
-	public List<TranstarReims> getAllResolvedRequests(int userId) {
+	public List<TranstarReims> getRequests(int reqId, int userId) {
 		
 		List<TranstarReims> reqs = new ArrayList<>();
 		try (Connection con = ConnectionsPropertiesUtil.newConnection()){
@@ -106,9 +108,10 @@ public class TranstarReimDaoImpl implements TranstarReimDao{
 					"ON reimbursement.rb_type_id = rb_type.rb_type_id " + 
 					"INNER JOIN rq_status " + 
 					"ON reimbursement.rq_status_id = rq_status.rq_status_id " + 
-					"WHERE rq_status.rq_status_id = 2 AND reimbursement.emp_u_id = ?";
+					"WHERE rq_status.rq_status_id = ? AND reimbursement.emp_u_id = ?";
 			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setInt(1, userId);
+			ps.setInt(1, reqId);
+			ps.setInt(2, userId);
 			ResultSet rs = ps.executeQuery();
 		
 			while (rs.next()) {

@@ -61,9 +61,8 @@ function employeeTabs(num) {
                 return resp.text();
             }).then((text) => {
                 navbar.innerHTML = text;
-
-
             });
+            pendingReqs();
             break;
 
         case 4:

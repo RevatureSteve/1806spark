@@ -1,5 +1,6 @@
 // READ TODO RAW JS to learn more on this method!
 let newUser;
+let newPendingReqs;
 window.onload = function foo() {
 
     if (document.getElementById('content')) {

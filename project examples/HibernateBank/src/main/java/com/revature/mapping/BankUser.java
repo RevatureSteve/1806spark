@@ -113,7 +113,7 @@ public class BankUser {
 
 		@Override
 		public String toString() {
-			return "BankUser [userId=" + userId + ", username=" + username + ", password=" + password
+			return "BankUser [userId=" + userId  + ", username=" + username + ", password=" + password
 					+ ", fname=" + fname + ", lname=" + lname + "]";
 		}
 		

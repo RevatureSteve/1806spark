@@ -76,4 +76,4 @@ INNER JOIN rb_type
 ON reimbursement.rb_type_id = rb_type.rb_type_id 
 INNER JOIN rq_status 
 ON reimbursement.rq_status_id = rq_status.rq_status_id 
-WHERE rq_status.rq_status_id = 2 AND reimbursement.emp_u_id = 1;
+WHERE rq_status.rq_status_id = 2 OR rq_status.rq_status_id = 1 AND reimbursement.emp_u_id = 1;
