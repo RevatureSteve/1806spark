@@ -1,14 +1,27 @@
-/* use for making a alert box popup after button is pressed */
+// /* use for making a alert box popup after button is pressed */
 
-/* function myFunction (){
-    alert('You have limited access pal, maughh..make it quick');
- }
-*/
+// /* function myFunction (){
+//     alert('You have limited access pal, maughh..make it quick');
+//  }
+// */
 
-function openForm() {
-    document.getElementById("myForm").style.display = "block";
-}
+// /* When the user clicks on the button, 
+// toggle between hiding and showing the dropdown content */
+// function myFunction() {
+//     document.getElementById("myDropdown").classList.toggle("show");
+// }
 
-function closeForm() {
-    document.getElementById("myForm").style.display = "none";
-}
+// // Close the dropdown menu if the user clicks outside of it
+// window.onclick = function(event) {
+//   if (!event.target.matches('.dropbtn')) {
+
+//     var dropdowns = document.getElementsByClassName("dropdown-content");
+//     var i;
+//     for (i = 0; i < dropdowns.length; i++) {
+//       var openDropdown = dropdowns[i];
+//       if (openDropdown.classList.contains('show')) {
+//         openDropdown.classList.remove('show');
+//       }
+//     }
+//   }
+// }

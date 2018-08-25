@@ -8,7 +8,7 @@
 
   }
 
-  #background5 {
+#background5 {
     position: fixed;
     z-index: -1; 
     opacity: .5;
@@ -22,7 +22,7 @@
         
   }
   
-  #background6 {
+#background6 {
       z-index: -2;
       position:fixed;
   
@@ -30,7 +30,7 @@
 
 #title {
     position: fixed;
-    margin-left: 29%;
+    margin-left: 26%;
     margin-top: 25px;
     color: black;
     font-size: 100px;
@@ -100,27 +100,30 @@ input[type=submit]:hover {
 #portal3 {
     z-index: -1;
     position: fixed;
-    margin-left: 40%;
+    margin-left: 37%;
     margin-top: 3%;
     opacity: .6;
    
 }
 
-#meebox {
+#meebox2 {
     margin-left: 3%;
-    margin-top: 2.5%;
+    margin-top: 4%;
     position: fixed;
     width: 5%;
 }
 
-#meesee {
+#meesee2 {
     margin-left: 2%;
-    margin-top: 1%;
+    margin-top: 2%;
     position: fixed;
     width: 6%;
     opacity: 0;
 }
 
-#meesee:hover {
+#meesee2:hover {
     opacity: 1;
+}
+.dropdown{
+    height: 50%;
 }
