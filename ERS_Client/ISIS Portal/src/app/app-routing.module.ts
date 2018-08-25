@@ -26,6 +26,7 @@ const routes : Routes = [
   {path: 'agnet/reimbursements', component: AgentReimbursementsComponent},
   {path: 'reimbursements', component: AllReimbursementsComponent },
   {path: 'agents', component: AllAgentsComponent},
+  {path: '**', component: LoginComponent}
 ]
 
 

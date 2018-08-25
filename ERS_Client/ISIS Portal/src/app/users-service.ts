@@ -63,5 +63,6 @@ setLoggedInUser(user) {
   //Get the current logged in user.
   currentLoggedUser() {
       return UsersService.user;
+     
   }
 }

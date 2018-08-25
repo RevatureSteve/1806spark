@@ -10,26 +10,32 @@ import { Users } from 'src/app/Users';
   styleUrls: ['./employee-home.component.css']
 })
 export class EmployeeHomeComponent implements OnInit {
+ 
+  // firstname = this.usr.first;
+  // lastname = this.usr.last;
+
+
   links = [
     'Home',
     'Agent Profile',
     'Missions',
     'Agent Status'
   ];
-  agents : Users[];
-  // Harcoded agent for testing
-  
+  agents: Users[];
 
 
-   constructor(private httpClient: HttpClient, private service :UsersService) { }
+
+  constructor(private httpClient: HttpClient, private service: UsersService) { }
   ngOnInit() {
-    this.httpClient.get<Users[]>('http://localhost:8080/ERS/GetAllEmployeesServlet')
-    .subscribe(data => {
-      this.agents = data;
-      console.log(this.agents);
-    }
 
-    )
+    this.getUser();
+
   }
 
+  getUser() {
+    console.log("Checking logged in user.")
+   return this.service.currentLoggedUser().first;
+    // console.log();
+
+  }
 }
