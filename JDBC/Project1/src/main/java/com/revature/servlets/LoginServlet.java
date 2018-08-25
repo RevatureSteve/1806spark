@@ -1,5 +1,6 @@
 package com.revature.servlets;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
 
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.revature.domain.Users;
 import com.revature.service.BusinessLogic;
 
@@ -42,23 +44,36 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		System.out.println("LoginServlet - POST");
-		Users users = new Users();
 		
+		Users user = new Users();
 		
-		//JSON format of our User
-		String email = request.getParameter("email");
-		String password = request.getParameter("password");
-		
-		System.out.println("Email is: " + email);
-		System.out.println("Password is: " + password);
-		
-		users = businessLogic.login(email, password);
+		BufferedReader bf = request.getReader();
+		System.out.println("[LOG]---LoginServlet---BufferedReader Successful");
 		
 		//converting object to JSON format
 		ObjectMapper mapper = new ObjectMapper();
+		System.out.println("[LOG]---LoginServlet---ObjectMapper Successful");
+				
+		/*//JSON format of our User (not advised because the password and email are displayed within the url which is B A D)
+		String email = request.getParameter("email");
+		String password = request.getParameter("password");
+		System.out.println("Email is: " + email);
+		System.out.println("Password is: " + password);*/
 		
+		
+		ObjectNode node = mapper.readValue(bf, ObjectNode.class);
+		System.out.println("[LOG]---LoginServlet---ObjectNode Successful");
+				
+		String email = node.get("email").textValue();
+		String password = node.get("password").textValue();
+		System.out.println("[LOG]---LoginServlet---converting email and password from JSON to string respectively: " + email + " and " + password);
+		
+		user = businessLogic.login(email, password);
+		System.out.println("[LOG]---LoginServlet---sending string to the Service Login()");
+		
+
 		//JSON format of the user
-		String json = mapper.writeValueAsString(users);
+		String json = mapper.writeValueAsString(user);
 		
 		//client side info
 		response.setContentType("application/json");
@@ -66,8 +81,7 @@ public class LoginServlet extends HttpServlet {
 		//format object into a text output string
 		PrintWriter out = response.getWriter();
 		out.println(json);
-		
-		
+
 	}
 
 }

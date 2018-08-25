@@ -19,7 +19,7 @@ public class BusinessLogic {
 	 *		it is used to verify login by comparing the input pw against the DB pw 
 	 */
 	public Users login (String email, String password) {
-		System.out.println("[LOG]---Starting---Service login() with the arguments: " + email);
+		System.out.println("[LOG]---Starting---Service login() with the arguments: " + email + " and " + password);
 
 		Users dbUsers = usersDao.getUserByEmail(email);
 		System.out.println("[LOG]---Calling the Dao---Service login()");

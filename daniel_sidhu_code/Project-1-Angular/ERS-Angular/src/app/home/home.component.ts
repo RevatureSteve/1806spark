@@ -7,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
+  title = ' The Racoon City Police Department';
   constructor() { }
 
   ngOnInit() {

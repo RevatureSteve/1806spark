@@ -1,3 +1,35 @@
-<p>
-  login works!
-</p>
+<form class="form-horizontal">
+
+<!-- Form Name -->
+<legend>Login</legend>
+
+<!-- Email input-->
+<div>
+  <label class="col-md-4 control-label" for="textinput">Email</label>  
+  <div class="col-md-4">
+      <!-- the ngModel here will grab my email text and place that into my inputUser var -->
+  <input name="emailinput" type="text" [(ngModel)]='inputUser.email' placeholder="Email" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Password input-->
+<div>
+  <label class="col-md-4 control-label">Password</label>
+  <div class="col-md-4">
+       <!-- the ngModel here will grab my password text and place that into my inputUser var -->
+    <input name="passwordinput" type="password" [(ngModel)]='inputUser.password' placeholder="Password" class="form-control input-md">
+    
+  </div>
+</div>
+
+<!-- Button -->
+<div>
+  <label class="col-md-4 control-label"></label>
+  <div class="col-md-4">
+      <!-- after clicking login, I send the input info to be used in the Login() -->
+    <button class="btn btn-primary" (click)='login()'>Login</button>
+  </div>
+</div>
+
+</form>

@@ -7,26 +7,75 @@
     <a class="navbar-brand" href="#">RCPD</a>
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
       <li class="nav-item">
-        <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/Home">Home<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">About</a>
+        <a class="nav-link" routerLink="/About">About</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Communities</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Opportunities
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Application</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Your Division</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Join S.T.A.R.S.</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Join Umbrealla's Division</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Join RCPD</a>
+          <div class="dropdown-divider"></div>
+        </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Media</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          media
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">RCPD Blog</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">RCPD TV</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Newsroom</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Research</a>
+          <div class="dropdown-divider"></div>
+        </div>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" href="#">Opportunities</a>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
+          aria-expanded="false">
+          Crime Information
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+          <a class="dropdown-item" href="#">Alarm School</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Crime Mapping</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Crime Prevention</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Domestic Violence</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">FAQs</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Gang Injunctions</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">ID Theft</a>
+          <div class="dropdown-divider"></div>
+          <a class="dropdown-item" href="#">Year in Review</a>
+          <div class="dropdown-divider"></div>
+        </div>
       </li>
       <li class="nav-item">
         <a class="nav-link" routerLink="/login">Login</a>
       </li>
     </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <a class="nav-link" href="#">Umbrella</a>
-        </form>
+    <form class="form-inline my-2 my-lg-0">
+      <a class="nav-link" routerLink="#">Umbrella</a>
+    </form>
   </div>
 </nav>
