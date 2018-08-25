@@ -1,6 +1,8 @@
+import { CurrentUserService } from './../services/current-user.service';
+import { UserService } from './../services/user.service';
 import { Component, OnInit, NgModule } from '@angular/core';
 import { Users } from '../models/users';
-import { HttpClient } from '@angular/common/http';
+import { Router } from '@angular/router';
 
 
 @Component({
@@ -11,43 +13,32 @@ import { HttpClient } from '@angular/common/http';
 
 export class LoginComponent implements OnInit {
   inputUser: Users;
-  validUser = null;
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private userService: UserService, private currentUser: CurrentUserService, private router: Router) { }
 
   ngOnInit() {
-    this.validUser = null;
-    this.inputUser = {
-      userId: 0,
-      email: '',
-      password: '',
-      firstName: '',
-      lastName: '',
-      positionId: 0
-    };
+
   }
 
-  login() {
-
-    this.loginUser(this.inputUser);
-  }
-
-  loginUser(user: Users): void {
-    console.log('service: loginUser info ' + user.email + ' and ' + user.password);
-    this.httpClient.post('http://localhost:8080/Project1/Login', user)
-    .subscribe(
-      succ => {
-        console.log('login successful');
-        console.dir(succ);
-        localStorage.setItem('user', JSON.stringify(succ));
-        this.setUser();
-      },
-      err => alert('failed login')
+  login(email, password) {
+    console.log('email: ' + email + ' password ' + password);
+    this.userService.login(email, password).subscribe(
+      inputUser => this.changePage(inputUser)
     );
   }
 
-  setUser() {
-    this.validUser = JSON.parse(localStorage.getItem('user'));
+  changePage(inputUser) {
+    this.inputUser = inputUser;
+    if (inputUser) {
+      this.currentUser.setCurrentUser(inputUser);
+      if (inputUser.positionId === 1) {
+        this.router.navigate(['home/manager']);
+      } else {
+        this.router.navigate(['login']);
+      }
+    } else {
+      this.router.navigate(['login']);
+    }
   }
-
 }
+
