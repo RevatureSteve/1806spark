@@ -38,8 +38,7 @@ public class CreateReimbursementServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		System.out.println("CreateReimbursementServlet -POST");
- 
+		System.out.println("CreateReimbursementServlet -POST"); 
 		ObjectMapper mapper = new ObjectMapper();
 		// Reads the json that's being sent through the POST request
 		ServletInputStream json = request.getInputStream();

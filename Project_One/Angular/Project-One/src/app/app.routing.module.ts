@@ -6,36 +6,18 @@ import { ReimbursementInformationComponent } from './pages/reimbursement-informa
 import { ApprovedReimbInfoComponent } from './pages/approved-reimb-info/approved-reimb-info.component';
 import { PendingReimbInfoComponent } from './pages/pending-reimb-info/pending-reimb-info.component';
 import { DeniedReimbInfoComponent } from './pages/denied-reimb-info/denied-reimb-info.component';
-import { LoginBoxComponent } from './components/login-box/login-box.component';
+import { LoginComponent } from './pages/login/login.component';
 
 const routes: Routes = [
-    {
-        path: '', redirectTo: 'login', pathMatch: 'full'
-    },
-    {
-        path: 'info',
-        component: UsersInformationComponent
-    },
-    {
-        path: 'login',
-        component: LoginBoxComponent
-    },
-    {
-        path: 'reimb/approved',
-        component: ApprovedReimbInfoComponent
-    },
-    {
-        path: 'reimb/pending',
-        component: PendingReimbInfoComponent
-    },
-    {
-        path: 'reimb/denied',
-        component: DeniedReimbInfoComponent
-    },
-    {
-        path: 'reimb/info',
-        component: ReimbursementInformationComponent
-    }
+    {path: '', redirectTo: 'login', pathMatch: 'full'},
+    {path: 'info', component: UsersInformationComponent},
+    {path: 'login', component: LoginComponent},
+    {path: 'reimb/approved', component: ApprovedReimbInfoComponent},
+    {path: 'reimb/pending', component: PendingReimbInfoComponent},
+    {path: 'reimb/denied', component: DeniedReimbInfoComponent},
+    {path: 'reimb/info', component: ReimbursementInformationComponent},
+    {path: '**', redirectTo: 'login'}
+
 ];
 
 @NgModule({
@@ -43,4 +25,3 @@ const routes: Routes = [
     exports: [RouterModule]
 })
 export class AppRoutingModule { }
-

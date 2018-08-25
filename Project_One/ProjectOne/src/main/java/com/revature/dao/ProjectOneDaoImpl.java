@@ -57,7 +57,6 @@ public class ProjectOneDaoImpl implements ProjectOneDao {
 				users = new Users(rs.getInt("U_ID"), rs.getString("EMAIL"), rs.getString("PASSWORD"),
 						rs.getString("FNAME"), rs.getString("LNAME"), rs.getInt("POS_ID"));
 			}
-
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

@@ -45,7 +45,7 @@
 	<!-- GetUserByEmail Servlet -->
 	<servlet>
 		<servlet-name>getUserByEmail</servlet-name>
-		<servlet-class>com.revature.servlet.UserInformationByEmail</servlet-class>
+		<servlet-class>com.revature.servlet.UserInformationByEmailServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>getUserByEmail</servlet-name>

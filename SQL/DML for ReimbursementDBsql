@@ -18,20 +18,21 @@ INSERT INTO rq_status VALUES (1, 'Pending');
 INSERT INTO rq_status VALUES (2, 'Completed');
 INSERT INTO rq_status VALUES (3, 'Denied');
 
+DELETE FROM reimbursement WHERE r_id = 21;
 -- REIMBURSEMENT TABLE
 INSERT INTO reimbursement VALUES (1, 40, 1, 1, 1, 2, 'Stimpacks that were needed for the Deathclaw raid last night', null, default);
 INSERT INTO reimbursement VALUES (2, 500, 2, 2, 3, 3, 'Power armor got destroyed from jumping off a cliff', null, default);
 INSERT INTO reimbursement VALUES (3, 430, 1, 1, 5, 2, 'Drank too much Nuka Cola', null, default);
 INSERT INTO reimbursement VALUES (4, 430, 1, 1, 5, 1, 'Drank too much Nuka Cola', null, default);
 
-INSERT INTO reimbursement (amt, emp_u_id, mgr_u_id, rq_type_id, description)
+INSERT INTO reimbursement (amt, emp_U_Id, mgr_U_Id, rq_Type_Id, description)
         VALUES (450, 2, 2, 4, 'Broke my mini-gun');     
 
 -- INSERT 
 -- USERS TABLE
-INSERT INTO users VALUES(1, 'alex.moraga94@yahoo.com', 'cookie', 'Alex', 'Moraga', 1); -- 1 for overseer, 2 for vault dweller
-INSERT INTO users VALUES(2, 'alex.moraga95@yahoo.com', 'cookies', 'Axel', 'Moraga', 2);
-INSERT INTO users VALUES (3, 'revature@gmail.com', 'rev', 'Revy', 'Rev', 2);
+INSERT INTO users VALUES(1, 'Alex', 'Moraga', 'alex.moraga94@yahoo.com', 'cookie', 1); -- 1 for overseer, 2 for vault dweller
+INSERT INTO users VALUES(2, 'Axel', 'Moraga', 'alex.moraga95@yahoo.com', 'cookies', 2);
+INSERT INTO users VALUES (3, 'Revy', 'rev', 'revature@gamil.com', 'rev', 2);
 
 -- Creating a sequence that will be used in trigger for Users table
 CREATE SEQUENCE userId_sequence

@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.revature.pogo.Reimbursement;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.revature.pogo.Users;
 import com.revature.service.AppService;
 
@@ -37,24 +37,37 @@ public class ValidateUserServlet extends HttpServlet{
 		
 	}
 	
-//	@Override
-//	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//		
-//		System.out.println("ValidateServlet -POST");
-// 
-//		ObjectMapper mapper = new ObjectMapper();
-//		// Reads the json that's being sent through the POST request
-//		ServletInputStream json = request.getInputStream();
-//		Users u = mapper.readValue(json, Users.class);
-//
-//		System.out.println("User reimbursement information: " + reimb);
-//		
-//		String email = u.getEmail()
-//		String password = u.getPassword()
-//		System.out.println(email + ""+ password);
-//		int success = aS.login(email + )
-//		PrintWriter out = response.getWriter();
-//		out.print(1);
-//	}
+	@Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
+		System.out.println("ValidateServlet -POST");
+ 
+		ObjectMapper mapper = new ObjectMapper();
+		// Reads the json that's being sent through the POST request
+		ServletInputStream json = request.getInputStream();
+		// Setting a json object that has been received as an ObjectNod
+		ObjectNode node = mapper.readValue(json, ObjectNode.class);
+
+		// Setting email & password as the text values stored within ObjectNode.class
+		String email = node.get("email").textValue();
+		String password = node.get("password").textValue();
+		
+		System.out.println("email: " + email + " , password: " + password);
+		
+		// Passing email/password for verification through the login app service
+		// & setting it as verified if user is valid
+		Users verified = aS.login(email, password);
+		
+		// Printing out the verified user through mapper and 
+		// & setting it as jsonOut
+		String jsonOut = mapper.writeValueAsString(verified);
+		
+		// Note: printwriter is not a JSON String, just a misc toString code
+		PrintWriter out = response.getWriter();
+		// Setting the response content type as application/json
+		response.setContentType("application/json");
+		out.print(jsonOut);
+}
+	
 
 }

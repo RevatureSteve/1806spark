@@ -15,9 +15,8 @@ import { ApprovedReimbInfoComponent } from './pages/approved-reimb-info/approved
 import { PendingReimbInfoComponent } from './pages/pending-reimb-info/pending-reimb-info.component';
 import { DeniedReimbInfoComponent } from './pages/denied-reimb-info/denied-reimb-info.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { LoginBoxComponent } from './components/login-box/login-box.component';
-
 import { HttpClientModule } from '@angular/common/http';
+import { LoginBoxComponent } from './components/login-box/login-box.component';
 
 @NgModule({
   declarations: [

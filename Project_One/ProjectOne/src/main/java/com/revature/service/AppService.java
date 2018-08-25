@@ -21,26 +21,23 @@ public class AppService {
 	private ProjectOneDao projectOneDao = new ProjectOneDaoImpl();
 	
 	// Login Validation
-	public Users login(Users email) {
-		System.out.println("[LOG]---Starting--- Service login() for: " + email + " information");
+	public Users login(String email, String password) {
+		System.out.println("[LOG]---Starting--- Service login() for: " + email + " , password: " + password);
 		
-		// Need to pass the user's email to the dao to see if there is a
-		// 	found in the database with that email
 		//      Yes - assign the user record to a User java object
 		// 		No - then it is null
-		System.out.println("[LOG]---calling dao---Service login()");
 		// Setting dbEmail by accessing through dao, into daoImpl, with users email by the getEmail method
-		Users dbEmail = projectOneDao.getUserByEmail(email.getEmail());
-		System.out.println("[LOG]---dao returned---Service login() returned: " + dbEmail);
+		Users dbUsers = projectOneDao.getUserByEmail(email);
+		System.out.println("[LOG]---dao returned---Service login() returned: " + dbUsers);
 		
 		// logic to compare user's email to email in Database
-		if (dbEmail != null) {
-			System.out.println("[LOG]---dbEmail null check---Service login() status: success");
-			// compare user's email to dbEmail's password
-			if (dbEmail.getPassword().equals(email.getPassword())) {
+		if (dbUsers != null) {
+			System.out.println("[LOG]---dbUsers null check---Service login() status: success");
+			// compare user's email to dbUser's password
+			if (dbUsers.getPassword().equals(projectOneDao.getUserByEmail(email).getPassword())) {
 				System.out.println("[LOG]---compare password---Service login() password: success");
 				// returning dbEmail to Users, not usersEmail
-				return dbEmail;
+				return dbUsers;
 			}
 		}
 		

@@ -12,8 +12,4 @@ export class LoginBoxComponent implements OnInit {
 
     ngOnInit() {
     }
-
-    btnClick(){
-        this.router.navigate(['/employees']);
-    }
 }
