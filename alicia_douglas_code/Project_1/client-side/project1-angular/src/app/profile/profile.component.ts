@@ -20,12 +20,9 @@ export class ProfileComponent implements OnInit {
     this.user = this.currentUser.getCurrentUser();
     console.log(this.user);
     this.posId = this.user.pos_id;
-    // this.setPage(this.user);
   }
 
-  // setPage(user) {
-  //   document.getElementById('fname').innerText = user.fname;
-  // }
+
 
   updateUser(email, fname, lname) {
     const id = this.user.u_id;

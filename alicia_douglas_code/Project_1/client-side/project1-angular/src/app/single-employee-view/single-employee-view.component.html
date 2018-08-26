@@ -1,3 +1,4 @@
+<app-manager-navbar></app-manager-navbar>  
 
 <table id='reimbursements' class="table table-hover table-dark">
   <thead>
@@ -21,10 +22,15 @@
       <td>{{r.amt}}</td>
       <td>{{r.rbStatus}}</td>
       <td>{{r.timeSubmission | date: 'short'}}</td>
-      <td>
+      <span *ngIf = "r.rbStatus == 'Pending'">
+         <td>
         <button (click)="approve(r.rId)" type="button" class="btn btn-success">Approve</button>
         <button (click)="deny(r.rId)" type="button" class="btn btn-danger">Deny</button>
       </td>
+      </span>
+     <span *ngIf = "r.rbStatus != 'Pending'">
+      <td>{{r.managerName}}</td>
+     </span>
     </tr>
 
   </tbody>

@@ -10,7 +10,7 @@
     </tr>
   </thead>
   <tbody>
-    <tr *ngFor = 'let u of users'>
+    <tr (click) = "employeeSort(u.u_id)" *ngFor = 'let u of users'>
       <th scope="row">{{u.u_id}}</th>
       <td>{{u.fname}}</td>
       <td>{{u.lname}}</td>

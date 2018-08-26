@@ -10,10 +10,10 @@
   <li class="nav-item">
     <a class="nav-link color" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Resolved Reimbursements</a>
   </li>
-  <li class="nav-item">
-    <a class="nav-link color" id="reimbursement-tab" data-toggle="tab" href="#reimbursement" role="tab" aria-controls="reimbursement" aria-selected="false">New Reimbursements</a>
-  </li>
 </ul>
+
+<a style="color: white" class="btn btn-outline-secondary" routerLink="/new-reimbursement" role="button">New Reimbursement</a>
+
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
     <app-employee-reimbursement></app-employee-reimbursement>
@@ -23,8 +23,5 @@
   </div>
   <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
     <app-emp-resolved-reimbursements></app-emp-resolved-reimbursements>
-  </div>
-  <div class="tab-pane fade" id="reimbursement" role="tabpanel" aria-labelledby="reimbursement-tab">
-    <app-new-reimbursement></app-new-reimbursement>
   </div>
 </div>

@@ -1,33 +1,33 @@
-
 import { Component, OnInit } from '@angular/core';
 import { ReimbursementsService } from '../reimbursements.service';
-import { Reimbursements } from '../models/reimbursements.model';
 import { CurrentUserService } from '../current-user.service';
+import { Reimbursements } from '../models/reimbursements.model';
 import { Users } from '../models/users.model';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'app-manager-pending-reimbursements',
-  templateUrl: './manager-pending-reimbursements.component.html',
-  styleUrls: ['./manager-pending-reimbursements.component.css']
+  selector: 'app-single-employee-view',
+  templateUrl: './single-employee-view.component.html',
+  styleUrls: ['./single-employee-view.component.css']
 })
-export class ManagerPendingReimbursementsComponent implements OnInit {
+export class SingleEmployeeViewComponent implements OnInit {
 
   user: Users;
   reimb: Reimbursements;
   reimbs: Reimbursements[];
-  allReimbs: Reimbursements[];
-  sortedReimbs: Reimbursements[];
+  empId;
 
-  constructor(private reimbService: ReimbursementsService, private currentUser: CurrentUserService) { }
+  constructor(private reimbService: ReimbursementsService, private currentUser: CurrentUserService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.user = this.currentUser.getCurrentUser();
-    this.getPendingReimbursements();
+    this.empId = +this.route.snapshot.paramMap.get('id');
+    console.log(this.empId);
+    this.getEmployeeReimbursements();
   }
 
-  getPendingReimbursements() {
-    console.log('Get pending reimbursements');
-    this.reimbService.getPendingReimbursements()
+  getEmployeeReimbursements() {
+    this.reimbService.getReimbursementById(this.empId)
       .subscribe(reimbursements => this.reimbs = reimbursements);
   }
 
@@ -35,21 +35,22 @@ export class ManagerPendingReimbursementsComponent implements OnInit {
     console.log(`approve clicked rId: ${rId}`);
     this.reimbService.updateReimbursement(rId, this.user.u_id, 2)
       .subscribe(reimb => this.reimb = reimb);
-    this.removeResolved(rId);
+    this.changeStatus(rId, 'Approved');
   }
 
   deny(rId) {
     console.log(`deny clicked rId: ${rId}`);
     this.reimbService.updateReimbursement(rId, this.user.u_id, 3)
       .subscribe(reimb => this.reimb = reimb);
-    this.removeResolved(rId);
+    this.changeStatus(rId, 'Denied');
   }
 
-  removeResolved(Id) {
+  changeStatus(Id, status) {
     for (let i = 0; i < this.reimbs.length; i++) {
       if (this.reimbs[i].rId === Id) {
-        console.log('Should remove value');
-        this.reimbs.splice(i, 1);
+        console.log('Should change status');
+        this.reimbs[i].rbStatus = status;
+        this.reimbs[i].managerName = this.user.fname + ' ' + this.user.lname;
         console.log(this.reimbs);
       }
     }

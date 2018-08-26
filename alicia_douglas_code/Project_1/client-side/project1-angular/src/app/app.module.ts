@@ -21,6 +21,7 @@ import { ManagerPendingReimbursementsComponent } from './manager-pending-reimbur
 import { ManagerResolvedReimbursmentsComponent } from './manager-resolved-reimbursments/manager-resolved-reimbursments.component';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { ManagerNavbarComponent } from './manager-navbar/manager-navbar.component';
+import { SingleEmployeeViewComponent } from './single-employee-view/single-employee-view.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { ManagerNavbarComponent } from './manager-navbar/manager-navbar.componen
     ManagerPendingReimbursementsComponent,
     ManagerResolvedReimbursmentsComponent,
     EmployeeListComponent,
-    ManagerNavbarComponent
+    ManagerNavbarComponent,
+    SingleEmployeeViewComponent
   ],
   imports: [
     BrowserModule,
