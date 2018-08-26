@@ -1,0 +1,21 @@
+<div class="container">
+  <table class="table table-bordered table-dark table-hover">
+    <thead>
+      <tr>
+        <td>Email</td>
+        <td>First Name</td>
+        <td>Last Name</td>
+        <td>Position</td>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let us of user' (click)='getReimbursementsById(us.user_id)'>
+        <td>{{us.email}}</td>
+        <td>{{us.fname}}</td>
+        <td>{{us.lname}}</td>
+        <td>{{us.pos_name}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- (click)='getReimbursementsById(us.user_id) -->

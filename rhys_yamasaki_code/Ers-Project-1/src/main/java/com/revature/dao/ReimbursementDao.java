@@ -12,9 +12,9 @@ public interface ReimbursementDao {
 	// READ
 	public List<Reimbursement> getAllReimbursements();
 	public List<Reimbursement> getReimbursementById(int id);
-	
+	public List<Reimbursement> getResolvedReimbursements();
 	// UPDATE
-	
+	public void resolveReimbursement(int userId, int rId, int statusId);
 	
 	// DELETE
 }

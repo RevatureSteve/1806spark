@@ -22,8 +22,22 @@ export class ReimbursementsListService {
     return this.http.get<Reimbursement[]>('http://localhost:8080/Ers-Project-1/manager/reimbursements');
   }
 
-  // getReimbursementsArray(): Observable<Reimbursement[]> {
-  //   return this.reimbursement;
-  // }
+  getResolvedReimbursements() {
+    return this.http.get<Reimbursement[]>('http://localhost:8080/Ers-Project-1/reimbursements/resolved');
+  }
+
+  resolveReimbursement(userId, r_id, rq_status_id) {
+    const reim = {
+      user_id: userId,
+      r_id: r_id,
+      rq_status_id: rq_status_id
+    };
+    console.log(reim);
+    return this.http.put('http://localhost:8080/Ers-Project-1/reimbursements/id', reim);
+  }
+
+  getReimbursementsById(id) {
+    return this.http.get<Reimbursement[]>(`http://localhost:8080/Ers-Project-1/reimbursements/id?user_id=${id}`);
+  }
 
 }

@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.revature.service.ReimbursementService;
 
 /**
- *  url /employee/reimbursement/
+ *  url - /employee/reimbursement/
  */
 public class CreateReimbursementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;

@@ -16,7 +16,7 @@ import com.revature.pojo.User;
 import com.revature.service.UserService;
 
 /**
- * /employee/update
+ * /employee
  */
 public class EmployeeInfoServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -57,8 +57,6 @@ public class EmployeeInfoServlet extends HttpServlet {
 		lname = n.get("lname").textValue();
 		
 		us.updateEmployeeInfo(userId, email, password, fname, lname);		
-		
-		
 	}
 
 }

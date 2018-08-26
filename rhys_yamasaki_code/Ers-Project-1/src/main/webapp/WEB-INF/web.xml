@@ -63,4 +63,14 @@
     <servlet-name>ReimbursementsByIdServlet</servlet-name>
     <url-pattern>/reimbursements/id</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeeReimbursementResolvedServlet</display-name>
+    <servlet-name>EmployeeReimbursementResolvedServlet</servlet-name>
+    <servlet-class>com.revature.servlets.EmployeeReimbursementResolvedServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeReimbursementResolvedServlet</servlet-name>
+    <url-pattern>/reimbursements/resolved</url-pattern>
+  </servlet-mapping>
 </web-app>

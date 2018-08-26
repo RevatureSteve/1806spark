@@ -150,6 +150,24 @@ END;
 SELECT * from users;
 /
 
+-- STORED PROCEDURE TO UPDATE resolved
+CREATE OR REPLACE PROCEDURE resolve_reimbursement(uId INT, rId INT, statusId INT)
+AS
+BEGIN
+UPDATE reimbursement r SET r.r_resolved_id = uId, r.rq_status_id = statusId
+WHERE r.r_id = rId;
+COMMIT;
+END;
+/
+
+BEGIN 
+    resolve_reimbursement(1, 61, 2);
+    resolve_reimbursement(1, 62, 3);
+    resolve_reimbursement(1, 63, 2);
+END;
+/
+
+
 SELECT r.r_id, r.r_resolved_id, r.r_submission_id, r.amount, r.description, r.img, r.time_submission, r.rq_type_id,
 r.rq_status_id, uu.fname AS rb_resolved_fname, uu.lname AS rb_resolved_lname, u.fname AS rb_submission_id, u.lname AS
 rb_submission_lname, rq.rq_type ,s.rq_status 
@@ -161,6 +179,7 @@ INNER JOIN rq_status s ON r.rq_status_id = s.rq_status_id;
 
 
 select * from reimbursement;
+select * from rq_status;
 /
 
 SELECT u.u_id, u.email, u.password, u.fname, u.lname, u.pos_id, p.pos_type

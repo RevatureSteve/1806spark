@@ -11,14 +11,21 @@ import {User} from '../../models/user';
 export class ManagerComponent implements OnInit {
 
   user: User;
+  choice = 1;
 
   constructor(private logged: LoggedInService, private route: ActivatedRoute) {
-    // this.route.component: 'ManagerComponent';
-    // this.route.params.subscribe(params => this.user = params.pos_name);
    }
 
   ngOnInit() {
     this.user = this.logged.getLoggedInUser();
+  }
+
+  getPending() {
+    this.choice = 1;
+  }
+
+  getResolved() {
+    this.choice = 2;
   }
 
 }

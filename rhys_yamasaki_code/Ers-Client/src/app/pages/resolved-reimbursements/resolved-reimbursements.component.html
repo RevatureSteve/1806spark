@@ -8,7 +8,6 @@
       <th>Time submitted</th>
       <th>Request type</th>
       <th>Request status</th>
-      <th></th>
     </thead>
     <tbody>
     <tr *ngFor="let reimb of reimbursement">
@@ -20,9 +19,6 @@
       <td>{{reimb.time_submission | date:'medium'}}</td>
       <td>{{reimb.rq_type}}</td>
       <td>{{reimb.rq_status}}</td>
-      <td><button class="btn btn-outline-success" (click)='resolveReimbursement(this.user.user_id,reimb.rb_id,2)'>Approve</button>
-      <button class="btn btn-outline-danger" (click)='resolveReimbursement(this.user.user_id,reimb.rb_id,3)'>Reject</button>
-      </td>
     </tr>
   </tbody>
 
