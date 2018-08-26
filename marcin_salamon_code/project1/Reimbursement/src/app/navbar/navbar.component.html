@@ -5,7 +5,7 @@
   <li class="nav-item" *ngIf='logged.getLoggedUser().positionId === 2'>
     <a class="nav-link" data-toggle="tab" routerLink='/{{logged.getLoggedUser().position}}/employees'>Employees</a>
   </li>
-  <li class="nav-item">
+  <li class="nav-item" *ngIf='logged.getLoggedUser().positionId === 1'>
     <a class="nav-link" data-toggle="tab" routerLink='/{{logged.getLoggedUser().position}}/submit'>Submit</a>
   </li>
   <li class="nav-item">

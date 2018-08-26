@@ -31,6 +31,10 @@ export class DecisionsService {
     });
   }
 
+  clear() {
+    DecisionsService.decisions = [];
+  }
+
   managerDecision(): void {
     console.log(DecisionsService.decisions);
     this.http.post('http://18.223.123.204:8080/Reimbursement-0.0.1-SNAPSHOT/reimbursements/update',

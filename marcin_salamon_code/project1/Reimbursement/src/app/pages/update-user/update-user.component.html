@@ -1,4 +1,4 @@
-<div class="form-group">
+<div class="form-group mx-auto" style="width: 50%;">
   <label for="email">Email</label>
   <div class="form-control">{{user.email}}</div>
   <label for="password">Password</label>
@@ -7,5 +7,5 @@
   <input type="text" class="form-control" #fname placeholder="{{logged.getLoggedUser().fname}}">
   <label for="lname">Last name</label>
   <input type="text" class="form-control" #lname placeholder="{{logged.getLoggedUser().lname}}">
-  <button (click)="updateUser(psw.value, fname.value, lname.value)">Update User</button>
+  <button class="btn-primary" (click)="updateUser(psw.value, fname.value, lname.value)">Update User</button>
 </div>

@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { LoggedUserService } from '../../services/logged-user.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-employee',
@@ -7,9 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class EmployeeComponent implements OnInit {
 
-  constructor() { }
+  constructor(private logged: LoggedUserService, private routes: Router) { }
 
   ngOnInit() {
+    if (!this.logged.getLoggedUser()) {
+      this.routes.navigate(['/']);
+    }
   }
 
 }

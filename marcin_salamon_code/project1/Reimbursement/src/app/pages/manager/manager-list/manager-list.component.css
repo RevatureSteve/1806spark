@@ -1,8 +1,7 @@
-button{
-    width: 20%;
-    margin: auto;
-}
-
 li{
     color: blue;
+}
+
+input{
+    width: 80px;
 }
