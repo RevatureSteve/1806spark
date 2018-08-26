@@ -32,7 +32,7 @@ img{
 }
 #word_box{
     position: absolute;
-    height: 100px;
+    height: 120px;
     width: 900px;
     background-color: rgb(32, 32, 32);
     border-style: solid;

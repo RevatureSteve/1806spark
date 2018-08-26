@@ -1,3 +1,10 @@
+var mainButtonNum = 0;
+var isManager;
+var current = {};
+var cReArray = {};
+var users = {};
+
+
 window.onload = function music() {  //home page music
     document.getElementById("page").src = "../pages/blank.html";
     var title = new Audio('../audio/town.wav');
@@ -5,20 +12,6 @@ window.onload = function music() {  //home page music
     title.loop = true;
     title.play();
 }
-
-var mainButtonNum = 0;
-var isManager;
-var current = {};
-
-var users = [{ id: 1, rid: 2, fname: "Touvan", lname: "Louihao", email: "t@gmail.com", pass: "pas" },
-{ id: 2, rid: 2, fname: "Deson", lname: "Louihao", email: "d@gmail.com", pass: "pass" },
-{ id: 3, rid: 1, fname: "Ichiyou", lname: "Mochizuki", email: "i@gmail.com", pass: "passs" }];
-
-var requestArray = [{ id: 1, mid: "none", amt: 100, desc: "oran berries", time: "8/18/2018", type: "2", status: "pending" },
-{ id: 2, mid: "none", amt: 50, desc: "apple for azuril", time: "8/14/2018", type: "2", status: "pending" },
-{ id: 3, mid: "none", amt: 675, desc: "overnight stay at Medicahm's guild", time: "8/11/2018", type: "3", status: "pending" },
-{ id: 4, mid: "none", amt: 3000, desc: "bag stollen by outlaw", time: "8/16/2018", type: "5", status: "pending" },
-{ id: 5, mid: "none", amt: 1300, desc: "Lapras ride accross the ocean", time: "8/10/2018", type: "1", status: "pending" }];
 
 function isLeader() {
     document.getElementById("mainButton").hidden = true;
@@ -28,7 +21,6 @@ function isLeader() {
 }
 
 function yes() {
-    /* window.history.pushState("object or string", "Title", "/manager");*/
     isManager = 1;
     document.getElementById("face").src = "../images/aw.png";
     document.getElementById("text").innerText = "Oh my! Well it truly is a pleasure to meet you! lets get you logged in";
@@ -36,7 +28,6 @@ function yes() {
 }
 
 function no() {
-    /* window.history.pushState("object or string", "Title", "/employee");*/
     isManager = 2;
     document.getElementById("face").src = "../images/neutral_smile.png";
     document.getElementById("text").innerText = "Alright then lets get you logged in";
@@ -44,28 +35,56 @@ function no() {
 }
 
 function login() {
-    var e = document.getElementById("ebox").value;
-    var p = document.getElementById("pbox").value;
-    for (var i = 0; i < users.length; i++) {
-        if (e == users[i].email && p == users[i].pass && users[i].rid == isManager) {
-            current = users[i];
-            newPage('../pages/blank.html');
-            document.getElementById("face").src = "../images/smile.png";
-            document.getElementById("text").innerText = "Ah there you are. How may I help you?";
-            if (isManager) {
-                mMain();
-            } else {
-                uMain();
-            }
-            return;
+    document.getElementById("loginButton").hidden = true;
+    document.getElementById("face").src = "../images/neutral_smile.png";
+    document.getElementById("text").innerText = "One moment please...";
+    data = {"email": document.getElementById("ebox").value, 
+            "password": document.getElementById("pbox").value,
+            "pos_id":isManager
+    }
+
+    fetch('http://localhost:8080/ERS/login', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: { 'Content-Type': 'application/json' }
+    }).then(response => {
+        rjson = response.json();
+        return rjson;
+    }).then(data => {
+        current = data
+        logged();
+    }).catch((err) => {
+        document.getElementById("face").src = "../images/uh.png";
+        document.getElementById("text").innerText = "Something went wrong with the system. I couldnt check our records.";
+        document.getElementById("loginButton").hidden = false;
+        console.error(err)
+    });
+}
+
+function logged() {
+    if (current != null) {
+        cReArray = current.userRes;
+        console.log(current);
+        console.log(cReArray);
+        newPage('../pages/blank.html');
+        document.getElementById("face").src = "../images/smile.png";
+        document.getElementById("text").innerText = "Ah there you are. How may I help you?";
+        if (isManager == 1) {
+            mMain();
+        } else {
+            uMain();
         }
+        return;
     }
     document.getElementById("face").src = "../images/confused.png";
     document.getElementById("text").innerText = "I cant seem to find you in our records. Try again, probably just a typo";
+    document.getElementById("loginButton").hidden = false;
 }
 
 //logout
 function logout() {
+    current = {};
+    cReArray = {};
     newPage('../pages/blank.html');
     document.getElementById("face").src = "../images/smile.png";
     document.getElementById("text").innerText = "All good? pleasure to be of service to you";
@@ -78,11 +97,9 @@ function logout() {
 function newPage(pageString) {
     let newPage = document.getElementById('page');
     fetch(pageString).then((resp) => {
-        //console.log(resp);
         nav = resp;
-        return resp.text(); // getting html not json!
+        return resp.text();
     }).then((text) => {
-        //console.log(text);
         newPage.innerHTML = text;
     })
 }
@@ -116,29 +133,6 @@ function dia() {
             document.getElementById("mainButton").innerText = "Continue";
             document.getElementById("face").src = "../images/happy_smile.png";
             document.getElementById("text").innerText = "Welcome to Riolu's Reimbursements!";
-            console.log("test1");
-
-
-
-            
-
-            fetch('http://localhost:8080/ERS/login?email=t@gmail.com&password=pass&pos_id=2')
-            .then((response) => {
-                console.log("test2");
-                console.log(response.json()); // getting html not json!
-                return response.json();
-            }).then(data => {
-                    re = data
-                    console.log("test3");
-                    console.log(re);
-                })
-                .catch((err) => console.error(err));
-
-
-
-
-
-            console.log("test4");
             break;
         case 1:
             document.getElementById("face").src = "../images/neutral_smile.png";
