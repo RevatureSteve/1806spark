@@ -218,6 +218,7 @@ function populateSearchTable() {
         cell2.innerHTML = JSON.stringify(searchData[i].description);
         cell3.innerHTML = JSON.stringify(searchData[i].timeStamp);
         cell4.innerHTML = JSON.stringify(searchData[i].r_id);
+        row.id = searchData[i].r_id;
         x++;
     }
     popped = true;

@@ -1,10 +1,11 @@
 <div id="sub-div">
         <hr>
-        <p id="profile-info">Search <span> <input id="userId" type="text" placeholder="User ID"> <select id="r_type" name="r_type">
+        <p id="profile-info">Search <span> <input id="userId" type="number" placeholder="User ID"> <select id="r_type" name="r_type">
                 <option value="1">Pending</option>
                 <option value="2">Approved</option>
                 <option value="3">Denied</option>
-            </select> <input id="lookUp" type="button" value="Search"></span></p>
+            </select> <input id="lookUp" type="button" value="Search"></span>
+            <input id="approved" type="button" value="✓" /><button id="denied">✖</button></p>
         <hr>
                 <div id="sectionz">
 
@@ -24,3 +25,13 @@
        
         
     </div>
+
+
+    <div id="transaction-table">
+        <h3>TRANSACTION</h3>
+    
+    <input type="button" value="Commit"> <span></span><input type="button" value="Cancel"></span>
+        <div id="transaction">
+            
+        </div>
+</div>

@@ -6,6 +6,9 @@ html {
     background-size: cover;
     background-attachment: fixed;
   }
+  h3{
+      font-family: 'Aldrich';
+  }
   #talos{
       margin-top: 5%;
       margin-left: 38%;
@@ -313,4 +316,35 @@ input{
     border-radius: 25px;
     padding: 0.5%;
     display: none;
+}
+#approved{
+background-color: green;
+height: 4%;
+float: right;
+margin-left: 1%;
+}
+#approved:hover{
+    background-color: white;
+}
+#denied{
+    background-color: red;
+    height: 4%;
+    float: right;
+}
+#denied:hover{
+    background-color: white;
+}
+#userId{
+    width: 10%;
+}
+#transaction-table{
+    background-color: aliceblue;
+    position: absolute;
+    margin-top: -9.2%;
+    margin-left: 40%;
+    border-style: outset;
+    border-width: thick;
+    border-color: darkgoldenrod;
+    box-shadow: 0px 0px 100px #000000;
+    text-align: center;
 }
