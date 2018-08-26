@@ -16,6 +16,7 @@ import { HomeComponent } from './home/home.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { ManagerComponent } from './manager/manager.component';
 import { HttpClientModule } from '@angular/common/http';
+import { ManagerProfileComponent } from './manager-profile/manager-profile.component';
 
 
 @NgModule({
@@ -25,7 +26,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     LoginComponent,
     EmployeeComponent,
-    ManagerComponent
+    ManagerComponent,
+    ManagerProfileComponent
   ],
   imports: [
     BrowserModule,

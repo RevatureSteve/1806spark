@@ -31,10 +31,11 @@ export class LoginComponent implements OnInit {
     this.inputUser = inputUser;
     if (inputUser) {
       this.currentUser.setCurrentUser(inputUser);
+      console.log(inputUser);
       if (inputUser.positionId === 1) {
-        this.router.navigate(['home/manager']);
+        this.router.navigate(['manager']);
       } else {
-        this.router.navigate(['login']);
+        this.router.navigate(['employee']);
       }
     } else {
       this.router.navigate(['login']);

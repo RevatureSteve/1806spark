@@ -1,3 +1,4 @@
+import { EmployeeComponent } from './employee/employee.component';
 import { ManagerComponent } from './manager/manager.component';
 import { NgModule } from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
@@ -9,8 +10,9 @@ export const routes: Routes = [
     {path: '', redirectTo: 'home', pathMatch: 'full'},
     {path: 'home', component: HomeComponent},
     {path: 'login', component: LoginComponent},
-    {path: '**', redirectTo: 'home' },
-    {path: 'manager', component: ManagerComponent}
+    {path: 'manager', component: ManagerComponent},
+    {path: 'employee', component: EmployeeComponent},
+    {path: '**', redirectTo: 'home'}
 ];
 
 
