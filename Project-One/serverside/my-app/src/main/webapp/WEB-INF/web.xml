@@ -67,4 +67,14 @@
     <servlet-name>AllPendingServlet</servlet-name>
     <url-pattern>/all</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeeServlet</display-name>
+    <servlet-name>EmployeeServlet</servlet-name>
+    <servlet-class>com.revature.servlet.EmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeServlet</servlet-name>
+    <url-pattern>/emp</url-pattern>
+  </servlet-mapping>
 </web-app>

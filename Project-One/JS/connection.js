@@ -96,6 +96,24 @@
     });
 
    }
+
+   
+   function allEmps(){
+   
+    fetch('http://localhost:8080/my-app/emp', {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'}
+    }).then(response => { 
+      return response.json(); 
+    }).then(data => { 
+      empList = data;
+      console.log(empList[0]);
+      populateEmpTable();
+    }).catch(err => {
+           console.log("[LOG]---------" + err );
+    });
+
+   }
     
     
     

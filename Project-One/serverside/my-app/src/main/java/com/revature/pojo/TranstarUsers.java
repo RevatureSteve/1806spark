@@ -28,6 +28,14 @@ public TranstarUsers(int u_id, String email, String password, String fname, Stri
 }
 
 
+public TranstarUsers(int int1, String string, String string2, String string3) {
+	this.u_id = int1;
+	this.fname = string;
+	this.lname = string2;
+	this.email = string3;
+}
+
+
 @Override
 public String toString() {
 	return "TranstarUsers [u_id=" + u_id + ", email=" + email + ", password=" + password + ", fname=" + fname

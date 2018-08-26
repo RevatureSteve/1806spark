@@ -24,11 +24,12 @@ public class TranstarUserDaoImpl implements TranstarUserDao{
 	public List<TranstarUsers> readUsers() {
 		List<TranstarUsers> users = new ArrayList<>();
 		try (Connection con = ConnectionsPropertiesUtil.newConnection()){
-			String sql = "SELECT * FROM users a INNER JOIN position b ON a.pos_id = b.pos_id";
+			String sql = "SELECT u_id,fname,lname,email FROM USERS " + 
+					"WHERE pos_id = 1";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
-				TranstarUsers user = new TranstarUsers(rs.getInt(1), rs.getString("email"), rs.getString("password"), rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"),rs.getString("pos_type"));
+				TranstarUsers user = new TranstarUsers(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4));
 				users.add(user);
 			}
 		} catch (SQLException e) {

@@ -3,6 +3,7 @@ let newUser;
 let newPendingReqs;
 let newResolvedReqs;
 let newAllReqs;
+let empList;
 let amount;
 let reqType;
 let desc;

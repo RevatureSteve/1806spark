@@ -42,12 +42,12 @@ function mgrTabs(num) {
             break;
 
         case 2:
-            fetch('pages/submit.html').then((resp) => {
+            fetch('pages/all-emp.html').then((resp) => {
                 nav = resp;
                 return resp.text();
             }).then((text) => {
                 navbar.innerHTML = text;
-
+                allEmps();
 
             });
             break;
@@ -145,6 +145,25 @@ cell4.innerHTML = JSON.stringify(newAllReqs[i].img);
 cell5.innerHTML = JSON.stringify(newAllReqs[i].rq_status);
 cell6.innerHTML = JSON.stringify(newAllReqs[i].timeStamp);
 cell7.innerHTML = JSON.stringify(newAllReqs[i].r_id);
+x++;
+}
+}
+function populateEmpTable(){
+    console.log("popping table " + empList);
+    table = document.getElementById('table3');
+let x = 1; 
+for(let i = 0; i < empList.length; i++) {
+var row = table.insertRow(x);
+var cell1 = row.insertCell(0);
+var cell2 = row.insertCell(1);
+var cell3 = row.insertCell(2);
+var cell4 = row.insertCell(3);
+
+
+cell1.innerHTML = JSON.stringify(empList[i].u_id);
+cell2.innerHTML = JSON.stringify(empList[i].fname);
+cell3.innerHTML = JSON.stringify(empList[i].lname);
+cell4.innerHTML = JSON.stringify(empList[i].email);
 x++;
 }
 }
