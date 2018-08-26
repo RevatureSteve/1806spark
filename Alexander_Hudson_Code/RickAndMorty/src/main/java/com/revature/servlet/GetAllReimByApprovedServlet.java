@@ -23,15 +23,14 @@ public class GetAllReimByApprovedServlet extends HttpServlet{
 	
 	protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		System.out.println("All Reimbursements by Approved -GET");
-		
-		int emp_U_Id = Integer.parseInt(req.getParameter("emp_U_Id"));
+	
 		int rq_Status_Id = Integer.parseInt(req.getParameter("rq_Status_Id"));
 	
 		System.out.println("anything");
 		
 		//converting to json
 		
-			List<Reimbursement> re = appService.getAllReimbursementsByApproved(emp_U_Id, rq_Status_Id );
+			List<Reimbursement> re = appService.getAllReimbursementsByApproved(rq_Status_Id );
 			ObjectMapper mapper = new ObjectMapper();
 			
 			//employee json information

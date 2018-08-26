@@ -20,15 +20,16 @@ public class GetAllReimByStatusAndIdServlet extends HttpServlet{
 	protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		System.out.println("All Reimbursements by Status and Employee Id -GET");
 		
-	System.out.println("All Reimbursements by Denied -GET");
-		
-		List <Reimbursement> re = appService.getAllReimbursementsByStatusAndId(2, 0);
+		int emp_U_Id = Integer.parseInt(req.getParameter("emp_U_Id"));
+	
+		List <Reimbursement> re = appService.getAllReimbursementsByStatusAndId(emp_U_Id);
 		
 		//converting to json
 			ObjectMapper mapper = new ObjectMapper();
 			
 			//employee json information
 			String json = mapper.writeValueAsString(re);
+			resp.setContentType("application/json");
 			
 			//format into text output
 			PrintWriter out = resp.getWriter();

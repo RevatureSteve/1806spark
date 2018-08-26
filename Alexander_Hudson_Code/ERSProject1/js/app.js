@@ -39,7 +39,6 @@ function mgrPage () {
         }).then((text) => {
             navbar.innerHTML = text;
             topBarMgr();
-            getAllReim();
         });
     }
 
@@ -52,11 +51,12 @@ function mgrAllEmp (){
         }).then((text) => {
             navbar.innerHTML = text;
             topBarMgr();
+            getAllEmp();
         });
     }
 
     function mgrApproved (){
-        console.log('loading mgrApproved');
+        console.log('loading All Approved');
             let navbar = document.getElementById('content');
             fetch('Pages/mgrApproved.html').then((resp) => {
                 nav = resp;
@@ -64,11 +64,12 @@ function mgrAllEmp (){
             }).then((text) => {
                 navbar.innerHTML = text;
                 topBarMgr();
+                viewApprove();
             });
         }
 
     function mgrPend (){
-        console.log('loading mgr Pending');
+        console.log('loading All Pending');
             let navbar = document.getElementById('content');
             fetch('Pages/mgrPend.html').then((resp) => {
                 nav = resp;
@@ -76,6 +77,33 @@ function mgrAllEmp (){
             }).then((text) => {
                 navbar.innerHTML = text;
                 topBarMgr();
+                viewPending();
+               });
+        }
+
+    function mgrDenied (){
+        console.log('loading All Denied');
+            let navbar = document.getElementById('content');
+            fetch('Pages/mgrDenied.html').then((resp) => {
+                nav = resp;
+                return resp.text();
+            }).then((text) => {
+                navbar.innerHTML = text;
+                topBarMgr();
+                viewDenied();
+               });
+        }
+
+    function mgrAllReim (){
+        console.log('loading mgr All Reimbursements');
+            let navbar = document.getElementById('content');
+            fetch('Pages/mgrAllReim.html').then((resp) => {
+                nav = resp;
+                return resp.text();
+            }).then((text) => {
+                navbar.innerHTML = text;
+                topBarMgr();
+                getAllReim();
                });
         }
 
@@ -102,8 +130,10 @@ function topBarMgr (){
         navbar.innerHTML = text;
         document.getElementById('mgrReim').addEventListener('click', mgrPage);
         document.getElementById('ViewEmp').addEventListener('click', mgrAllEmp);
+        document.getElementById('ViewAll').addEventListener('click', mgrAllReim);
         document.getElementById('ViewApp').addEventListener('click', mgrApproved);
         document.getElementById('ViewPend').addEventListener('click', mgrPend);
+        document.getElementById('ViewDenied').addEventListener('click', mgrDenied);
     });
 }
 
@@ -152,7 +182,7 @@ function viewReim (){
         return resp.text();
     }).then((text) => {
         navbar.innerHTML = text;
-       viewPending();
+       getAllEmp();
     });
     
 }

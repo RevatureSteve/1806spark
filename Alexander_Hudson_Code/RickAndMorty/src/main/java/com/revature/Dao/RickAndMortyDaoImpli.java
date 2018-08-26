@@ -143,23 +143,23 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 	}
 	
 	
-	public List <Reimbursement> getAllReimbursementsByApproved( int emp_U_Id, int rq_Status_Id){
+	public List <Reimbursement> getAllReimbursementsByApproved(int rq_Status_Id){
 		List <Reimbursement> re = new ArrayList<>();
 		System.out.println("Connected");
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			
 		
-		String sql = "SELECT * FROM reimbursement WHERE rq_Status_Id = 1 AND emp_U_Id = ?";
+		String sql = "SELECT * FROM reimbursement WHERE rq_Status_Id = 1";
 		
 		
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setInt(1, emp_U_Id);
+
 		
 		System.out.println("Retrieving Information");
 		ResultSet rs = ps.executeQuery();
 		
-		if (rs.next()) {
+		while (rs.next()) {
 			re.add(new Reimbursement(rs.getInt("R_ID"), rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getTimestamp("TIME_SUBMISSION"), rs.getInt("RQ_TYPE"), rs.getInt("RQ_STATUS_ID")));
 		}
 		
@@ -173,15 +173,14 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 	}
 	
 	
-	public List <Reimbursement> getAllReimbursementsByPending(int rq_status_id, int emp_U_Id){
+	public List <Reimbursement> getAllReimbursementsByPending(int rq_status_id){
 		List <Reimbursement> re = new ArrayList<>();
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 		
-			String sql = "SELECT * FROM reimbursement WHERE rq_status_id = 2 AND emp_U_Id = ?";
+			String sql = "SELECT * FROM reimbursement WHERE rq_Status_Id = 2";
 		
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setInt(1, emp_U_Id);
 		
 		ResultSet rs = ps.executeQuery();
 		
@@ -199,16 +198,15 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 	}
 	
 	
-	public List <Reimbursement> getAllReimbursementsByDenied(int rq_status_id, int emp_U_Id){
+	public List <Reimbursement> getAllReimbursementsByDenied(int rq_status_id){
 		List <Reimbursement> re = new ArrayList<>();
 		System.out.println("Connected");
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 		
-			String sql = "SELECT * FROM reimbursement WHERE rq_status_id = 3 AND emp_U_Id = ?";
+			String sql = "SELECT * FROM reimbursement WHERE rq_Status_Id = 3";
 		
 		PreparedStatement ps = conn.prepareStatement(sql);
-		ps.setInt(1, emp_U_Id);
 		
 		System.out.println("Retrieving Information");
 		
@@ -230,22 +228,20 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 	
 	
 	
-	public List <Reimbursement> getAllReimbursementsByStatusAndId(int rq_status_id, int emp_u_id){
+	public List <Reimbursement> getAllReimbursementsByStatusAndId(int emp_U_Id){
 		List <Reimbursement> re = new ArrayList<>();
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			System.out.println("Connected");
 		
-		String sql = "SELECT * FROM reimbursement WHERE rq_status_id =? AND emp_u_id = ?";
+		String sql = "SELECT * FROM reimbursement WHERE emp_U_Id = ?";
 		
 		PreparedStatement ps = conn.prepareStatement(sql);
 		
-		ps.setInt(1, rq_status_id);
-		ps.setInt(2, emp_u_id);
+		ps.setInt(1, emp_U_Id);
 		System.out.println("Retrieving Information");
 		
 		ResultSet rs = ps.executeQuery();
-		System.out.println(re);
 		
 		while (rs.next()) {
 			re.add(new Reimbursement(rs.getInt("R_ID"), rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getTimestamp("TIME_SUBMISSION"), rs.getInt("RQ_TYPE"), rs.getInt("RQ_STATUS_ID")));
@@ -255,7 +251,7 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-
+		System.out.println(re);
 		return re;
 		
 	}

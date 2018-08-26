@@ -21,10 +21,10 @@ public interface RickAndMortyDao {
 	public Users getUserByEmail(String email, String password);
 	public List<Users> getAllUsers();
 	public List <Reimbursement> getAllReimbursements();
-	public List <Reimbursement> getAllReimbursementsByApproved(int rq_Status_Id, int emp_U_Id);
-	public List <Reimbursement> getAllReimbursementsByPending(int rq_Status_Id, int emp_U_Id);
-	public List <Reimbursement> getAllReimbursementsByDenied(int rq_Status_Id, int emp_U_Id);
-	public List <Reimbursement> getAllReimbursementsByStatusAndId(int rq_Status_Id, int emp_U_Id);
+	public List <Reimbursement> getAllReimbursementsByApproved(int rq_Status_Id);
+	public List <Reimbursement> getAllReimbursementsByPending(int rq_Status_Id);
+	public List <Reimbursement> getAllReimbursementsByDenied(int rq_Status_Id);
+	public List <Reimbursement> getAllReimbursementsByStatusAndId(int emp_U_Id);
 	
 	//UPDATE------------------------------------------------------------------------------------------------------
 	

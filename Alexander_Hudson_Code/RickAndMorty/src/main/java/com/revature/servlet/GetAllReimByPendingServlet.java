@@ -21,14 +21,14 @@ public class GetAllReimByPendingServlet extends HttpServlet{
 	protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 		System.out.println("All Reimbursements by Pending -GET");
 		
-		int emp_U_Id = Integer.parseInt(req.getParameter("emp_U_Id"));
+//		int emp_U_Id = Integer.parseInt(req.getParameter("emp_U_Id"));
 		int rq_Status_Id = Integer.parseInt(req.getParameter("rq_Status_Id"));
 	
 		System.out.println("anything");
 		
 		//converting to json
 		
-			List<Reimbursement> re = appService.getAllReimbursementsByPending(emp_U_Id, rq_Status_Id );
+			List<Reimbursement> re = appService.getAllReimbursementsByPending(rq_Status_Id );
 			ObjectMapper mapper = new ObjectMapper();
 			
 			//employee json information

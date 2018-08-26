@@ -1,0 +1,88 @@
+#table6 {
+    position: absolute;
+    margin-top: 350px;
+    color: white;
+    background-color: black;
+    width: 50%;
+    margin-left: 395px;
+    opacity: .8;
+
+}
+
+#table5 {
+    position: absolute;
+    margin-top: 350px;
+    color: green;
+    background-color: black;
+    width: 50%;
+    margin-left: 395px;
+    opacity: .8;
+}
+
+#table4 {
+    position: absolute;
+    margin-top: 350px;
+    color: green;
+    background-color: black;
+    width: 50%;
+    margin-left: 395px;
+    opacity: .8;
+}
+
+#table3 {
+    position: absolute;
+    margin-top: 350px;
+    color: green;
+    background-color: black;
+    width: 50%;
+    margin-left: 395px;
+    opacity: .8; 
+}
+
+#table2 {
+    position: absolute;
+    margin-top: 350px;
+    color: green;
+    background-color: black;
+    width: 50%;
+    margin-left: 395px;
+    opacity: .8;
+}
+
+#table {
+    position: absolute;
+    margin-top: 350px;
+    color: green;
+    background-color: black;
+    width: 50%;
+    margin-left: 395px;
+    opacity: .8;
+}
+
+#title2 {
+    position: fixed;
+    margin-left: 27%;
+    margin-top: 25px;
+    color: black;
+    font-size: 100px;
+    text-decoration-style: wavy;
+    text-shadow: 10px 10px 12px #4CAF50, 0 0 10px black;
+    opacity: .8;
+    font-family: 'Gill Sans', 'Gill Sans MT', 'Calibri', 'Trebuchet MS', sans-serif;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: white;
+}
+
+#portal4 {
+    z-index: -1;
+    position: fixed;
+    margin-left: 39%;
+    margin-top: 3%;
+    opacity: .6;
+    
+   
+}
+
+#portal4:hover {
+    opacity: .4;
+}

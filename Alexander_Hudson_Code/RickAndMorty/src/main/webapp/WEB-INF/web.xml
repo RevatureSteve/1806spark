@@ -57,6 +57,19 @@
   </servlet-mapping>
   
   
+  <servlet>
+  <servlet-name>allEmpReim</servlet-name>
+  <servlet-class>com.revature.servlet.GetAllReimByStatusAndIdServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>allEmpReim</servlet-name>
+  <url-pattern>/reim/empId</url-pattern>
+ 
+  </servlet-mapping>
+  
+  
+  
   
    <servlet>
   <servlet-name>allReimApproved</servlet-name>
