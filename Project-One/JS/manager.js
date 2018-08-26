@@ -74,7 +74,7 @@ function mgrTabs(num) {
                 navbar.innerHTML = text;
                 document.getElementById('news-btn-mgr').style.backgroundColor = "yellow";
                 document.getElementById('news-btn-mgr').style.fontSize = "97%";
-
+                getAllResolvedReqs();
             });
             break;
         case 6:

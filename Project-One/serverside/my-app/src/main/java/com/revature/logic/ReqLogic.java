@@ -44,6 +44,10 @@ public class ReqLogic {
 		List<TranstarReims> reqs = rDao.getAllPendingRequests();
 		return reqs;
 	}
+	public List<TranstarReims> getAllResolvedReqs() {
+		List<TranstarReims> reqs = rDao.getAllRequests();
+		return reqs;
+	}
 	
 	public int createRequest(int emp_id, int amount, String desc, int rq_type) {
 		int rowsAffected = rDao.submitReimbursment(emp_id, amount, desc, rq_type);

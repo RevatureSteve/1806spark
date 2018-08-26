@@ -69,7 +69,15 @@ INNER JOIN rq_status
 ON reimbursement.rq_status_id = rq_status.rq_status_id 
 WHERE rq_status.rq_status_id = 1;
 
+SELECT u_id,fname,lname,email FROM USERS
+WHERE pos_id = 1;
 
+SELECT * FROM reimbursement
+INNER JOIN rb_type 
+ON reimbursement.rb_type_id = rb_type.rb_type_id 
+INNER JOIN rq_status 
+ON reimbursement.rq_status_id = rq_status.rq_status_id 
+WHERE reimbursement.rq_status_id = 2 OR reimbursement.rq_status_id = 3;
 
 SELECT * FROM reimbursement
 INNER JOIN rb_type 

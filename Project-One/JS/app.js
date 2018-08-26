@@ -4,6 +4,7 @@ let newResolvedReqs;
 let newAllReqs;
 let empList;
 let searchData;
+let newAllResolvedReqs;
 let amount;
 let reqType;
 let desc;

@@ -133,6 +133,22 @@
     });
 
    }
+   function getAllResolvedReqs(){
+
+    fetch(' http://localhost:8080/my-app/resolvedreqs', {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'}
+    }).then(response => { 
+      return response.json(); 
+    }).then(data => { 
+      newAllResolvedReqs = data;
+      console.log(newAllResolvedReqs);
+    }).catch(err => {
+           console.log("[LOG]---------" + err );
+    });
+
+   }
+  
     
     
     

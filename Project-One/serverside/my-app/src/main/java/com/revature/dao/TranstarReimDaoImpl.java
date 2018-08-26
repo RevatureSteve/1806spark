@@ -157,4 +157,34 @@ public class TranstarReimDaoImpl implements TranstarReimDao{
 		
 	}
 	
+
+public List<TranstarReims> getAllRequests() {
+		
+		List<TranstarReims> reqs = new ArrayList<>();
+		try (Connection con = ConnectionsPropertiesUtil.newConnection()){
+			String sql = "	SELECT * FROM reimbursement " + 
+					"INNER JOIN rb_type " + 
+					"ON reimbursement.rb_type_id = rb_type.rb_type_id " + 
+					"INNER JOIN rq_status " + 
+					"ON reimbursement.rq_status_id = rq_status.rq_status_id " + 
+					"WHERE reimbursement.rq_status_id = 2 OR reimbursement.rq_status_id = 3";
+			PreparedStatement ps = con.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				TranstarReims req = new TranstarReims(rs.getInt(1), rs.getInt(2), rs.getInt(3)
+						, rs.getInt(4), rs.getString("description"), rs.getBlob("img")
+						,rs.getString("time_submission"), rs.getString("rb_type")
+						, rs.getString("rq_status"));
+				reqs.add(req);
+			}
+			
+		} catch (SQLException e) {
+			System.out.println("SQL fail");
+			e.printStackTrace();
+		}
+		return reqs;
+		
+	}
+	
+	
 }

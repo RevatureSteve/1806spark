@@ -77,4 +77,14 @@
     <servlet-name>EmployeeServlet</servlet-name>
     <url-pattern>/emp</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ResolvedReqsServlet</display-name>
+    <servlet-name>ResolvedReqsServlet</servlet-name>
+    <servlet-class>com.revature.servlet.ResolvedReqsServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ResolvedReqsServlet</servlet-name>
+    <url-pattern>/resolvedreqs</url-pattern>
+  </servlet-mapping>
 </web-app>
