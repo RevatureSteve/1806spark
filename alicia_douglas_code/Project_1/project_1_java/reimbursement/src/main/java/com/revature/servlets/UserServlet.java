@@ -73,11 +73,6 @@ public class UserServlet extends HttpServlet {
 		System.out.println("After print to json --servlet");
 	}
 	
-//	@Override
-//	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-//		// TODO Auto-generated method stub
-//		super.doPut(req, resp);
-//	}
 
 
 

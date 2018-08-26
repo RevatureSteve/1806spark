@@ -44,9 +44,6 @@ public class LoginServlet extends HttpServlet {
 		email = node.get("email").textValue();
 		password = node.get("password").textValue();
 
-//		currentUser.setEmail(email);
-//		currentUser.setPassword(password);
-
 		currentUser = new UserBuisnessLogic().login(email, password);
 
 		System.out.println("email: " + email + " password: " + password);
@@ -62,12 +59,6 @@ public class LoginServlet extends HttpServlet {
 			response.getWriter().write("");
 		}
 		
-		
-		
-//		String json = mapper.writeValueAsString(currentUser);
-//		
-//		response.setContentType("application/json");
-//		response.getWriter().write(json);
 		
 	}
 
