@@ -1,13 +1,14 @@
-// READ TODO RAW JS to learn more on this method!
 let newUser;
 let newPendingReqs;
 let newResolvedReqs;
 let newAllReqs;
 let empList;
+let searchData;
 let amount;
 let reqType;
 let desc;
 let resultSet;
+popped = false;
 window.onload = function foo() {
 
     if (document.getElementById('content')) {

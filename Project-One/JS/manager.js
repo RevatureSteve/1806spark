@@ -1,7 +1,7 @@
 
 
 function managerLogged() {
-    
+
     let navbar = document.getElementById('loaded-content');
     fetch('pages/manager.html').then((resp) => {
         nav = resp;
@@ -86,7 +86,7 @@ function mgrTabs(num) {
                 navbar.innerHTML = text;
                 document.getElementById('search-emp').style.backgroundColor = "yellow";
                 document.getElementById('search-emp').style.fontSize = "97%";
-
+                document.getElementById('lookUp').addEventListener('click', searchEmp);
             });
             break;
 
@@ -153,45 +153,72 @@ function mgrActiveBtn(eventId) {
             break;
     }
 }
-function createAllPendingTable(){
+function createAllPendingTable() {
     table = document.getElementById('table2');
-let x = 1; 
-for(let i = 0; i < newAllReqs.length; i++) {
-var row = table.insertRow(x);
-var cell1 = row.insertCell(0);
-var cell2 = row.insertCell(1);
-var cell3 = row.insertCell(2);
-var cell4 = row.insertCell(3);
-var cell5 = row.insertCell(4);
-var cell6 = row.insertCell(5);
-var cell7 = row.insertCell(6);
+    let x = 1;
+    for (let i = 0; i < newAllReqs.length; i++) {
+        var row = table.insertRow(x);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
 
-cell1.innerHTML = JSON.stringify(newAllReqs[i].amt);
-cell2.innerHTML = JSON.stringify(newAllReqs[i].description);
-cell3.innerHTML = JSON.stringify(newAllReqs[i].emp_u_id);
-cell4.innerHTML = JSON.stringify(newAllReqs[i].img);
-cell5.innerHTML = JSON.stringify(newAllReqs[i].rq_status);
-cell6.innerHTML = JSON.stringify(newAllReqs[i].timeStamp);
-cell7.innerHTML = JSON.stringify(newAllReqs[i].r_id);
-x++;
+        cell1.innerHTML = JSON.stringify(newAllReqs[i].amt);
+        cell2.innerHTML = JSON.stringify(newAllReqs[i].description);
+        cell3.innerHTML = JSON.stringify(newAllReqs[i].emp_u_id);
+        cell4.innerHTML = JSON.stringify(newAllReqs[i].img);
+        cell5.innerHTML = JSON.stringify(newAllReqs[i].rq_status);
+        cell6.innerHTML = JSON.stringify(newAllReqs[i].timeStamp);
+        cell7.innerHTML = JSON.stringify(newAllReqs[i].r_id);
+        x++;
+    }
 }
-}
-function populateEmpTable(){
+function populateEmpTable() {
     console.log("popping table " + empList);
     table = document.getElementById('table3');
-let x = 1; 
-for(let i = 0; i < empList.length; i++) {
-var row = table.insertRow(x);
-var cell1 = row.insertCell(0);
-var cell2 = row.insertCell(1);
-var cell3 = row.insertCell(2);
-var cell4 = row.insertCell(3);
+    let x = 1;
+    for (let i = 0; i < empList.length; i++) {
+        var row = table.insertRow(x);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
 
 
-cell1.innerHTML = JSON.stringify(empList[i].u_id);
-cell2.innerHTML = JSON.stringify(empList[i].fname);
-cell3.innerHTML = JSON.stringify(empList[i].lname);
-cell4.innerHTML = JSON.stringify(empList[i].email);
-x++;
+        cell1.innerHTML = JSON.stringify(empList[i].u_id);
+        cell2.innerHTML = JSON.stringify(empList[i].fname);
+        cell3.innerHTML = JSON.stringify(empList[i].lname);
+        cell4.innerHTML = JSON.stringify(empList[i].email);
+        x++;
+    }
 }
+function populateSearchTable() {
+    console.log("popping table " + searchData);
+
+    table = document.getElementById('table4');
+    let x = 1;
+    if (table.rows.length > 1) {
+        for(let y = table.rows.length -1; y > 0; y-- ){
+            console.log("table is " + y);
+            table.deleteRow(y);
+        }
+}
+    for (let i = 0; i < searchData.length; i++) {
+        
+        let row = table.insertRow(x);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+
+        cell1.innerHTML = JSON.stringify(searchData[i].amt);
+        cell2.innerHTML = JSON.stringify(searchData[i].description);
+        cell3.innerHTML = JSON.stringify(searchData[i].timeStamp);
+        cell4.innerHTML = JSON.stringify(searchData[i].r_id);
+        x++;
+    }
+    popped = true;
 }

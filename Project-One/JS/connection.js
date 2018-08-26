@@ -114,6 +114,25 @@
     });
 
    }
+   function searchEmp(){
+
+    let userId = document.getElementById('userId').value;
+    let req = document.getElementById('r_type').value;
+    console.log(userId + " " + req );
+    fetch('http://localhost:8080/my-app/pending?req_type='+ req +'&u_id='+ userId, {
+        method: 'GET',
+        headers: {'Content-Type': 'application/json'}
+    }).then(response => { 
+      return response.json(); 
+    }).then(data => { 
+      searchData = data;
+      console.log(searchData[0]);
+      populateSearchTable();
+    }).catch(err => {
+           console.log("[LOG]---------" + err );
+    });
+
+   }
     
     
     
