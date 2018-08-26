@@ -143,6 +143,7 @@
     }).then(data => { 
       newAllResolvedReqs = data;
       console.log(newAllResolvedReqs);
+      populateReqTable();
     }).catch(err => {
            console.log("[LOG]---------" + err );
     });

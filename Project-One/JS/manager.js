@@ -55,12 +55,12 @@ function mgrTabs(num) {
             break;
 
         case 3:
-            fetch('pages/pending.html').then((resp) => {
+            fetch('pages/view-reqs.html').then((resp) => {
                 nav = resp;
                 return resp.text();
             }).then((text) => {
                 navbar.innerHTML = text;
-
+                getAllResolvedReqs();
 
             });
             break;
@@ -74,7 +74,7 @@ function mgrTabs(num) {
                 navbar.innerHTML = text;
                 document.getElementById('news-btn-mgr').style.backgroundColor = "yellow";
                 document.getElementById('news-btn-mgr').style.fontSize = "97%";
-                getAllResolvedReqs();
+
             });
             break;
         case 6:
@@ -201,13 +201,13 @@ function populateSearchTable() {
     table = document.getElementById('table4');
     let x = 1;
     if (table.rows.length > 1) {
-        for(let y = table.rows.length -1; y > 0; y-- ){
+        for (let y = table.rows.length - 1; y > 0; y--) {
             console.log("table is " + y);
             table.deleteRow(y);
         }
-}
+    }
     for (let i = 0; i < searchData.length; i++) {
-        
+
         let row = table.insertRow(x);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
@@ -219,6 +219,43 @@ function populateSearchTable() {
         cell3.innerHTML = JSON.stringify(searchData[i].timeStamp);
         cell4.innerHTML = JSON.stringify(searchData[i].r_id);
         row.id = searchData[i].r_id;
+        x++;
+    }
+    popped = true;
+}
+function populateReqTable() {
+    console.log("popping table " + newAllResolvedReqs);
+
+    table = document.getElementById('table5');
+    let x = 1;
+    if (table.rows.length > 1) {
+        for (let y = table.rows.length - 1; y > 0; y--) {
+            console.log("table is " + y);
+            table.deleteRow(y);
+        }
+    }
+    for (let i = 0; i < newAllResolvedReqs.length; i++) {
+
+        var row = table.insertRow(x);
+        var cell1 = row.insertCell(0);
+        var cell2 = row.insertCell(1);
+        var cell3 = row.insertCell(2);
+        var cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+        var cell6 = row.insertCell(5);
+        var cell7 = row.insertCell(6);
+        var cell8 = row.insertCell(7);
+        var cell9 = row.insertCell(8);
+
+        cell1.innerHTML = JSON.stringify(newAllResolvedReqs[i].amt);
+        cell2.innerHTML = JSON.stringify(newAllResolvedReqs[i].description);
+        cell3.innerHTML = JSON.stringify(newAllResolvedReqs[i].emp_u_id);
+        cell4.innerHTML = JSON.stringify(newAllResolvedReqs[i].img);
+        cell5.innerHTML = JSON.stringify(newAllResolvedReqs[i].mgr_u_id);
+        cell6.innerHTML = JSON.stringify(newAllResolvedReqs[i].rb_type);
+        cell7.innerHTML = JSON.stringify(newAllResolvedReqs[i].rq_status);
+        cell8.innerHTML = JSON.stringify(newAllResolvedReqs[i].timeStamp);
+        cell9.innerHTML = JSON.stringify(newAllResolvedReqs[i].r_id);
         x++;
     }
     popped = true;
