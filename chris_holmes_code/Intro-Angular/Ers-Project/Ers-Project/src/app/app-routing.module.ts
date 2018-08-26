@@ -1,12 +1,14 @@
-import { UsersComponent } from './users/users.component';
+import { EmployeeHomepageComponent } from './employee-homepage/employee-homepage.component';
+import { ManagerReimbursementsComponent } from './manager-reimbursements/manager-reimbursements.component';
+import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
 
-const routes: Routes = [
-  {path: 'users',
-  component: UsersComponent
-}
+export const routes: Routes = [
+  {path: 'login', component: LoginComponent},
+  {path: 'reimbursements', component: ManagerReimbursementsComponent},
+  {path: 'employee-homepage', component: EmployeeHomepageComponent}
 ];
 
 @NgModule({

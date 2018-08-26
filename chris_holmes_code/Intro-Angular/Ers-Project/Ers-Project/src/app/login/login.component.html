@@ -1,0 +1,14 @@
+<form (ngSubmit)="login()">
+  <!-- <div class = "form-control"> -->
+<input name="email" type="text" class="form-control" [(ngModel)]="inputUser.email" id="email" placeholder="Enter email">
+
+<input type="password" name = "password" [(ngModel)]="inputUser.password" class="form-control" id="password" placheolder="Enter password">
+<button type="submit" class="btn btn-secondary">Submit</button>
+  <!-- </div>  -->
+<div>
+  {{validUser.email}}
+  {{validUser.uId}}
+</div>
+
+
+</form>
