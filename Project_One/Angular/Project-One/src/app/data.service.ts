@@ -1,3 +1,4 @@
+import { Users } from './models/Users';
 import { Reimbursement } from './models/Reimbursement';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
@@ -31,7 +32,7 @@ export class DataService {
     }
     // GetUserByEmail Servlet
     getUser() {
-        return this.http.get('http://localhost:8080/ProjectOne/user/email')
+        return this.http.get<Users>('http://localhost:8080/ProjectOne/user/email')
     }
     postReimb() {
         return this.http.get('http://localhost:8080/ProjectOne/reimbursement/create')

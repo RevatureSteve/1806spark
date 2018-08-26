@@ -1,3 +1,4 @@
+import { LoggedInService } from './../../logged-in.service';
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Users } from './../../models/Users';
@@ -13,50 +14,57 @@ export class LoginComponent implements OnInit {
   inputUser: Users; // Setting the information inputted as inputUser
   validUser = null; // Setting the validUser as null
 
-  constructor(private httpClient: HttpClient, private routes: Router ) { }
+  constructor(private httpClient: HttpClient, private routes: Router, private loggedInService: LoggedInService ) { }
 
   ngOnInit() {
     this.validUser = null;
     // Setting the input value into the parameters below
-    this.inputUser = {
-      u_Id: 0,
-      email: '',
-      password: '',
-      fname: '',
-      name: '',
-      pos_Id: 0
-    };
   }
 
   // verifying logic for user that's logging in
-  loggingInUser(user: Users): void {
+  loggingInUser(email, password): void {
     console.log('service: loggingInUser');
-    this.httpClient.post('http://localhost:8080/ProjectOne/reimbursement/v', user).subscribe(
+    this.loggedInService.getUser(email, password).subscribe(
       succ => {
         console.log('login successful');
         console.dir(succ);
-        localStorage.setItem('user', JSON.stringify(succ));
-        this.setUser();
+        this.changePage(succ);
 
         // to redirect to either manager or employee
-        if (this.validUser.pos_Id === 1) {
-          this.routes.navigate(['/overseer']);
-        }
-        if (this.validUser.pos_Id  === 2) {
-          this.routes.navigate(['/dweller']);
-        }
+        // if (this.inputUser.pos_Id === 1) {
+        //   this.routes.navigate(['/overseer']);
+        // }
+        // if (this.validUser.pos_Id  === 2) {
+        //   this.routes.navigate(['/dweller']);
+        // }
       },
       err => alert('login failed')
     );
   }
 
-  // function to set user if the user is VALID!
-  setUser() {
-    this.validUser = JSON.parse(localStorage.getItem('user'));
+  changePage(inputUser) {
+    this.inputUser = inputUser;
+    if (inputUser) {
+      this.loggedInService.setLoggedInUser(inputUser);
+      console.log(inputUser);
+      if (inputUser.pos_Id === 1) {
+        this.routes.navigate(['/overseer']);
+      } else {
+        this.routes.navigate(['/dweller']);
+      }
+    } else {
+      this.routes.navigate(['/login']);
+    }
   }
 
+
+  // function to set user if the user is VALID!
+  // setUser() {
+  //   this.validUser = JSON.parse(localStorage.getItem('user'));
+  // }
+
   // login function to set valid user to inputUser
-  login() {
-    this.loggingInUser(this.inputUser);
-  }
+  // login() {
+  //   this.loggingInUser(this.inputUser);
+  // }
 }
