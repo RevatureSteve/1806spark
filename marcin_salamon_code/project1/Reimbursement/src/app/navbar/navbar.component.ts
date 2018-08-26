@@ -8,11 +8,9 @@ import { LoggedUserService } from '../services/logged-user.service';
   styleUrls: ['./navbar.component.css']
 })
 export class NavbarComponent implements OnInit {
-  active: string[];
   constructor(private logged: LoggedUserService, private routes: Router) { }
 
   ngOnInit() {
-    this.active = ['active', '', '', '', ''];
   }
 
   logout(): void {

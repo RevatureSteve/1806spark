@@ -1,6 +1,6 @@
 <div *ngIf='decisions.length !== 0'>
     <h1>List of Decisions to commit</h1>
-    <li *ngFor="let d of createViewable()" class="list-group-item list-group-item-action list-group-item-success">
+    <li *ngFor="let d of createViewable()" class="list-group-item list-group-item-action list-group-item-{{style[d.rq_statusId]}}">
         <div>{{d.description}}</div>
         <div>{{d.employee.fname}} {{d.employee.lname}}</div>
         <button (click)='delete(d)'>Cancel</button>

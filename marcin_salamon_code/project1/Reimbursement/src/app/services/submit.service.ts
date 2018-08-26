@@ -21,7 +21,6 @@ export class SubmitService {
       rqTypeId: id
     };
     console.log(reimb);
-    // return this.http.post('http://18.223.123.204:8080/Reimbursement-0.0.1-SNAPSHOT/employee/reimbursements/submit', reimb);
-    return this.http.post<number>('http://localhost:8080/Reimbursement/employee/reimbursements/submit', reimb);
+    return this.http.post<number>('http://18.223.123.204:8080/Reimbursement-0.0.1-SNAPSHOT/employee/reimbursements/submit', reimb);
   }
 }

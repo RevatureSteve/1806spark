@@ -12,6 +12,7 @@ import { ReimbursementListService } from '../../../services/reimbursement-list.s
 export class DecisionsComponent implements OnInit {
   decisions: Decision[] = DecisionsService.decisions;
   reimbursements: Reimbursement[];
+  style: string[] = ['', 'primary', 'success', 'danger'];
   constructor(private decisionService: DecisionsService, private reimbService: ReimbursementListService) { }
 
   ngOnInit() {
@@ -32,6 +33,7 @@ export class DecisionsComponent implements OnInit {
     this.decisions.forEach(d => {
       this.reimbursements.forEach(r => {
         if (r.rId === d.rId) {
+          r.rq_statusId = d.rq_statusId;
           reimb.push(r);
         }
       });
