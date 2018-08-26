@@ -88,36 +88,19 @@
     width: 100%;
 }
 
-
-/* Bordered form */
-form {
-    position: fixed;
-    border: 3px solid green;
-    background-color: rgb(19, 7, 3);
-    opacity: 0.9;
-    width: 30%;
-    height: 30%;
-    margin-left: 33%;
-    margin-top: 22%;
-    border-radius: 30px 30px;
-    opacity: .5;
-    font-size: 20px;
-
-
-}
-form:hover {
-    opacity:.8;
-}
-
 #email {
     font-size: 20px;
     color: white;
     padding: 10px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: gray;
 }
 #psw {
     font-size: 20px;
     color: white;
     padding: 10px;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: gray;
 }
 
 /* Full-width inputs */
@@ -161,4 +144,14 @@ img.avatar {
     font-size: 20px;
 }
 
+.container {
+    position: fixed;
+    margin-top: 450px;
+    margin-left: 575px;
+    width: 30%;
+    opacity: .3;
+}
 
+.container:hover{
+    opacity: .9;
+}

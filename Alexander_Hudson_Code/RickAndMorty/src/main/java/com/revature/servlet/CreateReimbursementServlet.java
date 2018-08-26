@@ -20,6 +20,8 @@ public class CreateReimbursementServlet extends HttpServlet {
 	}
 
 	AppService appService = new AppService();
+	
+
 
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 	
@@ -38,7 +40,12 @@ public class CreateReimbursementServlet extends HttpServlet {
 
 		System.out.println(re);
 
-		appService.createReimbursement(re.getEmp_U_Id(), re.getAmt(), re.getDescription(), re.getRq_Type());
+
+		int newReq = appService.createReimbursement(re.getEmp_U_Id(), re.getAmt(), re.getDescription(), re.getRq_Type());
+		
+		String json = mapper.writeValueAsString(newReq);
+		resp.setContentType("application/json");
+		resp.getWriter().write(json);
 	}
 
 }

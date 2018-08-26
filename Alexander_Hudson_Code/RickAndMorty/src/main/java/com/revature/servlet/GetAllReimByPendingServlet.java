@@ -19,15 +19,21 @@ public class GetAllReimByPendingServlet extends HttpServlet{
 	private AppService appService = new AppService();
 	
 	protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		System.out.println("All Reimbursements by Denied -GET");
+		System.out.println("All Reimbursements by Pending -GET");
 		
-		List <Reimbursement> re = appService.getAllReimbursementsByPending(2);
+		int emp_U_Id = Integer.parseInt(req.getParameter("emp_U_Id"));
+		int rq_Status_Id = Integer.parseInt(req.getParameter("rq_Status_Id"));
+	
+		System.out.println("anything");
 		
 		//converting to json
+		
+			List<Reimbursement> re = appService.getAllReimbursementsByPending(emp_U_Id, rq_Status_Id );
 			ObjectMapper mapper = new ObjectMapper();
 			
 			//employee json information
 			String json = mapper.writeValueAsString(re);
+			resp.setContentType("application/json");
 			
 			//format into text output
 			PrintWriter out = resp.getWriter();

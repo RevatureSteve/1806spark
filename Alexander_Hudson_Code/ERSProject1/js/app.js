@@ -26,8 +26,58 @@ console.log('loading empPage');
     }).then((text) => {
         navbar.innerHTML = text;
         topBar();
+        document.getElementById('reimSub').addEventListener('click', createReim);
     });
 }
+
+function mgrPage () {
+    console.log('loading mgrPage');
+        let navbar = document.getElementById('content');
+        fetch('Pages/mgrPage.html').then((resp) => {
+            nav = resp;
+            return resp.text();
+        }).then((text) => {
+            navbar.innerHTML = text;
+            topBarMgr();
+            getAllReim();
+        });
+    }
+
+function mgrAllEmp (){
+    console.log('loading mgrAllEmp');
+        let navbar = document.getElementById('content');
+        fetch('Pages/mgrAllEmp.html').then((resp) => {
+            nav = resp;
+            return resp.text();
+        }).then((text) => {
+            navbar.innerHTML = text;
+            topBarMgr();
+        });
+    }
+
+    function mgrApproved (){
+        console.log('loading mgrApproved');
+            let navbar = document.getElementById('content');
+            fetch('Pages/mgrApproved.html').then((resp) => {
+                nav = resp;
+                return resp.text();
+            }).then((text) => {
+                navbar.innerHTML = text;
+                topBarMgr();
+            });
+        }
+
+    function mgrPend (){
+        console.log('loading mgr Pending');
+            let navbar = document.getElementById('content');
+            fetch('Pages/mgrPend.html').then((resp) => {
+                nav = resp;
+                return resp.text();
+            }).then((text) => {
+                navbar.innerHTML = text;
+                topBarMgr();
+               });
+        }
 
 function topBar (){
     let navbar = document.getElementById('topBar');
@@ -43,6 +93,20 @@ function topBar (){
     });
 }
 
+function topBarMgr (){
+    let navbar = document.getElementById('topBar2');
+    fetch('Pages/navBar1.html').then((resp) => {
+        nav = resp;
+        return resp.text();
+    }).then((text) => {
+        navbar.innerHTML = text;
+        document.getElementById('mgrReim').addEventListener('click', mgrPage);
+        document.getElementById('ViewEmp').addEventListener('click', mgrAllEmp);
+        document.getElementById('ViewApp').addEventListener('click', mgrApproved);
+        document.getElementById('ViewPend').addEventListener('click', mgrPend);
+    });
+}
+
 function profile (){
     console.log('profile loaded');
     let navbar = document.getElementById('content');
@@ -52,18 +116,6 @@ function profile (){
     }).then((text) => {
         navbar.innerHTML = text;
     });
-}
-
-function viewReim (){
-    console.log('View Reimbursement');
-    let navbar = document.getElementById('content');
-    fetch('Pages/empReim.html').then((resp) => {
-        nav = resp;
-        return resp.text();
-    }).then((text) => {
-        navbar.innerHTML = text;
-    });
-    
 }
 
 function logout (){
@@ -91,3 +143,16 @@ function logout2 (){
     
 }
 
+
+function viewReim (){
+    console.log('View Reimbursement');
+    let navbar = document.getElementById('content');
+    fetch('Pages/empReim.html').then((resp) => {
+        nav = resp;
+        return resp.text();
+    }).then((text) => {
+        navbar.innerHTML = text;
+       viewPending();
+    });
+    
+}

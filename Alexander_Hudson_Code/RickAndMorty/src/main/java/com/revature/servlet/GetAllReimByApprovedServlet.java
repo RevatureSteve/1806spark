@@ -15,18 +15,28 @@ import com.revature.service.AppService;
 
 public class GetAllReimByApprovedServlet extends HttpServlet{
 	
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 755760635249352817L;
 	private AppService appService = new AppService();
 	
 	protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
-		System.out.println("All Reimbursements by Status -GET");
+		System.out.println("All Reimbursements by Approved -GET");
 		
-		List <Reimbursement> re = appService.getAllReimbursementsByApproved(1);
+		int emp_U_Id = Integer.parseInt(req.getParameter("emp_U_Id"));
+		int rq_Status_Id = Integer.parseInt(req.getParameter("rq_Status_Id"));
+	
+		System.out.println("anything");
 		
 		//converting to json
+		
+			List<Reimbursement> re = appService.getAllReimbursementsByApproved(emp_U_Id, rq_Status_Id );
 			ObjectMapper mapper = new ObjectMapper();
 			
 			//employee json information
 			String json = mapper.writeValueAsString(re);
+			resp.setContentType("application/json");
 			
 			//format into text output
 			PrintWriter out = resp.getWriter();

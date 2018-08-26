@@ -22,13 +22,19 @@ protected void doGet (HttpServletRequest req, HttpServletResponse resp) throws I
 	System.out.println("All Reimbursements by Denied -GET");
 	
 	
-	List <Reimbursement> re = appService.getAllReimbursementsByApproved(3);
+	int emp_U_Id = Integer.parseInt(req.getParameter("emp_U_Id"));
+	int rq_Status_Id = Integer.parseInt(req.getParameter("rq_Status_Id"));
+
+	System.out.println("anything");
 	
 	//converting to json
+	
+		List<Reimbursement> re = appService.getAllReimbursementsByDenied(emp_U_Id, rq_Status_Id );
 		ObjectMapper mapper = new ObjectMapper();
 		
 		//employee json information
 		String json = mapper.writeValueAsString(re);
+		resp.setContentType("application/json");
 		
 		//format into text output
 		PrintWriter out = resp.getWriter();

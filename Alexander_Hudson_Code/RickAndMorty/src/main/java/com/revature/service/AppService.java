@@ -91,28 +91,28 @@ public class AppService {
 	
 	//GET ALL APPROVED
 	
-	public List <Reimbursement> getAllReimbursementsByApproved(int rq_status_id) {
+	public List <Reimbursement> getAllReimbursementsByApproved( int emp_U_Id, int rq_Status_Id) {
 		System.out.println("[LOG]---------retrieving---------All Reimbursements by Status");
 		
-		return rmDao.getAllReimbursementsByApproved(rq_status_id);
+		return rmDao.getAllReimbursementsByApproved(rq_Status_Id, emp_U_Id);
 		
 	}
 	
 	//GET ALL PENDING
 	
-	public List <Reimbursement> getAllReimbursementsByPending(int rq_status_id) {
+	public List <Reimbursement> getAllReimbursementsByPending(int rq_Status_Id, int emp_U_Id) {
 		System.out.println("[LOG]---------retrieving---------All Reimbursements by Status");
 		
-		return rmDao.getAllReimbursementsByPending(rq_status_id);
+		return rmDao.getAllReimbursementsByPending(rq_Status_Id, emp_U_Id);
 		
 	}
 	
 	//GET ALL DENIED
 	
-	public List <Reimbursement> getAllReimbursementsByDenied(int rq_status_id) {
+	public List <Reimbursement> getAllReimbursementsByDenied(int rq_Status_Id, int emp_U_Id) {
 		System.out.println("[LOG]---------retrieving---------All Reimbursements by Status");
 		
-		return rmDao.getAllReimbursementsByDenied(rq_status_id);
+		return rmDao.getAllReimbursementsByDenied(rq_Status_Id, emp_U_Id);
 		
 	}
 	

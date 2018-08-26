@@ -1,9 +1,9 @@
 // /* use for making a alert box popup after button is pressed */
 
-// /* function myFunction (){
-//     alert('You have limited access pal, maughh..make it quick');
-//  }
-// */
+ function myFunction (){
+    alert('Reimbursement Posted! Stop begging...');
+ }
+
 
 // /* When the user clicks on the button, 
 // toggle between hiding and showing the dropdown content */

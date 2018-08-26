@@ -2,7 +2,7 @@
     <head>
         <title>Employee Rick</title>
        
-     
+        <script src="js/project1.js"></script>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
         <h1 id="title" class="font-weight-bold">Employee Rick</h1>
@@ -39,25 +39,40 @@
             <div class="container2">
 
                  
-                      <label for="fname">Amount of Mortys needed? </label>
-                      <input type="text" id="fname" name="firstname" placeholder="Amount..">
+                      <label for="fname">Employee Id </label>
+                      <input type="text" id="empUId" name="firstname" placeholder="1-6">
                   
-                      <label for="lname">Date of submission</label>
-                      <input type="text" id="lname" name="lastname" placeholder="Date..">
+                      <label for="lname">Amount of Mortys needed?</label>
+                      <input type="text" id="amt" name="lastname" placeholder="Amount..">
                   
                       <label for="country">Type of Morty</label>
-                      <select id="country" name="Mortys">
-                            <option value="Morty C-137">Morty C-137</option>
-                            <option value="Evil Morty">Evil Morty</option>
-                            <option value="Alien Morty">Alien Morty</option>
-                            <option value="Big Morty">Big Morty</option>
+                      <select name="Mortys" id="rq_Type">
+                            <option value="1">Morty C-137</option>
+                            <option value="2">Evil Morty</option>
+                            <option value="3">Alien Morty</option>
+                            <option value="4">Big Morty</option>
+                            <option value="5">Lawyer Morty</option>
+                            <option value="6">Fish Morty</option>
+                            <option value="7">Long Sleeved Morty</option>
+                            <option value="8">Cat Morty</option>
+                            <option value="9">Morty Rick</option>
+                            <option value="10">Campaign Manager Morty</option>
+                            <option value="11">Cop Morty</option>
+                            <option value="12">Genius Morty</option>
+                            <option value="13">The One True Morty</option>
+                            <option value="14">Cyclops Morty</option>
+                            <option value="15">Hammerhead Morty</option>
+                            <option value="16">Eric Stoltz Morty</option>
+                            <option value="17">Morty K-22</option>
+                            <option value="18">Robot Morty</option>
+                            <option value="19">Artist Morty</option>
+                            <option value="20">Cronenbuerg Morty</option>
                       </select>
                   
                       <label for="subject">What happened to Morty this time Rick?...</label>
-                      <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+                      <textarea id="description" name="subject" placeholder="Write something.." style="height:200px"></textarea>
                       
-                      <button type="sumbit">submit</button>
-                      <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+                      <button id="reimSub" type="sumbit" onclick="myFunction()" >submit</button>
                   
               
                   </div>
