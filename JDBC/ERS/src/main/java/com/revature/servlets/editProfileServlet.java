@@ -44,7 +44,6 @@ public class editProfileServlet extends HttpServlet {
 	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("called");
 		ObjectMapper mapper = new ObjectMapper();
 		ServletInputStream json = request.getInputStream();
 		ObjectNode node = mapper.readValue(json, ObjectNode.class);
@@ -53,7 +52,9 @@ public class editProfileServlet extends HttpServlet {
 		String email = node.get("email").textValue();
 		String fname = node.get("firstName").textValue();
 		String lname = node.get("lastName").textValue();
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		
+		System.out.println(id + " " + email + " " + fname + " " + lname);
+		
 		appService.UpdateProfile(email, fname, lname, id);
 	}
 

@@ -29,9 +29,8 @@ public class resolveRequestsServlet extends HttpServlet {
 		int rid = Integer.parseInt(request.getParameter("requestId"));
 		int sid = Integer.parseInt(request.getParameter("statusId"));
 		int mid = Integer.parseInt(request.getParameter("managerId"));
-		System.out.println(rid);
-		System.out.println(sid);
-		System.out.println(mid);
+		System.out.println("request id: " + rid + " status id: " + sid + " manager id: " + mid);
+
 		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		appService.resolveRe(mid, sid, rid);
 	}

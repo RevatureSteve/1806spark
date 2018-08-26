@@ -50,10 +50,7 @@ public class makeReServlet extends HttpServlet {
 		double amt = node.get("amount").doubleValue();
 		String desc = node.get("description").textValue();
 		int type = node.get("type").intValue();
-		System.out.println(id);
-		System.out.println(amt);
-		System.out.println(desc);
-		System.out.println(type);
+		System.out.println("Id: " + id + " amount: " + amt + " description: " + desc + " type: " + type);
 		appService.makeRe(id, amt, desc, type);
 		PrintWriter out = response.getWriter();
 		

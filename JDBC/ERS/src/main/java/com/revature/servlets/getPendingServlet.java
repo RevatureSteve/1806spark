@@ -29,18 +29,16 @@ public class getPendingServlet extends HttpServlet {
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
+    
+    
+    //   ****************UNUSED****************
+    
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("userId"));
 		boolean all = Boolean.parseBoolean(request.getParameter("all"));
-		//response.getWriter().append("Served at: ").append(request.getContextPath());
-		//List<Reimbursement> re = appService.getPend(false ,id);
-		System.out.println("complete");
-
+		System.out.println("id: " + id + " is all:" + all);
 		ObjectMapper mapper = new ObjectMapper();
-
-		//String json = mapper.writeValueAsString(re);
 		response.setContentType("application/json");
-		//response.getWriter().write(json);
 	}
 
 	/**

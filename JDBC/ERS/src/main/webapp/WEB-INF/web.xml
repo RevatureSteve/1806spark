@@ -82,16 +82,6 @@
 		<servlet-name>resolveRequestsServlet</servlet-name>
 		<url-pattern>/resolveRequests</url-pattern>
 	</servlet-mapping>
-	<servlet>
-		<description></description>
-		<display-name>getManagersServlet</display-name>
-		<servlet-name>getManagersServlet</servlet-name>
-		<servlet-class>com.revature.servlets.getManagersServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>getManagersServlet</servlet-name>
-		<url-pattern>/getManagers</url-pattern>
-	</servlet-mapping>
 	<filter>
 		<filter-name>CorsFilter</filter-name>
 		<filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
