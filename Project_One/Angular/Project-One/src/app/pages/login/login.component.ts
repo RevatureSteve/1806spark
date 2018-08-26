@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Users } from './../../models/Users';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit {
   inputUser: Users; // Setting the information inputted as inputUser
   validUser = null; // Setting the validUser as null
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient, private routes: Router ) { }
 
   ngOnInit() {
     this.validUser = null;
@@ -36,6 +37,14 @@ export class LoginComponent implements OnInit {
         console.dir(succ);
         localStorage.setItem('user', JSON.stringify(succ));
         this.setUser();
+
+        // to redirect to either manager or employee
+        if (this.validUser.pos_Id === 1) {
+          this.routes.navigate(['/overseer']);
+        }
+        if (this.validUser.pos_Id  === 2) {
+          this.routes.navigate(['/dweller']);
+        }
       },
       err => alert('login failed')
     );
@@ -50,5 +59,4 @@ export class LoginComponent implements OnInit {
   login() {
     this.loggingInUser(this.inputUser);
   }
-
 }

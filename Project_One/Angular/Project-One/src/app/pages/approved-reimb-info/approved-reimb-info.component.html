@@ -1,3 +1,9 @@
-<p>
-  approved-reimb-info works!
-</p>
+<h6>Approved Reimbursements</h6>
+
+<ul>
+    <li *ngFor="let post of postA">
+      <a routerLink="">{{ post.r_Id }}</a>
+  
+      <p>{{ post.description }}</p>
+    </li>
+  </ul>
