@@ -22,8 +22,6 @@ export class ReimbursementListService {
     return this.reimbursements;
   }
 
-
-
   getAllReimbursements(): void {
     this.reimbursements = this.http.get<Reimbursement[]>('http://18.223.123.204:8080/Reimbursement-0.0.1-SNAPSHOT/manager');
   }

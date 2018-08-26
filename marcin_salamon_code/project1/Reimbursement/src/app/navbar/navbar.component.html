@@ -1,17 +1,17 @@
-<ul class="nav">
+<ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link" routerLink='/{{logged.getLoggedUser().position}}'>Home</a>
+    <a class="nav-link" data-toggle="tab" routerLink='/{{logged.getLoggedUser().position}}'>Home</a>
   </li>
   <li class="nav-item" *ngIf='logged.getLoggedUser().positionId === 2'>
-    <a class="nav-link" routerLink='/{{logged.getLoggedUser().position}}/employees'>Employees</a>
+    <a class="nav-link" data-toggle="tab" routerLink='/{{logged.getLoggedUser().position}}/employees'>Employees</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" routerLink='/{{logged.getLoggedUser().position}}/submit'>Submit</a>
+    <a class="nav-link" data-toggle="tab" routerLink='/{{logged.getLoggedUser().position}}/submit'>Submit</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id=logout routerLink='/{{logged.getLoggedUser().position}}/account'>Account</a>
+    <a class="nav-link" data-toggle="tab" id=logout routerLink='/{{logged.getLoggedUser().position}}/account'>Account</a>
   </li>
   <li class="nav-item">
-    <a class="nav-link" id=logout (click)='logout()' routerLink='/'>Log out</a>
+    <a class="nav-link" data-toggle="tab" id=logout (click)='logout()' routerLink='/'>Log out</a>
   </li>
 </ul>

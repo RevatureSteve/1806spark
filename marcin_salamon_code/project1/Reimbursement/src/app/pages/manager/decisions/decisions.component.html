@@ -1,5 +1,9 @@
-<li *ngFor="let d of decisions">
-    <div>{{d.rId}}</div>
-    <div>{{d.rq_statusId}}</div>
-</li>
-<button type="submit" class="btn btn-info" (click)=managerDecision()>Submit Decision</button>
+<div *ngIf='decisions.length !== 0'>
+    <h1>List of Decisions to commit</h1>
+    <li *ngFor="let d of createViewable()" class="list-group-item list-group-item-action list-group-item-success">
+        <div>{{d.description}}</div>
+        <div>{{d.employee.fname}} {{d.employee.lname}}</div>
+        <button (click)='delete(d)'>Cancel</button>
+    </li>
+    <button type="submit" class="btn btn-info" (click)=managerDecision()>Submit Decision</button>
+</div>

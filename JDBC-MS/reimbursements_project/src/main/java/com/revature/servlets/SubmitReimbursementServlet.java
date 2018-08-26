@@ -37,7 +37,7 @@ public class SubmitReimbursementServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 
-		System.out.println("Update employee up");
+		System.out.println("Submit reimbursement is up");
 		ObjectMapper mapper = new ObjectMapper();
 		ServletInputStream json = request.getInputStream();
 		ObjectNode node = mapper.readValue(json, ObjectNode.class);
@@ -47,7 +47,7 @@ public class SubmitReimbursementServlet extends HttpServlet {
 		String description = node.get("description").textValue();
 		byte[] imgStr = node.get("img").binaryValue();
 		int rqTypeId = node.get("rqTypeId").intValue();
-		System.out.println(id + ""+amount+description+imgStr+rqTypeId);
+		System.out.println(id + " "+amount+description+imgStr+rqTypeId);
 		int success = ReimbursementsService.createNewReimbursement(id, amount, description, imgStr, rqTypeId);
 		PrintWriter out = response.getWriter();
 		out.print(success);

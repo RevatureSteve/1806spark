@@ -13,11 +13,15 @@ export class ReimbursementListComponent implements OnInit {
   reimbursements: Reimbursement[];
   user: User;
   filter: number;
+  status: string;
+  active: string[];
+  style: string[] = ['', 'primary', 'success', 'danger'];
   constructor(private reimbService: ReimbursementListService, private logged: LoggedUserService) { }
 
   ngOnInit() {
     this.getReimbursements();
     this.filter = 1;
+    this.active = ['active', '', ''];
   }
 
   getReimbursements(): void {
@@ -33,14 +37,17 @@ export class ReimbursementListComponent implements OnInit {
   }
   setPending() {
     this.filter = 1;
+    this.active = ['active', '', ''];
   }
 
   setResolved() {
     this.filter = 2;
+    this.active = ['', 'active', ''];
   }
 
   setDenied() {
     this.filter = 3;
+    this.active = ['', '', 'active'];
   }
   dynamicSort(property) {
     let sortOrder = 1;

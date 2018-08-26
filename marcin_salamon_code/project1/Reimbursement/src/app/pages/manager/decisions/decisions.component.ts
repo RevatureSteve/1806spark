@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { DecisionsService } from '../../../services/decisions.service';
+import { Reimbursement } from '../../../models/reimbursement';
+import { Decision } from '../../../models/decision';
+import { ReimbursementListService } from '../../../services/reimbursement-list.service';
 
 @Component({
   selector: 'app-decisions',
@@ -7,13 +10,32 @@ import { DecisionsService } from '../../../services/decisions.service';
   styleUrls: ['./decisions.component.css']
 })
 export class DecisionsComponent implements OnInit {
-  decisions = DecisionsService.decisions;
-  constructor(private decisionService: DecisionsService) { }
+  decisions: Decision[] = DecisionsService.decisions;
+  reimbursements: Reimbursement[];
+  constructor(private decisionService: DecisionsService, private reimbService: ReimbursementListService) { }
 
   ngOnInit() {
+    this.reimbService.getReimbursementsArray().subscribe(reimbs => this.reimbursements = reimbs);
   }
 
   managerDecision(): void {
     this.decisionService.managerDecision();
+  }
+
+  delete(decision): void {
+    this.decisionService.deleteDecision(decision);
+  }
+
+  createViewable(): Reimbursement[] {
+    console.log('[LOG]-----create viewable');
+    const reimb: Reimbursement[] = [];
+    this.decisions.forEach(d => {
+      this.reimbursements.forEach(r => {
+        if (r.rId === d.rId) {
+          reimb.push(r);
+        }
+      });
+    });
+    return reimb;
   }
 }

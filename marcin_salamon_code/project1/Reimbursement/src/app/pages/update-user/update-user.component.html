@@ -1,12 +1,11 @@
 <div class="form-group">
   <label for="email">Email</label>
-  <div class="form-control">{{logged.getLoggedUser().email}}</div>
+  <div class="form-control">{{user.email}}</div>
   <label for="password">Password</label>
-  <input type="password" #password class="form-control">
+  <input type="password" #psw placeholder='password' class="form-control" value="">
   <label for="fname">First name</label>
   <input type="text" class="form-control" #fname placeholder="{{logged.getLoggedUser().fname}}">
   <label for="lname">Last name</label>
   <input type="text" class="form-control" #lname placeholder="{{logged.getLoggedUser().lname}}">
-  <button>update</button>
-  <!-- <button (click)="updateUser(kjhfa@lkafj.com, password.value, fname.value, lname.value)">Update User</button> -->
+  <button (click)="updateUser(psw.value, fname.value, lname.value)">Update User</button>
 </div>

@@ -2,31 +2,30 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { User } from '../models/user';
+import { LoggedUserService } from './logged-user.service';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UpdateService {
   logged: User;
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient, private logService: LoggedUserService) { }
 
-  updateUser(email, password, fname, lname): Observable<User> {
-    if (email === '') {
-      email = this.logged.email;
-    }
-    if (password === '') {
+  updateUser(password, fname, lname): Observable<User> {
+    this.logged = this.logService.getLoggedUser();
+    if (!password) {
       password = this.logged.password;
     }
-    if (fname === '') {
+    if (!fname) {
       fname = this.logged.fname;
     }
-    if (lname === '') {
+    if (!lname) {
       lname = this.logged.lname;
     }
 
     const user = {
       uId: this.logged.uId,
-      email: email,
+      email: this.logged.email,
       password: password,
       fname: fname,
       lname: lname,

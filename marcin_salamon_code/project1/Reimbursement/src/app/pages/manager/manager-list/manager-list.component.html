@@ -1,9 +1,11 @@
-<div (click)='setPending()'>Pending</div>
-<div (click)='setResolved()'>Resolved</div>
-<div (click)='setDenied()'>Denied</div>
-<li *ngFor='let r of reimbursements' class="list-group mw-50" style="width: 60%; margin: auto;">
+<ul class="nav nav-tabs" id="myTab" role="tablist">
+    <li class="nav-link {{active[0]}}" (click)='setPending()'>Pending</li>
+    <li class="nav-link {{active[1]}}" (click)='setResolved()'>Resolved</li>
+    <li class="nav-link {{active[2]}}" (click)='setDenied()'>Denied</li>
+</ul>
+<li *ngFor='let r of reimbursements' class="list-group" >
     <div *ngIf='r.rq_statusId===filter'>
-        <a routerLink='/manager/detail/{{r.rId}}' class="list-group-item list-group-item-action list-group-item-success">
+        <a routerLink='/manager/detail/{{r.rId}}' class="list-group-item list-group-item-action list-group-item-{{style[r.rq_statusId]}}">
             <div>{{r.description}}</div>
             <div>{{r.timesubmission.substring(0,19)}}</div>
             <div>{{r.rq_type}}</div>
@@ -15,4 +17,3 @@
         </div>
     </div>
 </li>
-

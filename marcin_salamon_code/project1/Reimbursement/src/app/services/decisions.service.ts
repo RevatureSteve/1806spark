@@ -21,6 +21,16 @@ export class DecisionsService {
     return 1;
   }
 
+  deleteDecision(decision: Decision): void {
+    let counter = 0;
+    DecisionsService.decisions.forEach(element => {
+      if (element.rId === decision.rId) {
+        DecisionsService.decisions.splice(counter, 1);
+      }
+      counter++;
+    });
+  }
+
   managerDecision(): void {
     console.log(DecisionsService.decisions);
     this.http.post('http://18.223.123.204:8080/Reimbursement-0.0.1-SNAPSHOT/reimbursements/update',

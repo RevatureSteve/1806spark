@@ -14,12 +14,15 @@ export class ManagerListComponent implements OnInit {
   reimbursements: Reimbursement[];
   decisions: Decision[];
   filter: number;
+  active: string[];
+  style: string[] = ['', 'primary', 'success', 'danger'];
   constructor(private reimbService: ReimbursementListService, private decisionService: DecisionsService,
     private logged: LoggedUserService) { }
 
   ngOnInit() {
     this.getReimbursements();
     this.filter = 1;
+    this.active = ['active', '', ''];
   }
 
   getReimbursements(): void {
@@ -29,14 +32,17 @@ export class ManagerListComponent implements OnInit {
 
   setPending() {
     this.filter = 1;
+    this.active = ['active', '', ''];
   }
 
   setResolved() {
     this.filter = 2;
+    this.active = ['', 'active', ''];
   }
 
   setDenied() {
     this.filter = 3;
+    this.active = ['', '', 'active'];
   }
 
 // return 1 when adding new decision
