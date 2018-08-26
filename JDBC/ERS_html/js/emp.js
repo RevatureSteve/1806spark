@@ -10,17 +10,15 @@ function makeRequest() {
     document.getElementById("text").innerText = "Ok, just fill out this form and I'll put it in our system";
     newPage('../pages/empPages/makeRequest.html');
 }
-var trollCheck = 0;
+
 function NewReqSubmit() {
     var a = parseInt(document.getElementById("amount").value);
     var t = parseInt(document.getElementById("type").value);
     var d = document.getElementById("description").value;
-    console.log(trollCheck);
 
     if (trollCheck == 3) {
+        trollCheck = 0;
         newPage('../pages/blank.html');
-        document.getElementById("newRequestSubmit").disabled = true;
-        document.getElementById("newRequestSubmit").innerText = "<<<";
         document.getElementById("face").src = "../images/mad.png";
         document.getElementById("text").innerText = "Ok, thats enough.";
         mainButtonNum = 4;
@@ -60,13 +58,13 @@ function NewReqSubmit() {
         trollCheck += 1;
         return;
     }
+
     request = {
         "userId": current.uId,
         "amount": a,
         "description": d,
         "type": t
     }
-
     fetch('http://localhost:8080/ERS/makeRe', {
         method: 'POST',
         body: JSON.stringify(request),
@@ -84,6 +82,7 @@ function NewReqSubmit() {
         }
         document.getElementById("face").src = "../images/neutral_smile.png";
         document.getElementById("text").innerText = "Ok your request has been added. Ill go file it quick";
+        newPage('../pages/blank.html');
         updateRequests();
     }).catch((err) => {
         document.getElementById("face").src = "../images/uh.png";
@@ -218,7 +217,7 @@ function viewProfile() {
 function viewProf() {
     document.getElementById("page").removeEventListener("mouseover", viewProf);
     document.getElementById("uid").innerText = "ID: " + current.uId;
-    document.getElementById("name").innerText = "Name: " + current.fname + " " + current.lname;
+    document.getElementById("name").innerText = current.fname + " " + current.lname;
     document.getElementById("email").innerText = "Email: " + current.email;
     document.getElementById("mainButton").innerText = "Menu";
     document.getElementById("mainButton").onclick = uMain;
@@ -299,22 +298,49 @@ function empDialogue() {
             document.getElementById("text").innerText = "Not that i question your intelligence, but I'd like to think this is a rather simple system here";
             break;
         case 6:
+            document.getElementById("mainButton").hidden = true;
             document.getElementById("face").src = "../images/mad.png";
             document.getElementById("text").innerText = "But really though, there are other pokemon that are waiting so are you gonna stop causing trouble?";
             newPage('../pages/isTrouble.html');
-            document.getElementById("page").addEventListener("mouseover", isTrouble);
             break;
         case 7:
+            document.getElementById("mainButton").hidden = false;
             newPage('../pages/blank.html');
             document.getElementById("face").src = "../images/grudge.png";
-            document.getElementById("text").innerText = "Oh really....";
+            document.getElementById("text").innerText = "Oh really, Well then....";
+            break;
+        case 8:
+            document.getElementById("face").src = "../images/lucario.png";
+            document.getElementById("text").innerText = "Thats enough Riolu. I'll take it from here";
+            break;
+        case 9:
+            document.getElementById("face").src = "../images/mad.png";
+            document.getElementById("text").innerText = "hmph";
+            break;
+        case 10:
+            document.getElementById("face").src = "../images/lucario.png";
+            document.getElementById("text").innerText = current.lname + " You've done enough damage. Lets go";
+            break;
+        case 11:
+            document.getElementById("face").src = "../images/mad.png";
+            document.getElementById("text").innerText = "...";
+            break;
+        case 12:
+            document.getElementById("face").src = "../images/relief.png";
+            break;
+        case 13:
+            document.getElementById("face").src = "../images/neutral_smile.png";
+            document.getElementById("text").innerText = "Next in line, sorry you had to see that";
+            mainButtonNum = 5;
+            current = {};
+            cReArray = {};
+            document.getElementById("mainButton").onclick = dia;
             break;
     }
     mainButtonNum++;
 }
 
-
-function noTrouble(){
+function noTrouble() {
     document.getElementById("yesButton").onClick = empDialogue;
     document.getElementById("noButton").onClick = "";
 }

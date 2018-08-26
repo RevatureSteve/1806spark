@@ -19,7 +19,9 @@ function resReq() {
         if (cReArray[i].status != "Pending") {
             continue;
         }
-
+        resolving[resolving.length] = cReArray[i];
+        console.log(resolving);
+        console.log(resolving[i]);
         var sel = document.createElement("select");
         sel.id = "AppDec";
         sel.name = "appDecSelect";
@@ -38,8 +40,8 @@ function resReq() {
         document.getElementById("resReq").appendChild(sel);
 
         var rei = document.createElement("h1");
-        rei.innerText = "\nAmount: $" + cReArray[i].amt + "\nDescription: " + cReArray[i].desc + "\nTime: " +
-            cReArray[i].time + "\nType: " + cReArray[i].type + "\nStatus: " + cReArray[i].status;
+        rei.innerText = "\nAmount: $" + resolving[i].amt + "\nDescription: " + resolving[i].desc + "\nTime: " +
+        resolving[i].time + "\nType: " + resolving[i].type + "\nStatus: " + resolving[i].status;
         document.getElementById("resReq").appendChild(rei);
         var rei = document.createElement("br");
         document.getElementById("resReq").appendChild(rei);
@@ -52,19 +54,19 @@ function resolve() {
             case 1:
                 continue;
             case 2:
-                cReArray[i].status = "Accepted";
+            resolving[i].status = "Accepted";
                 break;
             case 3:
-                cReArray[i].status = "Declined";
+            resolving[i].status = "Declined";
                 break;
 
         }
-        cReArray[i].mid = current.fname + " " + current.lanem;
-        console.log(cReArray[i].rid);
+        resolving[i].mid = current.fname + " " + current.lanem;
+        console.log(resolving[i].rid);
         console.log(parseInt(selects[i].value));
         console.log(current.uId);
 
-        fetch("http://localhost:8080/ERS/resolveRequests?requestId=" + cReArray[i].rid + "&statusId=" + parseInt(selects[i].value) + "&managerId=" + current.uId, {
+        fetch("http://localhost:8080/ERS/resolveRequests?requestId=" + resolving[i].rid + "&statusId=" + parseInt(selects[i].value) + "&managerId=" + current.uId, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
         }).catch((err) => {
@@ -179,10 +181,6 @@ function memRequests() {
         if (cReArray[i].uId != id) { 
             continue;
         }
-        var rei = document.createElement("li");
-        var t = document.createTextNode("ID: " + cReArray[i].id);
-        rei.appendChild(t);
-        document.getElementById("viewMemReq").appendChild(rei);
         var rei = document.createElement("li");
         var t = document.createTextNode("Amount: $" + cReArray[i].amt);
         rei.appendChild(t);

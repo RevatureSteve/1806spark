@@ -1,7 +1,9 @@
 var mainButtonNum = 0;
+var trollCheck = 0;
 var isManager;
 var current = {};
 var cReArray = {};
+var resolving = [];
 var users = {};
 
 
