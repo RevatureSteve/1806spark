@@ -1,8 +1,9 @@
-import { UserService } from '../services/user.service';
+import { LoggedUserService } from '../services/logged-user.service';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../models/user';
 import { HttpClient } from '@angular/common/http';
 import { Router } from '@angular/router';
+
 
 @Component({
   selector: 'app-login',
@@ -13,8 +14,9 @@ export class LoginComponent implements OnInit {
 
   inputUser: User;
   validUser = null;
+  user: User;
 
-  constructor(private httpClient: HttpClient, private routes: Router) { }
+  constructor(private httpClient: HttpClient, private logged: LoggedUserService, private routes: Router) { }
 
   ngOnInit() {
     this.validUser = null;
@@ -42,6 +44,8 @@ export class LoginComponent implements OnInit {
           console.log(currentUser.email);
           console.log(currentUser.posid);
 
+          this.changeLogged(currentUser)
+
           if (currentUser.posid === 1) {
             this.routes.navigate(['Employee']);
           } else if (currentUser.posid === 2) {
@@ -54,7 +58,10 @@ export class LoginComponent implements OnInit {
     console.log('sent post');
   }
 
-
+changeLogged(user) {
+  this.user = user;
+  this.logged.setLoggedUser(user);
+}
 
 
 }
