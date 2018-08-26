@@ -9,11 +9,13 @@ import { DeniedReimbInfoComponent } from './pages/denied-reimb-info/denied-reimb
 import { LoginComponent } from './pages/login/login.component';
 import { ManagersComponent } from './pages/managers/managers.component';
 import { UsersComponent } from './pages/users/users.component';
+import { ReimbursementComponent } from './pages/reimbursement/reimbursement.component';
 
 const routes: Routes = [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
     {path: 'info', component: UsersInformationComponent},
     {path: 'login', component: LoginComponent},
+    {path: 'reimb', component: ReimbursementComponent},
     {path: 'reimb/approved', component: ApprovedReimbInfoComponent},
     {path: 'reimb/pending', component: PendingReimbInfoComponent},
     {path: 'reimb/denied', component: DeniedReimbInfoComponent},

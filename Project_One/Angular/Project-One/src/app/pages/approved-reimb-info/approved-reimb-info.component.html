@@ -1,9 +1,22 @@
-<h6>Approved Reimbursements</h6>
+<h2>Approved Reimbursements</h2>
 
-<ul>
-    <li *ngFor="let post of postA">
-      <a routerLink="">{{ post.r_Id }}</a>
-  
-      <p>{{ post.description }}</p>
-    </li>
-  </ul>
+  <table class="table table-hover table-dark">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Amount</th>
+          <th scope="col">Request Type</th>
+          <th scope="col">Description</th>
+          <th scope="col">Time Submission</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let post of postA">
+          <th scope="row"> {{ post.r_Id}} </th>
+          <td> {{ post.amt}} </td>
+          <td> {{ post.rq_Type_Id}} </td>
+          <td> {{ post.description}} </td>
+          <td> {{ post.timeSubmission}} </td>
+        </tr>
+      </tbody>
+    </table>

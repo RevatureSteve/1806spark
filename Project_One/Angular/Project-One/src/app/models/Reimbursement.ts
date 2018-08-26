@@ -4,7 +4,7 @@ amt: number;
 emp_U_Id: number;
 mgr_U_Id: number;
 rq_Type_Id: number;
-Status_Id: number;
+rq_Status_Id: number;
 description: string;
 timeSubmission: string;
 
