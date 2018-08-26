@@ -1,0 +1,7 @@
+{
+    "getReimbursementById":"http://localhost:8080/expenseProject/OneReimbursement",
+    "addReimbursement": "http://localhost:8080/expenseProject/AddReimbursementServlet"
+
+
+
+}

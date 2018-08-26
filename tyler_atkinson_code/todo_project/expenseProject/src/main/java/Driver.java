@@ -42,42 +42,42 @@ public class Driver {
 	
 		System.out.println("confirm valid user " + validUser);
 		
-	}}
 	
-//		addAReimb();}
-//	
-//	public static void addAReimb() {
-//		
-//		ReimbursementDaoImpl nowAddReimbursement = new ReimbursementDaoImpl();
-//		
-//	
-//		Scanner scan = new Scanner(System.in);
-//	
-//
-//		System.out.println("emp id #");
-//	
-//		int emp_u_id = scan.nextInt();
-//	
-//		System.out.println("your mgrs id: ");
-//		int mgr_u_id = scan.nextInt();
-//		
-//		System.out.println("amt");
-//		double amt = scan.nextDouble();
-//		
-//		System.out.println("description");
-//		String description = scan.next();
-//		
-//		System.out.println("rq_type_id");
-//		int rq_type_id = scan.nextInt();
-//		
-//		System.out.println("rq_status_id");
-//		int rq_status_id = scan.nextInt();
-//		
-//		
-//		nowAddReimbursement.addReimbursement(emp_u_id, mgr_u_id, amt, description, rq_type_id, rq_status_id);
-//		
-//	}
 	
+		addAReimb();}
+	
+	public static void addAReimb() {
+		
+		ReimbursementDaoImpl nowAddReimbursement = new ReimbursementDaoImpl();
+		
+	
+		Scanner scan = new Scanner(System.in);
+	
+
+		System.out.println("emp id #");
+	
+		int empuid = scan.nextInt();
+	
+		System.out.println("your mgrs id: ");
+		int mgruid = scan.nextInt();
+		
+		System.out.println("amt");
+		double amt = scan.nextDouble();
+		
+		System.out.println("description");
+		String description = scan.next();
+		
+		System.out.println("rqtypeid");
+		int rqtypeid = scan.nextInt();
+		
+		System.out.println("rqstatusid");
+		int rqstatusid = scan.nextInt();
+		
+		
+		nowAddReimbursement.addReimbursement(empuid, mgruid, amt, description, rqtypeid, rqstatusid);
+	
+	}
+}
 	
 	
 			

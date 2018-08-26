@@ -1,16 +1,16 @@
 package com.revature.servlets;
 
 import java.io.IOException;
-import java.sql.CallableStatement;
-import java.sql.Connection;
-import java.sql.DriverManager;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.revature.dao.ReimbursementDao;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.revature.dao.ReimbursementDaoImpl;
 
 /**
  * Servlet implementation class AddReimbursementServlet
@@ -26,9 +26,40 @@ public class AddReimbursementServlet extends HttpServlet {
      
     }
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+    @Override
+	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+    	System.out.println("Post  on Addreimbursement servlet initiated");
+    	
+    	ReimbursementDaoImpl nowAddReimbursement = new ReimbursementDaoImpl();
+    	
+    	ObjectMapper mapper = new ObjectMapper();
+    	ServletInputStream data = request.getInputStream();
+    	ObjectNode node = mapper.readValue(data, ObjectNode.class);
+    	
+    	System.out.println("object node stuff");
+    	
+    	int a = node.get("uid").intValue();
+    	 System.out.println(a);
+    	 int b = node.get("mgruid").intValue();
+    	 System.out.println(b);
+    	 double c = node.get("amt").intValue();
+    	 System.out.println(c);
+    	 String d = node.get("description").asText();
+    	 System.out.println(d);
+    	 int e = node.get("rqtypeid").intValue();
+    	 System.out.println(e);
+    	 int f = node.get("rqstatusid").intValue();
+    	 System.out.println(f);
+    	 
+    	 
+    	 
+    	
+    	
+    	
+    	nowAddReimbursement.addReimbursement(a,b,c,d,e,f);
+    	
+		response.getWriter();
 	}
 
 

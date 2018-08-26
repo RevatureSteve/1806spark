@@ -14,6 +14,8 @@ import { NewrequestComponent } from './newrequest/newrequest.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule }    from '@angular/common/http';
 
+
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -24,7 +26,9 @@ import { HttpClientModule }    from '@angular/common/http';
     LoginComponent,
     ViewrequestsComponent,
     NewrequestComponent,
-    ProfileComponent
+    ProfileComponent,
+    
+
   ],
   imports: [
     BrowserModule,
