@@ -1,5 +1,7 @@
 import { CurrentUserService } from './../current-user.service';
 import { Component, OnInit } from '@angular/core';
+import { Users } from '../models/users.model';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main',
@@ -8,25 +10,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MainComponent implements OnInit {
 
-  navbar;
-  posId;
+  user: Users;
 
-  constructor(private currentUser: CurrentUserService) { }
+  constructor(private currentUser: CurrentUserService, private router: Router) { }
 
   ngOnInit() {
-    // this.validatePostition(this.currentUser.getCurrentUser().pos_id);
-    // this.validatePostition(1);
-    this.posId = this.currentUser.getCurrentUser().pos_id;
+    this.user = this.currentUser.getCurrentUser();
+    this.checkUser();
   }
 
-  // validatePostition(posId) {
-  //   console.log('validate position fn');
-  //   this.navbar = document.getElementById('home-nav-bar');
-  //   if (posId === 1) {
-  //     this.navbar.appendChild('home-nav-bar');
-  //     // document.getElementById('home-nav-bar').innerHTML = '<app-home-navbar></app-home-navbar>';
-  //     // this.navbar = '<app-home-navbar></app-home-navbar>';
-  //   }
-  // }
+  checkUser() {
+    if (!this.user || this.user.pos_id !== 1) {
+      this.router.navigate(['/login']);
+    }
+  }
+
+
 
 }

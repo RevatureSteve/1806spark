@@ -18,15 +18,8 @@ export class NavbarComponent implements OnInit {
   ngOnInit() {
     this.user = this.currentUser.getCurrentUser();
     this.posId = this.user.pos_id;
-    // this.setUpNavbar(this.user);
   }
 
-  // setUpNavbar(user) {
-  //   const home = document.getElementsByClassName('home');
-  //   if (user.pos_id === 1) {
-  //     this.posId =
-  //   }
-  // }
 
   logout() {
     this.currentUser.setCurrentUser(null);

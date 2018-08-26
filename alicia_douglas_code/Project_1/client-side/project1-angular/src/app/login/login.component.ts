@@ -22,7 +22,10 @@ export class LoginComponent implements OnInit {
   login(email, password) {
     console.log('email: ' + email + ' password: ' + password);
     this.userService.login(email, password).subscribe(
-      user => this.changeCurrentUser(user)
+      user => {
+        this.changeCurrentUser(user);
+      },
+      err => alert('Login failed: email or password where incorrect')
     );
   }
 
@@ -37,8 +40,7 @@ export class LoginComponent implements OnInit {
       }
 
     } else {
-      // later add something telling user login failed
-      this.router.navigate(['login']);
+      alert('Login failed: email or password where incorrect');
     }
   }
 

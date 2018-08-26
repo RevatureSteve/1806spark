@@ -15,7 +15,7 @@ export class ReimbursementsService {
   constructor(private httpClient: HttpClient, private currentUser: CurrentUserService) { }
 
   getAllReimbursements() {
-    return this.httpClient.get<Reimbursements[]>('http://localhost:8080/reimbursement/reimbursement');
+    return this.httpClient.get<Reimbursements[]>('http://18.219.98.243:8080/reimbursement-0.0.1-SNAPSHOT/reimbursement');
   }
 
   // getReimbursementsArray(): Observable<Reimbursements[]> {
@@ -23,23 +23,24 @@ export class ReimbursementsService {
   // }
 
   getReimbursementById(id) {
-    return this.httpClient.get<Reimbursements[]>('http://localhost:8080/reimbursement/reimbursement/id' + '?userId=' + id);
+    return this.httpClient.get<Reimbursements[]>('http://18.219.98.243:8080/reimbursement-0.0.1-SNAPSHOT/reimbursement/id'
+     + '?userId=' + id);
   }
 
   getPendingReimbursements() {
-    return this.httpClient.get<Reimbursements[]>('http://localhost:8080/reimbursement/pending');
+    return this.httpClient.get<Reimbursements[]>('http://18.219.98.243:8080/reimbursement-0.0.1-SNAPSHOT/pending');
   }
 
   getPendingReimbursemetsById(id) {
-    return this.httpClient.get<Reimbursements[]>(`http://localhost:8080/reimbursement/pending/id?userId=${id}`);
+    return this.httpClient.get<Reimbursements[]>(`http://18.219.98.243:8080/reimbursement-0.0.1-SNAPSHOT/pending/id?userId=${id}`);
   }
 
   getResolvedReimbursements() {
-    return this.httpClient.get<Reimbursements[]>('http://localhost:8080/reimbursement/resolved');
+    return this.httpClient.get<Reimbursements[]>('http://18.219.98.243:8080/reimbursement-0.0.1-SNAPSHOT/resolved');
   }
 
   getResolvedReimbursemetsById(id) {
-    return this.httpClient.get<Reimbursements[]>(`http://localhost:8080/reimbursement/resolved/id?userId=${id}`);
+    return this.httpClient.get<Reimbursements[]>(`http://18.219.98.243:8080/reimbursement-0.0.1-SNAPSHOT/resolved/id?userId=${id}`);
   }
 
   createNewReimbursement(amt, desc, type, img) {
@@ -52,7 +53,7 @@ export class ReimbursementsService {
 
     console.log(reimb);
 
-    return this.httpClient.post<Reimbursements>('http://localhost:8080/reimbursement/reimbursement', reimb);
+    return this.httpClient.post<Reimbursements>('http://18.219.98.243:8080/reimbursement-0.0.1-SNAPSHOT/reimbursement', reimb);
 
     // console.log('after post statement');
   }
@@ -66,7 +67,7 @@ export class ReimbursementsService {
 
     console.log(update);
 
-    return this.httpClient.put<Reimbursements>('http://localhost:8080/reimbursement/reimbursement', update);
+    return this.httpClient.put<Reimbursements>('http://18.219.98.243:8080/reimbursement-0.0.1-SNAPSHOT/reimbursement', update);
 
   }
 
