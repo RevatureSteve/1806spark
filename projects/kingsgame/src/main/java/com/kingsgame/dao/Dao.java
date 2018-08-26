@@ -11,6 +11,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.kingsgame.pojo.Reimbursement;
+import com.kingsgame.pojo.Type;
 import com.kingsgame.pojo.User;
 import com.kingsgame.util.Conn;
 
@@ -151,7 +152,7 @@ public class Dao implements DaoInterface{
 	public List<Reimbursement> getAllReimbursement() {
 		List<Reimbursement>reimList = new ArrayList<>();
 		try(Connection conn = Conn.getConn();){
-			String sql = "select * from reimbursement";
+			String sql = "select * from reimbursement order by rq_status_id";
 		CallableStatement cs = conn.prepareCall(sql);
 
 		ResultSet rs = cs.executeQuery();
@@ -160,7 +161,6 @@ public class Dao implements DaoInterface{
 			rs.getInt(1),rs.getInt(2),rs.getInt(3),
 			rs.getDouble(4),rs.getString(5),rs.getObject(6),
 			rs.getString(7),rs.getInt(8),rs.getInt(9)));
-			
 
 		}
 		} catch (SQLException | IOException e) {
@@ -169,6 +169,76 @@ public class Dao implements DaoInterface{
 
 		System.out.println(reimList);
 		return reimList;
+	}
+	@Override
+	public List<User> getAllUsers() {
+		List<User>userList = new ArrayList<>();
+		try(Connection conn = Conn.getConn();){
+			String sql = "SELECT u.u_id, u.email,u.password,u.fname,u.lname,u.pos_id,p.pos_type\n" + 
+					"FROM users u\n" + 
+					"RIGHT JOIN position p ON u.pos_id = p.pos_id order by pos_type asc";
+		CallableStatement cs = conn.prepareCall(sql);
+
+		ResultSet rs = cs.executeQuery();
+		while(rs.next()) {
+			userList.add(new User(
+			rs.getInt(1),rs.getString(2),rs.getString(3),
+			rs.getString(4),rs.getString(5),rs.getInt(6),
+			rs.getString(7)));
+
+		}
+		} catch (SQLException | IOException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println(userList);
+		return userList;
+	}
+	
+	@Override
+	public List<Reimbursement> getMineReimbursement(int u_id) {
+		System.out.println("---------------------------------------------");
+		List<Reimbursement>reimList = new ArrayList<>();
+		try(Connection conn = Conn.getConn();){
+			String sql = "select * from reimbursement where emp_u_id = ?";
+		CallableStatement cs = conn.prepareCall(sql);
+		cs.setInt(1, u_id);
+		ResultSet rs = cs.executeQuery();
+		while(rs.next()) {
+			reimList.add(new Reimbursement(
+			rs.getInt(1),rs.getInt(2),rs.getInt(3),
+			rs.getDouble(4),rs.getString(5),rs.getObject(6),
+			rs.getString(7),rs.getInt(8),rs.getInt(9)));
+
+		}
+		} catch (SQLException | IOException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("hello---------------------------" + reimList );
+		return reimList;
+	}
+	
+	
+	
+	@Override
+	public List<Type> getAllTypes() {
+		List<Type>typeList = new ArrayList<>();
+		try(Connection conn = Conn.getConn();){
+			String sql = "select * from rq_type order by rq_type_id";
+		CallableStatement cs = conn.prepareCall(sql);
+
+		ResultSet rs = cs.executeQuery();
+		while(rs.next()) {
+			typeList.add(new Type(rs.getInt(1),rs.getString(2)));
+
+		}
+		} catch (SQLException | IOException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println(typeList);
+		return typeList;
 	
 	
 	

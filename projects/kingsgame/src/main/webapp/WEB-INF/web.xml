@@ -39,21 +39,39 @@
 	 		</servlet-mapping>
 	 		
 	 		<servlet>
-	 		<servlet-name>newre</servlet-name>
+	 		<servlet-name>new-re</servlet-name>
 	 		<servlet-class>com.kingsgame.servlets.NewReServlet</servlet-class>
 	 		</servlet>
 	 		<servlet-mapping> <!-- use alias of servlet -->
-	 		<servlet-name>newre</servlet-name>
+	 		<servlet-name>new-re</servlet-name>
 	 		<url-pattern>/reim/new</url-pattern>
 	 		</servlet-mapping>
 	 		
 	 		<servlet>
-	 		<servlet-name>mgr-re</servlet-name>
+	 		<servlet-name>all-re</servlet-name>
 	 		<servlet-class>com.kingsgame.servlets.AllServlet</servlet-class>
 	 		</servlet>
 	 		<servlet-mapping>
-	 		<servlet-name>mgr-re</servlet-name>
+	 		<servlet-name>all-re</servlet-name>
 	 		<url-pattern>/reim/all</url-pattern>
+	 		</servlet-mapping>
+	 		
+	 		<servlet>
+	 		<servlet-name>all-users</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.AllUsersServlet</servlet-class>
+	 		</servlet>
+	 		<servlet-mapping>
+	 		<servlet-name>all-users</servlet-name>
+	 		<url-pattern>/users/all</url-pattern>
+	 		</servlet-mapping>
+	 		
+	 		<servlet>
+	 		<servlet-name>mine-re</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.MineServlet</servlet-class>
+	 		</servlet>
+	 		<servlet-mapping>
+	 		<servlet-name>mine-re</servlet-name>
+	 		<url-pattern>/reim/mine</url-pattern>
 	 		</servlet-mapping>
 	 		
 	 		<servlet>
@@ -62,6 +80,15 @@
 	 		</servlet>
 	 		<servlet-mapping>
 	 		<servlet-name>mgr-update</servlet-name>
-	 		<url-pattern>/reim/update/</url-pattern>
+	 		<url-pattern>/reim/update</url-pattern>
+	 		</servlet-mapping>
+	 		
+	 		<servlet>
+	 		<servlet-name>type</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.TypeServlet</servlet-class>
+	 		</servlet>
+	 		<servlet-mapping>
+	 		<servlet-name>type</servlet-name>
+	 		<url-pattern>/util/type</url-pattern>
 	 		</servlet-mapping>
 </web-app>

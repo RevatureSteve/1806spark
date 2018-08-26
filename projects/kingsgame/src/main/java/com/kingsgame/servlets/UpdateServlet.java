@@ -16,9 +16,9 @@ public class UpdateServlet extends HttpServlet{
 	private Dao dao = new Dao();
 	
 	@Override
-	protected void doPut(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		int rid = 0; int mgrid = 0; int rqstatusid = 0;
-		
+		System.out.println("hit");
 		ObjectMapper mapper = new ObjectMapper();
 		ServletInputStream data = req.getInputStream();
 		ObjectNode n = mapper.readValue(data, ObjectNode.class);
@@ -36,6 +36,7 @@ public class UpdateServlet extends HttpServlet{
 			};
 			if(rid != 0) {
 				dao.updateReimbursement(rid, mgrid, rqstatusid);
+				System.out.println("Confirmation of Update for: " + rid + " " + mgrid + " " + rqstatusid);
 			}
 		};
 		

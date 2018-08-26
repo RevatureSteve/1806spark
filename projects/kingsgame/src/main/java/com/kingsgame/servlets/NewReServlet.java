@@ -28,7 +28,6 @@ public class NewReServlet extends HttpServlet{
 		int emp_u_id = 0;
 		Double amt = 0.0;
 		String description = null;
-	//	Blob imgpath = null;
 		int rq_type_id = 0;
 		if(n.has("emp_u_id")) {
 			
@@ -40,19 +39,11 @@ public class NewReServlet extends HttpServlet{
 		if(n.has("description")) {
 			description = n.get("description").asText();
 		};
-	//	if(n.has("	")) {
-	//		if((n.get("img").equals(""))){
-	//			imgpath = null;
-	//		}else {
-	//		imgpath = (Blob) n.get("img");
-	//		}
-	//	};
 		if(n.has("rq_type_id")) {
 			rq_type_id = n.get("rq_type_id").asInt();
 		};
-		System.out.println(emp_u_id+"sad"+amt+"sad"+description+
-	//			imgpath
-				+rq_type_id);
+		System.out.println(emp_u_id+"emp"+amt+"amt"+description+"desc"
+				+rq_type_id+"rq");
 		if(emp_u_id != 0 && amt != 0) {
 			r = dao.createReimbursement(emp_u_id, amt, description, 
 					//imgpath, 
