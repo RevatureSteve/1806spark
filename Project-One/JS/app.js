@@ -9,6 +9,7 @@ let amount;
 let reqType;
 let desc;
 let resultSet;
+let list = [];
 popped = false;
 window.onload = function foo() {
 

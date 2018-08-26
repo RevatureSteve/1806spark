@@ -154,6 +154,7 @@ function mgrActiveBtn(eventId) {
     }
 }
 function createAllPendingTable() {
+    document.getElementById('clear').addEventListener('click', clearArray);
     table = document.getElementById('table2');
     let x = 1;
     for (let i = 0; i < newAllReqs.length; i++) {
@@ -173,8 +174,27 @@ function createAllPendingTable() {
         cell5.innerHTML = JSON.stringify(newAllReqs[i].rq_status);
         cell6.innerHTML = JSON.stringify(newAllReqs[i].timeStamp);
         cell7.innerHTML = JSON.stringify(newAllReqs[i].r_id);
+        row.id = newAllReqs[i].r_id;
+        cell1.id = newAllReqs[i].r_id;
+        cell2.id = newAllReqs[i].r_id;
+        cell3.id = newAllReqs[i].r_id;
+        cell4.id = newAllReqs[i].r_id;
+        cell5.id = newAllReqs[i].r_id;
+        cell6.id = newAllReqs[i].r_id;
+        cell7.id = newAllReqs[i].r_id;
+        console.log(row.id);
         x++;
+        document.getElementById(cell1.id).addEventListener('click', rowListener);
+        document.getElementById(cell2.id).addEventListener('click', rowListener);
+        document.getElementById(cell3.id).addEventListener('click', rowListener);
+        document.getElementById(cell4.id).addEventListener('click', rowListener);
+        document.getElementById(cell5.id).addEventListener('click', rowListener);
+        document.getElementById(cell6.id).addEventListener('click', rowListener);
+        document.getElementById(cell7.id).addEventListener('click', rowListener);
     }
+    document.getElementById('newTable').addEventListener('click', rowListener);
+        console.log("Listening...");
+
 }
 function populateEmpTable() {
     console.log("popping table " + empList);
@@ -193,10 +213,12 @@ function populateEmpTable() {
         cell3.innerHTML = JSON.stringify(empList[i].lname);
         cell4.innerHTML = JSON.stringify(empList[i].email);
         x++;
+        
     }
 }
 function populateSearchTable() {
     console.log("popping table " + searchData);
+    document.getElementById('clear').addEventListener('click', clearArray);
 
     table = document.getElementById('table4');
     let x = 1;
@@ -218,10 +240,19 @@ function populateSearchTable() {
         cell2.innerHTML = JSON.stringify(searchData[i].description);
         cell3.innerHTML = JSON.stringify(searchData[i].timeStamp);
         cell4.innerHTML = JSON.stringify(searchData[i].r_id);
-        row.id = searchData[i].r_id;
+        cell1.id = searchData[i].r_id;
+        cell2.id = searchData[i].r_id;
+        cell3.id = searchData[i].r_id;
+        cell4.id = searchData[i].r_id;
+        document.getElementById(cell1.id).addEventListener('click', rowListener);
+        document.getElementById(cell2.id).addEventListener('click', rowListener);
+        document.getElementById(cell3.id).addEventListener('click', rowListener);
+        document.getElementById(cell4.id).addEventListener('click', rowListener);
+        console.log("Listening... to " + row.id);
         x++;
     }
-    popped = true;
+    document.getElementById('newTable').addEventListener('click', rowListener);
+    console.log("Listening...");
 }
 function populateReqTable() {
     console.log("popping table " + newAllResolvedReqs);
@@ -256,6 +287,7 @@ function populateReqTable() {
         cell7.innerHTML = JSON.stringify(newAllResolvedReqs[i].rq_status);
         cell8.innerHTML = JSON.stringify(newAllResolvedReqs[i].timeStamp);
         cell9.innerHTML = JSON.stringify(newAllResolvedReqs[i].r_id);
+
         x++;
     }
     popped = true;

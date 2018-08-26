@@ -211,6 +211,7 @@ cell6.innerHTML = JSON.stringify(newResolvedReqs[i].rb_type);
 cell7.innerHTML = JSON.stringify(newResolvedReqs[i].rq_status);
 cell8.innerHTML = JSON.stringify(newResolvedReqs[i].timeStamp);
 cell9.innerHTML = JSON.stringify(newResolvedReqs[i].r_id);
+
 x++;
 }
 }

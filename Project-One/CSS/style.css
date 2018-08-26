@@ -319,17 +319,16 @@ input{
 }
 #approved{
 background-color: green;
-height: 4%;
-float: right;
-margin-left: 1%;
 }
 #approved:hover{
     background-color: white;
 }
 #denied{
     background-color: red;
-    height: 4%;
-    float: right;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 1px;
+    padding-bottom: 3px;
 }
 #denied:hover{
     background-color: white;
@@ -347,4 +346,7 @@ margin-left: 1%;
     border-color: darkgoldenrod;
     box-shadow: 0px 0px 100px #000000;
     text-align: center;
+}   
+#transaction{
+    margin-left: -10%;
 }

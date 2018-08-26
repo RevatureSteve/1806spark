@@ -27,3 +27,25 @@ function reqSent(){
 function closeAlert(){
     document.getElementById('alert').style.display = 'none';
 }
+
+function rowListener(){
+    event.stopPropagation();
+    let newRow = event.target.id;
+    newRow = parseInt(newRow);
+    console.log("ID is " + newRow);
+    if(isNaN(newRow)){
+        console.log("NAAAN");
+    }
+    else{
+    list.unshift(newRow);
+    console.log("List is " + list);
+        document.getElementById('transaction').innerHTML += '<p>' + list[0] + '</p>';
+    }
+    
+}
+
+function clearArray(){
+    console.log("Clear hit")
+    list = [];
+    document.getElementById('transaction').innerHTML = '';
+}
