@@ -12,6 +12,7 @@ function managerLogged() {
         let sub = document.getElementById('submit-reim-btn-mgr');
         let pend = document.getElementById('pending-reim-btn-mrg');
         let news = document.getElementById('news-btn-mgr');
+        let ser = document.getElementById('search-emp');
         document.getElementById('back-btn').addEventListener('click', loginPage)
 
         pro.addEventListener('click', clickedMgr);
@@ -20,6 +21,7 @@ function managerLogged() {
 
         pend.addEventListener('click', clickedMgr);
 
+        ser.addEventListener('click', clickedMgr);
 
         news.addEventListener('click', clickedMgr);
         let fnameLname = newUser.fname + " " + newUser.lname;
@@ -75,6 +77,18 @@ function mgrTabs(num) {
 
             });
             break;
+        case 6:
+
+            fetch('pages/search.html').then((resp) => {
+                nav = resp;
+                return resp.text();
+            }).then((text) => {
+                navbar.innerHTML = text;
+                document.getElementById('search-emp').style.backgroundColor = "yellow";
+                document.getElementById('search-emp').style.fontSize = "97%";
+
+            });
+            break;
 
     }
 }
@@ -85,6 +99,7 @@ function mgrActiveBtn(eventId) {
     let sub = document.getElementById('submit-reim-btn-mgr');
     let pend = document.getElementById('pending-reim-btn-mrg');
     let news = document.getElementById('news-btn-mgr');
+    let ser = document.getElementById('search-emp');
 
     switch (eventId) {
         case "profile-info-btn-mgr":
@@ -93,8 +108,19 @@ function mgrActiveBtn(eventId) {
             sub.removeAttribute("style");
             pend.removeAttribute("style");
             news.removeAttribute('style');
-
+            ser.removeAttribute('style');
             mgrTabs(1);
+
+            break;
+        case "search-emp":
+            innerElement.style.backgroundColor = "yellow";
+            innerElement.style.fontSize = "97%";
+            sub.removeAttribute("style");
+            pend.removeAttribute("style");
+            news.removeAttribute('style');
+            pro.removeAttribute('style');
+
+            mgrTabs(6);
 
             break;
         case "submit-reim-btn-mgr":
@@ -103,6 +129,7 @@ function mgrActiveBtn(eventId) {
             pro.removeAttribute("style");
             pend.removeAttribute("style");
             news.removeAttribute('style');
+            ser.removeAttribute('style');
             mgrTabs(2);
 
             break;
@@ -112,6 +139,7 @@ function mgrActiveBtn(eventId) {
             sub.removeAttribute("style");
             pro.removeAttribute("style");
             news.removeAttribute('style');
+            ser.removeAttribute('style');
             mgrTabs(3);
             break;
         case 'news-btn-mgr':
@@ -120,7 +148,7 @@ function mgrActiveBtn(eventId) {
             sub.removeAttribute("style");
             pend.removeAttribute("style");
             pro.removeAttribute('style');
-
+            ser.removeAttribute('style');
             mgrTabs(5);
             break;
     }
