@@ -4,11 +4,13 @@ import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.revature.POJO.Reimbursement;
 import com.revature.service.AppService;
 
@@ -42,11 +44,16 @@ public class editProfileServlet extends HttpServlet {
 	 *      response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int id = Integer.parseInt(request.getParameter("userId"));
-		String email = request.getParameter("email");
-		String fname = request.getParameter("firstName");
-		String lname = request.getParameter("lastName");
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		System.out.println("called");
+		ObjectMapper mapper = new ObjectMapper();
+		ServletInputStream json = request.getInputStream();
+		ObjectNode node = mapper.readValue(json, ObjectNode.class);
+		
+		int id = node.get("userId").intValue();
+		String email = node.get("email").textValue();
+		String fname = node.get("firstName").textValue();
+		String lname = node.get("lastName").textValue();
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		appService.UpdateProfile(email, fname, lname, id);
 	}
 

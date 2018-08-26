@@ -119,77 +119,25 @@ public class UserDaoImpl implements UserDao {
 		}
 		return users;
 	}
+
 	
 	@Override
-	public List<Reimbursement> getPending(boolean all, int id) {
+	public List<Reimbursement> getReById(int id, boolean all) {
 		String sql = null;
 		PreparedStatement ps = null;
 		List<Reimbursement> re = new ArrayList<>();
 		try (Connection conn = setConnectionProperties.getConnection()){
 			if(all) {
-				sql = "SELECT * FROM REIMBURSEMENT WHERE RQ_STATUS_ID = 1";
+				sql = "SELECT * FROM REIMBURSEMENT";
 				ps = conn.prepareStatement(sql);
 			} else {
-				sql = "SELECT * FROM REIMBURSEMENT WHERE EMP_U_ID = ? AND RQ_STATUS_ID = 1";
+				sql = "SELECT * FROM REIMBURSEMENT WHERE EMP_U_ID = ?";
 				ps = conn.prepareStatement(sql);
 				ps.setInt(1, id);
 			}
 			ResultSet resultSet = ps.executeQuery();
 			while (resultSet.next()) {
-				Reimbursement r = new Reimbursement(resultSet.getInt("R_ID"), manName(resultSet), resultSet.getDouble("AMT"), resultSet.getString("DESCRIPTION"), resultSet.getString("TIMESUBMISSION"), Type(resultSet.getInt("RQ_TYPE_ID")), "Pending");
-				re.add(r);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		return re;
-	}
-	
-	@Override
-	public List<Reimbursement> getResolved(boolean all, int id) {
-		String sql = null;
-		PreparedStatement ps = null;
-		List<Reimbursement> re = new ArrayList<>();
-		try (Connection conn = setConnectionProperties.getConnection()){
-			if(all) {
-				sql = "SELECT * FROM REIMBURSEMENT WHERE RQ_STATUS_ID != 1";
-				ps = conn.prepareStatement(sql);
-			} else {
-				sql = "SELECT * FROM REIMBURSEMENT WHERE EMP_U_ID = ? AND RQ_STATUS_ID != 1";
-				ps = conn.prepareStatement(sql);
-				ps.setInt(1, id);
-			}
-			ResultSet resultSet = ps.executeQuery();
-			while (resultSet.next()) {
-				Reimbursement r = new Reimbursement(resultSet.getInt("R_ID"), manName(resultSet), resultSet.getDouble("AMT"),resultSet.getString("DESCRIPTION"), resultSet.getString("TIMESUBMISSION"), Type(resultSet.getInt("RQ_TYPE_ID")), statusState(resultSet));
-				re.add(r);
-			}
-		} catch (SQLException e) {
-			e.printStackTrace();
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			e1.printStackTrace();
-		}
-		return re;
-	}
-	
-	@Override
-	public List<Reimbursement> getReById(int id) {
-		String sql = null;
-		PreparedStatement ps = null;
-		List<Reimbursement> re = new ArrayList<>();
-		try (Connection conn = setConnectionProperties.getConnection()){
-			sql = "SELECT * FROM REIMBURSEMENT WHERE EMP_U_ID = ?";
-			ps = conn.prepareStatement(sql);
-			ps.setInt(1, id);
-			ResultSet resultSet = ps.executeQuery();
-			while (resultSet.next()) {
-				Reimbursement r = new Reimbursement(resultSet.getInt("R_ID"), manName(resultSet), resultSet.getDouble("AMT"),resultSet.getString("DESCRIPTION"), resultSet.getString("TIMESUBMISSION"), Type(resultSet.getInt("RQ_TYPE_ID")), statusState(resultSet));
+				Reimbursement r = new Reimbursement(resultSet.getInt("R_ID"), resultSet.getInt("EMP_U_ID"), manName(resultSet), resultSet.getDouble("AMT"),resultSet.getString("DESCRIPTION"), resultSet.getString("TIMESUBMISSION"), Type(resultSet.getInt("RQ_TYPE_ID")), statusState(resultSet));
 				re.add(r);
 			}
 		} catch (SQLException e) {

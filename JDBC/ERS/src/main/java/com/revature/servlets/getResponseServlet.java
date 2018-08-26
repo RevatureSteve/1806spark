@@ -32,15 +32,15 @@ public class getResponseServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("userId"));
 		boolean all = Boolean.parseBoolean(request.getParameter("all"));
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		List<Reimbursement> re = appService.getRes(all ,id);
-		System.out.println(re);
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		//List<Reimbursement> re = appService.getRes(all ,id);
+		//System.out.println(re);
 
 		ObjectMapper mapper = new ObjectMapper();
 
-		String json = mapper.writeValueAsString(re);
+		//String json = mapper.writeValueAsString(re);
 		response.setContentType("application/json");
-		response.getWriter().write(json);
+		//response.getWriter().write(json);
 	}
 
 	/**

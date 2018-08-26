@@ -2,6 +2,7 @@ package com.revature.POJO;
 
 public class Reimbursement {
 	private int rid;
+	private int uId;
 	private String mId;
 	private double amt;
 	private String desc;
@@ -13,9 +14,13 @@ public class Reimbursement {
 		super();
 	}
 
-	public Reimbursement(int rid, String mId, double amt, String desc, String time, String type, String status) {
+	
+
+	public Reimbursement(int rid, int uId, String mId, double amt, String desc, String time, String type,
+			String status) {
 		super();
 		this.rid = rid;
+		this.uId = uId;
 		this.mId = mId;
 		this.amt = amt;
 		this.desc = desc;
@@ -23,6 +28,8 @@ public class Reimbursement {
 		this.type = type;
 		this.status = status;
 	}
+
+
 
 	public Reimbursement(String mId, double amt, String desc, String time) {
 		this.mId = mId;
@@ -38,6 +45,18 @@ public class Reimbursement {
 	public void setRid(int rid) {
 		this.rid = rid;
 	}
+
+	public int getuId() {
+		return uId;
+	}
+
+
+
+	public void setuId(int uId) {
+		this.uId = uId;
+	}
+
+
 
 	public String getmId() {
 		return mId;

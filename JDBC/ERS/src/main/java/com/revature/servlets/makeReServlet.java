@@ -41,38 +41,24 @@ public class makeReServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		/*
-		int id = Integer.parseInt(request.getParameter("userId"));
-		double amt = Double.parseDouble(request.getParameter("amount"));
-		String desc = request.getParameter("description");
-		int type = Integer.parseInt(request.getParameter("type"));
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		appService.makeRe(id, amt, desc, type);
-		*/
 		System.out.println("called");
 		ObjectMapper mapper = new ObjectMapper();
 		ServletInputStream json = request.getInputStream();
 		ObjectNode node = mapper.readValue(json, ObjectNode.class);
 
 		int id = node.get("userId").intValue();
-		System.out.println(id);
 		double amt = node.get("amount").doubleValue();
-		System.out.println(amt);
 		String desc = node.get("description").textValue();
-		System.out.println(desc);
 		int type = node.get("type").intValue();
+		System.out.println(id);
+		System.out.println(amt);
+		System.out.println(desc);
 		System.out.println(type);
 		appService.makeRe(id, amt, desc, type);
-		// user printwriter note this is not json String just misc toString code
 		PrintWriter out = response.getWriter();
+		
+		String ujson = mapper.writeValueAsString("Request sent");
+		response.setContentType("application/json");
+		response.getWriter().write(ujson);
 	}
-	
-	/*        example body input
-	    {
-			"userId":3, 
-			"amount":2.00, 
-			"description":"hi", 
-			"type":5
-		}
-	 */
 }

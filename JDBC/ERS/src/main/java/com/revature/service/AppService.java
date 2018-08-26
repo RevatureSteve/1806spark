@@ -18,9 +18,14 @@ public class AppService {
 	private UserDao userDao = new UserDaoImpl();
 
 	public User login(String email, String pass, int pos) {
+		boolean all = false;
 		User db_u = userDao.getUserByUsername(email);
 		if (db_u != null) {
 			if (db_u.getPassword().equals(pass) && pos == db_u.getPosId()) {
+				if (pos == 1) {
+					all = true;
+				}
+				db_u.setUserRes(userDao.getReById(db_u.getuId(), all));
 				return db_u;
 			}
 		}
@@ -35,15 +40,6 @@ public class AppService {
 		userDao.makeReimbursement(u_id, amt, desc, type);
 	}
 
-	public List<Reimbursement> getPend(boolean all, int id) {
-		List<Reimbursement> re = userDao.getPending(all, id);
-		return re;
-	}
-
-	public List<Reimbursement> getRes(boolean all, int id) {
-		return userDao.getResolved(all, id);
-	}
-
 	public void resolveRe(int mid, int sid, int rid) {
 		userDao.updateReStatus(mid, sid, rid);
 	}
@@ -56,6 +52,6 @@ public class AppService {
 	}
 
 	public List<Reimbursement> getReById(int id) {
-		return userDao.getReById(id);
+		return userDao.getReById(id, true);
 	}
 }

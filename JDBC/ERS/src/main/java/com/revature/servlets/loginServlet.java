@@ -1,14 +1,17 @@
 package com.revature.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
+import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.revature.POJO.Reimbursement;
 import com.revature.POJO.User;
 import com.revature.service.AppService;
@@ -34,13 +37,13 @@ public class loginServlet extends HttpServlet {
 		String email = request.getParameter("email");
 		String pass = request.getParameter("password");
 		int pos = Integer.parseInt(request.getParameter("pos_id"));
-		response.getWriter().append("Served at: ").append(request.getContextPath());
 		User u = appService.login(email, pass, pos);
 		System.out.println(u);
 		ObjectMapper mapper = new ObjectMapper();
 
 		String json = mapper.writeValueAsString(u);
 		response.setContentType("application/json");
+		System.out.println(json);
 		response.getWriter().write(json);
 	}
 
@@ -48,8 +51,20 @@ public class loginServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		doGet(request, response);
+		System.out.println("called");
+		ObjectMapper mapper = new ObjectMapper();
+		ServletInputStream json = request.getInputStream();
+		ObjectNode node = mapper.readValue(json, ObjectNode.class);
+
+		String email = node.get("email").textValue();
+		String pass = node.get("password").textValue();
+		int pos = node.get("pos_id").intValue();
+		User u = appService.login(email, pass, pos);
+		
+		String ujson = mapper.writeValueAsString(u);
+		response.setContentType("application/json");
+		System.out.println(ujson);
+		response.getWriter().write(ujson);
 	}
 
 }

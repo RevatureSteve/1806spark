@@ -31,7 +31,7 @@ public class getReByIdServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("userId"));
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
 		List<Reimbursement> re = appService.getReById(id);
 
 		ObjectMapper mapper = new ObjectMapper();

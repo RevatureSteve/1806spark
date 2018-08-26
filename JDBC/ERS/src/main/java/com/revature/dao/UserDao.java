@@ -13,10 +13,8 @@ public interface UserDao {
 	//READ
 	public User getUserByUsername(String email);
 	List<User> getManagers(boolean all, int id);
-	List<Reimbursement> getPending(boolean all, int id);
-	List<Reimbursement> getResolved(boolean all, int id);
 	List<User> getUsers();
-	List<Reimbursement> getReById(int id);
+	List<Reimbursement> getReById(int id, boolean all);
 	//UPDATE
 	void updateUser(String email, String fname, String lname, int id);
 	void updateReStatus(int getuId, int input, int num);

@@ -26,18 +26,20 @@ public class resolveRequestsServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		response.getWriter().append("Served at: ").append(request.getContextPath());
+		int rid = Integer.parseInt(request.getParameter("requestId"));
+		int sid = Integer.parseInt(request.getParameter("statusId"));
+		int mid = Integer.parseInt(request.getParameter("managerId"));
+		System.out.println(rid);
+		System.out.println(sid);
+		System.out.println(mid);
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		appService.resolveRe(mid, sid, rid);
 	}
 
 	/**
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		int rid = Integer.parseInt(request.getParameter("requestId"));
-		int sid = Integer.parseInt(request.getParameter("statusId"));
-		int mid = Integer.parseInt(request.getParameter("managerId"));
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		appService.resolveRe(mid, sid, rid);
+		
 	}
 }

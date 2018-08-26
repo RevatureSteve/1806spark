@@ -32,15 +32,15 @@ public class getPendingServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("userId"));
 		boolean all = Boolean.parseBoolean(request.getParameter("all"));
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		List<Reimbursement> re = appService.getPend(false ,id);
+		//response.getWriter().append("Served at: ").append(request.getContextPath());
+		//List<Reimbursement> re = appService.getPend(false ,id);
 		System.out.println("complete");
 
 		ObjectMapper mapper = new ObjectMapper();
 
-		String json = mapper.writeValueAsString(re);
+		//String json = mapper.writeValueAsString(re);
 		response.setContentType("application/json");
-		response.getWriter().write(json);
+		//response.getWriter().write(json);
 	}
 
 	/**
