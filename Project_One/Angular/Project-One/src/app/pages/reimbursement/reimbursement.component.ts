@@ -3,7 +3,6 @@ import { Users } from './../../models/Users';
 import { Reimbursement } from './../../models/Reimbursement';
 import { DataService } from './../../data.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-reimbursement',
@@ -19,6 +18,7 @@ export class ReimbursementComponent implements OnInit {
   ngOnInit() {
     this.getReimb();
     this.user = this.loggedInService.getLoggedInUser();
+    console.log(this.user);
   }
 
   getReimb() {

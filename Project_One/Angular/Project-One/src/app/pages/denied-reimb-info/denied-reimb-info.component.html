@@ -10,8 +10,8 @@
           <th scope="col">Time Submission</th>
         </tr>
       </thead>
-      <tbody>
-        <tr *ngFor="let post of postD">
+      <tbody *ngFor="let post of postD">
+        <tr *ngIf='user.pos_Id === post.emp_U_Id'>
           <th scope="row"> {{ post.r_Id}} </th>
           <td> {{ post.amt}} </td>
           <td> {{ post.rq_Type_Id}} </td>

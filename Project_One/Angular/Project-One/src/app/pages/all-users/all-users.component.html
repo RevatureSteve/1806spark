@@ -1,4 +1,4 @@
-<h2>Pending Reimbursements</h2>
+<h2>All Dwellers</h2>
 
   <table class="table table-hover table-dark">
       <thead>
@@ -10,7 +10,7 @@
           <th scope="col">Dweller Id</th>
         </tr>
       </thead>
-      <tbody *ngIf='user.pos_Id === 2'>
+      <tbody >
         <tr *ngFor="let user of allUsers">
           <th scope="row"> {{ user.email}} </th>
           <td> {{ user.password }} </td>

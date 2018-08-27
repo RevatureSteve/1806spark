@@ -1,7 +1,8 @@
+import { Users } from './../../models/Users';
+import { LoggedInService } from './../../logged-in.service';
 import { Reimbursement } from './../../models/Reimbursement';
 import { DataService } from './../../data.service';
 import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-denied-reimb-info',
@@ -10,11 +11,13 @@ import { Observable } from 'rxjs';
 })
 export class DeniedReimbInfoComponent implements OnInit {
   postD: Reimbursement[];
+  user: Users;
 
-  constructor(private data: DataService) { }
+  constructor(private data: DataService, private loggedInService: LoggedInService) { }
 
   ngOnInit() {
     this.getReimb();
+    this.user = this.loggedInService.getLoggedInUser();
   }
 
   getReimb() {

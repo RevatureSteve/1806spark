@@ -51,8 +51,8 @@ public class ProjectOneDaoImpl implements ProjectOneDao {
 			ResultSet rs = ps.executeQuery();
 
 			while (rs.next()) {
-				users.add(new Users(rs.getInt("U_ID"), rs.getString("FNAME"), rs.getString("LNAME"),
-						rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getInt("POS_ID")));
+				users.add(new Users(rs.getInt("U_ID"), rs.getString("EMAIL"), rs.getString("PASSWORD"),
+						rs.getString("FNAME"), rs.getString("LNAME"), rs.getInt("POS_ID")));
 			}
 
 		} catch (IOException | SQLException e) {
