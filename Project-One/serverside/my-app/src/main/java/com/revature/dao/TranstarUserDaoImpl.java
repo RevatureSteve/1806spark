@@ -1,6 +1,7 @@
 package com.revature.dao;
 
 import java.io.IOException;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
@@ -59,6 +60,30 @@ public class TranstarUserDaoImpl implements TranstarUserDao{
 				e.printStackTrace();
 			}
 			return user;
+		}
+		//http://localhost:8080/my-app/updateuser
+		public int updateUser(String email, String fname, String lname, int userId) {
+			int rowsAffected = 0;
+			System.out.println("1" + rowsAffected);
+			try (Connection con = ConnectionsPropertiesUtil.newConnection()){
+				System.out.println("2 " + rowsAffected);
+				String sql = "{call update_profile(?,?,?,?)}";
+				System.out.println("3 " + rowsAffected);
+				CallableStatement cs = con.prepareCall(sql);
+				System.out.println("4 " + rowsAffected);
+				cs.setString(1, email);
+				cs.setString(2, fname);
+				cs.setString(3, lname);
+				cs.setInt(4, userId);
+				System.out.println("5 " + rowsAffected);
+				rowsAffected = cs.executeUpdate();
+				System.out.println("6 " + rowsAffected);
+				
+			} catch (SQLException e) {
+				System.out.println("SQL fail");
+				e.printStackTrace();
+			}
+			return rowsAffected;
 		}
 		
 		

@@ -40,14 +40,26 @@ BEGIN
     VALUES (emp_id, amount, description, null, CURRENT_TIMESTAMP, rq_type, 1);
 END;
 /
-CREATE OR REPLACE PROCEDURE resolved(req_id IN INT, status IN INT)
+CREATE OR REPLACE PROCEDURE resolved(req_id IN INT, status IN INT, mgr_id IN INT)
 IS
 BEGIN
     UPDATE reimbursement 
-    SET rq_status_id = status
+    SET rq_status_id = status, mgr_u_id = mgr_id
     WHERE r_id = req_id;
 END;
 /
+CREATE OR REPLACE PROCEDURE update_profile(eml IN VARCHAR2, fn IN VARCHAR2, ln IN VARCHAR2, user_id IN INT)
+IS
+BEGIN
+    UPDATE users
+    SET email = eml, fname = fn, lname = ln
+    WHERE u_id = user_id;
+END;
+/
+
+UPDATE users
+    SET email = 'test@transtar.com', fname = 'Beck', lname = 'Larson'
+    WHERE u_id = 1;
 BEGIN
     new_reimbursement(1,300, 'Lost it all', 2);
 END;

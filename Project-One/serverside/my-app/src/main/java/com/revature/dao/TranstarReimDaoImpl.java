@@ -20,7 +20,7 @@ public class TranstarReimDaoImpl implements TranstarReimDao{
 	public int submitReimbursment(int emp_id, int amount, String desc, int rq_type) {
 		int rowsAffected = 0;
 		try (Connection con = ConnectionsPropertiesUtil.newConnection()){
-			String sql = "{call new_reimbursement(?,?, ?, ?)}";
+			String sql = "{call new_reimbursement(?,?,?,?)}";
 			CallableStatement cs = con.prepareCall(sql);
 			cs.setInt(1, emp_id);
 			cs.setInt(2, amount);

@@ -41,5 +41,11 @@ public class UserLogic {
 		return null;
 		
 	}
+	public int updateUser(String email, String fname, String lname, int userId) {
+		int rowsAffected = tuDao.updateUser(email, fname, lname, userId);
+		
+		
+		return rowsAffected;
+	}
 	
 }

@@ -97,4 +97,14 @@
     <servlet-name>UpdateRequestServlet</servlet-name>
     <url-pattern>/updatereq</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateUserServlet</display-name>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <servlet-class>com.revature.servlet.UpdateUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <url-pattern>/updateuser</url-pattern>
+  </servlet-mapping>
 </web-app>
