@@ -22,4 +22,9 @@ export class ReimbursementService {
   getApprovedReimbursements() {
     return this.httpClient.get<Reimbursement[]>('http://localhost:8080/Project1/ApprovedReimbursements');
   }
+
+  // unfinished code to get prnding reimbursements by ID
+  getPendingReimbursementsById(id) {
+  //  return this.httpClient.get<Reimbursement[]>();
+  }
 }

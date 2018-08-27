@@ -1,3 +1,4 @@
+import { ManagerApprovedReimbursementsComponent } from './manager-approved-reimbursements/manager-approved-reimbursements.component';
 import { ManagerAllReimbursementsComponent } from './manager-all-reimbursements/manager-all-reimbursements.component';
 import { ManagerProfileComponent } from './manager-profile/manager-profile.component';
 import { ManagerViewEmployeesComponent } from './manager-view-employees/manager-view-employees.component';
@@ -21,6 +22,7 @@ export const routes: Routes = [
     {path: 'employee/profile', component: EmployeeProfileComponent},
     {path: 'manager/reimbursementlist', component: ManagerAllReimbursementsComponent},
     {path: 'manager/pending/reimbursementlist', component: ManagerPendingReimbursementsComponent},
+    {path: 'manager/approved/reimbursementlist', component: ManagerApprovedReimbursementsComponent},
     {path: 'manager/employeeslist', component: ManagerViewEmployeesComponent},
     {path: '**', redirectTo: 'home'}
 ];

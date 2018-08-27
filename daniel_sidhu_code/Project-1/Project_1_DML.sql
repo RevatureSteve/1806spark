@@ -15,11 +15,26 @@ INSERT INTO users VALUES(9,'Tyler@rcpd.com', 'Tyler123', 'Tyler', 'Hamilton', 2)
 INSERT INTO users VALUES(10,'Rita@rcpd.com', 'Rita123', 'Rita', 'Phillips', 2);
 INSERT INTO users VALUES(11,'KevinR@rcpd.com', 'Kevin123', 'Kevin', 'Ryman', 2);
 INSERT INTO users VALUES(12,'George@rcpd.com', 'George123', 'George', 'Scott', 2);
-INSERT INTO users VALUES(5,'Brian@rcpd.com', 'Brian123', 'Brian', 'Irons', 2);
-
+INSERT INTO users VALUES(13,'Brian@rcpd.com', 'Brian123', 'Brian', 'Irons', 1);
+INSERT INTO users VALUES(14,'Richard@rcpd.com', 'Richard123', 'Richard', 'Aiken', 1);
+INSERT INTO users VALUES(15,'Barry@rcpd.com', 'Barry123', 'Barry', 'Burton', 1);
+INSERT INTO users VALUES(16,'Rebecca@rcpd.com', 'Rebecca123', 'Rebecca', 'Chambers', 1);
+INSERT INTO users VALUES(17,'Edward@rcpd.com', 'Edward123', 'Edward', 'Dewey', 1);
+INSERT INTO users VALUES(18,'Joseph@rcpd.com', 'Joseph123', 'Joseph', 'Frost', 1);
+INSERT INTO users VALUES(19,'Enrico@rcpd.com', 'Enrico123', 'Enrico', 'Marini', 1);
+INSERT INTO users VALUES(20,'Forest@rcpd.com', 'Forest123', 'Forest', 'Speyer', 1);
+INSERT INTO users VALUES(21,'Kenneth@rcpd.com', 'Kenneth123', 'Kenneth', 'Speyer', 1);
+INSERT INTO users VALUES(22,'Chris@rcpd.com', 'Chris123', 'Chris', 'Redfield', 1);
+INSERT INTO users VALUES(23,'Jill@rcpd.com', 'Jill123', 'Jill', 'Valentine', 1);
+INSERT INTO users VALUES(24,'Brad@rcpd.com', 'Brad123', 'Brad', 'Vickers', 1);
+INSERT INTO users VALUES(25,'Albert@rcpd.com', 'Albert123', 'Albert', 'Wesker', 1);
+INSERT INTO users VALUES(26,'Alexander@rcpd.com', 'Alexander123', 'Alexander', 'Hudson', 2);
+INSERT INTO users VALUES(27,'RichardI@rcpd.com', 'Richard123', 'Richard', 'Iskra', 2);
+INSERT INTO users VALUES(28,'TylerA@rcpd.com', 'TylerA123', 'Tyler', 'Atkinson', 2);
+INSERT INTO users VALUES(29,'Christopher@rcpd.com', 'Christopher123', 'Christopher', 'Holmes', 2);
 
 SELECT * FROM users;
-
+COMMIT;
 --SEQUENCE FOR users TABLES
 CREATE SEQUENCE users_seq
 MINVALUE 1
@@ -61,7 +76,7 @@ COMMIT;
 ALTER TABLE reimbursement MODIFY Mgr_U_Id null; 
 ALTER TABLE reimbursement MODIFY Timesubmission DEFAULT CURRENT_TIMESTAMP;
 ALTER TABLE reimbursement MODIFY Rq_Status_Id DEFAULT (1);
-
+ 
 --SEQUENCE FOR Reimbursement TABLES
 CREATE SEQUENCE reimbursement_seq
 MINVALUE 1

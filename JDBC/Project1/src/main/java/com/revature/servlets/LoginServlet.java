@@ -60,7 +60,7 @@ public class LoginServlet extends HttpServlet {
 		System.out.println("Email is: " + email);
 		System.out.println("Password is: " + password);*/
 		
-		
+		//taking the JSON and treating it as a node
 		ObjectNode node = mapper.readValue(bf, ObjectNode.class);
 		System.out.println("[LOG]---LoginServlet---ObjectNode Successful");
 				

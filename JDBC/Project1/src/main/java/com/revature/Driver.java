@@ -62,10 +62,10 @@ public class Driver {
 		/*
 		 * Here is where I create a new reimburement
 		 */
-		Reimbursement reimb = new Reimbursement(1, 30.00, "more ammo", 1);
+		/*Reimbursement reimb = new Reimbursement(1, 30.00, "more ammo", 1);
 		ReimbursementDao ri = new ReimbursementDaoImpl();
 		ri.newReimbursement(reimb);
-		System.out.println(ri);
+		System.out.println(ri);*/
 	}
 
 }
