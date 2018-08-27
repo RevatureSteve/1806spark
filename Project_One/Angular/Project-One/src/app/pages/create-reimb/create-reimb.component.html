@@ -1,0 +1,21 @@
+<div class="table table-bordered table-dark">
+    <div class="form-group">
+      <label for="exampleFormControlInput1">Amount</label>
+      <input type="number" #amt class="form-control" id="exampleFormControlInput1" placeholder="Enter Cap Amount">
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlSelect1">Reimbursement Type</label>
+      <select [(ngModel)]="rq_Type_Id.value" class="form-control" id="exampleFormControlSelect1" placeholder="Select Request Type">
+        <option (click)="capture(rq_Type_Id.value)" value = "1" #rq_Type_Id >Medical Supplies</option>
+        <option (click)="capture(rq_Type_Id.value)" value = "2" #rq_Type_Id > Ammunition</option>
+        <option (click)="capture(rq_Type_Id.value)" value = "3" #rq_Type_Id >Armor/Clothing</option>
+        <option (click)="capture(rq_Type_Id.value)" value = "4" #rq_Type_Id >Weapons</option>
+        <option (click)="capture(rq_Type_Id.value)" value = "5" #rq_Type_Id >Consumables</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="exampleFormControlTextarea1">Description</label>
+      <textarea #description class="form-control" id="exampleFormControlTextarea1" rows="3" placeholder="Please enter a description" required></textarea>
+    </div>
+    <button (click)="creatingReimb(amt.value, user.u_Id, rq_Type_Id.value, description.value)" class="btn btn-primary" type="submit">Submit</button>
+  </div>

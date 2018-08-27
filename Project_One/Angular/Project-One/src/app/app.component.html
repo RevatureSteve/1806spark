@@ -1,4 +1,4 @@
-<app-navbar></app-navbar>
+<app-navbar *ngIf='loggedInService.getLoggedInUser()'></app-navbar>
 <div class="container">
     <router-outlet></router-outlet>
     <!-- Routed views go here -->

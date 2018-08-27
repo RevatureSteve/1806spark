@@ -1,3 +1,4 @@
+import { LoggedInService } from './logged-in.service';
 import { Component } from '@angular/core';
 
 @Component({
@@ -7,4 +8,6 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'Project-One';
+
+  constructor(private loggedInService: LoggedInService) { }
 }

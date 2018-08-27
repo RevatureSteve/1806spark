@@ -17,19 +17,18 @@ public class ProjectOneDaoImpl implements ProjectOneDao {
 
 	// CREATE
 	@Override
-	public int createReimbursement(int amt, int emp_U_Id, int mgr_U_Id, int rq_Type_Id, String description) {
+	public int createReimbursement(int amt, int emp_U_Id, int rq_Type_Id, String description) {
 		System.out.println("[LOG]---Starting---createReimbursement(users-parameters)");
 		int rowsAffected = 0;
 		
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
 			conn.setAutoCommit(false);
-			String sql = "INSERT INTO reimbursement (amt, emp_U_Id, mgr_U_Id, rq_Type_Id, description) VALUES (?, ?, ?, ?, ?)";
+			String sql = "INSERT INTO reimbursement (amt, emp_U_Id, rq_Type_Id, description) VALUES (?, ?, ?, ?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, amt);
 			ps.setInt(2, emp_U_Id);
-			ps.setInt(3, mgr_U_Id);
-			ps.setInt(4, rq_Type_Id);
-			ps.setString(5, description);
+			ps.setInt(3, rq_Type_Id);
+			ps.setString(4, description);
 			rowsAffected = ps.executeUpdate();
 			conn.commit();
 			

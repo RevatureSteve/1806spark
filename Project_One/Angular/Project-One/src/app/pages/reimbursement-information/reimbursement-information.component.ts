@@ -1,3 +1,5 @@
+import { DataService } from './../../data.service';
+import { Reimbursement } from './../../models/Reimbursement';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -6,10 +8,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./reimbursement-information.component.css']
 })
 export class ReimbursementInformationComponent implements OnInit {
+  postAll: Reimbursement[];
 
-  constructor() { }
+  constructor(private data: DataService) { }
 
   ngOnInit() {
+    this.getReimb();
   }
 
+  getReimb() {
+    this.data.getReimbs().subscribe(
+      data => this.postAll = data);
+  }
 }

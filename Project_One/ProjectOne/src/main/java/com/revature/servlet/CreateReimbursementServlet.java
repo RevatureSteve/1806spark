@@ -51,8 +51,8 @@ public class CreateReimbursementServlet extends HttpServlet {
 		int mgr_U_Id = reimb.getMgr_U_Id();
 		int rq_Type_Id = reimb.getRq_Type_Id();
 		String description = reimb.getDescription();
-		System.out.println(amt + ""+ emp_U_Id + "" + mgr_U_Id + "" + rq_Type_Id + "" + description);
-		int success = aS.createReimbursement(amt, emp_U_Id, mgr_U_Id, rq_Type_Id, description);
+		System.out.println(amt + ""+ emp_U_Id + "" + rq_Type_Id + "" + description);
+		int success = aS.createReimbursement(amt, emp_U_Id, rq_Type_Id, description);
 		PrintWriter out = response.getWriter();
 		out.print(1);
 	}

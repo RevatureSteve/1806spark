@@ -10,6 +10,7 @@ import { LoginComponent } from './pages/login/login.component';
 import { ManagersComponent } from './pages/managers/managers.component';
 import { UsersComponent } from './pages/users/users.component';
 import { ReimbursementComponent } from './pages/reimbursement/reimbursement.component';
+import { CreateReimbComponent } from './pages/create-reimb/create-reimb.component';
 
 const routes: Routes = [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -20,6 +21,7 @@ const routes: Routes = [
     {path: 'reimb/pending', component: PendingReimbInfoComponent},
     {path: 'reimb/denied', component: DeniedReimbInfoComponent},
     {path: 'reimb/info', component: ReimbursementInformationComponent},
+    {path: 'reimb/create', component: CreateReimbComponent},
     {path: 'overseer', component: ManagersComponent},
     {path: 'dweller', component: UsersComponent},
     {path: '**', redirectTo: 'login'}

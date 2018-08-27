@@ -8,7 +8,7 @@ import com.revature.pogo.Users;
 public interface ProjectOneDao {
 	
 	// Create
-	public int createReimbursement(int amt, int emp_U_Id, int mgr_U_Id, int rq_Type_Id, String description);
+	public int createReimbursement(int amt, int emp_U_Id, int rq_Type_Id, String description);
 	
 	// Read
 	public Users getUserByEmail(String email);
