@@ -1,0 +1,18 @@
+.form {
+    color:forestgreen;
+    border-color: darkred;
+}
+
+/* .input profileInput {
+    color:forestgreen;
+    border-color: darkred;
+    
+} */
+
+.formBtn {
+    color:white;
+    border-color: darkred;
+    width: 180px;
+    background-color: forestgreen;
+    font-size: 20px;
+}

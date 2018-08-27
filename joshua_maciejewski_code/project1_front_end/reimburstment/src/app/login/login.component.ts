@@ -17,6 +17,7 @@ export class LoginComponent implements OnInit {
   constructor(private httpClient: HttpClient, private loggedon: LoggedonService, private router: Router) { }
 
   ngOnInit() {
+    localStorage.clear();
     this.verifiedUser = null;
     this.input = {
       u_id: 0,
@@ -65,10 +66,11 @@ setUser() {
   } else if (this.verifiedUser.posId ===2) { 
     this.router.navigate(['managerhome']);
   } else {
+    // alert('incorrect email or password!');
     this.router.navigate(['login']);
  
   }
- 
+
 
 }
 

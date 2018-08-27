@@ -1,6 +1,7 @@
 package com.revature.servlets;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -27,19 +28,18 @@ public class ReimByIdServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		ReimbursementBL bl = new ReimbursementBL();
 		
-		int u_id;
+		int u_id = Integer.parseInt(request.getParameter("u_id"));
 		
-		ObjectMapper mapper = new ObjectMapper();
-		ServletInputStream data = request.getInputStream();
-		ObjectNode node = mapper.readValue(data,  ObjectNode.class);
-		
-		u_id = node.get("u_id").intValue();
 		
 		List<Reimbursement> reims = bl.viewSingleEmployee(u_id);
+		ObjectMapper mapper = new ObjectMapper();
 		
 		String json = mapper.writeValueAsString(reims);
 		response.setContentType("application/json");
-		response.getWriter().write(json);
+		
+		
+		PrintWriter out = response.getWriter();
+		out.print(json);
 		
 		
 	}

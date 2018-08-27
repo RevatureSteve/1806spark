@@ -1,6 +1,7 @@
 package com.revature.service;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 import java.util.List;
 
 import javax.servlet.ServletException;
@@ -24,8 +25,22 @@ public class EmployeeViewPendingServlet extends HttpServlet {
 
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
+		
+		ReimbursementBL bl = new ReimbursementBL();
+		
+		int u_id = Integer.parseInt(request.getParameter("u_id"));
+		
+		List<Reimbursement> reims = bl.employeeViewPending(u_id);
+		ObjectMapper mapper = new ObjectMapper();
+		
+		String json = mapper.writeValueAsString(reims);
+		response.setContentType("application/json");
+		
+		
+		PrintWriter out = response.getWriter();
+		out.print(json);
 	}
+
 
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

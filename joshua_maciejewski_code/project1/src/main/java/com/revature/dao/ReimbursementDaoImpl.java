@@ -245,7 +245,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	public void updateReimStatus (int rID, int mID, int status ) {
 		
 		try(Connection conn = SetConnectionsPropertyUtil.getConnection()) {
-			String sql ="UPDATE reimbursement SET mgr_u_id = ?, rq_status = ? WHERE r_id = ?";
+			String sql ="UPDATE reimbursement SET mgr_u_id = ?, rq_status_id = ? WHERE r_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1,  mID);
 			ps.setInt(2, status);

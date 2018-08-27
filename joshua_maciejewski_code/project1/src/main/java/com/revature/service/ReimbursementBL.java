@@ -45,7 +45,7 @@ public class ReimbursementBL {
 
 	//update
 	public void changeReimStatus(int rID, int mID, int status) {
-		
+		dao.updateReimStatus(rID, mID, status);
 	}
 
 }

@@ -65,7 +65,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ReimByIdServlet</servlet-name>
-    <url-pattern>/ReimByIdServlet</url-pattern>
+    <url-pattern>/ReimByIdServlet/id</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -85,7 +85,7 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>EmployeeViewPendingServlet</servlet-name>
-    <url-pattern>/EmployeeViewPendingServlet</url-pattern>
+    <url-pattern>/EmployeeViewPendingServlet/id</url-pattern>
   </servlet-mapping>
   <servlet>
     <description></description>
@@ -96,5 +96,15 @@
   <servlet-mapping>
     <servlet-name>ChangeReimStatusServlet</servlet-name>
     <url-pattern>/ChangeReimStatusServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeeResolvedServlet</display-name>
+    <servlet-name>EmployeeResolvedServlet</servlet-name>
+    <servlet-class>com.revature.servlets.EmployeeResolvedServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeResolvedServlet</servlet-name>
+    <url-pattern>/EmployeeResolvedServlet/id</url-pattern>
   </servlet-mapping>
 </web-app>

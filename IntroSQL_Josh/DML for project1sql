@@ -2,6 +2,7 @@ INSERT INTO rq_status (rq_status_id, rq_status)  VALUES (1, 'Pending');
 INSERT INTO rq_status (rq_status_id, rq_status) VALUES (2, 'Approved');
 INSERT INTO rq_status (rq_status_id, rq_status) VALUES (3, 'Denied');
 
+
 INSERT INTO position (pos_id, pos_type) VALUES (1, 'Employee');
 INSERT INTO position (pos_id, pos_type) VALUES (2, 'Manager');
 
@@ -12,6 +13,19 @@ INSERT INTO users (u_id, email, password, fname, lname, pos_id)
 INSERT INTO users (u_id, email, password, fname, lname, pos_id) 
     VALUES (2, 'boss@email.com', 'password2', 'Boss', 'Man', 2);
     
+INSERT INTO users (u_id, email, password, fname, lname, pos_id) 
+    VALUES (4, 'buddy@northpole.com', 'buddy', 'Buddy', 'The Elf', 1);
+INSERT INTO users (u_id, email, password, fname, lname, pos_id) 
+    VALUES (5, 'elf@northpole.com', 'elf', 'Joe', 'The Elf', 1);
+INSERT INTO users (u_id, email, password, fname, lname, pos_id) 
+    VALUES (6, 'santa@northpole.com', 'santa', 'Santa', 'Claus', 2);
+INSERT INTO users (u_id, email, password, fname, lname, pos_id) 
+    VALUES (7, 'mrs@northpole.com', 'mrs', 'Mrs.', 'Claus', 2);    
+   
+commit;    
+
+select * from users;
+    
 INSERT INTO reimbursement (r_id, emp_u_id, mgr_u_id, amt, timesubmission, rq_type_id, rq_status_id)
     VALUES (1, 1, 2, 25.25, CURRENT_TIMESTAMP, 1, 1);
 INSERT INTO reimbursement (r_id, emp_u_id, mgr_u_id, amt, timesubmission, rq_type_id, rq_status_id)
@@ -21,8 +35,15 @@ INSERT INTO reimbursement (r_id, emp_u_id, mgr_u_id, amt, timesubmission, rq_typ
 INSERT INTO reimbursement (r_id, emp_u_id, mgr_u_id, amt, timesubmission, rq_type_id, rq_status_id)
     VALUES (4, 1, 2, 28.25, CURRENT_TIMESTAMP, 1, 2);
     
-INSERT INTO rq_type (rq_type_id, rq_type) VALUES (1, 'theme');
 
+
+UPDATE rq_type SET rq_type = 'candy' WHERE rq_type_id = 1;
+INSERT INTO rq_type (rq_type_id, rq_type) VALUES (2, 'candy canes');
+INSERT INTO rq_type (rq_type_id, rq_type) VALUES (3, 'candy corns');
+INSERT INTO rq_type (rq_type_id, rq_type) VALUES (4, 'syrup');
+
+
+select * from rq_type;
 
 commit;
 

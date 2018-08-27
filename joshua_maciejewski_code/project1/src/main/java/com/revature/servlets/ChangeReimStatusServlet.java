@@ -1,6 +1,7 @@
 package com.revature.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
 import javax.servlet.http.HttpServlet;
@@ -9,6 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.revature.domain.Reimbursement;
 import com.revature.service.ReimbursementBL;
 
 
@@ -41,9 +43,11 @@ public class ChangeReimStatusServlet extends HttpServlet {
 		rqStatusId = node.get("rqStatusId").intValue();
 
 		bl.changeReimStatus(rId, mgrUId, rqStatusId);
+		
+		
+		
 		System.out.println("end servlet");
 		
 
 	}
-//changeReimStatus(int rID, int mID, int status)
 }

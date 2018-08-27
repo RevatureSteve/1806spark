@@ -8,23 +8,22 @@ export class LoggedonService {
 
   private static user: User;
 
+  user=JSON.parse(localStorage.getItem('user'));
+
   constructor() { }
 
   setloggedon(user) {
-    LoggedonService.user = user;
     
-    console.log(user + "singleton");
-    console.log(LoggedonService.user + "singleton 2nd");
-    console.log(user + "singleton");
-    console.log(LoggedonService.user + "singleton 2nd");
     
-    console.log(localStorage.getItem('user'))
+    //user=JSON.parse(localStorage.getItem('user'));
+
+    console.log(user)
+
   }
 
   getloggedon() {
-    console.log(localStorage.getItem('user'))
-    console.log(LoggedonService.user);
-    return LoggedonService.user;
+
+    return this.user;
     
   }
 } 
