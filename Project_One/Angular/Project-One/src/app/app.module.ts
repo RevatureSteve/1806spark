@@ -18,6 +18,7 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LoginBoxComponent } from './components/login-box/login-box.component';
 import { CreateReimbComponent } from './pages/create-reimb/create-reimb.component';
+import { UpdateUserComponent } from './pages/update-user/update-user.component';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,8 @@ import { CreateReimbComponent } from './pages/create-reimb/create-reimb.componen
     DeniedReimbInfoComponent,
     NavbarComponent,
     LoginBoxComponent,
-    CreateReimbComponent
+    CreateReimbComponent,
+    UpdateUserComponent
   ],
   imports: [
     BrowserModule,

@@ -32,6 +32,7 @@ export class CreateReimbComponent implements OnInit {
     this.createReimbService.getReimb(amt, u_Id, rq_Type_Id, description).subscribe(
       create => {
         console.log('creating reimbursement submission');
+        alert('Reimbursement submission sent');
       }
     );
   }

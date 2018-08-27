@@ -1,0 +1,20 @@
+<div>
+  <div class="form-group">
+    <h4>Update Infomation</h4>
+    <label for="exampleInputEmail1">Update your email address</label>
+    <input type="email" #email class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Update your password</label>
+    <input type="password" #password class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Update your first name</label>
+    <input type="text" #fname class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Update your last name</label>
+    <input type="text" #lname class="form-control" id="exampleInputPassword1" placeholder="Password">
+  </div>
+  <button (click)="updatingUser(email.value, password.value, fname.value, lname.value, user.u_Id)" type="submit" class="btn btn-primary" routerLink="/user/update">Update</button>
+</div>
