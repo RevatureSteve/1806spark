@@ -1,8 +1,6 @@
-import { LoggedInService } from './logged-in.service';
 import { Users } from './models/Users';
 import { Reimbursement } from './models/Reimbursement';
 import { Observable } from 'rxjs';
-import { Router } from '@angular/router';
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
@@ -14,7 +12,7 @@ export class CreateReimbService {
   private static reimb: Reimbursement;
   user: Users;
 
-  constructor(private httpClient: HttpClient, private router: Router) { }
+  constructor(private httpClient: HttpClient) { }
 
   getReimb(amt, u_Id, rq_Type_Id, description): Observable<Reimbursement> {
 

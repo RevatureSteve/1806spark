@@ -180,6 +180,29 @@ public class ProjectOneDaoImpl implements ProjectOneDao {
 	}
 
 	// UPDATE
+	@Override
+	public int updateUser(String email, String password, String fname, String lname, int u_Id) {
+		System.out.println("[LOG]---Starting---updateUsers(users-parameters)");
+		int rowsAffected = 0;
+		
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
+			conn.setAutoCommit(false);
+			String sql = "UPDATE users SET fname = ?" + ", lname = ?" + ", email = ?" + ", password = ?" + " WHERE u_Id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, fname);
+			ps.setString(2, lname);
+			ps.setString(3, email);
+			ps.setString(4, password);
+			ps.setInt(5, u_Id);
+			rowsAffected = ps.executeUpdate();
+			conn.commit();
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println(rowsAffected + " update has been sent!");
+		
+		return rowsAffected;
+	}
 
 	// DELETE
 

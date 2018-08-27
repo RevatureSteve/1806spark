@@ -87,5 +87,12 @@ public class AppService {
 		System.out.println("[LOG]---sending---Created Reimbursement Request");
 		return projectOneDao.createReimbursement(amt, emp_U_Id, rq_Type_Id, description);
 	}
+	
+	// Update User
+	public int updateUser(String email, String password, String fname, String lname, int u_Id) {
+		System.out.println("[LOG]---sending--- Update User Request");
+		return projectOneDao.updateUser(email, password, fname, lname, u_Id);
+	}
+
 }
 

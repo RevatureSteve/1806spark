@@ -86,5 +86,14 @@
 		<servlet-name>validateUser</servlet-name>
 		<url-pattern>/reimbursement/v</url-pattern>
 	</servlet-mapping>
+	<!-- UpdateUser Servlet -->
+	<servlet>
+		<servlet-name>updateUser</servlet-name>
+		<servlet-class>com.revature.servlet.UpdateUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>updateUser</servlet-name>
+		<url-pattern>/user/update</url-pattern>
+	</servlet-mapping>
 
 </web-app>
