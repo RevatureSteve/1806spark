@@ -225,6 +225,29 @@ public class ProjectOneDaoImpl implements ProjectOneDao {
 		
 		return rowsAffected;
 	}
+	
+	
+	public int updateReimb(int r_Id, int mgr_U_Id, int rq_Status_Id) {
+		System.out.println("[LOG]---Starting---updateReimb(reimb-parameters)");
+		int rowsAffected = 0;
+		
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
+			conn.setAutoCommit(false);
+			String sql = "UPDATE reimbursement SET rq_Status_Id = ?" + ", mgr_U_Id = ?" + " WHERE r_Id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, r_Id);
+			ps.setInt(2, mgr_U_Id);
+			ps.setInt(3, rq_Status_Id);
+			rowsAffected = ps.executeUpdate();
+			conn.commit();
+		} catch (IOException | SQLException e) {
+			e.printStackTrace();
+		}
+		System.out.println(rowsAffected + " update has been sent!");
+		
+		return rowsAffected;
+		
+	}
 
 	// DELETE
 

@@ -97,6 +97,6 @@
   </servlet>
   <servlet-mapping>
     <servlet-name>ManagerOptionsServlet</servlet-name>
-    <url-pattern>/ManagerOptionsServlet</url-pattern>
+    <url-pattern>/managerOptions</url-pattern>
   </servlet-mapping>
 </web-app>

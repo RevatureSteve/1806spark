@@ -24,6 +24,8 @@ public interface ProjectOneDao {
 	public List<Reimbursement> getAllReimbursements();
 	// Update
 	public int updateUser(String email, String password, String fname, String lname, int u_Id);
+	
+	public int updateReimb(int r_Id, int mgr_U_Id, int rq_Status_Id);
 	// Delete
 
 }

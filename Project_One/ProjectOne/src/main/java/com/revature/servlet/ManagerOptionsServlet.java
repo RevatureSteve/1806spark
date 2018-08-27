@@ -37,15 +37,14 @@ public class ManagerOptionsServlet extends HttpServlet {
 		ObjectMapper mapper = new ObjectMapper();
 		// Reads the json that's being sent through the POST request
 		ServletInputStream json = request.getInputStream();
-		Users user = mapper.readValue(json, Users.class);
 		Reimbursement reimb = mapper.readValue(json, Reimbursement.class);
 
-		System.out.println(user + "" + reimb);
+		System.out.println(reimb);
 		
-		int u_Id = user.getU_Id();
+		int r_Id = reimb.getR_Id();
 		int mgr_U_Id = reimb.getMgr_U_Id();
 		int rq_Status_Id = reimb.getRq_Status_Id();
-		System.out.println(u_Id + ""+ mgr_U_Id + "" + rq_Status_Id);
+		System.out.println(r_Id + ""+ mgr_U_Id + "" + rq_Status_Id);
 		int success = aS.
     }
 

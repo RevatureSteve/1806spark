@@ -94,6 +94,11 @@ public class AppService {
 		return projectOneDao.updateUser(email, password, fname, lname, u_Id);
 	}
 	
+	// Update Reimbursement
+	public int updateReimb(int r_Id, int mgr_U_Id, int rq_Status_Id) {
+		System.out.println("[LOG]---sending---Update Reimbursement");
+	}
+	
 	// Get All Users
 	public List<Users> getAllUsers(){
 		System.out.println("[LOG]---sending---Get All Users");
