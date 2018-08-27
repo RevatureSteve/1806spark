@@ -1,3 +1,36 @@
-<p>
-  all-agents works!
-</p>
+<div id="background">
+
+  <h1> All Employees</h1>
+  <div id="sidenav">
+      <a routerLink="/manager" id="link">Home</a>
+      <a routerLink="/agents" id="link">Employees</a>
+      <a routerLink = "/agent/missions" id="link">Missions</a>
+      <a routerLink = "/reimbursements" id="link">Mission Reimbursements</a>
+      <a routerLink = "/logout" id="link">Logout</a>
+      </div>
+    <table class="table table-dark" id="tt">
+        <thead>
+          <tr>
+            <td>ID</td>
+            <td>First Name</td>
+            <td>Last Name</td>
+            <td>Email</td>
+            <td>Position Id</td>
+            
+          </tr>
+        </thead>
+        <tr *ngFor = "let a of agents">
+         <td> {{ a.empId}} </td>
+         <td> {{ a.firstname}} </td>
+         <td> {{ a.lastname}} </td>
+         <td> {{ a.email}} </td>
+         <td> {{ a.positionId}} </td>
+        </tr>
+        <tr>
+          
+        </tr>
+        
+        </table>
+
+
+</div>

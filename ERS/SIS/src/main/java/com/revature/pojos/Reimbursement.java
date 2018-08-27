@@ -153,9 +153,10 @@ public class Reimbursement {
 
 	@Override
 	public String toString() {
-		return "Reimbursement [rId=" + rId + ", amount=" + amount + ", rDescription=" + rDescription + ", rType="
-				+ rType + ", timeSubmitted=" + timeSubmitted + ", rStatus=" + rStatus + "]";
+		return "Reimbursement [amount=" + amount + ", rDescription=" + rDescription + ", rTypeId=" + rTypeId
+				+ ", rStatusId=" + rStatusId + ", empId=" + empId + "]";
 	}
+	
 
 
 	

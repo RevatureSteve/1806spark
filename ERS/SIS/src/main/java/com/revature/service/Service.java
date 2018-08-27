@@ -73,15 +73,50 @@ public class Service {
 	
 	//Allows employee to submit request.
 	public Reimbursement createNewReimbursement(double amount, String rDescription, int uId, int rTypeId, int rStatusId) {
+		Reimbursement rb = null;
 		System.out.println("Starting createNewReimbursement....");
 		int ra =emImpl.createNewReimbursement(amount, rDescription, uId, rTypeId, rStatusId);
 		
 		if (ra !=0) {
 			System.out.println("Success! " + ra + "reimbursement submitted!");
+			rb = new Reimbursement(amount,rDescription, rTypeId, rStatusId, uId);
+			System.out.println(rb);
 		}
 		else {
 			System.out.println("Failed.");
 		}
-		return null;
+		return rb;
 	}
+	
+	// Allows a manager to approve or deny(update) a reimbursement request.
+	public int updateReimbursements(int rId, int rStatusId) {
+		System.out.println("Starting update Reimbursement...");
+		int row = mImpl.updateReimbursements(rId, rStatusId);
+		if (row != 0 ) {
+			System.out.println("Success! " + row + "requests ");
+		}
+		else {
+			System.out.println("Failed");
+		}
+		
+		return rStatusId;
+	}
+	
+	//Updates
+	public int updateUserPssword(int uId, String password) {
+		System.out.println("Starting update User Password....");
+		int row = emImpl.updatePassword(uId, password);
+		if (row != 0) {
+			System.out.println("Success! ");
+		}else {
+				System.out.println("Failed");
+			}
+		return row;
+		}
+	
+	
+	
+	
+	
+	
 }

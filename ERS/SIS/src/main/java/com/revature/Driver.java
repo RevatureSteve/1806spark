@@ -13,7 +13,7 @@ public class Driver {
 		Service s = new Service();
 		
 		//Login
-		System.out.println(s.login("dc@bss.com", "07"));
+		//System.out.println(s.login("dc@bss.com", "07"));
 		
 		
 		//Reimbursements
@@ -32,8 +32,15 @@ public class Driver {
 		
 		// Create new reimbursement.
 		
-//		s.createNewReimbursement(500, "Test", 1, 1, 1);
-//		
+		s.createNewReimbursement(500, "Test", 1, 1, 1);
+		
+		
+		//Approve or deny a request.
+		//s.updateReimbursements(61, 2);
+		
+		
+//		Update password
+		//s.updateUserPssword(07, "dc");
 	}
 
 }

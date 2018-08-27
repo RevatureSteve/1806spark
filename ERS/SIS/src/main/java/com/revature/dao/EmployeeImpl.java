@@ -95,6 +95,89 @@ public class EmployeeImpl implements EmpDao{
 		return row;
 		
 	}
+
+	
+	//
+	@Override
+	public int updateFirstname(int uId, String firstname) {
+		int first = 0;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "UPDATE users SET f_name = ? WHERE u_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, uId);
+			ps.setString(2, firstname);
+			first = ps.executeUpdate();
+			if (first !=0) {
+				System.out.println("Success");
+			}
+			else {
+				System.out.println("Failed.");
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return first;
+	}
+
+	
+	//Allows a user to update last name.
+	@Override
+	public int updateLastName(int uId,String lastname) {
+		int last = 0;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String sql ="UPDATE users SET l_name = ? WHERE u_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, uId);
+			ps.setString(2, lastname);
+			last = ps.executeUpdate();
+			if (last !=0) {
+				System.out.println("Success");
+			}
+			else {
+				System.out.println("Failed.");
+			}
+		} 
+		catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return last;
+	}
+
+	
+	//Allows a user to update password.
+	@Override
+	public int updatePassword(int uId, String password) {
+			int pass = 0;
+			try(Connection conn = ConnectionUtil.getConnection()) {
+				String sql ="UPDATE users SET password = ? WHERE u_id = ?";
+				PreparedStatement ps = conn.prepareStatement(sql);
+				ps.setString(1, password);
+				ps.setInt(2, uId);
+				pass = ps.executeUpdate();
+				if (pass !=0) {
+					System.out.println("Success");
+				}
+				else {
+					System.out.println("Failed.");
+				}
+		} 
+		catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		return pass;
+	}
 	
 	
 	

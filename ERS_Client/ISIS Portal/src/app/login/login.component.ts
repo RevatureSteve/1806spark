@@ -33,18 +33,22 @@ this.validateUser(this.email, this.password);
 }
 
 //Validate User.
-validateUser(email, password): void  {
+validateUser(email, password)  {
   console.log(this.email + this.password)
   this.httpClient.post<Users>('http://localhost:8080/ERS/LoginServlet?email=' + this.email + '&password=' + this.password, this.inputUser)
-  .subscribe(data => {
-    console.log(data);
+  .subscribe(data  => {
+   
+    //console.log(data);
     this.inputUser = data;
-    console.log(this.inputUser);
+   let usr =  JSON.stringify(this.inputUser);
+    // console.log(usr);
+    
 
     if (this.inputUser != null) {
+      console.log("Setting user....." + this.inputUser)
         this.service.setLoggedInUser(this.inputUser);
-        console.log(this.service.currentLoggedUser);
-        if (this.inputUser.positionId == 2) {
+        this.service.currentLoggedUser();
+        if (this.inputUser.positionId== 2) {
         this.router.navigate(['employee']);
         }
         else if (this.inputUser.positionId == 1) {
@@ -55,6 +59,7 @@ validateUser(email, password): void  {
       alert("Invalid email or password .")
       this.service.logout();
     }
+  
   } )
 
  

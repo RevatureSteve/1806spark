@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { UsersService } from './../../users-service';
+
 
 @Component({
   selector: 'app-agent-profile',
@@ -7,9 +9,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AgentProfileComponent implements OnInit {
 
-  constructor() { }
+  constructor(private service: UsersService ) { }
+
+  usr = this.service.currentLoggedUser();
+ user = JSON.stringify(this.usr);
+ uu = this.user.valueOf();
+ final = JSON.parse(this.uu);
 
   ngOnInit() {
+  
   }
 
 }

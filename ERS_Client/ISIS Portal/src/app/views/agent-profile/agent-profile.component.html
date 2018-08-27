@@ -1,8 +1,35 @@
-<div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
-  <div class="card-body">
-    <h5 class="card-title"> {{ user.firstname }}</h5>
-    <p class="card-text">ISIS Employee</p>
-    <a href="#" class="btn btn-primary">Go somewhere</a>
-  </div>
+<div id="emp_background">
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Employee Profile</h1>
+    <div id="sidenav">
+        <a routerLink="/employee" id="link">Home</a>
+        <a routerLink="/agent/profile" id="link">Employee Profile</a>
+        <a routerLink="/agnet/reimbursements" id="link">Employee Reimbursements</a>
+        <a routerLink="/logout" id="link">Logout</a>
+    </div>
+
+    <div class="card" >
+        <h5 class="card-header">Employee Profile</h5>
+        <div class="card-body">
+            <h5 class="card-title">Employee {{ final.positionId }}</h5>
+            <div class="card-text" id="e-info">
+                <label>Employee Id:</label>
+                <input type="text" value="{{ final.empId }}" readonly>
+                <label>First Name:</label>
+                <input type="text" value="{{ final.firstname }}" readonly>
+                <label>Last Name:</label>
+                <input type="text" value="{{ final.lastname }}" readonly>
+                <label>Employee Email::</label>
+                <input type="text" value="{{ final.email }}" readonly>
+            </div>
+            <h5> Need to reset your password?</h5>
+            <a href="#" class="btn btn-primary">Reset Password</a>
+        </div>
+    </div>
+
+    
+
 </div>

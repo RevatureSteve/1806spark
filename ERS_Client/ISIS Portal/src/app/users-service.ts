@@ -10,16 +10,14 @@ import { RouterModule, Router } from '@angular/router';
   providedIn: 'root'
 })
 export class UsersService {
- static user: Users;
+  static  user: Users;
   constructor(private router : Router, private httpClient: HttpClient) { }
 
 //Login
     loginUser(email, password) {
         console.log('Success');
        return this.httpClient.get<Users>('http://localhost:8080/ERS/LoginServlet');
-        
-   
-       
+    
     }
 //Get all users.
 getAllUsers() {
@@ -31,17 +29,11 @@ getAllUsers() {
 getAllReimbursements() {
     console.log("Getting all reimbursements");
    return this.httpClient.get<Reimbursement[]>('http://localhost:8080/ERS/AllReimbursementsServlet');
-   
-   
-        
-  
-    
 
 }
 
 
 //Add emloyee.
-
 addNewEmployee() {
     return this.httpClient.get('http://localhost:8080/ERS/');
 }
@@ -55,14 +47,13 @@ setLoggedInUser(user) {
     UsersService.user = user;
   }
 //Logging out the current logged in user.
-  logout(): void {
+  logout() {
     this.setLoggedInUser(null);
     this.router.navigate(['/login']);
   }
 
   //Get the current logged in user.
   currentLoggedUser() {
-      return UsersService.user;
-     
+    return UsersService.user;
   }
 }

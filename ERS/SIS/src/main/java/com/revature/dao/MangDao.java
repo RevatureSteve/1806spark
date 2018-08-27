@@ -15,7 +15,7 @@ public interface MangDao {
 	List<Reimbursement> getAllReimb();
 	
 	//UPDATE
-	
+	int updateReimbursements(int rId, int rStatusId);
 	
 	//DELETE
 }

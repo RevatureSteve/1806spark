@@ -121,4 +121,27 @@ PreparedStatement ps = conn.prepareStatement(sql);
 		
 	}
 
+	// Allows a manager to approve or deny a reimbursement request.
+	@Override
+	public int updateReimbursements(int rId, int rStatusId) {
+		int row = 0;
+		try(Connection conn = ConnectionUtil.getConnection()) {
+			String sql = "UPDATE reimbursement SET rq_status_id = ? WHERE r_id = ? ";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, rStatusId);
+			ps.setInt(2, rId);
+			row= ps.executeUpdate();
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+		
+		
+		return row;
+	}
+
 }

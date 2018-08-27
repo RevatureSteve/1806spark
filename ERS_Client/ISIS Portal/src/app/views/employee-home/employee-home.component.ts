@@ -19,23 +19,29 @@ export class EmployeeHomeComponent implements OnInit {
     'Home',
     'Agent Profile',
     'Missions',
-    'Agent Status'
+    'Agent Status',
+    'Logout'
   ];
   agents: Users[];
-
+ usr = this.service.currentLoggedUser();
+user = JSON.stringify(this.usr);
+uu = this.user.valueOf();
+final = JSON.parse(this.uu);
 
 
   constructor(private httpClient: HttpClient, private service: UsersService) { }
   ngOnInit() {
-
-    this.getUser();
+    console.log("Employee....")
+    let usr = this.service.currentLoggedUser();
+    let user = JSON.stringify(usr);
+    
+    // let first = user.first;
+    // let last = user.last;
+    let uu = user.valueOf();
+    let final = JSON.parse(uu);
+    console.log(final.email);
 
   }
 
-  getUser() {
-    console.log("Checking logged in user.")
-   return this.service.currentLoggedUser().first;
-    // console.log();
 
-  }
 }

@@ -14,7 +14,9 @@ public interface EmpDao {
 	List<Reimbursement> getEmpReimb(int empId);
 	
 	//UPDATE
-	
+	int updateFirstname(int uId, String firstname);
+	int updateLastName(int uId ,String lasname);
+	int updatePassword(int uId, String email);
 	//DELETE
 
 }
