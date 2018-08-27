@@ -1,6 +1,6 @@
 #background {
   position: fixed;
-  z-index: -2;
+  z-index: -1;
   margin-left: -100px;
   margin-top: -150px;
 
@@ -16,7 +16,7 @@
 
 #welcome {
     position: fixed;
-    margin-left: 27%;
+    margin-left: 23%;
     margin-top: 25px;
     color: black;
     font-size: 100px;
@@ -32,7 +32,7 @@
 #portal {
     width: 500px;
     position: fixed;
-    margin-left: 40%;
+    margin-left: 38%;
     margin-top: 13%;
     opacity: .6;
    
@@ -41,7 +41,7 @@
 #portal2 {
     z-index: -1;
     position: fixed;
-    margin-left: 28%;
+    margin-left: 25%;
     margin-top: 2%;
     opacity: .9;
     
@@ -147,7 +147,7 @@ img.avatar {
 .container {
     position: fixed;
     margin-top: 450px;
-    margin-left: 575px;
+    margin-left: 530px;
     width: 30%;
     opacity: .3;
 }

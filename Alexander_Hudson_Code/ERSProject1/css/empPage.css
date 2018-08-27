@@ -2,7 +2,7 @@
     position: fixed;
     z-index: -1;
     margin-left: 1320px; 
-    opacity: .5;
+    opacity: .7;
     width: 100%;
     margin-top: -40px;
 
@@ -11,7 +11,7 @@
 #background5 {
     position: fixed;
     z-index: -1; 
-    opacity: .5;
+    opacity: .3;
     margin-left: -440px;
     margin-top: -73px;
     width: 100%;
@@ -22,6 +22,53 @@
         
   }
   
+  #background7 {
+    position: fixed;
+    z-index: -1; 
+    opacity: .8;
+    margin-left: -440px;
+    margin-top: -73px;
+    width: 100%;
+       /* -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1); */
+        
+  }
+
+  #background8 {
+    position: fixed;
+    z-index: -1;
+    margin-left: 1320px; 
+    opacity: .2;
+    width: 100%;
+    margin-top: -40px;
+
+  }
+
+  #background10 {
+    position: fixed;
+    z-index: -1; 
+    opacity: .4;
+    margin-left: -440px;
+    margin-top: -73px;
+    width: 100%;
+       /* -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1); */
+        
+  }
+
+  #background9 {
+    position: fixed;
+    z-index: -1;
+    margin-left: 1320px; 
+    opacity: .4;
+    width: 100%;
+    margin-top: -40px;
+
+  }
 #background6 {
       z-index: -2;
       position:fixed;
@@ -130,4 +177,21 @@ input[type=submit]:hover {
 }
 .dropdown{
     height: 50%;
+}
+
+#ship {
+    position: absolute;
+    z-index: -1;
+    margin-top: 50%;
+    margin-left: 20%;
+    opacity: .8;
+}
+
+
+#ship2 {
+    position: absolute;
+    z-index: -1;
+    margin-top: 50%;
+    margin-left: 20%;
+    opacity: .8;
 }

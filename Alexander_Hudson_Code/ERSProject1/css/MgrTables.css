@@ -1,10 +1,10 @@
 #table7 {
-    position: absolute;
+    position: fixed;
     margin-top: 350px;
     color: white;
     background-color: black;
     width: 30%;
-    margin-left: 525px;
+    margin-left: 540px;
     opacity: .8;
     border-style: solid;
     border-color: green;
@@ -27,72 +27,61 @@
 #table5 {
     position: absolute;
     margin-top: 350px;
-    color: green;
+    color: white;
     background-color: black;
     width: 50%;
-    margin-left: 395px;
-    opacity: .9;
-    border-style: solid;
-    border-color: rgb(71, 10, 71);
-    border-width: 5px;
+    margin-left: 365px;
+    opacity: .8;
+  
 }
 
 #table4 {
     position: absolute;
     margin-top: 350px;
-    color: green;
+    color: white;
     background-color: black;
     width: 50%;
-    margin-left: 395px;
-    opacity: .9;
-    border-style: solid;
-    border-color: rgb(71, 10, 71);
-    border-width: 5px;
+    margin-left: 365px;
+    opacity: .8;
+
 }
 
 #table3 {
     position: absolute;
     margin-top: 350px;
-    color: green;
+    color: white;
     background-color: black;
     width: 50%;
-    margin-left: 395px;
-    opacity: .9; 
-    border-style: solid;
-    border-color: rgb(71, 10, 71);
-    border-width: 5px;
+    margin-left: 365px;
+    opacity: .8; 
+ 
 }
 
 #table2 {
     position: absolute;
     margin-top: 350px;
-    color: green;
+    color: white;
     background-color: black;
     width: 50%;
-    margin-left: 395px;
-    opacity: .9;
-    border-style: solid;
-    border-color: rgb(71, 10, 71);
-    border-width: 5px;
+    margin-left: 365px;
+    opacity: .8;
+
 }
 
 #table {
     position: absolute;
     margin-top: 350px;
-    color: green;
+    color: white;
     background-color: black;
     width: 50%;
-    margin-left: 395px;
-    opacity: .9;
-    border-style: solid;
-    border-color: rgb(71, 10, 71);
-    border-width: 5px;
+    margin-left: 365px;
+    opacity: .8;
 }
 
-#title2 {
+#title7 {
     position: fixed;
-    margin-left: 27%;
-    margin-top: 25%;
+    margin-left: 30%;
+    margin-top: 2%;
     color: black;
     font-size: 100px;
     text-decoration-style: wavy;
@@ -106,7 +95,7 @@
 #portal4 {
     z-index: -1;
     position: fixed;
-    margin-left: 40%;
+    margin-left: 38%;
     margin-top: 3%;
     opacity: .6;
     
