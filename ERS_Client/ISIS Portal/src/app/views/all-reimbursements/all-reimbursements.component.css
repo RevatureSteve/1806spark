@@ -30,12 +30,13 @@ h1 {
     margin-left: 10px;
     padding-top: 40p;
     font-family: 'Press Start 2P', cursive;
-    font-size: 15px;
+    font-size: 10px;
 }
 
 thead    {
     color: rgb(4, 4, 71);
     font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
 }
 #scroll {
     margin-top: 20px;

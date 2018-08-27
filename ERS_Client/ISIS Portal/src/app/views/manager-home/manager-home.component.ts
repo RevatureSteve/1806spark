@@ -9,13 +9,13 @@ import { UsersService } from '../../users-service';
 export class ManagerHomeComponent implements OnInit {
 
   constructor(private service : UsersService) { }
-
+  
+   usr = this.service.currentLoggedUser();
+   user = JSON.stringify(this.usr);
+   uu = this.user.valueOf();
+   final = JSON.parse(this.uu);
   ngOnInit() {
-    console.log("Manager....")
-    let usr = this.service.currentLoggedUser();
-    let user = JSON.stringify(usr);
-    let uu = user.valueOf();
-    let final = JSON.parse(uu);
+  
   }
 
 

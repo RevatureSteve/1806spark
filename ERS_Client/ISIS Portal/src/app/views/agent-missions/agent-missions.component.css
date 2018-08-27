@@ -23,6 +23,7 @@ h1 {
     font-family: 'Press Start 2P', cursive;
     font-size: larger;
     
+    
 
 }
 #background {
@@ -38,6 +39,7 @@ h1 {
     margin-right: auto;
     margin-left: 10px;
     padding-top: 40p;
+    margin-bottom: 10px;
 }
 
 thead    {

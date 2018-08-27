@@ -6,13 +6,17 @@ table {
 #tt {
     margin-top: 30px;
 }
+td {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+}
 thead    {
     color: rgb(4, 4, 71);
+    font-family: 'Press Start 2P', cursive;
 }
 h1 {
     color: white;
-    font-family: 'Permanent Marker', cursive;
-    font-family: 'Press Start 2P', cursive;
+   
     text-align: center;
     font-size: 40px;   
     

@@ -13,6 +13,7 @@ import { AgentReimbursementsComponent } from './views/agent-reimbursements/agent
 import { AllReimbursementsComponent } from './views/all-reimbursements/all-reimbursements.component';
 import { AllAgentsComponent } from './views/all-agents/all-agents.component';
 import { NewReimbursemetComponent } from './new-reimbursemet/new-reimbursemet.component';
+import { UpdateReimbursementComponent } from './update-reimbursement/update-reimbursement.component';
 
 
 
@@ -30,6 +31,7 @@ const routes : Routes = [
   {path: 'agents', component: AllAgentsComponent},
   {path: 'password', component: NewPasswordComponent},
   {path: 'new/reimbursement', component: NewReimbursemetComponent},
+  {path: 'update' , component: UpdateReimbursementComponent},
   {path: '**', component: LoginComponent}
  
 ]

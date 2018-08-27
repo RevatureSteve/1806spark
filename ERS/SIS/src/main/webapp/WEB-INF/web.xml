@@ -71,4 +71,14 @@
     <servlet-name>UpdatePasswordServlet</servlet-name>
     <url-pattern>/UpdatePasswordServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateReimbursementServlet</display-name>
+    <servlet-name>UpdateReimbursementServlet</servlet-name>
+    <servlet-class>com.revature.servlets.UpdateReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateReimbursementServlet</servlet-name>
+    <url-pattern>/UpdateReimbursementServlet</url-pattern>
+  </servlet-mapping>
 </web-app>
