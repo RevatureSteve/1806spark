@@ -1,0 +1,35 @@
+<div class="ercard" *ngIf="this.user.role ==2">
+  <div class="ercard_header">Employee Requests</div>
+  <div class="list_container">
+    <table id="datatable" class="er_table">
+      <thead>
+        <tr class="table_caps">
+          <th (click)="sortById()">Reimburse ID</th>
+          <th>Type</th>
+          <th (click)="sortByStatus()">Status</th>
+          <th>Employee Name</th>
+          <th>Description</th>
+          <th>Amount</th>
+          <th>Submitted Date</th>
+          <th>Approve/Deny</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reimb of reimbs" class="tdcenter">
+          <td>{{reimb.id}}</td>
+          <td>{{types[reimb.type]}}</td>
+          <td>{{statuses[reimb.status]}}</td>
+          <td>{{getName(reimb)}}</td>
+          <td>{{reimb.description}}</td>
+          <td>${{reimb.amount}}</td>
+          <td>{{toDateString(reimb.timeSubmitted)}}</td>
+          <td>
+            <button *ngIf="reimb.status == 1" (click)="setStatus(reimb, 2)" class="btn btn-success">Approve</button>
+            <button *ngIf="reimb.status == 1" (click)="setStatus(reimb, 3)" class="btn btn-danger">Deny</button>
+            <span *ngIf="reimb.status != 1">Resolved</span>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

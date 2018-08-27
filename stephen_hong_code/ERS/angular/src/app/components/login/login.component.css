@@ -1,0 +1,209 @@
+@charset "ISO-8859-1";
+
+a:hover {
+	cursor: pointer;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-family: 'Nanum Gothic', sans-serif;
+}
+
+body {
+	margin: 0;
+	bottom: 0;
+	height: 100%;
+	font-family: Helvetica Neue, 'Roboto', sans-serif;
+}
+
+html, .alignlogin {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	/*height:100%;*/
+	/*width:100%;*/
+	text-align: center;
+}
+
+.form-signin {
+	width: 100%;
+	max-width: 400px;
+	padding: 15px;
+	margin: auto;
+}
+
+.form-signin .createaccount {
+	font-weight: 400;
+}
+
+.form-signin .form-control {
+	position: relative;
+	box-sizing: border-box;
+	height: auto;
+	padding: 10px;
+	font-size: 16px;
+}
+
+.form-signin .form-control:focus {
+	z-index: 2;
+}
+
+.form-signin input[type="email"] {
+	margin-bottom: 5px;
+	border-bottom-right-radius: 0;
+	border-bottom-left-radius: 0;
+}
+
+.form-signin input[type="password"] {
+	margin-bottom: 5px;
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+
+.loginbody {
+	background-size: cover;
+	background:
+		url(https://rev2.force.com/sfsites/picasso/core/external/salesforceIdentity/images/background.jpg?v=11)
+		50% 50%/cover no-repeat fixed #f4f4f4;
+	text-align: center;
+	display: flex;
+	align-items: center;
+	height: 703px;
+}
+
+.logincard {
+	text-align: left;
+	min-width: 280px;
+	max-width: 390px;
+	margin: auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	display: inline-block;
+	position: relative;
+	font-size: 14px;
+	color: #333;
+	text-decoration: none;
+	vertical-align: middle;
+	z-index: 0;
+}
+
+.logincard:before {
+	content: '';
+	position: absolute;
+	top: -65px;
+	bottom: -70px;
+	left: -20px;
+	right: -20px;
+	padding: 20px;
+	z-index: -1;
+	background-color: rgba(255, 255, 255, 0);
+	border-radius: 4px;
+}
+
+.inputcontainer {
+	margin-bottom: 10px;
+	padding: 12px;
+	background-color: #fff;
+	border: 1px solid #ccc;
+	border-radius: 2px;
+}
+
+.inputbox {
+	margin-left: 10px;
+	margin-top: 3px;
+	border: 0 solid transparent;
+	width: 70%;
+	-webkit-appearance: none;
+	font-size: 16px;
+	color: #696969;
+	outline: none;
+}
+
+.loginbtn {
+	width: 100%;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	color: #fff;
+	cursor: pointer;
+	background-color: rgb(242, 105, 37);
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 10px 12px;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.42857143;
+	border-radius: 2px;
+	user-select: none;
+	outline: none;
+	transition: border .15s linear;
+}
+
+.loginbtn:hover {
+	background-color: #d7500d;
+}
+
+.registerbtn {
+	width: 100%;
+	margin-top: 5px;
+	margin-bottom: 15px;
+	color: #fff;
+	cursor: pointer;
+	background-color: #d7500d;
+	display: inline-block;
+	text-align: center;
+	vertical-align: middle;
+	background-image: none;
+	border: 1px solid transparent;
+	white-space: nowrap;
+	padding: 10px 12px;
+	font-size: 16px;
+	font-weight: 700;
+	line-height: 1.42857143;
+	border-radius: 2px;
+	user-select: none;
+	outline: none;
+	transition: border .15s linear;
+}
+
+.registerbtn:hover {
+	background-color: rgb(242, 105, 37);
+}
+
+.header {
+	background-color: #f7f7f7;
+	overflow: auto;
+	position: relative;
+	z-index: 1;
+	box-shadow: 0px 2px 1px 0px rgba(102, 93, 93, 0.15);
+	padding-right: 24px;
+}
+
+.anchortitle {
+	text-decoration: none;
+	color: #2c91de;
+	float: left;
+}
+
+.anchortitle:hover {
+	text-decoration: none;
+	color: #1d76ba;
+}
+
+.navtitle {
+	padding: 12px;
+	margin: 0;
+}
+
+.rightnav {
+	float: right;
+	padding: 12px;
+}
+
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

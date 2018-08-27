@@ -1,0 +1,33 @@
+<div class="ercard" *ngIf="this.user.role == 1">
+  <div class="ercard_header">Expense Reimbursements</div>
+  <div class="btn_container">
+    <button class="create_expense_btn" (click)="create()">
+      <fa name="plus"></fa>
+      Create New Expense
+    </button>
+  </div>
+  <div class="list_container">
+    <table id="datatable" class="er_table">
+      <thead>
+        <tr class="table_caps">
+          <th (click)="sortById()">Reimburse ID</th>
+          <th>Type</th>
+          <th (click)="sortByStatus()">Status</th>
+          <th>Description</th>
+          <th>Total Amount</th>
+          <th (click)="sortByTimeSubmitted()">Submitted Date</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let reimb of reimbs" class="tdcenter">
+          <td>{{reimb.id}}</td>
+          <td>{{types[reimb.type]}}</td>
+          <td>{{statuses[reimb.status]}}</td>
+          <td>{{reimb.description}}</td>
+          <td>${{reimb.amount}}</td>
+          <td>{{toDateString(reimb.timeSubmitted)}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,31 @@
+<div class="ercard">
+  <div class="ercard_header">Create Expense Reimbursements</div>
+  <div class="list_container">
+    <div class="form-group">
+      <label for="type">Type:</label>
+      <select class="form-control" [(ngModel)]="this.reimb.type" (blur)="validate()">
+        <option value="1">Certification</option>
+        <option value="2">Relocation to Client</option>
+        <option value="3">Relocation to Training</option>
+        <option value="4">Interview Expense</option>
+        <option value="5">Sales Expense</option>
+        <option value="6">Associate Travel Expense</option>
+        <option value="7">Other</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label for="amount">Amount:</label>
+      <input type="number" class="form-control" [(ngModel)]="this.reimb.amount" (blur)="validate()">
+    </div>
+    <div class="form-group">
+      <label for="description">Description:</label>
+      <textarea class="form-control" rows="5" [(ngModel)]="this.reimb.description" (blur)="validate()"></textarea>
+    </div>
+  </div>
+
+  <div class="btn_container">
+    <button (click)="createReimbursement()" class="create_expense_btn" [disabled]="!valid">Submit</button>
+  </div>
+
+  <div *ngIf="message" class="alert alert-danger">{{message}}</div>
+</div>

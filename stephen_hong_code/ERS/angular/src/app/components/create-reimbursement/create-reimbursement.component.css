@@ -1,0 +1,58 @@
+
+.ercard {
+	position: relative;
+	padding: 0;
+	background: #fff;
+	border: 1px solid rgb(221, 219, 218);
+	border-radius: .25rem;
+	background-clip: padding-box;
+	box-shadow: none;
+	margin: 1.5rem;
+}
+
+.ercard_header {
+	color: #fff;
+	padding: .75rem 1rem .75rem;
+	margin: 0;
+	background-color: #55698d;
+}
+
+.btn_container {
+	padding: 0 25px;
+	height: 100px;
+	justify-content: flex-end;
+	align-items: center;
+	border-bottom: 1px solid rgb(221, 219, 218);
+}
+
+.create_expense_btn {
+	padding-left: 1rem;
+	padding-right: 1rem;
+	text-align: center;
+	vertical-align: middle;
+	border: 1px solid rgb(217, 219, 221);
+	transition: border .15s linear;
+	background-color: rgb(242, 105, 37);
+	border-color: rgb(242, 105, 37);
+	color: rgb(255, 255, 255);
+	position: relative;
+	display: inline-block;
+	background-clip: border-box;
+	border-radius: .25rem;
+	line-height: 1.875rem;
+	text-decoration: none;
+	white-space: normal;
+	user-select: none;
+	cursor: pointer;
+}
+
+.list_container {
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
+	padding: 1rem;
+}
+
+textarea {
+	resize: none;
+}

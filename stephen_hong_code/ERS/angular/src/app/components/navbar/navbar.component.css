@@ -1,0 +1,21 @@
+.header {
+	overflow: auto;
+	position: relative;
+	z-index: 1;
+	box-shadow: 0px 2px 1px 0px rgba(102, 93, 93, 0.15);
+	padding-right: 24px;
+}
+
+.navbtn {
+	cursor: pointer;
+	padding: 6px 10px;
+	border-radius: 50%;
+	border-style: solid;
+	border-width: 1px;
+	background-color: transparent;
+	text-decoration: none;
+	border-color: #333;
+	color: #333;
+	opacity: 0.7;
+	float: right;
+}

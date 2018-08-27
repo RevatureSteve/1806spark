@@ -1,0 +1,47 @@
+<div class="ercard">
+  <div class="ercard_header">Register New User</div>
+  <div class="list_container">
+    <form>
+      <div class="form-group">
+        <label for="fn">First name</label>
+        <input type="text" [(ngModel)]="this.user.firstName" (blur)="validate()" class="form-control" id="fn" placeholder="Enter your first name"
+          name="fn">
+      </div>
+
+      <div class="form-group">
+        <label for="ln">Last name</label>
+        <input type="text" [(ngModel)]="this.user.lastName" (blur)="validate()" class="form-control" id="ln" placeholder="Enter your last name"
+          name="ln">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" [(ngModel)]="this.user.email" (blur)="validate()" class="form-control" id="email" placeholder="Enter your email address"
+          name="email">
+      </div>
+
+      <div class="form-group">
+        <label for="username">Username</label>
+        <input type="text" [(ngModel)]="this.user.username" (blur)="validate()" class="form-control" id="username" placeholder="Create username"
+          name="usr">
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" [(ngModel)]="this.user.pwHash" (blur)="validate()" class="form-control" id="password" placeholder="Create password"
+          name="pw">
+      </div>
+
+      <!-- <div class="form-group">
+        <label for="Role">Manager: <input type="checkbox" [(ngModel)]="role" name="role"></label>
+      </div> -->
+
+      <div class="btn_container">
+        <button type="submit" class="btn btn-primary" [disabled]="!isValid" (click)="register()">Register</button>
+      </div>
+      <br> <br>
+
+      <div *ngIf="message" class="alert alert-danger">{{message}}</div>
+    </form>
+  </div>
+</div>

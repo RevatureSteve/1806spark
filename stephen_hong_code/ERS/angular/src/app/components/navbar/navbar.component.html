@@ -1,0 +1,17 @@
+<div class="wrapper">
+	<!-- <div class="nav-container"> -->
+	<div class="nav-container" *ngIf="this.loggedUser != null">
+		<nav class="navbar navbar-expand-lg header">
+			<a routerLink="landing">
+				<img src="https://s33.postimg.cc/nfppu2pbj/revature-logo.png" height="36" />
+			</a>
+			<div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+				<div class="navbar-nav">
+					<a *ngIf="this.loggedUser == null" class="nav-item nav-link" id="toLogin" routerLink="login">Login</a>
+					<a *ngIf="this.loggedUser == null" class="nav-item nav-link" id="toRegister" routerLink="register">Register</a>
+				</div>
+			</div>
+			<a *ngIf="this.loggedUser != null" class="navbtn" id="toLogout" (click)="logout()" routerLink=""><fa name="sign-out"></fa></a>
+		</nav>
+	</div>
+</div>
