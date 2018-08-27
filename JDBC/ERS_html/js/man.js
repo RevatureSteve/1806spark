@@ -1,6 +1,6 @@
+//load in manager navbar
 function mMain() {
     newPage('../pages/manNavbar.html');
-    document.getElementById("mainButton").onclick = manDialogue;
     document.getElementById("mainButton").hidden = true;
 }
 
@@ -14,14 +14,17 @@ function resolveRequests() {
 }
 function resReq() {
     document.getElementById("page").removeEventListener("mouseover", resReq);
-    for (var i = 0; i < cReArray.length; i++) {
-
-        if (cReArray[i].status != "Pending") {
+    var num = -1;
+    //For each request...
+    for (var q = 0; q < cReArray.length; q++) {
+        //skip any resolved requests
+        if (cReArray[q].status != "Pending") {
             continue;
         }
-        resolving[resolving.length] = cReArray[i];
-        console.log(resolving);
-        console.log(resolving[i]);
+        num += 1;
+        resolving[resolving.length] = cReArray[q];
+
+        //create a dropdown menu to for accepting, declining, or leaving the request as it is
         var sel = document.createElement("select");
         sel.id = "AppDec";
         sel.name = "appDecSelect";
@@ -39,48 +42,42 @@ function resReq() {
         sel.appendChild(op3);
         document.getElementById("resReq").appendChild(sel);
 
+        //then put in the request information bellow the dropdown
         var rei = document.createElement("h1");
-        rei.innerText = "\nAmount: $" + resolving[i].amt + "\nDescription: " + resolving[i].desc + "\nTime: " +
-        resolving[i].time + "\nType: " + resolving[i].type + "\nStatus: " + resolving[i].status;
+        rei.innerText = "\nAmount: $" + resolving[num].amt + "\nDescription: " + resolving[num].desc + "\nTime: " +
+            resolving[num].time + "\nType: " + resolving[num].type + "\nStatus: " + resolving[num].status;
         document.getElementById("resReq").appendChild(rei);
         var rei = document.createElement("br");
         document.getElementById("resReq").appendChild(rei);
     }
 }
+//after clicking the cubmit button
 function resolve() {
+    newPage('../pages/blank.html');
+    document.getElementById("face").src = "../images/neutral_smile.png";
+    document.getElementById("text").innerText = "Alright I'll inform the members who made these requests.";
+    //gather all the dropdown menues into an array
     var selects = document.getElementsByName("appDecSelect");
+    var j = 0;
     for (var i = 0; i < selects.length; i++) {
-        switch (parseInt(selects[i].value)) {
-            case 1:
-                continue;
-            case 2:
-            resolving[i].status = "Accepted";
-                break;
-            case 3:
-            resolving[i].status = "Declined";
-                break;
-
-        }
-        resolving[i].mid = current.fname + " " + current.lanem;
-        console.log(resolving[i].rid);
-        console.log(parseInt(selects[i].value));
-        console.log(current.uId);
-
+        // change the status of the requests in the global array 
         fetch("http://localhost:8080/ERS/resolveRequests?requestId=" + resolving[i].rid + "&statusId=" + parseInt(selects[i].value) + "&managerId=" + current.uId, {
             method: 'GET',
             headers: { 'Content-Type': 'application/json' }
+        }).then((res) => {
+            j += 1;
+            if (j == 4) {
+                memUpdateRequests();
+            }
         }).catch((err) => {
-            document.getElementById("face").src = "../images/uh.png";
-            document.getElementById("text").innerText = "Something went wrong with the system. I couldnt check our records.";
-            document.getElementById("loginButton").hidden = false;
+            console.log("test")
+            //document.getElementById("face").src = "../images/uh.png";
+            //document.getElementById("text").innerText = "Something went wrong with the system. I couldnt check our records.";
+            //document.getElementById("loginButton").hidden = false;
             console.error(err)
         });
     }
-    document.getElementById("addDecButton").disabled = true;
-    document.getElementById("addDecButton").innerText = "<<<";
-    document.getElementById("face").src = "../images/neutral_smile.png";
-    document.getElementById("text").innerText = "Alright I'll inform the members who made these requests.";
-    mMain();
+    resolving = [];
 }
 
 //View Pending requests
@@ -178,7 +175,7 @@ function memRequests() {
     document.getElementById("text").innerText = "Here are the requests from that member";
 
     for (var i = 0; i < cReArray.length; i++) {
-        if (cReArray[i].uId != id) { 
+        if (cReArray[i].uId != id) {
             continue;
         }
         var rei = document.createElement("li");
@@ -318,7 +315,20 @@ function viewMem() {
     document.getElementById("mainButton").hidden = false;
 }
 
-
-function manDialogue() {
-
+function memUpdateRequests() {
+    fetch('http://localhost:8080/ERS/getReById?userId=' + current.uId, {
+        method: 'GET',
+        headers: { 'Content-Type': 'application/json' }
+    }).then(response => {
+        rjson = response.json();
+        return rjson;
+    }).then(data => {
+        cReArray = data;
+        mMain();
+    }).catch((err) => {
+        document.getElementById("face").src = "../images/uh.png";
+        document.getElementById("text").innerText = "Something went wrong with the system. I couldnt check our records.";
+        document.getElementById("loginButton").hidden = false;
+        console.error(err)
+    });
 }

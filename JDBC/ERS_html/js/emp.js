@@ -1,3 +1,4 @@
+//load employee navbar
 function uMain() {
     document.getElementById("mainButton").onclick = empDialogue;
     document.getElementById("mainButton").hidden = true;
@@ -16,15 +17,24 @@ function NewReqSubmit() {
     var t = parseInt(document.getElementById("type").value);
     var d = document.getElementById("description").value;
 
-    if (trollCheck == 3) {
-        trollCheck = 0;
+    if (trollCheck >= 3) {  //check if the user is causing too much trouble
+        title.pause();    //stop the music
+        title.currentTime = 0;
+        if (troub){     //If this isnt the first time...
+            mainButtonNum = 7;
+            empDialogue();
+            return;
+        }
         newPage('../pages/blank.html');
         document.getElementById("face").src = "../images/mad.png";
         document.getElementById("text").innerText = "Ok, thats enough.";
         mainButtonNum = 4;
+        troub = true;
         document.getElementById("mainButton").hidden = false;
         return;
     }
+
+    //check if the amount given is valid 1-9999
     if (a == 0) {
         console.log("0");
         document.getElementById("face").src = "../images/confused.png";
@@ -59,6 +69,7 @@ function NewReqSubmit() {
         return;
     }
 
+    //If the amount given is valid, create the request in the DB
     request = {
         "userId": current.uId,
         "amount": a,
@@ -74,9 +85,10 @@ function NewReqSubmit() {
         return rjson;
     }).then(data => {
         console.log(data);
-        if (document.getElementById("description").value == "") {
+        if (document.getElementById("description").value == "") {   //If no description is given :/
             document.getElementById("face").src = "../images/confused.png";
             document.getElementById("text").innerText = "for...no reason? Well if you say so but I wouldn't get your hopes up";
+            troub = false;
             updateRequests();
             return;
         }
@@ -92,7 +104,7 @@ function NewReqSubmit() {
     });
 }
 
-
+//Update the array of requests
 function updateRequests() {
     fetch('http://localhost:8080/ERS/getReById?userId=' + current.uId, {
         method: 'GET',
@@ -122,6 +134,7 @@ function viewPendingRequests() {
     document.getElementById("face").src = "../images/neutral_smile.png";
     document.getElementById("text").innerText = "Here is a list of all your pending requests";
 
+    //populate the list
     for (var i = 0; i < cReArray.length; i++) {
         if (cReArray[i].status != "Pending") {
             continue;
@@ -135,7 +148,7 @@ function viewPendingRequests() {
         rei.appendChild(t);
         document.getElementById("list").appendChild(rei);
         var rei = document.createElement("li");
-        var t = document.createTextNode("Time: " + cReArray[i].time);
+        var t = document.createTextNode("Time: " + cReArray[i].time);  //looots of population
         rei.appendChild(t);
         document.getElementById("list").appendChild(rei);
         var rei = document.createElement("li");
@@ -170,6 +183,7 @@ function viewResolvedRequests() {
     document.getElementById("face").src = "../images/neutral_smile.png";
     document.getElementById("text").innerText = "Here is a list of all your resolved requests";
 
+    //more population
     for (var i = 0; i < cReArray.length; i++) {
         if (cReArray[i].status == "Pending") {
             continue;
@@ -183,8 +197,8 @@ function viewResolvedRequests() {
         rei.appendChild(t);
         document.getElementById("list").appendChild(rei);
         var rei = document.createElement("li");
-        var t = document.createTextNode("Time: " + cReArray[i].time);
-        rei.appendChild(t);
+        var t = document.createTextNode("Time: " + cReArray[i].time);   //For some reason /n doesnt work when
+        rei.appendChild(t);                                             //making one big li element so I do this
         document.getElementById("list").appendChild(rei);
         var rei = document.createElement("li");
         var t = document.createTextNode("Type: " + cReArray[i].type);
@@ -234,7 +248,7 @@ function editProfile() {
 }
 function populate() {
     document.getElementById("page").removeEventListener("mouseover", populate);
-    document.getElementById("first").value = current.fname;
+    document.getElementById("first").value = current.fname; //set the default values to the current user information
     document.getElementById("last").value = current.lname;
     document.getElementById("mail").value = current.email;
 }
@@ -267,70 +281,72 @@ function submitProfile() {
     uMain();
 }
 
-// Side Dialogue
+// Employee side Dialogue
 function empDialogue() {
     switch (mainButtonNum) {
-        case 0:
+        case 0:     //when you try to make a request with $10,000+  part 1
             document.getElementById("face").src = "../images/uh.png";
             document.getElementById("text").innerText = "Yeah theres no way thats going to get accepted, sorry.";
             break;
-        case 1:
+        case 1:     //part 2
             document.getElementById("mainButton").hidden = true;
             document.getElementById("text").innerText = "At least try to keep it bellow $10,000";
             document.getElementById("newRequestSubmit").disabled = false;
             document.getElementById("newRequestSubmit").innerText = "Submit";
             break;
-        case 2:
+        case 2:     //this isn't used now but I kept it for testing purposes 
             viewPendingRequests();
             break;
-        case 3:
+        case 3:     //request with a negative amount
             document.getElementById("mainButton").hidden = true;
             document.getElementById("face").src = "../images/uh.png";
             document.getElementById("text").innerText = "Yeah uhhhh, thats not quite how this works. Possitve numbers please.";
             document.getElementById("newRequestSubmit").disabled = false;
             document.getElementById("newRequestSubmit").innerText = "Submit";
             break;
-        case 4:
+        case 4:     //part 2 of the user causing too much trouble (part 1 being line 30)
             document.getElementById("text").innerText = "What exactly are you trying to accomplish here?";
             break;
-        case 5:
+        case 5:     //part 3
             document.getElementById("face").src = "../images/confused.png";
-            document.getElementById("text").innerText = "Not that i question your intelligence, but I'd like to think this is a rather simple system here";
+            document.getElementById("text").innerText = "Not to question your intelligence or anything, but I'd like to think this is a rather simple system here";
             break;
-        case 6:
+        case 6:     //part 4 (asks if you will stop)
             document.getElementById("mainButton").hidden = true;
             document.getElementById("face").src = "../images/mad.png";
             document.getElementById("text").innerText = "But really though, there are other pokemon that are waiting so are you gonna stop causing trouble?";
             newPage('../pages/isTrouble.html');
             break;
-        case 7:
+        case 7:     //part 5 (if you continue to cause trouble)
             document.getElementById("mainButton").hidden = false;
             newPage('../pages/blank.html');
             document.getElementById("face").src = "../images/grudge.png";
             document.getElementById("text").innerText = "Oh really, Well then....";
+            trollCheck = 0;
             break;
-        case 8:
+        case 8:     //part 6
             document.getElementById("face").src = "../images/lucario.png";
             document.getElementById("text").innerText = "Thats enough Riolu. I'll take it from here";
             break;
-        case 9:
+        case 9:     //part 7
             document.getElementById("face").src = "../images/mad.png";
             document.getElementById("text").innerText = "hmph";
             break;
-        case 10:
+        case 10:    //part 8
             document.getElementById("face").src = "../images/lucario.png";
             document.getElementById("text").innerText = current.lname + " You've done enough damage. Lets go";
             break;
-        case 11:
+        case 11:    //part 9
             document.getElementById("face").src = "../images/mad.png";
             document.getElementById("text").innerText = "...";
             break;
-        case 12:
+        case 12:    //part 10
             document.getElementById("face").src = "../images/relief.png";
             break;
-        case 13:
+        case 13:    //part 11 (loging out of previous user)
             document.getElementById("face").src = "../images/neutral_smile.png";
             document.getElementById("text").innerText = "Next in line, sorry you had to see that";
+            title.play();
             mainButtonNum = 5;
             current = {};
             cReArray = {};
@@ -340,7 +356,11 @@ function empDialogue() {
     mainButtonNum++;
 }
 
+//If you chose to stop causing trouble
 function noTrouble() {
-    document.getElementById("yesButton").onClick = empDialogue;
-    document.getElementById("noButton").onClick = "";
+    title.play();
+    document.getElementById("face").src = "../images/neutral_smile.png";
+    document.getElementById("text").innerText = "Ok good. Please give a possitive number between 1 and 9999 this time.";
+    mainButtonNum = 7;
+    newPage('../pages/empPages/makeRequest.html');
 }
