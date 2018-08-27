@@ -41,9 +41,6 @@ public class UpdateReimbursementsServlet extends HttpServlet {
 		ObjectMapper mapper = new ObjectMapper();
 		ServletInputStream json = request.getInputStream();
 		Decision[] decisions = mapper.readValue(json, Decision[].class);
-		for(Decision d: decisions) {
-			System.out.println(d);
-		}
 		
 		int success = ReimbursementsService.updateReimbursements(decisions);
 		System.out.println(decisions);

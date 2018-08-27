@@ -22,6 +22,9 @@ export class UpdateService {
     if (!lname) {
       lname = this.logged.lname;
     }
+    this.logService.setfName(fname);
+    this.logService.setlName(lname);
+    this.logService.setPassword(password);
 
     const user = {
       uId: this.logged.uId,

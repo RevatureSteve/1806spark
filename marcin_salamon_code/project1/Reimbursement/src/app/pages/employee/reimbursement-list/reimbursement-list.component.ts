@@ -10,12 +10,13 @@ import { User } from '../../../models/user';
   styleUrls: ['./reimbursement-list.component.css']
 })
 export class ReimbursementListComponent implements OnInit {
-  reimbursements: Reimbursement[];
+  reimbursements: Reimbursement[] = [];
   user: User;
   filter: number;
   status: string;
   active: string[];
   style: string[] = ['', 'primary', 'success', 'danger'];
+  easterEgg = false;
   constructor(private reimbService: ReimbursementListService, private logged: LoggedUserService) { }
 
   ngOnInit() {
@@ -32,7 +33,11 @@ export class ReimbursementListComponent implements OnInit {
 
   sortReimbursements(reimb): Reimbursement[] {
     reimb.sort(this.dynamicSort('-timesubmission'));
-    console.log(reimb);
+    if (reimb.length === 0) {
+      this.easterEgg = true;
+    } else {
+      this.easterEgg = false;
+    }
     return reimb;
   }
   setPending() {
@@ -52,12 +57,12 @@ export class ReimbursementListComponent implements OnInit {
   dynamicSort(property) {
     let sortOrder = 1;
     if (property[0] === '-') {
-        sortOrder = -1;
-        property = property.substr(1);
+      sortOrder = -1;
+      property = property.substr(1);
     }
     return function (a, b) {
-        const result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
-        return result * sortOrder;
+      const result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+      return result * sortOrder;
     };
-}
+  }
 }

@@ -15,8 +15,6 @@ public class Reimbursement {
 	private int rq_typeId;
 	private int rq_statusId;
 
-	
-
 	public Reimbursement(int rId, User employee, User manager, double amount, String description, Object img,
 			String timesubmission, String rq_type, String rq_status, int rq_typeId, int rq_statusId) {
 		super();
@@ -75,5 +73,13 @@ public class Reimbursement {
 
 	public String getRq_status() {
 		return rq_status;
+	}
+
+	@Override
+	public String toString() {
+		return "Reimbursement [rId=" + rId + ", employee=" + employee + ", manager=" + manager + ", amount=" + amount
+				+ ", description=" + description + ", img=" + img + ", timesubmission=" + timesubmission + ", rq_type="
+				+ rq_type + ", rq_status=" + rq_status + ", rq_typeId=" + rq_typeId + ", rq_statusId=" + rq_statusId
+				+ "]";
 	}
 }

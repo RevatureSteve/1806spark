@@ -37,7 +37,15 @@ public class ReimbursementsService {
 	public static int updateReimbursements(Decision[] decisions) {
 		int affected = 0;
 		for (Decision decision : decisions) {
+			System.out.println(decision);
 			affected = rDao.updateReimbursements(decision.getrId(), decision.getRq_statusId(), decision.getMgrId());
+			List<Reimbursement> reimbursements = rDao.getAllReimbursements();
+			for(Reimbursement r: reimbursements) {
+				System.out.println(r);
+				if(r.getrId() == decision.getrId()) {
+					SendConfirmation.sendEmail(r);
+				}
+			}
 		}
 		return affected;
 	}

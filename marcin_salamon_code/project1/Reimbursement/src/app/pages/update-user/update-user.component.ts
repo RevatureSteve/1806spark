@@ -10,6 +10,7 @@ import { LoggedUserService } from '../../services/logged-user.service';
 })
 export class UpdateUserComponent implements OnInit {
   user = this.logged.getLoggedUser();
+  success: number;
   constructor(private update: UpdateService, private logged: LoggedUserService) { }
 
   ngOnInit() {
@@ -19,5 +20,10 @@ export class UpdateUserComponent implements OnInit {
     console.log(password + fname + lname);
 
     this.update.updateUser(password, fname, lname).subscribe(user => this.logged.setLoggedUser(user));
+    this.success = 1;
+  }
+
+  successClear() {
+    this.success = -1;
   }
 }

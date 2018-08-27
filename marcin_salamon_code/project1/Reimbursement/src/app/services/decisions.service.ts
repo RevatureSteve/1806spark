@@ -31,8 +31,10 @@ export class DecisionsService {
     });
   }
 
-  clear() {
-    DecisionsService.decisions = [];
+  clear(): void {
+    while (DecisionsService.decisions[0]) {
+      DecisionsService.decisions.pop();
+    }
   }
 
   managerDecision(): void {

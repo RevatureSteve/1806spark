@@ -1,6 +1,6 @@
 <ul class="nav nav-tabs">
   <li class="nav-item">
-    <a class="nav-link" data-toggle="tab" routerLink='/{{logged.getLoggedUser().position}}'>Home</a>
+    <a class="nav-link active" data-toggle="tab" routerLink='/{{logged.getLoggedUser().position}}'>Home</a>
   </li>
   <li class="nav-item" *ngIf='logged.getLoggedUser().positionId === 2'>
     <a class="nav-link" data-toggle="tab" routerLink='/{{logged.getLoggedUser().position}}/employees'>Employees</a>

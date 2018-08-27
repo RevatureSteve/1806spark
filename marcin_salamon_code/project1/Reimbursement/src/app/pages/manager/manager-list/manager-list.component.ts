@@ -4,6 +4,7 @@ import { ReimbursementListService } from '../../../services/reimbursement-list.s
 import { Decision } from '../../../models/decision';
 import { DecisionsService } from '../../../services/decisions.service';
 import { LoggedUserService } from '../../../services/logged-user.service';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-manager-list',
@@ -11,13 +12,14 @@ import { LoggedUserService } from '../../../services/logged-user.service';
   styleUrls: ['./manager-list.component.css']
 })
 export class ManagerListComponent implements OnInit {
-  reimbursements: Reimbursement[];
+  reimbursements: Reimbursement[] = [];
   decisions: Decision[];
   filter: number;
   active: string[];
   style: string[] = ['', 'primary', 'success', 'danger'];
+  easterEgg = false;
   constructor(private reimbService: ReimbursementListService, private decisionService: DecisionsService,
-    private logged: LoggedUserService) { }
+    private logged: LoggedUserService, private route: ActivatedRoute) { }
 
   ngOnInit() {
     this.getReimbursements();
@@ -26,8 +28,14 @@ export class ManagerListComponent implements OnInit {
   }
 
   getReimbursements(): void {
-    this.reimbService.getAllReimbursements();
-    this.reimbService.getReimbursementsArray().subscribe(reimbursements => this.reimbursements = this.sortReimbursements(reimbursements));
+    const id = +this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.getReimbursementsByUserId(id);
+    } else {
+      this.reimbService.getAllReimbursements();
+      this.reimbService.getReimbursementsArray().subscribe(reimbursements => this.reimbursements = this.sortReimbursements(reimbursements));
+    }
+
   }
 
   setPending() {
@@ -45,8 +53,21 @@ export class ManagerListComponent implements OnInit {
     this.active = ['', '', 'active'];
   }
 
-// return 1 when adding new decision
-// return 2 when updating old decision
+  getReimbursementsByUserId(id) {
+    this.reimbService.getAllReimbursements();
+    this.reimbService.getReimbursementsArray().subscribe(reimbursements => {
+      reimbursements.forEach(reimb => {
+        if (reimb.employee.uId === id) {
+          this.reimbursements.push(reimb);
+        }
+      });
+      this.reimbursements = this.sortReimbursements(this.reimbursements);
+
+    });
+  }
+
+  // return 1 when adding new decision
+  // return 2 when updating old decision
   approve(id): number {
     let decision = new Decision();
     decision = {
@@ -69,7 +90,11 @@ export class ManagerListComponent implements OnInit {
 
   sortReimbursements(reimb): Reimbursement[] {
     reimb.sort(this.dynamicSort('-timesubmission'));
-    console.log(reimb);
+    if (reimb.length === 0) {
+      this.easterEgg = true;
+    } else {
+      this.easterEgg = false;
+    }
     return reimb;
   }
 

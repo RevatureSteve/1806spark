@@ -5,13 +5,12 @@
 </ul>
 <div>
     <li *ngFor='let r of reimbursements' class="list-group mw-50" style="width: 60%; margin: auto;">
-        <div *ngIf='r.rq_statusId===filter'>
-            <a routerLink='/employee/detail/{{r.rId}}' class="list-group-item list-group-item-action list-group-item-{{style[r.rq_statusId]}}">
+        <div *ngIf='r.rq_statusId===filter' style="margin-bottom: 5px;">
+            <a routerLink='/manager/detail/{{r.rId}}' class="list-group-item list-group-item-action list-group-item-{{style[r.rq_statusId]}}">
                 <div>{{r.description}}</div>
-                <div>{{r.timesubmission.substring(0,19)}}</div>
-                <div>{{r.rq_type}}</div>
-                <div>{{r.rq_status}}</div>
+                <div>${{r.amount}}</div>
             </a>
         </div>
     </li>
 </div>
+<div *ngIf="easterEgg"><img src="/src/assets/whyyyy.jpg" alt="No reimbursements"></div>

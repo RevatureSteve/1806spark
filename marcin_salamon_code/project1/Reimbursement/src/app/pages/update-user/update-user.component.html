@@ -1,11 +1,14 @@
-<div class="form-group mx-auto" style="width: 50%;">
-  <label for="email">Email</label>
+<div class="form-group mx-auto rounded border border-dark bg-secondary">
   <div class="form-control">{{user.email}}</div>
-  <label for="password">Password</label>
   <input type="password" #psw placeholder='password' class="form-control" value="">
-  <label for="fname">First name</label>
   <input type="text" class="form-control" #fname placeholder="{{logged.getLoggedUser().fname}}">
-  <label for="lname">Last name</label>
   <input type="text" class="form-control" #lname placeholder="{{logged.getLoggedUser().lname}}">
-  <button class="btn-primary" (click)="updateUser(psw.value, fname.value, lname.value)">Update User</button>
+  <button class="btn btn-success" (click)="updateUser(psw.value, fname.value, lname.value)">Update User</button>
+
+  <div *ngIf="success===1" class="alert alert-success alert-dismissible fade show" role="alert">
+    Update successful!
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true" (click)=successClear()>&times;</span>
+    </button>
+  </div>
 </div>

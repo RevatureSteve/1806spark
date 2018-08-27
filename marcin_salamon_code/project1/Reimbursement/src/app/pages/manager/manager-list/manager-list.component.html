@@ -3,19 +3,19 @@
     <li class="nav-link {{active[1]}}" (click)='setResolved()'>Resolved</li>
     <li class="nav-link {{active[2]}}" (click)='setDenied()'>Denied</li>
 </ul>
-<li *ngFor='let r of reimbursements' class="list-group" >
+<li *ngFor='let r of reimbursements' class="list-group " >
     <div *ngIf='r.rq_statusId===filter' style="margin-bottom: 5px;">
-        <a routerLink='/manager/detail/{{r.rId}}' class="list-group-item list-group-item-action list-group-item-{{style[r.rq_statusId]}}">
+        <a routerLink='/manager/detail/{{r.rId}}' class="rounded list-group-item list-group-item-action list-group-item-{{style[r.rq_statusId]}}">
             <div>{{r.employee.fname}} {{r.employee.lname}}</div>
             <div>{{r.description}}</div>
-            <div>{{r.timesubmission.substring(0,19)}}</div>
+            <div>{{r.amount}}</div>
             <div>{{r.rq_type}}</div>
-            <div>{{r.rq_status}}</div>
             <div>{{r.manager.fname}} {{r.manager.lname}}</div>
         </a>
         <div class="mx-auto" *ngIf='r.rq_statusId === 1' style="text-align: center;">
-            <input class="btn-success" type="button" value=Approve name="approve{{r.rId}}" (click)="approve(r.rId)">
-            <input class="btn-danger" type="button" value=Deny name="approve{{r.rId}}" (click)="deny(r.rId)">
+            <input class="btn btn-success" type="button" value=Approve name="approve{{r.rId}}" (click)="approve(r.rId)">
+            <input class="btn btn-danger" type="button" value=Deny name="approve{{r.rId}}" (click)="deny(r.rId)">
         </div>
     </div>
 </li>
+<div *ngIf="easterEgg"><img src="/src/assets/whyyyy.jpg" alt="No reimbursements"></div>

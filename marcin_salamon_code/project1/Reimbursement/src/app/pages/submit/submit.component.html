@@ -1,5 +1,5 @@
-<div class="form-group">
-  <input class="form-control" type="number" name="amount" id="amount" #amount placeholder="Amount">
+<div class="form-group mx-auto rounded border border-dark bg-secondary">
+  <input class="form-control" type="number" name="amount" id="amount" #amount placeholder="Amount" required>
   <input class="form-control" type="text" name="description" id="description" #description placeholder="Description">
   <select #sel class="form-control" name="type" id="type">
     <option value="1">Dining</option>
@@ -8,7 +8,7 @@
     <option value="4">Travel</option>
     <option value="5">Other</option>
   </select>
-  <button class="btn btn-outline-success mx-auto" type="submit" (click)='submitNewReimbursement(amount.value, description.value, sel.value)'>Submit Reimbursement</button>
+  <button class="btn btn-success mx-auto" type="submit" (click)='submitNewReimbursement(amount.value, description.value, sel.value)'>Submit Reimbursement</button>
 
   <div *ngIf="success===1" class="alert alert-success alert-dismissible fade show" role="alert">
       Reimbursement submitted!

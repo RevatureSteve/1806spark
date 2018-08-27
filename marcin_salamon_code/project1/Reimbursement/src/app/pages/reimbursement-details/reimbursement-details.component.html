@@ -1,10 +1,13 @@
-<button (click)="goBack()">go back</button>
-<div *ngIf='reimbursement'>
-    <div>Posted by {{reimbursement.employee.fname}} {{reimbursement.employee.lname}}</div>
-    <div>{{reimbursement.manager.fname}} {{reimbursement.manager.lname}}</div>
+<div class="jumbotron" *ngIf='reimbursement'>
+    <h1 class="display-6">
+        <div *ngIf='reimbursement.description'>Description: {{reimbursement.description}}</div>
+        <div *ngIf='!reimbursement.description'>No description</div>
+    </h1>
     <div>Amount: ${{reimbursement.amount}}</div>
-    <div>Description: {{reimbursement.description}}</div>
-    <div>Time submitted: {{reimbursement.timesubmission.substring(0,19)}}</div>
-    <div>Type: {{reimbursement.rq_type}}</div>
+    <div>Posted by: {{reimbursement.employee.fname}} {{reimbursement.employee.lname}}</div>
+    <div>Time Submitted: {{reimbursement.timesubmission.substring(0,19)}}</div>
+    <div>Request type: {{reimbursement.rq_type}}</div>
     <div>Status: {{reimbursement.rq_status}}</div>
+    <div *ngIf='reimbursement.manager.fname'>Manager: {{reimbursement.manager.fname}} {{reimbursement.manager.lname}}</div>
+    <button class='btn btn-secondary' (click)="goBack()">Back</button>
 </div>

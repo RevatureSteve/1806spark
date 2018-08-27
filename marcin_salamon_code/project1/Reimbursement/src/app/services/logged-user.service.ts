@@ -13,6 +13,18 @@ export class LoggedUserService {
     LoggedUserService.user = u;
   }
 
+  setfName(fname) {
+    LoggedUserService.user.fname = fname;
+  }
+
+  setlName(lname) {
+    LoggedUserService.user.lname = lname;
+  }
+
+  setPassword(password) {
+    LoggedUserService.user.password = password;
+  }
+
   getLoggedUser(): User {
     return LoggedUserService.user;
   }

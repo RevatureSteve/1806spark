@@ -21,6 +21,7 @@ export class DecisionsComponent implements OnInit {
 
   managerDecision(): void {
     this.decisionService.managerDecision();
+    this.decisionService.clear();
   }
 
   delete(decision): void {
@@ -30,7 +31,7 @@ export class DecisionsComponent implements OnInit {
   createViewable(): Reimbursement[] {
     console.log('[LOG]-----create viewable');
     const reimb: Reimbursement[] = [];
-    this.decisions.forEach(d => {
+    DecisionsService.decisions.forEach(d => {
       this.reimbursements.forEach(r => {
         if (r.rId === d.rId) {
           r.rq_statusId = d.rq_statusId;
@@ -38,6 +39,8 @@ export class DecisionsComponent implements OnInit {
         }
       });
     });
+    console.log(this.decisions);
+    console.log(reimb);
     return reimb;
   }
 }
