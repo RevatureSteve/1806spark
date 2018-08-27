@@ -18,6 +18,15 @@ public class Reimbursement implements Serializable{
 		
 	}
 	
+	public Reimbursement(int empId, double amount, String description, String imageUrl, int reqTypeId) {
+		super();
+		this.empId = empId;
+		this.amount = amount;
+		this.description = description;
+		this.imageUrl = imageUrl;
+		this.reqTypeId = reqTypeId;
+	}
+
 	public Reimbursement(int reimbursementId, int empId, int mgrId, double amount, String description, String imageUrl,
 			String timeStamp, int reqTypeId, int reqStatusId) {
 		super();

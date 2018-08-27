@@ -1,0 +1,23 @@
+<table id='reimbursements' class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Id</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Description</th>
+      <th scope="col">Request Type</th>
+      <th scope="col">Request Status</th>
+      <th scope="col">Time Submitted</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = 'let r of reimbursement'>
+      <th scope="row">{{r.reimbursementId}}</th>
+      <td>{{r.amount}}</td>
+      <td>{{r.description}}</td>
+      <td>{{r.reqTypeId}}</td>
+      <td>{{r.reqStatusId}}</td>
+      <td>{{r.timeStamp | date: 'short'}}</td>
+    </tr>
+
+  </tbody>
+</table>

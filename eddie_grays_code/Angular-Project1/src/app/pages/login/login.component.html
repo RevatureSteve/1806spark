@@ -1,0 +1,12 @@
+  <div id="text">
+    <h1>Login</h1>
+    <p>Email:
+      <input type="text" name="email" [(ngModel)]="user.email" placeholder="Email">
+    </p>
+    <p>Password:
+      <input type="password" name="password" [(ngModel)]="user.password" placeholder="Password">
+    </p>
+    <p>
+      <button (click)='login()'>Login</button>
+    </p>
+  </div>
