@@ -1,3 +1,8 @@
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary h-50 d-inline-block">
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo01" aria-controls="navbarTogglerDemo01"
     aria-expanded="false" aria-label="Toggle navigation">
@@ -5,22 +10,28 @@
   </button>
   <div class="collapse navbar-collapse" id="navbarTogglerDemo01">
     <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-        <li class="nav-item">
-          <a class="nav-link" routerLink="/manager">Manager</a>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/manager/profile">S.T.A.R.S</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/Home">View Officers<span class="sr-only">(current)</span></a>
+        <a class="nav-link" routerLink="/manager/employeeslist">View Officers<span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="/Reimbursements">Reimbursements</a>
+        <a class="nav-link" routerLink="/manager/reimbursementlist">All Reimbursements</a>
       </li>
       <li class="nav-item">
-          <a class="nav-link" routerLink="/">Submit Reimbursements</a>
+        <a class="nav-link" routerLink="/Reimbursements">Pending Reimbursements</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" routerLink="#">Logout</a>
+        <a class="nav-link" routerLink="/Reimbursements">Approved Reimbursements</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="/">Submit Reimbursements</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Logout</a>
       </li>
     </ul>
   </div>
 </nav>
-<app-manager-profile></app-manager-profile>
+<h2>Welcome back {{user.firstName}} {{user.lastName}}</h2>

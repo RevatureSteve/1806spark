@@ -5,6 +5,18 @@ DROP TABLE users;
 
 INSERT INTO users VALUES(1,'dan@yahoo.com', 'dan123', 'Daniel', 'Sidhu', 1);
 INSERT INTO users VALUES(2,'leon@rcpd.com', 'leon123', 'Leon', 'Kennedy', 2);
+INSERT INTO users VALUES(3,'Marvin@rcpd.com', 'Marvin', 'Marvin', 'Branagh', 2);
+INSERT INTO users VALUES(4,'Neil@rcpd.com', '123', 'Neil', 'Carlsen', 2);
+INSERT INTO users VALUES(5,'Kevin@rcpd.com', 'Kevin123', 'Kevin', 'Dooley', 2);
+INSERT INTO users VALUES(6,'Raymond@rcpd.com', 'Raymond123', 'Raymond', 'Douglas', 2);
+INSERT INTO users VALUES(7,'Elliot@rcpd.com', 'Elliot123', 'Elliot', 'Edward', 2);
+INSERT INTO users VALUES(8,'David@rcpd.com', 'David123', 'David', 'Ford', 2);
+INSERT INTO users VALUES(9,'Tyler@rcpd.com', 'Tyler123', 'Tyler', 'Hamilton', 2);
+INSERT INTO users VALUES(10,'Rita@rcpd.com', 'Rita123', 'Rita', 'Phillips', 2);
+INSERT INTO users VALUES(11,'KevinR@rcpd.com', 'Kevin123', 'Kevin', 'Ryman', 2);
+INSERT INTO users VALUES(12,'George@rcpd.com', 'George123', 'George', 'Scott', 2);
+INSERT INTO users VALUES(5,'Brian@rcpd.com', 'Brian123', 'Brian', 'Irons', 2);
+
 
 SELECT * FROM users;
 
@@ -71,6 +83,11 @@ END;
 DROP TABLE rq_type;
 
 INSERT INTO rq_type VALUES (1, 'food');
+INSERT INTO rq_type VALUES (2, 'Weapons');
+INSERT INTO rq_type VALUES (3, 'Ammunition');
+INSERT INTO rq_type VALUES (4, 'Health');
+INSERT INTO rq_type VALUES (5, 'Misc');
+
 SELECT * FROM rq_type;
 
 --For my Request Status TABLE(no more values needed)

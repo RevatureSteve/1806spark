@@ -9,6 +9,7 @@ export class UserService {
 
   constructor(private httpClient: HttpClient) { }
 
+  // here I login entering my email and password
   login(email, password) {
     const user = {
       email: email,
@@ -18,6 +19,9 @@ export class UserService {
     return this.httpClient.post<Users>('http://localhost:8080/Project1/Login', user);
   }
 
+  getAllEmployees() {
+    return this.httpClient.get<Users[]>('http://localhost:8080/Project1/allEmployees');
+  }
 
 
 }

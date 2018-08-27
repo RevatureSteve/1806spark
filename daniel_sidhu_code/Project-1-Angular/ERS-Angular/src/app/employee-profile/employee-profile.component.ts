@@ -1,13 +1,13 @@
+import { CurrentUserService } from './../services/current-user.service';
+import { Users } from './../models/users';
 import { Component, OnInit } from '@angular/core';
-import { Users } from '../models/users';
-import { CurrentUserService } from '../services/current-user.service';
 
 @Component({
-  selector: 'app-employee',
-  templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css']
+  selector: 'app-employee-profile',
+  templateUrl: './employee-profile.component.html',
+  styleUrls: ['./employee-profile.component.css']
 })
-export class EmployeeComponent implements OnInit {
+export class EmployeeProfileComponent implements OnInit {
 
   // import our Users model
   user: Users;
@@ -20,5 +20,4 @@ export class EmployeeComponent implements OnInit {
     this.user = this.currentUser.getCurrentUser();
     console.log(this.user);
   }
-
 }

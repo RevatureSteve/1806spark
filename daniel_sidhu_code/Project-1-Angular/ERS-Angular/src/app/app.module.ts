@@ -17,6 +17,9 @@ import { EmployeeComponent } from './employee/employee.component';
 import { ManagerComponent } from './manager/manager.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ManagerProfileComponent } from './manager-profile/manager-profile.component';
+import { EmployeeProfileComponent } from './employee-profile/employee-profile.component';
+import { ManagerViewEmployeesComponent } from './manager-view-employees/manager-view-employees.component';
+import { ManagerAllReimbursementsComponent } from './manager-all-reimbursements/manager-all-reimbursements.component';
 
 
 @NgModule({
@@ -27,7 +30,10 @@ import { ManagerProfileComponent } from './manager-profile/manager-profile.compo
     LoginComponent,
     EmployeeComponent,
     ManagerComponent,
-    ManagerProfileComponent
+    ManagerProfileComponent,
+    EmployeeProfileComponent,
+    ManagerViewEmployeesComponent,
+    ManagerAllReimbursementsComponent
   ],
   imports: [
     BrowserModule,
