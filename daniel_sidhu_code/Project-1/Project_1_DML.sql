@@ -191,7 +191,7 @@ SELECT * FROM Reimbursement
 INNER JOIN Rq_Status 
     ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id
 INNER JOIN Rq_Type
-    ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Status_Id; 
+    ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Type_Id; 
 
 --For my getPendingReimbursements()
 SELECT * FROM Reimbursement

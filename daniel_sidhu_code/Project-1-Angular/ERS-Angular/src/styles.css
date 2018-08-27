@@ -1,1 +1,10 @@
 /* You can add global styles to this file, and also import other style files */
+body{
+    background-image: url("https://newevolutiondesigns.com/images/freebies/city-wallpaper-47.jpg");
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 100%;
+    width: 100%;
+    z-index: -2;
+}
