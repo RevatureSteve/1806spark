@@ -43,6 +43,7 @@ export class LoginComponent implements OnInit {
           console.dir(currentUser);
           console.log(currentUser.email);
           console.log(currentUser.posid);
+          console.log(currentUser.uid);
 
           this.changeLogged(currentUser)
 
@@ -58,7 +59,7 @@ export class LoginComponent implements OnInit {
     console.log('sent post');
   }
 
-changeLogged(user) {
+changeLogged(user:User) {
   this.user = user;
   this.logged.setLoggedUser(user);
 }

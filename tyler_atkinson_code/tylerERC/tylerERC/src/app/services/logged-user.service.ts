@@ -6,15 +6,15 @@ import { User } from '../models/user';
   providedIn: 'root'
 })
 export class LoggedUserService {
-  private static user: User;
+  public user: User;
   constructor(private http: HttpClient) { }
 
-  setLoggedUser(u) {
-    LoggedUserService.user = u;
+  setLoggedUser(u:User) {
+    this.user = u;
   }
 
   getLoggedUser(): User {
-    return LoggedUserService.user;
+    return this.user;
   }
 
   logout(): void {

@@ -23,14 +23,14 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	
 
 	
-//READ ONE REIMBURSEMENT BY ID	
+//READ ONE REIMBURSEMENT BY user ID	
 
 	@Override
 	public List<Reimbursement> getReimbursemenstById(int r_id) {
 		List<Reimbursement> reimbursements = new ArrayList<>();
 		
 		try(Connection conn = SetConnectionPropertiesUtil.getConnection();){
-			String sql = "SELECT * FROM reimbursement WHERE r_id = ?";
+			String sql = "SELECT * FROM reimbursement WHERE EMP_U_ID = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, r_id );
 			ResultSet rs = ps.executeQuery();

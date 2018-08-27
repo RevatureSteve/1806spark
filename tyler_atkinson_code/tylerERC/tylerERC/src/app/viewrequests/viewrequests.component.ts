@@ -11,6 +11,8 @@ import { Location } from '@angular/common';
   styleUrls: ['./viewrequests.component.css']
 })
 export class ViewrequestsComponent implements OnInit {
+
+  clickMessage = '';
   
   reimbursements: Reimbursement[];
   
@@ -27,8 +29,16 @@ export class ViewrequestsComponent implements OnInit {
   console.log(this.reimbursements);
 }
 
-logged(id) {
+logged1(id) {
   console.log(id);
+  this.clickMessage = "Request is APPROVED By Michael Scott";
+
+}
+
+logged2(id) {
+  console.log(id);
+  this.clickMessage = "Request is DENIED By Michael Scott";
+
 }
 
 

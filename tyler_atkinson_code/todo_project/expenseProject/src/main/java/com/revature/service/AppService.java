@@ -39,11 +39,11 @@ public class AppService {
 	
 	
 
-	public List<Reimbursement> getReimbursementsById(int r_id){
+	public List<Reimbursement> getReimbursementsById(int u_id){
 		
 		System.out.println("[LOG]-- retrieving a reimbursement ");
 		
-		return reimbursementDao.getReimbursemenstById(r_id);
+		return reimbursementDao.getReimbursemenstById(u_id);
 	}
 	
 

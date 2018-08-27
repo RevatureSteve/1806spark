@@ -1,0 +1,65 @@
+<div class="jumbotron">
+    <h1 class="display-4 shadow-lg p-3 mb-5 bg-white rounded" >Reimbursements By Reimbursement ID:</h1>
+    <div class="col"><button type="button" class="btn btn-secondary btn-lg btn-block" routerLink="/Manager">HOME</button></div>
+    <div class="input-group mb-3">
+      <br>  
+      
+      <div class="input-group-prepend">
+          <button class="btn btn-outline-secondary" type="button">ENTER EMPLOYEE ID</button>
+        </div>
+        <input type="number" (change)="getReimbursement(id)" [(ngModel)]="id" class="form-control" placeholder="Employee ID" aria-label="" aria-describedby="basic-addon1">
+      </div>
+    
+      <hr class="my-4">
+    <p>Please Approve or Deny Requests In Accordance with Company Poicies</p>
+  
+    <div *ngIf='reimbursements'class ="shadow-lg p-3 mb-5 bg-white rounded">
+  
+      <div class="box box-default">
+        <div class="jumbotron shadow-lg p-3 mb-5 bg-white rounded" *ngFor='let reim of reimbursements'>
+          <div>
+            {{ reim.timesubmission | date: 'medium'}}
+          </div>
+          <div>
+            {{ reim.r_id }}
+          </div>
+          <div>
+            {{ reim.amt }}
+          </div>
+          <div>
+            {{ reim.description }}
+          </div>
+          <div>
+            {{ reim.emp_u_id }}
+          </div>
+          <div>
+            {{ reim.mgr_u_id }}
+          </div>
+          <div>
+            {{ reim.rq_status_id }}
+          </div>
+  
+  
+          <br>
+         
+          <div class="row">
+            <div class="col center-block text-center">
+              <button class="btn btn-outline-success shadow-lg p-3 mb-5 bg-white rounded" id="btn1" (click)="logged1(reim.r_id)">Approve Request</button>
+            </div>
+            <div class="col center-block text-center">
+              <button class="btn btn-outline-danger shadow-lg p-3 mb-5 bg-white rounded" (click)="logged2(reim.r_id)">Deny Request</button>
+            </div>
+          </div>
+        
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+    {{clickMessage}}
+  
+  
+  
+  </div>

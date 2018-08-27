@@ -34,11 +34,11 @@ public class OneReimbursementServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("[LOG]-GET reimbursement servlet");
+		System.out.println("[LOG]-ONE Reimbursement");
 		
-		int r_id = Integer.parseInt(request.getParameter("reimbursementId"));
-		System.out.println("The reimbursement id is: " + r_id);
-		List<Reimbursement> reimbursements = appService.getReimbursementsById(r_id);
+		int u_id = Integer.parseInt(request.getParameter("byId"));
+		System.out.println("The reimbursement id is: " + u_id);
+		List<Reimbursement> reimbursements = appService.getReimbursementsById(u_id);
 		
 		ObjectMapper mapper = new ObjectMapper();
 		String json = mapper.writeValueAsString(reimbursements);

@@ -13,6 +13,8 @@ import { ViewrequestsComponent } from './viewrequests/viewrequests.component';
 import { NewrequestComponent } from './newrequest/newrequest.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule }    from '@angular/common/http';
+import { OneReimbursementComponent } from './one-reimbursement/one-reimbursement.component';
+
 
 
 
@@ -27,6 +29,8 @@ import { HttpClientModule }    from '@angular/common/http';
     ViewrequestsComponent,
     NewrequestComponent,
     ProfileComponent,
+    OneReimbursementComponent,
+   
     
 
   ],

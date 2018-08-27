@@ -42,43 +42,45 @@ public class Driver {
 	
 		System.out.println("confirm valid user " + validUser);
 		
-	
-	
-		addAReimb();}
-	
-	public static void addAReimb() {
-		
-		ReimbursementDaoImpl nowAddReimbursement = new ReimbursementDaoImpl();
-		
-	
-		Scanner scan = new Scanner(System.in);
-	
-
-		System.out.println("emp id #");
-	
-		int empuid = scan.nextInt();
-	
-		System.out.println("your mgrs id: ");
-		int mgruid = scan.nextInt();
-		
-		System.out.println("amt");
-		double amt = scan.nextDouble();
-		
-		System.out.println("description");
-		String description = scan.next();
-		
-		System.out.println("rqtypeid");
-		int rqtypeid = scan.nextInt();
-		
-		System.out.println("rqstatusid");
-		int rqstatusid = scan.nextInt();
 		
 		
-		nowAddReimbursement.addReimbursement(empuid, mgruid, amt, description, rqtypeid, rqstatusid);
 	
-	}
-}
-	
+//	
+//		addAReimb();}
+//	
+//	public static void addAReimb() {
+//		
+//		ReimbursementDaoImpl nowAddReimbursement = new ReimbursementDaoImpl();
+//		
+//	
+//		Scanner scan = new Scanner(System.in);
+//	
+//
+//		System.out.println("emp id #");
+//	
+//		int empuid = scan.nextInt();
+//	
+//		System.out.println("your mgrs id: ");
+//		int mgruid = scan.nextInt();
+//		
+//		System.out.println("amt");
+//		double amt = scan.nextDouble();
+//		
+//		System.out.println("description");
+//		String description = scan.next();
+//		
+//		System.out.println("rqtypeid");
+//		int rqtypeid = scan.nextInt();
+//		
+//		System.out.println("rqstatusid");
+//		int rqstatusid = scan.nextInt();
+//		
+//		
+//		nowAddReimbursement.addReimbursement(empuid, mgruid, amt, description, rqtypeid, rqstatusid);
+//	
+//	}
+//}
+//	
 	
 			
 //			
@@ -116,18 +118,19 @@ public class Driver {
 //		
 //
 //		
-//		try(Connection conn = SetConnectionPropertiesUtil.getConnection();){
-//			String sql = "SELECT * FROM reimbursement WHERE r_id = ?";
-//			PreparedStatement ps = conn.prepareStatement(sql);
-//			ps.setInt(1, 1 );
-//			ResultSet rs = ps.executeQuery();
-//			
-//			while(rs.next()) {
-//				Reimbursement.add(new Reimbursement(rs.getInt("R_ID"), rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("RQ_TYPE_ID"),
-//						rs.getInt("RQ_STATUS_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getString("TIMESUBMISSION"),rs.getString("IMG")));
-//			}
-//		}
-////}
+		try(Connection conn = SetConnectionPropertiesUtil.getConnection();){
+			String sql = "SELECT * FROM reimbursement WHERE emp_u_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, 1 );
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				Reimbursement.add(new Reimbursement(rs.getInt("R_ID"), rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("RQ_TYPE_ID"),
+						rs.getInt("RQ_STATUS_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getString("TIMESUBMISSION"),rs.getString("IMG")));
+			}
+		
+}
+	
 
 			
 			

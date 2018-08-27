@@ -22,29 +22,17 @@ public class AllReimbursementsServlet extends HttpServlet {
 	
 	private AppService appService = new AppService();  
 	
-	
-	
-	
-       
-
     public AllReimbursementsServlet() {
         super();
         // TODO Auto-generated constructor stub
     }
 
-
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		
 		List<Reimbursement> reimbursements = appService.getAllReimbursements();
-		
 		ObjectMapper mapper = new ObjectMapper();
-		
 		String json = mapper.writeValueAsString(reimbursements);
-		
 		resp.setContentType("application/json");
-		
 		PrintWriter out = resp.getWriter();
-		
 		out.print(json);
 		
 			

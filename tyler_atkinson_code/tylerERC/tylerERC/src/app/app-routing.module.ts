@@ -7,7 +7,7 @@ import { ViewrequestsComponent } from './viewrequests/viewrequests.component';
 import { NewrequestComponent } from './newrequest/newrequest.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
-
+import { OneReimbursementComponent } from './one-reimbursement/one-reimbursement.component'
 
 export const routes: Routes = [
   {path: '', redirectTo: 'Login', pathMatch: 'full'},
@@ -17,7 +17,8 @@ export const routes: Routes = [
   {path: 'ViewR', component: ViewrequestsComponent},
   {path: 'NewR', component: NewrequestComponent},
   {path: 'Profile', component: ProfileComponent},
-  {path: 'Login', component: LoginComponent}
+  {path: 'Login', component: LoginComponent},
+  {path: 'Onereimbursement', component: OneReimbursementComponent}
 
 
 ]
