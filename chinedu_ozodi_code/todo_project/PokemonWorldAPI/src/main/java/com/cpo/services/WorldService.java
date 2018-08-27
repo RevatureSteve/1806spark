@@ -13,6 +13,7 @@ import com.cpo.models.WorldTile;
 public class WorldService {
 	
 	private static WorldService instance;
+	int worldIndex = 5;
 	
 	private WorldDatabaseDao wdd = new WorldDatabaseDao();
 	private WorldTileDatabaseDao wtdd = new WorldTileDatabaseDao();
@@ -30,12 +31,12 @@ public class WorldService {
 	
 	public void createWorld() {
 		//Create world
-		int worldIndex = 3;
+		
 		int worldLength = 10;
 		int worldWidth = 5;
 		int localLength = 10;
 		int localWidth = 5;
-		float chanceOfPokemonOnTile = .1f;
+		float chanceOfPokemonOnTile = .5f;
 		PokeWorld world = new PokeWorld(worldIndex, "Pokemon World", worldLength, worldWidth);
 		List<Pokemon> pokemonData = PokemonService.getInstance().getPokemonData();
 		System.out.println("[LOG] available pokemon: " + pokemonData.size());
@@ -65,9 +66,9 @@ public class WorldService {
 							int pokemonPick = (int) (Math.random() * pokemonData.size());
 							System.out.println("[LOG] pokemon number: " + pokemonPick + " of " + pokemonData.size());
 							Pokemon pickedPokemon = pokemonData.get(pokemonPick);
-							System.out.println("[LOG] picked pokemon: " + pickedPokemon);
 							pickedPokemon.setStatusId(1);
 							pickedPokemon.setLtId(lt.getTileId());
+							System.out.println("[LOG] picked pokemon: " + pickedPokemon);
 							//Save Pokemon
 							PokemonService.getInstance().createPokemon(pickedPokemon);
 						}
@@ -75,5 +76,29 @@ public class WorldService {
 				}
 			}
 		}
+	}
+	public PokeWorld getWorld() {
+		PokeWorld world = wdd.getWorldById(worldIndex);
+		System.out.println("[LOG] world " + world);
+		System.out.println("[LOG] getting tiles");
+		List<WorldTile> wts = wtdd.getWorldTilesByWorldId(worldIndex);
+//		System.out.println("[LOG] world tiles count: " + wts.size());
+		
+//		for (int i = 0; i < wts.size(); i++) {
+//			WorldTile wt = wts.get(i);
+////			System.out.println("[LOG] getting local tiles for wt " + wt.getTileId());
+//			List<LocalTile> lts = ltdd.getLocalTilesByLocation(wt.getTileId());
+////			System.out.println("[LOG] local tile count: " + lts.size());
+//			for (int k = 0; k < lts.size(); k++) {
+//				LocalTile lt = lts.get(k);
+////				System.out.println("[LOG] getting pokemon for lt " + lt.getTileId());
+//				List<Pokemon> pokemon = PokemonService.getInstance().getPokemonByLocalTileId(lt.getTileId());
+//				lt.setPokemon(pokemon);
+////				System.out.println("[LOG] pokemon count: " + pokemon.size());
+//			}
+//			wt.setLocalTiles(lts);
+//		}
+		world.setWorldTiles(wts);
+		return world;
 	}
 }

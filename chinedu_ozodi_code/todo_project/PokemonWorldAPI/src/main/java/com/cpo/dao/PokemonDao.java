@@ -17,4 +17,12 @@ public interface PokemonDao {
 	
 	List<Pokemon> GetPokemonData();
 
+	List<Pokemon> getPokemonByLocalTileId(int id);
+
+	List<Pokemon> getPokemonByLocalTilePosition(int worldTileId, int x, int y);
+
+	List<Pokemon> getPokemonByTrainerId(int id);
+
+	int updatePokemon(Pokemon pokemon);
+
 }

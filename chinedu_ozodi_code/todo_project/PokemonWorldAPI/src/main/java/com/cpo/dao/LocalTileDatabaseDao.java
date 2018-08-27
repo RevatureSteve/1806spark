@@ -6,9 +6,10 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.cpo.models.LocalTile;
-import com.cpo.models.WorldTile;
 import com.cpo.util.SetConnectionPropertiesUtil;
 
 public class LocalTileDatabaseDao implements LocalTileDao {
@@ -52,7 +53,7 @@ public class LocalTileDatabaseDao implements LocalTileDao {
 					ps.setInt(3, y);
 					ResultSet rs = ps.executeQuery();
 					if (rs.next()) {
-						lt = new LocalTile(rs.getInt(1),null,rs.getInt("local_x"),rs.getInt("local_y"), rs.getInt("lt_type_id"));
+						lt = new LocalTile(rs.getInt("lt_id"),rs.getInt("wt_id"), null, rs.getInt("local_x"),rs.getInt("local_y"), rs.getInt("lt_type_id"), rs.getString("lt_type"));
 					}
 				} catch (SQLException e) {
 					e.printStackTrace();
@@ -63,6 +64,30 @@ public class LocalTileDatabaseDao implements LocalTileDao {
 				}
 
 				return lt;
+	}
+	
+	@Override
+	public List<LocalTile> getLocalTilesByLocation(int worldTileId) {
+		// Going to contain code for JDBC
+				List<LocalTile> lts = new ArrayList<LocalTile>();
+				try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
+
+					String sql = "SELECT * FROM local_tiles lt RIGHT OUTER JOIN lt_types ltt on (lt.lt_type_id = ltt.lt_type_id) WHERE wt_id = ? ORDER BY local_y, local_x";
+					PreparedStatement ps = conn.prepareStatement(sql);
+					ps.setInt(1, worldTileId);
+					ResultSet rs = ps.executeQuery();
+					while (rs.next()) {
+						lts.add(new LocalTile(rs.getInt("lt_id"),rs.getInt("wt_id"), null, rs.getInt("local_x"),rs.getInt("local_y"), rs.getInt("lt_type_id"), rs.getString("lt_type")));
+					}
+				} catch (SQLException e) {
+					e.printStackTrace();
+				} catch (FileNotFoundException e) {
+					e.printStackTrace();
+				} catch (IOException e) {
+					e.printStackTrace();
+				}
+
+				return lts;
 	}
 
 }

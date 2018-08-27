@@ -5,6 +5,7 @@ export class Pokemon {
     experience: number;
     height: number;
     statusId: number;
+    status: string;
     ltId: number;
     trainerId: number;
     imageUrl: string;

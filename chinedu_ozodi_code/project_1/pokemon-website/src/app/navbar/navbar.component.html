@@ -5,7 +5,7 @@
     <span class="navbar-toggler-icon"></span>
   </button>
 
-  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <div class="collapse navbar-collapse" *ngIf="login.currentUser" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
         <a class="nav-link" [routerLink]="['/main']">Home <span class="sr-only">(current)</span></a>
@@ -13,19 +13,21 @@
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/reimbursements']">Reimbursements</a>
       </li>
+      <li class="nav-item nav-link"> ----- Welcome {{login.currentUser.fname}} {{login.currentUser.lname}} -----</li>
       <li class="nav-item">
+        <a class="nav-link" (click)="logout()">Logout</a>
+      </li>
+    </ul>
+    <!-- <li class="nav-item">
         <a class="nav-link" [routerLink]="['/manage-reimbursements']">Manage Reimbursements</a>
       </li>
-      <li class="nav-item">
-        <a class="nav-link" [routerLink]="['/pokebag']">PokeBag</a>
-      </li>
+    
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/admin']">Admin</a>
       </li>
       <li class="nav-item">
         <a class="nav-link" [routerLink]="['/profile']">Profile</a>
-      </li>
-    </ul>
+      </li> -->
     <!-- <form class="form-inline my-2 my-lg-0">
       <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>

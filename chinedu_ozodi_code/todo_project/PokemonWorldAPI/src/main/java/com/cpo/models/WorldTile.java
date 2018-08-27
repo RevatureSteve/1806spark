@@ -1,10 +1,12 @@
 package com.cpo.models;
 
+import java.util.List;
+
 public class WorldTile extends Tile{
 	
 	private int length;
 	private int width;
-	private LocalTile[] localTiles;
+	private List<LocalTile> localTiles;
 
 	public WorldTile() {
 		
@@ -21,7 +23,7 @@ public class WorldTile extends Tile{
 		this.width = width;
 	}
 	
-	public WorldTile(int tileParentId, String tileName, int x, int y, int tileTypeId, String tileType, int length, int width, LocalTile[] localTiles) {
+	public WorldTile(int tileParentId, String tileName, int x, int y, int tileTypeId, String tileType, int length, int width, List<LocalTile> localTiles) {
 		super(tileParentId, tileName, x, y, tileTypeId, tileType);
 		this.length = length;
 		this.width = width;
@@ -50,12 +52,17 @@ public class WorldTile extends Tile{
 	public void setWidth(int width) {
 		this.width = width;
 	}
-
-	public LocalTile[] getLocalTiles() {
+	public List<LocalTile> getLocalTiles() {
 		return localTiles;
 	}
-
-	public void setLocalTiles(LocalTile[] localTiles) {
+	public void setLocalTiles(List<LocalTile> localTiles) {
 		this.localTiles = localTiles;
 	}
+	
+	@Override
+	public String toString() {
+		return "WorldTile [length=" + length + ", width=" + width + ", localTiles=" + localTiles + "]";
+	}
+	
+	
 }

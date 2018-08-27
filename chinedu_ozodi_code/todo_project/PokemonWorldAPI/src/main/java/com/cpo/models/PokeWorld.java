@@ -13,7 +13,7 @@ public class PokeWorld extends Tile implements Serializable{
 	
 	private int worldId;
 	private String worldName;
-	private WorldTile[] worldTiles;
+	private List<WorldTile> worldTiles;
 	private int length;
 	private int width;
 
@@ -47,14 +47,6 @@ public class PokeWorld extends Tile implements Serializable{
 		this.worldName = worldName;
 	}
 
-	public WorldTile[] getWorldTiles() {
-		return worldTiles;
-	}
-
-	public void setWorldTiles(WorldTile[] worldTiles) {
-		this.worldTiles = worldTiles;
-	}
-
 	public int getLength() {
 		return length;
 	}
@@ -71,9 +63,19 @@ public class PokeWorld extends Tile implements Serializable{
 		this.width = width;
 	}
 
+	public List<WorldTile> getWorldTiles() {
+		return worldTiles;
+	}
+
+	public void setWorldTiles(List<WorldTile> worldTiles) {
+		this.worldTiles = worldTiles;
+	}
+
 	@Override
 	public String toString() {
-		return "PokeWorld [worldId=" + worldId + ", worldName=" + worldName + ", worldTiles="
-				+ Arrays.toString(worldTiles) + ", length=" + length + ", width=" + width + "]";
+		return "PokeWorld [worldId=" + worldId + ", worldName=" + worldName + ", worldTiles=" + worldTiles + ", length="
+				+ length + ", width=" + width + "]";
 	}
+	
+	
 }

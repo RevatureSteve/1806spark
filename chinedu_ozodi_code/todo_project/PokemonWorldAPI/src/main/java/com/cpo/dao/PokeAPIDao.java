@@ -85,4 +85,39 @@ public class PokeAPIDao implements PokemonDao {
 		return null;
 	}
 
+
+	@Override
+	public int createPokemon(Pokemon pokemon) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+
+	@Override
+	public List<Pokemon> getPokemonByLocalTileId(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<Pokemon> getPokemonByLocalTilePosition(int worldTileId, int x, int y) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public List<Pokemon> getPokemonByTrainerId(int id) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	@Override
+	public int updatePokemon(Pokemon pokemon) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
 }

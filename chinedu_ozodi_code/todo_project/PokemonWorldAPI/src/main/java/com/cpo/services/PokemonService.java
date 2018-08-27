@@ -41,5 +41,20 @@ public class PokemonService {
 	public List<Pokemon> getPokemonData() {
 		return pdd.GetPokemonData();
 	}
+	
+	public List<Pokemon> getPokemonByLocalTileId( int id) {
+		return pdd.getPokemonByLocalTileId(id);
+	}
+	
+	public List<Pokemon> getPokemonByTrainerId( int id) {
+		return pdd.getPokemonByTrainerId(id);
+	}
+	
+	public List<Pokemon> getPokemonByLocalTilePosition( int worldTileId, int x, int y) {
+		return pdd.getPokemonByLocalTilePosition(worldTileId, x, y);
+	}
 
+	public int updatePokemon(Pokemon pokemon) {
+		return pdd.updatePokemon(pokemon);
+	}
 }

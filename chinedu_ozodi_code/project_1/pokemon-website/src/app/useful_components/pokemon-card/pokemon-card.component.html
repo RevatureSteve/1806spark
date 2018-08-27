@@ -1,0 +1,10 @@
+<div class="card {{pokemon.status}}">
+  <img class="card-img-top" src="{{pokemon.imageUrl}}" alt="{{pokemon.name}}">
+  <div class="card-body">
+    <h5 class="card-title">{{pokemon.name | uppercase}}</h5>
+    <p class="card-text">{{pokemon.status| uppercase}}</p>
+    <a (click) = "createReimbursement()" class="btn btn-primary" *ngIf="pokemon.statusId == 2">Reimburse</a>
+    <a class="btn btn-primary" [routerLink] = "['/reimbursements']" *ngIf="pokemon.statusId == 3">Status</a>
+    <a class="btn btn-primary" (click)="done()" *ngIf="pokemon.statusId == 3">Done</a>
+  </div>
+</div>

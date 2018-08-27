@@ -6,14 +6,19 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.cpo.services.WorldService;
-
 /**
- * -/CreateWorld Endpoint
- * Servlet implementation class CreateWorldServlet
+ *  - /pokemon
+ * Servlet implementation class PokemonServlet
  */
-public class CreateWorldServlet extends HttpServlet {
+public class PokemonServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
+       
+    /**
+     * @see HttpServlet#HttpServlet()
+     */
+    public PokemonServlet() {
+        super();
+    }
 
 	/**
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
@@ -26,13 +31,8 @@ public class CreateWorldServlet extends HttpServlet {
 	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		//Create World
-		response.getWriter().append("Served at: ").append(request.getContextPath());
-		
-		WorldService.getInstance().createWorld();
-		
-		
+		// TODO Auto-generated method stub
+		doGet(request, response);
 	}
 
 }

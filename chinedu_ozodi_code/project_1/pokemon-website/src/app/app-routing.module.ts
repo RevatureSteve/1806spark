@@ -1,3 +1,4 @@
+import { ReimbursementsComponent } from './pages/reimbursements/reimbursements.component';
 import { AdminComponent } from './admin/admin.component';
 import { PokeBagComponent } from './poke-bag/poke-bag.component';
 import { LoginComponent } from './login/login.component';
@@ -13,6 +14,7 @@ const routes: Routes = [
   {path: 'main', component: MainComponent},
   {path: 'pokebag', component: PokeBagComponent},
   {path: 'admin', component: AdminComponent},
+  {path: 'reimbursements', component: ReimbursementsComponent},
   {path: '**', redirectTo: 'welcome'}
 ];
 

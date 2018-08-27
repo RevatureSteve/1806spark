@@ -6,7 +6,8 @@ public class LocalTile extends Tile {
 	
 	private List<Pokemon> pokemon;
 
-	public LocalTile() {
+	public LocalTile(int tileId, int tileParentId, String tileName, int x, int y, int tileTypeId, String tileType) {
+		super(tileId,tileParentId, tileName, x, y, tileTypeId, tileType);
 	}
 	
 	public LocalTile(int tileParentId, String tileName, int x, int y, int tileTypeId)  {

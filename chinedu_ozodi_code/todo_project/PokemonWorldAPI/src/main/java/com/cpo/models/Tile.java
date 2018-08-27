@@ -100,7 +100,5 @@ public abstract class Tile {
 	@Override
 	public String toString() {
 		return "Tile [tileId=" + tileId + ", tileName=" + tileName + ", x=" + x + ", y=" + y + "]";
-	}
-
-	
+	}	
 }

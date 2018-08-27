@@ -12,6 +12,10 @@ import { HttpClientModule } from '@angular/common/http';
 import { WorldTileComponent } from './main/world-tile/world-tile.component';
 import { PokeBagComponent } from './poke-bag/poke-bag.component';
 import { AdminComponent } from './admin/admin.component';
+import { PokemonCardComponent } from './useful_components/pokemon-card/pokemon-card.component';
+import { ReimbursementsComponent } from './pages/reimbursements/reimbursements.component';
+import { ReimbursementCardComponent } from './useful_components/reimbursement-card/reimbursement-card.component';
+import { ManageReimbursementsComponent } from './pages/manage-reimbursements/manage-reimbursements.component';
 
 @NgModule({
   declarations: [
@@ -22,14 +26,18 @@ import { AdminComponent } from './admin/admin.component';
     MainComponent,
     WorldTileComponent,
     PokeBagComponent,
-    AdminComponent
+    AdminComponent,
+    PokemonCardComponent,
+    ReimbursementsComponent,
+    ReimbursementCardComponent,
+    ManageReimbursementsComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
     NgbModule.forRoot(),
-    AppRoutingModule
+    AppRoutingModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

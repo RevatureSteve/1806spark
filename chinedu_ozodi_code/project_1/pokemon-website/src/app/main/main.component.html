@@ -1,12 +1,18 @@
-<div class="main">
+<div class="main" *ngIf="!pokemonService.pokemonBattle">
   <h1>World Map</h1>
 
   <div class="container">
     <div class="row" *ngFor="let row of map; let r = index">
       <div class="col-sm" *ngFor="let col of row; let c = index">
-        <app-world-tile [x] = "c" [y] = "r"></app-world-tile>
+        <app-world-tile [worldTile] = "map[r][c]"></app-world-tile>
       </div>
     </div>
   </div>
-
+</div>
+<div class="main" *ngIf="pokemonService.pokemonBattle">
+  <h1>{{pokemonService.pokemonBattle.name}}</h1>
+  <a><img class="pokemonBattleImg" (click)="caughtPokemon()" src="{{pokemonService.pokemonBattle.imageUrl}}" alt="{{pokemonService.pokemonBattle.name}}"></a>
+</div>
+<div *ngIf="loginService.trainerPokemon">
+  <app-pokemon-card  *ngFor="let pokemon of loginService.trainerPokemon" [pokemon]="pokemon"></app-pokemon-card>
 </div>

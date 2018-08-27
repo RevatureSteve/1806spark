@@ -20,7 +20,7 @@ DROP TABLE reimbursement;
 CREATE TABLE reimbursement (
     r_id INT,
     emp_u_id NOT NULL,
-    mgr_u_id NOT NULL,
+    mgr_u_id,
     amt INT NOT NULL,
     description VARCHAR2(4000),
     img BLOB,
@@ -33,7 +33,7 @@ CREATE TABLE reimbursement (
     FOREIGN KEY (rq_type_id) REFERENCES rq_type(rq_type_id),
     FOREIGN KEY (rq_status_id) REFERENCES rq_status(rq_status_id)
 );
-
+TRUNCATE TABLE rq_type;
 CREATE TABLE rq_type (
     rq_type_id INT,
     rq_type VARCHAR2(40),
@@ -73,3 +73,4 @@ BEGIN
   END IF;
 END;
 /
+COMMIT;

@@ -6,6 +6,6 @@ public interface WorldDao {
 	
 	int createWorld(PokeWorld world);
 	
-	PokeWorld getWorldByName(String name);
+	PokeWorld getWorldById(int id);
 
 }

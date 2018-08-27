@@ -1,0 +1,11 @@
+<div class="card {{reimb.rqStatus}}" *ngIf="reimb">
+    <img class="card-img-top" src="http://www.pokestadium.com/sprites/xy/{{reimb.rqType}}.gif" alt="{{reimb.rqType}}">
+    <div class="card-body">
+      <h5 class="card-title">{{reimb.rqType | uppercase}}</h5>
+      <p class="card-text">{{reimb.rqStatus | uppercase}} <br> {{reimb.description}}</p>
+      <span *ngIf="reimb.rqStatusId < 3">
+        <a (click) = "accept()" class="btn btn-primary">Yes</a>
+        <a (click) = "decline()" class="btn btn-primary">No</a>
+      </span>
+    </div>
+  </div>

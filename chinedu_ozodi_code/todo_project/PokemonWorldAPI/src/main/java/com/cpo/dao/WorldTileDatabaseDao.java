@@ -6,6 +6,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.cpo.models.WorldTile;
 import com.cpo.util.SetConnectionPropertiesUtil;
@@ -67,6 +69,33 @@ public class WorldTileDatabaseDao implements WorldTileDao {
 		}
 
 		return wt;
+
+	}
+	
+	@Override
+	public List<WorldTile> getWorldTilesByWorldId(int worldId) {
+		// Going to contain code for JDBC
+		List<WorldTile> wts = new ArrayList<WorldTile>();
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
+
+			String sql = "SELECT * FROM world_tiles wt RIGHT OUTER JOIN wt_types wtt on (wt.wt_type_id = wtt.wt_type_id) WHERE world_id = ? ORDER BY world_y, world_x";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, worldId);
+			ResultSet rs = ps.executeQuery();
+			while (rs.next()) {
+				wts.add(new WorldTile(rs.getInt(1), rs.getInt("world_id"), rs.getString("wt_name"), rs.getInt("world_x"),
+						rs.getInt("world_y"), rs.getInt("wt_type_id"), rs.getString("wt_type"), rs.getInt("length"),
+						rs.getInt("width")));
+			}
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		return wts;
 
 	}
 }

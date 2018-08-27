@@ -108,6 +108,15 @@ BEGIN
   END IF;
 END;
 /
+CREATE OR REPLACE TRIGGER p_trainer_trigger
+BEFORE INSERT ON pokemon
+FOR EACH ROW
+BEGIN
+  IF :new.trainer_id = 0 THEN
+    :new.trainer_id := NULL;
+  END IF;
+END;
+/
 CREATE OR REPLACE TRIGGER pt_seq_trigger
 BEFORE INSERT ON pokemon_trainers
 FOR EACH ROW
