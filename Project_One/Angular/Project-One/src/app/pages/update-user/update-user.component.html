@@ -6,15 +6,15 @@
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Update your password</label>
-    <input type="password" #password class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="password" #password class="form-control" placeholder="Password">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Update your first name</label>
-    <input type="text" #fname class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="text" #fname class="form-control"  placeholder="First">
   </div>
   <div class="form-group">
     <label for="exampleInputPassword1">Update your last name</label>
-    <input type="text" #lname class="form-control" id="exampleInputPassword1" placeholder="Password">
+    <input type="text" #lname class="form-control"  placeholder="Last Name">
   </div>
-  <button (click)="updatingUser(email.value, password.value, fname.value, lname.value, user.u_Id)" type="submit" class="btn btn-primary" routerLink="/user/update">Update</button>
+  <button (click)="updatingUser(email.value, password.value, fname.value, lname.value, user.u_Id)" type="submit" class="btn btn-primary" routerLink="update">Update</button>
 </div>
