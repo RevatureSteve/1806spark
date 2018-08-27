@@ -42,8 +42,8 @@ public class NewReimburement extends HttpServlet {
 		System.out.println("NewReimbursement - POST");
 		Reimbursement reimb = new Reimbursement();
 		
-		BufferedReader bf = request.getReader();
-		System.out.println("[LOG]---NewReimbursementServlet---BufferedReader Successful");
+		//BufferedReader bf = request.getReader();
+		//System.out.println("[LOG]---NewReimbursementServlet---BufferedReader Successful");
 		
 		ObjectMapper mapper = new ObjectMapper();
 		System.out.println("[LOG]---NewReimbursementServlet---ObjectMapper Successful");
