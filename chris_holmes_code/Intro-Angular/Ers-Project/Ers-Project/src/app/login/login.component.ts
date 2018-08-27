@@ -37,7 +37,6 @@ loginUser(user: User) {
 this.httpClient.post('http://localhost:8080/ErsProject/login', user).subscribe
   (succ => this.changePage(succ), err => console.log('login failed')
 );
-console.log('welcome back');
 console.log(this.validUser);
 }
 
@@ -51,7 +50,10 @@ changePage(user) {
   } else if (this.validUser.posId === 1) {
     this.route.navigate(['employee-homepage']);
   }
-}
+    if (this.validUser.posId === 2) {
+    this.route.navigate(['manager-homepage']);
+  }
 
 }
 
+}

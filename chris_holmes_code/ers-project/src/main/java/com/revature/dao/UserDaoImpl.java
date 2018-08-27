@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
+import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.domain.Reimbursements;
@@ -63,7 +63,6 @@ public class UserDaoImpl implements UserDao{
 			cs.setInt(1,empuId);
 			cs.setInt(2,amount);
 			cs.setString(3, description);
-			//cs.setObject(4, null);
 			cs.setInt(4, rqTypeId);
 			cs.setInt(5, rqStatusId);
 			ResultSet resultSet = cs.executeQuery();
@@ -83,6 +82,40 @@ public class UserDaoImpl implements UserDao{
 		}
 		return reimbursement;
 
+	}
+	
+	
+	
+	public List<Reimbursements> getAllReimbursements() { 
+		List<Reimbursements> reimbursement= new ArrayList<Reimbursements>(); //creating a null reimbursement object
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()){
+			System.err.println("connection to db successful");
+			String sql = "SELECT * FROM reimbursement";
+			PreparedStatement ps = conn.prepareStatement(sql); // Precompiles the sql statement without the parameter values
+			ResultSet resultSet = ps.executeQuery();
+			while (resultSet.next()) {
+				reimbursement.add(new Reimbursements(resultSet.getInt("emp_u_id"), resultSet.getInt("mgr_u_id"), resultSet.getInt("amt"), resultSet.getString("description"), null, resultSet.getTimestamp("timesubmission"), resultSet.getInt("rq_type_id"), resultSet.getInt("rq_status_id"), resultSet.getInt("r_id")));
+				
+			}
+			
+			System.err.println("[LOG]---resultset completed");
+			
+					System.out.println(reimbursement);
+					
+		
+			
+			
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e1) {
+			e1.printStackTrace();
+		} catch (IOException e1) {
+			e1.printStackTrace();
+		}catch (ClassNotFoundException e) {
+			
+		}
+		System.out.println("[LOG]---Ending----returning: " + reimbursement);
+		return reimbursement;
 	}
 	
 	

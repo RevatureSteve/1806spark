@@ -19,12 +19,23 @@ public class Reimbursements {
 	
 	
 	
+	public Reimbursements(int emp_u_id, int mgr_u_id, int amt, String description, Blob img, Timestamp timesubmission,
+			int rq_type_id, int rq_status_id, int r_id) {
+		super();
+		this.emp_u_id = emp_u_id;
+		this.mgr_u_id = mgr_u_id;
+		this.amt = amt;
+		this.description = description;
+		this.img = img;
+		this.timesubmission = timesubmission;
+		this.rq_type_id = rq_type_id;
+		this.rq_status_id = rq_status_id;
+		this.r_id = r_id;
+	}
 	public Reimbursements() {
 		super();
 	}
-	public Reimbursements(int i, String string, String string2, String string3, String string4, int j) {
-		super();
-	}
+	
 	private int r_id;
 	public int getR_id() {
 		return r_id;

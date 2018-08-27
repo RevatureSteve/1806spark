@@ -45,4 +45,24 @@
     <servlet-name>NewReimbursementServlet</servlet-name>
     <url-pattern>/NewReimbursementServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewAllReimbursments</display-name>
+    <servlet-name>ViewAllReimbursments</servlet-name>
+    <servlet-class>com.revature.servlets.ViewAllReimbursments</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewAllReimbursments</servlet-name>
+    <url-pattern>/ViewAllReimbursments</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewAllReimbursements</display-name>
+    <servlet-name>ViewAllReimbursements</servlet-name>
+    <servlet-class>com.revature.servlets.ViewAllReimbursements</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewAllReimbursements</servlet-name>
+    <url-pattern>/ViewAllReimbursements</url-pattern>
+  </servlet-mapping>
 </web-app>

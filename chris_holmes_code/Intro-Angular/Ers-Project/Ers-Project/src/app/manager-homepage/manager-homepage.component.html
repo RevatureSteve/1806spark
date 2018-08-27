@@ -1,0 +1,34 @@
+<div class="jumbotron">
+    <h1 class="display-4">Reimbursement Info</h1>
+    <p class="lead">View reimbursement info here</p>
+    <hr class="my-4">
+    <p></p>
+  
+    <form>
+        <ul>
+              <table class ="table table-dark" >
+                <tr>
+              <ul *ngFor= 'let data of data' >
+                REIMBURSEMENT REQUEST!
+                <br> <br>
+                Employee ID <li>{{ data.emp_u_id }}</li>
+                Manager ID <li>{{ data.mgr_u_id }}</li>
+                Amount <li>{{ data.amt }}</li>
+                Description <li>{{ data.description }}</li>
+                Time Submitted <li>{{ data.timesubmission | date: 'medium' }}</li>
+                Request Type ID <li>{{ data.rq_type_id }}</li>
+                Request Status ID <li><a *ngIf='data.rq_status_id === 0'>Pending</a>
+                  <a *ngIf='data.rq_status_id === 1'>Approved</a>
+                  <a *ngIf='data.rq_status_id === 2'>Denied</a></li>
+                Request ID  <li>{{ data.r_id }}</li>
+                <input type="button" value="Approve Request">
+                <br>
+                <br>
+                <br>
+              </ul>
+             </tr>
+              </table>
+            </ul>
+
+    </form>
+  </div>
