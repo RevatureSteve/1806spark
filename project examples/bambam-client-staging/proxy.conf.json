@@ -1,0 +1,14 @@
+{
+  "/people": {
+    "target": "http://localhost:3000",
+    "secure": false
+  },
+  "/planets": {
+      "target": "http://localhost:3000",
+      "secure": false
+  },
+  "/starships": {
+      "target": "http://localhost:3000",
+      "secure": false
+  }
+}

@@ -36,10 +36,6 @@ public class UserDaoImpl implements UserDao{
 			
 		} catch (SQLException e) {
 			e.printStackTrace();
-		} catch (FileNotFoundException e1) {
-			e1.printStackTrace();
-		} catch (IOException e1) {
-			e1.printStackTrace();
 		}
 		System.err.println("[LOG]---Ending----getUserByUser() returning: " + user);
 		return user;
@@ -58,7 +54,7 @@ public class UserDaoImpl implements UserDao{
 				tasks.add(new Task(rs.getInt("T_ID"), rs.getInt("U_ID"), rs.getString("T_NAME"), rs.getInt("TS_ID"), null));
 			}
 			
-		} catch (IOException | SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		
@@ -77,7 +73,7 @@ public class UserDaoImpl implements UserDao{
 			while(rs.next()) {
 				tasks.add(new Task(rs.getInt("T_ID"), rs.getInt("U_ID"), rs.getString("T_NAME"), rs.getInt("TS_ID"), null));
 			}
-		} catch (IOException | SQLException e) {
+		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 		

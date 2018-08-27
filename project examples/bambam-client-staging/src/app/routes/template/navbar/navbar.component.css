@@ -1,0 +1,79 @@
+#menu-navbar {
+    -webkit-box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.35);
+    -moz-box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.35);
+    box-shadow: 0px 0px 30px -5px rgba(0,0,0,0.35);
+}
+
+.nav-item {
+    cursor: pointer;
+}
+
+.nav-item a {
+    border-bottom: 2px solid rgba(0,0,0,0);
+    transition: ease-in 0.15s;
+}
+
+.nav-item a:hover {
+    color: salmon;
+    border-bottom: 2px solid salmon;
+    transition: ease-in 0.3s;
+}
+
+.active-link {
+    color: salmon !important;
+    border-bottom: 2px solid salmon !important;
+}
+
+.dropdown-menu {
+    background-color: rgba(207, 207, 207, 0.7);
+    border: 0;
+}
+
+.dropdown-menu .nav-link {
+    padding-left: 15px;
+}
+
+.dropdown-menu .nav-link:hover {
+    background-color: rgba(207, 207, 207, 0.45);
+}
+
+.icon {
+    width: 35px;
+}
+
+.navbar-toggler {
+    outline: none;
+}
+
+/* Hamburger Menu */
+.bars-container {
+    display: none;
+    cursor: pointer;
+}
+
+.bar1, .bar2, .bar3 {
+    width: 20px;
+    height: 2px;
+    background-color: rgb(156, 156, 156);
+    margin: 5px 0;
+    transition: 0.4s;
+}
+
+.change .bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.change .bar2 {opacity: 0;}
+
+.change .bar3 {
+    -webkit-transform: rotate(45deg) translate(-4px, -4px);
+    transform: rotate(45deg) translate(-4px, -4px);
+}
+/* End Hamburger Menu */
+
+@media(max-width: 575px) {
+    .bars-container {
+        display: inline-block;
+    }
+}

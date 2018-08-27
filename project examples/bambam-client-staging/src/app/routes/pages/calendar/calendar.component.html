@@ -1,0 +1,118 @@
+<!-- Fixed event option button to show or hide event-panel -->
+<div class="event-options-wrapper">
+  <div class="event-options text-center bg-orange">
+    <button class="btn" type="button" (click)="clickEventOptions()">
+      <i class="far fa-calendar-alt"></i>
+    </button>
+  </div>
+</div>
+
+<!-- Main container -->
+<div class="container-fluid padding-top">
+  <div class="row">
+
+    <!-- Left Column - Date Picker and Event Panel-->
+    <div id="event-panel" class="col-md-4 event-panel">
+      <div class="event-panel-left">
+        <div>Jump to a particular date</div>
+        <div class="input-wrapper">
+          <div *ngIf="smallScreen()">
+            <input id="datepicker" placement="bottom" type="text" name="datepickerInput" [bsValue]="date" #dp="bsDatepicker" (onHidden)="dateChange(dp._bsValue)" (change)="dateChange(dp._bsValue)" bsDatepicker [bsConfig]="{containerClass: 'theme-orange'}">
+            <span class="calendar" (click)="dp.toggle()"><i class="far fa-calendar-alt"></i></span>
+          </div>
+
+          <div *ngIf="!smallScreen()">
+            <input id="datepicker" placement="bottom left" type="text" name="datepickerInput" [bsValue]="date" #dp="bsDatepicker" (onHidden)="dateChange(dp._bsValue)" (change)="dateChange(dp._bsValue)" bsDatepicker [bsConfig]="{containerClass: 'theme-orange'}">
+            <span class="calendar" (click)="dp.toggle()"><i class="far fa-calendar-alt"></i></span>
+          </div>
+        </div>
+
+        <br>
+        
+        <div>Add subtopic to calendar</div>
+
+        <div>Topic:</div>
+        <input id="topic" name="topic" class="panel-inputs" list="topics" (keyup)="getSubtopics()" (change)="getSubtopics()">
+        <datalist id="topics">
+          <option *ngFor="let topic of topics" [value]="topic">
+        </datalist>
+
+        <br><br>
+        
+        <div>Subtopic:</div>
+        <input id="subtopic" name="subtopic" class="panel-inputs" list="subtopics" (keyup)="checkSubtopic()" (change)="checkSubtopic()" disabled>
+        <datalist id="subtopics">
+          <option *ngFor="let subtopic of subtopics" [value]="subtopic">
+        </datalist>
+
+        <br><br>
+
+        <div>Start:</div>
+        <div>
+          <timepicker id="timepicker" [(ngModel)]="time" [mousewheel]="true" [arrowkeys]="true" (change)="timeChange()"></timepicker>
+        </div>
+
+        <br><br>
+
+        <a class="btn buttons" [ngClass]="{'disabled' : !validSubtopic}" (click)="addToCalendar()">Add to Calendar</a>
+
+        <div class="delete">
+          <i class="fas fa-trash"></i>
+        </div>
+      </div>
+
+      <hr *ngIf="smallScreen()">
+    </div>
+
+    <!-- Right Column - Main Calendar -->
+    <div id="calendar-panel" class="col-md-8 col-md-12">
+      <div class="vl"></div>
+      
+      <!-- Main Calendar -->
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-lg">
+            <h3>{{ title }}</h3>
+          </div>
+        </div>
+
+        <div class="row">
+          <!-- Left Buttons -->
+          <div class="col-lg">
+            <a (click)="changeView('day')" class="btn buttons buttons-left" [ngClass]="{'active' : view === 'day'}">Day</a>
+            <a (click)="changeView('week')" class="btn buttons buttons-middle" [ngClass]="{'active' : view === 'week'}">Week</a>
+            <a (click)="changeView('month')" class="btn buttons buttons-right" [ngClass]="{'active' : view === 'month'}">Month</a>
+            <a (click)="changeView('list')" class="btn buttons buttons-list" [ngClass]="{'active' : view === 'list'}">List</a>
+          </div>
+    
+          <!-- Right Buttons -->
+          <div class="col-lg text-right">
+            <a class="btn buttons buttons-today" [ngClass]="{'disabled': isToday}" (click)="changeView('today')">
+              Today
+            </a>
+
+            <a class="btn buttons buttons-left" (click)="changeView('prev')">
+              <i class="fas fa-chevron-left"></i>
+            </a>
+            
+            <a class="btn buttons buttons-right" (click)="changeView('next')">
+              <i class="fas fa-chevron-right"></i>
+            </a>
+          </div>
+
+          <!-- Main Calendar -->
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg">
+                <div id="main-calendar" class="padding-top"></div>
+              </div>
+            </div>
+          </div>
+          
+        </div>
+      </div>
+  </div>
+
+</div> <!-- End main container-fluid-->
+
+<br>

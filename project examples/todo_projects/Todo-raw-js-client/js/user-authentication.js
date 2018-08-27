@@ -8,10 +8,13 @@
 /**
  *  fetch to Java API
  *      -valid -> validUserNavbar, 
+ * 
+ *  userAthentication invoked by login.html submit btn
  */
 function userAuthentication(){
-    const url = 'http://localhost:8085/TodoList-Restful-API/login'
+    const url = 'http://localhost:8080/TodoList-Restful-API/login';
     let user = {}
+    // user object MUST match the Java Class
     user.username = document.getElementById('username').value;
     user.password = document.getElementById('password').value;
     console.log('userAuthentication called');
@@ -48,7 +51,7 @@ function validUserNavbar(){
     // change login to logout since user is 
     document.getElementById('loginLink').innerHTML = "logout";
     // display navbar links
-    document.getElementById('user-navbar').style.display = "";;
+    document.getElementById('user-navbar').style.display = "";
     }
 }
 

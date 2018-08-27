@@ -9,33 +9,43 @@ import java.sql.SQLException;
 import java.util.Properties;
 
 public class SetConnectionPropertiesUtil {
-
+	
 	/*
-	 *  utility class helper methods not specific to manipulation of pojos
-	 *  	as that would be business logic in services
-	 *  usually for configuration 
+	 * 	utility class helper methods not specific to manipulation of pojos
+	 * 		as that would be business logic in services
+	 * 	usually for configuration
 	 */
-	// let the developer that needs a connection handle these exceptions
-	public static Connection getConnection() throws FileNotFoundException, IOException, SQLException {
+	//	let the developer that needs a connection handle these exceptions
+	public static Connection getConnection() {
+		
+		Connection conn = null;
+		
+		Properties prop = new Properties();
+	
 		try {
-			Class.forName("oracle.jdbc.driver.OracleDriver"); // required for Tomcat
+			
+			//load in values from properties file
+			prop.load(new FileReader("C:\\Users\\Stephen Hong\\my_git_repos\\1806spark\\project examples\\todo_projects\\TodoList-Restful-API\\src\\main\\resources\\application.properties"));
+			
+			//gets class path to load and register the oracle driver
+			Class.forName(prop.getProperty("driver"));	
+			
+			//establish connection
+			conn = DriverManager.getConnection(
+					prop.getProperty("url"),
+					prop.getProperty("usr"), 
+					prop.getProperty("pw"));
+			
 		} catch (ClassNotFoundException e) {
 			e.printStackTrace();
-		}
-		String url="jdbc:oracle:thin:@octocat.ccwgu9dykdjd.us-west-2.rds.amazonaws.com:1521:ORCL";
-		String username="todo_db";
-		String password="p4ssw0rd";
-//		Properties props = new Properties();
-//		props.load(new FileReader("src\\main\\resources\\db.properties"));
-//		
-//		url = props.getProperty("url");
-//		username = props.getProperty("username");
-//		password = props.getProperty("pw");
-		
-		return DriverManager.getConnection(url, username, password);
-		
+		} catch (SQLException e) {
+			e.printStackTrace();
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		}		
+		return conn;
 	}
-	
-	
-	
+
 }

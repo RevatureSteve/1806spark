@@ -1,0 +1,32 @@
+<nav id="menu-navbar" class="navbar navbar-expand-sm navbar-light bg-light">
+
+  <a class="navbar-brand" routerLink="/">
+    <img class="icon" src="favicon.png">
+  </a>
+
+  <div #hamburger class="bars-container" (click)="toggleHamburgerMenu()" data-toggle="collapse" data-target="#navbar">
+    <div class="bar1"></div>
+    <div class="bar2"></div>
+    <div class="bar3"></div>
+  </div>
+
+  <div class="collapse navbar-collapse dropdown" id="navbar">
+    <ul class="navbar-nav">
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active-link" routerLink="dashboard" (click)="clickHamburgerLink()">Dashboard</a>
+      </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active-link" routerLink="calendar" (click)="clickHamburgerLink()">Calendar</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active-link" routerLink="curriculum/editor" (click)="clickHamburgerLink()">Curriculum Editor</a>
+      </li>
+
+      <li class="nav-item">
+        <a class="nav-link" routerLinkActive="active-link" routerLink="boom" (click)="clickHamburgerLink()">VP/QC (Boom)</a>
+      </li>
+    </ul>
+  </div>
+</nav>
