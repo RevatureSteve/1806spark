@@ -1,4 +1,4 @@
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router, ParamMap, RoutesRecognized } from '@angular/router';
 import { ReimbursementsListService } from '../../reimbursements-list.service';
 import { LoggedInService } from '../../logged-in.service';
 import { User } from '../../models/user';
@@ -16,12 +16,16 @@ export class ReimbursementsByIdComponent implements OnInit {
   reimbursement: Reimbursement[];
   userId;
 
-  constructor(private logged: LoggedInService, private reim: ReimbursementsListService, private route: ActivatedRoute) {
+  constructor(private logged: LoggedInService, private reim: ReimbursementsListService, private route: ActivatedRoute,
+    private router: Router) {
+    // this.route.paramMap.subscribe(params => {
+    //   this.userId = +params.get('id');
+    // });
    }
 
   ngOnInit() {
+    this.userId = +this.route.snapshot.queryParamMap.get('user_id');
     this.user = this.logged.getLoggedInUser();
-    this.userId = this.route.snapshot.paramMap.get('id');
     console.log(this.userId);
     this.getReimbursementsById(this.userId);
   }

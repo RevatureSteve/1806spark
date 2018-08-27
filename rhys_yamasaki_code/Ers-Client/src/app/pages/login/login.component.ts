@@ -18,15 +18,13 @@ export class LoginComponent implements OnInit {
 
 
   getUser(email, password): void {
-    this.login.getUser(email, password).subscribe(user => this.changePage(user)
-  );
+    this.login.getUser(email, password).subscribe(user => this.changePage(user));
   }
 
   changePage(user) {
     this.changeLoggedInUser(user);
     this.logged.getLoggedInUser();
     localStorage.setItem('user', JSON.stringify(user));
-    console.log(localStorage.getItem('user'));
     this.router.navigate(['/', this.user.pos_name, 'home']);
   }
 
