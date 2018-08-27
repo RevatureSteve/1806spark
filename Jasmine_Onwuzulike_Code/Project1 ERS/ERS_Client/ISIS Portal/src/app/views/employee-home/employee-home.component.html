@@ -1,0 +1,33 @@
+<div id="emp_background">
+  
+    <div id="emp">
+      <br>
+      <br>
+      <br>
+      <br>
+      <br>
+        <h1> Welcome home {{ final.firstname }}</h1>
+      <div id="sidenav">
+      <a routerLink="/employee" id="link">Home</a>
+      <a routerLink="/agent/profile" id="link">Employee Profile</a>
+      <a routerLink = "/agnet/reimbursements" id="link">Employee Reimbursements</a>
+      <a routerLink = "/logout" id="link">Logout</a>
+      </div>
+      
+      
+      
+      <h2 *ngIf="final.positionId == 2" class="status">Current Status: Employee  </h2>
+      <h2 *ngIf="final.positionId == 1" class="status">Current Status: Manager</h2>"
+
+      <!-- <div *ngSwitch = "final.firstname">
+        <img *ngSwicthCase = "Sterling" src = "../Archer/archer id.jpg">
+        <img *ngSwicthCase = "Lana" src = "../Archer/archer id.jpg">
+        <img *ngSwicthCase = "Cyril" src = "../Archer/archer id.jpg">
+        <img *ngSwicthCase = "Pan" src = "../Archer/archer id.jpg">
+        <img *ngSwicthCase = "Cheryl" src = "../Archer/archer id.jpg">
+        <img *ngSwicthCase = "Ray" src = "../Archer/archer id.jpg">
+       
+        <img *ngSwicthCase = "Dr" src = "../Archer/archer id.jpg">
+      </div> -->
+      </div>
+    </div>

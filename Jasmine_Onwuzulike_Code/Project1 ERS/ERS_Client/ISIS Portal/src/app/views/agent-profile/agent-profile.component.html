@@ -1,0 +1,37 @@
+<div id="emp_background">
+    <br>
+    <br>
+    <br>
+    <br>
+    <h1>Employee Profile</h1>
+    <div id="sidenav">
+        <a routerLink="/employee" id="link">Home</a>
+        <a routerLink="/agent/profile" id="link">Employee Profile</a>
+        <a routerLink="/agnet/reimbursements" id="link">Employee Reimbursements</a>
+        <a routerLink="/logout" id="link">Logout</a>
+    </div>
+
+    <div class="card" >
+        <h5 class="card-header">Employee Profile</h5>
+        <div class="card-body">
+            <h5 class="card-title">Employee Type:  {{ final.positionId }}</h5>
+            <div class="card-text" id="e-info">
+                <label>Employee Id:</label>
+                <input type="text" value="{{ final.empId }}" readonly>
+                <label>First Name:</label>
+                <input type="text" value="{{ final.firstname }}" readonly>
+                <label>Last Name:</label>
+                <input type="text" value="{{ final.lastname }}" readonly>
+                <label>Employee Email:</label>
+                <input type="text" value="{{ final.email }}" readonly>
+            </div>
+            <h5> Need to reset your password?</h5>
+            <a class="btn btn-primary" id = "reset" routerLink = "/password">Reset Password</a>
+
+          
+        </div>
+    </div>
+
+    
+
+</div>

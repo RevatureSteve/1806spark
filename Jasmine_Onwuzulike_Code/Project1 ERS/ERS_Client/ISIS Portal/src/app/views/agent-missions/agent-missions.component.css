@@ -1,0 +1,47 @@
+thead {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+}
+td {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+
+}
+
+h1 {
+    color: white;
+    font-family: 'Press Start 2P', cursive;
+}
+
+#link {
+    padding: 32px;
+    text-decoration: none;
+    display: inline;
+    transition: 0.3s;
+    color: rgb(4, 4, 71);
+    font-family: 'Press Start 2P', cursive;
+    font-size: larger;
+    
+    
+
+}
+#background {
+    /* background-image: url("../Archer/background.jpg"); */
+    background-image: url("https://ak0.picdn.net/shutterstock/videos/9044620/thumb/9.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 85%;
+    width: 100em;
+    height: 50em;
+ }
+ table {
+    width: 30%;
+    margin-right: auto;
+    margin-left: 10px;
+    padding-top: 40p;
+    margin-bottom: 10px;
+}
+
+thead    {
+    color: rgb(4, 4, 71);
+}
