@@ -49,7 +49,7 @@ public class ERSService {
 		return userDao.getUserByUsername(username);
 	}
 	//check
-	public ArrayList<User> getAllUsers(){
+	public static ArrayList<User> getAllUsers(){
 		System.out.println("[LOG] - In ERSService.getAllUsers()");
 		return userDao.getAllUsers();
 	}
@@ -75,7 +75,7 @@ public class ERSService {
 		return reimb;
 	}
 	//check
-	public ArrayList<Reimbursement> getAllReimbursements() {
+	public static ArrayList<Reimbursement> getAllReimbursements() {
 		System.out.println("[LOG] - In ERSService.getAllReimbursements()");
 		return reimbDao.getAllReimbursements();
 	}
