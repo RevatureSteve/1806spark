@@ -187,7 +187,7 @@
     }).then(data => { 
       resultSet = data;
       console.log(resultSet);
-      activeBtn("profile-info-btn");
+      reqSent();
     }).catch(err => {
            console.log("[LOG]---------" + err );
     });

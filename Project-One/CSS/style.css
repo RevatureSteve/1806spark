@@ -329,8 +329,9 @@ input{
     color: red;
 }
 #alert{
-    position: absolute;
-    margin-top: -2%;
+    width: 80%;
+    margin: auto;
+    text-align: center;
     background-color: rgba(255, 255, 0, 0.63);
     border-radius: 25px;
     padding: 0.5%;

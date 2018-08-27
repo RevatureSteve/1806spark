@@ -33,7 +33,7 @@ public class UpdateRequestServlet extends HttpServlet {
 	 * @see HttpServlet#doGet(HttpServletRequest request, HttpServletResponse response)
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("POST- Login");
+		System.out.println("get- update");
 		int reqId = 0;
 		int reqStatus = 0;
 		
