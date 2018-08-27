@@ -70,6 +70,19 @@
   
   
   <servlet>
+  <servlet-name>updateReim</servlet-name>
+  <servlet-class>com.revature.servlet.UpdateReimServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>updateReim</servlet-name>
+  <url-pattern>/reim/update</url-pattern>
+ 
+  </servlet-mapping>
+  
+  
+  
+  <servlet>
   <servlet-name>allEmpReim</servlet-name>
   <servlet-class>com.revature.servlet.GetAllReimByStatusAndIdServlet</servlet-class>
   </servlet>

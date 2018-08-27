@@ -69,6 +69,10 @@ public class AppService {
 		return rmDao.createReimbursement(emp_U_Id, amt, description, rq_Type);
 	}
 	
+	public int updateReim(int r_Id, int rq_Status_Id, int mgr_U_Id) {
+		int rowsAffected = rmDao.updateReim(r_Id, rq_Status_Id, mgr_U_Id);
+		return rowsAffected;
+	}
 
 //-------------------------------------------------------------------------------------------------------------------------------
 	

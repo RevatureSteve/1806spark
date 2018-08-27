@@ -1,3 +1,7 @@
+let list = [];
+let rq_Status_Id;
+let rqStat;
+
 window.onload = function foo() {
     console.log('Loading login');
 
@@ -14,9 +18,22 @@ function login (){
     }).then((text) => {
         navbar.innerHTML = text;
         document.getElementById('submit').addEventListener('click', getLogin);
+        removeNavBar();
     });
 }
 
+//LOGOUT FUNCTIONALITY
+function removeNavBar (){
+    let navbar = document.getElementById('topBar');
+    let navbar2 = document.getElementById('topBar2');
+    fetch('Pages/empty.html').then((resp) => {
+        nav = resp;
+        return resp.text();
+    }).then((text) => {
+        navbar.innerHTML = text;
+        navbar2.innerHTML = text;
+    });
+}
 //---------------------------------------------------------------------------------------------------
 //NAVBARS
 // EMPLOYEE NAVBAR
@@ -30,7 +47,7 @@ function topBar (){
         document.getElementById('profile').addEventListener('click', profile);
         document.getElementById('viewReim').addEventListener('click', viewReim);
         document.getElementById('createReim').addEventListener('click', empPage);
-        document.getElementById('logout').addEventListener('click', logout);
+        document.getElementById('logout').addEventListener('click', login);
     });
 }
 
@@ -48,7 +65,7 @@ function topBarMgr (){
         document.getElementById('ViewApp').addEventListener('click', mgrApproved);
         document.getElementById('ViewPend').addEventListener('click', mgrPend);
         document.getElementById('ViewDenied').addEventListener('click', mgrDenied);
-        document.getElementById('logout2').addEventListener('click', logout4);
+        document.getElementById('logout2').addEventListener('click', login);
     });
 }
 
@@ -148,6 +165,9 @@ function mgrAllEmp (){
                 navbar.innerHTML = text;
                 topBarMgr();
                 viewPending();
+            document.getElementById('approve').addEventListener('click', updateApprove);
+            document.getElementById('denied').addEventListener('click', updateDenied);
+            document.getElementById('clear').addEventListener('click', clearArray);
                });
         }
 
@@ -180,56 +200,8 @@ function mgrAllEmp (){
         }
 
 //-------------------------------------------------------------------------------------------------------
-//LOGOUT FUNCTIONALITY
-function logout (){
-    console.log('logging out');
-    let navbar = document.getElementById('content');
-    fetch('Pages/login.html').then((resp) => {
-        nav = resp;
-        return resp.text();
-    }).then((text) => {
-        navbar.innerHTML = text; 
-        logout2();
-    });
-    
-}
 
-function logout4 (){
-    console.log('logging out');
-    let navbar = document.getElementById('content');
-    fetch('Pages/login.html').then((resp) => {
-        nav = resp;
-        return resp.text();
-    }).then((text) => {
-        navbar.innerHTML = text; 
-        logout3();
-    });
-    
-}
 
-function logout2 (){
-    console.log('logging out');
-    let navbar = document.getElementById('topBar');
-    fetch('Pages/logout.html').then((resp) => {
-        nav = resp;
-        return resp.text();
-    }).then((text) => {
-        navbar.innerHTML = text; 
-    });
-    
-}
-
-function logout3 (){
-    console.log('logging out');
-    let navbar = document.getElementById('topBar2');
-    fetch('Pages/logout.html').then((resp) => {
-        nav = resp;
-        return resp.text();
-    }).then((text) => {
-        navbar.innerHTML = text; 
-    });
-    
-}
 
 
 

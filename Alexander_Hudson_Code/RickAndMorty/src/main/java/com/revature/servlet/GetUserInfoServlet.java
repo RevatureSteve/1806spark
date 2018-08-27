@@ -25,7 +25,7 @@ public class GetUserInfoServlet extends HttpServlet{
 		ObjectMapper mapper = new ObjectMapper();
 		
 		//employee json information
-		String json = mapper.writeValueAsString(u_Id);
+		String json = mapper.writeValueAsString(us);
 		
 		//format into text output
 		PrintWriter out = resp.getWriter();

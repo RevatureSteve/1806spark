@@ -53,6 +53,24 @@ function createPending(){
         cell6.innerText = pending[i].rq_Type;
         cell7.innerText = pending[i].time_Submission;
         cell8.innerText = pending[i].r_Id;
+        row.id = pending[i].r_Id;
+        cell1.id = pending[i].r_Id;
+        cell2.id = pending[i].r_Id;
+        cell3.id = pending[i].r_Id;
+        cell4.id = pending[i].r_Id;
+        cell5.id = pending[i].r_Id;
+        cell6.id = pending[i].r_Id;
+        cell7.id = pending[i].r_Id;
+        cell8.id = pending[i].r_Id;
+
+        document.getElementById(cell1.id).addEventListener('click', rowListener);
+        document.getElementById(cell2.id).addEventListener('click', rowListener);
+        document.getElementById(cell3.id).addEventListener('click', rowListener);
+        document.getElementById(cell4.id).addEventListener('click', rowListener);
+        document.getElementById(cell5.id).addEventListener('click', rowListener);
+        document.getElementById(cell6.id).addEventListener('click', rowListener);
+        document.getElementById(cell7.id).addEventListener('click', rowListener);
+        document.getElementById(cell8.id).addEventListener('click', rowListener);  
         x++;
 
     }

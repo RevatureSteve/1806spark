@@ -131,6 +131,26 @@ function getAllReim () {
     });
 }
 
+//MANAGER CAN UPDATE REQUEST
+function changeReim () {
+    console.log("update" + newUser.u_Id);
+    for (let i = list.length - 1; i > -1; i--){
+        console.log([i]);
+    fetch ('http://localhost:8080/RickAndMorty/reim/update?r_Id='+ list[i] + '&rq_Status_Id=' + rqStat + '&mgr_U_Id=' + newUser.u_Id ,{
+        method: 'GET',
+        headers: {'Content-Type' : 'application/json'}
+    }).then (resp => {
+        return resp.json();
+    }).then(data => {
+        resultSet = data;
+        console.log(resultSet);
+    }).catch (err => {
+        console.log(['[LOG]-----------' + err]);
+    });
+}
+clearArray();
+}
+
 //------------------------------------------------------------------------------------------------------
 //MANAGER VIEW ALL EMPLOYEES
 var emp = {};
@@ -170,6 +190,7 @@ function getAllEmp () {
 //--------------------------------------------------------------------------------------------------------
 //EMPLOYEE VIEW PROFILE
 function getEmpInfo () {
+  
     document.getElementById('u_Id').innerText = newUser.u_Id;
     document.getElementById('email').innerText = newUser.email;
     document.getElementById('password').innerText = newUser.passWord;

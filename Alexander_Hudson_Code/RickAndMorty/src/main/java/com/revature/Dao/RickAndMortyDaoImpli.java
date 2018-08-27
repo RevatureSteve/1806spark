@@ -1,11 +1,11 @@
 package com.revature.Dao;
 
 import java.io.IOException;
+import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -142,6 +142,23 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 			System.out.println(us);
 			return us;
 	}
+	
+	public int updateReim(int r_Id, int rq_Status_Id, int mgr_U_Id) {
+		int rowsAffected = 0;
+	try (Connection conn = SetConnectionUtil.getConnection()){
+		String sql = "{call resolved (?,?,?)}";
+		CallableStatement cs = conn.prepareCall(sql);
+		cs.setInt(1, r_Id);
+		cs.setInt(2, rq_Status_Id);
+		cs.setInt(3, mgr_U_Id);
+		rowsAffected = cs.executeUpdate();
+	} catch (IOException | SQLException | ClassNotFoundException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+	return rowsAffected;
+	
+}
 	
 	@Override
 	public List <Reimbursement> getAllReimbursements(){
