@@ -33,10 +33,10 @@ public class NewReimbursementServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		double amount  = Double.parseDouble(request.getParameter("amount"));
 		String rDescription = request.getParameter("rDescription");
-		int type = Integer.parseInt(request.getParameter("rTypeId"));	
-		int status = Integer.parseInt(request.getParameter("rStatusId"));
 		int empId = Integer.parseInt(request.getParameter("empId"));
-		Reimbursement rb = ss.createNewReimbursement(amount, rDescription, empId, type, status);
+		int type = Integer.parseInt(request.getParameter("rTypeId"));	
+		
+		Reimbursement rb = ss.createNewReimbursement(amount, rDescription, empId, type);
 		System.out.println(rb);
 		ObjectMapper map = new ObjectMapper();
 		String s = map.writeValueAsString(rb);

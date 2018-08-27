@@ -16,6 +16,7 @@ import { AllAgentsComponent } from './views/all-agents/all-agents.component';
 import { AllReimbursementsComponent } from './views/all-reimbursements/all-reimbursements.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { NewReimbursemetComponent } from './new-reimbursemet/new-reimbursemet.component';
+import { UpdateReimbursementComponent } from './update-reimbursement/update-reimbursement.component';
 
 @NgModule({
   declarations: [
@@ -31,6 +32,7 @@ import { NewReimbursemetComponent } from './new-reimbursemet/new-reimbursemet.co
     AllReimbursementsComponent,
     NewPasswordComponent,
     NewReimbursemetComponent,
+    UpdateReimbursementComponent,
  
 
   ],

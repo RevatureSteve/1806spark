@@ -14,7 +14,7 @@
     <div class="card" >
         <h5 class="card-header">Employee Profile</h5>
         <div class="card-body">
-            <h5 class="card-title">Employee {{ final.positionId }}</h5>
+            <h5 class="card-title">Employee Type:  {{ final.positionId }}</h5>
             <div class="card-text" id="e-info">
                 <label>Employee Id:</label>
                 <input type="text" value="{{ final.empId }}" readonly>
@@ -22,11 +22,11 @@
                 <input type="text" value="{{ final.firstname }}" readonly>
                 <label>Last Name:</label>
                 <input type="text" value="{{ final.lastname }}" readonly>
-                <label>Employee Email::</label>
+                <label>Employee Email:</label>
                 <input type="text" value="{{ final.email }}" readonly>
             </div>
             <h5> Need to reset your password?</h5>
-            <a class="btn btn-primary" routerLink = "/password">Reset Password</a>
+            <a class="btn btn-primary" id = "reset" routerLink = "/password">Reset Password</a>
 
           
         </div>

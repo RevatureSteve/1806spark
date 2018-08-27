@@ -1,16 +1,20 @@
 <div id="emp_background">
   <h1>Employee New Reimbursement</h1>
 
-
+[(ngModel)] =""
   <div class="card">
     <div class="card-body">
       <h5 class="card-title">Create a Reimbursement Request</h5>
       <div class="card-text" id="new">
-        <input type="number" placeholder="Amount" required>
-        <input type="text" placeholder="Description" required>
-        <input type="number">
-        <input type="number">
-        <input type="number">
+        <label>Employee Id:</label>
+        <input  type="number" placeholder="Employee Id" value = "{{ final.empId }}" readonly required>
+       <label>Reimbursement Amount:</label>
+        <input [(ngModel)] ="amount" type="number" placeholder="Amount" required>
+        <label>Reimbursement Description</label>
+        <input [(ngModel)] ="rDescription" type="text" placeholder="Description" required>
+        <label>Enter '1' for Trainning, '2' for 'Lodging/Food, '3' for Travel or '4' for Gadgets</label>
+        <input [(ngModel)] ="rType" type="number" placeholder="Request Type" required>
+        <button class="btn btn-primary" (click) = "start()">Create Reimbursement</button>
       </div>
     </div>
   </div>

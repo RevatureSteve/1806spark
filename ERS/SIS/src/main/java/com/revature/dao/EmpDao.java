@@ -8,7 +8,7 @@ import com.revature.pojos.Users;
 
 public interface EmpDao {
 	//CREATE
-	int createNewReimbursement(double amount, String rDescription, int uId, int type, int status );
+	int createNewReimbursement(double amount, String rDescription, int uId, int type);
 	//READ
 	Users login(String email, String password);
 	List<Reimbursement> getEmpReimb(int empId);

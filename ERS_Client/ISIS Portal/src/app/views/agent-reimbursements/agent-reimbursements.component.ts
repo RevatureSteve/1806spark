@@ -21,6 +21,9 @@ export class AgentReimbursementsComponent implements OnInit {
     .subscribe(data => {
       this.rb = data;
         console.log(this.rb);
+        if (this.rb == null) {
+          alert("No reimbursements for that user.");
+        }
       }
     )
     }

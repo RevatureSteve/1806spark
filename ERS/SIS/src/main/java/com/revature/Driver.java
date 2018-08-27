@@ -32,7 +32,7 @@ public class Driver {
 		
 		// Create new reimbursement.
 		
-		s.createNewReimbursement(500, "Test", 1, 1, 1);
+		s.createNewReimbursement(500, "Test", 1, 1);
 		
 		
 		//Approve or deny a request.

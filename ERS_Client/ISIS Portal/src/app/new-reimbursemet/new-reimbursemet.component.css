@@ -27,14 +27,33 @@ h1 {
     margin-bottom: 30px;
    
 }
+h5 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+    text-align: center;
+}
 #input {
     margin-right: auto;
     margin-left: 60px;
     width: 20%;
     margin-top: 15px;
+    margin-top: 10pz;
     font-family: 'Press Start 2P', cursive;
-
+    font-size: 10px;
 }
 button {
     font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+}
+
+label {
+    display: block;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+}
+.card {
+    margin-top: 20px;
+    margin-left: 200px;;
+    margin-right: auto;
+    width: 40%;
 }

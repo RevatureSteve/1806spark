@@ -32,6 +32,9 @@
      margin-bottom: 10px;
      font-size: 10px;
  }
+ label {
+     display: block;
+ }
  #emp_background {
     background-image: url("http://coleran.com/wp-content/uploads/2014/03/CB2-CIA-Sat-Map-1024x768.jpg");
     background-repeat: no-repeat;
@@ -42,7 +45,9 @@
  h5 {
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
+    text-align: center;
  }
- button {
+ #reset {
     font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
  }

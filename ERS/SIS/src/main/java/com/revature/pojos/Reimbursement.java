@@ -16,12 +16,11 @@ public class Reimbursement {
 
 	
 	
-	public Reimbursement(double amount, String rDescription, int rTypeId, int rStatusId, int empId) {
+	public Reimbursement(double amount, String rDescription, int rTypeId, int empId) {
 		super();
 		this.amount = amount;
 		this.rDescription = rDescription;
 		this.rTypeId = rTypeId;
-		this.rStatusId = rStatusId;
 		this.empId = empId;
 	}
 
@@ -154,7 +153,7 @@ public class Reimbursement {
 	@Override
 	public String toString() {
 		return "Reimbursement [amount=" + amount + ", rDescription=" + rDescription + ", rTypeId=" + rTypeId
-				+ ", rStatusId=" + rStatusId + ", empId=" + empId + "]";
+				+ ", empId=" + empId + "]";
 	}
 	
 
