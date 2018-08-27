@@ -117,6 +117,32 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 			return us;
 	}
 	
+	public List<Users> getAllInfo(int u_Id) {
+		List <Users> us = new ArrayList<>();
+		
+		try (Connection conn = SetConnectionUtil.getConnection()) {
+			System.out.println("Connected");
+			
+			String sql = "SELECT * FROM users WHERE u_Id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, u_Id);
+			System.out.println("Retrieving Information");
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while (rs.next()) {
+				us.add (new Users (rs.getInt("U_ID"), rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getString("FNAME"), rs.getString("LNAME"), rs.getInt("POS_ID")));
+				
+			}
+			} catch (IOException | SQLException | ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			System.out.println(us);
+			return us;
+	}
+	
 	@Override
 	public List <Reimbursement> getAllReimbursements(){
 		List <Reimbursement> re = new ArrayList<>();
@@ -288,7 +314,7 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 	
 	
 	public int updateUserFName(String fName) {
-int rowsAffected = 0;
+		int rowsAffected = 0;
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			System.out.println("Connected");

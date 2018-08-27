@@ -53,6 +53,12 @@ public class AppService {
 		
 		return rmDao.getUserByEmail(email, password);
 	}
+	
+	public List<Users> getAllInfo(int u_Id) {
+		System.out.println("[LOG]-------Getting Information---------");
+		
+		return rmDao.getAllInfo(u_Id);
+	}
 //-------------------------------------------------------------------------------------------------------------------------------
 	
 	//CREATE REIMBURSEMENT

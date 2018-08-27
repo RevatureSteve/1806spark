@@ -1,12 +1,27 @@
+#table7 {
+    position: absolute;
+    margin-top: 350px;
+    color: white;
+    background-color: black;
+    width: 30%;
+    margin-left: 525px;
+    opacity: .8;
+    border-style: solid;
+    border-color: green;
+    border-width: 5px;
+}
+
 #table6 {
     position: absolute;
     margin-top: 350px;
     color: white;
     background-color: black;
     width: 50%;
-    margin-left: 395px;
+    margin-left: 370px;
     opacity: .8;
-
+    border-style: solid;
+    border-color: green;
+    border-width: 5px;
 }
 
 #table5 {
@@ -16,7 +31,10 @@
     background-color: black;
     width: 50%;
     margin-left: 395px;
-    opacity: .8;
+    opacity: .9;
+    border-style: solid;
+    border-color: rgb(71, 10, 71);
+    border-width: 5px;
 }
 
 #table4 {
@@ -26,7 +44,10 @@
     background-color: black;
     width: 50%;
     margin-left: 395px;
-    opacity: .8;
+    opacity: .9;
+    border-style: solid;
+    border-color: rgb(71, 10, 71);
+    border-width: 5px;
 }
 
 #table3 {
@@ -36,7 +57,10 @@
     background-color: black;
     width: 50%;
     margin-left: 395px;
-    opacity: .8; 
+    opacity: .9; 
+    border-style: solid;
+    border-color: rgb(71, 10, 71);
+    border-width: 5px;
 }
 
 #table2 {
@@ -46,7 +70,10 @@
     background-color: black;
     width: 50%;
     margin-left: 395px;
-    opacity: .8;
+    opacity: .9;
+    border-style: solid;
+    border-color: rgb(71, 10, 71);
+    border-width: 5px;
 }
 
 #table {
@@ -56,13 +83,16 @@
     background-color: black;
     width: 50%;
     margin-left: 395px;
-    opacity: .8;
+    opacity: .9;
+    border-style: solid;
+    border-color: rgb(71, 10, 71);
+    border-width: 5px;
 }
 
 #title2 {
     position: fixed;
     margin-left: 27%;
-    margin-top: 25px;
+    margin-top: 25%;
     color: black;
     font-size: 100px;
     text-decoration-style: wavy;
@@ -76,7 +106,7 @@
 #portal4 {
     z-index: -1;
     position: fixed;
-    margin-left: 39%;
+    margin-left: 40%;
     margin-top: 3%;
     opacity: .6;
     

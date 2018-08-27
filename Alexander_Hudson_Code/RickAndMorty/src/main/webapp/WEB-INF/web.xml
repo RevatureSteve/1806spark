@@ -45,6 +45,18 @@
   </servlet-mapping>
   
   
+     <servlet>
+  <servlet-name>EmpInfo</servlet-name>
+  <servlet-class>com.revature.servlet.GetUserInfoServlet</servlet-class>
+  </servlet>
+  
+  <servlet-mapping>
+  <servlet-name>EmpInfo</servlet-name>
+  <url-pattern>/empInfo</url-pattern>
+ 
+  </servlet-mapping>
+  
+  
   <servlet>
   <servlet-name>allReim</servlet-name>
   <servlet-class>com.revature.servlet.GetAllReimbursementsServlet</servlet-class>

@@ -1,3 +1,5 @@
+//------------------------------------------------------------------------------------------------------
+//LOGIN FUNCTIONALITY
 function getLogin(){
 
     let email;
@@ -5,7 +7,6 @@ function getLogin(){
     email = document.getElementById('Email').value;
     password = document.getElementById('Password').value;
     
-
     let data = {"email" : email, "password" : password};
 fetch ('http://localhost:8080/RickAndMorty/login', {
     
@@ -23,11 +24,12 @@ fetch ('http://localhost:8080/RickAndMorty/login', {
         alert("Y..Y..Youu don't match anyone here Rick");
         console.log('[LOG]-------------' + err);
 }
-       
 });
 
 }
 
+//------------------------------------------------------------------------------------------------------
+//EMPLOYEE CREATE REIMBURSEMENT
 function createReim (){
     console.log("Connecting to DB");
     empUId = parseInt(document.getElementById('empUId').value);
@@ -57,6 +59,8 @@ fetch ('http://localhost:8080/RickAndMorty/reim/create', {
 });
 }
 
+//----------------------------------------------------------------------------------------------------
+//MANAGER VIEW ALL APPROVED
 var approve = {};
 function viewApprove (){
     fetch ('http://localhost:8080/RickAndMorty/reim/approved?rq_Status_Id=1', {
@@ -73,6 +77,8 @@ function viewApprove (){
     });
 }
 
+//------------------------------------------------------------------------------------------------------
+//MANAGER VIEW ALL PENDING
 var pending = {};
 function viewPending (){
     fetch ('http://localhost:8080/RickAndMorty/reim/pending?rq_Status_Id=2', {
@@ -89,6 +95,8 @@ function viewPending (){
     });
 }
 
+//------------------------------------------------------------------------------------------------------
+//MANAGER VIEW ALL DENIED 
 var denied = {};
 function viewDenied (){
     fetch ('http://localhost:8080/RickAndMorty/reim/denied?rq_Status_Id=3', {
@@ -105,6 +113,8 @@ function viewDenied (){
     });
 }
 
+//----------------------------------------------------------------------------------------------------
+//MANAGER GET ALL REIMBURSEMENTS
 var reim = {};
 function getAllReim () {
     fetch ('http://localhost:8080/RickAndMorty/reim',{
@@ -121,9 +131,10 @@ function getAllReim () {
     });
 }
 
-
+//------------------------------------------------------------------------------------------------------
+//MANAGER VIEW ALL EMPLOYEES
 var emp = {};
-function getAllEmp () {
+function getAllEmp2 () {
     fetch ('http://localhost:8080/RickAndMorty/employees?pos_id=2',{
         method: 'GET',
         headers: {'Content-Type' : 'application/json'}
@@ -138,6 +149,8 @@ function getAllEmp () {
     });
 }
 
+//------------------------------------------------------------------------------------------------------
+//EMPLOYEE CAN VIEW ALL REIMBURSEMENTS
 var empAll = {};
 function getAllEmp () {
     console.log('user id ' + newUser.u_Id);
@@ -154,4 +167,17 @@ function getAllEmp () {
         console.log(['[LOG]-----------' + err]);
     });
 }
+//--------------------------------------------------------------------------------------------------------
+//EMPLOYEE VIEW PROFILE
+function getEmpInfo () {
+    document.getElementById('u_Id').innerText = newUser.u_Id;
+    document.getElementById('email').innerText = newUser.email;
+    document.getElementById('password').innerText = newUser.passWord;
+    document.getElementById('fName').innerText = newUser.fName;
+    document.getElementById('lName').innerText = newUser.lName;
+    document.getElementById('pos_Id').innerText = newUser.pos_Id;
+}
+
+
+
 

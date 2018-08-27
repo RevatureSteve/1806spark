@@ -127,10 +127,8 @@ function createEmp(){
     table = document.getElementById('table5');
     let x = 1;
     for (let i = 0; i < emp.length; i++) {
-        if(emp.rq_Status_Id == 1){
-            continue;
-        }
-        console.log(emp [i].rq_Status_Id);
+     
+        console.log(emp [i]);
         var row = table.insertRow(x);
         var cell1 = row.insertCell(0);
         var cell2 = row.insertCell(1);
