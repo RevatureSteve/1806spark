@@ -1,6 +1,7 @@
 package com.revature.servlet;
 
 import java.io.IOException;
+import java.io.PrintWriter;
 
 import javax.servlet.ServletException;
 import javax.servlet.ServletInputStream;
@@ -45,7 +46,9 @@ public class ManagerOptionsServlet extends HttpServlet {
 		int mgr_U_Id = reimb.getMgr_U_Id();
 		int rq_Status_Id = reimb.getRq_Status_Id();
 		System.out.println(r_Id + ""+ mgr_U_Id + "" + rq_Status_Id);
-		int success = aS.
+		int success = aS.updateReimb(r_Id, mgr_U_Id, rq_Status_Id);
+		PrintWriter out = response.getWriter();
+		out.print(1);
     }
 
 }
