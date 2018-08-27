@@ -93,6 +93,12 @@ public class AppService {
 		System.out.println("[LOG]---sending--- Update User Request");
 		return projectOneDao.updateUser(email, password, fname, lname, u_Id);
 	}
+	
+	// Get All Users
+	public List<Users> getAllUsers(){
+		System.out.println("[LOG]---sending---Get All Users");
+		return projectOneDao.getAllUsers();
+	}
 
 }
 

@@ -12,6 +12,8 @@ import { UsersComponent } from './pages/users/users.component';
 import { ReimbursementComponent } from './pages/reimbursement/reimbursement.component';
 import { CreateReimbComponent } from './pages/create-reimb/create-reimb.component';
 import { UpdateUserComponent } from './pages/update-user/update-user.component';
+import { AllUsersComponent } from './pages/all-users/all-users.component' ;
+
 
 const routes: Routes = [
     {path: '', redirectTo: 'login', pathMatch: 'full'},
@@ -26,6 +28,7 @@ const routes: Routes = [
     {path: 'overseer', component: ManagersComponent},
     {path: 'dweller', component: UsersComponent},
     {path: 'update', component: UpdateUserComponent},
+    {path: 'allUsers', component: AllUsersComponent},
     {path: '**', redirectTo: 'login'}
 
 ];

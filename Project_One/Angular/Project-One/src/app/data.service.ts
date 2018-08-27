@@ -34,4 +34,8 @@ export class DataService {
     getUser() {
         return this.http.get<Users>('http://localhost:8080/ProjectOne/user/email');
     }
+    // GetAllUsers Servlet
+    getUsers() {
+        return this.http.get<Users[]>('http://localhost:8080/ProjectOne/user/getAll');
+    }
 }

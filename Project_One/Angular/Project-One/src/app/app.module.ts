@@ -19,6 +19,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { LoginBoxComponent } from './components/login-box/login-box.component';
 import { CreateReimbComponent } from './pages/create-reimb/create-reimb.component';
 import { UpdateUserComponent } from './pages/update-user/update-user.component';
+import { AllUsersComponent } from './pages/all-users/all-users.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { UpdateUserComponent } from './pages/update-user/update-user.component';
     NavbarComponent,
     LoginBoxComponent,
     CreateReimbComponent,
-    UpdateUserComponent
+    UpdateUserComponent,
+    AllUsersComponent
   ],
   imports: [
     BrowserModule,

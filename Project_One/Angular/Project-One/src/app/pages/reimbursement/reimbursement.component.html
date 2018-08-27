@@ -11,16 +11,17 @@
       <th scope="col">Time Submission</th>
     </tr>
   </thead>
-  <tbody>
-    <tr *ngFor="let post of postR">
-      <a *ngIf='post.emp_U_Id === user.u_Id'>
+  <a *ngIf='post.emp_U_Id === user.u_Id'>
+    <tbody>
+      <tr *ngFor="let post of postR">
+
         <th scope="row"> {{ post.r_Id}} </th>
         <td> {{ post.amt}} </td>
         <td> {{ post.rq_Type_Id}} </td>
         <td> {{ post.rq_Status_Id}} </td>
         <td> {{ post.description}} </td>
         <td> {{ post.timeSubmission}} </td>
-      </a>
-    </tr>
-  </tbody>
+      </tr>
+    </tbody>
+  </a>
 </table>

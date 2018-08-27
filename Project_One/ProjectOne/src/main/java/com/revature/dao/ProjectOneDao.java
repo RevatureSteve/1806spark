@@ -11,6 +11,8 @@ public interface ProjectOneDao {
 	public int createReimbursement(int amt, int emp_U_Id, int rq_Type_Id, String description);
 	
 	// Read
+	public List<Users> getAllUsers();
+	
 	public Users getUserByEmail(String email);
 	
 	public List<Reimbursement> getAllPendingReimb();

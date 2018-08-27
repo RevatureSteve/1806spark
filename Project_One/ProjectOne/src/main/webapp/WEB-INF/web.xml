@@ -95,5 +95,14 @@
 		<servlet-name>updateUser</servlet-name>
 		<url-pattern>/user/update</url-pattern>
 	</servlet-mapping>
+	<!-- GetAllUsers Servlet -->
+	<servlet>
+		<servlet-name>getAllUsers</servlet-name>
+		<servlet-class>com.revature.servlet.GetAllUsersServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>getAllUsers</servlet-name>
+		<url-pattern>/user/getAll</url-pattern>
+	</servlet-mapping>
 
 </web-app>

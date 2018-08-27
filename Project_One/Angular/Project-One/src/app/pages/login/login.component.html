@@ -1,7 +1,9 @@
-  <form>
-    <input type="text" #email class="form-control" name="email" placeholder="email">
-    <input type="password" #password class="form-control" name="password" placeholder="password">
-    <button (click)="loggingInUser(email.value, password.value)" class="btn btn-primary" type="submit">Login</button>
-  </form>
-   
- 
+<div class="table table-bordered table-dark">
+  <div class="container">
+    <form>
+      <input type="text" #email class="form-control" name="email" placeholder="email">
+      <input type="password" #password class="form-control" name="password" placeholder="password">
+      <button (click)="loggingInUser(email.value, password.value)" class="btn btn-primary" type="submit">Login</button>
+    </form>
+  </div>
+</div>

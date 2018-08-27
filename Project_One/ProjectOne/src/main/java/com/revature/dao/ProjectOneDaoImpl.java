@@ -41,7 +41,29 @@ public class ProjectOneDaoImpl implements ProjectOneDao {
 	}
 
 	// READ
-	public Users getUserByEmail(String email) {
+	public List<Users> getAllUsers() {
+		System.err.println("[LOG]---Starting---getAllUsers() argument: ");
+		List<Users> users = new ArrayList<>();
+
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
+			String sql = "SELECT * FROM users";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ResultSet rs = ps.executeQuery();
+
+			while (rs.next()) {
+				users.add(new Users(rs.getInt("U_ID"), rs.getString("FNAME"), rs.getString("LNAME"),
+						rs.getString("EMAIL"), rs.getString("PASSWORD"), rs.getInt("POS_ID")));
+			}
+
+		} catch (IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(users);
+		return users;
+	}
+	
+ 	public Users getUserByEmail(String email) {
 		System.err.println("[LOG]---Starting---getUserByEmail() argument: " + email);
 		Users users = null;
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {

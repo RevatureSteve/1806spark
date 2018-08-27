@@ -1,8 +1,12 @@
 <div class="card border-success mb-3" style="max-width: 18rem;">
-  <div class="card-header">Welcome {{ user.fname }} </div>
+  <div *ngIf = 'user.pos_Id === 1' class="card-header">Welcome Overseer </div>
+  <div *ngIf = 'user.pos_Id === 2' class="card-header">Welcome Dweller </div>
   <div class="card-body text-success">
-    <h5 class="card-title">Success card title</h5>
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <h5 class="card-title">Email: {{ user.email }} </h5>
+    <h5 class="card-title">First name: {{ user.fname }} </h5>
+    <h5 class="card-title">Last name: {{ user.lname }} </h5>
+    <h5 *ngIf = 'user.pos_Id === 1' class="card-title">Overseer #: {{ user.u_Id }} </h5>
+    <h5 *ngIf = 'user.pos_Id === 2' class="card-title">Dweller #: {{ user.u_Id }} </h5>
   </div>
 
   
