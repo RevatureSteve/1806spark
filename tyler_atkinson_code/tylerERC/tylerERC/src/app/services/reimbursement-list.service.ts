@@ -9,9 +9,8 @@ import { Reimbursement } from '../models/reimbursement';
 
 export class ReimbursementListService {
 
-    
 
-    reimbursements: Observable<Reimbursement[]>;
+    reimbursements: Reimbursement[];
     constructor(private httpClient: HttpClient) {}
 
 
@@ -20,9 +19,7 @@ export class ReimbursementListService {
         return this.httpClient.get<Reimbursement[]>('http://localhost:8080/expenseProject/OneReimbursemetServlet/${rid}');
     }
 
-    getReimbursement(): Observable<Reimbursement[]>{
-        return this.httpClient.get<Reimbursement[]>('http://localhost:8080/expenseProject/AllReimbursementsServlet')//'http://18.188.60.42:8080/expenseProject-0.0.1-SNAPSHOT/AllReimbursementsServlet')
-        
-
+    getReimbursement() {
+        return this.httpClient.get<Reimbursement[]>('http://localhost:8080/expenseProject/AllReimbursementsServlet'); //'http://18.188.60.42:8080/expenseProject-0.0.1-SNAPSHOT/AllReimbursementsServlet')
     }
 }

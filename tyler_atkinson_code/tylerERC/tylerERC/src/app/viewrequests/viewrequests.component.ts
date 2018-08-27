@@ -18,13 +18,18 @@ export class ViewrequestsComponent implements OnInit {
   
   ngOnInit() {
     this.getReimbursement();
+    console.log(this.reimbursements);
   }
 
-  getReimbursement()  {
+  getReimbursement() {
   this.reimbursementListService.getReimbursement()
-  .subscribe(reimbursements => this.reimbursements = reimbursements)
+  .subscribe(reimbursements => this.reimbursements = reimbursements);
+  console.log(this.reimbursements);
 }
 
+logged(id) {
+  console.log(id);
+}
 
 
 

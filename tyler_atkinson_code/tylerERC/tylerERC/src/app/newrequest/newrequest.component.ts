@@ -19,6 +19,7 @@ export class NewrequestComponent implements OnInit {
   }
 
   submitNewReimbursement(empuid, mgruid, amt, description, img, rqtypeid) {
+     
       const eid = Number.parseInt(empuid);
       const mid = Number.parseInt(mgruid);
       const at  = Number.parseInt(amt);

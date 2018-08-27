@@ -1,26 +1,53 @@
 <div class="jumbotron">
-  <h1 class="display-4">All Submitted Reimbursements:</h1>
-
-  <div *ngIf='reimbursements'>
-    
-    <div class="box box-default">
-      <code>
-        <pre>{{reimbursements | json}}</pre>
-      </code>
-    </div>
-
-  </div>
-
+  <h1 class="display-4 shadow-lg p-3 mb-5 bg-white rounded" >Dunder Mifflin Submitted Reimbursements:</h1>
+  <div class="col"><button type="button" class="btn btn-secondary btn-lg btn-block" routerLink="/Manager">HOME</button></div>
   <hr class="my-4">
-  <p>For any questions or concerns please contact your supervisor</p>
-  <div class="row">
-    <div class="col">
-      <a class="btn btn-primary btn-lg" routerLink="/home" role="button">Home</a>
+  <p>Please Approve or Deny Requests In Accordance with Company Poicies</p>
+
+  <div *ngIf='reimbursements'class ="shadow-lg p-3 mb-5 bg-white rounded">
+
+    <div class="box box-default">
+      <div class="jumbotron shadow-lg p-3 mb-5 bg-white rounded" *ngFor='let reim of reimbursements'>
+        <div>
+          {{ reim.timesubmission | date: 'medium'}}
+        </div>
+        <div>
+          {{ reim.r_id }}
+        </div>
+        <div>
+          {{ reim.amt }}
+        </div>
+        <div>
+          {{ reim.description }}
+        </div>
+        <div>
+          {{ reim.emp_u_id }}
+        </div>
+        <div>
+          {{ reim.mgr_u_id }}
+        </div>
+        <div>
+          {{ reim.rq_status_id }}
+        </div>
+
+
+        <br>
+        <div class="row">
+          <div class="col center-block text-center">
+            <button class="btn btn-outline-success shadow-lg p-3 mb-5 bg-white rounded" id="btn1" (click)="logged(reim.r_id)">Approve Request</button>
+          </div>
+          <div class="col center-block text-center">
+            <button class="btn btn-outline-danger shadow-lg p-3 mb-5 bg-white rounded" (click)="logged(reim.r_id)">Deny Request</button>
+          </div>
+        </div>
+
+      </div>
+
     </div>
-    <div class="col">
-      <a class="btn btn-primary btn-lg" routerLink="/NewR" role="button">Submit New Request</a>
-    </div>
+
   </div>
+
+
 
 
 

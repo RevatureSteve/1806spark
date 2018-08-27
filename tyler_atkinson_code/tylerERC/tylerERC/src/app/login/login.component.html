@@ -1,11 +1,25 @@
 
 
-<div class="jumbotron" aria-label="Toggle ngHide">
+<div class="jumbotron shadow-lg p-3 mb-5 bg-white rounded" aria-label="Toggle ngHide">
 <form (ngSubmit)="login()">
-  <input type="text" name="email" [(ngModel)]="inputUser.email" placeholder="email">
-  <input type="password"name="password" [(ngModel)]="inputUser.password" placeholder="password">
-  <button class="btn btn-primary" type="submit" ng-hide="click">Login</button>
-  </form>
+  
+    <div class="row">
+        <div class="col">
+            <input type="text" name="email" class="shadow-lg p-3 mb-5 bg-white rounded" [(ngModel)]="inputUser.email" placeholder="email">
+        </div>
+        <div class="col">
+            <input type="password"name="password" class="shadow-lg p-3 mb-5 bg-white rounded" [(ngModel)]="inputUser.password" placeholder="password">
+        </div>
+      </div>
+      
+  
  
+  <button class="btn btn-secondary btn-lg btn-block shadow-lg p-3 mb-5" type="submit" ng-hide="click">Login</button>
+  </form>
+
   <h1 *ngIf="validUser">User: {{validUser.email}} </h1>
 </div>
+
+<div class="jumbotron shadow-lg p-3 mb-5 bg-white rounded" aria-label="Toggle ngHide">
+        <img src="https://res.cloudinary.com/teepublic/image/private/s--3xfPh_yZ--/t_Preview/b_rgb:484849,c_limit,f_jpg,h_630,q_90,w_630/v1446228610/production/designs/216224_2.jpg">   
+    </div>
