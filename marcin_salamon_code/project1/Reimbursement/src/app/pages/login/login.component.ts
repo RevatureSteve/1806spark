@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
   }
 
   validateUser(email, psw): void {
+    console.log('validate');
     this.login.validateUser(email, psw).subscribe(user => this.changePage(user));
   }
 
@@ -37,6 +38,10 @@ export class LoginComponent implements OnInit {
   changeLogged(user) {
     this.user = user;
     this.logged.setLoggedUser(user);
+  }
+
+  clearFailed() {
+    this.failed = false;
   }
 
 }

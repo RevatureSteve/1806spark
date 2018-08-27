@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ReimbursementListService } from '../../services/reimbursement-list.service';
 import { Reimbursement } from '../../models/reimbursement';
@@ -11,6 +11,7 @@ import { Location } from '@angular/common';
 })
 export class ReimbursementDetailsComponent implements OnInit {
   reimbursement: Reimbursement;
+
   constructor(private location: Location, private reimbSer: ReimbursementListService, private route: ActivatedRoute) { }
 
   ngOnInit() {

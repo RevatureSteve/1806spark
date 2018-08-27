@@ -5,8 +5,9 @@
     </h1>
     <div>Amount: ${{reimbursement.amount}}</div>
     <div>Posted by: {{reimbursement.employee.fname}} {{reimbursement.employee.lname}}</div>
-    <div>Time Submitted: {{reimbursement.timesubmission.substring(0,19)}}</div>
+    <div>Time Submitted: {{reimbursement.timesubmission | date: 'medium'}}</div>
     <div>Request type: {{reimbursement.rq_type}}</div>
+    <img *ngIf='reimbursement.img' src="data:image/jpeg;base64,{{reimbursement.img}}" alt="">
     <div>Status: {{reimbursement.rq_status}}</div>
     <div *ngIf='reimbursement.manager.fname'>Manager: {{reimbursement.manager.fname}} {{reimbursement.manager.lname}}</div>
     <button class='btn btn-secondary' (click)="goBack()">Back</button>

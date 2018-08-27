@@ -8,14 +8,14 @@ public class Reimbursement {
 	private User manager;
 	private double amount;
 	private String description;
-	private Object img;
+	private String img;
 	private String timesubmission;
 	private String rq_type;
 	private String rq_status;
 	private int rq_typeId;
 	private int rq_statusId;
 
-	public Reimbursement(int rId, User employee, User manager, double amount, String description, Object img,
+	public Reimbursement(int rId, User employee, User manager, double amount, String description, byte[] img,
 			String timesubmission, String rq_type, String rq_status, int rq_typeId, int rq_statusId) {
 		super();
 		this.rId = rId;
@@ -23,7 +23,7 @@ public class Reimbursement {
 		this.manager = manager;
 		this.amount = amount;
 		this.description = description;
-		this.img = img;
+		this.img = new String(img);
 		this.timesubmission = timesubmission;
 		this.rq_type = rq_type;
 		this.rq_status = rq_status;

@@ -9,7 +9,7 @@
   <div *ngIf="failed" class="alert alert-danger alert-dismissible fade show" role="alert">
     You input a wrong email or password
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
+      <span aria-hidden="true" (click)='clearFailed()'>&times;</span>
     </button>
   </div>
 

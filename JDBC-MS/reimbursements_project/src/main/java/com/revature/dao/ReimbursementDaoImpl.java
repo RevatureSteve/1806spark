@@ -10,6 +10,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.sql.rowset.serial.SerialBlob;
+
 import com.revature.domain.Reimbursement;
 import com.revature.domain.User;
 import com.revature.util.SetConnectionPropertiesUtil;
@@ -32,13 +34,17 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 						rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"), rs.getString("pos_type"));
 				User manager = new User(rs.getInt("mgr_u_id"), "", "", rs.getString(25), rs.getString(26),
 						rs.getInt(27), "Manager");
+				Blob b = rs.getBlob("img");
+				if(b == null) {
+					b = conn.createBlob();
+				}
 				reimbursements.add(new Reimbursement(rs.getInt("r_id"), employee, manager, rs.getDouble("amount"),
-						rs.getString("description"), rs.getBlob("img"), rs.getString("timesubmission"),
+						rs.getString("description"), b.getBytes(1, (int) b.length()), rs.getString("timesubmission"),
 						rs.getString("rq_type"), rs.getString("rq_status"), rs.getInt("rq_type_id"),
 						rs.getInt("rq_status_id")));
 			}
 		} catch (Exception e) {
-			// TODO: handle exception
+			e.printStackTrace();
 		}
 		return reimbursements;
 
@@ -61,8 +67,13 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 						rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"), rs.getString("pos_type"));
 				User manager = new User(rs.getInt("mgr_u_id"), "", "", rs.getString(25), rs.getString(26),
 						rs.getInt(27), "Manager");
+				Blob b = rs.getBlob("img");
+				if(b == null) {
+					b = conn.createBlob();
+				}
+				System.out.println(b);
 				reimbursements.add(new Reimbursement(rs.getInt("r_id"), employee, manager, rs.getDouble("amount"),
-						rs.getString("description"), rs.getBlob("img"), rs.getString("timesubmission"),
+						rs.getString("description"), b.getBytes(1, (int) b.length()), rs.getString("timesubmission"),
 						rs.getString("rq_type"), rs.getString("rq_status"), rs.getInt("rq_type_id"),
 						rs.getInt("rq_status_id")));
 			}
@@ -90,9 +101,14 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 				User employee = new User(rs.getInt("emp_u_id"), rs.getString("email"), rs.getString("password"),
 						rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"), rs.getString("pos_type"));
 				User manager = new User(rs.getInt("mgr_u_id"), rs.getString(23), "", rs.getString(25), rs.getString(26),
-						2 , "Manager");
+						2, "Manager");
+				Blob b = rs.getBlob("img");
+				if(b == null) {
+					b = conn.createBlob();
+				}
+				System.out.println(b);
 				reimbursements.add(new Reimbursement(rs.getInt("r_id"), employee, manager, rs.getDouble("amount"),
-						rs.getString("description"), rs.getBlob("img"), rs.getString("timesubmission"),
+						rs.getString("description"), b.getBytes(1, (int) b.length()), rs.getString("timesubmission"),
 						rs.getString("rq_type"), rs.getString("rq_status"), rs.getInt("rq_type_id"),
 						rs.getInt("rq_status_id")));
 			}
@@ -138,8 +154,13 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 						rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"), rs.getString("pos_type"));
 				User manager = new User(rs.getInt("mgr_u_id"), "", "", rs.getString(25), rs.getString(26),
 						rs.getInt(27), "Manager");
+				Blob b = rs.getBlob("img");
+				if(b == null) {
+					b = conn.createBlob();
+				}
+				System.out.println(b);
 				reimbursements.add(new Reimbursement(rs.getInt("r_id"), employee, manager, rs.getDouble("amount"),
-						rs.getString("description"), rs.getBlob("img"), rs.getString("timesubmission"),
+						rs.getString("description"), b.getBytes(1, (int) b.length()), rs.getString("timesubmission"),
 						rs.getString("rq_type"), rs.getString("rq_status"), rs.getInt("rq_type_id"),
 						rs.getInt("rq_status_id")));
 			}
@@ -164,14 +185,19 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
 			ResultSet rs = ps.executeQuery();
-			
+
 			while (rs.next()) {
 				User employee = new User(rs.getInt("emp_u_id"), rs.getString("email"), rs.getString("password"),
 						rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"), rs.getString("pos_type"));
 				User manager = new User(rs.getInt("mgr_u_id"), "", "", rs.getString(25), rs.getString(26),
 						rs.getInt(27), "Manager");
+				Blob b = rs.getBlob("img");
+				if(b == null) {
+					b = conn.createBlob();
+				}
+				System.out.println(b);
 				reimbursements.add(new Reimbursement(rs.getInt("r_id"), employee, manager, rs.getDouble("amount"),
-						rs.getString("description"), rs.getBlob("img"), rs.getString("timesubmission"),
+						rs.getString("description"), b.getBytes(1, (int) b.length()), rs.getString("timesubmission"),
 						rs.getString("rq_type"), rs.getString("rq_status"), rs.getInt("rq_type_id"),
 						rs.getInt("rq_status_id")));
 			}
@@ -189,13 +215,14 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 			String sql = "{call insertReimbursement(?,?,?,?,?)}";
 			CallableStatement cs = conn.prepareCall(sql);
 			Blob b = conn.createBlob();
-			b.setBytes(1, imgStr);
+			System.out.println(b.setBytes(1, imgStr));
+			System.out.println(b.toString());
 			cs.setInt(1, id);
 			cs.setDouble(2, amount);
 			cs.setString(3, description);
 			cs.setBlob(4, b);
 			cs.setInt(5, rqTypeId);
-			
+
 			rowsAffected = cs.executeUpdate();
 		} catch (Exception e) {
 			e.printStackTrace();

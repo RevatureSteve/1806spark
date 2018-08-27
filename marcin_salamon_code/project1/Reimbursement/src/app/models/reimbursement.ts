@@ -6,7 +6,7 @@ export class Reimbursement {
     manager: User;
     amount: number;
     description: string;
-    img: Object;
+    img: string;
     timesubmission: string;
     rq_type: string;
     rq_status: string;

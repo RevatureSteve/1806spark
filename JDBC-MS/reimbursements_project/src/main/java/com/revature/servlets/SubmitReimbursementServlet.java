@@ -1,7 +1,7 @@
 package com.revature.servlets;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.io.PrintWriter;import java.nio.charset.Charset;
 import java.sql.Blob;
 import java.sql.SQLException;
 
@@ -45,7 +45,7 @@ public class SubmitReimbursementServlet extends HttpServlet {
 		int id = node.get("uId").intValue();
 		double amount = node.get("amount").doubleValue();
 		String description = node.get("description").textValue();
-		byte[] imgStr = node.get("img").binaryValue();
+		byte[] imgStr = node.get("img").textValue().getBytes();
 		int rqTypeId = node.get("rqTypeId").intValue();
 		System.out.println(id + " "+amount+description+imgStr+rqTypeId);
 		int success = ReimbursementsService.createNewReimbursement(id, amount, description, imgStr, rqTypeId);

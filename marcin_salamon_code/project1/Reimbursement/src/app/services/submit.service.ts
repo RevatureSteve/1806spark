@@ -10,14 +10,15 @@ export class SubmitService {
 
   constructor(private http: HttpClient, private logged: LoggedUserService) { }
 
-  submit(amount, description, id): Observable<number> {
+  submit(amount, description, id, file): Observable<number> {
     console.log('SubmitService');
+
     const uId = this.logged.getLoggedUser().uId;
     const reimb = {
       uId: uId,
       amount: amount,
       description: description,
-      img: null,
+      img: file,
       rqTypeId: id
     };
     console.log(reimb);

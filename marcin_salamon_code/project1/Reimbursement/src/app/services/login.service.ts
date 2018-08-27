@@ -14,7 +14,7 @@ export class LoginService {
       email: email,
       password: password
     };
-
+    console.log(user);
     return this.http.post<User>('http://18.223.123.204:8080/Reimbursement-0.0.1-SNAPSHOT/login', user);
   }
 }

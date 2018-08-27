@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SubmitService } from '../../services/submit.service';
+import { toUnicode } from 'punycode';
 
 @Component({
   selector: 'app-submit',
@@ -8,6 +9,10 @@ import { SubmitService } from '../../services/submit.service';
 })
 export class SubmitComponent implements OnInit {
   success: number;
+  file: File;
+  filename;
+  url: string = null;
+  byteFile = null;
   constructor(private submit: SubmitService) { }
 
   ngOnInit() {
@@ -16,10 +21,31 @@ export class SubmitComponent implements OnInit {
   submitNewReimbursement(amount, description, id) {
     const amt = Number.parseFloat(amount);
     const rqId = Number.parseInt(id);
-    this.submit.submit(amt, description, rqId).subscribe(r => this.success = r);
+    if (!amt) {
+      this.success = 0;
+    } else {
+      this.submit.submit(amt, description, rqId, this.byteFile).subscribe(r => this.success = r);
+    }
   }
 
   successClear() {
     this.success = -1;
   }
+
+  onFileChanged(event) {
+    this.file = event.target.files[0];
+    this.filename = this.file.name;
+    if (event.target.files && event.target.files[0]) {
+      const reader = new FileReader();
+
+      reader.readAsDataURL(event.target.files[0]); // read file as data url
+
+      reader.onload = (ev) => { // called once readAsDataURL is completed
+        this.url = ev.target.result;
+        console.log(this.url.substring(0, 23));
+        this.byteFile = this.url.substring(23);
+      };
+    }
+  }
 }
+
