@@ -13,7 +13,7 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.revature.service.ReimbursementService;
 
 /**
- *  url - /employee/reimbursement/
+ *  url - /employee/reimbursement/submit
  */
 public class CreateReimbursementServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
@@ -34,13 +34,13 @@ public class CreateReimbursementServlet extends HttpServlet {
 		byte[] img = null;
 		int type_id = 0;
 		
-		user_id = Integer.parseInt(n.get("user_id").textValue());
-		amount = Double.parseDouble(n.get("amount").textValue());
+		user_id = n.get("user_id").asInt();
+		amount = n.get("amount").asDouble();
 		description = n.get("description").textValue();
 		if (n.has("image")) {
 		img = n.get("image").binaryValue();
 		}
-		type_id = Integer.parseInt(n.get("type_id").textValue());
+		type_id = n.get("type_id").asInt();
 		
 		rs.createReimbursement(user_id, amount, description, img, type_id);
 		

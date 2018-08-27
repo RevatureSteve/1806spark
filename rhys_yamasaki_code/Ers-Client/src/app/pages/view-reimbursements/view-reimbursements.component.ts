@@ -1,5 +1,5 @@
-import { User } from './../../models/user';
-import { LoggedInService } from './../../logged-in.service';
+import { User } from '../../models/user';
+import { LoggedInService } from '../../logged-in.service';
 import { ActivatedRoute, RouterModule, Routes, Router } from '@angular/router';
 import { ReimbursementsListService } from '../../reimbursements-list.service';
 import { Observable } from 'rxjs';

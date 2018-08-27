@@ -1,0 +1,45 @@
+<div *ngIf='!editable' id="profile">
+  <fieldset disabled>
+    <div class="form-group">
+      <label for="disabledTextInput">Email</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.email}}">
+    </div>
+    <div class="form-group">
+      <label for="disabledTextInput">Password</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.password}}">
+    </div>
+    <div class="form-group">
+      <label for="disabledTextInput">First name</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.fname}}">
+    </div>
+    <div class="form-group">
+      <label for="disabledTextInput">Last name</label>
+      <input type="text" id="disabledTextInput" class="form-control" placeholder="{{user.lname}}">
+    </div>
+  </fieldset>
+  <button id="editBtn" class="btn btn-outline-primary" (click)='editFields()'>Edit profile</button>
+</div>
+
+<div *ngIf='editable' id="editProfile">
+  <fieldset disabled>
+    <div class="form-group">
+      <label for="disabledTextInput">Email</label>
+      <input type="text" #email id="disabledTextInput" class="form-control" placeholder="{{user.email}}" value="{{user.email}}">
+    </div>
+  </fieldset>
+  <div class="form-group">
+    <label for="disabledTextInput">Password</label>
+    <input #password type="text" class="form-control" placeholder="{{user.password}}" value="{{user.password}}">
+  </div>
+  <div class="form-group">
+    <label for="disabledTextInput">First name</label>
+    <input #fname type="text" class="form-control" placeholder="{{user.fname}}" value="{{user.fname}}">
+  </div>
+  <div class="form-group">
+    <label for="disabledTextInput">Last name</label>
+    <input #lname type="text" class="form-control" placeholder="{{user.lname}}" value="{{user.lname}}">
+  </div>
+  <button id="updateBtn" class="btn btn-outline-success" (click)='editUserInfo(email.value, this.user.user_id, password.value, fname.value, lname.value)'>Update</button>
+  <button id="cancelBtn" class="btn btn-outline-danger" (click)='editFields()'>Cancel</button>
+</div>
+

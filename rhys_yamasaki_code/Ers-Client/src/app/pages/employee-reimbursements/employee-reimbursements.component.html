@@ -1,0 +1,25 @@
+<table class="table table-bordered table-dark table-hover">
+  <thead>
+    <tr>
+      <th>ID</th>
+      <th>Resolved by</th>
+      <th>Submitted by</th>
+      <th>Amount</th>
+      <th>Description</th>
+      <th>Time submitted</th>
+      <th>Request type</th>
+      <th>Request status</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let reimb of reimbursement">
+        <th scope="row">{{reimb.rb_id}}</th>
+        <td scope="row">{{reimb.rb_resolved_fname}} {{reimb.rb_resolved_lname}}</td>
+        <td scope="row">{{reimb.rb_submission_fname}} {{reimb.rb_submission_lname}}</td>
+        <td scope="row">${{reimb.amount}}</td>
+        <td scope="row">{{reimb.description}}</td>
+        <td scope="row">{{reimb.time_submission | date:'medium'}}</td>
+        <td scope="row">{{reimb.rq_type}}</td>
+        <td scope="row">{{reimb.rq_status}}</td>
+      </tr>
+</table>

@@ -16,6 +16,8 @@
   <filter-mapping>
     <filter-name>CorsFilter</filter-name>
     <url-pattern>/*</url-pattern>
+    <dispatcher>FORWARD</dispatcher>
+    <dispatcher>REQUEST</dispatcher>
   </filter-mapping>
   <servlet>
     <servlet-name>login</servlet-name>
@@ -72,5 +74,35 @@
   <servlet-mapping>
     <servlet-name>EmployeeReimbursementResolvedServlet</servlet-name>
     <url-pattern>/reimbursements/resolved</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeePendingReimbursementServlet</display-name>
+    <servlet-name>EmployeePendingReimbursementServlet</servlet-name>
+    <servlet-class>com.revature.servlets.EmployeePendingReimbursementServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeePendingReimbursementServlet</servlet-name>
+    <url-pattern>/employee/pending</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EmployeeResolvedReimbursementsById</display-name>
+    <servlet-name>EmployeeResolvedReimbursementsById</servlet-name>
+    <servlet-class>com.revature.servlets.EmployeeResolvedReimbursementsById</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EmployeeResolvedReimbursementsById</servlet-name>
+    <url-pattern>/employee/resolved</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>TypeServlet</display-name>
+    <servlet-name>TypeServlet</servlet-name>
+    <servlet-class>com.revature.servlets.TypeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>TypeServlet</servlet-name>
+    <url-pattern>/type</url-pattern>
   </servlet-mapping>
 </web-app>

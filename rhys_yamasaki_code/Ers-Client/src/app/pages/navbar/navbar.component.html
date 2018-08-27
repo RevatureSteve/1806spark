@@ -12,26 +12,11 @@
             <a class="nav-link" routerLink='/{{logged.getLoggedInUser().pos_name}}/home'>Home
             </a>
           </li>
-          <!-- dropdown -->
-          <!-- id="navbarDropdown"
-           data-toggle="dropdown"
-           dropdown-toggle
-          -->
-          <li *ngIf='logged.getLoggedInUser().pos_id===2' class="nav-item">
+          <li *ngIf="logged.getLoggedInUser().pos_id===2" class="nav-item">
               <a class="nav-link" routerLink='/manager/view/employees'  role="button" aria-haspopup="true"
                 aria-expanded="false">
                 Employees</a>
             </li>
-          <!-- <li *ngIf='logged.getLoggedInUser().pos_id===2' class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true"
-              aria-expanded="false">
-              Reimbursements</a>
-            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <a class="dropdown-item" >View All Reimbursements</a>
-              <div class="dropdown-divider"></div>
-              <a class="dropdown-item" >Something else here</a>
-            </div>
-          </li> -->
           <li *ngIf='logged.getLoggedInUser().pos_id===1' class="nav-item">
               <a class="nav-link" routerLink='/employee/profile'  role="button" aria-haspopup="true"
                 aria-expanded="false">

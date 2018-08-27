@@ -12,6 +12,11 @@ import { NavbarComponent } from './pages/navbar/navbar.component';
 import { ResolvedReimbursementsComponent } from './pages/resolved-reimbursements/resolved-reimbursements.component';
 import { ReimbursementsByIdComponent } from './pages/reimbursements-by-id/reimbursements-by-id.component';
 import { ViewEmployeesComponent } from './pages/view-employees/view-employees.component';
+import { EmployeeProfileComponent } from './pages/employee-profile/employee-profile.component';
+import { EmployeeReimbursementsComponent } from './pages/employee-reimbursements/employee-reimbursements.component';
+import { EmpResolvedReimbComponent } from './pages/emp-resolved-reimb/emp-resolved-reimb.component';
+import { CreateReimbursementComponent } from './pages/create-reimbursement/create-reimbursement.component';
+import { EasterEggComponent } from './pages/easter-egg/easter-egg.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +29,11 @@ import { ViewEmployeesComponent } from './pages/view-employees/view-employees.co
     ResolvedReimbursementsComponent,
     ReimbursementsByIdComponent,
     ViewEmployeesComponent,
+    EmployeeProfileComponent,
+    EmployeeReimbursementsComponent,
+    EmpResolvedReimbComponent,
+    CreateReimbursementComponent,
+    EasterEggComponent,
   ],
   imports: [
     BrowserModule,

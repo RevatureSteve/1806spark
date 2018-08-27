@@ -5,6 +5,7 @@ import java.util.List;
 import com.revature.dao.ReimbursementDao;
 import com.revature.dao.ReimbursementDaoImpl;
 import com.revature.pojo.Reimbursement;
+import com.revature.pojo.Type;
 
 public class ReimbursementService {
 	
@@ -34,4 +35,17 @@ public class ReimbursementService {
 	public void updateReimbursementById(int userId, int rId, int statusId) {
 		rb.resolveReimbursement(userId, rId, statusId);
 	}
+	
+	public List<Reimbursement> getPendingReimbursementById(int id) {
+		return rb.getPendingReimbursements(id);
+	}
+	
+	public List<Reimbursement> getEmployeeResolvedReimbursement(int id) {
+		return rb.getEmployeeResolvedReimbursements(id);
+	}
+	
+	public List<Type> getStatus() {
+		return rb.getStatus();
+	}
+	
 }

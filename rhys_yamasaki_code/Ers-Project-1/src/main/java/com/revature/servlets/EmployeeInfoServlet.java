@@ -10,6 +10,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.omg.CORBA.Request;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.revature.pojo.User;
@@ -45,18 +47,16 @@ public class EmployeeInfoServlet extends HttpServlet {
 		ObjectNode n = mapper.readValue(data, ObjectNode.class);
 		
 		int userId = 0;
-		String email = null;
 		String password = null;
 		String fname = null;
 		String lname = null;
 		
-		userId = Integer.parseInt(n.get("userId").textValue());
-		email = n.get("email").textValue();
+		userId = n.get("user_id").intValue();
 		password = n.get("password").textValue();
 		fname = n.get("fname").textValue();
 		lname = n.get("lname").textValue();
 		
-		us.updateEmployeeInfo(userId, email, password, fname, lname);		
+		us.updateEmployeeInfo(userId, password, fname, lname);
 	}
 
 }

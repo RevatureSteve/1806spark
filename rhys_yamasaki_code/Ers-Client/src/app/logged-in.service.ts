@@ -20,6 +20,13 @@ export class LoggedInService {
     return LoggedInService.user;
   }
 
+
+  checkLoggedInUser() {
+    if (localStorage.getItem('user') === null) {
+      this.router.navigate(['/']);
+    }
+  }
+
   logout(): void {
     this.setLoggedInUser(null);
     this.router.navigate(['/login']);

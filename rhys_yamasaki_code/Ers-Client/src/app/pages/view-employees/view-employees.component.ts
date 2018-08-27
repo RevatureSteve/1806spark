@@ -1,10 +1,10 @@
-import { Reimbursement } from './../../models/reimbursement';
-import { ReimbursementsListService } from './../../reimbursements-list.service';
-import { LoggedInService } from './../../logged-in.service';
-import { EmployeeListService } from './../../employee-list.service';
-import { User } from './../../models/user';
+import { Reimbursement } from '../../models/reimbursement';
+import { ReimbursementsListService } from '../../reimbursements-list.service';
+import { LoggedInService } from '../../logged-in.service';
+import { EmployeeListService } from '../../employee-list.service';
+import { User } from '../../models/user';
 import { Component, OnInit } from '@angular/core';
-import { Router } from '../../../../node_modules/@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-view-employees',
@@ -18,7 +18,7 @@ export class ViewEmployeesComponent implements OnInit {
   currUser: User;
 
   constructor(private emp: EmployeeListService, private logged: LoggedInService, private reim: ReimbursementsListService,
-  private router: Router) { }
+  private router: Router, private route: ActivatedRoute) {  }
 
   ngOnInit() {
     this.currUser = this.logged.getLoggedInUser();
@@ -30,8 +30,6 @@ export class ViewEmployeesComponent implements OnInit {
   }
 
   getReimbursementsById(id) {
-
-    // this.reim.getReimbursementsById(id).subscribe(rb => this.reimbursement = rb);
-    this.router.navigate([`/managers/employees/${id}`]);
+    this.router.navigate([`/manager/view/employees/${id}`]);
   }
 }

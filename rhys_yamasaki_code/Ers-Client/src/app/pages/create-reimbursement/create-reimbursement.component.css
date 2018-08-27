@@ -1,0 +1,11 @@
+#createReim {
+  width: 500px;
+  margin-top: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  border: 1px grey ridge;
+  background: azure;
+  opacity: 0.9;
+  padding: 10px;
+  border-radius: 25px;
+}

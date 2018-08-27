@@ -13,8 +13,7 @@ export class NavbarComponent implements OnInit {
   constructor(private logged: LoggedInService) { }
 
   ngOnInit() {
-    // this.logged.getLoggedInUser();
-    // console.log(this.user);
+
   }
 
 

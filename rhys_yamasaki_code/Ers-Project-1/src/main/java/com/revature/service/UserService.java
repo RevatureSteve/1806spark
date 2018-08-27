@@ -22,11 +22,9 @@ public class UserService {
 		return null;
 	}
 	
-	public void updateEmployeeInfo(int uId, String email, String pw, String fname, String lname) {
+	public void updateEmployeeInfo(int uId, String pw, String fname, String lname) {
 		// enter logic to check user validation
-		if (userDao.getUserByEmail(email).getPos_id() == 1) {
 			userDao.updateEmployee(uId, pw, fname, lname);
-		}
 	}
 	
 	public boolean validateEmployee(String email) {

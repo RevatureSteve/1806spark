@@ -1,15 +1,26 @@
-<p>
-  {{user.pos_name}}
-</p>
+<div class="container">
 
-<ul>
-  <li *ngIf="user" (change)="getLoggedInUser()">
-    {{user.fname}}
-  </li>
-  <li *ngIf="user" (change)="getLoggedInUser()">
-    {{user.lname}}
-  </li>
-  <li *ngIf="user" (change)="getLoggedInUser()">
-    {{user.email}}
-  </li>
-</ul>
+  <ul class="nav nav-pills nav-fill" id="myTab" role="tablist">
+    <li class="nav-item">
+      <a class="nav-link active color" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">My Pending Reimbursements</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link color" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">My Resolved Reimbursements</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link color" id="reimbursement-tab" data-toggle="tab" href="#reimbursement" role="tab" aria-controls="reimbursement"
+        aria-selected="false">Create New Reimbursement</a>
+    </li>
+  </ul>
+  <div class="tab-content" id="myTabContent">
+    <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+      <app-employee-reimbursements></app-employee-reimbursements>
+    </div>
+    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+      <app-emp-resolved-reimb></app-emp-resolved-reimb>
+    </div>
+    <div class="tab-pane fade" id="reimbursement" role="tabpanel" aria-labelledby="reimbursement-tab">
+      <app-create-reimbursement></app-create-reimbursement>
+    </div>
+  </div>
+</div>

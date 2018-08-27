@@ -15,14 +15,12 @@ import com.revature.pojo.Reimbursement;
 import com.revature.service.ReimbursementService;
 
 /**
- * Servlet implementation class ReimbursementsById
+ * url - /reimbursements/id
  */
+
 public class ReimbursementsByIdServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
-	/**
-	 * url - /reimbursements/id
-	 */
 
 	private ReimbursementService rs = new ReimbursementService();
 
@@ -55,7 +53,6 @@ public class ReimbursementsByIdServlet extends HttpServlet {
 		int userId = n.get("user_id").asInt();
 		int rId = n.get("r_id").asInt();
 		int statusId = n.get("rq_status_id").asInt();
-		
 		
 		rs.updateReimbursementById(userId, rId, statusId);
 		System.out.println("Resolved user");

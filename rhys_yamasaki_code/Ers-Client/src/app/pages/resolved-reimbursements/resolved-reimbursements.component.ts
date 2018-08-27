@@ -1,6 +1,6 @@
-import { LoggedInService } from './../../logged-in.service';
-import { ReimbursementsListService } from './../../reimbursements-list.service';
-import { Reimbursement } from './../../models/reimbursement';
+import { LoggedInService } from '../../logged-in.service';
+import { ReimbursementsListService } from '../../reimbursements-list.service';
+import { Reimbursement } from '../../models/reimbursement';
 import { Component, OnInit } from '@angular/core';
 import { User } from '../../models/user';
 

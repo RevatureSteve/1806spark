@@ -11,13 +11,12 @@ export class LoginService {
 
   constructor(private httpClient: HttpClient) { }
 
-  getUser(email, password): Observable<User> {
+  getUser(email, password) {
 
     const user = {
       email: email,
       password: password
     };
-
     return this.httpClient.post<User>('http://localhost:8080/Ers-Project-1/login', user);
-  }
+}
 }
