@@ -10,6 +10,9 @@ let reqType;
 let desc;
 let resultSet;
 let list = [];
+let reqId;
+let reqStatus;
+let tableOn;
 popped = false;
 window.onload = function foo() {
 

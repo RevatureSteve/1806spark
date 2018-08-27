@@ -87,4 +87,14 @@
     <servlet-name>ResolvedReqsServlet</servlet-name>
     <url-pattern>/resolvedreqs</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateRequestServlet</display-name>
+    <servlet-name>UpdateRequestServlet</servlet-name>
+    <servlet-class>com.revature.servlet.UpdateRequestServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateRequestServlet</servlet-name>
+    <url-pattern>/updatereq</url-pattern>
+  </servlet-mapping>
 </web-app>

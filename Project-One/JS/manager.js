@@ -39,6 +39,9 @@ function mgrTabs(num) {
                 return resp.text();
             }).then((text) => {
                 navbar.innerHTML = text;
+                document.getElementById('approved').addEventListener('click', updateApproved);
+                document.getElementById('denied').addEventListener('click', updateHandler);
+                tableOn = 0;
                 allReqs();
             });
             break;
@@ -87,6 +90,9 @@ function mgrTabs(num) {
                 document.getElementById('search-emp').style.backgroundColor = "yellow";
                 document.getElementById('search-emp').style.fontSize = "97%";
                 document.getElementById('lookUp').addEventListener('click', searchEmp);
+                document.getElementById('approved').addEventListener('click', updateApproved);
+                document.getElementById('denied').addEventListener('click', updateHandler);
+                tableOn = 1;
             });
             break;
 

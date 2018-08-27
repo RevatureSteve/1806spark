@@ -40,7 +40,14 @@ BEGIN
     VALUES (emp_id, amount, description, null, CURRENT_TIMESTAMP, rq_type, 1);
 END;
 /
-
+CREATE OR REPLACE PROCEDURE resolved(req_id IN INT, status IN INT)
+IS
+BEGIN
+    UPDATE reimbursement 
+    SET rq_status_id = status
+    WHERE r_id = req_id;
+END;
+/
 BEGIN
     new_reimbursement(1,300, 'Lost it all', 2);
 END;
@@ -63,6 +70,11 @@ END;
 /
 
 commit;
+
+UPDATE reimbursement 
+SET rq_status_id = 2
+WHERE r_id = 27;
+
 SELECT * FROM reimbursement INNER JOIN rb_type
 ON reimbursement.rb_type_id = rb_type.rb_type_id
 INNER JOIN rq_status 

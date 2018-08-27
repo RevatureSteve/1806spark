@@ -29,7 +29,23 @@ public class TranstarReimDaoImpl implements TranstarReimDao{
 			rowsAffected = cs.executeUpdate();
 			
 		} catch (SQLException e) {
-			System.out.println("SQL fail 1");
+			System.out.println("SQL fail");
+			e.printStackTrace();
+		}
+		return rowsAffected;
+	}
+	public int updateReimbursment(int reqNum, int reqStatus, int mgrId) {
+		int rowsAffected = 0;
+		try (Connection con = ConnectionsPropertiesUtil.newConnection()){
+			String sql = "{call resolved(?,?,?)}";
+			CallableStatement cs = con.prepareCall(sql);
+			cs.setInt(1, reqNum);
+			cs.setInt(2, reqStatus);
+			cs.setInt(3, mgrId);
+			rowsAffected = cs.executeUpdate();
+			
+		} catch (SQLException e) {
+			System.out.println("SQL fail");
 			e.printStackTrace();
 		}
 		return rowsAffected;

@@ -55,5 +55,11 @@ public class ReqLogic {
 		
 		return rowsAffected;
 	}
+	public int updateReq(int req_id, int rq_status, int mgrId) {
+		int rowsAffected = rDao.updateReimbursment(req_id, rq_status, mgrId);
+		
+		
+		return rowsAffected;
+	}
 	}
 

@@ -38,6 +38,25 @@
            console.log("[LOG]---------" + err );
     });
    }
+    function updateReqs(){
+      console.log("Update " + newUser.u_id);
+      for(let i = list.length - 1; i > -1; i--){
+        
+        fetch('http://localhost:8080/my-app/updatereq?req_id='+ list[i] + '&req_status='+ reqStatus + '&mgr_id=' + newUser.u_id, {
+          method: 'GET',
+          headers: {'Content-Type': 'application/json'}
+      }).then(response => { 
+        return response.json(); 
+      }).then(data => { 
+        resultSet = data;
+        console.log(resultSet);
+      }).catch(err => {
+             console.log("[LOG]---------" + err );
+      });
+     }
+     clearArray();
+      }
+      
 
    function resolvedReqs(){
     fetch('http://localhost:8080/my-app/resolved?u_id='+ newUser.u_id, {
@@ -94,7 +113,7 @@
     }).catch(err => {
            console.log("[LOG]---------" + err );
     });
-
+    tableOn = 0;
    }
 
    

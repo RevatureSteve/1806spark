@@ -48,4 +48,25 @@ function clearArray(){
     console.log("Clear hit")
     list = [];
     document.getElementById('transaction').innerHTML = '';
+    updateTable();
+}
+function updateHandler(){
+    console.log("handling..");
+    reqStatus = 3;
+    updateReqs();
+}
+function updateApproved(){
+    console.log("handling.. approved");
+    reqStatus = 2;
+    updateReqs();
+}
+function updateTable(){
+    console.log("table is " + tableOn);
+    if(tableOn == 1){
+        tableOn = 0;
+        searchEmp();
+        
+    }else{
+        mgrTabs(1);
+    }
 }
