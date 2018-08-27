@@ -37,7 +37,11 @@ component : @Component in a ts file!
 Data Binding: 1-way & 2-way
 
 what does {{}} Angular Expression
+TS file -> HTML file
 1 way Binding
 from what to what? well we're only talking about components
     and components only have 3 things:
     Data Binding means sharing the same data between them
+
+mini assignment: create an project, generate 2 components
+        and use angular {{}} to print 2 separate values to the HTML files

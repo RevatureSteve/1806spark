@@ -1,0 +1,22 @@
+.form-group{
+    width:800px;
+    margin-left: 250px;
+    position: relative;
+    margin-top: 100px;
+    align-self: auto;
+}
+
+.form-control {
+    margin-bottom: -50px;
+}
+
+button {
+    margin-left: -75px;
+    background-color: red;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+    color: white;
+}
