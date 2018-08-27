@@ -1,0 +1,15 @@
+How to create angular routing
+    * 1. create app-routing.module.ts
+    2. export the class
+    3. create a route array, an imported angular class
+    * 4. provide route array path { }s that require 2 properties
+            path & component
+    5. provide the module decorator: @NgModule
+    6. provide the @NgModule decorator: imports / exports
+        e.g. @NgModule({
+            imports: [RouterModule.forRoot(routes)],
+            exports: [RouterModule]
+        })
+    * 7. add the <router-outlet></router-outlet> directive to the place you want the pages
+    8. add to app module.ts to the imports array
+    9. update navbar with routerLink, not href

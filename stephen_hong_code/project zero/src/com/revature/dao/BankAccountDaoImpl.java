@@ -46,7 +46,7 @@ public class BankAccountDaoImpl implements BankAccountDao {
 		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
 			String sql = "UPDATE bank_account SET balance = (?) WHERE account_number = (?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
-			//pre-compiling SQL statement without the parameter values
+			//pre-compiling SQL statement
 			ps.setInt(1, account.getBalance());
 			//this is what goes inside the 1st ?, the new balance
 			ps.setInt(2, account.getAcNum());

@@ -1,0 +1,7 @@
+(ngSubmit) to submit an angular form asynchronously
+[(ngModule)] helps with input fields for 2 way databinding
+        between template and ts file
+
+But  to use these I need to import Forms Module in the app.module.ts
+    if you see something like:
+    Can't bind to ngModel since it isn't a known property of
