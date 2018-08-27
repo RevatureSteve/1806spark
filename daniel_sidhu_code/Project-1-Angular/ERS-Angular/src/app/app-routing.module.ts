@@ -8,6 +8,7 @@ import {RouterModule, Routes} from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { EmployeeProfileComponent } from './employee-profile/employee-profile.component';
+import { ManagerPendingReimbursementsComponent } from './manager-pending-reimbursements/manager-pending-reimbursements.component';
 
 
 export const routes: Routes = [
@@ -19,6 +20,7 @@ export const routes: Routes = [
     {path: 'manager/profile', component: ManagerProfileComponent},
     {path: 'employee/profile', component: EmployeeProfileComponent},
     {path: 'manager/reimbursementlist', component: ManagerAllReimbursementsComponent},
+    {path: 'manager/pending/reimbursementlist', component: ManagerPendingReimbursementsComponent},
     {path: 'manager/employeeslist', component: ManagerViewEmployeesComponent},
     {path: '**', redirectTo: 'home'}
 ];

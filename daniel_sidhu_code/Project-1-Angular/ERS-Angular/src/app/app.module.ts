@@ -20,6 +20,7 @@ import { ManagerProfileComponent } from './manager-profile/manager-profile.compo
 import { EmployeeProfileComponent } from './employee-profile/employee-profile.component';
 import { ManagerViewEmployeesComponent } from './manager-view-employees/manager-view-employees.component';
 import { ManagerAllReimbursementsComponent } from './manager-all-reimbursements/manager-all-reimbursements.component';
+import { ManagerPendingReimbursementsComponent } from './manager-pending-reimbursements/manager-pending-reimbursements.component';
 
 
 @NgModule({
@@ -33,7 +34,8 @@ import { ManagerAllReimbursementsComponent } from './manager-all-reimbursements/
     ManagerProfileComponent,
     EmployeeProfileComponent,
     ManagerViewEmployeesComponent,
-    ManagerAllReimbursementsComponent
+    ManagerAllReimbursementsComponent,
+    ManagerPendingReimbursementsComponent
   ],
   imports: [
     BrowserModule,

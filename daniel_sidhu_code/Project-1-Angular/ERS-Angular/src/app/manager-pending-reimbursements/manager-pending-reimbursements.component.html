@@ -1,6 +1,6 @@
 
 <app-manager></app-manager>
-<h3>Here Are All Reimbursements</h3>
+<h3>Here Are All Pending Reimbursements</h3>
 <table class="table table-dark">
     <thead>
       <tr>
@@ -9,7 +9,6 @@
         <th scope="col">Amount</th>
         <th scope="col">Description</th>
         <th scope="col">Request Type</th>
-        <th scope="col">Request Status</th>
       </tr>
     </thead>
     <tbody>
@@ -19,7 +18,6 @@
         <td>{{r.amount}}</td>
         <td>{{r.description}}</td>
         <td>{{r.requestType}}</td>
-        <td>{{r.requestStatus}}</td>
       </tr>
     </tbody>
   </table>
