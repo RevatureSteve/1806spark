@@ -41,6 +41,7 @@ function employeeTabs(num) {
                 document.getElementById('fname').value = newUser.fname;
                 document.getElementById('lname').value = newUser.lname;
                 document.getElementById('email').value = newUser.email;
+                document.getElementById('update-btn').addEventListener('click', updateProfile);
             });
             break;
 

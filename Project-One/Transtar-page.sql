@@ -57,10 +57,10 @@ BEGIN
 END;
 /
 
-UPDATE users
-    SET email = 'test@transtar.com', fname = 'Beck', lname = 'Larson'
-    WHERE u_id = 1;
-BEGIN
+begin
+update_profile('Testiing@test.com', 'Beck', 'Larson', 1);
+END;
+/
     new_reimbursement(1,300, 'Lost it all', 2);
 END;
 /

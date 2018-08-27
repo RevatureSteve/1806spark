@@ -154,7 +154,7 @@
    }
    function getAllResolvedReqs(){
 
-    fetch(' http://localhost:8080/my-app/resolvedreqs', {
+    fetch('http://localhost:8080/my-app/resolvedreqs', {
         method: 'GET',
         headers: {'Content-Type': 'application/json'}
     }).then(response => { 
@@ -163,6 +163,31 @@
       newAllResolvedReqs = data;
       console.log(newAllResolvedReqs);
       populateReqTable();
+    }).catch(err => {
+           console.log("[LOG]---------" + err );
+    });
+
+   }
+   function updateProfile(){
+
+    let fname = document.getElementById('fname').value;
+    let lname = document.getElementById('lname').value;
+    let newEmail = document.getElementById('email').value;
+    let data = {"email": newEmail, 
+        "fname": fname,
+        "lname": lname,
+        "user_id": newUser.u_id};
+
+    fetch('http://localhost:8080/my-app/updateuser', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {'Content-Type': 'application/json'}
+    }).then(response => { 
+      return response.json(); 
+    }).then(data => { 
+      resultSet = data;
+      console.log(resultSet);
+      activeBtn("profile-info-btn");
     }).catch(err => {
            console.log("[LOG]---------" + err );
     });

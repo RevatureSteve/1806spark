@@ -176,7 +176,7 @@ function createAllPendingTable() {
         cell1.innerHTML = JSON.stringify(newAllReqs[i].amt);
         cell2.innerHTML = JSON.stringify(newAllReqs[i].description);
         cell3.innerHTML = JSON.stringify(newAllReqs[i].emp_u_id);
-        cell4.innerHTML = JSON.stringify(newAllReqs[i].img);
+        cell4.innerHTML = JSON.stringify(newAllReqs[i].rb_type);
         cell5.innerHTML = JSON.stringify(newAllReqs[i].rq_status);
         cell6.innerHTML = JSON.stringify(newAllReqs[i].timeStamp);
         cell7.innerHTML = JSON.stringify(newAllReqs[i].r_id);
@@ -282,17 +282,15 @@ function populateReqTable() {
         var cell6 = row.insertCell(5);
         var cell7 = row.insertCell(6);
         var cell8 = row.insertCell(7);
-        var cell9 = row.insertCell(8);
 
         cell1.innerHTML = JSON.stringify(newAllResolvedReqs[i].amt);
         cell2.innerHTML = JSON.stringify(newAllResolvedReqs[i].description);
         cell3.innerHTML = JSON.stringify(newAllResolvedReqs[i].emp_u_id);
-        cell4.innerHTML = JSON.stringify(newAllResolvedReqs[i].img);
-        cell5.innerHTML = JSON.stringify(newAllResolvedReqs[i].mgr_u_id);
-        cell6.innerHTML = JSON.stringify(newAllResolvedReqs[i].rb_type);
-        cell7.innerHTML = JSON.stringify(newAllResolvedReqs[i].rq_status);
-        cell8.innerHTML = JSON.stringify(newAllResolvedReqs[i].timeStamp);
-        cell9.innerHTML = JSON.stringify(newAllResolvedReqs[i].r_id);
+        cell4.innerHTML = JSON.stringify(newAllResolvedReqs[i].mgr_u_id);
+        cell5.innerHTML = JSON.stringify(newAllResolvedReqs[i].rb_type);
+        cell6.innerHTML = JSON.stringify(newAllResolvedReqs[i].rq_status);
+        cell7.innerHTML = JSON.stringify(newAllResolvedReqs[i].timeStamp);
+        cell8.innerHTML = JSON.stringify(newAllResolvedReqs[i].r_id);
 
         x++;
     }
