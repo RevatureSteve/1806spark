@@ -63,11 +63,11 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
 			System.err.println("[LOG]---ReimbursementDao try/catch---getReimbursements() connection successful");
 			
-			String sql = "SELECT * FROM Reimbursement\r\n" + 
-					"INNER JOIN Rq_Status \r\n" + 
-					"    ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id\r\n" + 
-					"INNER JOIN Rq_Type\r\n" + 
-					"    ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Status_Id";
+			String sql = "SELECT * FROM Reimbursement\n" + 
+					"INNER JOIN Rq_Status \n" + 
+					"    ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id\n" + 
+					"INNER JOIN Rq_Type\n" + 
+					"    ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Type_Id";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			
@@ -107,7 +107,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 					"INNER JOIN Rq_Status \r\n" + 
 					"    ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id\r\n" + 
 					"INNER JOIN Rq_Type\r\n" + 
-					"    ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Status_Id\r\n" + 
+					"    ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Type_Id\r\n" + 
 					"WHERE Reimbursement.Rq_Status_Id = 1";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
@@ -146,7 +146,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 					"INNER JOIN Rq_Status \r\n" + 
 					"    ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id\r\n" + 
 					"INNER JOIN Rq_Type\r\n" + 
-					"    ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Status_Id\r\n" + 
+					"    ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Type_Id\r\n" + 
 					"WHERE Reimbursement.Rq_Status_Id = 2";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
