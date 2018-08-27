@@ -4,7 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Users } from './Users';
 import { Reimbursement } from './models/reimbursement';
-import { RouterModule, Router } from '@angular/router';
+import {  Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -56,4 +56,7 @@ setLoggedInUser(user) {
   currentLoggedUser() {
     return UsersService.user;
   }
+
+
+ 
 }

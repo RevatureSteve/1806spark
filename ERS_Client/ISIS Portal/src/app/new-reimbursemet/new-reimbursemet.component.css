@@ -27,37 +27,14 @@ h1 {
     margin-bottom: 30px;
    
 }
-thead {
-    color: white;
-    font-family: 'Press Start 2P', cursive;
-    font-size: 12px;
-}
-td {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
-
-}
-table {
-    width: 30%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 40p;
-}
 #input {
     margin-right: auto;
     margin-left: 60px;
     width: 20%;
     margin-top: 15px;
     font-family: 'Press Start 2P', cursive;
-    font-size: 12px;
 
 }
 button {
     font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
-}
-h5 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
-    color: white;
 }

@@ -1,3 +1,4 @@
+import { NewPasswordComponent } from './new-password/new-password.component';
 
 
 import { HomeComponent } from './home/home.component';
@@ -11,6 +12,7 @@ import { AgentMissionsComponent } from './views/agent-missions/agent-missions.co
 import { AgentReimbursementsComponent } from './views/agent-reimbursements/agent-reimbursements.component';
 import { AllReimbursementsComponent } from './views/all-reimbursements/all-reimbursements.component';
 import { AllAgentsComponent } from './views/all-agents/all-agents.component';
+import { NewReimbursemetComponent } from './new-reimbursemet/new-reimbursemet.component';
 
 
 
@@ -26,7 +28,10 @@ const routes : Routes = [
   {path: 'agnet/reimbursements', component: AgentReimbursementsComponent},
   {path: 'reimbursements', component: AllReimbursementsComponent },
   {path: 'agents', component: AllAgentsComponent},
+  {path: 'password', component: NewPasswordComponent},
+  {path: 'new/reimbursement', component: NewReimbursemetComponent},
   {path: '**', component: LoginComponent}
+ 
 ]
 
 

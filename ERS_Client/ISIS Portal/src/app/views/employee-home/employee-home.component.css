@@ -25,17 +25,16 @@
  }
  h1 {
      color: white;
-     font-family: 'Permanent Marker', cursive;
      font-family: 'Press Start 2P', cursive;
      text-align: center;
      font-size: 40px;   
-     
-     margin-bottom: 50px;
+     margin-bottom: 40px;
     
  }
+
  .status {
     color: white;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Press Start 2P', cursive;
     font-size: 30px;
     text-align: center;
  }

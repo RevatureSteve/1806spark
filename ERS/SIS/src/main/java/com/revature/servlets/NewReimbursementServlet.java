@@ -38,6 +38,11 @@ public class NewReimbursementServlet extends HttpServlet {
 		int empId = Integer.parseInt(request.getParameter("empId"));
 		Reimbursement rb = ss.createNewReimbursement(amount, rDescription, empId, type, status);
 		System.out.println(rb);
+		ObjectMapper map = new ObjectMapper();
+		String s = map.writeValueAsString(rb);
+		response.setContentType("application/json");
+		System.out.println("Writing...");
+		response.getWriter().write(s);
 	
 		//Servlet Input Stream provides an input stream for reading data from the client.
 		//request.getInputStream() ==> Retrieves the body of the request.

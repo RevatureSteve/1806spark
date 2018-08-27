@@ -1,11 +1,13 @@
 package com.revature.servlets;
 
 import java.io.IOException;
+
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.revature.service.Service;
 
 public class UpdatePasswordServlet extends HttpServlet {
@@ -27,7 +29,10 @@ public class UpdatePasswordServlet extends HttpServlet {
 		String password = request.getParameter("password");
 		 int row = ss.updateUserPssword(uId, password);
 		System.out.println(row);
-		
+		ObjectMapper map = new ObjectMapper();
+		String s = map.writeValueAsString(row);
+		response.setContentType("application/json");
+		response.getWriter().write(s);
 	}
 
 }

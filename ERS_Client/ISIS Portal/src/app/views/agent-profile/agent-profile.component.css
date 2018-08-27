@@ -11,7 +11,6 @@
 }
  h1 {
      color: white;
-     font-family: 'Permanent Marker', cursive;
      font-family: 'Press Start 2P', cursive;
      text-align: center;
      font-size: 40px;   
@@ -19,6 +18,8 @@
  }
  #e-info {
      display: block;
+     font-family: 'Press Start 2P', cursive;
+     font-size: 10px;
  }
  .card {
      margin-top: 20px;
@@ -29,6 +30,7 @@
 
  input {
      margin-bottom: 10px;
+     font-size: 10px;
  }
  #emp_background {
     background-image: url("http://coleran.com/wp-content/uploads/2014/03/CB2-CIA-Sat-Map-1024x768.jpg");
@@ -36,4 +38,11 @@
     background-size: 100% 85%;
     width: 100em;
     height: 50em;
+ }
+ h5 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+ }
+ button {
+    font-family: 'Press Start 2P', cursive;
  }
