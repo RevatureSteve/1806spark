@@ -7,7 +7,9 @@
 }
 #page{
     display: inline-block;
-    background-color: rgb(32, 32, 32);
+    /*background-color: rgb(32, 32, 32);*/
+    background-image: url("../images/poster.png");
+    background-position: center;
     border-style: solid;
     border-width: 10px 12px 8px 14px;
     box-shadow: 3px 3px rgb(0, 0, 212);
@@ -23,7 +25,7 @@
     bottom: 200px;
     left: 100px;
 }
-img{
+#face_img img{
     border-style: solid;
     border-width: 10px 12px 8px 14px;
     box-shadow: 3px 3px rgb(0, 0, 212);
@@ -70,19 +72,19 @@ img{
     border-color: black;
 }
 .btn{
-    background: linear-gradient(rgb(110, 110, 110), rgb(82, 82, 82));
+    background: linear-gradient(rgb(175, 175, 175), rgb(150, 150, 150));
     margin:8px;
     font-family: 'Press Start 2P', cursive;
     border-color: black;
 }
 
 .btn:hover{
-    background: linear-gradient(rgb(59, 59, 59), rgb(39, 39, 39));
+    background: linear-gradient(rgb(120, 120, 120), rgb(95, 95, 95));
     border-color: black;
 }
 
 .btn:active{
-    background: linear-gradient(rgb(44, 44, 44), rgb(15, 15, 15));
+    background: linear-gradient(rgb(100, 100, 100), rgb(75, 75, 75));
     border-color: black;
 }
 .center{

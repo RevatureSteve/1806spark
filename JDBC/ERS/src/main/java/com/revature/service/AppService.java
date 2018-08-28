@@ -45,13 +45,13 @@ public class AppService {
 	}
 
 	public List<User> getUsers() {
-		return userDao.getUsers();
+		return userDao.getUsers(true, 0);
 	}
 	public List<User> getManagers(boolean all, int id) {
 		return userDao.getManagers(all, id);
 	}
 
-	public List<Reimbursement> getReById(int id) {
-		return userDao.getReById(id, true);
+	public List<Reimbursement> getReById(int id, boolean all) {
+		return userDao.getReById(id, all);
 	}
 }

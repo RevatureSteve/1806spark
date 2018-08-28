@@ -44,10 +44,11 @@ function resReq() {
 
         //then put in the request information bellow the dropdown
         var rei = document.createElement("h1");
-        rei.innerText = "\nAmount: $" + resolving[num].amt + "\nDescription: " + resolving[num].desc + "\nTime: " +
+        rei.innerText = "\nRequest from: " + resolving[num].uname + "\nAmount: $" + resolving[num].amt + "\nDescription: " + resolving[num].desc + "\nTime: " +
             resolving[num].time + "\nType: " + resolving[num].type + "\nStatus: " + resolving[num].status;
         document.getElementById("resReq").appendChild(rei);
         var rei = document.createElement("br");
+        document.getElementById("resReq").appendChild(rei);
         document.getElementById("resReq").appendChild(rei);
     }
 }
@@ -97,6 +98,10 @@ function manViewPendingRequests() {
         if (cReArray[i].status != "Pending") {
             continue;
         }
+        var rei = document.createElement("li");
+        var t = document.createTextNode("Request from: " + cReArray[i].uname);
+        rei.appendChild(t);
+        document.getElementById("list").appendChild(rei);
         var rei = document.createElement("li");
         var t = document.createTextNode("Amount: $" + cReArray[i].amt);
         rei.appendChild(t);
@@ -156,7 +161,7 @@ function viewMemReq() {
 function memList() {
     document.getElementById("page").removeEventListener("mouseover", memList);
     var sel = document.createElement("select");
-    sel.id = "AppDec";
+    sel.id = "MemSel";
     sel.name = "appDecSelect";
     for (var i = 0; i < users.length; i++) {
         var op = document.createElement("option");
@@ -165,11 +170,11 @@ function memList() {
         sel.appendChild(op);
     }
     document.getElementById("viewMemReq").appendChild(sel);
-    document.getElementById("AppDec").hidden = false;
+    document.getElementById("MemSel").hidden = false;
 }
 function memRequests() {
-    var id = document.getElementById("AppDec").value;
-    document.getElementById("AppDec").hidden = true;
+    var id = document.getElementById("MemSel").value;
+    document.getElementById("MemSel").hidden = true;
     document.getElementById("memReqBtn").hidden = true;
     document.getElementById("face").src = "../images/neutral_smile.png";
     document.getElementById("text").innerText = "Here are the requests from that member";
@@ -178,6 +183,10 @@ function memRequests() {
         if (cReArray[i].uId != id) {
             continue;
         }
+        var rei = document.createElement("li");
+        var t = document.createTextNode("Request from: " + cReArray[i].uname);
+        rei.appendChild(t);
+        document.getElementById("viewMemReq").appendChild(rei);
         var rei = document.createElement("li");
         var t = document.createTextNode("Amount: $" + cReArray[i].amt);
         rei.appendChild(t);
@@ -316,7 +325,7 @@ function viewMem() {
 }
 
 function memUpdateRequests() {
-    fetch('http://localhost:8080/ERS/getReById?userId=' + current.uId, {
+    fetch('http://localhost:8080/ERS/getReById?userId=' + current.uId + '&all=true', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
     }).then(response => {

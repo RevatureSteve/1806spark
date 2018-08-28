@@ -1,4 +1,17 @@
 #AppDec{
+    font-family: 'Press Start 2P', cursive;
     font-size: 20px;
+    text-align: center;
     background-color: rgb(175, 175, 175);
+    height:40px;
+    width: 180px;;
+}
+
+#MemSel{
+    font-family: 'Press Start 2P', cursive;
+    font-size: 20px;
+    text-align: center;
+    background-color: rgb(175, 175, 175);
+    height:40px;
+    width: 750px;
 }

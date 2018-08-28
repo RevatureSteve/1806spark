@@ -31,7 +31,9 @@ public class getReByIdServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		int id = Integer.parseInt(request.getParameter("userId"));
-		List<Reimbursement> re = appService.getReById(id);
+		boolean all = Boolean.parseBoolean(request.getParameter("all"));
+		List<Reimbursement> re = appService.getReById(id, all);
+		System.out.println(re);
 
 		ObjectMapper mapper = new ObjectMapper();
 

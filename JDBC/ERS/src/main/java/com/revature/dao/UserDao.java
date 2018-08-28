@@ -13,7 +13,7 @@ public interface UserDao {
 	//READ
 	public User getUserByUsername(String email);
 	List<User> getManagers(boolean all, int id);
-	List<User> getUsers();
+	List<User> getUsers(boolean all, int id);
 	List<Reimbursement> getReById(int id, boolean all);
 	//UPDATE
 	void updateUser(String email, String fname, String lname, int id);

@@ -1,3 +1,7 @@
+//BUG!!!!!
+//after making a new request, the list receives ALL requests instead of just the requests of the loged in user
+
+
 //load employee navbar
 function uMain() {
     document.getElementById("mainButton").onclick = empDialogue;
@@ -13,35 +17,20 @@ function makeRequest() {
 }
 
 function NewReqSubmit() {
+    var validCheck = true;
     var a = parseInt(document.getElementById("amount").value);
     var t = parseInt(document.getElementById("type").value);
     var d = document.getElementById("description").value;
 
-    if (trollCheck >= 3) {  //check if the user is causing too much trouble
-        title.pause();    //stop the music
-        title.currentTime = 0;
-        if (troub){     //If this isnt the first time...
-            mainButtonNum = 7;
-            empDialogue();
-            return;
-        }
-        newPage('../pages/blank.html');
-        document.getElementById("face").src = "../images/mad.png";
-        document.getElementById("text").innerText = "Ok, thats enough.";
-        mainButtonNum = 4;
-        troub = true;
-        document.getElementById("mainButton").hidden = false;
-        return;
-    }
-
-    //check if the amount given is valid 1-9999
+    //check if the amount given is valid 1-9999. if not...
     if (a == 0) {
+        var validCheck = false;
         console.log("0");
         document.getElementById("face").src = "../images/confused.png";
         document.getElementById("text").innerText = "Uhhh...I can't submit a request without an amount. That kinda defeats the purpose of a reimbursement";
         trollCheck += 1;
-        return;
     } else if (a >= 10000) {
+        var validCheck = false;
         console.log("1000000");
         document.getElementById("newRequestSubmit").disabled = true;
         document.getElementById("newRequestSubmit").innerText = "<<<";
@@ -50,14 +39,14 @@ function NewReqSubmit() {
         mainButtonNum = 0;
         document.getElementById("mainButton").hidden = false;
         trollCheck += 1;
-        return;
     } else if (isNaN(a)) {
+        var validCheck = false;
         console.log("nan");
         document.getElementById("face").src = "../images/confused.png";
         document.getElementById("text").innerText = "I uh, dont understand that. The amount needs to be a number";
         trollCheck += 1;
-        return;
     } else if (a < 0) {
+        var validCheck = false;
         console.log("negative");
         document.getElementById("newRequestSubmit").disabled = true;
         document.getElementById("newRequestSubmit").innerText = "<<<";
@@ -66,10 +55,31 @@ function NewReqSubmit() {
         mainButtonNum = 3;
         document.getElementById("mainButton").hidden = false;
         trollCheck += 1;
+    }
+    console.log(trollCheck);
+    console.log(validCheck);
+    if (!validCheck) {
+        if (trollCheck >= 3) {  //check if the user is causing too much trouble
+            title.pause();    //stop the music
+            title.currentTime = 0;
+            if (troub) {     //If this isnt the first time...
+                mainButtonNum = 7;
+                empDialogue();
+                return;
+            }
+            newPage('../pages/blank.html');
+            document.getElementById("face").src = "../images/mad.png";
+            document.getElementById("text").innerText = "Ok, thats enough.";
+            mainButtonNum = 4;
+            troub = true;
+            document.getElementById("mainButton").hidden = false;
+            return;
+        }
         return;
     }
 
     //If the amount given is valid, create the request in the DB
+    trollCheck = 0;
     request = {
         "userId": current.uId,
         "amount": a,
@@ -106,7 +116,7 @@ function NewReqSubmit() {
 
 //Update the array of requests
 function updateRequests() {
-    fetch('http://localhost:8080/ERS/getReById?userId=' + current.uId, {
+    fetch('http://localhost:8080/ERS/getReById?userId=' + current.uId + '&all=false', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' }
     }).then(response => {
