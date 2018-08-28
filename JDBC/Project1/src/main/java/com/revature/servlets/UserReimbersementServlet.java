@@ -34,7 +34,7 @@ public class UserReimbersementServlet extends HttpServlet {
 		int rqStatusId = Integer.parseInt(request.getParameter("requestTypeId")); 
 		int empUId = Integer.parseInt(request.getParameter("empUserId"));
 		
-		List<Reimbursement> userReimbs = BusinessLogic.
+		//List<Reimbursement> userReimbs = BusinessLogic.getReimbursementsById
 	}
 
 	/**
