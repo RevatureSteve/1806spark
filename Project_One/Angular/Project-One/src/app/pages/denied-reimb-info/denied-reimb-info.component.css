@@ -1,0 +1,21 @@
+body {
+    color: #0aff0a;
+    border-color: #32383e00;
+
+    color: #51a938;
+
+
+}
+
+.table-dark {
+    color: #0aff0a;
+    background-color: #000000;
+}
+
+.table-dark td, .table-dark th, .table-dark thead th {
+    border-color: #000000;
+    border-top-color: rgb(0, 0, 0);
+    border-right-color: rgb(0, 0, 0);
+    border-bottom-color: rgb(0, 0, 0);
+    border-left-color: rgb(0, 0, 0);
+}

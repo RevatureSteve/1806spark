@@ -5,6 +5,7 @@ com\revature\pogo\Position.class
 com\revature\pogo\Rq_Type.class
 com\revature\dao\ProjectOneDao.class
 com\revature\pogo\Rq_Status.class
+com\revature\servlet\GetAllUsersServlet.class
 com\revature\Driver.class
 com\revature\servlet\UpdateUserServlet.class
 com\revature\dao\ProjectOneDaoImpl.class
@@ -16,3 +17,4 @@ com\revature\servlet\ReimbursementServlet.class
 com\revature\servlet\ValidateUserServlet.class
 com\revature\servlet\CreateReimbursementServlet.class
 com\revature\servlet\DeniedReimbursementServlet.class
+com\revature\servlet\ManagerOptionsServlet.class

@@ -44,7 +44,6 @@ export class ReimbursementInformationComponent implements OnInit {
     this.updateReimb.updateReimb(r_Id, mgr_U_Id, rq_Status_Id).subscribe(
       update => {
         console.log('updating your information');
-        alert('Reimbursement has been adjusted');
         this.getReimb();
       }
     );

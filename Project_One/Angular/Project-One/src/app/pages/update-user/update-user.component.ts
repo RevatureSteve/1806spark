@@ -1,3 +1,4 @@
+import { Router } from '@angular/router';
 import { LoggedInService } from './../../logged-in.service';
 import { UpdateUserService } from './../../update-user.service';
 import { Users } from './../../models/Users';
@@ -12,7 +13,7 @@ export class UpdateUserComponent implements OnInit {
   updateUser: Users;
   user: Users;
 
-  constructor(private updateUserService: UpdateUserService, private loggedInService: LoggedInService) { }
+  constructor(private updateUserService: UpdateUserService, private loggedInService: LoggedInService, private router: Router) { }
 
   ngOnInit() {
     this.user = this.loggedInService.getLoggedInUser();
@@ -24,6 +25,7 @@ export class UpdateUserComponent implements OnInit {
       update => {
         console.log('updating your information');
         alert('Update submission complete');
+        this.router.navigate(['/', 'info']);
       }
     );
   }

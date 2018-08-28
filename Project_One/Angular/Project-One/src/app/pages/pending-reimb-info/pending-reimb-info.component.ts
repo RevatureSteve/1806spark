@@ -12,6 +12,7 @@ import { LoggedInService } from './../../logged-in.service';
 export class PendingReimbInfoComponent implements OnInit {
   postP: Reimbursement[];
   user: Users;
+  logic: Reimbursement;
 
   constructor(private data: DataService, private loggedInService: LoggedInService) { }
 

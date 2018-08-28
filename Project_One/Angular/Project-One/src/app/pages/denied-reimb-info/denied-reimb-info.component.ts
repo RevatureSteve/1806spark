@@ -12,6 +12,7 @@ import { Component, OnInit } from '@angular/core';
 export class DeniedReimbInfoComponent implements OnInit {
   postD: Reimbursement[];
   user: Users;
+  logic: Reimbursement;
 
   constructor(private data: DataService, private loggedInService: LoggedInService) { }
 

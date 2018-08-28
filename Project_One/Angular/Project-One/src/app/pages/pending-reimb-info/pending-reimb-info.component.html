@@ -1,22 +1,48 @@
-<h2>Pending Reimbursements</h2>
+<table *ngIf="user.pos_Id === 2" class="table table-hover table-dark">
+  <thead>
+    <h2>Pending Reimbursements</h2>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Request Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Time Submission</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let post of postP">
+    <tr *ngIf='user.pos_Id !== post.emp_U_Id'>
+      <th scope="row" > {{ post.r_Id}} </th>
+      <td > {{ post.amt}} </td>
+      <td > {{ post.rq_Type_Id}} </td>
+      <td > {{ post.description}} </td>
+      <td > {{ post.timeSubmission}} </td>
+    </tr>
+  </tbody>
+</table>
 
-  <table class="table table-hover table-dark">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Request Type</th>
-          <th scope="col">Description</th>
-          <th scope="col">Time Submission</th>
-        </tr>
-      </thead>
-      <tbody *ngFor="let post of postP">
-        <tr *ngIf='user.pos_Id === post.emp_U_Id'>
-          <th scope="row"> {{ post.r_Id}} </th>
-          <td> {{ post.amt}} </td>
-          <td> {{ post.rq_Type_Id}} </td>
-          <td> {{ post.description}} </td>
-          <td> {{ post.timeSubmission}} </td>
-        </tr>
-      </tbody>
-    </table>
+<!-- For Manager's -->
+<table *ngIf="user.pos_Id === 1" class="table table-hover table-dark">
+  <thead>
+    <h2>Pending Reimbursements</h2>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Dweller #</th>
+      <th scope="col">Overseer's Approval</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Request Type</th>
+      <th scope="col">Description</th>
+      <th scope="col">Time Submission</th>
+    </tr>
+  </thead>
+  <tbody *ngFor="let post of postP">
+    <tr>
+      <th scope="row"> {{ post.r_Id}} </th>
+      <td> {{ post.emp_U_Id}} </td>
+      <td> {{ post.mgr_U_Id}} </td>
+      <td> {{ post.amt}} </td>
+      <td> {{ post.rq_Type_Id}} </td>
+      <td> {{ post.description}} </td>
+      <td> {{ post.timeSubmission}} </td>
+    </tr>
+  </tbody>
+</table>

@@ -49,10 +49,13 @@ export class LoginComponent implements OnInit {
       console.log(inputUser);
       if (inputUser.pos_Id === 1) {
         this.routes.navigate(['/overseer']);
+        alert('Welcome Overseer');
       } else {
+        alert('Welcome Vault Dweller' + inputUser.u_Id);
         this.routes.navigate(['/dweller']);
       }
     } else {
+      alert('login failed');
       this.routes.navigate(['/login']);
     }
   }

@@ -32,6 +32,7 @@ export class UsersInformationComponent implements OnInit {
     this.updateUserService.updateUser(email, password, fname, lname, u_Id).subscribe(
       update => {
         console.log('updating your information');
+        alert('You have updated your information');
       }
     );
   }

@@ -1,6 +1,11 @@
 /* Bordered form */
-form {
-    border: 3px solid #f1f1f1;
+/* form {
+    
+
+} */
+#login {
+    margin-top: 100px;
+
 }
 
 /* Full-width inputs */
@@ -50,6 +55,7 @@ img.avatar {
 
 /* Add padding to containers */
 .container {
+    padding-top: 40px;
     padding: 16px;
 }
 

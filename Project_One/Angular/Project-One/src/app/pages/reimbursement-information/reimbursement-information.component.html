@@ -1,9 +1,10 @@
-<h2>All Reimbursements</h2>
 
 <table class="table table-hover table-dark">
   <thead>
+    <h2>All Reimbursements</h2>
     <tr>
       <th scope="col">#</th>
+      <th scope="col">Dweller's Id</th>
       <th scope="col">Amount</th>
       <th scope="col">Request Type</th>
       <th scope="col">Status</th>
@@ -16,6 +17,7 @@
   <tbody>
     <tr *ngFor="let post of postAll">
       <th scope="row" #r_Id> {{ post.r_Id}} </th>
+      <td> {{ post.emp_U_Id }} </td>
       <td> {{ post.amt}} </td>
       <td> {{ post.rq_Type_Id}} </td>
       <td *ngIf = 'post.rq_Status_Id === 1'> Pending </td>
