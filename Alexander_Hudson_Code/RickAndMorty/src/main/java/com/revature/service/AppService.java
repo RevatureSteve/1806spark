@@ -12,7 +12,7 @@ public class AppService {
 	
 	
 	private RickAndMortyDao rmDao = new RickAndMortyDaoImpli();
-	
+	private RickAndMortyDaoImpli rmImpli = new RickAndMortyDaoImpli();
 	
 	public Users login (Users email, Users password) {
 		System.out.println("[LOG]------retrieving--------Users Email");
@@ -140,9 +140,9 @@ public class AppService {
 	
 	//UPDATE USER PASSWORD
 	
-	public int updateUserPassWord(String passWord) {
+	public int updateUserInfo(String email, String fName, String lName, int u_Id ) {
 		System.out.println("[LOG]----------Update Password---------------");
 		
-		return rmDao.updateUserPassWord(passWord);
+		return rmImpli.updateUserInfo(email, fName, lName, u_Id);
 	}
 }

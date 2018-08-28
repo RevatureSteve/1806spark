@@ -146,13 +146,13 @@
   
   
      <servlet>
-  <servlet-name>updatePassword</servlet-name>
-  <servlet-class>com.revature.servlet.UpdatePasswordServlet</servlet-class>
+  <servlet-name>updateUser</servlet-name>
+  <servlet-class>com.revature.servlet.GetUserInfoServlet</servlet-class>
   </servlet>
   
   <servlet-mapping>
-  <servlet-name>updatePassword</servlet-name>
-  <url-pattern>/update</url-pattern>
+  <servlet-name>updateUser</servlet-name>
+  <url-pattern>/empInfo/update</url-pattern>
  
   </servlet-mapping>
   

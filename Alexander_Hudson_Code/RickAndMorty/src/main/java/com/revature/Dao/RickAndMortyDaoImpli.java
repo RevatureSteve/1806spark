@@ -303,84 +303,38 @@ public class RickAndMortyDaoImpli implements RickAndMortyDao {
 	//--------------------------------------------------------------------------------------------------------------------
 	//UPDATE
 	
-	public int updateUserPassWord(String passWord) {
+	public int updateUserInfo(String email, String fName, String lName, int u_Id ) {
 		int rowsAffected = 0;
 		
 		try (Connection conn = SetConnectionUtil.getConnection()) {
 			System.out.println("Connected");
 		
-			conn.setAutoCommit(false);
-		String sql = "UPDATE users SET password=? WHERE password=?";
+	
+		String sql = "{call update_profile(?,?,?,?)}";
 		
-		PreparedStatement ps = conn.prepareStatement(sql);
+		CallableStatement cs = conn.prepareCall(sql);
+		System.out.println(email+  fName+ lName+ u_Id);
+		cs.setString(1, email);
+		cs.setString(2, fName);
+		cs.setString(3, lName);
+		cs.setInt(4, u_Id);
 		
-		ps.setString(1, passWord);
-		
-		rowsAffected = ps.executeUpdate();
+		rowsAffected = cs.executeUpdate();
 		System.out.println("executing update");
-		
+		System.out.println(email+  fName+ lName+ u_Id);
 		
 		} catch (IOException | SQLException | ClassNotFoundException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		System.out.println("We still know who you are Rick...");
+		System.out.println("Account updated");
+		System.out.println(rowsAffected);
 		return rowsAffected;
 		
 	}
 	
 	
-	public int updateUserFName(String fName) {
-		int rowsAffected = 0;
-		
-		try (Connection conn = SetConnectionUtil.getConnection()) {
-			System.out.println("Connected");
-		
-			conn.setAutoCommit(false);
-		String sql = "UPDATE users SET fname=? WHERE fname=?";
-		
-		PreparedStatement ps = conn.prepareStatement(sql);
-		
-		ps.setString(1, fName);
-		
-		rowsAffected = ps.executeUpdate();
-		System.out.println("executing update");
-		
-		
-		} catch (IOException | SQLException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println("We still know who you are Rick...");
-		return rowsAffected;
-		
-	}
-	
-	public int updateUserLName(String lName) {
-int rowsAffected = 0;
-		
-		try (Connection conn = SetConnectionUtil.getConnection()) {
-			System.out.println("Connected");
-		
-			conn.setAutoCommit(false);
-		String sql = "UPDATE users SET lname=? WHERE lname=?";
-		
-		PreparedStatement ps = conn.prepareStatement(sql);
-		
-		ps.setString(1, lName);
-		
-		rowsAffected = ps.executeUpdate();
-		System.out.println("executing update");
-		
-		
-		} catch (IOException | SQLException | ClassNotFoundException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		System.out.println("We still know who you are Rick...");
-		return rowsAffected;
-		
-	}
+
 
 
 }
