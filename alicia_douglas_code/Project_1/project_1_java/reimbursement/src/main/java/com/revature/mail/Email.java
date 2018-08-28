@@ -19,11 +19,11 @@ public class Email {
 	 * Sends email to employee after reimbursement is resolved
 	 * @param reim
 	 */
-	public static void ReimbursementResolvedEmail(Reimbursement reim) {
+	public static void ReimbursementResolvedEmail(Reimbursement reim, Users user) {
 		
 		final String username = "";
 		final String password = "";
-		final String receiver = "";
+		final String receiver = user.getEmail();
 		
 		String text = "Hello " + reim.getEmployeeName()
 				+ "\n\n		Your reimbursement has been " + reim.getRbStatus() + ". \n\n" +
@@ -65,7 +65,7 @@ public class Email {
 	public static void newUserEmail(Users user) {
 		final String username = "";
 		final String password = "";
-		final String receiver = "";
+		final String receiver = user.getEmail();
 		
 		String text = "Hello " + user.getFname() + ", \n\nYour account has been created. Your information is below" 
 				+ "\n\nName: " + user.getFname() + " " + user.getLname() 

@@ -31,18 +31,18 @@ export class ManagerPendingReimbursementsComponent implements OnInit {
       .subscribe(reimbursements => this.reimbs = reimbursements);
   }
 
-  approve(rId) {
-    console.log(`approve clicked rId: ${rId}`);
-    this.reimbService.updateReimbursement(rId, this.user.u_id, 2)
+  approve(r) {
+    console.log(`approve clicked rId: ${r}`);
+    this.reimbService.updateReimbursement(r.rId, this.user.u_id, 2, r.empUId)
       .subscribe(reimb => this.reimb = reimb);
-    this.removeResolved(rId);
+    this.removeResolved(r.rId);
   }
 
-  deny(rId) {
-    console.log(`deny clicked rId: ${rId}`);
-    this.reimbService.updateReimbursement(rId, this.user.u_id, 3)
+  deny(r) {
+    console.log(`deny clicked rId: ${r}`);
+    this.reimbService.updateReimbursement(r.rId, this.user.u_id, 3, r.empUId)
       .subscribe(reimb => this.reimb = reimb);
-    this.removeResolved(rId);
+    this.removeResolved(r.rId);
   }
 
   removeResolved(Id) {

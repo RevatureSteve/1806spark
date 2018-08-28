@@ -4,7 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.dao.ReimbursementDao;
+import com.revature.dao.UsersDao;
 import com.revature.domain.Reimbursement;
+import com.revature.domain.Users;
+import com.revature.mail.Email;
 
 public class ReimbursementBuisnessLogic {
 
@@ -108,10 +111,13 @@ public class ReimbursementBuisnessLogic {
 	 * @param mgrId
 	 * @param status
 	 */
-	public Reimbursement updateReimbursement(int rId, int mgrId, int status) {
+	public Reimbursement updateReimbursement(int rId, int mgrId, int status, int empId) {
+		Users user = new UsersDao().getUserById(empId);
 		Reimbursement reimb = reimbDao.getReimbursementByRId(rId);
 		reimbDao.updateReimbursementStatus(reimb, mgrId, status);
-		return reimbDao.getReimbursementByRId(rId);
+		reimb = reimbDao.getReimbursementByRId(rId);
+		Email.ReimbursementResolvedEmail(reimb, user);
+		return reimb;
 	}
 	
 	

@@ -10,6 +10,8 @@ import { Users } from '../models/users.model';
 })
 export class NewEmployeeComponent implements OnInit {
 
+  success = false;
+  fail = false;
   user: Users;
 
   constructor(private currentUser: CurrentUserService, private userService: UsersService) { }
@@ -19,6 +21,8 @@ export class NewEmployeeComponent implements OnInit {
   }
 
   createNewUser(email, fname, lname, pos) {
+    this.success = false;
+    this.fail = false;
     const user = {
       email: email,
       fname: fname,
@@ -26,7 +30,9 @@ export class NewEmployeeComponent implements OnInit {
       password: '111',
       pos_id: pos
     };
-    this.userService.createUser(user).subscribe(u => alert('new user made'));
+    this.userService.createUser(user).subscribe(u => {
+      this.success = true;
+    }, err => this.fail = true);
   }
 
 }

@@ -66,6 +66,7 @@ System.out.println("Hit put /reimbursement");
 		int rId;
 		int mgrId;
 		int status;
+		int empId;
 		
 		ObjectMapper mapper = new ObjectMapper();
 		ServletInputStream data = req.getInputStream();
@@ -74,12 +75,12 @@ System.out.println("Hit put /reimbursement");
 		rId = node.get("rId").intValue();
 		status = node.get("status").intValue();
 		mgrId = node .get("mgrId").intValue();
+		empId = node.get("empId").intValue();
 		
-		Reimbursement reimb = reimBL.updateReimbursement(rId, mgrId, status);
+		Reimbursement reimb = reimBL.updateReimbursement(rId, mgrId, status, empId);
 		
 		System.out.println(reimb);
 		
-		Email.ReimbursementResolvedEmail(reimb);
 		
 		String json = mapper.writeValueAsString(reimb);
 		resp.setContentType("application/json");

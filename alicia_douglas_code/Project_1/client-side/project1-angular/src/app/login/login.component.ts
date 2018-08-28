@@ -12,7 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   user: Users;
-  // curUser: Users;
+  success = true;
 
   constructor(private userService: UsersService, private currentUser: CurrentUserService, private router: Router) { }
 
@@ -20,13 +20,14 @@ export class LoginComponent implements OnInit {
   }
 
   login(email, password) {
+    this.success = true;
     console.log('email: ' + email + ' password: ' + password);
     this.userService.login(email, password).subscribe(
       user => {
         this.changeCurrentUser(user);
       },
       err => {
-        // alert('Login failed: email or password where incorrect');
+        this.success = false;
       }
     );
   }

@@ -58,9 +58,10 @@ export class ReimbursementsService {
     // console.log('after post statement');
   }
 
-  updateReimbursement(rId, mgrId, status) {
+  updateReimbursement(rId, mgrId, status, empId) {
     const update = {
       rId: rId,
+      empId: empId,
       mgrId: mgrId,
       status: status
     };

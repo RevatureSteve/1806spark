@@ -13,6 +13,7 @@ export class ProfileComponent implements OnInit {
 
   user: Users;
   posId;
+  success = false;
 
   constructor(private currentUser: CurrentUserService, private userService: UsersService) { }
 
@@ -25,9 +26,13 @@ export class ProfileComponent implements OnInit {
 
 
   updateUser(email, fname, lname) {
+    this.success = false;
     const id = this.user.u_id;
     this.userService.updateUser(id, email, fname, lname)
-      .subscribe(user => this.user = user);
+      .subscribe(user => {
+        this.user = user;
+        this.success = true;
+      });
     this.currentUser.setCurrentUser(this.user);
   }
 

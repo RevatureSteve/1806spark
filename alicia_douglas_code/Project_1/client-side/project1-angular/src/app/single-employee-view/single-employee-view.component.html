@@ -24,8 +24,8 @@
       <td>{{r.timeSubmission | date: 'short'}}</td>
       <span *ngIf = "r.rbStatus == 'Pending'">
          <td>
-        <button (click)="approve(r.rId)" type="button" class="btn btn-success">Approve</button>
-        <button (click)="deny(r.rId)" type="button" class="btn btn-danger">Deny</button>
+        <button (click)="approve(r)" type="button" class="btn btn-success">Approve</button>
+        <button (click)="deny(r)" type="button" class="btn btn-danger">Deny</button>
       </td>
       </span>
      <span *ngIf = "r.rbStatus != 'Pending'">

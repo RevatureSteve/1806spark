@@ -58,6 +58,27 @@ public class UsersDao {
 		return user;
 	}
 	
+	public Users getUserById(int id) {
+		Users user = null;
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
+			String sql = "SELECT * FROM users WHERE u_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+			if(rs.next()) {
+				user = new Users(rs.getInt(1), rs.getString("email"), rs.getString("password"), rs.getString("fname"), rs.getString("lname"), rs.getInt("pos_id"), null);
+			}
+			
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return user;
+	}
+	
 	/**
 	 * get all the users from the Users table
 	 * @return 

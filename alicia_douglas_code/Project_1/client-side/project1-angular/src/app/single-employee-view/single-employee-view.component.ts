@@ -31,18 +31,18 @@ export class SingleEmployeeViewComponent implements OnInit {
       .subscribe(reimbursements => this.reimbs = reimbursements);
   }
 
-  approve(rId) {
-    console.log(`approve clicked rId: ${rId}`);
-    this.reimbService.updateReimbursement(rId, this.user.u_id, 2)
+  approve(r) {
+    console.log(`approve clicked rId: ${r}`);
+    this.reimbService.updateReimbursement(r.rId, this.user.u_id, 2, r.empUId)
       .subscribe(reimb => this.reimb = reimb);
-    this.changeStatus(rId, 'Approved');
+    this.changeStatus(r.rId, 'Approved');
   }
 
-  deny(rId) {
-    console.log(`deny clicked rId: ${rId}`);
-    this.reimbService.updateReimbursement(rId, this.user.u_id, 3)
+  deny(r) {
+    console.log(`deny clicked rId: ${r}`);
+    this.reimbService.updateReimbursement(r.rId, this.user.u_id, 3, r.empUId)
       .subscribe(reimb => this.reimb = reimb);
-    this.changeStatus(rId, 'Denied');
+    this.changeStatus(r.rId, 'Denied');
   }
 
   changeStatus(Id, status) {

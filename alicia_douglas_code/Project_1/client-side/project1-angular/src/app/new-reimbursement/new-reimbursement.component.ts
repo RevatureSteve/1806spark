@@ -8,6 +8,8 @@ import { ReimbursementsService } from '../reimbursements.service';
 })
 export class NewReimbursementComponent implements OnInit {
 
+  success = false;
+
   constructor(private reimbursementService: ReimbursementsService) { }
 
   ngOnInit() {
@@ -18,7 +20,7 @@ export class NewReimbursementComponent implements OnInit {
     console.log(amt);
     console.log (desc);
     console.log(type);
-    this.reimbursementService.createNewReimbursement(amt, desc, type, null).subscribe(r => alert('New reimbursement submited'));
+    this.reimbursementService.createNewReimbursement(amt, desc, type, null).subscribe(r => this.success = true);
   }
 
 }

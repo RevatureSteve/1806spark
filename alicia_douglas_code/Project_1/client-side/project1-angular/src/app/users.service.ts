@@ -35,6 +35,6 @@ export class UsersService {
   }
 
   createUser (user) {
-    return this.httpClient.post('http://localhost:8080/reimbursement/users', user);
+    return this.httpClient.post('http://18.219.98.243:8080/reimbursement-0.0.1-SNAPSHOT/users', user);
   }
 }
