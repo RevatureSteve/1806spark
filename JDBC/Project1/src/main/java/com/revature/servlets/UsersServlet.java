@@ -27,7 +27,7 @@ public class UsersServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("TodoIdServlet -GET");
+		System.out.println("UsersServlet -GET");
 
 		List<Users> users = dao.viewAllEmployees();
 

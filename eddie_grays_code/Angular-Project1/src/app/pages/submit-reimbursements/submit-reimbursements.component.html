@@ -1,3 +1,15 @@
-<p>
-  submit-reimbursements works!
-</p>
+<div id="text">
+  <h1>Submit Reimbursement</h1>
+  <p>Amount:
+    <input type="number" name="amount" [(ngModel)]="reimb.amount">
+  </p>
+  <p>Description:
+    <input type="text" name="description" [(ngModel)]="reimb.description" placeholder="Description">
+  </p>
+  <p>Request Type:
+    <input type="number" name="reqTypeId" [(ngModel)]="reimb.reqTypeId" min="1" max="4">
+  </p>
+  <p>
+    <button (click)='submitReimbursementRequest()'>Submit Reimbursement</button>
+  </p>
+</div>

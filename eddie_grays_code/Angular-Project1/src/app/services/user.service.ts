@@ -12,13 +12,9 @@ export class UserService {
 
   constructor(private httpClient: HttpClient, private router: Router) { }
 
-  login(user: User) {
-    this.validateUser(user);
-  }
-
-  validateUser(user: User): void {
-    this.httpClient.post('http://localhost:8080/Project1/login?email=' + user.email + '&password=' + user.password, user)
-      .subscribe((resp: any) => {
+  validateUser(user: User) {
+    this.httpClient.post<User>('http://localhost:8080/Project1/login', user)
+      .subscribe(resp => {
         this.user = resp;
 
         if (this.user != null) {
@@ -37,8 +33,8 @@ export class UserService {
             uId: 0,
             email: '',
             password: '',
-            fname: '',
-            lname: '',
+            firstname: '',
+            lastname: '',
             posId: 0
           };
           console.log('user is null try again');
@@ -47,8 +43,20 @@ export class UserService {
       });
   }
 
-  getAllUsers(): void {
+  currentUser() {
+    return this.user;
+  }
 
+  // Employee Cases
+  updateProfile(user: User) {
+    this.httpClient.put<User>('http://localhost:8080/Project1/profile', user).subscribe(resp => {
+      this.user = resp;
+    });
+  }
+
+  // Manager Cases
+  getAllUsers() {
+    return this.httpClient.get<User[]>('http://localhost:8080/Project1/users');
   }
 
 }

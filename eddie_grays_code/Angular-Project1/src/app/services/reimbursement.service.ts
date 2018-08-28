@@ -9,37 +9,34 @@ import { Injectable } from '@angular/core';
 })
 export class ReimbursementService {
 
-  user: User;
-  reimbursement: Reimbursement[];
-
-
+  reimb: Reimbursement;
 
   constructor(private httpClient: HttpClient, private userService: UserService) { }
 
   // Employee Cases
-  submitReimbursementRequest(empId: number, amount: number, description: string, imageUrl: string, reqTypeId: number): void {
-
+  submitReimbursementRequest(reimb) {
+    return this.httpClient.post('http://localhost:8080/Project1/submitReimbursement', reimb);
   }
+
   viewAllPendingReimbursementsById(uId: number) {
-    return this.httpClient.get('http://localhost:8080/Project1/userPending?uId=1');
+    return this.httpClient.get<Reimbursement[]>('http://localhost:8080/Project1/userPending?uId=' + uId);
   }
 
   viewAllResolvedReimbursementsById(uId: number) {
-    return this.httpClient.get('http://localhost:8080/Project1/userResolved?uId=1');
+    return this.httpClient.get<Reimbursement[]>('http://localhost:8080/Project1/userResolved?uId=' + uId);
   }
 
   // Manager Cases
-  viewAllPendingReimbursements(): void {
-
+  viewAllPendingReimbursements() {
+    return this.httpClient.get<Reimbursement[]>('http://localhost:8080/Project1/allPending');
   }
 
-  viewAllResolvedReimbursements(): void {
-
+  viewAllResolvedReimbursements() {
+    return this.httpClient.get<Reimbursement[]>('http://localhost:8080/Project1/allResolved');
   }
 
-  viewAllReimbursementsById(uId: number): void {
-
+  viewAllReimbursementsById(uId: number) {
+    return this.httpClient.get<Reimbursement[]>('http://localhost:8080/Project1/allRequestId?uId=' + uId);
   }
-
 
 }

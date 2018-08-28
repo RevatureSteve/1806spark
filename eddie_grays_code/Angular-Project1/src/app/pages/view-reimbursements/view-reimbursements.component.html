@@ -1,5 +1,5 @@
 <table id='reimbursements' class="table table-hover table-dark">
-  <thead>
+  <thead id="head">
     <tr>
       <th scope="col">Id</th>
       <th scope="col">Amount</th>
@@ -9,7 +9,7 @@
       <th scope="col">Time Submitted</th>
     </tr>
   </thead>
-  <tbody>
+  <tbody id="body">
     <tr *ngFor = 'let r of reimbursement'>
       <th scope="row">{{r.reimbursementId}}</th>
       <td>{{r.amount}}</td>

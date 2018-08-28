@@ -1,5 +1,4 @@
 import { UserService } from './../../services/user.service';
-import { User } from './../../models/user.model';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  user: User;
+  user;
 
   constructor(private userService: UserService) { }
 
@@ -17,14 +16,14 @@ export class LoginComponent implements OnInit {
       uId: 0,
       email: '',
       password: '',
-      fname: '',
-      lname: '',
+      firstname: '',
+      lastname: '',
       posId: 0
     };
   }
 
   login() {
-    this.userService.login(this.user);
+    this.userService.validateUser(this.user);
   }
 
 }

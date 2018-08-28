@@ -4,3 +4,19 @@
     background-attachment: fixed;
     background-repeat: no-repeat;
 } */
+
+#text {
+    color: white;
+    margin: auto;
+    text-align: center;
+    width: 800px;
+    background-color: silver;
+}
+
+#media {
+    color: black;
+    margin: auto;
+    margin-top: 250px;
+    width: 500px;
+    background-color: rgba(192, 192, 192, 0.6);
+}

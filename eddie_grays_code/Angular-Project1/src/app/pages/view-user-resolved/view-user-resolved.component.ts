@@ -11,20 +11,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ViewUserResolvedComponent implements OnInit {
 
-  user: User;
   reimbursement: Reimbursement[];
 
   constructor(private userService: UserService, private reimbursementService: ReimbursementService) { }
 
   ngOnInit() {
-    this.user = this.userService.user;
-    console.dir(this.user);
-    this.viewReimbursement(1);
+    this.viewReimbursement(this.userService.currentUser().uId);
   }
 
   viewReimbursement(uId: number) {
     this.reimbursementService.viewAllResolvedReimbursementsById(uId)
-    .subscribe((resp: any) => this.reimbursement = resp);
+    .subscribe(resp => this.reimbursement = resp);
   }
 
 }

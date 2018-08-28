@@ -107,7 +107,7 @@ public class ErsDaoImpl implements ErsDao {
 		
 		try (Connection conn = ConnectionProperties.getConnection();) {
 
-			String sql = "SELECT * FROM reimbursement WHERE emp_u_id = " + uId + " AND rq_status_id = 2";
+			String sql = "SELECT * FROM reimbursement WHERE emp_u_id = " + uId + " AND rq_status_id = 2 OR rq_status_id = 3";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			
@@ -186,7 +186,7 @@ public class ErsDaoImpl implements ErsDao {
 		
 		try (Connection conn = ConnectionProperties.getConnection();) {
 			
-			String sql = "SELECT * FROM reimbursement WHERE rq_status_id = 2";
+			String sql = "SELECT * FROM reimbursement WHERE rq_status_id = 2 OR rq_status_id = 3";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			
@@ -212,7 +212,7 @@ public class ErsDaoImpl implements ErsDao {
 		
 		try (Connection conn = ConnectionProperties.getConnection();) {
 			
-			String sql = "SELECT * FROM users";
+			String sql = "SELECT * FROM users WHERE pos_id = 2";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			

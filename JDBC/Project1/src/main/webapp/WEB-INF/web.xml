@@ -81,4 +81,12 @@
     <servlet-name>SubmitReimbursementServlet</servlet-name>
     <url-pattern>/submitReimbursement</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <servlet-name>ProfileServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ProfileServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ProfileServlet</servlet-name>
+    <url-pattern>/profile</url-pattern>
+  </servlet-mapping>
 </web-app>

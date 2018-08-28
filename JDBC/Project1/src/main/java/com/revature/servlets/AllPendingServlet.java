@@ -26,7 +26,7 @@ public class AllPendingServlet extends HttpServlet {
     }
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("TodoIdServlet -GET");
+		System.out.println("AllPendingServlet -GET");
 
 		List<Reimbursement> allPending = dao.viewAllPendingRequests();
 

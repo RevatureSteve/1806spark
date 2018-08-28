@@ -26,7 +26,7 @@ public class AllResolvedServlet extends HttpServlet {
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-    	System.out.println("TodoIdServlet -GET");
+    	System.out.println("AllResolvedServlet -GET");
 
 		List<Reimbursement> allResolved = dao.viewAllResolvedRequests();
 

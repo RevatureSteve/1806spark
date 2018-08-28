@@ -26,7 +26,7 @@ public class UserResolvedServlet extends HttpServlet {
     }
 	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		System.out.println("TodoIdServlet -GET");
+		System.out.println("UserResolvedServlet -GET");
 
 		int uId = Integer.parseInt(request.getParameter("uId"));
 
