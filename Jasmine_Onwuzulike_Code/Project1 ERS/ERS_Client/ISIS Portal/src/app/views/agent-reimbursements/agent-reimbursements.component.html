@@ -11,6 +11,7 @@
     <a routerLink="/logout" id="link">Logout</a>
 </div>
 <div id="input">
+  <h5>Verify Employee Id</h5>
 <input type="number" value="{{ final.empId }}" readonly>
 <button type="button" class="btn btn-dark" (click) = "getEmpReimbursements()">Verify</button>
 </div>
@@ -34,9 +35,10 @@
   </tr>
   <tr>
 </table>
-</div>
 <div id="nn">
-<h5>Need to Submit a New Reimbursement Reques</h5>
-<button routerLink = "/new/reimbursement" class="btn btn-primary">New Reimbursement</button>
+    <h5>Need to Submit a New Reimbursement Reques</h5>
+    <button routerLink = "/new/reimbursement" class="btn btn-primary">New Reimbursement</button>
+    </div>
 </div>
+
 </div>

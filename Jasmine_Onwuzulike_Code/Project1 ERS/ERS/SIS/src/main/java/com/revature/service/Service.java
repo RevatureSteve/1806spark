@@ -72,14 +72,14 @@ public class Service {
 	}
 	
 	//Allows employee to submit request.
-	public Reimbursement createNewReimbursement(double amount, String rDescription, int uId, int rTypeId) {
-		Reimbursement rb = null;
+	public int createNewReimbursement(double amount, String rDescription, int uId, int rTypeId) {
+		int rb = 0;
 		System.out.println("Starting createNewReimbursement....");
 		int ra =emImpl.createNewReimbursement(amount, rDescription, uId, rTypeId);
 		
 		if (ra !=0) {
 			System.out.println("Success! " + ra + "reimbursement submitted!");
-			rb = new Reimbursement(amount,rDescription, rTypeId, uId);
+//			rb = new Reimbursement(amount,rDescription, rTypeId, uId);
 			System.out.println(rb);
 		}
 		else {

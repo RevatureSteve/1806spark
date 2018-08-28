@@ -26,6 +26,12 @@ private router : Router) { }
 
   }
 
+  check() {
+    while (this.email == null ) {
+    
+    }
+  }
+
 login() {
 console.log(this.email);
 console.log(this.password);

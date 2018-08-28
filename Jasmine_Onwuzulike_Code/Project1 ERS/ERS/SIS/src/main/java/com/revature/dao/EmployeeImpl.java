@@ -189,7 +189,7 @@ public class EmployeeImpl implements EmpDao{
 			BufferedImage im = ImageIO.read(new File(img));
 			if (im != null) {
 				 a = "Yes";
-				System.out.println(s);
+				System.out.println(a);
 			}
 			else {
 				a = "No";

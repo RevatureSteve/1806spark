@@ -36,7 +36,7 @@ public class NewReimbursementServlet extends HttpServlet {
 		int empId = Integer.parseInt(request.getParameter("empId"));
 		int type = Integer.parseInt(request.getParameter("rTypeId"));	
 		
-		Reimbursement rb = ss.createNewReimbursement(amount, rDescription, empId, type);
+		int rb = ss.createNewReimbursement(amount, rDescription, empId, type);
 		System.out.println(rb);
 		ObjectMapper map = new ObjectMapper();
 		String s = map.writeValueAsString(rb);
@@ -76,16 +76,7 @@ public class NewReimbursementServlet extends HttpServlet {
 //		
 		
 		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		doGet(request, response);
+	
 	}
 
 }

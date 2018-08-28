@@ -37,18 +37,17 @@ rb: any;
       else if (this.amount < 0  || uId == null) {
         alert("Please try agaon with a non negative number.")
       }
-      else {
-        alert("You request could not be submitted at this time. Please try again.");
-      }
     this.httpClient.post('http://localhost:8080/ERS/NewReimbursementServlet?amount=' + this.amount + '&rDescription=' + this.rDescription + '&empId=' + uId+ '&rTypeId=' + this.rType , this.rb)
   .subscribe(data => {
     this.rb = data;
+    console.log("This" + this.rb);
    
     let c = JSON.parse(this.rb);
     console.log(c);
 
-    if (c != null) {
+    if (c != null ) {
       alert("Your request has been submitted successfully. ");
+      this.router.navigate(['agnet/reimbursements']);
     }
   
   })
