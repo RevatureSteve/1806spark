@@ -12,31 +12,31 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.kingsgame.dao.Dao;
 
-public class UpdateServlet extends HttpServlet{
+public class UpdateUserServlet extends HttpServlet{
 	private Dao dao = new Dao();
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int rid = 0; int mgrid = 0; int rqstatusid = 0;
+		int uid = 0; String em = null; int postypeid = 0;
 		System.out.println("hit");
 		ObjectMapper mapper = new ObjectMapper();
 		ServletInputStream data = req.getInputStream();
 		ObjectNode n = mapper.readValue(data, ObjectNode.class);
 		
-		if(n.has("r_id")) {
-			rid = n.get("r_id").asInt();
-			System.out.println("r_id"+rid);
-			if(n.has("mgr_u_id")) {
-				mgrid = n.get("mgr_u_id").asInt();
-				System.out.println("mgr_u_id"+mgrid);
+		if(n.has("u_id")) {
+			uid = n.get("u_id").asInt();
+			System.out.println("u_id"+uid);
+			if(n.has("email")) {
+				em = n.get("email").asText();
+				System.out.println("email"+em);
 			};
-			if(n.has("rq_status_id")) {
-				rqstatusid = n.get("rq_status_id").asInt();
-				System.out.println("rq_status_id"+rqstatusid);
+			if(n.has("pos_id")) {
+				postypeid = n.get("pos_id").asInt();
+				System.out.println("pos_id"+postypeid);
 			};
-			if(rid != 0) {
-				dao.updateReimbursement(rid, mgrid, rqstatusid);
-				System.out.println("Confirmation of Update for: " + rid + " " + mgrid + " " + rqstatusid);
+			if(uid != 0) {
+				dao.updateUser(uid, em, postypeid);
+				System.out.println("Confirmation of Update for: " + uid + " " + em + " " + postypeid);
 			}
 		};
 		

@@ -2,6 +2,7 @@ package com.kingsgame.dao;
 
 import java.util.List;
 
+import com.kingsgame.pojo.Position;
 import com.kingsgame.pojo.Reimbursement;
 import com.kingsgame.pojo.Type;
 import com.kingsgame.pojo.User;
@@ -31,5 +32,9 @@ public interface DaoInterface {
 	
 	List<Type> getAllTypes();
 	List<User> getAllUsers();
+	User getMineUser(int u_id);
+	List<Position> getAllPositions();
+	int updateUser(int uid, String em, int posid);
+	List<User> getMyUser(int u_id);
 
 }

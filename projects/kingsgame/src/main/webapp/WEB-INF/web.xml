@@ -67,7 +67,7 @@
 	 		
 	 		<servlet>
 	 		<servlet-name>mine-re</servlet-name>
-	 		<servlet-class>com.kingsgame.servlets.MineServlet</servlet-class>
+	 		<servlet-class>com.kingsgame.servlets.MineReimServlet</servlet-class>
 	 		</servlet>
 	 		<servlet-mapping>
 	 		<servlet-name>mine-re</servlet-name>
@@ -75,12 +75,39 @@
 	 		</servlet-mapping>
 	 		
 	 		<servlet>
-	 		<servlet-name>mgr-update</servlet-name>
-	 		<servlet-class>com.kingsgame.servlets.UpdateServlet</servlet-class>
+	 		<servlet-name>mine-user</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.MineUserServlet</servlet-class>
 	 		</servlet>
 	 		<servlet-mapping>
-	 		<servlet-name>mgr-update</servlet-name>
+	 		<servlet-name>mine-user</servlet-name>
+	 		<url-pattern>/users/mine</url-pattern>
+	 		</servlet-mapping>
+	 		
+	 		<servlet>
+	 		<servlet-name>me-user</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.MeUserServlet</servlet-class>
+	 		</servlet>
+	 		<servlet-mapping>
+	 		<servlet-name>me-user</servlet-name>
+	 		<url-pattern>/users/me</url-pattern>
+	 		</servlet-mapping>
+	 		
+	 		<servlet>
+	 		<servlet-name>mgr-update-re</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.UpdateReimServlet</servlet-class>
+	 		</servlet>
+	 		<servlet-mapping>
+	 		<servlet-name>mgr-update-re</servlet-name>
 	 		<url-pattern>/reim/update</url-pattern>
+	 		</servlet-mapping>
+	 		
+	 		<servlet>
+	 		<servlet-name>mgr-update-us</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.UpdateUserServlet</servlet-class>
+	 		</servlet>
+	 		<servlet-mapping>
+	 		<servlet-name>mgr-update-us</servlet-name>
+	 		<url-pattern>/users/update</url-pattern>
 	 		</servlet-mapping>
 	 		
 	 		<servlet>
@@ -90,5 +117,14 @@
 	 		<servlet-mapping>
 	 		<servlet-name>type</servlet-name>
 	 		<url-pattern>/util/type</url-pattern>
+	 		</servlet-mapping>
+	 		
+	 		<servlet>
+	 		<servlet-name>position</servlet-name>
+	 		<servlet-class>com.kingsgame.servlets.PositionServlet</servlet-class>
+	 		</servlet>
+	 		<servlet-mapping>
+	 		<servlet-name>position</servlet-name>
+	 		<url-pattern>/util/position</url-pattern>
 	 		</servlet-mapping>
 </web-app>

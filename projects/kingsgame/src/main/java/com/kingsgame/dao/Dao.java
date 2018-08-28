@@ -10,6 +10,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.kingsgame.pojo.Position;
 import com.kingsgame.pojo.Reimbursement;
 import com.kingsgame.pojo.Type;
 import com.kingsgame.pojo.User;
@@ -97,6 +98,22 @@ public class Dao implements DaoInterface{
 		cs.setInt(1, rid);
 		cs.setInt(2, mgrid);
 		cs.setInt(3, rqstatusid);
+		rowsAffected = cs.executeUpdate();
+		} catch (SQLException | IOException e) {
+			e.printStackTrace();
+		}
+		return rowsAffected;
+}
+	
+	@Override
+	public int updateUser(int uid, String em,  int posid) {
+		int rowsAffected = 0;
+		try(Connection conn = Conn.getConn();){
+			String sql = "{call update_user(?,?,?)}";
+		CallableStatement cs = conn.prepareCall(sql);
+		cs.setInt(1, uid);
+		cs.setString(2, em);
+		cs.setInt(3, posid);
 		rowsAffected = cs.executeUpdate();
 		} catch (SQLException | IOException e) {
 			e.printStackTrace();
@@ -194,6 +211,32 @@ public class Dao implements DaoInterface{
 		System.out.println(userList);
 		return userList;
 	}
+	@Override
+	public List<User> getMyUser(int u_id) {
+		List<User>userList = new ArrayList<>();
+		try(Connection conn = Conn.getConn();){
+			String sql = "SELECT u.u_id, u.email,u.password,u.fname,u.lname,u.pos_id,p.pos_type\n" + 
+					"FROM users u\n" + 
+					"RIGHT JOIN position p ON u.pos_id = p.pos_id \n" + 
+					"where u_id = ?";
+		CallableStatement cs = conn.prepareCall(sql);
+		cs.setInt(1, u_id);
+
+		ResultSet rs = cs.executeQuery();
+		while(rs.next()) {
+			userList.add(new User(
+			rs.getInt(1),rs.getString(2),rs.getString(3),
+			rs.getString(4),rs.getString(5),rs.getInt(6),
+			rs.getString(7)));
+
+		}
+		} catch (SQLException | IOException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println(userList);
+		return userList;
+	}
 	
 	@Override
 	public List<Reimbursement> getMineReimbursement(int u_id) {
@@ -219,6 +262,33 @@ public class Dao implements DaoInterface{
 		return reimList;
 	}
 	
+	@Override
+	public User getMineUser(int u_id) {
+		System.out.println("---------------------------------------------");
+		User user = null;
+		try(Connection conn = Conn.getConn();){
+			String sql = "SELECT u.u_id, u.email,u.password,u.fname,u.lname,u.pos_id,p.pos_type\n" + 
+					"FROM users u\n" + 
+					"RIGHT JOIN position p ON u.pos_id = p.pos_id \n" + 
+					"where u_id =?";
+		CallableStatement cs = conn.prepareCall(sql);
+		cs.setInt(1, u_id);
+		ResultSet rs = cs.executeQuery();
+		while(rs.next()) {
+			user = new User(
+			rs.getInt(1),rs.getString(2),rs.getString(3),
+			rs.getString(4),rs.getString(5),rs.getInt(6),
+			rs.getString(7));
+
+		}
+		} catch (SQLException | IOException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println("user grabbed: " + user );
+		return user;
+	}
+	
 	
 	
 	@Override
@@ -231,6 +301,29 @@ public class Dao implements DaoInterface{
 		ResultSet rs = cs.executeQuery();
 		while(rs.next()) {
 			typeList.add(new Type(rs.getInt(1),rs.getString(2)));
+
+		}
+		} catch (SQLException | IOException e) {
+			e.printStackTrace();
+		}
+
+		System.out.println(typeList);
+		return typeList;
+	
+	
+	
+	}
+	
+	@Override
+	public List<Position> getAllPositions() {
+		List<Position>typeList = new ArrayList<>();
+		try(Connection conn = Conn.getConn();){
+			String sql = "select * from position order by pos_id";
+		CallableStatement cs = conn.prepareCall(sql);
+
+		ResultSet rs = cs.executeQuery();
+		while(rs.next()) {
+			typeList.add(new Position(rs.getInt(1),rs.getString(2)));
 
 		}
 		} catch (SQLException | IOException e) {
