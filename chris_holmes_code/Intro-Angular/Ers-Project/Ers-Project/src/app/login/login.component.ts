@@ -14,7 +14,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
   inputUser: User;
   validUser: User;
-  constructor(private httpClient: HttpClient, private route: Router) { }
+  constructor(private httpClient: HttpClient, private route: Router, private LoggeduserServices: LoggeduserService) { }
 
   ngOnInit() {
     this.inputUser = {
@@ -42,7 +42,7 @@ console.log(this.validUser);
 
 changePage(user) {
   this.validUser = user;
-  LoggeduserService.setloggeduser(this.validUser);
+  this.LoggeduserServices.setloggeduser(this.validUser);
   console.log(this.validUser);
   // this.validUser(this.validUser);
   if (!this.validUser) {

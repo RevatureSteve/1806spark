@@ -17,5 +17,5 @@ export class ManagerHomepageComponent implements OnInit {
     reimbursement => this.data = reimbursement
     );
   }
-  
+
 }

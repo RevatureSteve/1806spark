@@ -4,10 +4,17 @@
       <p class="lead">Submit reimbursement requests here</p>
     <form action="">
      <div>
-          <input type="text" placeholder="insert description here">
+          <input type="text" #d (click)='view(d.value)'placeholder="insert description here">
           <br>
-          <input type="number" placeholder="insert amount here">
-
+          <input type="number" #amt  placeholder="insert amount here">
+         <br><br> Request Type ID
+          <select multiple #x >
+            <option value = '1'>1</option>
+            <option value = '2'>2</option>
+            <option value = '3'>3</option>
+            <option value = '4'>4</option>
+          </select>
+          <button (click)="SubmitReimbursement(user.uId ,amt.value, d.value, x.value)">x</button>
      </div>
       
      

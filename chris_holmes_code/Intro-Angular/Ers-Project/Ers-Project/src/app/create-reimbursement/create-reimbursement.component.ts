@@ -1,6 +1,10 @@
+import { RetrievalService } from './../services/retrieval.service';
+import { LoggeduserService } from './../services/loggeduser.service';
+import { User } from './../models/users';
 import { Reimbursements } from './../models/Reimbursements';
 import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+
 @Component({
   selector: 'app-create-reimbursement',
   templateUrl: './create-reimbursement.component.html',
@@ -9,30 +13,25 @@ import { Component, OnInit } from '@angular/core';
 export class CreateReimbursementComponent implements OnInit {
 
  reimbursement: Reimbursements;
-
-  constructor(private httpClient: HttpClient) { }
+user: User; // create user
+w;
+  constructor(private http: HttpClient,
+  private logged: LoggeduserService,
+private retrieve: RetrievalService) { }
 
   ngOnInit() {
+    this.user = this.logged.getloggeduser();
+  }
 
-     /* this.reimbursement = {
-      emp_u_id: 0,
-      mgr_u_id: 0,
-      amt: 0,
-      description: '',
-      img: null,
-      timesubmission: '',
-      rq_type_id: 0,
-      rq_status_id: 0, 
-    };
 
-    SubmitReimbursement(){
-      console.log(this.reimbursement);
-    }
-
-     SubmitReimbursement(reimbursement: Reimbursement) {
-      this.httpClient.post('http://localhost:8080/NewReimbursementServlet', reimbursement).subscribe;
-      );
-      console.log(this.validUser); */
+      view (x, y , z) {
+        console.log(x + '' + y + '' + z );
       }
+        SubmitReimbursement(w, x, y, z) {
+          console.log('sending request!' + w + '' + x + '' + y + '' + z + '');
+          this.retrieve.sendReimbursement(w, x, y, z).subscribe( a => {});
+
+        }
+
 
 }

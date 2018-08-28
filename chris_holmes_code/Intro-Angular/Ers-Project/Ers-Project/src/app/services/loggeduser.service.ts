@@ -5,12 +5,14 @@ import { User } from '../models/users';
   providedIn: 'root'
 })
 export class LoggeduserService {
-private static loggeduser: User;
+
   constructor() { }
-  static getloggeduser() {
+private loggeduser: User;
+
+  getloggeduser() {
     return this.loggeduser;
   }
-  static setloggeduser(loggeduser) {
+  setloggeduser(loggeduser) {
    this.loggeduser = loggeduser;
   }
 }

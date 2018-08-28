@@ -12,11 +12,12 @@ import { User } from '../models/users';
 export class EmployeeHomepageComponent implements OnInit {
 user: User;
 
-  constructor() { }
+
+  constructor(private logged: LoggeduserService) { }
 
 
   ngOnInit() {
-    this.user = LoggeduserService.getloggeduser();
+    this.user = this.logged.getloggeduser();
     console.log(this.user);
   }
 

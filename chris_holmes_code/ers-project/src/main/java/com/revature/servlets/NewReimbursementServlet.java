@@ -29,22 +29,19 @@ public class NewReimbursementServlet extends HttpServlet {
     	ObjectMapper mapper = new ObjectMapper();
 		ServletInputStream data = req.getInputStream();
 		ObjectNode n = mapper.readValue(data,ObjectNode.class);
-    	
-		int emp_uid = 0;
+    	System.out.println(n);
+		int emp_u_id = 0;
 		int amount  = 0;
 		String description  = null;
-		Blob img  = null;
 		int rqtypeid = 0;
-		int rqstatusid  = 0;
 		
 		
-		emp_uid = Integer.parseInt(n.get("emp_uid").textValue());
-		amount = Integer.parseInt(n.get("amount").textValue());
-		description = n.get("description").textValue();
-		rqtypeid = Integer.parseInt(n.get("rqtypeid").textValue());
-		rqstatusid = Integer.parseInt(n.get("rqstatusid").textValue());
+		emp_u_id = n.get("emp_u_id").asInt();
+		amount = n.get("amt").asInt();
+		description = n.get("description").asText();
+		rqtypeid = n.get("rq_type_id").asInt();
 		
-		dao.createNewReimbursement(emp_uid,amount, description, img, rqtypeid, rqstatusid);
+		dao.createNewReimbursement(emp_u_id,amount, description, rqtypeid);
 		
 		System.out.println("T-Rex");
 		

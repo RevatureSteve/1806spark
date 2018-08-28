@@ -53,18 +53,21 @@ public class UserDaoImpl implements UserDao{
 
 	
 	
-	public Reimbursements createNewReimbursement(int empuId, int amount, String description, Blob image, int rqTypeId, int rqStatusId ) { //method to get users by email
-		System.err.println("making reimbursement");
+	public void createNewReimbursement(int empuId, int amount, String description,  int rqTypeId) { //method to get users by email
+		System.out.println("making reimbursement");
 		Reimbursements reimbursement = null; //creating a null reimbursement object
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection()){
 			System.err.println("2nd connection to db successful");
-			String sql = "{call new_reimbursement(?,?,?,NULL,?,?)}";
+			String sql = "{call new_reimbursement(?,?,?,?)}";
 			CallableStatement cs = conn.prepareCall(sql); // Precompiles the sql statement without the parameter values
 			cs.setInt(1,empuId);
+			System.out.println(empuId);
 			cs.setInt(2,amount);
+			System.out.println(amount);
 			cs.setString(3, description);
+			System.out.println(description);
 			cs.setInt(4, rqTypeId);
-			cs.setInt(5, rqStatusId);
+			System.out.println(rqTypeId);
 			ResultSet resultSet = cs.executeQuery();
 		// we do not need a loop because emails are unique
 			System.err.println("[LOG]---resultset completed----getUserByEmail()");
@@ -80,7 +83,7 @@ public class UserDaoImpl implements UserDao{
 		}catch (ClassNotFoundException e) {
 			
 		}
-		return reimbursement;
+		
 
 	}
 	
