@@ -43,6 +43,36 @@ public class NewReimbursementServlet extends HttpServlet {
 		response.setContentType("application/json");
 		System.out.println("Writing...");
 		response.getWriter().write(s);
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 	
 		//Servlet Input Stream provides an input stream for reading data from the client.
 		//request.getInputStream() ==> Retrieves the body of the request.
