@@ -11,7 +11,7 @@ export class SubmitComponent implements OnInit {
   success: number;
   file: File;
   filename;
-  url: string = null;
+  url: any = null;
   byteFile = null;
   constructor(private submit: SubmitService) { }
 
@@ -24,7 +24,7 @@ export class SubmitComponent implements OnInit {
     if (!amt) {
       this.success = 0;
     } else {
-      this.submit.submit(amt, description, rqId, this.byteFile).subscribe(r => this.success = r);
+      // this.submit.submit(amt, description, rqId, this.byteFile).subscribe(r => this.success = r);
     }
   }
 
@@ -41,8 +41,7 @@ export class SubmitComponent implements OnInit {
       reader.readAsDataURL(event.target.files[0]); // read file as data url
 
       reader.onload = (ev) => { // called once readAsDataURL is completed
-        this.url = ev.target.result;
-        console.log(this.url.substring(0, 23));
+        this.url = reader.result;
         this.byteFile = this.url.substring(23);
       };
     }
