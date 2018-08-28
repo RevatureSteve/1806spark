@@ -1,18 +1,115 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
   <display-name>Project1</display-name>
-  
-<!--   <servlet>
-  the alias of a servlet for protection (different name so hackers cannot see our class)
-	 <servlet-name>hello</servlet-name>
-	 <servlet-class>com.revature.servlets.HelloWorldServlet</servlet-class>
+
+<!-- CORS Filter -->
+<filter>
+  <filter-name>CorsFilter</filter-name>
+  <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+  <init-param>
+    <param-name>cors.allowed.origins</param-name>
+    <param-value>*</param-value>
+  </init-param>
+  <init-param>
+    <param-name>cors.allowed.methods</param-name>
+    <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
+  </init-param>
+</filter>
+<filter-mapping>
+  <filter-name>CorsFilter</filter-name>
+  <url-pattern>/*</url-pattern>
+</filter-mapping>
+
+<!-- Servlets -->
+<servlet>
+    <description></description>
+    <display-name>UserServlet2</display-name>
+    <servlet-name>UserServlet2</servlet-name>
+    <servlet-class>com.drake.servlets.UserServlet2</servlet-class>
   </servlet>
-  
   <servlet-mapping>
-  now use the alias of a servlet
-   	<servlet-name>hello</servlet-name>
-   	<url-pattern>/hello</url-pattern>
+    <servlet-name>UserServlet2</servlet-name>
+    <url-pattern>/users</url-pattern>
   </servlet-mapping>
- -->
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementServlet2</display-name>
+    <servlet-name>ReimbursementServlet2</servlet-name>
+    <servlet-class>com.drake.servlets.ReimbursementServlet2</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementServlet2</servlet-name>
+    <url-pattern>/reimbursement</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementIdServlet</display-name>
+    <servlet-name>ReimbursementIdServlet</servlet-name>
+    <servlet-class>com.drake.servlets.ReimbursementIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementIdServlet</servlet-name>
+    <url-pattern>/reimbursement/id</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementResolvedServlet</display-name>
+    <servlet-name>ReimbursementResolvedServlet</servlet-name>
+    <servlet-class>com.drake.servlets.ReimbursementResolvedServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementResolvedServlet</servlet-name>
+    <url-pattern>/resolved</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <display-name>ReimbursementPendingServlet</display-name>
+    <servlet-name>ReimbursementPendingServlet</servlet-name>
+    <servlet-class>com.drake.servlets.ReimbursementPendingServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementPendingServlet</servlet-name>
+    <url-pattern>/pending</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.drake.servlets.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/login</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementPendingIdServlet</display-name>
+    <servlet-name>ReimbursementPendingIdServlet</servlet-name>
+    <servlet-class>com.drake.servlets.ReimbursementPendingIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementPendingIdServlet</servlet-name>
+    <url-pattern>/pending/id</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementResolvedIdServlet</display-name>
+    <servlet-name>ReimbursementResolvedIdServlet</servlet-name>
+    <servlet-class>com.drake.servlets.ReimbursementResolvedIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementResolvedIdServlet</servlet-name>
+    <url-pattern>/resolved/id</url-pattern>
+</servlet-mapping>
+
+<servlet>
+  <description></description>
+  <display-name>DocumentationServlet</display-name>
+  <servlet-name>DocumentationServlet</servlet-name>
+  <servlet-class>com.drake.servlets.DocumentationServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+  <servlet-name>DocumentationServlet</servlet-name>
+  <url-pattern>/Project1</url-pattern>
+</servlet-mapping>
    
 </web-app>

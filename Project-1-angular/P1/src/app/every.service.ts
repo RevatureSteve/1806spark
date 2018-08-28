@@ -17,7 +17,7 @@ export class EveryService {
 
   constructor(private http: HttpClient) { }
 
-  getEmpes(): Observable<Emp[]> {
+  getEmps(): Observable<Emp[]> {
     return this.http.get<Emp[]>(this.EmpesUrl);
   }
 
