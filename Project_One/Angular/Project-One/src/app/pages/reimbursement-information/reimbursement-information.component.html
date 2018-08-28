@@ -9,6 +9,7 @@
       <th scope="col">Status</th>
       <th scope="col">Description</th>
       <th scope="col">Time Submission</th>
+      <th scope="col">Overseers Approval</th>
       <th scope="col">Approval/Deny</th>
     </tr>
   </thead>
@@ -17,9 +18,12 @@
       <th scope="row" #r_Id> {{ post.r_Id}} </th>
       <td> {{ post.amt}} </td>
       <td> {{ post.rq_Type_Id}} </td>
-      <td> {{ post.rq_Status_Id}} </td>
+      <td *ngIf = 'post.rq_Status_Id === 1'> Pending </td>
+      <td *ngIf = 'post.rq_Status_Id === 2'> Accepted </td>
+      <td *ngIf = 'post.rq_Status_Id === 3'> Denied </td>
       <td> {{ post.description}} </td>
       <td> {{ post.timeSubmission}} </td>
+      <td *ngIf = 'user.u_Id === post.mgr_U_Id'> {{ user.fname }} {{ user.lname }} </td>
       <td>
         <button (click)="updatingReimb(post.r_Id, user.u_Id, 2)" type="button"  class="btn btn-success">Approve</button>
         <button (click)="updatingReimb(post.r_Id, user.u_Id, 3)" type="button"  class="btn btn-danger">Deny</button>

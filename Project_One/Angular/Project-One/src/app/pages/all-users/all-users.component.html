@@ -1,22 +1,22 @@
 <h2>All Dwellers</h2>
 
-  <table class="table table-hover table-dark">
-      <thead>
-        <tr>
-          <th scope="col">Email</th>
-          <th scope="col">Password</th>
-          <th scope="col">First Name</th>
-          <th scope="col">Last Name</th>
-          <th scope="col">Dweller Id</th>
-        </tr>
-      </thead>
-      <tbody >
-        <tr *ngFor="let user of allUsers">
-          <th scope="row"> {{ user.email}} </th>
-          <td> {{ user.password }} </td>
-          <td> {{ user.fname }} </td>
-          <td> {{ user.lname }} </td>
-          <td> {{ user.u_Id }} </td>
-        </tr>
-      </tbody>
-    </table>
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">Dweller Id</th>
+      <th scope="col">Email</th>
+      <th scope="col">Password</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let user of allUsers">
+      <td> {{ user.u_Id }} </td>
+      <th scope="row"> {{ user.email}} </th>
+      <td> {{ user.password }} </td>
+      <td> {{ user.fname }} </td>
+      <td> {{ user.lname }} </td>
+    </tr>
+  </tbody>
+</table>
