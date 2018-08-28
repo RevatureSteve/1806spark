@@ -17,5 +17,7 @@ export class OReimbursementService {
       return this.httpClient.get<Reimbursement[]>('http://localhost:8080/expenseProject/OneReimbursement?byId=' + rid);
   }
 
-
+  updateReimbursement(request:Reimbursement):Observable <Reimbursement>{
+    return this.httpClient.post<Reimbursement>('http://localhost:8080/expenseProject/ApproveRequest',request);
+    }
 }

@@ -70,7 +70,12 @@ public class AppService {
 	}
 
 
-
+// Update reimbursement
+	
+	public void changeStatus(int rq_status_id, int r_id){
+		
+		reimbursementDao.changeStatus(rq_status_id, r_id);
+	}
 
 
 

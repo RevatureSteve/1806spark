@@ -90,7 +90,23 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		return reimbursements;
 	}
 
-
+//UPDATE REIMBURSEMENT STATUS
+	public int changeStatus(int rq_status_id, int r_id) {
+		System.out.println( rq_status_id);
+		int rowsAffected = 0;
+		try(Connection conn = SetConnectionPropertiesUtil.getConnection();) {
+			String sql = "UPDATE REIMBURSEMENT SET rq_status_id = ? WHERE r_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, rq_status_id);
+			ps.setInt(2, r_id);
+			
+			 rowsAffected = ps.executeUpdate();
+		} catch (IOException | SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return rowsAffected;
+	}
 
 
 

@@ -15,7 +15,7 @@ export class Reimbursement {
         public empuid: number,
         public mgruid: number,
         public rqtypeid: number,
-        public rqstatusid: number,
+        public rq_status_id: number,
         public amt: number,
         public description: string,
         public timesubmission: string,

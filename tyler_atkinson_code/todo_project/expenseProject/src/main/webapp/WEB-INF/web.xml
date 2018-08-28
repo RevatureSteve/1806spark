@@ -85,4 +85,14 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/LoginServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ApproveRequest</display-name>
+    <servlet-name>ApproveRequest</servlet-name>
+    <servlet-class>com.revature.servlets.ApproveRequest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApproveRequest</servlet-name>
+    <url-pattern>/ApproveRequest</url-pattern>
+  </servlet-mapping>
 </web-app>

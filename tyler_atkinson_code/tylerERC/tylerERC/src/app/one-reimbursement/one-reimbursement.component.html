@@ -11,7 +11,7 @@
       </div>
     
       <hr class="my-4">
-    <p>Please Approve or Deny Requests In Accordance with Company Poicies</p>
+    <p>Please Approve or Deny Requests In Accordance with Company Policies</p>
   
     <div *ngIf='reimbursements'class ="shadow-lg p-3 mb-5 bg-white rounded">
   
@@ -39,15 +39,15 @@
             {{ reim.rq_status_id }}
           </div>
   
-  
+          {{clickMessage}}
           <br>
          
           <div class="row">
             <div class="col center-block text-center">
-              <button class="btn btn-outline-success shadow-lg p-3 mb-5 bg-white rounded" id="btn1" (click)="logged1(reim.r_id)">Approve Request</button>
+              <button class="btn btn-outline-success shadow-lg p-3 mb-5 bg-white rounded" id="btn1" (click)="logged1(reim)">Approve Request</button>
             </div>
             <div class="col center-block text-center">
-              <button class="btn btn-outline-danger shadow-lg p-3 mb-5 bg-white rounded" (click)="logged2(reim.r_id)">Deny Request</button>
+              <button class="btn btn-outline-danger shadow-lg p-3 mb-5 bg-white rounded" (click)="logged2(reim)">Deny Request</button>
             </div>
           </div>
         

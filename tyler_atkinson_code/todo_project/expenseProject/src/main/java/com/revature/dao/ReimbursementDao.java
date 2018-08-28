@@ -20,6 +20,7 @@ public interface ReimbursementDao {
 	public boolean addReimbursement(int emp_u_id, int mgr_u_id,
 			double amt, String description, int rq_type_id, int rq_status_id );     //add input data types
 	
+	public int changeStatus(int rq_status_id, int r_id);
 	
 	//DELETE
 

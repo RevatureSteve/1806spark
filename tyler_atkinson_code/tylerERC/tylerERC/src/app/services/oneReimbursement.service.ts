@@ -20,4 +20,7 @@ export class ReimbursementListService {
     }
 
 
+    updateReimbursement(request:Reimbursement):Observable <Reimbursement>{
+    return this.httpClient.post<Reimbursement>('http://localhost:8080/expenseProject/ApproveRequest',request);
+    }
 }
