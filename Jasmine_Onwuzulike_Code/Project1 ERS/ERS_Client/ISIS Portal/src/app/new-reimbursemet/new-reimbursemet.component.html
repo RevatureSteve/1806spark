@@ -1,4 +1,8 @@
 <div id="emp_background">
+  <br>
+  <br>
+  <br>
+  <br>
   <h1>Employee New Reimbursement</h1>
   <div id="sidenav">
       <a routerLink="/employee" id="link">Home</a>
@@ -20,7 +24,10 @@
         <input [(ngModel)] ="rDescription" type="text" placeholder="Description" required>
         <label>Enter '1' for Trainning, '2' for 'Lodging/Food, '3' for Travel or '4' for Gadgets</label>
         <input [(ngModel)] ="rType" type="number" placeholder="Request Type" required>
-        <button class="btn btn-primary" (click) = "start()">Create Reimbursement</button>
+        <br>
+        <button type="button" routerLink = "/upload" class="btn btn-primary">Upload Image</button>
+        <br>
+        <button id="create" class="btn btn-primary" (click) = "start()">Create Reimbursement</button>
       </div>
     </div>
   </div>

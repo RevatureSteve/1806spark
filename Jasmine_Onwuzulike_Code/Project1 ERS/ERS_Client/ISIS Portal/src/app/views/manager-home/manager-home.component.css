@@ -7,7 +7,6 @@ h1 {
 #link {
     padding: 32px;
     text-decoration: none;
-    display: block;
     transition: 0.3s;
     color: rgb(0, 0, 77);
     font-family: 'Press Start 2P', cursive;
@@ -29,5 +28,9 @@ h1 {
  img {
     width: 18em;
     height: 18em;
-    float: right;
+    margin-left: 30px;
+    margin-right: 200px;
+    margin-top: 30px;
+    border: 2px solid rgb(0, 0, 77);
+
 }

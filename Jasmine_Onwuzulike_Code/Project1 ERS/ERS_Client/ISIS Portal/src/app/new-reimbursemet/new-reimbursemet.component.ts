@@ -31,12 +31,16 @@ rb: any;
     this.createReimmbursement(this.amount, this.rDescription, this.final.empId, this.rType);
  }
     createReimmbursement(amount: number, rDesription: string, uId, rType: number) {
-      if (this.rType > 4 || this.rType < 0) {
-        alert("Request type must be 1, 2, 3, or 4. Try agin.")
+      if (this.amount < 0 && this.rType > 4 || this.rType< 0 ) {
+        alert("Please enter a non negative amount and enter a valid Request type");
+      }
+      else if (this.rType > 4 || this.rType <= 0) {
+        alert("Request type must be 1, 2, 3, or 4. Try agin.");
       }
       else if (this.amount < 0  || uId == null) {
-        alert("Please try agaon with a non negative number.")
+        alert("Please try agaon with a non negative amount.");
       }
+     
     this.httpClient.post('http://localhost:8080/ERS/NewReimbursementServlet?amount=' + this.amount + '&rDescription=' + this.rDescription + '&empId=' + uId+ '&rTypeId=' + this.rType , this.rb)
   .subscribe(data => {
     this.rb = data;
@@ -45,9 +49,12 @@ rb: any;
     let c = JSON.parse(this.rb);
     console.log(c);
 
-    if (c != null ) {
+    if (c != 0 ) {
       alert("Your request has been submitted successfully. ");
       this.router.navigate(['agnet/reimbursements']);
+    }
+    else {
+      this.router.navigate(['new/reimbursement']);
     }
   
   })

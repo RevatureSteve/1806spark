@@ -23,7 +23,6 @@ h1 {
     font-family: 'Press Start 2P', cursive;
     text-align: center;
     font-size: 30px;   
-    
     margin-bottom: 30px;
    
 }
@@ -44,16 +43,21 @@ h5 {
 button {
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
+    margin: 10px;
 }
 
 label {
     display: block;
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
 }
 .card {
     margin-top: 20px;
     margin-left: 200px;;
     margin-right: auto;
     width: 40%;
+    height: 350px;
+    overflow: scroll;
 }
