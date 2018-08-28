@@ -60,7 +60,13 @@ public class NewReimburement extends HttpServlet {
 		node.get("description").textValue(),
 		node.get("Rq_Type_Id")*/
 		
-		reimb = new Reimbursement();
+		//grabbing my input and placing them into here as JSON data
+			//note: make sure these
+		reimb = new Reimbursement(
+				node.get("empUserId").intValue(), 
+				node.get("amount").doubleValue(),
+				node.get("description").textValue(),
+				node.get("requestTypeId").intValue());
 		
 		businessLogic.newReimbursement(reimb);
 	}

@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.revature.domain.Reimbursement;
-import com.revature.domain.Users;
 import com.revature.util.SetConnectionPropertiesUtil;
 
 //import oracle.sql.TIMESTAMP;
@@ -27,8 +26,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection()) {
 			System.err.println("[LOG]---ReimbursementDao try/catch---newReimbursements() connection successful");
 			
-			String sql = "INSERT INTO reimbursement ( Emp_U_Id, Amt, Description, Rq_Type_Id)\r\n" + 
-					"VALUES(?,?,?,?)";
+			String sql = "INSERT INTO reimbursement (Emp_U_Id, Amt, Description, Rq_Type_Id) VALUES(?, ?, ?, ?)";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, reimb.getEmpUserId());
@@ -36,6 +34,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 			ps.setString(3, reimb.getDescription());
 			ps.setInt(4, reimb.getRequestTypeId());
 			
+			System.out.println(reimb.getEmpUserId());
 			rowAffected = ps.executeUpdate();
 			
 			
