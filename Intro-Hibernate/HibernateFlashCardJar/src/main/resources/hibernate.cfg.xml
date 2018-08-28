@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- XSD vs DTD -->
+<!-- 
+	XSD: XML Schema Definition
+	DTD: Document Type Definition
+	
+	These (xsd & dtd) provide validation for whatever type of 
+		xml file you are trying to write
+			e.g. web.xml
+				 hibernate.cfg.xml 
+				 pom.xml etc
+	
+	Well-formed vs Valid XML
+	well-formed: syntax is correct...
+	Valid: is checked by an XSD or DTD file
+ -->
+ <!DOCTYPE hibernate-configuration PUBLIC
+		"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+		"http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+	<!-- The main object of Hibernate: SessionFactory -->
+	<session-factory>
+		<!-- JDBC API stuff -->
+		<property name="hibernate.connection.username">flashcard_db</property>
+		<property name="hibernate.connection.password">p4ssw0rd</property>
+		<property name="hibernate.connection.url">jdbc:oracle:thin:@octocat.ccwgu9dykdjd.us-west-2.rds.amazonaws.com:1521:ORCL</property>
+		<property name="hibernate.connection.driver_class">oracle.jdbc.driver.OracleDriver</property>
+		
+		<!-- Additional Hibernate awesomeness -->
+		<property name="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</property>
+		<property name="hibernate.show_sql">true</property>
+		<property name="hibernate.format_sql">true</property>
+		<!-- Generators all Java Objects to the DB -->
+		<property name="hibernate.hbm2ddl.auto">none</property>
+		
+		<!-- Tell SessionFactory WHERE to find the POJO mappings -->
+			<!-- 
+				POJO Mappings can also be configured using 
+					XML or @s
+				We are going to use JPA @s
+				JPA: Java Persistence API Annotations
+			 -->
+		<!-- <mapping file="this would location of HBM.xml" -->
+		<mapping class="com.revature.domain.FlashCard" />
+		<mapping class="com.revature.domain.FcUser" />
+	</session-factory>
+</hibernate-configuration>
+
+
+
+
+
+
+
+
+
