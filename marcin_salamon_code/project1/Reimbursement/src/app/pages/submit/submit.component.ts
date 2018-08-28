@@ -24,7 +24,7 @@ export class SubmitComponent implements OnInit {
     if (!amt) {
       this.success = 0;
     } else {
-      // this.submit.submit(amt, description, rqId, this.byteFile).subscribe(r => this.success = r);
+      this.submit.submit(amt, description, rqId, this.byteFile).subscribe(r => this.success = r);
     }
   }
 
