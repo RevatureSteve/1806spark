@@ -83,4 +83,7 @@ public class BusinessLogic {
 		return reimbursementDao.newReimbursement(reimb);
 	}
 	
+	public List<Reimbursement> getReimbursementsById(int rqStatusId,int empUId) {
+		return reimbursementDao.getReimbursementsById(rqStatusId, empUId);
+	}
 }

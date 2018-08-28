@@ -14,7 +14,7 @@ public interface ReimbursementDao {
 	public List<Reimbursement> getReimbursements();
 	public List<Reimbursement> getPendingReimbursements();
 	public List<Reimbursement> getApprovedReimbursements();
-	
+	public List<Reimbursement> getReimbursementsById(int rqStatusId, int empUId);
 	//Update
 	
 	//Delete

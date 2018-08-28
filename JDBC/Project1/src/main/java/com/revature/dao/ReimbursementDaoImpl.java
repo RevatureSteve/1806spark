@@ -169,5 +169,44 @@ public class ReimbursementDaoImpl implements ReimbursementDao{
 		System.err.println("[LOG]---ReimbursementDao if---getApprovedReimbursements() returning the list of Approved Reimbursements");
 		return approvedReimbs;
 	}
+
+
+
+	@Override
+	public List<Reimbursement> getReimbursementsById(int rqStatusId,int empUId) {
+		List<Reimbursement> userReimbs = new ArrayList<>();
+		
+		try (Connection conn = SetConnectionPropertiesUtil.getConnection()){
+			System.err.println("[LOG]---ReimbursementDao try/catch---getReimbursementsById() connection successful");
+			String sql = "SELECT * FROM Reimbursement\n" + 
+					"INNER JOIN Rq_Status \n" + 
+					"    ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id\n" + 
+					"INNER JOIN Rq_Type\n" + 
+					"    ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Status_Id\n" + 
+					"WHERE Reimbursement.Rq_Status_Id = ? AND Reimbursement.Emp_U_Id = ?";
+			
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, rqStatusId);
+			ps.setInt(2, empUId);
+			ResultSet rs = ps.executeQuery();
+			System.err.println("[LOG]---ReimbursementDao ResultSet---getReimbursementsById()");
+			
+			while (rs.next()) {
+				System.err.println("[LOG]---ReimbursementDao if---getReimbursementsById()");
+				Reimbursement approvedReimb = new Reimbursement(rs.getInt("R_Id"), rs.getInt("Emp_U_Id"), rs.getInt("Mgr_U_Id"), 
+						rs.getDouble("Amt"), rs.getString("Description"), null, null, rs.getInt("Rq_Type_Id"), 
+						rs.getString("Rq_Type"),rs.getInt("Rq_Status_Id"), rs.getString("Rq_Status"));
+				userReimbs.addAll(userReimbs);
+			}
+		} catch (FileNotFoundException e) {
+			e.printStackTrace();
+		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		System.err.println("[LOG]---ReimbursementDao if---getReimbursementsById() returning the list of Reimbursements");
+		return userReimbs;
+	}
 	
 }

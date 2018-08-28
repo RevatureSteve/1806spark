@@ -23,7 +23,7 @@ export class NewReimbursementComponent implements OnInit {
     console.log(amount);
     console.log(description);
     console.log(requestTypeId);
-    this.reimbursementService.createNewReimbursement(empUserId, amount, description, requestTypeId)
+    this.reimbursementService.createNewReimbursement(empUserId, Number.parseInt(amount), description, Number.parseInt(requestTypeId))
       .subscribe(create => {
         console.log('reimbursement submitted');
       });

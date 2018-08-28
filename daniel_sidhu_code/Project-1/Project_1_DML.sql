@@ -199,7 +199,15 @@ INNER JOIN Rq_Status
     ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id
 INNER JOIN Rq_Type
     ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Status_Id
-WHERE Reimbursement.Rq_Status_Id = 1; 
+WHERE Reimbursement.Rq_Status_Id = 1;
+
+--For my getPendingReimbursementsById()
+SELECT * FROM Reimbursement
+INNER JOIN Rq_Status 
+    ON Rq_Status.Rq_Status_Id = Reimbursement.Rq_Status_Id
+INNER JOIN Rq_Type
+    ON Rq_Type.Rq_Type_Id = Reimbursement.Rq_Status_Id
+WHERE Reimbursement.Rq_Status_Id = 1 AND Reimbursement.Emp_U_Id = 35;
 
 --For my getApprovedReimbursements()
 SELECT * FROM Reimbursement

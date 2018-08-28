@@ -24,9 +24,13 @@ export class ReimbursementService {
     return this.httpClient.get<Reimbursement[]>('http://localhost:8080/Project1/ApprovedReimbursements');
   }
 
-  // unfinished code to get prnding reimbursements by ID
+  // finished code to get prnding reimbursements by ID
   getPendingReimbursementsById(id) {
-  //  return this.httpClient.get<Reimbursement[]>();
+    return this.httpClient.get<Reimbursement[]>('http://localhost:8080/Project1/PendingReimbursements');
+  }
+
+  getApprovedReimbursementsById(id) {
+    return this.httpClient.get<Reimbursement[]>('http://localhost:8080/Project1/ApprovedReimbursements');
   }
 
   createNewReimbursement(empUserId, amount, description, requestTypeId) {

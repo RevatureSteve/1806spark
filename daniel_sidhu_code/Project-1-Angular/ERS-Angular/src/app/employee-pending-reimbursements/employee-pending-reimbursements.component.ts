@@ -1,8 +1,7 @@
-import { CurrentUserService } from './../services/current-user.service';
 import { ReimbursementService } from './../services/reimbursement.service';
-import { Users } from './../models/users';
+import { Reimbursement } from './../models/reimbursement';
 import { Component, OnInit } from '@angular/core';
-import { Reimbursement } from '../models/reimbursement';
+import { CurrentUserService } from '../services/current-user.service';
 
 @Component({
   selector: 'app-employee-pending-reimbursements',
@@ -11,18 +10,23 @@ import { Reimbursement } from '../models/reimbursement';
 })
 export class EmployeePendingReimbursementsComponent implements OnInit {
 
-  user: Users;
+  reimbursements: Reimbursement[] = [];
 
-  reimbursement: Reimbursement;
-
-  constructor(private reimbursementService: ReimbursementService, private currentUserService: CurrentUserService) { }
+  constructor(private reimbursementService: ReimbursementService, private currentUser: CurrentUserService) { }
 
   ngOnInit() {
-   // this.user = this.currentUser.getCurrentUser();
-    this.getEmployeeReimbursements();
+    this.getPendingReimbursements();
   }
 
-  getEmployeeReimbursements() {
-   // const id = this.user.getEmployeeReimbursements(this.user.userId).sub
+  getPendingReimbursements() {
+    this.reimbursementService.getPendingReimbursements()
+      .subscribe(reimbursements => {
+        reimbursements.forEach(reimbursement => {
+          if (this.currentUser.getCurrentUser().userId === reimbursement.empUserId) {
+            this.reimbursements.push(reimbursement);
+          }
+        });
+      });
   }
+
 }
