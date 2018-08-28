@@ -23,6 +23,7 @@ import { ManagerAllReimbursementsComponent } from './manager-all-reimbursements/
 import { ManagerPendingReimbursementsComponent } from './manager-pending-reimbursements/manager-pending-reimbursements.component';
 import { ManagerApprovedReimbursementsComponent } from './manager-approved-reimbursements/manager-approved-reimbursements.component';
 import { EmployeePendingReimbursementsComponent } from './employee-pending-reimbursements/employee-pending-reimbursements.component';
+import { NewReimbursementComponent } from './new-reimbursement/new-reimbursement.component';
 
 
 @NgModule({
@@ -39,7 +40,8 @@ import { EmployeePendingReimbursementsComponent } from './employee-pending-reimb
     ManagerAllReimbursementsComponent,
     ManagerPendingReimbursementsComponent,
     ManagerApprovedReimbursementsComponent,
-    EmployeePendingReimbursementsComponent
+    EmployeePendingReimbursementsComponent,
+    NewReimbursementComponent
   ],
   imports: [
     BrowserModule,

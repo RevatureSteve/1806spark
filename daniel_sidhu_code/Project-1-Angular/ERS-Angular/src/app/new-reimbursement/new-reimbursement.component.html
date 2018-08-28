@@ -1,0 +1,24 @@
+<app-employee>
+</app-employee>
+<form>
+  <div class="form-group">
+    <label for="exampleInputEmail1">Description</label>
+    <input type="description" class="form-control" id="Description" aria-describedby="emailHelp" #description placeholder="Enter description">
+  </div>
+  <div class="form-group">
+    <label for="exampleInputPassword1">Amount</label>
+    <input type="amount" class="form-control" id="Amount" #amount placeholder="Enter amount">
+  </div>
+  <div>
+    <label for="exampleInputPassword1">Request Type</label>
+    <select #requestTypeId class="form-control">
+      <option value="1">select</option>
+      <option value="2">Weapons</option>
+      <option value="3">Ammunition</option>
+      <option value="4">Health</option>
+      <option value="5">Misc</option>
+    </select>
+  </div>
+  <br>
+  <button type="submit" class="btn btn-primary" (click)="submitNewReimbursement(empUserId, amount.value, description.value, requestTypeId.value)">Submit</button>
+</form>

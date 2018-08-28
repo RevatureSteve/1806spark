@@ -5,11 +5,12 @@ import { ManagerViewEmployeesComponent } from './manager-view-employees/manager-
 import { EmployeeComponent } from './employee/employee.component';
 import { ManagerComponent } from './manager/manager.component';
 import { NgModule } from '@angular/core';
-import {RouterModule, Routes} from '@angular/router';
+import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
 import { EmployeeProfileComponent } from './employee-profile/employee-profile.component';
 import { ManagerPendingReimbursementsComponent } from './manager-pending-reimbursements/manager-pending-reimbursements.component';
+import { NewReimbursementComponent } from './new-reimbursement/new-reimbursement.component';
 
 
 export const routes: Routes = [
@@ -24,6 +25,7 @@ export const routes: Routes = [
     {path: 'manager/pending/reimbursementlist', component: ManagerPendingReimbursementsComponent},
     {path: 'manager/approved/reimbursementlist', component: ManagerApprovedReimbursementsComponent},
     {path: 'manager/employeeslist', component: ManagerViewEmployeesComponent},
+    {path: 'employee/newReimbursement', component: NewReimbursementComponent},
     {path: '**', redirectTo: 'home'}
 ];
 
