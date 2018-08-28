@@ -19,3 +19,16 @@
 	opacity: 0.7;
 	float: right;
 }
+
+.navli {
+	padding: 8px 14px;
+    text-transform: uppercase;
+    font-weight: 650;
+	font-size: 14px;
+	text-decoration: none;
+	color: #000;
+}
+
+.underline:hover {
+	border-bottom: 2px solid #ff8600;
+}

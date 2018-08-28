@@ -18,6 +18,7 @@ import { CreateReimbursementComponent } from './components/create-reimbursement/
 import { LandingComponent } from './components/landing/landing.component';
 import { ManagerReimbursementComponent } from './components/manager-reimbursement/manager-reimbursement.component';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
+import { ProfileComponent } from './components/profile/profile.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +29,8 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
     ReimbursementsComponent,
     CreateReimbursementComponent,
     LandingComponent,
-    ManagerReimbursementComponent
+    ManagerReimbursementComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,

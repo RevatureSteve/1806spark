@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   apiUrl: 'http://localhost:8080/ERS_project/'
-  // apiUrl: 'http://localhost:8080/ProjectOne/'
+  // apiUrl: 'http://ec2-18-223-21-41.us-east-2.compute.amazonaws.com:8090/ERS_project-0.0.1-SNAPSHOT/'
 };
 
 /*

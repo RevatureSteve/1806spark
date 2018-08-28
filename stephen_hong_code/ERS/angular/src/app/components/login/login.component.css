@@ -151,7 +151,7 @@ html, .alignlogin {
 	margin-bottom: 15px;
 	color: #fff;
 	cursor: pointer;
-	background-color: #d7500d;
+	background-color: #dd0031;
 	display: inline-block;
 	text-align: center;
 	vertical-align: middle;
@@ -169,7 +169,7 @@ html, .alignlogin {
 }
 
 .registerbtn:hover {
-	background-color: rgb(242, 105, 37);
+	background-color: #c3002f;
 }
 
 .header {

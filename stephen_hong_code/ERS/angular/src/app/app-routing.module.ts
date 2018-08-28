@@ -7,6 +7,7 @@ import { ReimbursementsComponent } from './components/reimbursements/reimburseme
 import { CreateReimbursementComponent } from './components/create-reimbursement/create-reimbursement.component';
 import { LandingComponent } from './components/landing/landing.component';
 import { ManagerReimbursementComponent } from './components/manager-reimbursement/manager-reimbursement.component';
+import { ProfileComponent } from './components/profile/profile.component';
 
 const ROUTES: Routes = [
     {
@@ -33,6 +34,10 @@ const ROUTES: Routes = [
     {
         path: 'manager',
         component: ManagerReimbursementComponent
+    },
+    {
+        path: 'profile',
+        component: ProfileComponent
     }
 ];
 

@@ -113,7 +113,7 @@ public class ERSService {
 			return null;
 		}
 	}
-
+	//check
 	public String bytesToHex(byte[] bytes) {
 		System.out.println("[LOG] - In ERSService.bytesToHex()");
 		char[] hexArray = "0123456789ABCDEF".toCharArray();
@@ -125,7 +125,7 @@ public class ERSService {
 		}
 		return new String(hexChars);
 	}
-
+	//check
 	private static class RandomString {
 		//Generate a random string.
 		public String nextString() {

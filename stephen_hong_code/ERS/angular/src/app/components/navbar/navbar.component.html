@@ -9,6 +9,8 @@
 				<div class="navbar-nav">
 					<a *ngIf="this.loggedUser == null" class="nav-item nav-link" id="toLogin" routerLink="login">Login</a>
 					<a *ngIf="this.loggedUser == null" class="nav-item nav-link" id="toRegister" routerLink="register">Register</a>
+					<a class="navli" routerLink="profile"><span class="underline">Profile</span></a>
+					<!-- <a *ngIf="this.loggedUser.role == 2" class="navli"><span class="underline">Register Employee</span></a> -->
 				</div>
 			</div>
 			<a *ngIf="this.loggedUser != null" class="navbtn" id="toLogout" (click)="logout()" routerLink=""><fa name="sign-out"></fa></a>
