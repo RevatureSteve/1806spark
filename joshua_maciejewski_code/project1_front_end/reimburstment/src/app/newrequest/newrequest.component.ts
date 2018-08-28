@@ -29,6 +29,8 @@ export class NewrequestComponent implements OnInit {
     this.reimbursementService.createReimbursement(empUId, amt, description, rqTypeId, img)
     .subscribe(reim => console.log(reim));
 
+    location.reload();
+
     
       }
 }

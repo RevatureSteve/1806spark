@@ -1,8 +1,41 @@
-    .navbar navbar-expand-lg navbar-light bg-light {
+#logout {
     color: darkred;
-    background-color: darkred;
-    } 
+    float: right;
+}
+#home {
+    color: darkred;
+    
+}
+#pending {
+    color: darkred;
+}
+#resolved {
+    color: darkred;
+}
+#edit {
+    color: darkred;
+}
+#request {
+    color: darkred;
+}
 
-    /* .navbar-brand {
-        background-color: darkred;
-    }  */
+#logout:hover {
+    color: forestgreen;
+    float: right;
+}
+#home:hover {
+    color: forestgreen;
+    
+}
+#pending:hover {
+    color: forestgreen;
+}
+#resolved:hover {
+    color: forestgreen;
+}
+#edit:hover {
+    color: forestgreen;
+}
+#request:hover {
+    color: forestgreen;
+}

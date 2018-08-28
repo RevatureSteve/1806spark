@@ -1,6 +1,8 @@
 
 <form class="form" (ngSubmit)="login()">
-  <input type="text" name="email" [(ngModel)]="input.email" placeholder="email"> <br><br>
-  <input type="password"name="password" [(ngModel)]="input.password" placeholder="password"> <br> <br>
+  <div id="input">
+  <input class="input" type="text" name="email" [(ngModel)]="input.email" placeholder="email"> <br><br>
+  <input class ="input" type="password"name="password" [(ngModel)]="input.password" placeholder="password"> <br> <br>
   <button id="button" class="btn btn-primary" type="submit">Enter</button>
+</div>
   </form>

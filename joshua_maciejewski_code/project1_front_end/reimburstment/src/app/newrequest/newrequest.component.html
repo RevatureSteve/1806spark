@@ -5,41 +5,23 @@
     <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="name@example.com">
   </div> -->
   <div class="form-group">
-    <label for="exampleFormControlSelect1">What do you need more of?</label>
+    <label for="exampleFormControlSelect1"></label>
     <select #rqTypeId class="form-control" id="exampleFormControlSelect1">
+      <option>Select what you need!</option>
       <option value= "1">Candy</option>
       <option value= "2">Candy Canes</option>
       <option value="3">Candy Corns</option>
       <option value="4">Syrup</option>
     </select>
   </div>
-  <label id="label" for="amount">How many pounds do you need?</label>
-  <input class="form-control" type="number" name="amount" id="amount" min="0" #amt >
+  <label id="label" for="amount"></label>
+  <input class="form-control" type="number" name="amount" id="amount" min="0" #amt placeholder="How many pounds?" >
   <div class="form-group">
-    <label for="exampleFormControlTextarea1">What do you need this for?</label>
-    <textarea #description class="form-control" id="exampleFormControlTextarea1" rows="2"></textarea>
+    <label for="exampleFormControlTextarea1"></label>
+    <textarea #description class="form-control" id="exampleFormControlTextarea1" rows="2" placeholder="Add a description!"></textarea>
   </div>
   <div id = 'btn'>
     <input (click)="newReim(amt.value, description.value, rqTypeId.value)" class="formBtn" id = "editProfileBtn" type="button" value="Submit!" style="width: 300px;">
 </div>
 </form>
 
-<!-- <div class="form-group">
-  <input class="form-control" type="number" name="amount" id="amount" #amount placeholder="Amount">
-  <input class="form-control" type="text" name="description" id="description" #description placeholder="Description">
-  <select #sel class="form-control" name="type" id="type">
-    <option value="1">Dining</option>
-    <option value="2">Lodging</option>
-    <option value="3">Certification</option>
-    <option value="4">Travel</option>
-    <option value="5">Other</option>
-  </select>
-  <button class="btn btn-outline-success mx-auto" type="submit" (click)='submitNewReimbursement(amount.value, description.value, sel.value)'>Submit Reimbursement</button>
-
-  <div *ngIf="success===1" class="alert alert-success alert-dismissible fade show" role="alert">
-      Reimbursement submitted!
-      <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-        <span aria-hidden="true" (click)=successClear()>&times;</span>
-      </button>
-    </div>
-</div> -->

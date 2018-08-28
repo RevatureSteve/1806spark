@@ -1,9 +1,10 @@
 .list-group {
     background-image : url("https://d2v9y0dukr6mq2.cloudfront.net/video/thumbnail/okUindP/christmas-tree-background-cartoon-christmas-background-with-christmas-tree-and-snow-looping-animation_ejhrr4x2__F0000.png");
     margin: auto;
+    margin-top: 5%;
     width: 50%;
     border: 3px solid red;
-    padding: 100px;
+    padding: 5%;
 
     
 }
@@ -15,12 +16,20 @@
 
 .navbar-brand {
     font-size: 30px;
-    color: red;
+    color: darkred;
+  
+}
+
+.navbar-brand:hover {
+    font-size: 30px;
+    color: forestgreen;
   
 }
 
 
 .content {
-    padding-left: -100px;
-    padding-bottom: 100px;
+    background-color: white;
+    margin: auto;
+    /* padding-left: -100px; */
+    padding-bottom: 5%;
 }

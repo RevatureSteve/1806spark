@@ -1,14 +1,17 @@
 <app-navbar></app-navbar>
-<form class="form" id = 'profile'>
-  First name:
-  <input class="input profileInput" id = 'fname' #fname type="text" placeholder={{this.user.fname}} ><br>
-  Last name:
-  <input class="input profileInput" id = 'lname' #lname type="text" placeholder={{this.user.lname}} ><br>
-  Email:
-  <input class="input profileInput" id = 'email' #email type="text" placeholder={{this.user.email}} ><br>
+<form class="form">
+  <div id="inputs">
+  First name: 
+  <input class="input profileInput" id = 'fname' #fname type="text" value={{this.user.fname}} ><br>
+  Last name: 
+  <input class="input profileInput" id = 'lname' #lname type="text" value={{this.user.lname}} ><br>
+  Your Email: 
+  <input class="input profileInput" id = 'email' #email type="text" value={{this.user.email}} ><br>
   Password: 
-  <input class="input profileInput" id = 'password' #password type="text" placeholder={{this.user.password}}  ><br>
-   <div id = 'btn'>
+  <input class="input profileInput" id = 'password' #password type="text" value={{this.user.password}}  ><br><br>
+  
+  <div id = 'btn'>
       <input (click)="updateUser(email.value, password.value, fname.value, lname.value)" class="formBtn" id = "editProfileBtn" type="button" value="Edit Profile">
   </div>
+</div>
 </form>

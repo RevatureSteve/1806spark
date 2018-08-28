@@ -1,18 +1,44 @@
 .form {
-    color:forestgreen;
-    border-color: darkred;
+    color: darkred;
+    font-size: 16px;
+    background-image : url("http://www.pptback.com/uploads/light-colour-xmas-backgrounds-powerpoint.jpg");
+    margin: auto;
+    width: 50%;
+    border: 3px solid darkred;
+    margin-top: 5%;
 }
 
-/* .input profileInput {
+#inputs {
+    margin: auto;
+    padding: 10%;
+    font-size: 30px;
+}
+.input profileInput {
     color:forestgreen;
     border-color: darkred;
     
-} */
+}
+/* #editProfileBtn {
+    color:forestgreen;
+border-color: darkred;
+margin: auto;
+height: 35px;
+width: 50%;
+}  */
 
 .formBtn {
     color:white;
-    border-color: darkred;
-    width: 180px;
     background-color: forestgreen;
-    font-size: 20px;
+    margin: auto;
+    height: 45px;
+    width: 95%;
 }
+
+.formBtn:hover {
+    color:white;
+    background-color: darkred;
+    margin: auto;
+    height: 45px;
+    width: 95%;
+}
+

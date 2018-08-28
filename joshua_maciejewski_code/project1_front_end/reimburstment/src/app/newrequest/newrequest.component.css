@@ -16,24 +16,29 @@
 #btn {
     color:forestgreen;
     border-color: darkred;
-    width: 180px;
+    margin: auto;
+    height: 35px;
     }
     /* color: white;
     background-color: forestgreen; */
 
 
 .form {
-    color:forestgreen;
-    border-color: darkred;
+    background-image : url("https://png.pngtree.com/thumb_back/fh260/back_pic/00/14/65/61566573e562dc0.jpg");
+    margin: auto;
+    width: 30%;
+    border: 3px solid red;
+    padding: 55px;
+    margin-top: 5%;
     /* color: white;
     background-color: forestgreen; */
 }
 
 .formBtn {
     color:white;
-    border-color: darkred;
-    width: 180px;
-    background-color: forestgreen
+    background-color: forestgreen;
+    margin: auto;
+    height: 45px;
 }
 
 #label {

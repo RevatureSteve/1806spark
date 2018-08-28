@@ -42,8 +42,9 @@ export class ManagerpendingComponent implements OnInit {
 
     this.reimbursementService.changeReimStatus(rId, mgrUId, rqStatusId)
     .subscribe(reimbursements => this.reim = reimbursements);
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
-    this.router.navigate(['managerpending']));
+    location.reload();
+    // this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+    // this.router.navigate(['managerpending']));
 
   }
 

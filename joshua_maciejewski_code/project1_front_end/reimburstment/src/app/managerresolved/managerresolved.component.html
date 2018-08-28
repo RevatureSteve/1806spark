@@ -8,6 +8,8 @@
       <th scope="col">Amount</th>
       <th scope="col">Status</th>
       <th scope="col">Submission Time</th>
+      <th scope="col">Manager Name</th>
+      <th scope="col">Employee Name</th>
     </tr>
   </thead>
   <tbody>
@@ -18,6 +20,8 @@
       <td>{{r.amt}}</td>
       <td>{{r.rqStatus}}</td>
       <td>{{r.timesubmission | date: 'short'}}</td>
+      <td>{{r.mgrFName + " " + r.mgrLName}}</td>
+      <td>{{r.empFName + " " + r.empLName}}</td>
     </tr>
 
   </tbody>

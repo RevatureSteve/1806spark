@@ -34,13 +34,9 @@ export class EditprofileComponent implements OnInit {
     this.userService.updateUser(u_id, email, password, fname, lname)
     .subscribe(user => this.user = user);
     // this.currentUser.setCurrentUser(this.user);
+    location.reload();
   }
 
 }
 
-// updateUser(email, fname, lname) {
-//   const id = this.user.u_id;
-//   this.userService.updateUser(id, email, fname, lname)
-//     .subscribe(user => this.user = user);
-//   this.currentUser.setCurrentUser(this.user);
-// }
+

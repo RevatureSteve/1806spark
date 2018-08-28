@@ -7,11 +7,11 @@ INSERT INTO position (pos_id, pos_type) VALUES (1, 'Employee');
 INSERT INTO position (pos_id, pos_type) VALUES (2, 'Manager');
 
 INSERT INTO users (u_id, email, password, fname, lname, pos_id) 
-    VALUES (1, 'email@email.com', 'password1', 'Joshua', 'Mac', 1);
+    VALUES (1, 'choochoo@northpole.com', 'password1', 'Choo Choo', 'The Elf', 1);
 INSERT INTO users (u_id, email, password, fname, lname, pos_id) 
-    VALUES (3, 'myemail@email.com', 'password3', 'Tim', 'Smith', 1);
+    VALUES (3, 'kippy@northpole.com', 'password3', 'Kippy', 'The Elf', 1);
 INSERT INTO users (u_id, email, password, fname, lname, pos_id) 
-    VALUES (2, 'boss@email.com', 'password2', 'Boss', 'Man', 2);
+    VALUES (2, 'slippy@northpole.com', 'password2', 'Slippy', 'The Elf', 1);
     
 INSERT INTO users (u_id, email, password, fname, lname, pos_id) 
     VALUES (4, 'buddy@northpole.com', 'buddy', 'Buddy', 'The Elf', 1);
@@ -95,7 +95,7 @@ commit;
 
 
 
-
+commit;
 
 
 
