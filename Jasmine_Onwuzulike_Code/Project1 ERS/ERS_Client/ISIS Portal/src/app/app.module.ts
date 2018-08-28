@@ -17,6 +17,7 @@ import { AllReimbursementsComponent } from './views/all-reimbursements/all-reimb
 import { NewPasswordComponent } from './new-password/new-password.component';
 import { NewReimbursemetComponent } from './new-reimbursemet/new-reimbursemet.component';
 import { UpdateReimbursementComponent } from './update-reimbursement/update-reimbursement.component';
+import { UploadFileComponent } from './upload-file/upload-file.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { UpdateReimbursementComponent } from './update-reimbursement/update-reim
     NewPasswordComponent,
     NewReimbursemetComponent,
     UpdateReimbursementComponent,
+    UploadFileComponent,
  
 
   ],

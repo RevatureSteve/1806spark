@@ -1,14 +1,17 @@
 package com.revature.dao;
 
+import java.awt.image.BufferedImage;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
-import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
+
+import javax.imageio.ImageIO;
 
 import com.revature.pojos.Reimbursement;
 import com.revature.pojos.Users;
@@ -176,6 +179,26 @@ public class EmployeeImpl implements EmpDao{
 			e.printStackTrace();
 		}
 		return pass;
+	}
+
+	@Override
+	public String uploadReciept(int rId, BufferedImage image) {
+		String img = "/SIS/src/main/resources/Img/invoice.png";
+		String a = null;
+		try {
+			BufferedImage im = ImageIO.read(new File(img));
+			if (im != null) {
+				 a = "Yes";
+				System.out.println(s);
+			}
+			else {
+				a = "No";
+				System.out.println(a);
+			}
+		} catch (IOException e) {
+			System.out.println("File not found.");
+		}
+		return a;
 	}
 	
 	

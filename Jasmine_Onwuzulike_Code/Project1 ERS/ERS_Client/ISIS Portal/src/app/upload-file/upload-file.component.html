@@ -1,0 +1,25 @@
+<div id="emp_background">
+  <br>
+  <br>
+  <h1> Upload a Reimbursement Receipt</h1>
+
+  <div id="sidenav">
+      <a routerLink="/employee" id="link">Home</a>
+      <a routerLink="/agent/profile" id="link">Employee Profile</a>
+      <a routerLink="/agnet/reimbursements" id="link">Employee Reimbursements</a>
+      <a routerLink="/logout" id="link">Logout</a>
+  </div>
+  
+  <div class="card">
+    <h5 class="card-header">Upload an Image</h5>
+    <div class="card-body">
+      <h6 class="card-title">Please upload your receipt image</h6>
+      <div class="card-text" id="e-info">
+        <label>Request Id:</label>
+        <input type="number" [(ngModel)] = "rId">
+        <label>Reimbursement Receipt</label>
+        <input type="file" (change)="onFileChanged($event)">
+      </div>
+      <button class="btn btn-primary">Upload Image</button>
+    </div>
+  </div>

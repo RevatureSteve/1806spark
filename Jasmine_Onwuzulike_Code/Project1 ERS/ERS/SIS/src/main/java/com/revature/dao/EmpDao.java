@@ -1,5 +1,6 @@
 package com.revature.dao;
 
+import java.awt.image.BufferedImage;
 import java.sql.Timestamp;
 import java.util.List;
 
@@ -17,6 +18,8 @@ public interface EmpDao {
 	int updateFirstname(int uId, String firstname);
 	int updateLastName(int uId ,String lasname);
 	int updatePassword(int uId, String email);
+	String uploadReciept(int rId, BufferedImage image);
+	
 	//DELETE
 
 }

@@ -24,9 +24,13 @@ h1 {
      font-family: 'Press Start 2P', cursive;
      font-size: 10px;
  }
+ button {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+ }
  .card {
      margin-top: 20px;
-     margin-left: 200px;;
+     margin-left: 300px;;
      margin-right: auto;
      width: 40%;
  }
@@ -35,6 +39,15 @@ h1 {
      margin-bottom: 10px;
      font-size: 10px;
  }
+ h5 {
+    margin-bottom: 10px;
+    font-family: 'Press Start 2P', cursive;
+ 
+}
+h6 {
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
+}
  label {
      display: block;
  }
@@ -44,13 +57,4 @@ h1 {
     background-size: 100% 85%;
     width: 100em;
     height: 50em;
- }
- h5 {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
-    text-align: center;
- }
- #reset {
-    font-family: 'Press Start 2P', cursive;
-    font-size: 10px;
  }

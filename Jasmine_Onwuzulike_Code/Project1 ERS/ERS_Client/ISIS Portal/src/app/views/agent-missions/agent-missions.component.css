@@ -2,6 +2,7 @@ thead {
     color: white;
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
+   
 }
 td {
     font-family: 'Press Start 2P', cursive;
@@ -12,6 +13,7 @@ td {
 h1 {
     color: white;
     font-family: 'Press Start 2P', cursive;
+    margin-left: 400px;
 }
 
 #link {

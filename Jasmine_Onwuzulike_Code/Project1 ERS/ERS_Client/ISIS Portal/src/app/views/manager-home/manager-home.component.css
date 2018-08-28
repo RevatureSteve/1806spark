@@ -26,3 +26,8 @@ h1 {
  #id {
      background-image: image("../Archer/mallory id.jpg");
  }
+ img {
+    width: 18em;
+    height: 18em;
+    float: right;
+}

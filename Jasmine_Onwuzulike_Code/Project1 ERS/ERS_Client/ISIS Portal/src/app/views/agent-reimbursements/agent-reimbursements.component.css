@@ -39,9 +39,11 @@ td {
 }
 table {
     width: 30%;
-    margin-right: auto;
-    margin-left: auto;
-    padding-top: 40p;
+    float: right;
+    margin-right: 500px;
+    height: 300px;
+    background-color: rgb(12, 111, 177);
+  
 }
 #input {
     margin-right: auto;
@@ -62,4 +64,9 @@ h5 {
     font-family: 'Press Start 2P', cursive;
     font-size: 10px;
     color: white;
+}
+#tt {
+    margin-top: 15px;
+    overflow: auto;
+    height: 300px;
 }

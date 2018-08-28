@@ -19,15 +19,13 @@
       <h2 *ngIf="final.positionId == 2" class="status">Current Status: Employee  </h2>
       <h2 *ngIf="final.positionId == 1" class="status">Current Status: Manager</h2>"
 
-      <!-- <div *ngSwitch = "final.firstname">
-        <img *ngSwicthCase = "Sterling" src = "../Archer/archer id.jpg">
-        <img *ngSwicthCase = "Lana" src = "../Archer/archer id.jpg">
-        <img *ngSwicthCase = "Cyril" src = "../Archer/archer id.jpg">
-        <img *ngSwicthCase = "Pan" src = "../Archer/archer id.jpg">
-        <img *ngSwicthCase = "Cheryl" src = "../Archer/archer id.jpg">
-        <img *ngSwicthCase = "Ray" src = "../Archer/archer id.jpg">
-       
-        <img *ngSwicthCase = "Dr" src = "../Archer/archer id.jpg">
-      </div> -->
+      <div id="img">
+        <img *ngIf ="final.empId == 2" src = "https://i.pinimg.com/originals/79/57/28/7957280bfae554ffbad5bc718faeddab.jpg">
+        <img *ngIf = "final.empId ==3" src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSQUFPUmLsmRxWkYtve75NP1wyhAkHUIYaDdzFeSZjh2QavWMr">
+        <img *ngIf = "final.empId ==7" src = "https://i.pinimg.com/236x/29/08/b1/2908b1e2d8df79fa817098dd2a4884dc--sterling-archer-danger-zone.jpg">
+        <img *ngIf = "final.empId ==4" src = "https://i.pinimg.com/736x/24/13/16/241316c21b0256563b6a0ddee3ea3d80--adam-reed-sterling-archer.jpg">
+        <img *ngIf = "final.empId ==5" src = "C:\Users\Jasmine C Onwuzulike\My_Git_Repos\1806spark\Jasmine_Onwuzulike_Code\Project1 ERS\ERS_Client\ISIS Portal\src\app\views\Archer\carol idk.jpg">
+        <img *ngIf = "final.empId ==6"src = "https://i.pinimg.com/originals/81/b7/ca/81b7ca7a06ca95c6c184f20836869a63.jpg">
+      </div>
       </div>
     </div>

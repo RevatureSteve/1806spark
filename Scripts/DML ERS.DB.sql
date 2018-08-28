@@ -5,19 +5,19 @@ INSERT INTO position VALUES (2, 'Employee');
 --Insert into users.(
 INSERT INTO users
 VALUES
-(001, 'M', '.', 'm@bss.com', 'm', 1);
+(1, 'Mallory', 'Archer', 'ms@is.com', 'ma', 1);
 INSERT INTO users
 VALUES
-(002, 'Sean', 'Connery', 'sc@bss.com', '02', 2);
+(2, 'Sterling', 'Archer', 'sa@is.com', 'sa', 2);
 INSERT INTO users
 VALUES
-(003, 'Roger', 'Moore', 'rm@bss.com', '03', 2);
+(3, 'Lana', 'Kane', 'lk@is.com', 'lk', 2);
 INSERT INTO users
 VALUES
-(004, 'Pierce', 'Brosan', 'pb@bss.com', '04', 2);
+(4, 'Pam', 'Poovey', 'pp@is.com', 'pp', 2);
 INSERT INTO users
 VALUES
-(007, 'Daniel', 'Craig', 'dc@bss.com', '07', 2);
+(7, 'Cyril', 'Figgis', 'cf@is.com', 'cf', 2);
 commit;
 
 --Insert into requst_type
@@ -32,7 +32,7 @@ VALUES
 (03, 'Travel');
 INSERT INTO rq_type
 VALUES
-(04, 'Gadgets');
+(04, 'Weapons');
 commit;
 
 --Insert into request_status
@@ -50,17 +50,17 @@ commit;
 --Insert into reimbursement
 INSERT INTO reimbursement
 VALUES
-(001,20000, 'Goldfinger','01-JAN-63',002, 1, 1, 2);
+(001,20000, 'Skytanic','01-JUL-16',2, 1, 1, 2);
 INSERT INTO reimbursement
 VALUES 
-(002, 10000, 'Moonraker', '01-JUL-79', 003, 1, 4,2);
+(002, 10000, 'Skytanic', '01-JUL-16', 3, 1, 4,2);
 INSERT INTO reimbursement
 VALUES 
-(003, 50000, 'Goldeneye', '01-MAY-95', 004, 1, 2 ,2);
+(003, 50000, 'Space Race', '01-MAY-16', 2, 1, 2 ,2);
 INSERT INTO reimbursement
 VALUES 
-(004, 100000, 'Skyfall', '01-JAN-12', 007, 1, 1,3);
+(004, 100000, 'Jeu Monegasque', '01-JAN-18', 3, 1, 3,3);
 INSERT INTO reimbursement
 VALUES 
-(005, 10000, 'Spectre', '01-AUG-15', 007, 1, 3,1);
+(005, 10000, 'Space Race', '01-AUG-17', 7, 1, 1,1);
 commit;

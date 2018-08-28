@@ -1,3 +1,4 @@
+import { UploadFileComponent } from './upload-file/upload-file.component';
 import { NewPasswordComponent } from './new-password/new-password.component';
 
 
@@ -32,6 +33,7 @@ const routes : Routes = [
   {path: 'password', component: NewPasswordComponent},
   {path: 'new/reimbursement', component: NewReimbursemetComponent},
   {path: 'update' , component: UpdateReimbursementComponent},
+  {path: 'upload', component: UploadFileComponent},
   {path: '**', component: LoginComponent}
  
 ]
