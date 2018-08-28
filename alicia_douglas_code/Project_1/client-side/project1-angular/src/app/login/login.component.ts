@@ -25,7 +25,9 @@ export class LoginComponent implements OnInit {
       user => {
         this.changeCurrentUser(user);
       },
-      err => alert('Login failed: email or password where incorrect')
+      err => {
+        // alert('Login failed: email or password where incorrect');
+      }
     );
   }
 

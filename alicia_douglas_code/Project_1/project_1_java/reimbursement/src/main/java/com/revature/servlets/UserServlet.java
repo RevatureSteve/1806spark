@@ -12,6 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
+import com.fasterxml.jackson.databind.ser.std.MapProperty;
 import com.revature.domain.Users;
 import com.revature.service.UserBuisnessLogic;
 
@@ -37,6 +38,22 @@ public class UserServlet extends HttpServlet {
 		
 		PrintWriter out = response.getWriter();
 		out.print(json);
+	}
+	
+	
+	@Override
+	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		
+		System.out.println("User post");
+		
+		ObjectMapper mapper = new ObjectMapper();
+		ServletInputStream data = req.getInputStream();
+		ObjectNode node = mapper.readValue(data, ObjectNode.class);
+		
+		Users user = new Users(node.get("email").textValue(), node.get("password").textValue(), node.get("fname").textValue(), node.get("lname").textValue(), Integer.parseInt(node.get("pos_id").textValue()));
+		
+		userBL.createNewUser(user);
+		
 	}
 	
 	

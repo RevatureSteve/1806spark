@@ -14,21 +14,10 @@ body{
 }
 
 /* Ids */
-#editProfileBtn{
-    
-}
-
-#editProfileBtn:hover{
-   
-}
-
 #btn{
     text-align: center;
 }
 
-#profilePg{
-
-}
 
 #profile{
     text-align: right;

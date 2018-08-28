@@ -6,6 +6,7 @@ import java.util.List;
 import com.revature.dao.UsersDao;
 import com.revature.domain.Reimbursement;
 import com.revature.domain.Users;
+import com.revature.mail.Email;
 
 public class UserBuisnessLogic {
 	
@@ -59,6 +60,15 @@ public class UserBuisnessLogic {
 		System.out.println("After retrieve updated info");
 		
 		return updatedUser;
+	}
+	
+	/**
+	 * create a new user
+	 * @param user
+	 */
+	public void createNewUser(Users user) {
+		usersDao.createUser(user);
+		Email.newUserEmail(user);
 	}
 
 }

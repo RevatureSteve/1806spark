@@ -1,0 +1,18 @@
+
+
+/* classes */
+.profileInput{
+    margin-right: 70px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+/* Ids */
+#emp-btn{
+    text-align: center;
+}
+
+
+#new-emp{
+    text-align: right;
+}

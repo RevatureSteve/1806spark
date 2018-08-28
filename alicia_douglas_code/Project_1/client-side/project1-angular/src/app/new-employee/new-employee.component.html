@@ -1,0 +1,21 @@
+<app-manager-navbar></app-manager-navbar>
+
+<form class="form" id='new-emp'>
+  <h1 style="text-align: center">Create New Employee</h1>
+  First name:
+  <input class="input profileInput" id='emp-fname' #fname type="text">
+  <br> Last name:
+  <input class="input profileInput" id='emp-lname' #lname type="text">
+  <br> Email:
+  <input class="input profileInput" id='emp-email' #email type="text">
+  <br> Position:
+  <select #pos class="profileInput input">
+    <option selected>Select Employee Position</option>
+    <option value="1">Apprentice</option>
+    <option value="2">Sorcerer</option>
+  </select>
+  <div id='emp-btn'>
+    <input (click)="createNewUser(email.value, fname.value, lname.value, pos.value)" class="formBtn" id="createEmp" type="button"
+      value="Create New Employee">
+  </div>
+</form>

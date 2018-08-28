@@ -1,12 +1,12 @@
 import { SingleEmployeeViewComponent } from './single-employee-view/single-employee-view.component';
 import { MainManagerComponent } from './main-manager/main-manager.component';
 import { MainComponent } from './main/main.component';
-import { EmployeeReimbursementComponent } from './employee-reimbursement/employee-reimbursement.component';
 import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { NewReimbursementComponent } from './new-reimbursement/new-reimbursement.component';
+import { NewEmployeeComponent } from './new-employee/new-employee.component';
 
 
 const routes: Routes = [
@@ -15,7 +15,8 @@ const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'profile', component: ProfileComponent},
   {path: 'new-reimbursement', component: NewReimbursementComponent},
-  {path: 'employee/:id', component: SingleEmployeeViewComponent}
+  {path: 'employee/:id', component: SingleEmployeeViewComponent},
+  {path: 'new-employee', component: NewEmployeeComponent}
 ];
 
 @NgModule({
