@@ -1,0 +1,21 @@
+#outer{
+    background-color: red;
+    font-family: monospace;
+    font-size: xx-large;
+    margin: 10px;
+}
+
+#inner{
+    background-color: #43ff3e;
+    margin: 10px;
+}
+
+#innerMost{
+    background-color: #5172ff;
+    margin: 10px;
+}
+
+#header{
+    font-size:xx-large;
+    margin-bottom: 20px
+}
