@@ -10,7 +10,6 @@ import { Injectable } from '@angular/core';
 
 export class UpdateUserService {
   private static user: Users;
-  reimb: Reimbursement;
 
   constructor(private httpClient: HttpClient) { }
 

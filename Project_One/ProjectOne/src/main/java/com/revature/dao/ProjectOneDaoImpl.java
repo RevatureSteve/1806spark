@@ -235,9 +235,9 @@ public class ProjectOneDaoImpl implements ProjectOneDao {
 			conn.setAutoCommit(false);
 			String sql = "UPDATE reimbursement SET rq_Status_Id = ?" + ", mgr_U_Id = ?" + " WHERE r_Id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
-			ps.setInt(1, r_Id);
+			ps.setInt(1, rq_Status_Id);
 			ps.setInt(2, mgr_U_Id);
-			ps.setInt(3, rq_Status_Id);
+			ps.setInt(3, r_Id);
 			rowsAffected = ps.executeUpdate();
 			conn.commit();
 		} catch (IOException | SQLException e) {

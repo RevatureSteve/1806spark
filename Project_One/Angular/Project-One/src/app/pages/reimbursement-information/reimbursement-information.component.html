@@ -1,24 +1,29 @@
 <h2>All Reimbursements</h2>
 
-  <table class="table table-hover table-dark">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Amount</th>
-          <th scope="col">Request Type</th>
-          <th scope="col">Status</th>
-          <th scope="col">Description</th>
-          <th scope="col">Time Submission</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let post of postAll">
-          <th scope="row"> {{ post.r_Id}} </th>
-          <td> {{ post.amt}} </td>
-          <td> {{ post.rq_Type_Id}} </td>
-          <td> {{ post.rq_Status_Id}} </td>
-          <td> {{ post.description}} </td>
-          <td> {{ post.timeSubmission}} </td>
-        </tr>
-      </tbody>
-    </table>
+<table class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Request Type</th>
+      <th scope="col">Status</th>
+      <th scope="col">Description</th>
+      <th scope="col">Time Submission</th>
+      <th scope="col">Approval/Deny</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let post of postAll">
+      <th scope="row" #r_Id> {{ post.r_Id}} </th>
+      <td> {{ post.amt}} </td>
+      <td> {{ post.rq_Type_Id}} </td>
+      <td> {{ post.rq_Status_Id}} </td>
+      <td> {{ post.description}} </td>
+      <td> {{ post.timeSubmission}} </td>
+      <td>
+        <button (click)="updatingReimb(post.r_Id, user.u_Id, 2)" type="button"  class="btn btn-success">Approve</button>
+        <button (click)="updatingReimb(post.r_Id, user.u_Id, 3)" type="button"  class="btn btn-danger">Deny</button>
+      </td>
+    </tr>
+  </tbody>
+</table>

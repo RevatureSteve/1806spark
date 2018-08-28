@@ -8,7 +8,6 @@ import { HttpClient } from '@angular/common/http';
 })
 export class UpdateReimbService {
   private static reimb: Reimbursement;
-  user: Users;
 
   constructor(private httpClient: HttpClient) { }
 
