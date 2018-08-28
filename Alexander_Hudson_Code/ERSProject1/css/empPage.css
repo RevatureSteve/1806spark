@@ -158,14 +158,14 @@ input[type=submit]:hover {
 }
 
 #meebox2 {
-    margin-left: 3%;
+    margin-left: 5%;
     margin-top: 4%;
     position: fixed;
     width: 5%;
 }
 
 #meesee2 {
-    margin-left: 2%;
+    margin-left: 4%;
     margin-top: 2%;
     position: fixed;
     width: 6%;
@@ -179,12 +179,21 @@ input[type=submit]:hover {
     height: 50%;
 }
 
-#ship {
-    position: absolute;
-    z-index: -1;
-    margin-top: 50%;
-    margin-left: 20%;
-    opacity: .8;
+.ship {
+    width: 20%;
+    margin-top: 40%;
+    position: fixed;	
+    overflow: hidden;
+    animation: ship 5s linear infinite;
+}
+
+@keyframes ship {
+    0% {
+        transform: translateX(-100%)
+    }
+    100% {
+        transform: translateX(2100%)
+    }
 }
 
 

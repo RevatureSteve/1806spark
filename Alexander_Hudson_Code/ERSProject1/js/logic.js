@@ -40,12 +40,5 @@ function updateDenied(){
 }
 
 
-// function clicked (){
-//     let eventId = event.target.id;
-//     activeBtn(eventId);
-// }
-// function clickedMgr(){
-//     let eventId = event.target.id;
-//     mgrActiveBtn(eventId);
-// }
+
 

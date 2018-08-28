@@ -1,0 +1,40 @@
+.denyBox {
+    position: fixed;
+    width: 10%;
+    background-image: url('https://i.redd.it/tu71hg98rhgz.png');
+    background-size: 200px;
+    margin-top: 250px;
+    margin-left: 40px;
+    border-style: solid;
+    border-color: black;
+    border-width: 3px;
+    padding: 1px;
+}
+
+#denied {
+    width: 50px;
+    height: 40px;
+    background-color: black;
+    color: red;
+}
+
+#clear {
+    width: 50px;
+    height: 40px;
+    background-color: black;
+    color: yellow;
+}
+
+#approve {
+    width: 50px;
+    height: 40px;
+    background-color: black;
+}
+
+#ADC{
+    padding: 3.5px;
+}
+
+#denyBox {
+    font-weight: bold;
+}

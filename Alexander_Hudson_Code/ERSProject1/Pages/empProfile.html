@@ -37,18 +37,18 @@
                       <img id="meebox2" src="https://vignette.wikia.nocookie.net/rickandmorty/images/f/f7/Mr._Meeseeks_Box.png/revision/latest?cb=20160909153718" >
               <img id="meesee2" src="https://vignette.wikia.nocookie.net/kingdomhearts/images/1/12/FinalRest_Meeseeks_TBS.gif/revision/latest?cb=20170702160234" title="Im Mr.Meeseeks look at me!" >
 
-            
+            <div class="container2">
               <table id="table7" class="table table-sm"> 
                   <thead>
                       <tr>
-                          <th id="u_Id" scope="col">U_Id</th>
-                          <th id="email" scope="col">Email</th>
-                          <th id="password" scope="col">Password</th>
-                          <th id="fName" scope="col">First Name</th>
-                          <th id="lName" scope="col">Last Name</th>
-                          <th id="pos_Id" scope="col">Pos_Id</th>
-
+                        <label>Email</label>
+                        <input id="email" type="text" value="error">
+                        <label> First Name</label>
+                        <input id="fname" type="text" value="error">
+                        <label> Last Name</label>
+                        <input id="lname" type="text" value="error">
                       </tr>
+                      <button onclick="updateAlert()" id="update">Update </button>
           
                   </thead>
                   <tbody id="data">

@@ -190,13 +190,26 @@ function getAllEmp () {
 //--------------------------------------------------------------------------------------------------------
 //EMPLOYEE VIEW PROFILE
 function getEmpInfo () {
-  
-    document.getElementById('u_Id').innerText = newUser.u_Id;
-    document.getElementById('email').innerText = newUser.email;
-    document.getElementById('password').innerText = newUser.passWord;
-    document.getElementById('fName').innerText = newUser.fName;
-    document.getElementById('lName').innerText = newUser.lName;
-    document.getElementById('pos_Id').innerText = newUser.pos_Id;
+    newEmail = document.getElementById('email').value;
+    fname = document.getElementById('fname').value;
+    lname = document.getElementById('lname').value;
+
+    let data = {"email": newEmail, "fname": fname, "lname": lname, "u_Id": newUser.u_Id};
+
+    fetch ('http://localhost:8080/RickAndMorty/empInfo/update', {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {'Content-Type': 'application/json'}
+    }).then(resp => {
+        return resp.json();
+    }).then(data => {
+        resultSet = data;
+        console.log(resultSet);
+    }).catch(err => {
+        console.log("[LOG]---------------" + err);
+    });
+
+    
 }
 
 

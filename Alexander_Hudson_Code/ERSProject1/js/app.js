@@ -107,7 +107,11 @@ function profile (){
         return resp.text();
     }).then((text) => {
         navbar.innerHTML = text;
-        getEmpInfo();
+        document.getElementById('update').addEventListener('click',getEmpInfo )
+        document.getElementById('email').value = newUser.email;
+       document.getElementById('fname').value = newUser.fName;
+        document.getElementById('lname').value = newUser.lName;
+
     });
 }
 
