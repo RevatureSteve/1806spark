@@ -1,4 +1,8 @@
+import { Pokemon } from './pokemon';
+import { Observable } from 'rxjs';
+import { PokemonService } from './../services/pokemon.service';
 import { LocalTile } from './local_tile';
+
 export class WorldTile {
     tileId: number;
     tileParentId: number;

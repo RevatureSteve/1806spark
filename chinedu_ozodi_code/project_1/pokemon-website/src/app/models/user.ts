@@ -3,6 +3,7 @@ export class User {
     fname: string;
     lname: string;
     posId: number;
+    posType: string;
     email: string;
     password: string;
 }

@@ -1,12 +1,10 @@
 import { Router } from '@angular/router';
 import { Pokemon } from './../models/pokemon';
-import { RequestStatus } from '../request_status';
 import { User } from '../models/user';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, map, tap } from 'rxjs/operators';
-import { getOrCreateContainerRef } from '@angular/core/src/render3/di';
 import { Trainer } from '../models/trainer';
 
 const httpOptions = {
@@ -16,12 +14,11 @@ const httpOptions = {
 };
 const pokemonUrl = 'http://localhost:8080/PokemonWorldAPI/pokemon';
 const trainerUrl = 'http://localhost:8080/PokemonWorldAPI/trainer';
+const loginUrl = 'http://localhost:8080/PokemonWebsiteAPI/login';
 @Injectable({
   providedIn: 'root'
 })
 export class LoginService {
-  private url = 'http://localhost:8080/PokemonWebsiteAPI/User';
-
   currentUser: User;
   currentTrainer: Trainer;
   trainerPokemon: Pokemon[];
@@ -31,7 +28,7 @@ export class LoginService {
 
   login(user: User): Observable<User> {
     this.log(' login service started');
-    return this.http.post<User>(this.url, user, httpOptions).pipe(
+    return this.http.post<User>(loginUrl, user, httpOptions).pipe(
       catchError(this.handleError<User>('login', new User()))
     );
   }

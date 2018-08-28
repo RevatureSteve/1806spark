@@ -11,9 +11,21 @@
         <a class="nav-link" [routerLink]="['/main']">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/pokemon']">Pokemon</a>
+      </li>
+      <li class="nav-item">
         <a class="nav-link" [routerLink]="['/reimbursements']">Reimbursements</a>
       </li>
-      <li class="nav-item nav-link"> ----- Welcome {{login.currentUser.fname}} {{login.currentUser.lname}} -----</li>
+      <li class="nav-item" *ngIf="login.currentUser.posId == 2">
+        <a class="nav-link" [routerLink]="['/manage-reimbursements']">Manage Reimbursements</a>
+      </li>
+      <li class="nav-item" *ngIf="login.currentUser.posId == 2">
+        <a class="nav-link" [routerLink]="['/employees']">Employees</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" [routerLink]="['/profile']"> ----- Welcome {{login.currentUser.fname}} {{login.currentUser.lname}}
+          -----</a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" (click)="logout()">Logout</a>
       </li>

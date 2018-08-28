@@ -19,3 +19,9 @@ Commit;
 SELECT * FROM users u
 RIGHT OUTER JOIN position p on (u.pos_id = p.pos_id)
 WHERE email = 'chin2413@gmail.com';
+SELECT * FROM users u INNER JOIN position p ON u.pos_id = p.pos_id;
+
+-- REIMBURSEMENT
+SELECT * FROM reimbursement r RIGHT OUTER JOIN rq_status rs ON (r.rq_status_id = rs.rq_status_id) INNER JOIN rq_type rt ON (r.rq_type_id = rt.rq_type_id);
+SELECT * FROM reimbursement r RIGHT OUTER JOIN rq_status rs ON (r.rq_status_id = rs.rq_status_id) JOIN rq_type rt ON (r.rq_type_id = rt.rq_type_id)
+JOIN users u ON (r.emp_u_id = u.u_id) LEFT OUTER JOIN users m ON (r.mgr_u_id = m.u_id);

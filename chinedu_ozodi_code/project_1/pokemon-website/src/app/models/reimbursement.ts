@@ -9,4 +9,8 @@ export class Reimbursement {
     rqType: string;
     rqStatusId: number;
     rqStatus: string;
+    mfname: String;
+    mlname: String;
+    efname: String;
+    elname: String;
 }

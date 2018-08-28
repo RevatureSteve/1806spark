@@ -70,14 +70,18 @@ public class ReimbursementDatabaseDao implements ReimbursementDao {
 		List<Reimbursement> reimbs = new ArrayList<Reimbursement>();
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
 
-			String sql = "SELECT * FROM reimbursement r RIGHT OUTER JOIN rq_status rs ON (r.rq_status_id = rs.rq.status_id) RIGHT OUTER JOIN rq_type rt ON (r.rq_type_id = rt.rq_type_id)";
+			String sql = "SELECT * FROM reimbursement r "
+					+ "RIGHT OUTER JOIN rq_status rs ON (r.rq_status_id = rs.rq_status_id) "
+					+ "JOIN rq_type rt ON (r.rq_type_id = rt.rq_type_id)\r\n" + 
+					"JOIN users u ON (r.emp_u_id = u.u_id) "
+					+ "LEFT OUTER JOIN users m ON (r.mgr_u_id = m.u_id) ORDER BY r.rq_status_id";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
 				Reimbursement reimb = new Reimbursement(rs.getInt("r_id"), rs.getInt("emp_u_id"), rs.getInt("mgr_u_id"),
 						rs.getInt("amt"), rs.getString("description"), rs.getBlob("img"),
 						rs.getTimestamp("timesubmission"), rs.getInt("rq_type_id"), rs.getString("rq_type"),
-						rs.getInt("rq_status_id"), rs.getString("rq_status"));
+						rs.getInt("rq_status_id"), rs.getString("rq_status"),rs.getString("fname"),rs.getString("lname"),rs.getString("fname"),rs.getString("lname"));
 				reimbs.add(reimb);
 			}
 		} catch (SQLException e) {
@@ -97,7 +101,12 @@ public class ReimbursementDatabaseDao implements ReimbursementDao {
 		List<Reimbursement> reimbs = new ArrayList<Reimbursement>();
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
 
-			String sql = "SELECT * FROM reimbursement r RIGHT OUTER JOIN rq_status rs ON (r.rq_status_id = rs.rq_status_id) RIGHT OUTER JOIN rq_type rt ON (r.rq_type_id = rt.rq_type_id) WHERE emp_u_id = ?";
+			String sql = "SELECT * FROM reimbursement r "
+					+ "RIGHT OUTER JOIN rq_status rs ON (r.rq_status_id = rs.rq_status_id) "
+					+ "JOIN rq_type rt ON (r.rq_type_id = rt.rq_type_id) " 
+					+ "JOIN users u ON (r.emp_u_id = u.u_id) "
+					+ "LEFT OUTER JOIN users m ON (r.mgr_u_id = m.u_id)"
+					+ " WHERE emp_u_id = ? ORDER BY r.rq_status_id";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1,id);
 			ResultSet rs = ps.executeQuery();
@@ -105,7 +114,9 @@ public class ReimbursementDatabaseDao implements ReimbursementDao {
 				Reimbursement reimb = new Reimbursement(rs.getInt("r_id"), rs.getInt("emp_u_id"), rs.getInt("mgr_u_id"),
 						rs.getInt("amt"), rs.getString("description"), rs.getBlob("img"),
 						rs.getTimestamp("timesubmission"), rs.getInt("rq_type_id"), rs.getString("rq_type"),
-						rs.getInt("rq_status_id"), rs.getString("rq_status"));
+						rs.getInt("rq_status_id"), rs.getString("rq_status"),
+						rs.getString("fname"),rs.getString("lname"),
+						rs.getString("fname"),rs.getString("lname"));
 				reimbs.add(reimb);
 			}
 		} catch (SQLException e) {

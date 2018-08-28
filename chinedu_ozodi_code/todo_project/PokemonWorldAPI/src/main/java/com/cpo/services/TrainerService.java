@@ -1,5 +1,7 @@
 package com.cpo.services;
 
+import java.util.List;
+
 import com.cpo.dao.TrainerDatabaseDao;
 import com.cpo.models.Trainer;
 
@@ -22,9 +24,16 @@ public class TrainerService {
 		return TrainerDatabaseDao.getInstance().createTrainer(trainer);
 	}
 	
+	public List<Trainer> getAllTrainers() {
+		return TrainerDatabaseDao.getInstance().getAllTrainers();
+	}
+
 	public Trainer getTrainerById(int id) {
 		return TrainerDatabaseDao.getInstance().getTrainerById(id);
 	}
 	
+	public int updateTrainer(Trainer trainer) {
+		return TrainerDatabaseDao.getInstance().updateTrainer(trainer);
+	}
 
 }

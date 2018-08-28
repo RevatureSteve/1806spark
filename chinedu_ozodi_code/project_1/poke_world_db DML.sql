@@ -41,3 +41,6 @@ SELECT * FROM world_tiles wt RIGHT OUTER JOIN wt_types wtt on (wt.wt_type_id = w
 COMMIT;
 -- LOCAL TILES
 SELECT * FROM local_tiles lt RIGHT OUTER JOIN lt_types ltt on (lt.lt_type_id = ltt.lt_type_id) WHERE wt_id = ? AND local_x = ? AND local_y = ?;
+-- trainers
+SELECT * FROM pokemon_trainers;
+COMMIT;

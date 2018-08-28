@@ -1,11 +1,15 @@
-.main {
-    align-content: center;
-    padding: 15px;
+.card {
+    /* align-content: center; */
+    /* padding: 15px; */
     margin: auto;
-    margin-top: 100px;
-    position: relative;
-    width: 50%;
-    background: whitesmoke;
+    margin-top: 50px; 
+    /* position: relative; */
+    width: 75%;
+    /* background: whitesmoke; */
+}
+
+a:hover {
+    cursor:pointer;
 }
 /* .pokemonBattleImg {
     width: 15%;
@@ -13,4 +17,20 @@
 
 body {
     background-color: lavender;
+}
+
+img {
+    width: 100%;
+}
+
+.btn {
+    margin: 5px;
+}
+
+.pokemonBattle {
+    background-image: url("https://mr21.github.io/carousel-parallax/img/pokemon-battle/bg.jpg")
+}
+
+.pokemonBattleImg {
+    width: 20%;
 }

@@ -1,18 +1,38 @@
-<div class="main" *ngIf="!pokemonService.pokemonBattle">
-  <h1>World Map</h1>
-
-  <div class="container">
-    <div class="row" *ngFor="let row of map; let r = index">
-      <div class="col-sm" *ngFor="let col of row; let c = index">
-        <app-world-tile [worldTile] = "map[r][c]"></app-world-tile>
-      </div>
+<div class="card">
+  <div class="card-body">
+    <h1 class="card-title" *ngIf="!pokemonService.pokemonBattle">World Map</h1>
+    <h1 class="card-title" *ngIf="pokemonService.pokemonBattle">{{pokemonService.pokemonBattle.name | uppercase}} | EXP: {{pokemonService.pokemonBattle.experience}}</h1>
+    <h5 class="card-text" *ngIf="!pokemonService.pokemonBattle">Candy count, {{loginService.currentTrainer.candyCount}}. Pokeball count, {{loginService.currentTrainer.pokeballCount}}</h5>
+    <div class="container mb-3">
+      <img *ngIf="!pokemonService.pokemonBattle" src="https://lh5.googleusercontent.com/proxy/Ab5iZD6PZ5NHnqB_eER4vJolOCjDlESOwUgg59ca8ZeB0RHrKQYny99WAo2v8zkwrsmzDMxnlpbaEmdwKK63u04kEsgQcZMeicYTZuwXEZBdeYnzx4LTy-k=s0-d"
+        alt="world map">
+      <img *ngIf="battleStatus == 'waiting...'" src="https://static.fjcdn.com/gifs/Pokeball+shake_4bc600_4816210.gif" alt="world map">
     </div>
+    <div class="pokemonBattle mb-3">
+      <span *ngIf="pokemonService.pokemonBattle && !battleStatus">
+        <img class="pokemonBattleImg" src="{{pokemonService.pokemonBattle.imageUrl}}" alt="{{pokemonService.pokemonBattle.name}}">
+      </span>
+    </div>
+    <p class="card-text"><span *ngIf="battleStatus">{{battleStatus}}</span></p>
+    <a class="btn btn-primary" (click)="searchPokemon()" *ngIf="map && !pokemonService.pokemonBattle && !battleStatus">Search
+      Pokemon
+    </a>
+    <a class="btn btn-primary" (click)="throwBall()" *ngIf="pokemonService.pokemonBattle && !battleStatus"> Throw Ball ({{loginService.currentTrainer.pokeballCount}})
+    </a>
+    <a class="btn btn-primary" (click)="acknowledge()" *ngIf="pokemonService.pokemonBattle && !battleStatus"> Run
+    </a>
+    <a class="btn btn-primary" (click)="buyBall()" *ngIf="!pokemonService.pokemonBattle">
+      Buy Ball (10 Candy)
+    </a>
+    <a class="btn btn-primary" (click)="acknowledge()" *ngIf="battleStatus == 'Caught!' || battleStatus == 'Pokemon escaped...try again'">
+      Okay
+    </a>
   </div>
+
 </div>
-<div class="main" *ngIf="pokemonService.pokemonBattle">
-  <h1>{{pokemonService.pokemonBattle.name}}</h1>
-  <a><img class="pokemonBattleImg" (click)="caughtPokemon()" src="{{pokemonService.pokemonBattle.imageUrl}}" alt="{{pokemonService.pokemonBattle.name}}"></a>
-</div>
+
 <div *ngIf="loginService.trainerPokemon">
-  <app-pokemon-card  *ngFor="let pokemon of loginService.trainerPokemon" [pokemon]="pokemon"></app-pokemon-card>
+  <span *ngFor="let pokemon of loginService.trainerPokemon">
+    <app-pokemon-card  *ngIf="pokemon.statusId < 3" [pokemon]="pokemon"></app-pokemon-card>
+  </span>
 </div>

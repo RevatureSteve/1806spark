@@ -26,7 +26,7 @@ export class PokemonCardComponent implements OnInit {
 
   createReimbursement() {
     const reimb = new Reimbursement();
-    reimb.amt = 10;
+    reimb.amt = this.pokemon.experience;
     reimb.description = 'requesting reimbursement for ' + this.pokemon.name;
     reimb.empUId = this.loginService.currentUser.uId;
     reimb.rqTypeId = this.pokemon.pokeId;

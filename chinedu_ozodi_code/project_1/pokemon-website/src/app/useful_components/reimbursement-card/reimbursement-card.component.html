@@ -2,10 +2,19 @@
     <img class="card-img-top" src="http://www.pokestadium.com/sprites/xy/{{reimb.rqType}}.gif" alt="{{reimb.rqType}}">
     <div class="card-body">
       <h5 class="card-title">{{reimb.rqType | uppercase}}</h5>
-      <p class="card-text">{{reimb.rqStatus | uppercase}} <br> {{reimb.description}}</p>
+      <p class="card-text">{{reimb.rqStatus | uppercase}} <br> Candy: {{reimb.amt}} </p>
       <span *ngIf="reimb.rqStatusId < 3">
-        <a (click) = "accept()" class="btn btn-primary">Yes</a>
-        <a (click) = "decline()" class="btn btn-primary">No</a>
+          <p class="card-text mb-3"> {{reimb.description}}</p>
       </span>
+      <span *ngIf="reimb.empUId != login.currentUser.uId">
+          <p class="card-text"> Submitted by: {{reimb.efname | uppercase}} {{reimb.elname | uppercase}}</p>
+      </span>
+      <span *ngIf="reimb.rqStatusId > 2">
+          <p class="card-text"> Completed by: {{reimb.mfname | uppercase}} {{reimb.mlname | uppercase}}</p>
+      </span>
+      <span *ngIf="reimb.rqStatusId < 3 && login.currentUser.posId == 2">
+          <a (click) = "accept()" class="btn btn-primary">Yes</a>
+          <a (click) = "decline()" class="btn btn-primary">No</a>
+        </span>
     </div>
   </div>

@@ -1,5 +1,7 @@
 package com.cpo.doa;
 
+import java.util.List;
+
 import com.cpo.model.User;
 
 public interface UserDao {
@@ -9,6 +11,10 @@ public interface UserDao {
 	
 	//READ
 	User getUserByEmail(String email);
+
+	User getUserById(int id);
+
+	List<User> getAllUsers();
 	
 
 }

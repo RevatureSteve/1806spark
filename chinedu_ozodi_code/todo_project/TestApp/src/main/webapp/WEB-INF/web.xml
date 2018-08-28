@@ -1,0 +1,16 @@
+<web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+         http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
+        version="3.1">
+	<servlet>
+		<servlet-name>BookServlet</servlet-name>
+		<display-name>BookServlet</display-name>
+		<description></description>
+		<servlet-class>com.revature.servlets.BookServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>BookServlet</servlet-name>
+		<url-pattern>/book</url-pattern>
+	</servlet-mapping>
+</web-app>

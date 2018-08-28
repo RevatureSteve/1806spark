@@ -1,0 +1,3 @@
+<div *ngIf="loginService.trainerPokemon">
+  <app-pokemon-card *ngFor="let pokemon of loginService.trainerPokemon" [pokemon]="pokemon"></app-pokemon-card>
+</div>

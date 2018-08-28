@@ -1,4 +1,4 @@
-import { RequestStatus } from './../request_status';
+import { RequestStatus } from '../models/request_status';
 import { Observable } from 'rxjs';
 import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Injectable } from '@angular/core';

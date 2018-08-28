@@ -12,3 +12,11 @@ a:hover {
     margin: 15px;
     /* height: 40rem; */
 }
+
+/* .approved {
+    background-color: rgb(223, 255, 244);
+} */
+
+.approved,.rejected {
+    background-color: grey;
+}

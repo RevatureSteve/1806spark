@@ -1,0 +1,48 @@
+<div class="card">
+  <div class="card-body">
+    <h5 class="card-title">Create New User</h5>
+    <p class="card-text">Add new employee account here</p>
+    <span *ngIf="createNew">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Trainer Name</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Trainer Name" [(ngModel)]="newTrainer.trainerName">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">First Name</span>
+        </div>
+        <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="newUser.fname">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Last Name</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="newUser.lname">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Email</span>
+        </div>
+        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="newUser.email">
+      </div>
+      <span>
+        <select class="custom-select mb-3" [(ngModel)]="newUser.posId">
+          <option *ngFor="let type of employeeType; let i = index" value={{i+1}}>
+            {{type}}
+          </option>
+        </select>
+      </span>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Password</span>
+        </div>
+        <input type="password" class="form-control" placeholder="Password" [(ngModel)]="newUser.password">
+      </div>
+      <a class="btn btn-primary" (click)="createUser()">Create</a>
+    </span>
+    <a class="btn btn-primary" (click)="newEmployeeToggle()" *ngIf="!createNew">New User</a>
+  </div>
+</div>
+<app-profile-card *ngFor="let user of users; let i = index" [user]="user" [trainer]="trainers[i]"></app-profile-card>

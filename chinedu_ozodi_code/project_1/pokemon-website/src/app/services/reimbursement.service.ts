@@ -1,4 +1,4 @@
-import { RequestStatus } from './../request_status';
+import { RequestStatus } from '../models/request_status';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Reimbursement } from './../models/reimbursement';
 import { Injectable, Input } from '@angular/core';
@@ -19,6 +19,10 @@ export class ReimbursementService {
 
   createReimbursement(reimb: Reimbursement): Observable<RequestStatus> {
     return this.http.post<RequestStatus>(reimbUrl, reimb, httpOptions);
+  }
+
+  getAllReimbursements(): Observable<Reimbursement[]> {
+    return this.http.get<Reimbursement[]>(reimbUrl);
   }
 
   getReimbursementsByUserId(userId: number): Observable<Reimbursement[]> {

@@ -1,0 +1,46 @@
+<div class="card" style="width: 30rem;">
+  <div class="card-body">
+    <h3 class="card-title">{{login.currentTrainer.trainerName | uppercase}}</h3>
+    <h6 class="card-subtitle mb-2 text-muted">{{login.currentUser.fname}} {{login.currentUser.lname}}</h6>
+    <span *ngIf="edit">
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Trainer Name</span>
+        </div>
+        <input type="text" class="form-control" placeholder="trainerName" [(ngModel)]="login.currentTrainer.trainerName">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">First Name</span>
+        </div>
+        <input type="text" class="form-control" placeholder="First Name" [(ngModel)]="login.currentUser.fname">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Last Name</span>
+        </div>
+        <input type="text" class="form-control" placeholder="Last Name" [(ngModel)]="login.currentUser.lname">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">Email</span>
+        </div>
+        <input type="email" class="form-control" placeholder="Email" [(ngModel)]="login.currentUser.email">
+      </div>
+      <div class="input-group mb-3">
+        <div class="input-group-prepend">
+          <span class="input-group-text" id="basic-addon1">New Password</span>
+        </div>
+        <input type="password" class="form-control" placeholder="New Password" [(ngModel)]="newPassword">
+      </div>
+    </span>
+    <p class="card-text">
+      Position: {{login.currentUser.posType}} <br>
+      Email: {{login.currentUser.email}} <br>
+      Pokeball count: {{login.currentTrainer.pokeballCount}} <br> 
+      Candy Coung: {{login.currentTrainer.candyCount}}
+    </p>
+    <a class="btn btn-primary" (click)="toggleEdit()" *ngIf="!edit">Edit</a>
+    <a class="btn btn-primary" (click)="save()" *ngIf="edit">Save</a>
+  </div>
+</div>

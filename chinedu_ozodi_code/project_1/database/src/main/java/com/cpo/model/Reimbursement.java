@@ -14,7 +14,11 @@ public class Reimbursement {
 	private int rqTypeId;
 	private String rqType;
 	private int rqStatusId;
-	private String rqStatus;	
+	private String rqStatus;
+	private String mfname;
+	private String mlname;
+	private String efname;
+	private String elname;
 
 	public Reimbursement() {
 	}
@@ -34,10 +38,9 @@ public class Reimbursement {
 		this.rqStatus = rqStatus;
 	}
 
-
-
 	public Reimbursement(int rId, int empUId, int mgrUId, int amt, String description, Blob img,
-			Timestamp timeSubmission, int rqTypeId, String rqType, int rqStatusId, String rqStatus) {
+			Timestamp timeSubmission, int rqTypeId, String rqType, int rqStatusId, String rqStatus, String mfname,
+			String mlname, String efname, String elname) {
 		super();
 		this.rId = rId;
 		this.empUId = empUId;
@@ -50,9 +53,43 @@ public class Reimbursement {
 		this.rqType = rqType;
 		this.rqStatusId = rqStatusId;
 		this.rqStatus = rqStatus;
+		this.mfname = mfname;
+		this.mlname = mlname;
+		this.efname = efname;
+		this.elname = elname;
 	}
 
+	public String getMfname() {
+		return mfname;
+	}
 
+	public void setMfname(String mfname) {
+		this.mfname = mfname;
+	}
+
+	public String getMlname() {
+		return mlname;
+	}
+
+	public void setMlname(String mlname) {
+		this.mlname = mlname;
+	}
+
+	public String getEfname() {
+		return efname;
+	}
+
+	public void setEfname(String efname) {
+		this.efname = efname;
+	}
+
+	public String getElname() {
+		return elname;
+	}
+
+	public void setElname(String elname) {
+		this.elname = elname;
+	}
 
 	public int getrId() {
 		return rId;

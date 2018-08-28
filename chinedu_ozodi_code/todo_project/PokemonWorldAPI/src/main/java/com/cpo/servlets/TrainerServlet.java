@@ -3,6 +3,7 @@ package com.cpo.servlets;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.util.List;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -35,14 +36,26 @@ public class TrainerServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		ObjectMapper mapper = new ObjectMapper();
-		int trainerId = Integer.parseInt(request.getParameter("id"));
-		Trainer trainer = TrainerService.getInstance().getTrainerById(trainerId);
-		System.out.println("[LOG] TrainerServlet -GET trainer: " + trainer);
-		String json = mapper.writeValueAsString(trainer);
-		PrintWriter pw = response.getWriter();
-		response.setContentLength(json.length());
-		response.setContentType("application/json");
-		pw.write(json);
+		
+		
+		if (request.getParameter("id") != null) {
+			int trainerId = Integer.parseInt(request.getParameter("id"));
+			Trainer trainer = TrainerService.getInstance().getTrainerById(trainerId);
+			System.out.println("[LOG] TrainerServlet -GET trainer: " + trainer);
+			String json = mapper.writeValueAsString(trainer);
+			PrintWriter pw = response.getWriter();
+			response.setContentLength(json.length());
+			response.setContentType("application/json");
+			pw.write(json);
+		} else {
+			List<Trainer> trainers = TrainerService.getInstance().getAllTrainers();
+			System.out.println("[LOG] TrainerServlet -GET all trainers, count: " + trainers.size());
+			String json = mapper.writeValueAsString(trainers);
+			PrintWriter pw = response.getWriter();
+			response.setContentLength(json.length());
+			response.setContentType("application/json");
+			pw.write(json);
+		}
 	}
 
 	/**
@@ -64,4 +77,18 @@ public class TrainerServlet extends HttpServlet {
 		TrainerService.getInstance().createTrainer(trainer);
 	}
 
+	protected void doPut(HttpServletRequest request, HttpServletResponse response)
+			throws ServletException, IOException {
+		
+		System.out.println("[LOG] TrainerServlet -PUT update trainer");
+		BufferedReader bf = request.getReader();
+		
+		ObjectMapper mapper = new ObjectMapper();
+		Trainer trainer = mapper.readValue(bf, Trainer.class);
+		
+		System.out.println("Trainer: " + trainer);
+		
+		//Add to db
+		TrainerService.getInstance().updateTrainer(trainer);
+	}
 }
