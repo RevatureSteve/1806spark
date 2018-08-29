@@ -1,0 +1,96 @@
+#dancingMario{
+    margin-top: 406px;
+    margin-left: 100px;
+    height: 150px;
+    filter: brightness(132%);
+    position: absolute;
+    display: inline;
+}
+
+#coin1{
+    margin-top: 497px;
+    margin-left: 280px;
+    height: 150px;
+    filter: brightness(115%);
+    position: absolute;
+    display: inline;
+    height: 60px;
+}
+#coin2{
+    margin-top: 497px;
+    margin-left: 480px;
+    height: 150px;
+    filter: brightness(115%);
+    position: absolute;
+    display: inline;
+    height: 60px;
+}
+#coin3{
+    margin-top: 497px;
+    margin-left: 680px;
+    height: 150px;
+    filter: brightness(115%);
+    position: absolute;
+    display: inline;
+    height: 60px;
+}
+#coin4{
+    margin-top: 220px;
+    margin-left: 802px;
+    height: 150px;
+    filter: brightness(115%);
+    position: absolute;
+    display: inline;
+    height: 60px;
+}
+
+.btn{
+   display: inline;
+   position: absolute;
+}
+
+#bodydiv{
+    border: 0px dotted black;
+    width: 320px;
+    height: 562px;
+    float: right;
+    background-color: rgb(240, 35, 35);
+    margin-top:-6px;
+    text-align: center;
+    border-left: 2px dotted yellow;
+    display: inline;
+}
+
+#plant{
+    /* display: inline; */
+    position: absolute;
+    margin-top: 325px;
+    margin-left: 840px;
+}
+
+#border{
+    display: inline;
+    position: absolute;
+    margin-left: 780px;
+    margin-top: -15px;
+    z-index: -1;
+}
+
+#navContainer{
+   width:300px;
+   height:564px;
+   display: inline;
+   position: absolute;
+   margin: -14px 0px 0px 1066px;
+   border-top: 1px solid red;
+   border-right: 1px solid red;
+   float: right;
+}
+
+
+#space{
+    margin-top: 550px;
+    display: inline;
+    position: absolute;
+}
+

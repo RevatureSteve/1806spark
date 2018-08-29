@@ -1,0 +1,31 @@
+
+<div *ngIf="visible" class="text-monospace text-center" id="requestForm">
+    <form (ngSubmit)="sendRequest()">
+        <div class="form-group">
+          <label id="label1" for="exampleFormControlInput1">Submit New Reimbursement Request</label>
+          
+        </div>
+        <div class="form-group">
+          <label id="label2" for="exampleFormControlSelect1">Amount:</label><br>
+          <input name="amount" class="form-group" type="number" [(ngModel)]="newRequest.amount">
+        </div>
+        <div class="form-group">
+          <label id="label3"for="exampleFormControlSelect2">Reimbursement Type:</label>
+          <select name="rq_type"class="form-control" id="exampleFormControlSelect2" [(ngModel)]="newRequest.rq_type">
+            <option>Food</option>
+            <option>Lodging </option>
+            <option>Transportation</option>
+            <option>Other</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label id="label4" for="exampleFormControlTextarea1">Description:</label>
+          <textarea name="description" class="form-control" id="exampleFormControlTextarea1" rows="3" [(ngModel)]="newRequest.description"></textarea><br>
+        </div>
+        <div class="form-group">
+          <label id="label5" for="exampleFormControlTextarea1">image:</label>
+          <input name="image"id="file" class="form-group" type="file" accept="image/*" [(ngModel)]="newRequest.image">
+        </div>
+        <input class="btn btn-primary" type="submit" value="Submit" (click)="sendRequest()">
+      </form>
+</div>

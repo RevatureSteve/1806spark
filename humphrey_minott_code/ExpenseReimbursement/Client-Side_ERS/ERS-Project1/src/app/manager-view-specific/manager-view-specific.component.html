@@ -1,0 +1,77 @@
+
+    <h1 id="title">View {{managerViewEmployee.fname}}'s Request(s)</h1>
+          <input id="but1" class="btn btn-primary" type="button" value="Pending" (click)="clickPending()">
+          <input id="but2" class="btn btn-primary" type="button" value="Accepted" (click)="clickResolved()">
+          <input id="but3" class="btn btn-primary" type="button" value="Declined" (click)="clickDeclined()">
+
+<div *ngIf="pending">
+<div  *ngFor="let requestE of listOfRequests">
+  <h1 class="subTitle">Pending</h1>
+  <br>
+  <div id="pendingList" class="text-monospace text-center">
+    <div class="color"> <h6 class="text-center typeOfR">Reimbursement Type: {{requestE.rq_type}}</h6></div> 
+      <h6 class="text-center time">Submitted on: {{requestE.timeSubmission}}</h6>
+      <div class="color"><h6 class="text-center time">Amount: ${{requestE.amount}}</h6></div> 
+      <h6 class="descipt">Description</h6>
+      <div class="description">
+        <h6 class="text-center">{{requestE.description}}</h6>
+    </div>
+    </div>
+    <h6 class="image">Receipt</h6>
+    <div class="fileImage color">
+    <h6 class="noImage text-center">No image</h6>
+    </div> 
+    <h6 class="status">Approved By:</h6>
+    <div class="statusBox">
+    <h6 class="statusDescript text-center">Pending <br> not yet resolved </h6>
+    </div> 
+    </div>
+    </div>
+<div *ngIf="resolved">
+  <div  *ngFor="let requestEA of listOfResolvedRequests">
+        <h1 class="subTitle">Resolved</h1>
+        <br>
+        <div id="pendingList" class="text-monospace text-center">
+          <div class="color"> <h6 class="text-center typeOfR">Reimbursement Type: {{requestEA.rq_type}}</h6></div> 
+            <h6 class="text-center time">Submitted on: {{requestEA.timeSubmission}}</h6>
+            <div class="color"><h6 class="text-center time">Amount: ${{requestEA.amount}}</h6></div> 
+            <h6 class="descipt">Description</h6>
+            <div class="description">
+              <h6 class="text-center">{{requestEA.description}}</h6>
+          </div>
+          </div>
+          <h6 class="image">Receipt</h6>
+          <div class="fileImage color">
+          <h6 class="noImage text-center">No image</h6>
+          </div> 
+          <h6 class="status">Approved By:</h6>
+          <div class="statusBox">
+          <h6 class="statusDescript text-center">Manager {{requestEA.resolvedUId}} <br> Accepted </h6>
+          </div> 
+          </div>
+          <!-- (load)="getEmployeeById(requestEA.resolvedUId) -->
+         
+</div>
+<div *ngIf="declined">
+  <div  *ngFor="let requestED of listOfDeniedRequests">
+        <h1 class="subTitle">Denied</h1>
+        <br>
+        <div id="pendingList" class="text-monospace text-center">
+          <div class="color"> <h6 class="text-center typeOfR">Reimbursement Type: {{requestED.rq_type}}</h6></div> 
+            <h6 class="text-center time">Submitted on: {{requestED.timeSubmission}}</h6>
+            <div class="color"><h6 class="text-center time">Amount: ${{requestED.amount}}</h6></div> 
+            <h6 class="descipt">Description</h6>
+            <div class="description">
+              <h6 class="text-center">{{requestED.description}}</h6>
+          </div>
+          </div>
+          <h6 class="image">Receipt</h6>
+          <div class="fileImage color">
+          <h6 class="noImage text-center">No image</h6>
+          </div> 
+          <h6 class="status">Approved By:</h6>
+          <div class="statusBox">
+          <h6 class="statusDescript text-center">Manager {{requestED.resolvedUId}} <br> Denied </h6>
+          </div> 
+          </div>
+</div>

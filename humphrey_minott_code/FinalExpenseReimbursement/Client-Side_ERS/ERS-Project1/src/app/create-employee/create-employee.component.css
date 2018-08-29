@@ -1,0 +1,71 @@
+#requestForm{
+    width:620px;
+    height:500px;
+    background-color: rgb(194, 222, 255);
+    border: 5px dotted rgb(187, 14, 14);
+    display: inline;
+    position: absolute;
+    margin: -10px 0px 0px 200px;
+    background-image: Url("http://hdqwalls.com/wallpapers/super-mario-maker.jpg");
+    border-radius: 25px;
+    color: rgb(255, 0, 0);
+    overflow:scroll;
+    margin-top: 7px;
+    box-shadow: 8px 8px rgba(253, 10, 10, 0.747);
+}
+
+.btn{
+    padding:5px;
+}
+
+#but1{
+    margin: 10px 0px 0px -15px;
+}
+#but2{
+    margin: 10px 0px 0px 10px;
+}
+#but3{
+    margin: 10px 0px 0px 10px;
+}
+
+#title{
+    font-size: 40px;
+    margin: 25px 0px 0px 0px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.subTitle{
+    font-size: 20px;
+    margin: 25px 0px 0px -400px;
+    color: blue;
+    text-decoration: underline;
+}
+
+.name{
+    color: black;
+    font-weight: bold;
+}
+
+#subTitlep{
+    font-weight:bold;
+    text-decoration: underline;
+    margin-top:-10px;
+}
+#NewPassword{
+    margin: 0px 0px 0px -235px;
+    display: inline;
+    position: absolute;
+}
+
+#confPassword{
+    margin: 0px 0px 0px 26px;
+    display: inline;
+    position: absolute;
+}
+
+#close{
+    margin: 80px 0px 0px -25px;
+    display: inline;
+    position: absolute;
+}

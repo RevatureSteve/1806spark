@@ -1,0 +1,109 @@
+<div class="text-monospace text-center" id="requestForm">
+        <h1 id="title">All Employees</h1>
+    <span *ngFor="let employee of allEmployee" id="sameLine" >
+    <div id="profileContainer" (click)="managerSeeEmp(employee)" *ngIf="viewAll">
+      <img id="profile" src="../assets/images/employeeProfile.png"> 
+        <h6 id="nameP">{{employee.fname}} {{employee.lname}}</h6>
+        <h6 id="nameP">{{employee.email}}</h6>
+        <h6 id="nameP">Id: {{employee.uId}}</h6>
+    </div>
+    </span>
+    <app-manager-view-specific *ngIf="managerSpecific"></app-manager-view-specific>
+ </div>
+    
+    
+    <!-- <div *ngIf="pending">
+        <h1 class="subTitle">Pending</h1>
+    <div  *ngFor="let requestE of listOfRequests">
+      <br>
+      <div id="pendingList" class="text-monospace text-center">
+          <h6 class="text-center time">Employee Name: {{requestE.fname}} {{requestE.lname}}</h6>
+          <h6 class="text-center time">Submitted on: {{requestE.timeSubmission}}</h6>
+          <div class="color"><h6 class="text-center time">Amount: ${{requestE.amount}}</h6></div> 
+          <h6 class="descipt">Description</h6>
+          <div class="description">
+            <h6 class="text-center">{{requestE.description}}</h6>
+        </div>
+        </div>
+        <h6 class="image">Receipt</h6>
+        <div class="fileImage color">
+        <h6 class="noImage text-center">No image</h6>
+        </div> 
+        <h6 class="status">Approved By:</h6>
+        <div class="statusBox">
+        <h6 class="statusDescript text-center">Pending <br> not yet resolved </h6>
+        </div> 
+         <div id="managerSelect">
+            <div id ="accept" class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" (click)="updateRequestStatus(requestE,2)" name="inlineRadioOptions{{requestE.timeSubmission}}" value="2">
+                <label class="form-check-label" for="inlineRadio1">Accept</label>
+              </div>
+              <div id ="deny" class="form-check form-check-inline">
+                <input class="form-check-input" type="radio" (click)="updateRequestStatus(requestE,3)" name="inlineRadioOptions{{requestE.timeSubmission}}" value="3">
+                <label class="form-check-label" for="inlineRadio2">Deny</label>
+              </div>
+            </div> 
+        </div>
+        </div> -->
+    
+    
+    
+    
+    
+    <!-- <div *ngIf="resolved">
+      <div  *ngFor="let requestEA of listOfResolvedRequests">
+            <h1 class="subTitle">Resolved</h1>
+            <br>
+            <div id="pendingList" class="text-monospace text-center">
+                <h6 class="text-center time">Employee Name: {{requestEA.fname}} {{requestEA.lname}}</h6>
+                <h6 class="text-center time">Submitted on: {{requestEA.timeSubmission}}</h6>
+                <div class="color"><h6 class="text-center time">Amount: ${{requestEA.amount}}</h6></div> 
+                <h6 class="descipt">Description</h6>
+                <div class="description">
+                  <h6 class="text-center">{{requestEA.description}}</h6>
+              </div>
+              </div>
+              <h6 class="image">Receipt</h6>
+              <div class="fileImage color">
+              <h6 class="noImage text-center">No image</h6>
+              </div> 
+              <h6 class="status">Approved By:</h6>
+              <div class="statusBox">
+              <h6 class="statusDescript text-center">Manager {{requestEA.resolvedUId}} <br> Accepted </h6>
+              </div> 
+              </div>
+             (load)="getEmployeeById(requestEA.resolvedUId) -->
+             
+    <!-- </div>  -->
+    
+    
+    
+    
+    
+    
+    <!-- <div *ngIf="declined">
+      <div  *ngFor="let requestED of listOfDeniedRequests">
+            <h1 class="subTitle">Denied</h1>
+            <br>
+            <div id="pendingList" class="text-monospace text-center">
+              <div class="color"> <h6 class="text-center typeOfR">Reimbursement Type: {{requestED.rq_type}}</h6></div> 
+                <h6 class="text-center time">Submitted on: {{requestED.timeSubmission}}</h6>
+                <div class="color"><h6 class="text-center time">Amount: ${{requestED.amount}}</h6></div> 
+                <h6 class="descipt">Description</h6>
+                <div class="description">
+                  <h6 class="text-center">{{requestED.description}}</h6>
+              </div>
+              </div>
+              <h6 class="image">Receipt</h6>
+              <div class="fileImage color">
+              <h6 class="noImage text-center">No image</h6>
+              </div> 
+              <h6 class="status">Approved By:</h6>
+              <div class="statusBox">
+              <h6 class="statusDescript text-center">Manager {{requestED.resolvedUId}} <br> Denied </h6>
+              </div> 
+              </div>
+    </div> -->
+    
+    
+              

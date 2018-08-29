@@ -1,0 +1,22 @@
+<app-manager-view-employees *ngIf="viewEmployees"></app-manager-view-employees>
+<app-manager-view-request *ngIf="viewRequest"></app-manager-view-request>
+<app-create-employee *ngIf="create"></app-create-employee>
+
+<div id="navContainer" class="p-3 mb-2 bg-danger text-white ">
+<h1 id="name" class="text-monospace">Manager</h1>
+<img src="http://www.centro-renacer.org/wp-content/uploads/2016/06/blank-profile.png">
+<div id="navContain" class="text-monospace">
+<div class="nav">
+  <a id="navText1" (click)="clickRegister()">Register new hero</a>
+</div>
+<div class="nav">
+  <a id="navText2" (click)="clickViewRequest()">Employee Request(s)</a>
+</div>
+<div class="nav">
+  <a id="navText3" (click)="clickViewEmployees()">View employees</a> 
+</div>
+<div class="nav">
+  <a id="navText4" (click)="logOut()">Logout</a>
+</div>
+</div>
+</div>

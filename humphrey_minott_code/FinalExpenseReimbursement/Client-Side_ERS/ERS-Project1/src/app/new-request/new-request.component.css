@@ -1,0 +1,85 @@
+#requestForm{
+    width:620px;
+    height:500px;
+    background-color: yellow;
+    border: 5px dotted rgb(187, 14, 14);
+    display: inline;
+    position: absolute;
+    margin: -10px 0px 0px 200px;
+    background-image: Url("../assets/images/yellowBackground.jpg");
+    border-radius: 25px;
+    color: rgb(255, 0, 0);
+    margin-top:7px;
+    box-shadow: 8px 8px rgba(253, 10, 10, 0.747);
+}
+
+#exampleFormControlSelect2{
+    width: 250px;
+    margin: 40px 0px 0px -280px;
+    display:inline;
+    position:absolute;
+}
+
+#exampleFormControlTextarea1{
+    width: 250px;
+    height: 150px;
+    margin: 40px 0px 0px 40px;
+    display:inline;
+    position:absolute;
+}
+
+#file{
+    display:inline;
+    position:absolute;
+    margin: 160px 0px 0px -250px;
+}
+
+#label1{
+    font-size: 25px;
+    text-decoration: underline;
+    margin-top: 15px;
+    font-weight: bold;
+    
+}
+#label2{
+    display:inline;
+    position:absolute;
+    margin: 0px 0px 0px -20px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+
+}
+#label3{
+    display:inline;
+    position:absolute;
+    margin: 10px 0px 0px -245px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+
+}
+#label4{
+    display:inline;
+    position:absolute;
+    margin: 10px 0px 0px 120px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+
+}
+#label5{
+    display:inline;
+    position:absolute;
+    margin: 135px 0px 0px -220px;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+
+}
+
+.btn{
+    margin-top: 210px;
+}
+
+option:hover{
+    background-color: red;
+}
+
+

@@ -1,0 +1,222 @@
+#requestForm{
+    width:620px;
+    height:500px;
+    background-color: rgb(194, 222, 255);
+    border: 5px dotted rgb(187, 14, 14);
+    display: inline;
+    position: absolute;
+    margin: -10px 0px 0px 200px;
+    background-image: Url("http://hdqwalls.com/wallpapers/super-mario-maker.jpg");
+    border-radius: 25px;
+    color: rgb(255, 0, 0);
+    overflow:scroll;
+    margin-top: 7px;
+    box-shadow: 8px 8px rgba(253, 10, 10, 0.747);
+}
+
+.btn{
+    padding:5px;
+}
+
+#but1{
+    margin: 10px 0px 0px -15px;
+}
+#but2{
+    margin: 10px 0px 0px 10px;
+}
+#but3{
+    margin: 10px 0px 0px 10px;
+}
+
+#title{
+    font-size: 40px;
+    margin: 25px 0px 0px 0px;
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.subTitle{
+    font-size: 20px;
+    margin: 25px 0px 0px -400px;
+    color: blue;
+    text-decoration: underline;
+}
+
+#pendingList{
+    height: 260px;
+    width: 610px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid black;
+}
+
+.typeOfR{
+    /* Float: left; */
+    color: black;
+    font-size:15px;
+    margin-top: 10px;
+    display:block;
+    font-weight:bold;
+}
+.time{
+    /* Float: left; */
+    color: black;
+    font-size:15px;
+    /* margin-top: 10px; */
+    display:block;
+    font-weight:bold;
+}
+
+.color{
+    background-color: rgba(252, 69, 69, 0.493) !important;
+}
+
+.description{
+    overflow-y: scroll;
+    width:90px;
+    height: 142px; 
+    /* display: inline; */
+    position: absolute;
+    margin-left:30px;
+    color:black;
+}
+
+.descipt{
+    margin-left:-435px;
+    color: black;
+    font-size:15px;
+    /* margin-top: 10px; */
+    font-weight:bold;
+    display: inline;
+}
+
+.image{
+    display:inline;
+    color: black;
+    font-size:15px;
+    margin: -166px 0px 0px -30px;
+    font-weight:bold;
+    position: absolute;
+}
+
+.fileImage{
+    display: inline;
+    margin: -144px 0px 0px -35px;
+    position: absolute;
+    height: 142px;
+    width: 90px;
+}
+
+.noImage{
+    margin: 50px 0px 0px 0px;
+}
+.status{
+    display:inline;
+    color: black;
+    font-size:15px;
+    margin: -164px 0px 0px 140px;
+    font-weight:bold;
+    position: absolute;
+}
+
+.statusBox{
+    display: inline;
+    margin: -120px 0px 0px 140px;
+    position: absolute;
+    height: 142px;
+    width: 90px;
+    color: black;
+}
+
+.statusDescipt{
+    margin: 50px 0px 0px 0px;
+}
+
+/*------------------------------------------Accepted-------------------------------------------------*/
+#pendingList{
+    height: 260px;
+    width: 610px;
+    background-color: rgb(255, 255, 255);
+    border: 3px solid black;
+}
+
+.typeOfR{
+    /* Float: left; */
+    color: black;
+    font-size:15px;
+    margin-top: 10px;
+    display:block;
+    font-weight:bold;
+}
+.time{
+    /* Float: left; */
+    color: black;
+    font-size:15px;
+    /* margin-top: 10px; */
+    display:block;
+    font-weight:bold;
+}
+
+.color{
+    background-color: rgba(252, 69, 69, 0.493) !important;
+}
+
+.description{
+    overflow-y: scroll;
+    width:90px;
+    height: 142px; 
+    /* display: inline; */
+    position: absolute;
+    margin-left:30px;
+    color:black;
+}
+
+.descipt{
+    margin-left:-435px;
+    color: black;
+    font-size:15px;
+    /* margin-top: 10px; */
+    font-weight:bold;
+    display: inline;
+}
+
+.image{
+    display:inline;
+    color: black;
+    font-size:15px;
+    margin: -166px 0px 0px -30px;
+    font-weight:bold;
+    position: absolute;
+}
+
+.fileImage{
+    display: inline;
+    margin: -144px 0px 0px -35px;
+    position: absolute;
+    height: 142px;
+    width: 90px;
+}
+
+.noImage{
+    margin: 50px 0px 0px 0px;
+}
+.status{
+    display:inline;
+    color: black;
+    font-size:15px;
+    margin: -164px 0px 0px 140px;
+    font-weight:bold;
+    position: absolute;
+}
+
+.statusBox{
+    display: inline;
+    margin: -120px 0px 0px 140px;
+    position: absolute;
+    height: 142px;
+    width: 90px;
+    color: black;
+}
+
+.statusDescipt{
+    margin: 50px 0px 0px 0px;
+}

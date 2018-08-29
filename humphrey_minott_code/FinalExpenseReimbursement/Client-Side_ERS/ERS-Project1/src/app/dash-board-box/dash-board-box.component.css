@@ -1,0 +1,44 @@
+#loginBox{
+    height: 250px;
+    width: 400px;
+    float: right;
+    border: 5px dotted rgb(187, 14, 14);
+    border-radius: 25px;
+    box-shadow: 10px 10px rgba(253, 10, 10, 0.747);
+    margin: 15px 0px 0px 950px;
+    position: absolute;
+}
+
+.form-control{
+    width: 250px;
+    display: inline;
+    display: absolute;
+    margin-left: 50px;
+}
+
+#welcome{
+    margin-top: 49px;
+    margin-left: 85px;
+    position: absolute;
+    display: inline;
+    height: 170px;
+}
+
+.btn{
+    margin: 18px 0px 0px 136px;
+    display: inline;
+    position: absolute;
+}
+
+#message{
+    position: absolute;
+    display: inline;
+    font-size: 20px;
+    margin-left: 99px;
+}
+
+#name{
+    position: absolute;
+    display: inline;
+    margin:40px 0px 0px 75px;
+}

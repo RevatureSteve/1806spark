@@ -1,0 +1,37 @@
+<div *ngIf="visible" class="text-monospace text-center" id="requestForm">
+    
+    <div class="form-group">
+      <label id="title" for="exampleFormControlInput1">Register</label>
+      
+    </div>
+    <div class="form-group">
+      <label class="name">Enter first name:<br>
+      <input class="form-group big"  [(ngModel)]= "validateUser1.fname" placeholder="name">
+       </label>
+    </div>
+    <div class="form-group">
+      <label class="name">Enter last name:<br>
+      <input class="form-group big"  [(ngModel)]= "validateUser1.lname" placeholder="name">
+       </label>
+    </div>
+    <div class="form-group">
+      <label class="name">Email:<br>
+      <input class="form-group big"  [(ngModel)]= "validateUser1.email">
+       </label>
+    </div>
+   <h6 id="subTitlep">Position:</h6>
+   <div id="managerSelect">
+      <div id ="accept" class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" (click)="setPosition(2)" name="position" value="2">
+          <label class="form-check-label" for="inlineRadio1">Employee</label>
+        </div>
+        <div id ="deny" class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" (click)="setPosition(1)" name="position" value="1">
+          <label class="form-check-label" for="inlineRadio2">Manager</label>
+        </div>
+      </div> 
+  
+      <button id="close" type="button" class="btn btn-primary" (click)="close()">Create</button>
+ 
+  
+</div>

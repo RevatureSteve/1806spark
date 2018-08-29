@@ -1,0 +1,81 @@
+#navContain{
+    margin-top: 331px;
+    position: absolute;
+}
+.nav{
+    border: 1px dotted black;
+    width:300px;
+    margin: 0px 0px 0px -16px;
+    background-color: rgba(45, 143, 255, 0.918);
+    padding: 14px;
+}
+#navText1{
+    margin-left: 95px;
+    display: inline;
+}
+#navText1:hover{
+    margin-left: 95px;
+    display: inline;
+    color:red;
+    cursor: pointer;
+}
+#navText2{
+    margin-left: 82px;
+    
+}
+#navText2:hover{
+    margin-left: 82px;
+    display: inline;
+    color:red;
+    cursor: pointer;
+}
+#navText3{
+    margin-left: 85px;
+}
+#navText3:hover{
+    margin-left: 85px;
+    display: inline;
+    color:red;
+    cursor: pointer;
+}
+#navText4{
+    margin-left: 110px;
+}
+#navText4:hover{
+    margin-left: 110px;
+    display: inline;
+    color:red;
+    cursor: pointer;
+}
+
+img{
+    display: inline;
+    position: absolute;
+    filter: brightness(111%);
+    margin: 60px 0px 0px 28px;
+    border: 2px solid black;
+}
+
+#welcome{
+    margin-left: 50px;
+    font-size: 20px;
+    display: inline;
+    position: absolute;
+}
+#name{
+    margin-top:26px;
+    font-size: 20px;
+    display: inline;
+    position: absolute;
+}
+
+#navContainer{
+    width:300px;
+    height:564px;
+    display: inline;
+    position: absolute;
+    margin: -14px 0px 0px 1066px;
+    border-top: 1px solid red;
+    border-right: 1px solid red;
+    float: right;
+ }
