@@ -1,0 +1,6 @@
+CREATE USER project1_db IDENTIFIED BY p4ssw0rd;
+GRANT CONNECT, RESOURCE TO project1_db;
+DROp user bank_db;
+
+CREATE USER bank_db IDENTIFIED BY p4ssw0rd;
+GRANT CONNECT, RESOURCE TO bank_db;

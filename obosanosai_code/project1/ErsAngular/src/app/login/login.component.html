@@ -1,0 +1,12 @@
+<div>
+  <form class="form" id='login'>
+    <img src="https://fontmeme.com/permalink/180828/0cfee823a86b48ebe547ebdf55cd45b8.png">
+      <br>
+      <input class='input loginInput' id='email' #email type="text">
+      <br><img src="https://fontmeme.com/permalink/180828/d9d15a59356c48488fe3758844a6a114.png">
+      <br>
+      <input class='input loginInput' id='password' #password type='password'>
+      <br>
+      <input (click)="login(email.value, password.value)" class="formBtn" id='loginBtn' type="button" value="Login">
+  </form>
+</div>

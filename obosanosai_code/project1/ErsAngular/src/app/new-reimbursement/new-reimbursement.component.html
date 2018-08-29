@@ -1,0 +1,23 @@
+<form style="max-width: 700px;" class="form">
+  <h2><img src="https://fontmeme.com/permalink/180828/4ad9551297ca7b729f2441446aea8135.png"></h2>
+  <div class="form-group">
+    <label for="formGroupExampleInput"><img src="https://fontmeme.com/permalink/180828/c0e9f7987d308db7f2ea4af01675d534.png"></label>
+    <input type="number" #amt class="form-control" id="formGroupExampleInput" placeholder="$$$">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1"><img src="https://fontmeme.com/permalink/180828/5a2e4b0c33f357888ede366b4d8e67f4.png"></label>
+    <textarea #desc class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div>
+    <select #type class="custom-select">
+      <option selected> + Type of Reimbursement + </option>
+      <option value="1"> + Amunition + </option>
+      <option value="2"> + Unicorns + </option>
+      <option value="3"> + Machinery + </option>
+      <option value="4"> + Chimchangas +</option>
+    </select>
+  </div>
+  <div id = 'btn'>
+      <input (click)="newReimbursement(amt.value, desc.value, type.value, img)" class="formBtn" id = "editProfileBtn" type="button" value=" + Submit + " style="width: 100px;">
+  </div>
+</form>

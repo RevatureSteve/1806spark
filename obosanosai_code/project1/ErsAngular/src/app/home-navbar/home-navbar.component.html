@@ -1,0 +1,33 @@
+<app-navbar></app-navbar>
+
+<ul  class="nav nav-pills nav-justified">
+  <br>
+  <br>
+
+  <li class="nav-item">
+    <a class="nav-link" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><img src="https://fontmeme.com/permalink/180828/e6e0a1c7ad164ef0337a10d2d63a54b2.png"></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><img src="https://fontmeme.com/permalink/180828/503d468dfe19d0dfe23391166ffdd507.png"> </a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><img src="https://fontmeme.com/permalink/180828/050bbcc1b86bd309f2201728bd078bac.png"></a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link" id="reimbursement-tab" data-toggle="tab" href="#reimbursement" role="tab" aria-controls="reimbursement" aria-selected="false"><img src="https://fontmeme.com/permalink/180828/a85765922f44986fc56c8af6eef39054.png"></a>
+  </li>
+</ul>
+<div class="tab-content" id="pills-tabContent">
+  <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+    <app-employee-reimbursement></app-employee-reimbursement>
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <app-emp-pending-reimbursements></app-emp-pending-reimbursements>
+  </div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <app-emp-resolved-reimbursements></app-emp-resolved-reimbursements>
+  </div>
+  <div class="tab-pane fade" id="reimbursement" role="tabpanel" aria-labelledby="reimbursement-tab">
+    <app-new-reimbursement></app-new-reimbursement>
+  </div>
+</div>

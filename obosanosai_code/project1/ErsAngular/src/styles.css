@@ -1,0 +1,62 @@
+/* You can add global styles to this file, and also import other style files */
+/* You can add global styles to this file, and also import other style files */
+/* HTML Elements */
+
+body{
+    /* background-image: url('https://i.ytimg.com/vi/XtIx5nLSo4w/maxresdefault.jpg'); */
+    /* background-image: url('https://media0.giphy.com/media/zxf6g67Kq8zgQ/200.webp'); */
+    /* background-image: url('https://4znt8hi353-flywheel.netdna-ssl.com/wp-content/uploads/2016/06/DP_GoT.jpg'); */
+    background-image: url('https://data.whicdn.com/images/226301060/original.gif'); 
+    background-repeat: no-repeat; 
+  background-size: cover;
+ }   
+
+/* IDs */
+
+
+
+/* Classes */
+
+
+.formBtn{
+    margin-top: 10px;
+    width: 200px;
+    border-radius: 3px;
+    color:black;
+    font-weight: bold;
+    font-size: 17px;
+    font-style: normal;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 5px;
+}
+
+  .formBtn:hover{
+    background-color: rgb(41, 5, 5);
+    color: rgb(4, 4, 44);
+}  
+
+.form{
+    background-image: url('https://4znt8hi353-flywheel.netdna-ssl.com/wp-content/uploads/2016/06/DP_GoT.jpg');
+     border: solid;
+     border-width: 5px;
+     /* max-width: 500px;   */
+     margin: 200px; 
+     text-align: left; 
+     display: inline inline-block;
+    font-style: normal;
+    font-weight: bold;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 43px;
+    background-color:black;
+    color:rgb(41, 5, 5);
+    border-radius: 3px;
+}
+
+.input{
+    width: 250px;
+    font-size: 15px;
+    padding: 4px;
+    border-radius: 3px;
+    background-color:white;
+    margin-bottom: 5px;
+}

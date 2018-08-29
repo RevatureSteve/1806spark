@@ -1,0 +1,26 @@
+
+<table id='reimbursements' class="table table-striped">
+  <thead>
+    <tr>
+      <!-- <th scope="col" class="bg-danger">id</th> -->
+      <th scope="col" class="bg-danger"> + First Name + </th>
+      <th scope="col" class="bg-dark"> + Last Name + </th>
+      <th scope="col" class="bg-danger"> + Secret Id +</th>
+      <th scope="col" class="bg-dark"> + Email + </th>
+      <th scope="col" class="bg-danger">+ Position + </th>
+      <!-- <th scope="col" class="bg-danger">id</th> -->
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = 'let u of users'>
+      <!-- <th scope="row">{{u.u_id}}</th> -->
+      <td class="bg-danger">{{u.fname}}</td>
+      <td class="bg-dark">{{u.lname}}</td>
+      <th class="bg-danger" scope="row"  >{{u.u_id}}</th>
+      <td class="bg-dark">{{u.email}}</td>
+      <td class="bg-danger">{{u.posTitle}}</td>
+      <!-- <th class="bg-danger" scope="row"  >{{u.u_id}}</th> -->
+    </tr>
+
+  </tbody>
+</table>

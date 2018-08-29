@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>App Home</title>
+<link rel="stylesheet" href="/ServletExamples/resources/css/styles.css">
+</head>
+<body>
+<h1>App home page</h1>
+ <form method="POST" action="forwardVsRedirect">
+<!-- <form method="POST" action="/ServletExamples/forwardVsRedirect"> it works! -->
+<!-- <form method="POST" action="/forwardVsRedirect"> strips the /ServletExamples and becomes a 404-->
+<button type="submit">POST Request!</button>
+
+</form>
+</body>
+</html>

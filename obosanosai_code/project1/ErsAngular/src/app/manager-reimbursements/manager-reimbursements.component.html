@@ -1,0 +1,30 @@
+
+<table id='reimbursements' class="table table-striped">
+  <thead>
+    <tr>
+      <!-- <th scope="col" class="bg-danger" > + id + </th> -->
+      <th scope="col" class="bg-danger"> + Alias + </th>
+      <th scope="col" class="bg-dark" > + Seceret Id + </th>
+      <th scope="col" class="bg-danger"> + Description + </th>
+      <th scope="col" class="bg-dark"> + Request Type +</th>
+      <th scope="col" class="bg-danger">$Amount$</th>
+      <!-- <th scope="col" class="bg-danger"> + Request Status + </th> -->
+      <th scope="col" class="bg-dark"> + Time of Submission + </th>
+      <th scope="col" class="bg-danger"> + Request Status + </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = 'let r of reimbs'>
+      <!-- <th scope="row">{{r.rId}}</th> -->
+      <td class="bg-danger">{{r.employeeName}}</td>
+      <th scope="row" class="bg-dark">{{r.rId}}</th>
+      <td class="bg-danger">{{r.description}}</td>
+      <td class="bg-dark">{{r.rqType}}</td>
+      <td class="bg-danger">{{r.amt}}</td>
+      <!-- <td>{{r.rqStatus}}</td> -->
+      <td class="bg-dark">{{r.timeSubmission | date: 'short'}}</td>
+      <td class="bg-danger">{{r.rqStatus}}</td>
+    </tr>
+
+  </tbody>
+</table>

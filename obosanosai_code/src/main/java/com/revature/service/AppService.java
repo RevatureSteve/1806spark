@@ -1,0 +1,68 @@
+package com.revature.service;
+
+import java.util.List;
+
+import com.revature.dao.UserDao;
+import com.revature.dao.UserDaoImpl;
+import com.revature.domain.Task;
+import com.revature.domain.User;
+
+public class AppService {
+
+	/*
+	 *  business logic like login validation
+	 *      validate models before persisting
+	 *      manipulate models before persisting
+	 *      validate user before pulling sensitive data
+	 *      etc...
+	 */
+	
+	//instance scope so each non-static method is this class can use the sam eobject
+	private UserDao userDao = new UserDaoImpl();
+	
+	/**
+	 * login() returns a valid user object or return null if the user/pw is invalid;
+	 * @param userInput
+	 * @return
+	 */
+	public User login(User userInput) {
+		System.out.println("[LOG]----Starting----Service login() argument: " + userInput);
+		//First pass the userInput's username to the dao to see if there is a
+		//     record found in the database with that username
+		//     Yes- assign the user record to a User java object 
+		//     No - then it is null
+		System.out.println("[LOG]----calling dao----Service login()");
+		User dbUser = userDao.getUserByUsername(userInput.getUsername());
+		System.out.println("[LOG]----dao returned----Service login() returned: " + dbUser);
+		 // since the username might  not be found I could get back... check for that!
+		if(dbUser != null) {
+			System.out.println("[LOG]----dbUser null check----Service login() status: successful");
+			// now lets compare the userInput's password to the dbUser's password
+			if(dbUser.getPassword().equals(userInput.getPassword())) {
+				System.out.println("[LOG]----compare pw----Service login() pw: success");
+				return dbUser; // not userInput since it doesn't have the userId
+				
+			}
+		}
+		System.out.println("[LOG]----ending----Service login() pw: ");
+		return null;
+	}
+	public List<Task> getAllTasks(){
+		System.out.println("[LOG]----retrieving---All tasks");
+		// any validation before asking the db? maybe in future but not at the moment
+		// so let's call the dao to get Tasks from the DB
+		
+		return userDao.getAllTasks();
+	}
+	public List<Task> getTasksByUserId(int id){
+		System.out.println("[LOG]--retreiving---User task");
+		return userDao.getTasksByUserId(id);
+	}
+	public User getUser(int id) {
+		return null;
+	}
+	public int createUser(User user) {
+		return 0;
+	}
+	
+}

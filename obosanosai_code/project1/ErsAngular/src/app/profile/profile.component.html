@@ -1,0 +1,24 @@
+<span *ngIf="posId==1">
+  <app-navbar></app-navbar>  
+</span>
+<span *ngIf="posId==2">
+  <app-manager-navbar></app-manager-navbar>  
+</span>
+
+
+<!-- <h1 id = 'profilePg'>Profile</h1> -->
+<form class="form" id = 'profile'>
+  <img src="https://fontmeme.com/permalink/180828/e8d754995368e747f432baa3177a9822.png">
+  <input class="input profileInput" id = 'empId' #empId type="text" value = {{user.u_id}} readonly ><br>
+ <img src="https://fontmeme.com/permalink/180828/c9af9540448d60214e7a88881f5fcb5e.png">
+  <input class="input profileInput" id = 'fname' #fname type="text" value = {{user.fname}} ><br>
+  <img src="https://fontmeme.com/permalink/180828/321ca45c46335f7ad956feb921c6be97.png">
+  <input class="input profileInput" id = 'lname' #lname type="text" value = {{user.lname}} ><br>
+  <img src="https://fontmeme.com/permalink/180828/71c24563c04c10c8fb51983bb66929fa.png">
+  <input class="input profileInput" id = 'email' #email type="text" value = {{user.email}} ><br>
+  <img src="https://fontmeme.com/permalink/180828/1383bc0e9e50d6129eec516fab6dabcf.png">
+  <input class="input profileInput" id = 'position' type="text" value = {{user.posTitle}} readonly ><br>
+  <div id = 'btn'>
+      <input (click)="updateUser(email.value, fname.value, lname.value)" class="formBtn" id = "editProfileBtn" type="button" value="Update">
+  </div>
+</form>

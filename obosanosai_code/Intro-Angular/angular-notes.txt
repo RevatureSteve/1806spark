@@ -1,0 +1,81 @@
+Heavily use NpM which is an example of a popular CLI tool
+The Standard for npm projects after pulling is run the Command:
+npm install
+npm start
+
+But when creating a new npm project using npm init
+the npm install works but NOT npm start, you must add this!
+For example look at a generaated angular project's package.json
+ng serve is the cmd to start an angular project BUT again look at the package.json
+"npm start" calls ng serve because the script tag in package.json says to execute
+       ng serve
+
+SO if project 1 is only an npm project(has a package.json) and not an angualar
+     you must add start to your package.json script which would look like:
+     "scripts": {
+    "start": "node index.js",
+  }
+
+Angular has a CLI ontop of NpM called...Angular CLI
+CLI: Command Line Interface
+Examples of CLIs: ng (Angular), npm, node, git
+
+Need to install angualar CLI
+npm install -g @angular/cli
+The -g is global install, making angular available anywhere on the computer
+
+New Angular project:
+ng new <project-name>
+don't include the < > 
+cd <project name>
+npm init
+npm serve -o
+sudo chown -R $USER /usr/local
+
+Generate:
+ng generate component | service | pipe | etc <name>
+
+
+
+Angular:
+---------------------------------------------
+directive: <app-name></app-name> html code
+What is the first directive given when you start your project? <app-root></app-root>
+What is a directive?
+    -where there is a directive, at runtime it will inject
+    the corresponding html fragment then the style will style that html 
+    and the ts file will control(like dom manipulation) the hmtl/css
+A directive always belongs to a component, 
+    like app-root belongs to app.component
+---------------------------------------------
+component: @Component decorator in a ts file!
+@Commponent requires 3 things!
+     - selector aka directive name like app-root which becomes <app-root></app-root>
+     -template aka html
+     -styles
+-----------------------------------------------
+
+Data Binding: 1-way & 2-way
+
+What does {{}} Angular Expression do?
+TS file -> HTML file
+1 way data binding
+from what to what? well we're only talking about components
+    and components only have 3 things: html, css, ts
+    Data binding means sharing the same data between them
+
+
+mini assignment: create an angular project, generate 2 components
+         and use angular {{}} to print 2 separate values to the html files.
+
+-----------------------------------------------
+How to generate a component and what does it create/modify?
+     -creates html, css, ts, spec(for testing)
+     -modifies: adds the component to the app.module
+-----------------------------------------------
+
+What are structural directives?
+     There are 3 structural directives (mainly flow control)
+     -*ngFor
+     -*ngIf
+     -*ngSwitch

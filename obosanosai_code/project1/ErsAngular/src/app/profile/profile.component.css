@@ -1,0 +1,25 @@
+
+/* HTML elements */
+body{
+    background-image: url('https://data.whicdn.com/images/226301060/original.gif');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* classes */
+.profileInput{
+    margin-right: 70px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+
+
+#btn{
+    text-align: center;
+}
+
+
+#profile{
+    text-align: right;
+}

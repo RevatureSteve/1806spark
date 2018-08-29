@@ -1,0 +1,25 @@
+/*
+
+    Image Pop
+*/
+
+
+/*
+    HMTL IDs
+*/
+#imagePopBtn {
+    width: 150px;
+    height: 30px;
+    font-weight: bold;
+    
+    margin: auto;
+    border-radius: 20px;
+}
+
+/*
+    HTML Class
+*/
+.center {
+    text-align: center;
+    margin: auto;
+}
