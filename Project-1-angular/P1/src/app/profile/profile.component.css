@@ -1,0 +1,24 @@
+
+/* HTML elements */
+body{
+    background-image: url('https://i.pinimg.com/originals/0f/dd/12/0fdd12eabe25be35616ec24b04ed3c0a.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+/* classes */
+.profileInput{
+    margin-right: 70px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+/* Ids */
+#btn{
+    text-align: center;
+}
+
+
+#profile{
+    text-align: right;
+}

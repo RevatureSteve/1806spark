@@ -51,8 +51,8 @@ public class ReimbursementDao {
 		List<Reimbursement> reimbursements = new ArrayList<>();
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
 			
-			String sql = "SELECT * FROM reimbursement r LEFT JOIN rb_status rs ON r.rb_status_id = rs.rb_status_id LEFT JOIN rb_type rt "
-					+ "ON r.rb_type_id = rt.rb_type_id LEFT JOIN users u ON r.emp_u_id = u.u_id LEFT JOIN users u ON r.mgr_u_id = u.u_id WHERE emp_u_id = ? ORDER BY r_id";
+			String sql = "SELECT * FROM reimbursement r LEFT JOIN rq_status rs ON r.rq_status_id = rs.rq_status_id LEFT JOIN rq_type rt "
+					+ "ON r.rq_type_id = rt.rq_type_id LEFT JOIN u_sers u ON r.emp_u_id = u.u_id LEFT JOIN u_sers u ON r.mgr_u_id = u.u_id WHERE emp_u_id = ? ORDER BY r_id";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, id);
@@ -61,9 +61,9 @@ public class ReimbursementDao {
 			while (rs.next()) {
 				Reimbursement reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"),
 						rs.getString("fname") + " " + rs.getString("lname"), rs.getInt("mgr_u_id"),
-						rs.getString(23) + " " + rs.getString(24), rs.getDouble("amt"), rs.getString("description"),
-						rs.getBlob("img"), rs.getDate("time_submission"), rs.getString("rb_type"),
-						rs.getInt("rb_type_id"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
+						rs.getString(23) + " " + rs.getString(24), rs.getDouble("amt"), rs.getString("descript"),
+						rs.getBlob("img"), rs.getDate("time_submission"), rs.getString("rq_type"),
+						rs.getInt("rq_type_id"), rs.getString("rq_status"), rs.getInt("rq_status_id"));
 				reimbursements.add(reimbursement);
 			}
 		} catch (IOException | SQLException e) {
@@ -77,8 +77,8 @@ public class ReimbursementDao {
 		Reimbursement reimbursement = null;
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
 			
-			String sql = "SELECT * FROM reimbursement r LEFT JOIN rb_status rs ON r.rb_status_id = rs.rb_status_id LEFT JOIN rb_type rt "
-					+ "ON r.rb_type_id = rt.rb_type_id LEFT JOIN users u ON r.emp_u_id = u.u_id LEFT JOIN users u ON r.mgr_u_id = u.u_id WHERE r_id = ?";
+			String sql = "SELECT * FROM reimbursement r LEFT JOIN rq_status rs ON r.rq_status_id = rs.rq_status_id LEFT JOIN rq_type rt "
+					+ "ON r.rq_type_id = rt.rq_type_id LEFT JOIN u_sers u ON r.emp_u_id = u.u_id LEFT JOIN u_sers u ON r.mgr_u_id = u.u_id WHERE r_id = ?";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, rId);
@@ -87,9 +87,9 @@ public class ReimbursementDao {
 			if (rs.next()) {
 				reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"),
 						rs.getString("fname") + " " + rs.getString("lname"), rs.getInt("mgr_u_id"),
-						rs.getString(23) + " " + rs.getString(24), rs.getDouble("amt"), rs.getString("description"),
-						rs.getBlob("img"), rs.getDate("time_submission"), rs.getString("rb_type"),
-						rs.getInt("rb_type_id"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
+						rs.getString(23) + " " + rs.getString(24), rs.getDouble("amt"), rs.getString("descript"),
+						rs.getBlob("img"), rs.getDate("time_submission"), rs.getString("rq_type"),
+						rs.getInt("rq_type_id"), rs.getString("rq_status"), rs.getInt("rq_status_id"));
 //				reimbursements.add(reimbursement);
 			}
 		} catch (IOException | SQLException e) {
@@ -108,8 +108,8 @@ public class ReimbursementDao {
 		List<Reimbursement> reimbursements = new ArrayList<>();
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
 			
-			String sql = "SELECT * FROM reimbursement r LEFT JOIN rb_status rs ON r.rb_status_id = rs.rb_status_id LEFT JOIN rb_type rt "
-					+ "ON r.rb_type_id = rt.rb_type_id LEFT JOIN users u ON r.emp_u_id = u.u_id LEFT JOIN users u ON r.mgr_u_id = u.u_id ORDER BY r_id";
+			String sql = "SELECT * FROM reimbursement r LEFT JOIN rq_status rs ON r.rq_status_id = rs.rq_status_id LEFT JOIN rq_type rt "
+					+ "ON r.rq_type_id = rt.rq_type_id LEFT JOIN users u ON r.emp_u_id = u.u_id LEFT JOIN users u ON r.mgr_u_id = u.u_id ORDER BY r_id";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			
@@ -119,8 +119,8 @@ public class ReimbursementDao {
 				Reimbursement reimbursement = new Reimbursement(rs.getInt(1), rs.getInt("emp_u_id"),
 						rs.getString("fname") + " " + rs.getString("lname"), rs.getInt("mgr_u_id"),
 						rs.getString(23) + " " + rs.getString(24), rs.getDouble("amt"), rs.getString("description"),
-						rs.getBlob("img"), rs.getDate("time_submission"), rs.getString("rb_type"),
-						rs.getInt("rb_type_id"), rs.getString("rb_status"), rs.getInt("rb_status_id"));
+						rs.getBlob("img"), rs.getDate("time_submission"), rs.getString("rq_type"),
+						rs.getInt("rq_type_id"), rs.getString("rq_status"), rs.getInt("rq_status_id"));
 				reimbursements.add(reimbursement);
 			}
 		} catch (IOException | SQLException e) {
@@ -139,7 +139,7 @@ public class ReimbursementDao {
 	 */
 	public void updateReimbursementStatus(Reimbursement reimb, int mgrId, int status) {
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
-			String sql = "UPDATE reimbursement SET mgr_u_id = ? , rb_status_id = ? WHERE r_id = ?";
+			String sql = "UPDATE reimbursement SET mgr_u_id = ? , rq_status_id = ? WHERE r_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setInt(1, mgrId);
 			ps.setInt(2, status);

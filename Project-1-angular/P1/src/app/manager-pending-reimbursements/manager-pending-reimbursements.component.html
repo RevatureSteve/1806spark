@@ -1,0 +1,31 @@
+
+<table id='reimbursements' class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">Spy</th>
+      <th scope="col">Description</th>
+      <th scope="col">Type</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Status</th>
+      <th scope="col">Submission Time</th>
+      <th scope="col">Approve or Deny</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor = 'let r of reimbs'>
+      <th scope="row">{{r.rId}}</th>
+      <td>{{r.employeeName}}</td>
+      <td>{{r.description}}</td>
+      <td>{{r.rbType}}</td>
+      <td>{{r.amt}}</td>
+      <td>{{r.rbStatus}}</td>
+      <td>{{r.timeSubmission | date: 'short'}}</td>
+      <td>
+        <button (click)="approve(r.rId)" type="button" class="btn btn-success">Approve</button>
+        <button (click)="deny(r.rId)" type="button" class="btn btn-danger">Deny</button>
+      </td>
+    </tr>
+
+  </tbody>
+</table>

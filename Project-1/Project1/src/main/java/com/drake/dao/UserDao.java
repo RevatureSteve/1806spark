@@ -17,7 +17,7 @@ public class UserDao {
 	//Create
 	public void createUser(User user) {
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
-			String sql = "INSERT INTO users (email, password, fname, lname, pos_id) VALUES (?,?,?,?,?)";
+			String sql = "INSERT INTO u_sers (email, password, fname, lname, pos_id) VALUES (?,?,?,?,?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, user.getEmail());
 			ps.setString(2, user.getPassword());
@@ -40,7 +40,7 @@ public class UserDao {
 	public User getUserByEmail(String email) {
 		User user = null;
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
-			String sql = "SELECT * FROM users u INNER JOIN position p ON u.pos_id = p.pos_id WHERE email = ?";
+			String sql = "SELECT * FROM u_sers u INNER JOIN positions p ON u.pos_id = p.pos_id WHERE email = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, email);
 			ResultSet rs = ps.executeQuery();
@@ -65,7 +65,7 @@ public class UserDao {
 	public List<User> getAllUsers() {
 		List<User> users = new ArrayList<>();
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
-			String sql = "SELECT * FROM users u INNER JOIN position p ON u.pos_id = p.pos_id ORDER BY u_id";
+			String sql = "SELECT * FROM u_sers u INNER JOIN positions p ON u.pos_id = p.pos_id ORDER BY u_id";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ResultSet rs = ps.executeQuery();
 			while (rs.next()) {
@@ -90,7 +90,7 @@ public class UserDao {
 		
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
 			System.out.println("in try catch");
-			String sql = "UPDATE users SET email = ? , fname = ?, lname = ? WHERE u_id = ?";
+			String sql = "UPDATE u_sers SET email = ? , fname = ?, lname = ? WHERE u_id = ?";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			System.out.println("created prepared statement");
 			ps.setString(1, user.getEmail());

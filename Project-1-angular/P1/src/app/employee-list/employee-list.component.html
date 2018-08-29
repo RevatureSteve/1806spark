@@ -1,0 +1,22 @@
+
+<table id='reimbursements' class="table table-hover table-dark">
+  <thead>
+    <tr>
+      <th scope="col">id</th>
+      <th scope="col">First Name</th>
+      <th scope="col">Last Name</th>
+      <th scope="col">Email</th>
+      <th scope="col">Position</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr (click) = "employeeSort(u.u_id)" *ngFor = 'let u of users'>
+      <th scope="row">{{u.u_id}}</th>
+      <td>{{u.fname}}</td>
+      <td>{{u.lname}}</td>
+      <td>{{u.email}}</td>
+      <td>{{u.posTitle}}</td>
+    </tr>
+
+  </tbody>
+</table>

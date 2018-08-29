@@ -1,0 +1,25 @@
+
+
+<form style="max-width: 700px;" class="form">
+  <h2><span style="color: cadetblue">New Field Request</span></h2>
+  <div class="form-group">
+    <label for="formGroupExampleInput"><span style="color: white">Enter Field Request</span></label>
+    <input type="number" #amt class="form-control" id="formGroupExampleInput" placeholder="0.00">
+  </div>
+  <div class="form-group">
+    <label for="exampleFormControlTextarea1"><span style="color: white">Enter Description</span></label>
+    <textarea #desc class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+  </div>
+  <div>
+    <select #type class="custom-select">
+      <option selected>Select Request Type</option>
+      <option value="1">Clean-up Crew</option>
+      <option value="2">Fine Dining</option>
+      <option value="3">Stealth Equipment</option>
+      <option value="4">Other (We know what you did)</option>
+    </select>
+  </div>
+  <div id = 'btn'>
+      <input (click)="createNewReimbursement(amt.value, desc.value, type.value)" class="formBtn" id = "editProfileBtn" type="button" value="Submit new reimbursement" style="width: 300px;">
+  </div>
+</form>

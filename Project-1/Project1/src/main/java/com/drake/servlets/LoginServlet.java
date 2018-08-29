@@ -24,12 +24,6 @@ public class LoginServlet extends HttpServlet {
 	 */
 	private static final long serialVersionUID = 1L;
 
-	protected void doGet(HttpServletRequest request, HttpServletResponse response)
-			throws ServletException, IOException {
-		System.out.println("Login Servlet - GET");
-//		request.getRequestDispatcher("http://localhost:4200/login").forward(request, response);
-	}
-
 	protected void doPost(HttpServletRequest request, HttpServletResponse response)
 			throws ServletException, IOException {
 		System.out.println("Login Servlet - POST");
@@ -42,7 +36,7 @@ public class LoginServlet extends HttpServlet {
 		ObjectNode node = mapper.readValue(data, ObjectNode.class);
 		
 		email = node.get("email").textValue();
-		password = node.get("password").textValue();
+		password = node.get("pass_word").textValue();
 
 		currentUser = new UserServlet().login(email, password);
 

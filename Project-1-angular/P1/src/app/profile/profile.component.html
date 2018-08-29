@@ -1,0 +1,17 @@
+<app-manager-navbar></app-manager-navbar>  
+
+<form class="form" id = 'profile'>
+  <span style="color: white">Employee Id:</span>
+  <input class="input profileInput" id = 'empId' #empId type="text" value = {{user.u_id}} readonly ><br>
+  <span style="color: white">First name:</span>
+  <input class="input profileInput" id = 'fname' #fname type="text" value = {{user.fname}} ><br>
+  <span style="color: white">Last name:</span>
+  <input class="input profileInput" id = 'lname' #lname type="text" value = {{user.lname}} ><br>
+  <span style="color: white">Email:</span>
+  <input class="input profileInput" id = 'email' #email type="text" value = {{user.email}} ><br>
+  <span style="color: white">Position:</span> 
+  <input class="input profileInput" id = 'position' type="text" value = {{user.posTitle}} readonly ><br>
+  <div id = 'btn'>
+      <input (click)="updateUser(email.value, fname.value, lname.value)" class="formBtn" id = "editProfileBtn" type="button" value="Edit Profile">
+  </div>
+</form>

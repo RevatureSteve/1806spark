@@ -1,7 +1,7 @@
-import { CurrentUserService } from '../../current-user.service';
-import { UsersService } from '../../users.service';
+import { CurrentUserService } from './../current-user.service';
+import { UsersService } from './../users.service';
 import { Component, OnInit } from '@angular/core';
-import { Users } from '../../models/users.model';
+import { Users } from '../models/users.model';
 import { Router } from '@angular/router';
 
 @Component({
@@ -12,6 +12,7 @@ import { Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   user: Users;
+  // curUser: Users;
 
   constructor(private userService: UsersService, private currentUser: CurrentUserService, private router: Router) { }
 

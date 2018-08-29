@@ -2,14 +2,14 @@
   <div class="mx-auto mt-5 pt-5" style="width: 30%">
     <div>
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" placeholder="Enter email">
+      <input type="text" #email class="form-control" id="exampleInputEmail1" placeholder="Enter email">
     </div>
     <br>
     <div>
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <input type="password" #password class="form-control" id="exampleInputPassword1" placeholder="Password">
     </div>
     <br>
-    <button type="submit" class="btn btn-dark">Submit</button>
+    <input (click)="login(email.value, password.value)" class="formBtn" id='loginBtn' type="button" value="Login">
   </div>
 </div>

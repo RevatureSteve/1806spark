@@ -1,0 +1,21 @@
+<app-manager-navbar></app-manager-navbar>
+
+<form class="form" id='new-emp'>
+  <h1 style="text-align: center"><span style="color: cadetblue">Agent Registration</span></h1>
+  <span style="color: white">First name:</span>
+  <input class="input profileInput" id='emp-fname' #fname type="text">
+  <br> <span style="color: white">Last name:</span>
+  <input class="input profileInput" id='emp-lname' #lname type="text">
+  <br> <span style="color: white">Email:</span>
+  <input class="input profileInput" id='emp-email' #email type="text">
+  <br> <span style="color: white">Position:</span>
+  <select #pos class="profileInput input">
+    <option selected></option>
+    <option value="1">Agent</option>
+    <option value="2">Control</option>
+  </select>
+  <div id='emp-btn'>
+    <input (click)="createNewUser(email.value, fname.value, lname.value, pos.value)" class="formBtn" id="createEmp" type="button"
+      value="Register Agent">
+  </div>
+</form>
