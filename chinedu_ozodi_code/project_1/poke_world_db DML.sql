@@ -24,7 +24,7 @@ SELECT * FROM pokemon_data;
 UPDATE pokemon_data SET poke_id = 1 WHERE poke_id = 0;
 COMMIT;
 -- POKEMON
-SELECT * FROM pokemon;
+SELECT COUNT(*) FROM pokemon;
 SELECT * FROM pokemon p RIGHT OUTER JOIN pokemon_data pd ON (p.pd_id = pd.poke_id) RIGHT OUTER JOIN pokemon_status ps ON (p.p_status_id = ps.p_status_id) WHERE trainer_id = 6;
 SELECT * FROM pokemon p 
 RIGHT OUTER JOIN pokemon_data pd ON (p.pd_id = pd.poke_id)

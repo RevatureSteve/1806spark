@@ -6,33 +6,41 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 </head>
 <body>
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to the Pokemon Website API</h1>
+  <p class="lead">Here are all the different endpoints that can be hit, and the parameters you can pass if available</p>
+</div>
 <table class="table">
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">First</th>
-      <th scope="col">Last</th>
-      <th scope="col">Handle</th>
+      <th scope="col">Endpoint</th>
+      <th scope="col">POST</th>
+      <th scope="col">GET</th>
+      <th scope="col">PUT</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Mark</td>
-      <td>Otto</td>
-      <td>@mdo</td>
+      <th scope="row">/login</th>
+      <td>login user, returns user</td>
+      <td>N/A</td>
+      <td>N/A</td>
     </tr>
     <tr>
-      <th scope="row">2</th>
-      <td>Jacob</td>
-      <td>Thornton</td>
-      <td>@fat</td>
+      <th scope="row">/reimbursements</th>
+      <td>create new reimbursements</td>
+      <td>no params: get all reimbursements <br>
+      	id: get reimbursement by id
+      </td>
+      <td>update reimbursement</td>
     </tr>
     <tr>
-      <th scope="row">3</th>
-      <td>Larry</td>
-      <td>the Bird</td>
-      <td>@twitter</td>
+      <th scope="row">/User</th>
+      <td>create user</td>
+      <td>no param: get all users <br>
+      	id: get user with id
+      </td>
+      <td>update user</td>
     </tr>
   </tbody>
 </table>

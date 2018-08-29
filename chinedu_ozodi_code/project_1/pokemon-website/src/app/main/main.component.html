@@ -2,7 +2,7 @@
   <div class="card-body">
     <h1 class="card-title" *ngIf="!pokemonService.pokemonBattle">World Map</h1>
     <h1 class="card-title" *ngIf="pokemonService.pokemonBattle">{{pokemonService.pokemonBattle.name | uppercase}} | EXP: {{pokemonService.pokemonBattle.experience}}</h1>
-    <h5 class="card-text" *ngIf="!pokemonService.pokemonBattle">Candy count, {{loginService.currentTrainer.candyCount}}. Pokeball count, {{loginService.currentTrainer.pokeballCount}}</h5>
+    <h5 class="card-text" *ngIf="!pokemonService.pokemonBattle">Candy count: {{loginService.currentTrainer.candyCount}}  |  Pokeball count: {{loginService.currentTrainer.pokeballCount}}</h5>
     <div class="container mb-3">
       <img *ngIf="!pokemonService.pokemonBattle" src="https://lh5.googleusercontent.com/proxy/Ab5iZD6PZ5NHnqB_eER4vJolOCjDlESOwUgg59ca8ZeB0RHrKQYny99WAo2v8zkwrsmzDMxnlpbaEmdwKK63u04kEsgQcZMeicYTZuwXEZBdeYnzx4LTy-k=s0-d"
         alt="world map">
