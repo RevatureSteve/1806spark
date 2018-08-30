@@ -1,0 +1,25 @@
+package com.revature;
+
+import com.revature.domain.User;
+import com.revature.service.AppService;
+
+public class Driver {
+	
+	public static void main(String[] args) {
+		System.out.println("testing reimbursement project");
+		
+
+		String emailInput = "nisat.naila@gmail.com";
+		String pwInput = "nana";
+		String fname = "nisat";
+		String lname = "chowdhury";
+
+
+		
+		
+		User validUser = new AppService().login(new User(0,emailInput,pwInput, fname, lname, 0));
+		System.out.println("Is the user valid: " + validUser);
+		
+	}
+
+}

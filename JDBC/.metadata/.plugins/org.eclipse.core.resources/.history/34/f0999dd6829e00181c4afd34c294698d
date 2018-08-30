@@ -1,0 +1,16 @@
+package com.revature;
+
+import com.revature.domain.User;
+import com.revature.presentation.Login;
+import com.revature.service.AppService;
+
+public class Driver {
+	
+	public static void main(String[] args) {
+
+		Login.validateUser();
+
+		
+	}
+
+}

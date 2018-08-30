@@ -1,0 +1,6 @@
+package com.revature.presentation;
+
+public class Screen {
+
+	Screen start();
+}

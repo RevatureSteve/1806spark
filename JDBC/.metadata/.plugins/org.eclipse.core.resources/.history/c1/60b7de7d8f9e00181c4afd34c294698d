@@ -1,0 +1,24 @@
+package com.revature;
+
+import java.util.Scanner;
+
+import com.revature.domain.User;
+import com.revature.service.AppService;
+
+public class Driver {
+	
+	public static void main(String[] args) {
+
+		String fname = null;
+		String lname = null;
+
+		Scanner scan = new Scanner(System.in);
+
+		System.out.println("Enter Username: ");
+		String emailInput = scan.nextLine();
+		System.out.println("Enter Password: ");
+		String pwInput = scan.nextLine();
+		
+		User validUser = new AppService().login(new User(0, emailInput, pwInput, fname, lname, 0));
+	}
+}

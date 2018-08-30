@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move element &apos;HelloWorldServlet.java&apos; to &apos;TodoList/src/main/java/com.revature.servlets&apos;&#x0D;&#x0A;- Original project: &apos;TodoList&apos;&#x0D;&#x0A;- Destination element: &apos;TodoList/src/main/java/com.revature.servlets&apos;&#x0D;&#x0A;- Original element: &apos;com.revature.HelloWorldServlet.java&apos;&#x0D;&#x0A;- Update references to refactored element" description="Move compilation unit" destination="/src\/main\/java&lt;com.revature.servlets" element1="/src\/main\/java&lt;com.revature{HelloWorldServlet.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.move" patterns="*" policy="org.eclipse.jdt.ui.moveResources" qualified="false" references="true" stamp="1533911485661" units="1" version="1.0"/>
+</session>

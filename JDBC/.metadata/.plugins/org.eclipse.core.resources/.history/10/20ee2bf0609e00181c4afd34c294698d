@@ -1,0 +1,117 @@
+package com.revature.domain;
+
+import java.io.Serializable;
+import java.util.List;
+
+/**
+ * User Class found in the Domain package (classes that are ORM) (ORM: object
+ * relational mapping...a class that is modeled after a table)
+ * 
+ * @author 	Nisat PC
+ *
+ */
+public class User implements Serializable {
+
+	private int userId;
+	private String email;
+	private String password;
+	private String fname;
+	private String lname;
+	private int pId;
+
+
+
+	// additional property I probably will need here (not a field/attribute in the
+	// data)
+	// I know User will have multiple task...probably use a Collection or Array to
+	// hold them
+	private List<Task> userTasks;
+
+	public User() {
+	}
+
+	// lazy loading from the Database - only get this table's information not foreign key
+	public User(int userId, String email, String password, String fname, String lname, int pId, List<Task> userTasks) {
+		super();
+		this.userId = userId;
+		this.email = email;
+		this.password = password;
+		this.fname = fname;
+		this.lname = lname;
+		this.pId = pId;
+		this.userTasks = userTasks;
+	}
+
+	// eager loading from the Database - get other table's information like user's tasks
+	public User(int userId, String email, String password, List<Task> userTasks) {
+		super();
+		this.userId = userId;
+		this.email = email;
+		this.password = password;
+		this.userTasks = userTasks;
+	}
+
+	public String getFname() {
+		return fname;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+
+	public String getLname() {
+		return lname;
+	}
+
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
+	public int getpId() {
+		return pId;
+	}
+
+	public void setpId(int pId) {
+		this.pId = pId;
+	}
+
+	public int getUserId() {
+		return userId;
+	}
+
+	public void setUserId(int userId) {
+		this.userId = userId;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String password) {
+		this.password = password;
+	}
+
+	public List<Task> getUserTasks() {
+		return userTasks;
+	}
+
+	public void setUserTasks(List<Task> userTasks) {
+		this.userTasks = userTasks;
+	}
+
+	@Override
+	public String toString() {
+		return "User [userId=" + userId + ", email=" + email + ", password=" + password + ", fname=" + fname
+				+ ", lname=" + lname + ", pId=" + pId + ", userTasks=" + userTasks + "]";
+	}
+	
+
+}

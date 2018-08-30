@@ -1,0 +1,24 @@
+package com.revature.presentation;
+
+import java.util.Scanner;
+
+import com.revature.domain.User;
+import com.revature.service.AppService;
+
+public class Login implements Screen{
+
+	@Override
+	public Screen start() {
+	String fname = null;
+	String lname = null;
+
+	Scanner scan = new Scanner(System.in);
+
+	System.out.println("Enter email: ");
+	String emailInput = scan.nextLine();
+	System.out.println("Enter password: ");
+	String pwInput = scan.nextLine();
+	
+	User validUser = new AppService().login(new User(0, emailInput, pwInput, fname, lname, 0));
+	}
+}

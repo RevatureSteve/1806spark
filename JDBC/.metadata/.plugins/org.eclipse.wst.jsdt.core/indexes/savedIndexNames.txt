@@ -1,0 +1,2 @@
+INDEX VERSION 1.4+C:\Users\Nisat\my_git_repos\1806spark\JDBC\.metadata\.plugins\org.eclipse.wst.jsdt.core\indexes
+2470724118.index

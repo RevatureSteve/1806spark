@@ -1,0 +1,15 @@
+package com.revature;
+
+import java.util.Scanner;
+
+import com.revature.domain.User;
+import com.revature.presentation.Login;
+import com.revature.service.AppService;
+
+public class Driver {
+	
+	public static void main(String[] args) {
+
+		new Login().start();
+	}
+}
