@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { SubmitService } from '../../services/submit.service';
-import { toUnicode } from 'punycode';
 
 @Component({
   selector: 'app-submit',
@@ -38,9 +37,9 @@ export class SubmitComponent implements OnInit {
     if (event.target.files && event.target.files[0]) {
       const reader = new FileReader();
 
-      reader.readAsDataURL(event.target.files[0]); // read file as data url
+      reader.readAsDataURL(event.target.files[0]);
 
-      reader.onload = (ev) => { // called once readAsDataURL is completed
+      reader.onload = (ev) => {
         this.url = reader.result;
         this.byteFile = this.url.substring(23);
       };

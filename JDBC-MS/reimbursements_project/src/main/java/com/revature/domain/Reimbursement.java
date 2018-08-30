@@ -1,7 +1,5 @@
 package com.revature.domain;
 
-import java.sql.Blob;
-
 public class Reimbursement {
 	private int rId;
 	private User employee;

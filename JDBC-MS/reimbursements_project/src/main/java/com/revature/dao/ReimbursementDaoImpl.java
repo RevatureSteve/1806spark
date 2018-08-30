@@ -215,8 +215,6 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 			String sql = "{call insertReimbursement(?,?,?,?,?)}";
 			CallableStatement cs = conn.prepareCall(sql);
 			Blob b = conn.createBlob();
-			System.out.println(b.setBytes(1, imgStr));
-			System.out.println(b.toString());
 			cs.setInt(1, id);
 			cs.setDouble(2, amount);
 			cs.setString(3, description);
