@@ -1,0 +1,42 @@
+<div class="box box-default">
+  <div class="jumbotron shadow-lg p-3 mb-5 bg-white rounded" *ngFor='let use of users'>
+    <div>
+      {{ use.uid}}
+    </div>
+    <div>
+      {{ use.fname }}
+    </div>
+    <div>
+      {{ use.lname }}
+    </div>
+    <div>
+      {{ use.email }}
+    </div>
+    <div>
+      {{ use.posid }}
+    </div>
+  
+
+
+    <br>
+
+    <div class="row">
+        {{clickMessage}}
+      <div class="col center-block text-center">
+        <button class="btn btn-outline-success shadow-lg p-3 mb-5 bg-white rounded" id="btn1" routerLink= "/EditU">Edit Employee Information</button>
+      </div>
+
+    </div>
+
+  
+
+  </div>
+
+</div>
+
+
+
+{{clickMessage}}
+
+
+

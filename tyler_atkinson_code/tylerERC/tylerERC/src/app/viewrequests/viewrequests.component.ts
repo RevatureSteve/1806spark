@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { ReimbursementListService } from '../services/reimbursement-list.service';
 import { Reimbursement } from '../models/reimbursement';
 import { Location } from '@angular/common';
+import { OReimbursementService } from '../oreimbursement.service';
 
 
 @Component({
@@ -16,7 +17,7 @@ export class ViewrequestsComponent implements OnInit {
   
   reimbursements: Reimbursement[];
   
-  constructor(private reimbursementListService: ReimbursementListService){}
+  constructor(private reimbursementListService: ReimbursementListService, private oneReimburseService: OReimbursementService){}
   
   ngOnInit() {
     this.getReimbursement();
@@ -29,15 +30,19 @@ export class ViewrequestsComponent implements OnInit {
   console.log(this.reimbursements);
 }
 
-logged1(id) {
-  console.log(id);
+logged1(request:Reimbursement) {
+  // console.log(id);
+  request.rq_status_id = 4;
+  this.oneReimburseService.updateReimbursement(request).subscribe((r)=>{})
   this.clickMessage = "Request is APPROVED By Michael Scott";
+  
 
 }
 
-logged2(id) {
-  console.log(id);
-  this.clickMessage = "Request is DENIED By Michael Scott";
+logged2(request:Reimbursement) {
+  request.rq_status_id = 5;
+  this.oneReimburseService.updateReimbursement(request).subscribe((r)=>{})
+  this.clickMessage = "Request is DENIED By Michael Scott" 
 
 }
 

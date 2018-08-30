@@ -14,6 +14,8 @@ import { NewrequestComponent } from './newrequest/newrequest.component';
 import { ProfileComponent } from './profile/profile.component';
 import { HttpClientModule }    from '@angular/common/http';
 import { OneReimbursementComponent } from './one-reimbursement/one-reimbursement.component';
+import { ViewusersComponent } from './viewusers/viewusers.component';
+import { UpdateprofileComponent } from './updateprofile/updateprofile.component';
 
 
 
@@ -30,6 +32,8 @@ import { OneReimbursementComponent } from './one-reimbursement/one-reimbursement
     NewrequestComponent,
     ProfileComponent,
     OneReimbursementComponent,
+    ViewusersComponent,
+    UpdateprofileComponent,
    
     
 

@@ -1,0 +1,51 @@
+<div class="jumbotron">
+  <h1 class="display-4">Update Employee Profile:</h1>
+  
+<!-- List group -->
+<div class="list-group" id="myList" role="tablist">
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Enter First Name</span>
+    </div>
+    <input type="text" class="form-control" placeholder="First Name" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]= "employee.fname">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Enter Last Name</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Last Name" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]= "employee.lname">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Enter Email</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]= "employee.email">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Enter Password</span>
+    </div>
+    <input type="text" class="form-control" placeholder="Password" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]= "employee.password">
+  </div>
+  <div class="input-group mb-3">
+    <div class="input-group-prepend">
+      <span class="input-group-text" id="basic-addon1">Enter Current Position ID</span>
+    </div>
+    <input type="text" class="form-control" placeholder="User ID" aria-label="Username" aria-describedby="basic-addon1" [(ngModel)]= "employee.posid">
+  </div>
+</div>
+
+  <hr class="my-4">
+  
+  <div class="row">
+    <div class="col">
+      <a class="btn btn-primary btn-lg" routerLink="/home" role="button">Home</a>
+    </div>
+    <div class="col">
+      <a class="btn btn-primary btn-lg" role="button" (click)="myAwesomeUpdate()">Update Profile</a>
+    </div>
+  </div>
+  
+  
+  
+</div>

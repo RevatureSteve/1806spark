@@ -1,8 +1,10 @@
-Driver.class
 com\revature\util\SetConnectionPropertiesUtil.class
 com\revature\servlets\AllReimbursementsServlet.class
+com\revature\servlets\LoginServlet.class
+com\revature\servlets\ApproveRequest.class
 com\revature\dao\ReimbursementDaoImpl.class
 com\revature\domain\Users.class
+com\revature\servlets\DocumentationServlet.class
 com\revature\servlets\AddReimbursementServlet.class
 com\revature\servlets\AjaxTxServlet.class
 com\revature\dao\UsersDao.class

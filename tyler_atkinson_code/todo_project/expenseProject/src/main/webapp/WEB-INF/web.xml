@@ -95,4 +95,24 @@
     <servlet-name>ApproveRequest</servlet-name>
     <url-pattern>/ApproveRequest</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ViewAllUsersServlet</display-name>
+    <servlet-name>ViewAllUsersServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ViewAllUsersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ViewAllUsersServlet</servlet-name>
+    <url-pattern>/ViewAllUsersServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>EditUsersServlet</display-name>
+    <servlet-name>EditUsersServlet</servlet-name>
+    <servlet-class>com.revature.servlets.EditUsersServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>EditUsersServlet</servlet-name>
+    <url-pattern>/EditUsersServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

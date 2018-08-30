@@ -49,4 +49,50 @@
     <servlet-name>AddReimbursementServlet</servlet-name>
     <url-pattern>/AddReimbursementServlet</url-pattern>
   </servlet-mapping>
+  <filter>
+    <filter-name>CorsFilter</filter-name>
+    <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+    <init-param>
+      <param-name>cors.allowed.origins</param-name>
+      <param-value>*</param-value>
+    </init-param>
+    <init-param>
+      <param-name>cors.allowed.methods</param-name>
+      <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CorsFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DocumentationServlet</display-name>
+    <servlet-name>DocumentationServlet</servlet-name>
+    <servlet-class>com.revature.servlets.DocumentationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DocumentationServlet</servlet-name>
+    <url-pattern>/expenseProjectAPI</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>LoginServlet</display-name>
+    <servlet-name>LoginServlet</servlet-name>
+    <servlet-class>com.revature.servlets.LoginServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>LoginServlet</servlet-name>
+    <url-pattern>/LoginServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ApproveRequest</display-name>
+    <servlet-name>ApproveRequest</servlet-name>
+    <servlet-class>com.revature.servlets.ApproveRequest</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ApproveRequest</servlet-name>
+    <url-pattern>/ApproveRequest</url-pattern>
+  </servlet-mapping>
 </web-app>

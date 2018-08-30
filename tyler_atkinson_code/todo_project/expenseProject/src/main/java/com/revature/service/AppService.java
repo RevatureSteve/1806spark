@@ -58,6 +58,20 @@ public class AppService {
 		return reimbursementDao.getAllReimbursements();
 		
 	}
+
+// view all users
+	
+	public List <Users> getAllUsers(){
+		System.out.println("[LOG]- Get all users appservice");
+		return usersDao.getAllUsers();
+	}
+
+//update user profile
+	
+	public void updateUser(Users b) {
+		System.out.println("Appservice");
+		usersDao.updateUser(b);
+	}
 	
 
 
