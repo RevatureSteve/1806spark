@@ -1,0 +1,38 @@
+//package com.revature.util;
+//
+//import java.io.FileNotFoundException;
+//import java.io.FileReader;
+//import java.io.IOException;
+//import java.sql.Connection;
+//import java.sql.DriverManager;
+//import java.sql.SQLException;
+//import java.util.Properties;
+//
+//public class SetConnectionPropertiesUtil {
+//
+//	/*
+//	 * utility class helper methods not specific to manipulation of pojos
+//	 * 		as that would be business logic in services
+//	 * usually for configuration
+//	 */
+////	
+////		//what do I need for a JDBC Connection?
+////		 final static String USERNAME;
+////		 final static String PASSWORD;
+////		 static final String URL;
+////		//and the last thing? Driver which is the JAR for that specific database
+//		
+//		public static Connection getConnection() throws SQLException, FileNotFoundException, IOException {
+//			String username;
+//			String password;
+//			String url;
+//			Properties props = new Properties();
+//			props.load(new FileReader("\\src\\props\\db.properties"));
+//			
+//			url = props.getProperty("url");
+//			username = props.getProperty("username");
+//			password = props.getProperty("password");
+//			
+//			return DriverManager.getConnection(url, username, password);
+//	}
+//}
