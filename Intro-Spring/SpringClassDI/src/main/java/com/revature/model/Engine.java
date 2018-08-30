@@ -1,9 +1,12 @@
 package com.revature.model;
 
+import org.springframework.stereotype.Component;
+
 /**
  * @author skels
  *
  */
+@Component(value="powerfulEngine")
 public class Engine {
 
 	private String sound;

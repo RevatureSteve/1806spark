@@ -5,8 +5,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.revature.model.Car;
 import com.revature.model.Employee;
-import com.revature.model.Engine;
+import com.revature.model.Manager;
 import com.revature.service.EmployeeService;
+import com.revature.service.ManagerService;
 
 public class MainClass {
 
@@ -27,7 +28,24 @@ public class MainClass {
 		 *  	get a Manager from ManagerService
 		 *  	
 		 *  	Have both autowiring / beanwiring options 
+		 *  	
+		 *  	Autowiring with @s
+		 *  	Steps:
+		 *  			1. In spring bean configuration file
+		 *  			spring context - Turn on base component scan
+		 *  			provide the base-package e.g. com.revature
+		 *  			2. Beanify your classes you want with @s or still
+		 *  				XML but lets use @s for this
+		 *  			3. Use @Autowired for DI of other Spring Beans
+		 *  				e.g.
+		 *  					ManagerService has Autowired ManagerDaoImpl
 		 *  
+		 *  
+		 *  	Spring @s
+		 *  		@Component - most simple Spring @; marks a class as a spring bean
+		 *  		@Service - business logic class annotation
+		 *  		@Repository - will be used in Spring ORM/DATA for dao interfaces/impls
+		 *  		@Autowired - DI another Spring Bean 
 		 */
 		ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
 		Car c = (Car) ac.getBean("fastCar");
@@ -38,6 +56,11 @@ public class MainClass {
 		Employee emp = eService.getEmployeeById(55);
 		
 		System.out.println("Employee: " + emp);
+		
+		
+		ManagerService mService = (ManagerService) ac.getBean("managerService");
+		Manager m = mService.getManagerById(55);
+		System.out.println("Manager: " + m);
 	}
 
 }
