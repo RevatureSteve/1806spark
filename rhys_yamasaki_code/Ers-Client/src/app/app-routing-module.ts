@@ -14,7 +14,7 @@ export const routes: Routes = [
   {path: 'manager/home', component: ManagerComponent},
   {path: 'employee/home', component: EmployeeComponent},
   {path: 'manager/view/employees', component: ViewEmployeesComponent},
-  {path: 'manager/view/employees/:id ', component: ReimbursementsByIdComponent},
+  {path: 'manager/view/employees/:id', component: ReimbursementsByIdComponent},
   {path: 'employee/profile', component: EmployeeProfileComponent},
   {path: 'easteregg', component: EasterEggComponent}
 ];

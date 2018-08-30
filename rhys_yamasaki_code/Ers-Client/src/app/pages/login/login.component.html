@@ -11,4 +11,7 @@
     </div>
     <button id="loginBtn" class="btn btn-outline-primary" (click)="getUser(email.value, password.value)">Login</button>
   </div>
+  <div class="btn-danger" id='errorMessage' *ngIf='!user' >
+    {{ err }}
+  </div>
 </div>

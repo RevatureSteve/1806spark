@@ -30,6 +30,6 @@ export class ViewEmployeesComponent implements OnInit {
   }
 
   getReimbursementsById(id) {
-    this.router.navigate([`/manager/view/employees/${id}`]);
+    this.router.navigate(['/manager/view/employees/' + id]);
   }
 }

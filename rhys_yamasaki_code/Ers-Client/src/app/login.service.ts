@@ -17,6 +17,6 @@ export class LoginService {
       email: email,
       password: password
     };
-    return this.httpClient.post<User>('http://localhost:8080/Ers-Project-1/login', user);
+    return this.httpClient.post<User>('http://18.223.22.153:8080/Ers-Project-1-0.0.1-SNAPSHOT/login', user);
 }
 }

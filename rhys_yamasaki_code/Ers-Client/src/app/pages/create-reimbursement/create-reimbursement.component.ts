@@ -16,6 +16,7 @@ export class CreateReimbursementComponent implements OnInit {
   user: User;
   type: Type[];
 
+
   constructor(private http: HttpClient, private logged: LoggedInService, private reimb: ReimbursementsListService,
   private router: Router) { }
 
@@ -28,9 +29,12 @@ export class CreateReimbursementComponent implements OnInit {
     this.reimb.getType().subscribe(type => this.type = type).unsubscribe();
   }
 
+
+
   createReimbursement(userId, amount, desc, type) {
     this.reimb.submitReimbursement(userId, amount, desc, type).subscribe(x => {});
-    this.router.navigateByUrl('/', {skipLocationChange: false}).then(() =>
+    this.reimb.getEmployeePending(this.user.user_id).subscribe(x => this.reimb.reimbursement);
+    this.router.navigateByUrl('/easteregg', {skipLocationChange: true}).then(() =>
     this.router.navigate(['/employee/home']));
   }
 }

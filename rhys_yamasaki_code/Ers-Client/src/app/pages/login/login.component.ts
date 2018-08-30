@@ -13,12 +13,20 @@ import { RouterModule, ActivatedRoute, Router } from '@angular/router';
 export class LoginComponent implements OnInit {
 
   user: User;
+  err: string;
 
   constructor(private login: LoginService, private logged: LoggedInService, private route: ActivatedRoute, private router: Router) { }
 
 
   getUser(email, password): void {
-    this.login.getUser(email, password).subscribe(user => this.changePage(user));
+    this.login.getUser(email, password).subscribe(user => {
+      if (user) {
+        this.changePage(user);
+      } else {
+        this.err = 'You have input an incorrect email/password combination';
+      }
+    }
+      );
   }
 
   changePage(user) {

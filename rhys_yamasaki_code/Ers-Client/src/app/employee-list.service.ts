@@ -12,7 +12,7 @@ export class EmployeeListService {
   constructor(private http: HttpClient) { }
 
   getAllUsers() {
-    return this.http.get<User[]>('http://localhost:8080/Ers-Project-1/employee');
+    return this.http.get<User[]>('http://18.223.22.153:8080/Ers-Project-1-0.0.1-SNAPSHOT/employee'); // http://localhost:8080/Ers-Project-1
   }
 
 }

@@ -38,7 +38,7 @@ import { EasterEggComponent } from './pages/easter-egg/easter-egg.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

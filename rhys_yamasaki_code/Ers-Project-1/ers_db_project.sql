@@ -51,7 +51,9 @@ FOREIGN KEY (rq_status_id) REFERENCES rq_status (rq_status_id)
 );
 
 drop table reimbursement;
+Truncate TABLE reimbursement;
 
+select * from reimbursement;
 
 
 --DML 
@@ -83,7 +85,7 @@ select * from rq_type;
 
 
 INSERT INTO users VALUES (1, 'rhys@gmail.com', '123456', 'Rhys', 'Yamasaki', 2);
-INSERT INTO users VALUES (2, 'y@gmail.com', '123456', 'R', 'Y', 1);
+INSERT INTO users VALUES (4,'manager@gmail.com', 'password', 'Thomas', 'Square', 2);
 select * from users;
 
 SELECT * FROM users WHERE email = 'rhys@gmail.com';

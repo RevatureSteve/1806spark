@@ -1,6 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 body {
-  background-image: url('http://www.kinyu-z.net/data/wallpapers/190/1368739.jpg');
+  /* background-image: url('http://www.kinyu-z.net/data/wallpapers/190/1368739.jpg'); */
+  /* background-image: url('https://media.giphy.com/media/aRZ4vTsHnyW6A/giphy.gif'); */
+  background-image: url('https://media.giphy.com/media/BHNfhgU63qrks/giphy.gif');
+  /* background-image: url('https://i.pinimg.com/originals/c9/40/8d/c9408d47138ac4fb28fe8cc7c435d2ce.gif'); */
+  /* background-image: url('https://d1vvp9ihshjy3m.cloudfront.net/gif/57de57b1e4b04c32484efc54_1474189233796.gif'); */
+  /* background-image: url('https://media.giphy.com/media/117LBQhz4i7y7u/giphy.gif'); */
   background-size: cover;
+  background-attachment: fixed;
   background-repeat: no-repeat;
 }

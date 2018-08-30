@@ -21,11 +21,11 @@ export class ReimbursementsListService {
 
   getAllReimbursements() {
     console.log('Meow meow');
-    return this.http.get<Reimbursement[]>('http://localhost:8080/Ers-Project-1/manager/reimbursements');
+    return this.http.get<Reimbursement[]>('http://18.223.22.153:8080/Ers-Project-1-0.0.1-SNAPSHOT/manager/reimbursements');
   }
 
   getResolvedReimbursements() {
-    return this.http.get<Reimbursement[]>('http://localhost:8080/Ers-Project-1/reimbursements/resolved');
+    return this.http.get<Reimbursement[]>('http://18.223.22.153:8080/Ers-Project-1-0.0.1-SNAPSHOT/reimbursements/resolved');
   }
 
   resolveReimbursement(userId, r_id, rq_status_id) {
@@ -35,23 +35,23 @@ export class ReimbursementsListService {
       rq_status_id: rq_status_id
     };
     console.log(reim);
-    return this.http.put('http://localhost:8080/Ers-Project-1/reimbursements/id', reim);
+    return this.http.put('http://18.223.22.153:8080/Ers-Project-1-0.0.1-SNAPSHOT/reimbursements/id', reim);
   }
 
   getReimbursementsById(id) {
-    return this.http.get<Reimbursement[]>(`http://localhost:8080/Ers-Project-1/reimbursements/id?user_id=${id}`);
+    return this.http.get<Reimbursement[]>(`http://18.223.22.153:8080/Ers-Project-1-0.0.1-SNAPSHOT/reimbursements/id?user_id=${id}`);
   }
 
   getEmployeePending(id) {
-    return this.http.get<Reimbursement[]>(`http://localhost:8080/Ers-Project-1/employee/pending?user_id=${id}`);
+    return this.http.get<Reimbursement[]>(`http://18.223.22.153:8080/Ers-Project-1-0.0.1-SNAPSHOT/employee/pending?user_id=${id}`);
   }
 
   getEmployeeResolved(id) {
-    return this.http.get<Reimbursement[]>(`http://localhost:8080/Ers-Project-1/employee/resolved?user_id=${id}`);
+    return this.http.get<Reimbursement[]>(`http://18.223.22.153:8080/Ers-Project-1-0.0.1-SNAPSHOT/employee/resolved?user_id=${id}`);
   }
 
   getType() {
-    return this.http.get<Type[]>('http://localhost:8080/Ers-Project-1/type');
+    return this.http.get<Type[]>('http://18.223.22.153:8080/Ers-Project-1-0.0.1-SNAPSHOT/type');
   }
 
   submitReimbursement(userId, amount, desc, type) {
@@ -61,5 +61,5 @@ export class ReimbursementsListService {
      description: desc,
      type_id: type
    };
-   return this.http.post('http://localhost:8080/Ers-Project-1/employee/reimbursement/submit', reim);
+   return this.http.post('http://18.223.22.153:8080/Ers-Project-1-0.0.1-SNAPSHOT/employee/reimbursement/submit', reim);
  }}

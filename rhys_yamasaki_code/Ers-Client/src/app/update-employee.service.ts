@@ -21,6 +21,6 @@ export class UpdateEmployeeService {
 
     console.log(update);
 
-    return this.http.put('http://localhost:8080/Ers-Project-1/employee', update);
+    return this.http.put('http://18.223.22.153:8080/Ers-Project-1-0.0.1-SNAPSHOT/employee', update);
   }
 }

@@ -17,13 +17,14 @@ export class EmployeeProfileComponent implements OnInit {
   user: User;
   editable = false;
   subscription: Object = null;
+  loadUser: User;
 
   constructor(private logged: LoggedInService, private update: UpdateEmployeeService,
     private router: Router, private login: LoginService, private changes: ChangeDetectorRef) { }
 
   ngOnInit() {
-    this.user = this.logged.getLoggedInUser();
-    this.changes.detectChanges();
+    this.loadUser = this.logged.getLoggedInUser();
+    this.login.getUser(this.loadUser.email, this.loadUser.password).subscribe(x => this.user = x);
   }
 
   editFields() {
@@ -32,9 +33,9 @@ export class EmployeeProfileComponent implements OnInit {
 
   editUserInfo(email, userId, password, fname, lname) {
     this.update.updateEmployeeInfo(userId, password, fname, lname).subscribe(x => {});
-    this.login.getUser(email, password).subscribe(x => this.logged.setLoggedInUser(x));
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
-    this.router.navigate(['/easteregg']));
+    this.login.getUser(email, password).subscribe(x => this.user = x);
+    this.router.navigateByUrl('/easteregg', {skipLocationChange: false}).then(() =>
+    this.router.navigate(['/employee/home']));
   }
 
 }

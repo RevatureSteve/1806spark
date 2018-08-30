@@ -30,7 +30,7 @@ export class ViewReimbursementsComponent implements OnInit {
 
   resolveReimbursement(userId, rId, statusId) {
     this.reimbursementList.resolveReimbursement(userId, rId, statusId).subscribe(x => {});
-    this.router.navigateByUrl('/', {skipLocationChange: true}).then(() =>
+    this.router.navigateByUrl('/easteregg', {skipLocationChange: false}).then(() =>
     this.router.navigate(['/manager/home']));
   }
 
