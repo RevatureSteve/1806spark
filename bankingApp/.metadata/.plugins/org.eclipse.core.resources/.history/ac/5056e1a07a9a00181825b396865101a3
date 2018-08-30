@@ -1,0 +1,19 @@
+package com.revature.dao;
+
+import com.revature.domain.User;
+
+public class UserDaoImpl implements UserDao {
+	
+	//what do I need for a JDBC Connection?
+	private final static String USERNAME = "todo_db";
+	private final static String PASSWORD = "p4ssw0rd";
+	private static final String URL = "jdbc:oracle:thin:@blackcat.cob89bumroku.us-east-2.rds.amazonaws.com:1521:ORCL";
+	//and the last thing? Driver which is the JAR for that specific database
+	@Override
+	public User getUserByUsername(String username) {
+		//what is this method code going to contain? JDBC Code
+		
+		return null;
+	}
+
+}

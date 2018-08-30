@@ -1,0 +1,52 @@
+package com.banking.presentation;
+
+import java.util.Scanner;
+
+import com.banking.pojo.UserJB;
+
+public class LoginScreen implements Screen{
+	
+	public static UserJB login() {
+		
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Do you have an Ice Bear Bank account? y/n");
+		String a = scan.nextLine();
+		if(a=="y") {
+			System.out.println("----Login----");
+			System.out.println("Enter username: ");
+			String username = scan.nextLine();
+			System.out.println("Enter password: ");
+			String password = scan.nextLine();
+			UserJB p = new UserJB(0, null, password, null, null);
+			return p;
+		} else {
+		System.out.println("----Registration----");
+		System.out.println("Enter username: ");
+		String username = scan.nextLine();
+		System.out.println("Enter password: ");
+		String password = scan.nextLine();
+		System.out.println("Enter first name: ");
+		String fname = scan.nextLine();
+		System.out.println("Enter last name: ");
+		String lname = scan.nextLine();
+		UserJB u = new UserJB(0, username, password, fname, lname);
+		return u;
+		}
+		return new MainScreen().stArt();
+}
+
+	@Override
+	public Screen stArt() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}
+
+//	@Override
+//	public Screen stArt() {
+//		// TODO Auto-generated method stub
+//		return null;
+//	}
+
+
+

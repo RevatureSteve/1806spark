@@ -1,0 +1,57 @@
+package com.banking.presentation;
+
+import java.util.Scanner;
+
+import com.banking.pojo.BankAccountJB;
+import com.banking.pojo.UserJB;
+
+public class Account implements Screen{
+
+	private Scanner scan = new Scanner(System.in);
+
+	public static BankAccountJB createAccount() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("----Create an Account----");
+		System.out.println("Enter Name: ");
+		String name = scan.nextLine();
+									//id is 0, acts like null, so that the db takes care of it for you
+		BankAccountJB b = new BankAccountJB(0, name, 0);
+		return b;
+
+	}
+
+	@Override
+	public Screen stArt() {
+		System.out.println("Please choose from the following options: ");
+		System.out.println("1 to create an account");
+		System.out.println("2 to view your account balance");
+		System.out.println("3 to make a direct deposit");
+		System.out.println("4 to withdraw money");
+		System.out.println("5 to view transaction history");
+		System.out.println("6 to go back to main menu ");
+
+		String input = scan.nextLine();
+		
+		switch( input) {
+		case "1":
+			Account.createAccount();
+			break;
+		case "2":
+			System.out.println("feature not yet implemented");
+			break;
+		case "3":
+			System.out.println("feature not yet implemented");
+			break;
+		case "4":
+			System.out.println("feature not yet implemented");
+			break;
+		case "5":
+			System.out.println("feature not yet implemented");
+			break;
+		case "6":
+			return new MainScreen();
+		}
+		return this;
+	}
+
+}

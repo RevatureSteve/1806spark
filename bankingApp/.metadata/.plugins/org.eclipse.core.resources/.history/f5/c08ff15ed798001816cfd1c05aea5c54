@@ -1,0 +1,60 @@
+package com.baking.presentation;
+
+import java.util.Scanner;
+
+import com.banking.dao.UserDao;
+import com.banking.pojo.UserJB;
+
+public class MainScreen implements Screen {
+	private Scanner scan = new Scanner(System.in);
+
+	public static void welcome() { //static because i don't want to instantiate menu, just call it as needed)
+		System.out.println("******************************************");
+		//System.out.println("*Welcome to Ice Bear Bank�?ʕ•ᴥ•ʔ�? *");
+		System.out.println("******************************************");
+	}
+
+	public static UserJB createUser() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("----Registration----");
+		System.out.println("Enter username: ");
+		String username = scan.nextLine();
+		System.out.println("Enter password: ");
+		String password = scan.nextLine();
+									//id is 0, acts like null, so that the db takes care of it for you
+		UserJB u = new UserJB(0, username, password);
+		return u;
+	}
+
+	public Screen stArt() {
+		System.out.println("Please choose from the following options: ");
+		System.out.println("1 to create an account");
+		System.out.println("2 to view your account balance");
+		System.out.println("3 to make a direct deposit");
+		System.out.println("4 to withdraw money");
+		System.out.println("5 to view transaction history");
+		
+		String input = scan.nextLine();
+		
+		switch( input) {
+		case "1":
+			return new Account();
+		case "2":
+			return new Balance();
+		case "3":
+			return new Deposit();
+		case "4":
+			System.out.println("feature not yet implemented");
+			break;
+		case "5":
+			System.out.println("feature not yet implemented");
+			break;
+		case "6":
+			System.out.println("test");
+			//return new MainScreen();
+		}
+		return this;
+	}
+
+}
+

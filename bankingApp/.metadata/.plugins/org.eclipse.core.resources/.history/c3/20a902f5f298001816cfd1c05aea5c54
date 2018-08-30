@@ -1,0 +1,16 @@
+package com.banking.dao;
+
+import com.banking.pojo.BankAccountJB;
+import com.banking.presentation.Account;
+
+public interface BankAccountDao {
+
+	int createAccount(Account ba);
+
+	BankAccountJB getAccountBalanceById();
+
+	void createBankAccountProc(BankAccountJB ba);
+
+	int createBankAccount(BankAccountJB ba);
+
+}

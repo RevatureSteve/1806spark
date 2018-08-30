@@ -1,0 +1,50 @@
+package com.banking.pojo;
+
+import java.io.Serializable;
+
+public class UserJB implements Serializable {
+
+	private int uId;
+	private String uUser;
+	private String uPass;
+	
+	//no=args constructor
+	public UserJB() {}
+
+	public UserJB(int uId, String uUser, String uPass) {
+		super();
+		this.uId = uId;
+		this.uUser = uUser;
+		this.uPass = uPass;
+	}
+	
+	public int getuId() {
+		return uId;
+	}
+
+	public void setuId(int uId) {
+		this.uId = uId;
+	}
+
+	public String getuUser() {
+		return uUser;
+	}
+
+	public void setuUser(String uUser) {
+		this.uUser = uUser;
+	}
+
+	public String getuPass() {
+		return uPass;
+	}
+
+	public void setuPass(String uPass) {
+		this.uPass = uPass;
+	}
+
+	@Override
+	public String toString() {
+		return "User [uId=" + uId + ", uUser=" + uUser + ", uPass=" + uPass + "]";
+	}
+
+}

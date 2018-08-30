@@ -1,0 +1,71 @@
+package com.revature.pojo;
+
+public class User {
+	
+	private int uId;
+	private String email;
+	private String fname;
+	private String lname;
+	private int posId;
+	
+	public User() {}
+
+	public User(int uId, String email, String fname, String lname, int posId) {
+		super();
+		this.uId = uId;
+		this.email = email;
+		this.fname = fname;
+		this.lname = lname;
+		this.posId = posId;
+	}
+
+	public int getuId() {
+		return uId;
+	}
+
+	public void setuId(int uId) {
+		this.uId = uId;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
+	public String getFname() {
+		return fname;
+	}
+
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+
+	public String getLname() {
+		return lname;
+	}
+
+	public void setLname(String lname) {
+		this.lname = lname;
+	}
+
+	public int getPosId() {
+		return posId;
+	}
+
+	public void setPosId(int posId) {
+		this.posId = posId;
+	}
+
+	@Override
+	public String toString() {
+		return "User [uId=" + uId + ", email=" + email + ", fname=" + fname + ", lname=" + lname + ", posId=" + posId
+				+ "]";
+	}
+	
+	
+
+}
+

@@ -1,0 +1,9 @@
+package com.banking.dao;
+
+import com.banking.presentation.Account;
+
+public interface BankAccountDao {
+
+	int createAccount(Account ba);
+
+}

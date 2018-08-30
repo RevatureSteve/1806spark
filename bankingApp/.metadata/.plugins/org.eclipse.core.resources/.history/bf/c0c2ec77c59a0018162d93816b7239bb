@@ -1,0 +1,70 @@
+package com.revature.business;
+
+import java.util.List;
+
+import com.revature.dao.BankAccountDaoImpl;
+import com.revature.dao.BankAccountDaoImpl;
+import com.revature.dao.TransactionDaoImpl;
+import com.revature.dao.UserDaoImpl;
+import com.revature.dao.UserDaoImpl;
+import com.revature.exceptions.OverdraftDetectedException;
+import com.revature.exceptions.OverdraftDetectedException;
+import com.revature.pojo.BankAccount;
+import com.revature.pojo.Transaction;
+import com.revature.pojo.User;
+
+public class Service {
+	
+	
+	//	Validate user info
+	//	Return true if user exists, false otherwise
+
+	public static boolean userExists(String username, String password) {
+		UserDaoImpl users = new UserDaoImpl();
+		List<User> userList = users.readUser();
+		for (User u : userList) {
+			User user = (User) u;
+			if (username.equals(user.getUserName()) && password.equals(user.getPassword())) {
+				User.setCurrentUser(user);
+				return true;
+			}
+		}
+		return false;
+	}
+	
+
+	//	Finds the current user's bank account
+	
+	public static void applyUserAccount(int userId) {
+		BankAccountDaoImpl accountDao = new BankAccountDaoImpl();
+		BankAccount userAccount = accountDao.getAccountById(userId);
+		BankAccount.setCurrentAccount(userAccount);
+	}
+	
+	//	Deposit to account
+	
+	public static void deposit(Double amount) {
+		BankAccount account = BankAccount.getCurrentAccount();
+		Double balance = account.getBalance();
+		account.setBalance(balance + amount);
+		new BankAccountDaoImpl().updateAccount(account);
+		Transaction tx = new Transaction(amount, "Deposit", account.getAcNum());
+		new TransactionDaoImpl().createTx(tx);
+	}
+
+	//	Withdraw from account
+	public static void withdrawal(Double amount) throws OverdraftDetectedException {
+		BankAccount account = BankAccount.getCurrentAccount();
+		Double balance = account.getBalance();
+		if (balance - amount > 0) {
+			account.setBalance(balance - amount);
+			new BankAccountDaoImpl().updateAccount(account);
+			Transaction tx = new Transaction(amount, "Withdrawal", account.getAcNum());
+			new TransactionDaoImpl().createTx(tx);
+		}
+		if (balance - amount < 0) {
+			throw new OverdraftDetectedException();
+		}
+	}
+	
+}

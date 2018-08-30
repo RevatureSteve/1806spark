@@ -1,0 +1,197 @@
+package com.bank.present;
+
+import java.util.List;
+import java.util.Scanner;
+
+import com.bank.dao.UserDao;
+import com.bank.dao.BankAccountDao;
+import com.bank.dao.TranxDao;
+import com.bank.exceptions.InvalidInput;
+import com.bank.exceptions.InvalidInput;
+import com.bank.service.BTS;
+import com.bank.pojo.BankAcct;
+import com.bank.pojo.User;
+
+
+public class MainMenu implements Screen{
+
+	private Scanner scan = new Scanner(System.in);//this takes in input
+	private int uId;
+	private int bal;
+	
+	@Override
+	public Screen Start() {
+		
+
+		System.out.println("WELCOME TO ICE BEAR BANK");
+		
+		System.out.println("Do you already have an Ice Bear account? y/n");
+		System.out.println("Type 'x' to exit...");
+		
+		String input = scan.nextLine();
+		
+		switch (input) {
+		case "y":
+			Login();
+			break;
+			
+		case "n":
+			System.out.println("type 'm' to return to main menu and register");
+			break;//DO I NEED THIS BREAK BEFORE THE DEFAULT?
+
+			
+		case "x":
+			System.out.println("You have logged out");
+			System.exit(1);
+			break;
+						
+		default:
+			InvalidInputThrow();
+			break;
+		
+			
+		}
+		return this;// this returns current screen
+	}
+	public Screen Login() {
+		System.out.println("Username: ");
+		String username = scan.nextLine();
+		System.out.println("Password: ");
+		String password = scan.nextLine();
+		if(BTS.userInDb(username, password)) {
+			username = BTS.getFirstName(username, password);
+			User u = User.getCurrentUser();
+			String x = "" + u;
+			uId = Integer.valueOf(x);
+		    
+			Valid(username);
+		}
+		System.out.println("Invalid login...");
+		
+		return this.Login();
+}
+	public Screen Valid(String user) {
+		System.out.println("Welcome back " + user);
+		System.out.println("Type 'bal' to see your balance.");
+		System.out.println("Type 'depo' to deposit.");
+		System.out.println("Type 'with' to withdraw.");
+		System.out.println("Type 'exit' to logout...");
+		String input = scan.nextLine();
+		switch (input) {
+		case "bal":
+			Balance(user);
+			break;
+		case "depo":
+			Deposit(user);
+			break;
+		case "with":
+			Withdraw(user);
+			break;
+		case "exit":
+			System.out.println("\n" + "You have successfully logged out");
+			Start();
+			break;
+
+		default:
+			InvalidInputThrow();
+			break;
+		}
+		return this;
+	}
+	
+	public Screen Balance(String user) {
+		
+		bal = BankAccountDao.getBal(uId);
+		User bu = new User();
+		System.out.println(user + ", you have a balance of: " + bal + " Seals");
+		System.out.println("type 'm' to return to main menu");
+		String input = scan.nextLine();
+		switch (input) {
+		case "m":
+			Valid(user);
+			break;
+
+		default:
+			InvalidInputThrow();
+			break;
+		}
+		return this;
+	}
+	public Screen Withdraw(String user) {
+		System.out.println("How many Seals would you like to withdraw, " + user + "?");
+		System.out.println(" type 'm' to return to main menu...");
+		String input = scan.nextLine();
+		switch (input) {
+		case "m":
+			Valid(user);
+			break;
+
+		default:
+			bal = BankAccountDao.getBal(uId);
+			int x = Integer.valueOf(input);
+			if(x > bal) {
+				System.out.println("You can't withdraw that much \n You only have " + bal + " Seals...");
+				return this.Withdraw(user);
+			}else {
+				int trans = bal - x;
+				System.out.println("You are about to withdraw " + x + " Seals");
+				System.out.println("This will leave you with a remainder of " +  trans + " Seals");
+				System.out.println("Type 'y' to complete transaction or 'n' to cancel");
+				String value = scan.nextLine();
+				switch (value) {
+				case "y":
+					TranxDao.newTransaction(uId, trans);
+					System.out.println("Transaction completed");
+					return this.Valid(user);
+				case "n":
+					System.out.println("Transaction canceled....");
+					return this.Valid(user);
+
+				default:
+					InvalidInputThrow();
+					break;
+				}
+			}
+			break;
+		}
+		
+		return this;
+	}
+	public Screen Deposit(String user) {
+		System.out.println("How many Seals would you like to deposit, " + user + "?");
+		System.out.println("or type 'return' to return to previous menu...");
+		String input = scan.nextLine();
+		switch (input) {
+		case "return":
+			Valid(user);
+			break;
+			
+		default:
+			bal = BankAccountDao.getBal(uId);
+			int x = Integer.valueOf(input);
+			int trans = bal + x;
+			System.out.println("You are about to deposit " + x + " Seals");
+			System.out.println("This will give you a total of " +  trans + " Seals");
+			System.out.println("Type 'y' to complete transaction or 'n' to cancel");
+			String value = scan.nextLine();
+			switch (value) {
+			case "y":
+				TranxDao.newTransaction(uId, trans);
+				System.out.println("Transaction completed");
+				return this.Valid(user);
+			case "n":
+				System.out.println("Transaction canceled....");
+				return this.Valid(user);
+
+			default:
+				InvalidInputThrow();
+				break;
+			}
+		}
+		return this;
+	}
+	
+	public void InvalidInputThrow() {
+		throw new InvalidInput("Invalid input...");
+	}
+	}

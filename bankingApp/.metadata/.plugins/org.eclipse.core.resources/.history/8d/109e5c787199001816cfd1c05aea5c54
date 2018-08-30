@@ -1,0 +1,16 @@
+package com.banking.dao;
+
+import com.banking.daoIMP.List;
+import com.banking.pojo.UserJB;
+
+public interface UserDao {
+
+	int createUser(UserJB u);
+
+	java.util.List<UserJB> getAllUsers();
+
+	UserJB getUserById(int id);
+
+	void createUserProc(UserJB u);
+
+}

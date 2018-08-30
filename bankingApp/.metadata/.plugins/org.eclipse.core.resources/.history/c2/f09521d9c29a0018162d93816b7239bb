@@ -1,0 +1,4 @@
+#this is a properties file key=value pairs only, no spaces
+url=jdbc:oracle:thin:@blackcat.cob89bumroku.us-east-2.rds.amazonaws.com:1521:ORCL
+pw=p4ssw0rd
+user=todo_db

@@ -1,0 +1,6 @@
+package com.baking.presentation;
+
+public interface Screen {
+	Screen stArt();
+
+}

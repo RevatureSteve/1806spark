@@ -1,0 +1,116 @@
+package com.banking.daoIMP;
+
+import java.sql.CallableStatement;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.banking.pojo.BankAccountJB;
+import com.banking.pojo.UserJB;
+
+public class UserImpl implements UserDao {
+	private final static String USERNAME = "user_db";
+	private final static String PASSWORD = "p4ssw0rd";
+	private final static String URL = "jdbc:blackcat.cob89bumroku.us-east-2.rds.amazonaws.com" + ":1521:ORCL";
+
+	/*
+	 * Why use a preparedStatement over a statement? -poor readability of a
+	 * statement "INSERT with variables of a statement:  VALUES('" +
+	 * fc.getFcQuestion() +','+ fc.getFcAnswer()+"')"; -statement can have SQL
+	 * Injections while preparedStatement prevents them better Why is that?
+	 * preparedStatement precompiles the SQL String without the user input, looks
+	 * for SQL Keywords will only ever execute those keyword regardless of the what
+	 * the user enters
+	 */
+	// CREATE
+
+	@Override
+	public int createUser(UserJB u) {
+		int rowsAffected = 0;
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			/*
+			 * need to stop autocommit to run multiple sql statements as a single tx?
+			 */
+			conn.setAutoCommit(false);
+
+			String sql = "INSERT INTO Users(u_username, u_password, u_fname, u_lname) VALUES (?,?,?,?)";
+//			Statement statement = conn.createStatement(); notice that statement doesn't take a SQL argument while preparedStatement does!
+			PreparedStatement ps = conn.prepareStatement(sql); // take in the SQL statement without variable first, use
+																// ? instead!
+			// the SQL Statement
+			// however many ? you have, you need a ps.set method for each one
+			ps.setString(1, u.getuUser()); // what is the datatype of the 1st ?...that is String for the Question, and
+											// it is the 1st ?
+			ps.setString(2, u.getuPass()); // again 2 is the ? number, the 2nd argument is the value
+			ps.setString(3, u.getfName());
+			ps.setString(4, u.getlName());
+
+			rowsAffected = ps.executeUpdate();
+			conn.commit(); // if you setAutoCommit(false); you must use the commit() on the connection
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+		return rowsAffected;
+	}
+
+	@Override
+	public List<UserJB> getAllUsers() {
+		return null;
+	}
+
+	// READ
+
+	/**
+	 * need a single user back from the database? create a get Method and search by
+	 * a unique field(column)
+	 */
+
+	@Override
+	public UserJB getUserById(int id) {
+		UserJB u = null;
+		try (Connection conn = DriverManager.getConnection(URL, USERNAME, PASSWORD);) {
+			String sql = "SELECT * FROM USERS WHERE u_id = ?";
+			// Statement statement = conn.createStatement();
+			// ResultSet rs = statement.executeQuery(sql);
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, id);
+			ResultSet rs = ps.executeQuery();
+
+			if (rs.next()) {
+				u = new UserJB(rs.getInt(1), rs.getString(2), rs.getString(3), rs.getString(4), rs.getString(5));
+			}
+			conn.commit();
+		} catch (SQLException e) {
+			e.printStackTrace();
+		}
+
+		return u;
+	}
+
+
+
+	@Override
+	public UserJB getUserByUsername(String username) {
+		return null;
+	}
+
+	@Override
+	public int getUserBalance(UserJB u) {
+		return 0;
+	}
+
+	@Override
+	public int depositSeals(UserJB u, int seals) {
+		return 0;
+	}
+
+	@Override
+	public int withdrawSeals(UserJB u, int seals) {
+		return 0;
+	}
+}

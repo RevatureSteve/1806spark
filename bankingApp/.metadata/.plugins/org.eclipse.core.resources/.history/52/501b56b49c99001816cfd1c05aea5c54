@@ -1,0 +1,85 @@
+package com.banking.presentation;
+
+import java.util.Scanner;
+
+import com.banking.dao.UserDao;
+import com.banking.pojo.UserJB;
+
+public class MainScreen implements Screen {
+	private Scanner scan = new Scanner(System.in);
+
+	public static void welcome() { 
+		System.out.println("\r\n" + 
+				"┬ ┬┌─┐┬  ┌─┐┌─┐┌┬┐┌─┐  ┌┬┐┌─┐         \r\n" + 
+				"│││├┤ │  │  │ ││││├┤    │ │ │         \r\n" + 
+				"└┴┘└─┘┴─┘└─┘└─┘┴ ┴└─┘   ┴ └─┘  o  o  o\r\n" + 
+				"");
+		System.out.println("\r\n" + 
+				"╦┌─┐┌─┐  ╔╗ ┌─┐┌─┐┬─┐  ╔╗ ┌─┐┌┐┌┬┌─\r\n" + 
+				"║│  ├┤   ╠╩╗├┤ ├─┤├┬┘  ╠╩╗├─┤│││├┴┐\r\n" + 
+				"╩└─┘└─┘  ╚═╝└─┘┴ ┴┴└─  ╚═╝┴ ┴┘└┘┴ ┴\r\n" + 
+				"");
+	}
+
+	public static UserJB login() {
+		Scanner scan = new Scanner(System.in);
+		System.out.println("Do you have an Ice Bear Bank account? y/n");
+		String a = scan.nextLine();
+		if(a=="y") {
+			System.out.println("----Login----");
+			System.out.println("Enter username: ");
+			String username = scan.nextLine();
+			System.out.println("Enter password: ");
+			String password = scan.nextLine();
+			UserJB p = new UserJB(0, null, password, null, null);
+			return p;
+		} else {
+		System.out.println("----Registration----");
+		System.out.println("Enter username: ");
+		String username = scan.nextLine();
+		System.out.println("Enter password: ");
+		String password = scan.nextLine();
+		System.out.println("Enter first name: ");
+		String fname = scan.nextLine();
+		System.out.println("Enter last name: ");
+		String lname = scan.nextLine();
+		UserJB u = new UserJB(0, username, password, fname, lname);
+		return u;
+		}
+
+	}
+
+	public Screen stArt() {
+		System.out.println("Please choose from the following options: ");
+		System.out.println("1 to create an account");
+		System.out.println("2 to view your account balance");
+		System.out.println("3 to make a direct deposit");
+		System.out.println("4 to withdraw money");
+		System.out.println("5 to view transaction history");
+		
+		String input = scan.nextLine();
+		
+		switch( input) {
+		case "1":
+			Account.createAccount();
+			break;
+		case "2":
+			Balance.viewBalance();
+			break;
+		case "3":
+			return new Deposit();
+		case "4":
+			System.out.println("feature not yet implemented");
+			break;
+		case "5":
+			System.out.println("feature not yet implemented");
+			break;
+		case "6":
+			System.out.println("test");
+			//return new MainScreen();
+		}
+		return this;
+	}
+
+}
+

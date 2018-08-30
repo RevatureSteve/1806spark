@@ -1,0 +1,17 @@
+package com.banking;
+
+import com.banking.presentation.MainScreen;
+import com.banking.presentation.Screen;
+
+public class Driver {
+	public static void main(String[]args) {
+		Screen currentScreen = new MainScreen();
+		MainScreen.welcome();
+		while(true) {
+			currentScreen = currentScreen.stArt();
+		}
+	}
+
+}
+
+

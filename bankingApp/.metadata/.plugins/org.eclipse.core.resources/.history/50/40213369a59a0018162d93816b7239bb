@@ -1,0 +1,30 @@
+package com.revature.presentation;
+
+import java.util.Scanner;
+
+import com.revature.business.Service;
+import com.revature.interfaces.Screen;
+
+public class Login implements Screen {
+
+	@Override
+	public Screen start() {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("=========================================================");
+		System.out.println("Welcome to Project Zero!");
+		System.out.println("=========================================================");
+		System.out.println("Username: ");
+		String userName = scan.nextLine();
+		System.out.println("Password: ");
+		String password = scan.nextLine();
+		
+		if (Service.userExists(userName, password)) {
+			return new MainMenu().start();
+		}
+		
+		System.out.println("User info incorrect! Please try again.");
+		return this.start();
+	}
+
+}

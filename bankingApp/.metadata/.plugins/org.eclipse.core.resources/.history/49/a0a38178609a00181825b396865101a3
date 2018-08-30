@@ -1,0 +1,27 @@
+package com.revature;
+
+public class Driver {
+
+	public static void main(String[] args) {
+		/*
+		 * finally using a maven project
+		 * maven projects give us a pm.xml
+		 * 
+		 * what is a pom.xml?
+		 * pom: project object model
+		 * the pom file holds the meta data of the project
+		 * 		-name of the project
+		 * 		-external libraries aka JARS (dependencies)
+		 * 		-package type e.g. jar or war
+		 * 		-version number of the project 0.01-SNAPSHOT
+		 * 		-version of java being used 1.5 right now
+		 * 
+		 * Remember that xml, HTML, JSON are not programming languages
+		 * 	They are common formats that are human and machine readable
+		 * i.e. dont do anything on their own, can't be executed 
+		 * 
+		 */
+		System.out.println("testing new maven project");
+	}
+
+}

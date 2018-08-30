@@ -1,0 +1,42 @@
+package com.revature.presentation;
+
+import java.util.Scanner;
+
+import com.revature.business.Service;
+import com.revature.interfaces.Screen;
+
+public class Login implements Screen {
+
+	@Override
+	public Screen start() {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("*********************************************************");
+		System.out.println("\t"+"\t"+"WELCOME TO ICE BEAR BANK!");
+		System.out.println("*********************************************************");
+		System.out.println(
+			     "\t+       .--.              .--.\r\n" + 
+				"\t+       : (\\ \". _......_ .\" /) :\r\n" + 
+				"\t+        '.    `        `    .'\r\n" + 
+				"\t+         /'   _        _   `\\\r\n" + 
+				"\t+        /     0}      {0     \\\r\n" + 
+				"\t+       |       /      \\       |\r\n" + 
+				"\t+       |     /'        `\\     |\r\n" + 
+				"\t+       \\   | .  .==.  . |   /\r\n" + 
+				"\t+        '._ \\.' \\__/ './ _.'\r\n" + 
+				"\t+         /  ``'._-''-_.'``  \\\r\n" + 
+				"\t+                 `--`"      );
+		System.out.println("\t"+"Username: ");
+		String userName = scan.nextLine();
+		System.out.println("\t"+"Password: ");
+		String password = scan.nextLine();
+		
+		if (Service.userExists(userName, password)) {
+			return new MainMenu().start();
+		}
+		
+		System.out.println("\t"+"Invalid username or password. Re-enter user info.");
+		return this.start();
+	}
+
+}

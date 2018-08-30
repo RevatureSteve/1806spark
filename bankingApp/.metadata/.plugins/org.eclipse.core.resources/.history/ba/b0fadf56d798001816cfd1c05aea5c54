@@ -1,0 +1,6 @@
+package com.banking.presentation;
+
+public interface Screen {
+	Screen stArt();
+
+}

@@ -1,0 +1,59 @@
+package com.revature.presentation;
+
+import java.util.Scanner;
+
+import com.revature.business.Service;
+import com.revature.interfaces.Screen;
+
+public class Login implements Screen {
+
+	@Override
+	public Screen start() {
+		Scanner scan = new Scanner(System.in);
+		
+		System.out.println("*********************************************************");
+		System.out.println("\t"+"WELCOME TO ICE BEAR BANK!");
+		System.out.println("*********************************************************");
+		System.out.println("                                             \r\n" + 
+				"          _...,  												\r\n"+
+				"    _..o\"  )  `.                         \r\n" + 
+				"   Q      `     ;                                              \r\n" + 
+				"    \\_.         |   \r\n" + 
+				"     `---,,/:.  '                                              \r\n" + 
+				"          |:.    ;                                             \r\n" + 
+				" .-.      :.     ;                                             \r\n" + 
+				"/:..\\  ,/:.      |                                             \r\n" + 
+				";:.. v:..        '                                             \r\n" + 
+				"`\\:..            |                                             \r\n" + 
+				"  `\\:::.,/:.     ;                                             \r\n" + 
+				"        ;..      '                                             \r\n" + 
+				"       ;:.        ;                                            \r\n" + 
+				"       ;:.        ;                                            \r\n" + 
+				"       ':.        '                                            \r\n" + 
+				"      ;:..         ;                                           \r\n" + 
+				"      |:..         ;                                           \r\n" + 
+				"      ;:..         |                                           \r\n" + 
+				"      ;:.:,..      ;                                           \r\n" + 
+				"      ':/:..       ;                                           \r\n" + 
+				"       j:..       '\\                                           \r\n" + 
+				"       |:..      /-'                                           \r\n" + 
+				"       ':..    ,'                                              \r\n" + 
+				"        \\,:.. ;:|                                              \r\n" + 
+				"        _,\\:. |:/                                              \r\n" + 
+				"      /:::... \\                                                \r\n" + 
+				"      `-------'                                            \r\n" + 
+				"");
+		System.out.println("Username: ");
+		String userName = scan.nextLine();
+		System.out.println("Password: ");
+		String password = scan.nextLine();
+		
+		if (Service.userExists(userName, password)) {
+			return new MainMenu().start();
+		}
+		
+		System.out.println("Invalid username or password. Re-enter user info.");
+		return this.start();
+	}
+
+}

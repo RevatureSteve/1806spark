@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="com.bank.pojo.BankAcct"/>
+<fullyQualifiedTypeName name="com.bank.pojo.Transaction"/>
+<fullyQualifiedTypeName name="java.io.Serializable"/>
+<fullyQualifiedTypeName name="java.util.List"/>
+<fullyQualifiedTypeName name="com.revature.domain.User"/>
+<fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
+<fullyQualifiedTypeName name="java.sql.ResultSet"/>
+<fullyQualifiedTypeName name="com.revature.dao.UserDao"/>
+<fullyQualifiedTypeName name="java.util.Properties"/>
+<fullyQualifiedTypeName name="java.io.FileReader"/>
+<fullyQualifiedTypeName name="java.sql.Connection"/>
+<fullyQualifiedTypeName name="java.sql.DriverManager"/>
+<fullyQualifiedTypeName name="com.revature.util.SetConnectionPropertiesUtil"/>
+<fullyQualifiedTypeName name="com.revature.dao.UserDaoImpl"/>
+<fullyQualifiedTypeName name="com.revature.dao.BankAccountDaoImpl"/>
+</qualifiedTypeNameHistroy>
