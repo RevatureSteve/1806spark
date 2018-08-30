@@ -23,7 +23,7 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 	
 
 	
-//READ ONE REIMBURSEMENT BY user ID	
+//READ ONE REIMBURSEMENT BY reimbursement ID	
 
 	@Override
 	public List<Reimbursement> getReimbursemenstById(int r_id) {
@@ -146,6 +146,39 @@ public class ReimbursementDaoImpl implements ReimbursementDao {
 		}
 
 		return true;
+	}
+
+
+
+
+
+	@Override
+	public List<Reimbursement> getReimbursementByUserId(int emp_u_id) {
+			List<Reimbursement> reimbursements = new ArrayList<>();
+		
+		try(Connection conn = SetConnectionPropertiesUtil.getConnection();){
+			String sql = "SELECT * FROM reimbursement WHERE emp_u_id = ?";
+			PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, emp_u_id );
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				reimbursements.add(new Reimbursement(rs.getInt("R_ID"), rs.getInt("EMP_U_ID"), rs.getInt("MGR_U_ID"), rs.getInt("RQ_TYPE_ID"),
+						rs.getInt("RQ_STATUS_ID"), rs.getInt("AMT"), rs.getString("DESCRIPTION"), rs.getString("TIMESUBMISSION"),rs.getString("IMG")));
+			}
+			
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return reimbursements;
 	}
 
 

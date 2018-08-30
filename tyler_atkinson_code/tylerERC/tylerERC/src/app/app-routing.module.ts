@@ -10,6 +10,7 @@ import { LoginComponent } from './login/login.component';
 import { OneReimbursementComponent } from './one-reimbursement/one-reimbursement.component'
 import { ViewusersComponent} from './viewusers/viewusers.component'
 import { UpdateprofileComponent } from './updateprofile/updateprofile.component';
+import { EmployeeviewComponent } from './employeeview/employeeview.component';
 
 export const routes: Routes = [
   {path: '', redirectTo: 'Login', pathMatch: 'full'},
@@ -22,7 +23,8 @@ export const routes: Routes = [
   {path: 'Login', component: LoginComponent},
   {path: 'Onereimbursement', component: OneReimbursementComponent},
   {path: 'ViewU', component: ViewusersComponent},
-  {path: 'EditU', component: UpdateprofileComponent}
+  {path: 'EditU', component: UpdateprofileComponent},
+  {path: 'EmpV', component: EmployeeviewComponent}
 
 
 ]

@@ -115,4 +115,14 @@
     <servlet-name>EditUsersServlet</servlet-name>
     <url-pattern>/EditUsersServlet</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>ReimbursementByUserIdServlet</display-name>
+    <servlet-name>ReimbursementByUserIdServlet</servlet-name>
+    <servlet-class>com.revature.servlets.ReimbursementByUserIdServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReimbursementByUserIdServlet</servlet-name>
+    <url-pattern>/ReimbursementByUserIdServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

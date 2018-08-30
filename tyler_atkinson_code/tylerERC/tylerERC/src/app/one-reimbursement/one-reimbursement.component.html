@@ -39,8 +39,20 @@
             {{ reim.rq_status_id }}
           </div>
   
-          {{clickMessage}}
+         
           <br>
+
+          <br>
+
+        <div class="row">
+          <div *ngIf="reim.rq_status_id == 5">
+            {{clickMessage}}
+            <div ng-show="reim.rq_status_id == 5"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ49X7OauG7djCHZNS99mtvKngBqKD4-yZhJXCSe3okXiRuggSocQ"></div>
+          </div>
+          <div *ngIf="reim.rq_status_id == 4">
+              {{clickMessage}}
+              <div ng-show="reim.rq_status_id == 4"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrU-lX3_DdbPt4NAhzpLJ2CQYSUl-SNs5ivJA_SUlZ8BtACsKsIg"></div>
+            </div>
          
           <div class="row">
             <div class="col center-block text-center">

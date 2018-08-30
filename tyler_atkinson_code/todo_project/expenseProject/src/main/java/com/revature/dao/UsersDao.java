@@ -14,6 +14,8 @@ public interface UsersDao {
 	
 	public List<Users> getAllUsers();
 	
+	
+	
 	//UPDATE
 	
 	public int updateUser(Users u);

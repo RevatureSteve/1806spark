@@ -1,0 +1,65 @@
+<div class="jumbotron">
+    <h1 class="display-4 shadow-lg p-3 mb-5 bg-white rounded" >Dunder Mifflin Submitted Reimbursements:</h1>
+    <div class="col"><button type="button" class="btn btn-secondary btn-lg btn-block" routerLink="/Employee">HOME</button></div>
+    <hr class="my-4">
+    <p>Please Approve or Deny Requests In Accordance with Company Poicies</p>
+  
+    <div *ngIf='reimbursements'class ="shadow-lg p-3 mb-5 bg-white rounded">
+  
+      <div class="box box-default">
+        <div class="jumbotron shadow-lg p-3 mb-5 bg-white rounded" *ngFor='let reim of reimbursements'>
+          <div>
+            {{ reim.timesubmission | date: 'medium'}}
+          </div>
+          <div>
+            {{ reim.r_id }}
+          </div>
+          <div>
+            {{ reim.amt }}
+          </div>
+          <div>
+            {{ reim.description }}
+          </div>
+          <div>
+            {{ reim.emp_u_id }}
+          </div>
+          <div>
+            {{ reim.mgr_u_id }}
+          </div>
+          <div>
+            {{ reim.rq_status_id }}
+          </div>
+  
+  
+          <br>
+  
+          <div class="row">
+            <div *ngIf="reim.rq_status_id == 5">
+              {{clickMessage}}
+              <div ng-show="reim.rq_status_id == 5"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ49X7OauG7djCHZNS99mtvKngBqKD4-yZhJXCSe3okXiRuggSocQ"></div>
+            </div>
+            <div *ngIf="reim.rq_status_id == 4">
+                {{clickMessage}}
+                <div ng-show="reim.rq_status_id == 4"> <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrU-lX3_DdbPt4NAhzpLJ2CQYSUl-SNs5ivJA_SUlZ8BtACsKsIg"></div>
+              </div>
+            
+  
+            <div class="col center-block text-center">
+              <button class="btn btn-outline-success shadow-lg p-3 mb-5 bg-white rounded" routerLink = '/Employee'>Home</button>
+            </div>
+        
+          </div>
+  
+        
+  
+        </div>
+  
+      </div>
+  
+    </div>
+  
+  
+  
+  
+  
+  </div>

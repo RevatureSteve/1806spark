@@ -46,6 +46,12 @@ public class AppService {
 		return reimbursementDao.getReimbursemenstById(u_id);
 	}
 	
+	//view reimbursements by emp_u_ud
+	
+	public List <Reimbursement> getReimbursementByUserId(int emp_u_id){
+		
+		return reimbursementDao.getReimbursementByUserId(emp_u_id);
+	}
 
 
 	
