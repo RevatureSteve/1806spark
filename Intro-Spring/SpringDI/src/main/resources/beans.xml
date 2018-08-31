@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- configure the spring container -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+		
+		
+<!--  Hibernate has a  hibernate.cfg.xml: to configure SessionFactory -->
+<!--  Beans.xml is for Spring Bean Container configuration *Note* does not have a specific name
+		names of the .xml file can vary:
+				beans.xml
+				spring-container.xml
+				applicationContext.xml -> ApplicationContext is the technical name of the Spring Bean Container
+ -->
+
+
+	<!-- this line tells spring to scan for @s like @Autowired -->
+	<context:component-scan base-package="com.revature"></context:component-scan>
+
+	<!-- 
+		3 types of DI:
+			Constructor
+			setter
+			interface -not supported by spring
+	 -->
+	<bean class="com.revature.pojo.House" id="houseId" scope="singleton" autowire="byName" >
+		<property name="wall" ref="wallId" ></property>	<!--  DI through Setters -->
+		<property name="numOfWalls" value="4"></property>
+		<constructor-arg name="wallColor" value="blue" ></constructor-arg><!-- DI through Constructors -->
+			<!--  Constructors for required properties
+				  Setters for optional -->
+	</bean>
+	
+	<bean class="com.revature.pojo.Wall" id="wallId" scope="prototype">
+		<property name="material" value="brick"></property>
+	</bean>
+
+
+	<!-- Below is allowing Spring to figure out our object dependencies
+		using the autowire attribute
+	 -->
+
+<!-- 	<bean class="com.revature.service.AppService" id="service"  >
+	</bean> -->
+
+	<bean class="com.revature.service.DaoImpl" id="dao"></bean> 
+
+
+</beans>

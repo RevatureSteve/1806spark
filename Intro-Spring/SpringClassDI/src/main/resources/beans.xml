@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--  file to configure the Spring Bean Container -->
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+<!-- 3 Types of DI but only 2 supported in Spring -->
+<!-- Constructor / Setter in Spring but Interface is not -->
+<bean id="fastCar" class="com.revature.model.Car">
+	<!--  Constructor Injection -->
+	<constructor-arg name="name" value="Fast Car"></constructor-arg>
+	<!--  Setter Injection -->
+	<property name="color" value="black"></property>
+	<property name="engine" ref="powerfulEngine"></property>
+</bean>
+
+<bean id="powerfulEngine" class="com.revature.model.Engine">
+</bean>
+
+<!--  
+		Beanwiring: manually setting dependency injection 
+		E.g. EmployeeService injected a EmployeeDaoImpl specified in xml below
+
+<bean id="employeeService" class="com.revature.service.EmployeeService" autowire="default">
+	<constructor-arg name="edao" ref="employeeDaoImpl"></constructor-arg>
+</bean>
+
+<bean id="employeeDaoImpl" class="com.revature.dao.EmployeeDaoImpl">
+</bean>
+ -->
+
+<!-- 
+		Autowiring: allowing spring to wiring beans Automagically
+			What are the ways?
+				-default / no: no autowiring
+				-constructor
+				-byName
+				-byType 
+ -->
+<bean id="employeeService" class="com.revature.service.EmployeeService" autowire="constructor">
+</bean>
+
+<bean id="employeeDaoImpl" class="com.revature.dao.EmployeeDaoImpl">
+</bean> 
+
+</beans>
