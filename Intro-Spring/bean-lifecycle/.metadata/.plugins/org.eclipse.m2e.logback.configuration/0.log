@@ -1,0 +1,10 @@
+2018-08-30 13:09:53,046 [Worker-6: Loading available Gradle versions] INFO  c.g.t.t.d.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2018-08-30 13:14:31,208 [Worker-1: Creating project "bean-lifecycle"] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: com.drake:bean-lifecycle:0.0.1-SNAPSHOT @ /home/dralex/my_git_repo/1806spark/Intro-Spring/bean-lifecycle/bean-lifecycle/pom.xml.
+2018-08-30 13:14:31,789 [Worker-1: Creating project "bean-lifecycle"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bean-lifecycle/src/main/java
+2018-08-30 13:14:31,793 [Worker-1: Creating project "bean-lifecycle"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bean-lifecycle/src/main/resources
+2018-08-30 13:14:31,794 [Worker-1: Creating project "bean-lifecycle"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /bean-lifecycle/src/test/java
+2018-08-30 13:14:31,795 [Worker-1: Creating project "bean-lifecycle"] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding resource folder /bean-lifecycle/src/test/resources
+2018-08-30 13:14:34,900 [Worker-12: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-08-30 13:14:34,920 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource
+2018-08-30 13:14:34,931 [Worker-12: Building workspace] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (UTF-8 actually) to copy filtered resources, i.e. build is platform dependent!
+2018-08-30 13:14:34,936 [Worker-12: Building workspace] INFO  o.e.m.c.i.embedder.EclipseLogger - Copying 0 resource

@@ -1,0 +1,1 @@
+INDEX VERSION 1.131+/home/dralex/my_git_repo/1806spark/Intro-Spring/bean-lifecycle/.metadata/.plugins/org.eclipse.jdt.core

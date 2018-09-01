@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<libraryInfos>
+<libraryInfo home="/home/dralex/Desktop/eclipse/jre" version="1.8.0_181">
+<bootpath>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/resources.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/rt.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/sunrsasign.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/jsse.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/jce.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/charsets.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/jfr.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+<libraryInfo home="/home/dralex/Desktop/eclipse" version="1.8.0_181">
+<bootpath>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/resources.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/rt.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/sunrsasign.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/jsse.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/jce.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/charsets.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/jfr.jar"/>
+<entry path="/home/dralex/Desktop/eclipse/jre/classes"/>
+</bootpath>
+<extensionDirs>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/ext"/>
+<entry path="/usr/java/packages/lib/ext"/>
+</extensionDirs>
+<endorsedDirs>
+<entry path="/home/dralex/Desktop/eclipse/jre/lib/endorsed"/>
+</endorsedDirs>
+</libraryInfo>
+</libraryInfos>
