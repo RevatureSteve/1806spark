@@ -12,6 +12,7 @@ public interface EmployeeDao {
 	public Employee getEmployeeByID(int id);
 	public List<Employee> getAllEmployees();
 	
+	
 	// UPDATE
 	
 	// DELETE

@@ -5,8 +5,9 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import com.revature.model.Car;
 import com.revature.model.Employee;
-import com.revature.model.Engine;
+import com.revature.model.Manager;
 import com.revature.service.EmployeeService;
+import com.revature.service.ManagerService;
 
 public class MainClass {
 
@@ -36,8 +37,12 @@ public class MainClass {
 		
 		EmployeeService eService = (EmployeeService) ac.getBean("employeeService");
 		Employee emp = eService.getEmployeeById(55);
-		
 		System.out.println("Employee: " + emp);
+
+		ManagerService mService = (ManagerService) ac.getBean("managerService");
+		Manager mgr = mService.getManagerById(1);
+		
+		System.out.println("Manager: " + mgr);
 	}
 
 }
