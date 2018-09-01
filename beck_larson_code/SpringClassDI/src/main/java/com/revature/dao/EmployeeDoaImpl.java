@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-import com.revature.services.Employee;
+import com.revature.model.Employee;
 
 public class EmployeeDoaImpl implements EmployeeDao {
 

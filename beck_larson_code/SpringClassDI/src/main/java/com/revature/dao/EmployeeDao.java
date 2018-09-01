@@ -2,7 +2,7 @@ package com.revature.dao;
 
 import java.util.List;
 
-import com.revature.services.Employee;
+import com.revature.model.Employee;
 
 public interface EmployeeDao {
 
