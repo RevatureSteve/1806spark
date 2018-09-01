@@ -1,0 +1,80 @@
+<html>
+
+<head>
+    <title>Remake of a non-functional calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1 id=bitTitle>Calculator</h1>
+    <center>
+        <div id="calcBorder">
+            <input type="text" name="display" id="grayOval">
+            <table>
+                <tr>
+                    <td>
+                        <input type="button" name="one" value="1" id="newButton" onclick="input.display.value += '1'">
+                    </td>
+                    <td>
+                        <input type="button" name="two" value="2" id="newButton" onclick="calculator.display.value += '2'">
+                    </td>
+                    <td>
+                        <input type="button" name="three" value="3" id="newButton" onclick="calculator.display.value += '3'">
+                    </td>
+                    <td>
+                        <input type="button" name="plus" value="+" id="newButton" onclick="calculator.display.value += '+'">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" name="four" value="4" id="newButton" onclick="calculator.display.value += '4'">
+                    </td>
+                    <td>
+                        <input type="button" name="five" value="5" id="newButton" onclick="calculator.display.value += '5'">
+                    </td>
+                    <td>
+                        <input type="button" name="six" value="6" id="newButton" onclick="calculator.display.value += '6'">
+                    </td>
+                    <td>
+                        <input type="button" name="minus" value="-" id="newButton" onclick="calculator.display.value += '-'">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" name="seven" value="7" id="newButton" onclick="calculator.display.value += '7'">
+                    </td>
+                    <td>
+                        <input type="button" name="eight" value="8" id="newButton" onclick="calculator.display.value += '8'">
+                    </td>
+                    <td>
+                        <input type="button" name="nine" value="9" id="newButton" onclick="calculator.display.value += '9'">
+                    </td>
+                    <td>
+                        <input type="button" name="multiply" value="*" id="newButton" onclick="calculator.display.value += '*'">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type="button" name="clear" value="c" id="newButton" onclick="calculator.display.value = ''">
+                    </td>
+                    <td>
+                        <input type="button" name="zero" value="0" id="newButton" onclick="calculator.display.value += '0'">
+                    </td>
+                    <td>
+                        <input type="button" name="equals" value="=" id="newButton" onclick="calculator.display.value = eval(calculator.display.value)">
+                    </td>
+                    <td>
+                        <input type="button" name="divide" value="/" id="newButton" onclick="calculator.display.value += '/'">
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <br>
+        <h5>Press a calculator button to select: num1</h5>
+        <h5>num1</h5>
+        <h5>num2</h5>
+        <h5>answer</h5>
+    </center>
+</body>
+
+</html>
