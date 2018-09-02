@@ -1,0 +1,41 @@
+#image {
+    background: url(https://www.toptal.com/designers/subtlepatterns/patterns/textured_paper.png);
+}
+
+#center {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 8in;
+    height: 6in;
+}
+
+#center2 {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 9in;
+    width: 1in;
+    height: 6in;
+    background-color: rgba(53, 173, 53, 0.787);
+    z-index: -6;
+    display: block;
+}
+
+.tabs {
+    position: relative;
+}
+.tabs {
+    position: relative;
+}
+.tabs {
+    position: relative;
+}
+.tabs {
+    position: relative;
+}
