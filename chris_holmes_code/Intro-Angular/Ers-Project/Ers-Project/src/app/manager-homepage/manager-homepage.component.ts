@@ -18,4 +18,18 @@ export class ManagerHomepageComponent implements OnInit {
     );
   }
 
+  approveRequest(i: number) {
+    const singleR = this.data[i];
+    singleR.rq_status_id = 1;
+    const singleRlist = [];
+    singleRlist.push(singleR);
+    this.reimbursement.updateReimbursements(singleRlist).subscribe();
+  }
+  denyRequest(i: number) {
+    const singleR = this.data[i];
+    singleR.rq_status_id = 2;
+    const singleRlist = [];
+    singleRlist.push(singleR);
+    this.reimbursement.updateReimbursements(singleRlist).subscribe();
+  }
 }

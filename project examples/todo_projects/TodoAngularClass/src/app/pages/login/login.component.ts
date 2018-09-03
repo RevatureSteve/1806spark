@@ -31,6 +31,8 @@ export class LoginComponent implements OnInit {
     this.httpClient.post('http://localhost:8085/TodoList-Restful-API/login', user).subscribe(
       succ => this.validUser = succ, err => console.log('login failed')
     );
+    console.log(this.inputUser);
   }
+
 
 }

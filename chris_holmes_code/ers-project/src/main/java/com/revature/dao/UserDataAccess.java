@@ -9,15 +9,13 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.revature.domain.Reimbursements;
 import com.revature.domain.User;
 import com.revature.util.SetConnectionPropertiesUtil;
 
 public class UserDataAccess implements UserDao {
 
-		@Override
-		public int create(Object obj) {
-			return 0;
-		}
+		
 		
 		@Override
 		public List<Object> read() {
@@ -36,18 +34,34 @@ public class UserDataAccess implements UserDao {
 			}
 			return user;	
 		}
-		@Override
-		public int update(Object obj) {
-			// TODO Auto-generated method stub
-			return 0;
-		}
-
+		
 		
 
 		@Override
 		public User getUserbyEmail(String email, String password) {
 			// TODO Auto-generated method stub
 			return null;
+		}
+
+	
+		@Override
+		public int create(User obj) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+		@Override
+		public int updateUser(User u) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+
+
+
+		@Override
+		public int updateReimbursement(Reimbursements r) {
+			// TODO Auto-generated method stub
+			return 0;
 		}
 		
 }	

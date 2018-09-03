@@ -16,5 +16,9 @@ export class ReimbursementServiceService {
   getReimbursements() {
     return this.http.get<Reimbursements[]>('http://localhost:8080/ErsProject/ViewAllReimbursements', this.httpOptions);
   }
+  updateReimbursements(data: Reimbursements[]) {
+    console.log('updating ' + data[0].description);
+    return this.http.put('http://localhost:8080/ErsProject/UpdateRstatusServlet', data, this.httpOptions);
+  }
 
 }

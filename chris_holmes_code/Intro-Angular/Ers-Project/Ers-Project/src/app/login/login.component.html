@@ -1,14 +1,22 @@
-<form (ngSubmit)="login()">
-  <!-- <div class = "form-control"> -->
-<input name="email" type="text" class="form-control" [(ngModel)]="inputUser.email" id="email" placeholder="Enter email">
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">Login</h1>
+    <p class="lead"></p>
+    <img src="https://wallpaper.wiki/wp-content/uploads/2017/05/Photos-Free-Desktop-Candy-Wallpapers.jpg" alt="">
+    <form (ngSubmit)="login()">
+    <br>
+      Enter your Username and Password
+      
+      <div>
+        <br>
+        <input name="email" type="text" class="form-control" [(ngModel)]="inputUser.email" id="email" placeholder="Enter email">
+        <input type="password" name="password" [(ngModel)]="inputUser.password" class="form-control" id="password" placheolder="Enter password">
+        <button type="submit" class="btn btn-secondary">Submit</button>
+      </div>
+      <div>
+        {{validUser.email}} {{validUser.uId}}
+      </div>
 
-<input type="password" name = "password" [(ngModel)]="inputUser.password" class="form-control" id="password" placheolder="Enter password">
-<button type="submit" class="btn btn-secondary">Submit</button>
-  <!-- </div>  -->
-<div>
-  {{validUser.email}}
-  {{validUser.uId}}
+    </form>
+  </div>
 </div>
-
-
-</form>

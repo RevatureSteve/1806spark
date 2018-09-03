@@ -1,0 +1,22 @@
+<form (ngSubmit) = "updateUser()">
+<div class="jumbotron">
+  <h1 class="display-4">Update</h1>
+  <p class="lead">Update Your Profile Information Here!</p>
+  <hr class="my-4">
+  <p>Fill Out fields: Email, Password, First Name, Last Name </p>
+  <p class="lead">
+  </p>
+  <div><img src="https://hdwallsource.com/img/2014/7/free-cookie-wallpaper-35426-36235-hd-wallpapers.jpg" alt=""></div>
+<div *ngIf='lUser'>
+  <input type="text" name = "password" [(ngModel)]="lUser.password" class="form-control" id="password" placeholder="Enter new Password">
+  <input type="text" name = "firstName" [(ngModel)]="lUser.fName" class="form-control" id="fname" placeholder="Enter New First Name">
+  <input type="text" name = "lastName" [(ngModel)]="lUser.lName" class="form-control" id="lname" placeholder="Enter New Password">
+</div>
+<br>
+  <button type="submit" class="btn btn-secondary">Submit</button>
+  <div>
+  
+  </div>
+  
+</div>
+</form>

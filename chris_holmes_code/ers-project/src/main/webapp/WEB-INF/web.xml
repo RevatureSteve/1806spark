@@ -65,4 +65,24 @@
     <servlet-name>ViewAllReimbursements</servlet-name>
     <url-pattern>/ViewAllReimbursements</url-pattern>
   </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateUserServlet</display-name>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <servlet-class>com.revature.servlets.UpdateUserServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateUserServlet</servlet-name>
+    <url-pattern>/UpdateUserServlet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>UpdateRstatusServlet</display-name>
+    <servlet-name>UpdateRstatusServlet</servlet-name>
+    <servlet-class>com.revature.servlets.UpdateRstatusServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>UpdateRstatusServlet</servlet-name>
+    <url-pattern>/UpdateRstatusServlet</url-pattern>
+  </servlet-mapping>
 </web-app>

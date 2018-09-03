@@ -1,3 +1,4 @@
+import { UpdateUsersComponentComponent } from './update-users-component/update-users-component.component';
 import { ManagerHomepageComponent } from './manager-homepage/manager-homepage.component';
 import { EmployeeHomepageComponent } from './employee-homepage/employee-homepage.component';
 import { ManagerReimbursementsComponent } from './manager-reimbursements/manager-reimbursements.component';
@@ -8,12 +9,14 @@ import { CreateReimbursementComponent } from './create-reimbursement/create-reim
 import { LogouthpComponent } from './logouthp/logouthp.component';
 
 
+
 export const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'reimbursements', component: CreateReimbursementComponent},
   {path: 'employee-homepage', component: EmployeeHomepageComponent},
   {path: 'manager-homepage', component: ManagerHomepageComponent},
-  {path: '', component: LogouthpComponent}
+  {path: '', component: LogouthpComponent},
+  {path: 'update', component: UpdateUsersComponentComponent}
 ];
 
 @NgModule({

@@ -2,7 +2,6 @@ package com.revature.dao;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
-import java.sql.Blob;
 import java.sql.CallableStatement;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -121,27 +120,54 @@ public class UserDaoImpl implements UserDao{
 		return reimbursement;
 	}
 	
-	
-	
-	
-	
+	@Override
+	public int updateUser(User u) {
+		int rowsChanged = 0;
+		try(Connection conn = SetConnectionPropertiesUtil.getConnection();){
+			String sql = "UPDATE users SET EMAIL = ?, PASSWORD = ?, F_NAME = ?, L_NAME = ?  WHERE u_id = ?";
+				PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setString(1, u.getEmail());
+			ps.setString(2, u.getPassword());
+			ps.setString(3, u.getfName());
+			ps.setString(4, u.getlName());
+			ps.setInt(5, u.getuId());
+			rowsChanged = ps.executeUpdate();
+		
+		}catch (Exception e) {
+			e.printStackTrace();
+		}return rowsChanged;
+	}
 	
 	@Override
-	public int create(Object obj) {
+	public int updateReimbursement(Reimbursements r) {
+		int rowsChanged = 0;
+		try(Connection conn = SetConnectionPropertiesUtil.getConnection();){
+			String sql = "UPDATE REIMBURSEMENT SET rq_status_id = ? WHERE r_id = ?";
+				PreparedStatement ps = conn.prepareStatement(sql);
+			ps.setInt(1, r.getRq_status_id());
+			ps.setInt(2, r.getR_id());
+		
+			rowsChanged = ps.executeUpdate();
+		
+		}catch (Exception e) {
+			e.printStackTrace();
+		}return rowsChanged;
+	}
+
+
+
+	@Override
+	public int create(User obj) {
 		// TODO Auto-generated method stub
 		return 0;
 	}
+
+
 
 	@Override
 	public List<Object> read() {
 		// TODO Auto-generated method stub
 		return null;
-	}
-
-	@Override
-	public int update(Object obj) {
-		// TODO Auto-generated method stub
-		return 0;
 	}
 	
 	

@@ -13,6 +13,7 @@ import { ManagerHomepageComponent } from './manager-homepage/manager-homepage.co
 import { CreateReimbursementComponent } from './create-reimbursement/create-reimbursement.component';
 import { AllReimbursementsComponent } from './all-reimbursements/all-reimbursements.component';
 import { LogouthpComponent } from './logouthp/logouthp.component';
+import { UpdateUsersComponentComponent } from './update-users-component/update-users-component.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +24,8 @@ import { LogouthpComponent } from './logouthp/logouthp.component';
     ManagerHomepageComponent,
     CreateReimbursementComponent,
     AllReimbursementsComponent,
-    LogouthpComponent
+    LogouthpComponent,
+    UpdateUsersComponentComponent
   ],
   imports: [
     BrowserModule,

@@ -6,36 +6,42 @@
       <nav>
         <ul>
           <li>
+              <a routerLink="login">
+                <!--The i tag is for italics-->
+                <span class="material-icons">Login</span>
+              </a>
+            </li>
+          <li>
             <a routerLink="employee-homepage">
               <!--The i tag is for italics-->
-              <i class="material-icons">Home</i>
+              <span class="material-icons">Home</span>
             </a>
           </li>
-          <li>
+          <li> <!--  ng-if="loggedUserService.loggeduser.posId == 1"-->
             <a routerLink="manager-homepage">
               <!--The i tag is for italics-->
-              <i class="material-icons">Manager Home</i>
+              <span class="material-icons">Manager Home</span>
             </a>
           </li>
           <li>
             <!--The part after routerlink= is what page it will go to-->
             <a routerLink="reimbursements">
               <!--The i tag is for italics-->
-              <i class="material-icons">Reimbursements</i>
+              <span class="material-icons">Reimbursements</span>
             </a>
           </li>
           <li>
-              <a routerLink="login">
+              <a routerLink="update">
                 <!--The i tag is for italics-->
-                <i class="material-icons">Login</i>
+                <span class="material-icons">Update Profile</span>
               </a>
             </li>
-          <li>
-              <a href="/">
-                <!--The i tag is for italics-->
-                <i class="material-icons">Logout</i>
-              </a>
-            </li>
+            <li>
+                <a href="/">
+                  <!--The i tag is for italics-->
+                  <span class="material-icons">Logout</span>
+                </a>
+              </li>
         </ul>
         
       </nav>

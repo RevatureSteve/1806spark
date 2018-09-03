@@ -2,19 +2,21 @@
     <div class="container">
       <h1 class="display-4">Reimbursements</h1>
       <p class="lead">Submit reimbursement requests here</p>
+      <img src="http://s1.bwallpapers.com/thumbs2/2014/02/07/chocolate-chip-cookies-desktop-wallpapers_092724435.jpg" alt="">
     <form action="">
      <div>
           <input type="text" #d (click)='view(d.value)'placeholder="insert description here">
           <br>
           <input type="number" #amt  placeholder="insert amount here">
-         <br><br> Request Type ID
-          <select multiple #x >
-            <option value = '1'>1</option>
-            <option value = '2'>2</option>
-            <option value = '3'>3</option>
-            <option value = '4'>4</option>
+         <br><br> Request Type
+          <select  #x >
+            <option value = '1'>Lodging</option>
+            <option value = '2'>Not Enough Cookies</option>
+            <option value = '3'>Wrong Order</option>
+            <option value = '4'>Supbar Service</option>
           </select>
-          <button (click)="SubmitReimbursement(user.uId ,amt.value, d.value, x.value)">x</button>
+          <br>
+          <button (click)="SubmitReimbursement(user.uId ,amt.value, d.value, x.value)">Submit</button>
      </div>
       
      

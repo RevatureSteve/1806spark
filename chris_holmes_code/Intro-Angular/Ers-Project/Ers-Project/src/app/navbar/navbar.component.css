@@ -1,14 +1,35 @@
 nav {
     background: #2D2E2E;
     height: 100%;
+    display:block;
+    padding: 20px;
+    
+    
 }
 
 li {
     list-style: none;
+    display: inline;
+    padding: 10px;
+    
+    
 }
 
+li :hover{
+    color: blueviolet
+}
+
+/* li a {
+display:block;
+} */
+
 body{
-    background-color: blueviolet
+    background-color: blueviolet;
+    color: whitesmoke;
 }
   
+a{
+    color: whitesmoke;
+    text-decoration: none;
+}
 
