@@ -1,0 +1,12 @@
+.logo {
+    margin-top: 21px;
+    margin-left: 350px;
+    top: -9px;
+    width: 396px;
+    height: 576px;
+    display: block;
+    background:url('../../../assets/Images/closedbook.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: 1px solid transparent;
+}

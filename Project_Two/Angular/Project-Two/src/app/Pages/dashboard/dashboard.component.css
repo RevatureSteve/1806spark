@@ -22,7 +22,6 @@
     left: 9in;
     width: 1in;
     height: 6in;
-    background-color: rgba(53, 173, 53, 0.787);
     z-index: -6;
     display: block;
 }
@@ -38,4 +37,48 @@
 }
 .tabs {
     position: relative;
+}
+
+/* Button */
+.mat-raised-button {
+    box-sizing: border-box;
+    position: relative;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    outline: 0;
+    border: none;
+    -webkit-tap-highlight-color: transparent;
+    display: inline-block;
+    white-space: nowrap;
+    text-decoration: none;
+    vertical-align: baseline;
+    text-align: center;
+    margin: 0;
+    margin-right: 0px;
+    min-width: 0.8in;
+    line-height: 1.5in;
+    padding: 0 16px;
+    border-radius: 2px;
+    overflow: visible;
+    transform: translate3d(0,0,0);
+    transition: background .4s cubic-bezier(.25,.8,.25,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
+}
+
+/* Image */
+.logo {
+    margin-left: 150px;
+    margin-top: -8px;
+    right: 4px;
+    top: -9px;
+    width: 792px;
+    height: 619px;
+    display: block;
+    background:url('../../../assets/Images/openbook.png');
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    border: 1px solid transparent;
+    z-index: -5;
 }

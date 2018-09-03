@@ -12,6 +12,7 @@ import { AppRoutingModule } from './app.routing.module';
 import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FrontpageComponent } from './Pages/frontpage/frontpage.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     DashboardComponent,
     UserDashboardComponent,
     LoginComponent,
-    CartComponent
+    CartComponent,
+    FrontpageComponent
   ],
   imports: [
     BrowserModule,

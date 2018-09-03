@@ -1,15 +1,24 @@
 <div>
+    <!--
+         Div for picture -->
     <div id="center">
         <div id="image">
         </div>
     </div>
+    <!-- 
+        Div for buttons
+     -->
     <div id="center2">
         <div class="tabs">
-            <button mat-raised-button color="primary" routerLink="login">Primary</button>
+            <a routerLink="/home">
+                <button mat-raised-button color="primary">Home</button>
+            </a>
         </div>
         <div class="tabs">
-            <button mat-raised-button color="primary" routerLink="userDash">Secondary</button>
-        </div>
+                <a routerLink="/recipe">
+                    <button mat-raised-button color="primary" >Recipe</button>
+                </a>
+            </div>
         <div class="tabs">
             <button mat-raised-button color="primary" routerLink="cart">Third</button>
         </div>
@@ -17,4 +26,6 @@
             <button mat-raised-button color="primary" routerLink="recipe">Fourth</button>
         </div>
     </div>
+    <!-- Book Image -->
+    <a class=logo></a>
 </div>
