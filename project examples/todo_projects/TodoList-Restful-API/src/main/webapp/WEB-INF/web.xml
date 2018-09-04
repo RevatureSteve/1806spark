@@ -37,22 +37,30 @@
     <servlet-name>LoginServlet</servlet-name>
     <url-pattern>/login</url-pattern>
   </servlet-mapping>
-  
-  <!--  FILTERS: intercept requests before servlets -->
   <filter>
-   <filter-name>CorsFilter</filter-name>
-   <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
-   <init-param>
-     <param-name>cors.allowed.origins</param-name>
-     <param-value>*</param-value>
-   </init-param>
-   <init-param>
-     <param-name>cors.allowed.methods</param-name>
-     <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
-   </init-param>
- </filter>
- <filter-mapping>
-   <filter-name>CorsFilter</filter-name>
-   <url-pattern>/*</url-pattern>
- </filter-mapping>
+    <filter-name>CorsFilter</filter-name>
+    <filter-class>org.apache.catalina.filters.CorsFilter</filter-class>
+    <init-param>
+      <param-name>cors.allowed.origins</param-name>
+      <param-value>*</param-value>
+    </init-param>
+    <init-param>
+      <param-name>cors.allowed.methods</param-name>
+      <param-value>GET,POST,HEAD,OPTIONS,PUT</param-value>
+    </init-param>
+  </filter>
+  <filter-mapping>
+    <filter-name>CorsFilter</filter-name>
+    <url-pattern>/*</url-pattern>
+  </filter-mapping>
+  <servlet>
+    <description></description>
+    <display-name>DocumentationServlet</display-name>
+    <servlet-name>DocumentationServlet</servlet-name>
+    <servlet-class>com.revature.servlets.DocumentationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>DocumentationServlet</servlet-name>
+    <url-pattern>/TodoLiist-Restful-API</url-pattern>
+  </servlet-mapping>
 </web-app>

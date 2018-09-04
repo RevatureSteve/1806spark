@@ -55,6 +55,7 @@ public class LoginServlet extends HttpServlet {
 			response.setHeader("Content-Type", "application/json");
 			response.getWriter().write(mapper.writeValueAsString(validUser));
 		}else {
+			response.setStatus(401);
 			response.getWriter().write("");
 		}
 	}
