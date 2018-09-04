@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="AjaxBankingProject" path="/AjaxBankingProject" reloadable="true" source="org.eclipse.jst.jee.server:AjaxBankingProject"/><Context docBase="TodoList-Restful-API" path="/TodoList-Restful-API" reloadable="true" source="org.eclipse.jst.jee.server:TodoList-Restful-API"/><Context docBase="ProjectOne" path="/ProjectOne" reloadable="true" source="org.eclipse.jst.jee.server:ProjectOne"/><Context docBase="ersServerSide" path="/ersServerSide" reloadable="true" source="org.eclipse.jst.jee.server:ersServerSide"/><Context docBase="ERS_project" path="/ERS_project" reloadable="true" source="org.eclipse.jst.jee.server:ERS_project"/></Host>
+      <Context docBase="AjaxBankingProject" path="/AjaxBankingProject" reloadable="true" source="org.eclipse.jst.jee.server:AjaxBankingProject"/><Context docBase="TodoList-Restful-API" path="/TodoList-Restful-API" reloadable="true" source="org.eclipse.jst.jee.server:TodoList-Restful-API"/><Context docBase="ProjectOne" path="/ProjectOne" reloadable="true" source="org.eclipse.jst.jee.server:ProjectOne"/><Context docBase="ersServerSide" path="/ersServerSide" reloadable="true" source="org.eclipse.jst.jee.server:ersServerSide"/><Context docBase="ERS_project" path="/ERS_project" reloadable="true" source="org.eclipse.jst.jee.server:ERS_project"/><Context docBase="SpringFlashCardWeb" path="/SpringFlashCardWeb" reloadable="true" source="org.eclipse.jst.jee.server:SpringFlashCardWeb"/></Host>
     </Engine>
   </Service>
 </Server>

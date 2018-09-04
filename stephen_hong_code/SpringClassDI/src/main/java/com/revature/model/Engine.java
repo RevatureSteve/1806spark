@@ -1,5 +1,8 @@
 package com.revature.model;
 
+import org.springframework.stereotype.Component;
+
+@Component(value="powerfulEngine")
 public class Engine {
 	
 	private String sound;

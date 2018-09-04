@@ -2,7 +2,14 @@
 <!-- file to configure the Spring Bean Container -->
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">
+
+<!-- Turn on Spring component scan
+		which will have spring look for Spring @s -->
+<context:component-scan base-package="com.revature"></context:component-scan>
+
 
 <!-- 3 Types of DI, but only 2 are supported in Spring
 		Constructor / Setter in Spring, but Interface is not -->
@@ -14,8 +21,8 @@
 	<property name="engine" ref="powerfulEngine"></property>
 </bean>
 
-<bean id="powerfulEngine" class="com.revature.model.Engine">
-</bean>
+<!-- <bean id="powerfulEngine" class="com.revature.model.Engine">
+</bean> -->
 
 <!-- Beanwiring: manually setting dependency injection
 		e.g. EmployeeService injected a EmployeeDaoImpl specified in xml below -->

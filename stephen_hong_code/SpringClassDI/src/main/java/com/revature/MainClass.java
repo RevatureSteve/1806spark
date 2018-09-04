@@ -19,12 +19,22 @@ public class MainClass {
 		 * 			FileSystemXmlApplicationContext - found somewhere on the device
 		 * 			XmlWebApplicationContext - pulled via web
 		 * 
-		 * 	Create a Manager pojo
-		 * 				managerService
-		 * 				managerDao
-		 * 				managerDaoImpl
-		 * 					-2 methods: get manager from service
-		 * 		Have both autowiring & beanwiring options
+		 *		Autowiring with @s
+		 *		Steps: 
+		 *				1. In Spring bean configuration file
+		 *				spring context - turn on base component scan
+		 *				provide the base-package e.g. com.revature
+		 *				2. Beanify your classes you wnat with @s or still
+		 *					XML but lets use @s for this
+		 *				3. Use @Autowired for DI of other Spring Beans
+		 *					e.g. ManagerService has Autowired ManagerDaoImpl
+		 *
+		 *		Spring @s
+		 *			@Component - most simple Spring @; marks a class as a spring bean
+		 *			@Service - business logic class annotation
+		 *			@Repository - will be used in Spring ORM/DATA for dao impls
+		 *			@Autowired - DI another Spring Bean
+		 *			
 		 */
 		
 		ApplicationContext ac = new ClassPathXmlApplicationContext("beans.xml");
