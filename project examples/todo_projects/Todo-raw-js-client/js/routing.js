@@ -1,7 +1,7 @@
 /*
     routing like angular routing but raw js
 
-    path: /revature     id: revLink
+    path: /rev          id: revLink
     path: /dashboard    id: dashboardLink
     path: /addTodo      id: addTodoLink
     path: /login        id: loginLink    
