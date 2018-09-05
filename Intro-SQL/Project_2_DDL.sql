@@ -12,7 +12,7 @@ CREATE TABLE users(
     pw_salt VARCHAR2(4000) NOT NULL,
     fname VARCHAR2(4000),
     lname VARCHAR2(4000),
-    email VARCHAR2(4000) UNIQUE UNIQUE,
+    email VARCHAR2(4000) UNIQUE,
     f_list_id INT,
     online_status INT,
     PRIMARY KEY (u_id),
@@ -38,10 +38,10 @@ END;
 
 CREATE TABLE message(
 
-    m_id VARCHAR2(4000),
-    u_id VARCHAR2(4000),
-    timestamp DEFAULT CURRENT_TIMESTAMP,
-    message NOT NULL,
+    m_id INT,
+    u_id INT,
+    time timestamp,
+    message VARCHAR2(4000) NOT NULL,
     conversation_id INT,
     PRIMARY KEY (m_id),
     FOREIGN KEY (conversation_id) REFERENCES conversation (c_id)
@@ -54,11 +54,11 @@ START WITH 1
 INCREMENT BY 1;
 
 CREATE OR REPLACE TRIGGER message_seq_trigger
-BEFORE INSERT ON users
+BEFORE INSERT ON message
 FOR EACH ROW 
 BEGIN
     IF :new.m_id IS NULL THEN
-        SELECT users_seq.nextval INTO :new.m_id FROM DUAL;
+        SELECT message_seq.nextval INTO :new.m_id FROM DUAL;
     END IF;
 END;
 /
@@ -80,23 +80,27 @@ START WITH 1
 INCREMENT BY 1;
 
 CREATE OR REPLACE TRIGGER conversion_seq_trigger
-BEFORE INSERT ON users
+BEFORE INSERT ON conversation
 FOR EACH ROW 
 BEGIN
     IF :new.c_id IS NULL THEN
-        SELECT users_seq.nextval INTO :new.c_id FROM DUAL;
+        SELECT conversation_seq.nextval INTO :new.c_id FROM DUAL;
     END IF;
 END;
 /
 
 CREATE TABLE friends_list(
-
+    
+    f_id int,
     u_id_1 INT,
     u_id_2 INT,
-    PRIMARY KEY (u_id_1),
-    FOREIGN KEY (u_id_2) REFERENCES users (u_id)
-
+    PRIMARY KEY (f_id),
+    FOREIGN KEY (u_id_1) REFERENCES users(u_id)
+    
 );
+select * from friends_list;
+drop table friends_list CASCADE CONSTRAINTS;
+insert into friends_list values (1, 1);
 
 CREATE TABLE online_status(
 
@@ -106,6 +110,11 @@ CREATE TABLE online_status(
     
 );
 
+insert into online_status values (1, 'online');
+insert into online_status values (2, 'offline');
+
+drop table online_status;
+select * from online_status;
 
 
 
