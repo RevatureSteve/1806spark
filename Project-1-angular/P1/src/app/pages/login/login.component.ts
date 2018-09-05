@@ -22,10 +22,11 @@ export class LoginComponent implements OnInit {
     console.log('email: ' + email + ' password: ' + password);
     this.userService.login(email, password).subscribe(
       user => {
+        console.log(user);
         this.changeCurrentUser(user);
       },
       err => {
-        // alert('Login failed: email or password where incorrect');
+        // alert('Login failed: email or password were incorrect');
       }
     );
   }

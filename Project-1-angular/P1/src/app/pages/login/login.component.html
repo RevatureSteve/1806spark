@@ -1,15 +1,12 @@
-<div id="bgdrake">
-  <div class="mx-auto mt-5 pt-5" style="width: 30%">
-    <div>
-      <label for="exampleInputEmail1">Email address</label>
-      <input type="text" #email class="form-control" id="exampleInputEmail1" placeholder="Enter email">
-    </div>
+<div>
+  <form class="form" id='login'>
+    Email:
     <br>
-    <div>
-      <label for="exampleInputPassword1">Password</label>
-      <input type="password" #password class="form-control" id="exampleInputPassword1" placeholder="Password">
-    </div>
+    <input class='input loginInput' id='email' #email type="text">
+    <br> Password:
+    <br>
+    <input class='input loginInput' id='password' #password type='password'>
     <br>
     <input (click)="login(email.value, password.value)" class="formBtn" id='loginBtn' type="button" value="Login">
-  </div>
+  </form>
 </div>

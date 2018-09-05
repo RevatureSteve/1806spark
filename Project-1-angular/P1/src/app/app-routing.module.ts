@@ -1,8 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-import { ManagerComponent } from './pages/manager/manager.component';
-import { EmployeeComponent } from './pages/employee/employee.component';
 import { LoginComponent } from './pages/login/login.component';
 import { SingleEmployeeViewComponent } from './single-employee-view/single-employee-view.component';
 import { MainManagerComponent } from './main-manager/main-manager.component';
@@ -12,10 +10,7 @@ import { NewReimbursementComponent } from './new-reimbursement/new-reimbursement
 import { NewEmployeeComponent } from './new-employee/new-employee.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'login', pathMatch: 'full' },
-  { path: 'manager', component: ManagerComponent },
-  { path: 'employee', component: EmployeeComponent },
-  { path: 'login', component: LoginComponent },
+  {path: '', redirectTo: 'login', pathMatch: 'full'},
   {path: 'home', component: MainComponent},
   {path: 'home/manager', component: MainManagerComponent},
   {path: 'login', component: LoginComponent},

@@ -9,6 +9,7 @@ export class CurrentUserService {
   constructor() { }
 
   setCurrentUser(user: Users) {
+    console.log('hit localStorage');
     localStorage.setItem('user', JSON.stringify(user));
   }
 

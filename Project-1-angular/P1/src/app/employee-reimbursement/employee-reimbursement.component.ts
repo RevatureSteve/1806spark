@@ -17,15 +17,16 @@ export class EmployeeReimbursementComponent implements OnInit {
   constructor(private reimbursementsService: ReimbursementsService, private currentUser: CurrentUserService) { }
 
   ngOnInit() {
+    this.user = this.currentUser.getCurrentUser();
     this.getEmployeeReimbursements();
   }
 
   getEmployeeReimbursements() {
-    this.reimbs = this.reimbursementsService.reimb;
+    const id = this.user.u_id;
+    this.reimbursementsService.getReimbursementById(id)
+      .subscribe(reimbursements => this.reimbs = reimbursements);
   }
-
-
-
+  
 }
 
 

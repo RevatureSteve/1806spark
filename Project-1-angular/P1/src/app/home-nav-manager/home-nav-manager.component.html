@@ -5,12 +5,24 @@
     <a class="nav-link active color" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">Field Requests</a>
   </li>
   <li class="nav-item">
+    <a class="nav-link color" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">Pending Reimbursements</a>
+  </li>
+  <li class="nav-item">
+    <a class="nav-link color" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">Resolved Reimbursements</a>
+  </li>
+  <li class="nav-item">
     <a class="nav-link color" id="reimbursement-tab" data-toggle="tab" href="#reimbursement" role="tab" aria-controls="reimbursement" aria-selected="false">Agents in the Field</a>
   </li>
 </ul>
 <div class="tab-content" id="myTabContent">
   <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
     <app-manager-reimbursements></app-manager-reimbursements>
+  </div>
+  <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+    <app-manager-pending-reimbursements></app-manager-pending-reimbursements>
+  </div>
+  <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+    <app-manager-resolved-reimbursments></app-manager-resolved-reimbursments>
   </div>
   <div class="tab-pane fade" id="reimbursement" role="tabpanel" aria-labelledby="reimbursement-tab">
     <app-employee-list></app-employee-list>

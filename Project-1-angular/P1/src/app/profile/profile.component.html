@@ -1,4 +1,9 @@
-<app-manager-navbar></app-manager-navbar>  
+<span *ngIf="posId==1">
+  <button (click)="goBack()">go back</button>  
+</span>
+<span *ngIf="posId==2">
+  <app-manager-navbar></app-manager-navbar>  
+</span>
 
 <form class="form" id = 'profile'>
   <span style="color: white">Employee Id:</span>

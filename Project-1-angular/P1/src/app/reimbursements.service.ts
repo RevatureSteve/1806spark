@@ -10,44 +10,36 @@ import { Reimbursements } from './models/reimbursements.model';
 })
 export class ReimbursementsService {
 
-  public reimb;
-
-  // reimbursements: Observable<Reimbursements[]>;
-
   constructor(private httpClient: HttpClient, private currentUser: CurrentUserService) { }
 
   getAllReimbursements() {
-    return this.httpClient.get<Reimbursements[]>('http://18.188.229.73:8080/Project1-0.0.1-SNAPSHOT/reimbursement');
+    return this.httpClient.get<Reimbursements[]>('http://localhost:8080/ERS/reimbursement');
   }
 
-  // getReimbursementsArray(): Observable<Reimbursements[]> {
-  //   return this.reimbursements;
-  // }
-
   getReimbursementById(id) {
-    return this.httpClient.get<Reimbursements[]>('http://18.188.229.73:8080/Project1-0.0.1-SNAPSHOT/reimbursement/id'
+    return this.httpClient.get<Reimbursements[]>('http://localhost:8080/ERS/reimbursement/id'
      + '?userId=' + id);
   }
 
   getPendingReimbursements() {
-    return this.httpClient.get<Reimbursements[]>('http://18.188.229.73:8080/Project1-0.0.1-SNAPSHOT/pending');
+    return this.httpClient.get<Reimbursements[]>('http://localhost:8080/ERS/pending');
   }
 
   getPendingReimbursemetsById(id) {
-    return this.httpClient.get<Reimbursements[]>(`http://18.188.229.73:8080/Project1-0.0.1-SNAPSHOT/pending/id?userId=${id}`);
+    return this.httpClient.get<Reimbursements[]>(`http://localhost:8080/ERS/pending/id?userId=${id}`);
   }
 
   getResolvedReimbursements() {
-    return this.httpClient.get<Reimbursements[]>('http://18.188.229.73:8080/Project1-0.0.1-SNAPSHOT/resolved');
+    return this.httpClient.get<Reimbursements[]>('http://localhost:8080/ERS/resolved');
   }
 
   getResolvedReimbursemetsById(id) {
-    return this.httpClient.get<Reimbursements[]>(`http://18.188.229.73:8080/Project1-0.0.1-SNAPSHOT/resolved/id?userId=${id}`);
+    return this.httpClient.get<Reimbursements[]>(`http://localhost:8080/ERS/resolved/id?userId=${id}`);
   }
 
-  createNewReimbursement(amt, desc, type) {
+  createNewReimbursement(amt, desc, type, img): Observable<Reimbursements> {
     const reimb = {
-      u_id: 1,
+      u_id: this.currentUser.getCurrentUser().u_id,
       amt: amt,
       desc: desc,
       type: type
@@ -55,12 +47,12 @@ export class ReimbursementsService {
 
     console.log(reimb);
 
-    this.reimb = reimb;
+    return this.httpClient.post<Reimbursements>('http://localhost:8080/ERS/reimbursement', reimb);
 
     // console.log('after post statement');
   }
 
-  updateReimbursement(rId, mgrId, status) {
+  updateReimbursement(rId, mgrId, status): Observable<Reimbursements> {
     const update = {
       rId: rId,
       mgrId: mgrId,
@@ -69,7 +61,7 @@ export class ReimbursementsService {
 
     console.log(update);
 
-    return this.httpClient.put<Reimbursements>('http://18.188.229.73:8080/Project1-0.0.1-SNAPSHOT/reimbursement', update);
+    return this.httpClient.put<Reimbursements>('http://localhost:8080/ERS/reimbursement', update);
 
   }
 

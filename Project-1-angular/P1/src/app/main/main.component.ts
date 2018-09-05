@@ -18,4 +18,10 @@ export class MainComponent implements OnInit {
     this.user = this.currentUser.getCurrentUser();
   }
 
+  checkUser() {
+    if (!this.user || this.user.pos_id !== 1) {
+      this.router.navigate(['/login']);
+    }
+  }
+
 }

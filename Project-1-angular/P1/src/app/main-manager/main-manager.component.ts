@@ -16,6 +16,7 @@ export class MainManagerComponent implements OnInit {
 
   ngOnInit() {
     this.user = this.currentUser.getCurrentUser();
+    this.checkUser();
   }
 
   checkUser() {
