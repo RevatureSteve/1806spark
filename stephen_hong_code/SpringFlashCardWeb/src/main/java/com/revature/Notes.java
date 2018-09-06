@@ -22,7 +22,11 @@ public class Notes {
 	 * 		2. (beans.xml)turn on mvc scan
 	 * 		3. (web.xml) map the one and only servlet with requests to it
 	 * 
-	 * 	View Resolver: prefix & suffix
+	 * 	View Resolver: use prefix & suffix to shorten file path
+	 * 		instead of /a/b/c/d/e/f/one.html,
+	 * 			prefix("/a/b/c/d/e/f/")
+	 * 			suffix(".html")
+	 * 			and call for "one"
 	 */
 
 }

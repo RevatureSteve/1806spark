@@ -24,7 +24,7 @@ public class MainClass {
 		 *				1. In Spring bean configuration file
 		 *				spring context - turn on base component scan
 		 *				provide the base-package e.g. com.revature
-		 *				2. Beanify your classes you wnat with @s or still
+		 *				2. Beanify your classes you want with @s or still
 		 *					XML but lets use @s for this
 		 *				3. Use @Autowired for DI of other Spring Beans
 		 *					e.g. ManagerService has Autowired ManagerDaoImpl

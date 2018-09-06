@@ -14,7 +14,7 @@ public class UserDAOImpl implements UserDAO {
 
 	@Override
 	public User createUser(User user) {
-		try(Connection conn = ConnectionFactory.getInstance().getConnection()){
+		try(Connection conn = SetConnectionPropertiesUtil.getConnection()){
 			String sql = "INSERT INTO ers_users(ers_username, ers_password_hash, ers_password_salt, user_first_name, user_last_name, user_email, user_role_id) VALUES (?,?,?,?,?,?,?)";
 
 			String[] keys = {"ers_users_id"};

@@ -22,7 +22,7 @@ export class LoginComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
-    if(this.loggedUser != null){
+    if (this.loggedUser != null) {
       this.router.navigate(['landing']);
     }
   }
@@ -40,7 +40,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  register(){
+  register() {
     this.router.navigate(['register']);
   }
 
