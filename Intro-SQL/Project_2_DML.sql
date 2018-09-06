@@ -7,7 +7,8 @@ select * from users;
 commit;
 
 --Message Table
-
+ALTER TABLE message MODIFY time DEFAULT current_timestamp;
+INSERT INTO message (U_ID, MESSAGE, CONVERSATION_ID) VALUES (2, 'HELLO WORLD', 2);
 --Conversation Table
 
 --Friends_list Table

@@ -40,7 +40,7 @@ CREATE TABLE message(
 
     m_id INT,
     u_id INT,
-    time timestamp,
+    time TIMESTAMP,
     message VARCHAR2(4000) NOT NULL,
     conversation_id INT,
     PRIMARY KEY (m_id),
@@ -115,6 +115,8 @@ insert into online_status values (2, 'offline');
 
 drop table online_status;
 select * from online_status;
+
+commit;
 
 
 
