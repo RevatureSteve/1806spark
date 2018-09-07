@@ -17,7 +17,7 @@ public class UserDao {
 	//Create
 	public void createUser(User user) {
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();){
-			String sql = "INSERT INTO u_sers (email, password, fname, lname, pos_id) VALUES (?,?,?,?,?)";
+			String sql = "INSERT INTO u_sers (email, pass_word, fname, lname, pos_id) VALUES (?,?,?,?,?)";
 			PreparedStatement ps = conn.prepareStatement(sql);
 			ps.setString(1, user.getEmail());
 			ps.setString(2, user.getPassword());

@@ -27,7 +27,7 @@ public class ReimbursementDao {
 	// Create
 	public void createReimbursement(Reimbursement reimb) {
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
-			String sql = "{Call create_reimbursement(?,?,?,?,?)";
+			String sql = "{Call create_reimbursement(?,?,?,?,?)}";
 			CallableStatement cs = conn.prepareCall(sql);
 			cs.setInt(1, reimb.getEmpUId());
 			cs.setDouble(2, reimb.getAmt());
@@ -90,7 +90,6 @@ public class ReimbursementDao {
 						rs.getString(23) + " " + rs.getString(24), rs.getDouble("amt"), rs.getString("descript"),
 						rs.getBlob("img"), rs.getDate("time_submission"), rs.getString("rq_type"),
 						rs.getInt("rq_type_id"), rs.getString("rq_status"), rs.getInt("rq_status_id"));
-//				reimbursements.add(reimbursement);
 			}
 		} catch (IOException | SQLException e) {
 			e.printStackTrace();
@@ -109,7 +108,7 @@ public class ReimbursementDao {
 		try (Connection conn = SetConnectionPropertiesUtil.getConnection();) {
 			
 			String sql = "SELECT * FROM reimbursement r LEFT JOIN rq_status rs ON r.rq_status_id = rs.rq_status_id LEFT JOIN rq_type rt "
-					+ "ON r.rq_type_id = rt.rq_type_id LEFT JOIN users u ON r.emp_u_id = u.u_id LEFT JOIN users u ON r.mgr_u_id = u.u_id ORDER BY r_id";
+					+ "ON r.rq_type_id = rt.rq_type_id LEFT JOIN u_sers u ON r.emp_u_id = u.u_id LEFT JOIN u_sers u ON r.mgr_u_id = u.u_id ORDER BY r_id";
 			
 			PreparedStatement ps = conn.prepareStatement(sql);
 			

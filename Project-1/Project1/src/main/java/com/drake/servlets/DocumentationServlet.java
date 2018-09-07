@@ -13,7 +13,7 @@ public class DocumentationServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
        
     /**
-     *  URL *base*  - / 
+     *  URL - /Project1 
      */
     public DocumentationServlet() {
         super();
