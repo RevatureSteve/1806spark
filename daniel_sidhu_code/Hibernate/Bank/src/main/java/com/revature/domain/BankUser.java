@@ -28,7 +28,7 @@ public class BankUser {
 	private String fname;
 	
 	@Column(name="LNAME")
-	private String lname;
+	private String lname; 
 	
 	/*
 	 * first annotation: one user to many bankaccounts
