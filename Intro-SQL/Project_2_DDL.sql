@@ -98,9 +98,6 @@ CREATE TABLE friends_list(
     FOREIGN KEY (u_id_1) REFERENCES users(u_id)
     
 );
-select * from friends_list;
-drop table friends_list CASCADE CONSTRAINTS;
-insert into friends_list values (1, 1);
 
 CREATE TABLE online_status(
 
