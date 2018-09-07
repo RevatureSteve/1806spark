@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+
+	<!-- Spring @ scaning in all the nested packages of com.revature -->
+	<context:component-scan base-package="com.revature"></context:component-scan>
+
+	<!-- @Transactional -->
+	<tx:annotation-driven />
+	<!-- Contextual Session Configuration: 3 beans -->
+	<bean id="myDataSource" class="org.apache.commons.dbcp.BasicDataSource">
+		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property>
+		<property name="url" value="jdbc:oracle:thin:@localhost:1521:xe"></property>
+		<property name="username" value="flashcard_db"></property>
+		<property name="password" value="p4ssw0rd"></property>
+	</bean>
+	<bean id="mySessionFactory"
+		class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<!-- JDBC DataSource -->
+		<property name="dataSource" ref="myDataSource"></property>
+		<property name="hibernateProperties">
+			<props>
+				<!-- hbm2ddl.auto, dialect, show_sql, format_sql -->
+				<prop key="hibernate.dialect">org.hibernate.dialect.Oracle10gDialect</prop>
+				<prop key="hibernate.show_sql">true</prop>
+				<prop key="hibernate.hbm2ddl.auto">create</prop>
+			</props>
+		</property>
+		<property name="packagesToScan" value="com.revature.beans"></property>
+	</bean>
+	
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<!-- Setting Injection for the SessionFactory -->
+		<property name="sessionFactory" ref="mySessionFactory"></property>
+	</bean>
+	
+	<!-- "beanify" our class that are needed for ORMs-->	
+</beans>
+
+
+
