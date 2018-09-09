@@ -107,13 +107,6 @@ CREATE TABLE online_status(
     
 );
 
-insert into online_status values (1, 'online');
-insert into online_status values (2, 'offline');
-
-drop table online_status;
-select * from online_status;
-
-commit;
 
 
 

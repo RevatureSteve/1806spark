@@ -25,5 +25,11 @@ INSERT INTO friends_list VALUES (2, 2, 1);
 
 
 --Online_status Table
+insert into online_status values (1, 'online');
+insert into online_status values (2, 'offline');
 
+drop table online_status;
+select * from online_status;
+
+commit;
 
