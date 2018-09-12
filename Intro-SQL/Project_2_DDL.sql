@@ -99,6 +99,21 @@ CREATE TABLE friends_list(
     
 );
 
+CREATE SEQUENCE friends_list_seq
+MINVALUE 1
+START WITH 1
+INCREMENT BY 1;
+
+CREATE OR REPLACE TRIGGER friends_list_seq_trigger
+BEFORE INSERT ON friends_list
+FOR EACH ROW 
+BEGIN
+    IF :new.f_id IS NULL THEN
+        SELECT friends_list_seq.nextval INTO :new.f_id FROM DUAL;
+    END IF;
+END;
+/
+
 CREATE TABLE online_status(
 
     status_id INT,

@@ -1,7 +1,8 @@
 --Users Table
-INSERT INTO USERS VALUES(1, 'dan', 'a', 'a', 'dan', 'stan', 'dan@gmail.com', null, 1);
-INSERT INTO USERS VALUES(2, 'stan', 'b', 'b', 'stan', 'san', 'stan@gmail.com', null, 1);
+INSERT INTO USERS (username, pw_hash, fname, lname, email) 
+    VALUES('Terry', '1', 'Terry', 'so', 'terry@gmail.com');
 ALTER TABLE users DROP COLUMN pw_salt;
+ALTER TABLE users MODIFY online_status DEFAULT 2;
 SELECT * FROM USERS;
 COMMIT;
 
