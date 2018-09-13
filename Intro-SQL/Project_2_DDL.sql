@@ -1,5 +1,6 @@
 CREATE USER Project_2 IDENTIFIED BY p4ssw0rd;
 GRANT CONNECT, RESOURCE to Project_2;
+COMMIT;
 --DDL for Project 1
 
 --TABLES

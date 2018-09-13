@@ -22,9 +22,13 @@ ALTER TABLE friends_list DROP COLUMN f_id;
 ALTER TABLE friends_list ADD f_id INT;
 ALTER TABLE friends_list ADD CONSTRAINT f_id PRIMARY KEY (f_id);
 
-INSERT INTO friends_list VALUES (2, 2, 1);
+INSERT INTO friends_list (u_id_1, u_id_2) VALUES (2, 42);
+INSERT INTO friends_list VALUES (1, 2, 9);
+INSERT INTO friends_list VALUES (2, 2, 10);
+INSERT INTO friends_list VALUES (2, 2);
 
-
+--DROP TABLE friends_list;
+ROLLBACK;
 --Online_status Table
 insert into online_status values (1, 'online');
 insert into online_status values (2, 'offline');
