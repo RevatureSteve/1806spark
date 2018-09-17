@@ -10,9 +10,11 @@ COMMIT;
 ALTER TABLE message MODIFY TIME DEFAULT current_timestamp;
 INSERT INTO message (U_ID, MESSAGE, CONVERSATION_ID) VALUES (2, 'HELLO WORLD', 2);
 SELECT * FROM message;
+--TRUNCATE TABLE message;
 
 --Conversation Table
 SELECT * FROM conversation;
+TRUNCATE TABLE conversation;
 
 --Friends_list Table
 SELECT * FROM friends_list;
@@ -30,11 +32,11 @@ INSERT INTO friends_list VALUES (2, 2);
 --DROP TABLE friends_list;
 ROLLBACK;
 --Online_status Table
-insert into online_status values (1, 'online');
-insert into online_status values (2, 'offline');
+INSERT INTO online_status VALUES (1, 'online');
+INSERT INTO online_status VALUE (2, 'offline');
 
-drop table online_status;
-select * from online_status;
+DROP TABLE online_status;
+SELECT * FROM online_status;
 
-commit;
+COMMIT;
 
