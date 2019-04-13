@@ -16,6 +16,11 @@ button {
     margin-top: 20px;
 }
 
+h3 {
+    color: white;
+    margin-left: 250px;
+}
+
 label {
     font-weight: bold;
     color: white;

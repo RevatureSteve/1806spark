@@ -1,0 +1,24 @@
+<app-manager-navbar></app-manager-navbar>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#ID:</th>
+      <th scope="col">Position:</th>
+      <th scope="col">First Name:</th>
+      <th scope="col">Last Name:</th>
+      <th scope="col">Email:</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let u of users">
+        <th scope="row">{{u.userID}}</th>
+        <td>
+          <span *ngIf = "u.positionID == 1">Manager</span>
+          <span *ngIf = "u.positionID == 2">Employee</span>
+        </td>
+        <td>{{u.firstName}}</td>
+        <td>{{u.lastName}}</td>
+        <td>{{u.email}}</td>
+      </tr>
+    </tbody>
+  </table>

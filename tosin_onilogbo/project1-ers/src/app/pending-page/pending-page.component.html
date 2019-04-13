@@ -1,0 +1,24 @@
+<app-navbar></app-navbar>
+<table class="table table-striped table-dark">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Amount</th>
+      <th scope="col">Type</th>
+      <th scope="col">Description</th>
+    </tr>
+  </thead>
+  <tbody>
+      <tr *ngFor="let r of empReim">
+        <th scope="row">{{r.requestId}}</th>
+        <td>{{r.amount}}</td>
+        <td>
+            <span *ngIf = "r.requestTypeId == 1">Peace of mind</span>
+            <span *ngIf = "r.requestTypeId == 2">Slow down</span>
+            <span *ngIf = "r.requestTypeId == 3">Priorities</span>
+            <span *ngIf = "r.requestTypeId == 4">Aspirations</span>
+          </td>
+        <td>{{r.description}}</td>
+      </tr>
+  </tbody>
+</table>

@@ -8,6 +8,9 @@ import { StatusRequestComponent } from './status-request/status-request.componen
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { ManagerDashboardComponent } from './manager-dashboard/manager-dashboard.component';
 import { LoginComponent } from './login/login.component';
+import { PendingPageComponent } from './pending-page/pending-page.component';
+import { CompletedPageComponent } from './completed-page/completed-page.component';
+import { ViewEmployeesComponent } from './view-employees/view-employees.component';
 const routes: Routes = [
   {
   path: 'profile',
@@ -30,6 +33,15 @@ const routes: Routes = [
 }, {
   path: '',
   component: LoginComponent
+}, {
+  path: 'pending-page',
+  component: PendingPageComponent
+}, {
+  path: 'completed-page',
+  component: CompletedPageComponent
+}, {
+  path: 'view-employees',
+  component: ViewEmployeesComponent
 }
 ];
 

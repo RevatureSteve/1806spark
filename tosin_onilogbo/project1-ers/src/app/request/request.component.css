@@ -1,0 +1,9 @@
+label {
+    font-weight: bold;
+    color: black;
+}
+
+div {
+    width: 800px;
+    margin: 0 auto;
+}

@@ -1,1 +1,33 @@
 <app-navbar></app-navbar>
+<div class="container">
+    <div class="row" *ngIf="!editUser">
+        <div class="col-sm">
+            <label>First name:</label>
+            <br>
+            <br> {{data.user.firstName}}
+        </div>
+        <div class="col-sm">
+            <label>Last name:</label>
+            <br>
+            <br> {{data.user.lastName}}
+        </div>
+        <div class="col-sm">
+            <label>Password</label>
+            <br>
+            <br> {{data.user.password}}
+        </div>
+        <button type="button" (click)="updateUser()">Update Information</button>
+    </div>
+    <div class="row" *ngIf="editUser">
+        <div class="col-sm">
+            <input type="text" [(ngModel)]="data.user.firstName">
+        </div>
+        <div class="col-sm">
+            <input type="text" [(ngModel)]="data.user.lastName">
+        </div>
+        <div class="col-sm">
+            <input type="text" [(ngModel)]="data.user.password">
+        </div>
+        <button type="button" (click)="save()">Save</button>
+    </div>
+</div>

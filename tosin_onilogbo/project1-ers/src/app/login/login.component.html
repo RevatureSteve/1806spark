@@ -1,11 +1,11 @@
-<form class="form-row align-items-center col-auto">
+<div class="form-row align-items-center col-auto">
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
-      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
+      <input type="email" class="form-control" id="exampleInputEmail1" [(ngModel)] = "data.user.email" aria-describedby="emailHelp" placeholder="Enter email">
     </div>
     <div class="form-group">
       <label for="exampleInputPassword1">Password</label>
-      <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
+      <input type="password" class="form-control" id="exampleInputPassword1" [(ngModel)] = "data.user.password" placeholder="Password">
     </div>
     <div class="form-group form-check">
     </div>
@@ -13,4 +13,4 @@
     <div *ngIf = "display">
       <h3>{{display}}</h3>
     </div>
-  </form>
+  </div>

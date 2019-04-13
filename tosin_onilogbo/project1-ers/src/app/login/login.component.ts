@@ -17,11 +17,11 @@ export class LoginComponent implements OnInit {
   }
 
   getUsersLogin (){
+    console.log('USER: ' + this.data.user.email);
     this.data.getUsersLogin(this.data.user).subscribe(user => {
       if (user) {
         this.data.user=user
-        if (user.positionID){
-          user.positionID = 2
+        if (user.positionID==2){
           this.router.navigate(['dashboard'])
         } else {
           this.router.navigate(['manager-dashboard'])
