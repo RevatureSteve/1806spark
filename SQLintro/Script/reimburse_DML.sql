@@ -1,3 +1,5 @@
+ALTER TABLE reimbursement MODIFY mgr_u_id null;
+
 INSERT INTO position
 VALUES(1,'Manager');
 
@@ -6,16 +8,26 @@ VALUES(2,'Employee');
 
 INSERT INTO users
 VALUES(1, 'scontrol@gmail.com', 'cooly', 'Self', 'Control', 1);
+COMMIT;
 
 INSERT INTO users
 VALUES(2, 'lifec@gmail.com', 'tough', 'Life', 'Circumstances', 1);
 
 INSERT INTO users
-VALUES(3, 'jhightower@gmail.com', 'chilly', 'Josiah', 'Hightower', 3);
+VALUES(3, 'jhightower@gmail.com', 'chilly', 'Josiah', 'Hightower', 2);
 COMMIT;
 
+UPDATE users set pos_id = 2 where u_id = 3;
+commit;
+
 INSERT INTO users
-VALUES(4, 'swissa@gmail.com', 'swissy', 'Aamari', 'Swiss', 3);
+VALUES(4, 'swissa@gmail.com', 'swissy', 'Aamari', 'Swiss', 2);
+
+INSERT INTO users
+VALUES(5, 'kbrown@gmail.com', 'litty', 'Kandra', 'Brown', 2);
+
+INSERT INTO users
+VALUES(6, 'lhong@gmail.com', 'peace', 'Laura', 'Hong', 2);
 
 INSERT INTO rq_type
 VALUES(1, 'Peace of mind');
@@ -28,6 +40,16 @@ VALUES(3, 'Priorities');
 
 INSERT INTO rq_type
 VALUES(4, 'Aspirations');
+
+INSERT INTO rq_status
+Values(1, 'Pending');
+
+INSERT INTO rq_status
+Values(2, 'Denied');
+
+INSERT INTO rq_status
+Values(3, 'Approved');
+Commit;
 
 
 CREATE SEQUENCE id_seq 
